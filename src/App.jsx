@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, NavLink, Routes, Route } from "react-router-dom";
-import logo from "../images/logo.png";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import About from "./pages/About";
@@ -12,7 +11,7 @@ function App() {
       <div className="app-shell">
         <header className="site-header">
           <div className="brand">
-            <img src={logo} alt="Baraka Digital Hub logo" className="logo" />
+            <img src="/images/logo.png" alt="Baraka Digital Hub logo" className="logo" />
             <div>
               <p className="eyebrow">Baraka Digital Hub</p>
               <h1>Digital services designed for modern growth</h1>
