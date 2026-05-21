@@ -649,7 +649,7 @@ const WorkflowPage = ({ goBack, setPage }) => {
   );
 };
 
-const ImpactPage = ({ goBack }) => {
+const AboutPage = ({ goBack }) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   return (
     <div style={{ minHeight: "100vh", background: "#f8fafc", paddingTop: 80 }}>
@@ -660,10 +660,10 @@ const ImpactPage = ({ goBack }) => {
         <FadeIn>
           <div style={{ marginBottom: 48 }}>
             <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(245,158,11,0.08)", border: "1px solid rgba(245,158,11,0.15)", borderRadius: 100, padding: "6px 16px", marginBottom: 20 }}>
-              <span style={{ fontSize: "0.72rem", fontWeight: 700, color: "#d97706", letterSpacing: "0.07em", textTransform: "uppercase" }}>Community Impact</span>
+              <span style={{ fontSize: "0.72rem", fontWeight: 700, color: "#d97706", letterSpacing: "0.07em", textTransform: "uppercase" }}>About Baraka Digital Hub</span>
             </div>
-            <h1 className="font-display" style={{ fontSize: "2.8rem", fontWeight: 800, color: "#0f172a", letterSpacing: "-0.03em", marginBottom: 14 }}>Work That Creates Change</h1>
-            <p style={{ color: "#64748b", fontSize: "1.05rem", maxWidth: 620, lineHeight: 1.75 }}>Baraka Digital Hub was built on a core belief: that world-class AI data infrastructure can be built in Nairobi — and that building it creates real, lasting economic opportunity for youth who would otherwise be excluded from the global tech economy.</p>
+            <h1 className="font-display" style={{ fontSize: "2.8rem", fontWeight: 800, color: "#0f172a", letterSpacing: "-0.03em", marginBottom: 14 }}>Purpose, people, and practice</h1>
+            <p style={{ color: "#64748b", fontSize: "1.05rem", maxWidth: 680, lineHeight: 1.75 }}>Baraka Digital Hub helps businesses move from idea to launch by combining design, engineering, and performance into one seamless workflow. We build digital products, AI annotation, and growth systems that are rooted in professionalism, reliability, and measurable impact.</p>
           </div>
         </FadeIn>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, marginBottom: 32 }}>
@@ -688,6 +688,198 @@ const ImpactPage = ({ goBack }) => {
             <p style={{ color: "#475569", fontSize: "0.92rem", lineHeight: 1.85 }}>
               Timothy Mwangi leads Baraka Digital Hub's operations, workforce development, and delivery systems — building the organization from grassroots digital work initiatives into a structured AI outsourcing operation focused on scalable annotation, AI training, transcription, and BPO services. His vision is to show that communities in Nairobi can build world-class AI data infrastructure, closing the gap between global AI demand and local economic opportunity.
             </p>
+          </div>
+        </FadeIn>
+      </div>
+    </div>
+  );
+};
+
+const ImpactPage = ({ goBack }) => {
+  useEffect(() => { window.scrollTo(0, 0); }, []);
+  return (
+    <div style={{ minHeight: "100vh", background: "#ffffff", paddingTop: 80 }}>
+      <div style={{ maxWidth: 980, margin: "0 auto", padding: "48px 24px" }}>
+        <button onClick={goBack} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", cursor: "pointer", color: "#1d4ed8", fontWeight: 600, fontSize: "0.9rem", marginBottom: 32, fontFamily: "inherit" }}>
+          <ChevronLeft size={18} /> Back to Home
+        </button>
+        <FadeIn>
+          <div style={{ marginBottom: 40 }}>
+            <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(29,78,216,0.08)", border: "1px solid rgba(29,78,216,0.15)", borderRadius: 100, padding: "8px 18px", marginBottom: 18 }}>
+              <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "#1d4ed8", letterSpacing: "0.08em", textTransform: "uppercase" }}>Our Impact</span>
+            </div>
+            <h1 className="font-display" style={{ fontSize: "2.8rem", fontWeight: 800, color: "#0f172a", letterSpacing: "-0.03em", marginBottom: 20 }}>Baraka Digital Hub</h1>
+            <p style={{ color: "#475569", fontSize: "1.05rem", maxWidth: 760, lineHeight: 1.8 }}><strong>From Charity to Dignity. From Dependency to Opportunity.</strong></p>
+          </div>
+        </FadeIn>
+
+        <div style={{ borderTop: "1px solid #e2e8f0", margin: "32px 0" }} />
+
+        <FadeIn delay={0.05}>
+          <div style={{ marginBottom: 40 }}>
+            <h2 className="section-h2" style={{ marginBottom: 16 }}>Our Origin: Why We Exist</h2>
+            <p style={{ color: "#475569", fontSize: "1rem", lineHeight: 1.8, marginBottom: 16 }}>Baraka Digital Hub was born out of <strong>Baraka Children’s Home</strong>.</p>
+            <p style={{ color: "#64748b", fontSize: "0.96rem", lineHeight: 1.8, marginBottom: 16 }}>For nearly two decades, the Children’s Home has been a place of refuge, care, and hope for vulnerable children in Kayole, Nairobi. It provided what every child deserves: safety, food, education, and love.</p>
+            <p style={{ color: "#64748b", fontSize: "0.96rem", lineHeight: 1.8 }}>But as those children grew, a difficult reality became clear. Many faced an uncertain transition into adulthood, where access to opportunity, employment, and sustainable livelihoods was limited.</p>
+            <p style={{ color: "#64748b", fontSize: "0.96rem", lineHeight: 1.8, marginTop: 14 }}><strong>Baraka Digital Hub was created to close that gap. It is the bridge between care and independence, transforming long-term support into lasting economic empowerment.</strong></p>
+          </div>
+        </FadeIn>
+
+        <div style={{ borderTop: "1px solid #e2e8f0", margin: "32px 0" }} />
+
+        <FadeIn delay={0.1}>
+          <div style={{ marginBottom: 40 }}>
+            <h2 className="section-h2" style={{ marginBottom: 16 }}>The Problem We Address</h2>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 20 }}>
+              {[
+                "67 percent youth unemployment in informal settlements",
+                "1 in 3 young people lack access to formal employment",
+                "Fewer than 5 percent of youth from children’s homes transition into sustainable careers",
+              ].map((item, index) => (
+                <div key={index} style={{ background: "#f8fafc", borderRadius: 18, padding: "22px", border: "1px solid #e2e8f0" }}>
+                  <p style={{ color: "#0f172a", fontWeight: 700, marginBottom: 8 }}>{item}</p>
+                </div>
+              ))}
+            </div>
+            <p style={{ color: "#64748b", fontSize: "0.96rem", lineHeight: 1.8, marginBottom: 16 }}>Traditional charity systems face structural limits:</p>
+            <ul style={{ color: "#64748b", fontSize: "0.96rem", lineHeight: 1.8, paddingLeft: 20, marginBottom: 16 }}>
+              <li>Donations are unpredictable</li>
+              <li>Youth age out of care without market-ready skills</li>
+              <li>There is no clear pathway from protection to employment</li>
+            </ul>
+            <p style={{ color: "#0f172a", fontWeight: 700, lineHeight: 1.8 }}><strong>Baraka Digital Hub exists to change this outcome.</strong></p>
+          </div>
+        </FadeIn>
+
+        <div style={{ borderTop: "1px solid #e2e8f0", margin: "32px 0" }} />
+
+        <FadeIn delay={0.15}>
+          <div style={{ marginBottom: 40 }}>
+            <h2 className="section-h2" style={{ marginBottom: 20 }}>Our Dual Impact Model</h2>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, marginBottom: 24 }}>
+              {[
+                { title: "Impact 1", text: "Youth gain access to real digital work, earning fair income and building professional experience." },
+                { title: "Impact 2", text: "Baraka Children’s Home receives consistent support for education, food, and care." },
+              ].map((item, index) => (
+                <div key={index} style={{ background: "white", borderRadius: 18, padding: "24px", border: "1px solid #e2e8f0", boxShadow: "0 1px 12px rgba(15,23,42,0.06)" }}>
+                  <h3 style={{ fontSize: "1rem", fontWeight: 800, color: "#0f172a", marginBottom: 10 }}>{item.title}</h3>
+                  <p style={{ color: "#64748b", lineHeight: 1.8 }}>{item.text}</p>
+                </div>
+              ))}
+            </div>
+            <p style={{ color: "#0f172a", fontWeight: 700, lineHeight: 1.8 }}>Your invoice is also a school fees receipt.</p>
+          </div>
+        </FadeIn>
+
+        <div style={{ borderTop: "1px solid #e2e8f0", margin: "32px 0" }} />
+
+        <FadeIn delay={0.2}>
+          <div style={{ marginBottom: 40 }}>
+            <h2 className="section-h2" style={{ marginBottom: 20 }}>How Every Dollar Is Used</h2>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 20, marginBottom: 24 }}>
+              {[
+                { title: "70–80%", text: "Goes to youth earnings so they can build independence and dignity." },
+                { title: "10–15%", text: "Supports operations including internet, training, quality assurance, and infrastructure." },
+                { title: "5–10%", text: "Supports Baraka Children’s Home including school fees, meals, and essential care." },
+              ].map((item, index) => (
+                <div key={index} style={{ background: "white", borderRadius: 18, padding: "24px", border: "1px solid #e2e8f0", boxShadow: "0 1px 12px rgba(15,23,42,0.06)" }}>
+                  <h3 style={{ fontSize: "1rem", fontWeight: 800, color: "#0f172a", marginBottom: 10 }}>{item.title}</h3>
+                  <p style={{ color: "#64748b", lineHeight: 1.8 }}>{item.text}</p>
+                </div>
+              ))}
+            </div>
+            <p style={{ color: "#0f172a", fontWeight: 700, lineHeight: 1.8 }}>This structure ensures that work funds opportunity directly and sustainably.</p>
+          </div>
+        </FadeIn>
+
+        <div style={{ borderTop: "1px solid #e2e8f0", margin: "32px 0" }} />
+
+        <FadeIn delay={0.25}>
+          <div style={{ marginBottom: 40 }}>
+            <h2 className="section-h2" style={{ marginBottom: 20 }}>Who We Serve</h2>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, marginBottom: 20 }}>
+              {[
+                "From the Children’s Home — Young people who grew up in care and are now transitioning into independence through skills and digital work.",
+                "From the wider community — Out-of-school youth, orphans, and young women from marginalized backgrounds.",
+              ].map((item, index) => (
+                <div key={index} style={{ background: "#f8fafc", borderRadius: 18, padding: "22px", border: "1px solid #e2e8f0" }}>
+                  <p style={{ color: "#475569", lineHeight: 1.8 }}>{item}</p>
+                </div>
+              ))}
+            </div>
+            <p style={{ color: "#0f172a", fontWeight: 700, lineHeight: 1.8 }}>We do not define people by where they come from. We define them by what they are ready to build.</p>
+          </div>
+        </FadeIn>
+
+        <div style={{ borderTop: "1px solid #e2e8f0", margin: "32px 0" }} />
+
+        <FadeIn delay={0.3}>
+          <div style={{ marginBottom: 40 }}>
+            <h2 className="section-h2" style={{ marginBottom: 20 }}>The Ripple Effect</h2>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, marginBottom: 20 }}>
+              {[
+                "Client work generates income for youth.",
+                "Youth support their families and gain independence.",
+                "Operations sustain training and quality systems.",
+                "The Children’s Home receives continuous support for education and care.",
+              ].map((item, index) => (
+                <div key={index} style={{ background: "white", borderRadius: 18, padding: "24px", border: "1px solid #e2e8f0", boxShadow: "0 1px 12px rgba(15,23,42,0.06)" }}>
+                  <p style={{ color: "#475569", lineHeight: 1.8 }}>{item}</p>
+                </div>
+              ))}
+            </div>
+            <p style={{ color: "#64748b", lineHeight: 1.8, marginBottom: 18 }}>As young people grow, they return as mentors and trainers, strengthening the next generation.</p>
+            <p style={{ color: "#0f172a", fontWeight: 700, lineHeight: 1.8 }}>This is not charity. This is structured economic inclusion.</p>
+          </div>
+        </FadeIn>
+
+        <div style={{ borderTop: "1px solid #e2e8f0", margin: "32px 0" }} />
+
+        <FadeIn delay={0.35}>
+          <div style={{ marginBottom: 40 }}>
+            <h2 className="section-h2" style={{ marginBottom: 20 }}>From Our President and Mama Baraka</h2>
+            <div style={{ background: "#f8fafc", borderRadius: 20, padding: "28px 30px", border: "1px solid #e2e8f0" }}>
+              <p style={{ color: "#475569", lineHeight: 1.9, marginBottom: 18 }}>
+                “My life has always been rooted in children loving them, raising them, and standing beside them through every season of their growth. As Mama Baraka, my deepest calling has been to ensure that no child under our care ever feels forgotten or without a future.
+              </p>
+              <p style={{ color: "#475569", lineHeight: 1.9, marginBottom: 18 }}>
+                For many years, our focus at the Children’s Home was to provide safety, food, education, and love. But as our children grew, I could not ignore a deeper responsibility, preparing them for life beyond care.
+              </p>
+              <p style={{ color: "#475569", lineHeight: 1.9, marginBottom: 18 }}>
+                Baraka Digital Hub was born from that responsibility and that love. It is an extension of the Children’s Home, built to ensure that our young people step into adulthood with skills, confidence, and opportunity.
+              </p>
+              <p style={{ color: "#475569", lineHeight: 1.9, marginBottom: 18 }}>
+                My heart remains with the community in Kayole and every child who passes through our doors. Care must evolve into empowerment, and charity must grow into dignity.
+              </p>
+              <p style={{ color: "#475569", lineHeight: 1.9, marginBottom: 18 }}>
+                This work is family. It is love translated into opportunity.”
+              </p>
+              <p style={{ color: "#0f172a", fontWeight: 700, marginTop: 12 }}>Margrate Kimaru<br />President and Mama Baraka</p>
+            </div>
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={0.4}>
+          <div style={{ marginBottom: 40 }}>
+            <h2 className="section-h2" style={{ marginBottom: 20 }}>From Our Head of Operations</h2>
+            <div style={{ background: "white", borderRadius: 20, padding: "28px 30px", border: "1px solid #e2e8f0" }}>
+              <p style={{ color: "#475569", lineHeight: 1.9, marginBottom: 18 }}>
+                “Baraka Digital Hub was built on a simple belief: talent is universal, but opportunity is not.
+              </p>
+              <p style={{ color: "#475569", lineHeight: 1.9, marginBottom: 18 }}>
+                Our vision is to create a pathway where young people from underserved communities can access meaningful digital work, develop globally competitive skills, and build sustainable futures for themselves and their families.
+              </p>
+              <p style={{ color: "#475569", lineHeight: 1.9, marginBottom: 18 }}>
+                We are building more than a workforce centre. We are building a model of economic inclusion powered by technology, discipline, and purpose.
+              </p>
+              <p style={{ color: "#475569", lineHeight: 1.9, marginBottom: 18 }}>
+                Every project delivered is an opportunity created, a skill strengthened, and a future made more stable.
+              </p>
+              <p style={{ color: "#475569", lineHeight: 1.9, marginBottom: 18 }}>
+                We are ready to partner with organizations that value both excellence and impact.”
+              </p>
+              <p style={{ color: "#0f172a", fontWeight: 700, marginTop: 12 }}>Timothy Mwangi<br />Head of Operations</p>
+            </div>
           </div>
         </FadeIn>
       </div>
@@ -780,9 +972,10 @@ function BarakaDigitalHub() {
 
   const navLinks = [
     { label: "Services", page: "services" },
+    { label: "About", page: "about" },
+    { label: "Impact", page: "impact" },
     { label: "Operations", page: "operations" },
     { label: "Workflow", page: "workflow" },
-    { label: "Impact", page: "impact" },
     { label: "Pilot", page: "pilot" },
   ];
 
@@ -860,9 +1053,10 @@ function BarakaDigitalHub() {
       </nav>
 
       {page === "services" && <ServicesPage goBack={goBack} />}
+      {page === "about" && <AboutPage goBack={goBack} />}
+      {page === "impact" && <ImpactPage goBack={goBack} />}
       {page === "operations" && <OperationsPage goBack={goBack} />}
       {page === "workflow" && <WorkflowPage goBack={goBack} setPage={setPage} />}
-      {page === "impact" && <ImpactPage goBack={goBack} />}
       {page === "pilot" && <PilotPage goBack={goBack} />}
 
       {page === "home" && (
