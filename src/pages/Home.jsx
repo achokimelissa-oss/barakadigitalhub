@@ -4,11 +4,11 @@ function Home() {
   return (
     <section className="hero">
       <div className="hero-copy">
-        <p className="eyebrow">Build your brand online</p>
-        <h2>Creative strategy, web design, and digital acceleration.</h2>
+        <p className="eyebrow">Global digital services with local impact</p>
+        <h2>Digital strategy, design, and delivery for brands everywhere.</h2>
         <p>
-          Launch faster with a Vite + React site built for high performance,
-          accessibility, and modern deployment.
+          Build with a partner that combines modern web performance, strong operations,
+          and social impact for clients across the globe.
         </p>
         <div className="hero-actions">
           <Link to="/contact" className="button primary">
