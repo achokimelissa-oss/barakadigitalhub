@@ -5,13 +5,15 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
+const logo = "/logo.png";
+
 function App() {
   return (
     <Router>
       <div className="app-shell">
         <header className="site-header">
           <div className="brand">
-            <img src="/images/logo.png" alt="Baraka Digital Hub logo" className="logo" />
+            <img src={logo} alt="Baraka Digital Hub logo" className="logo" />
             <div>
               <p className="eyebrow">Baraka Digital Hub</p>
               <h1>Digital services designed for modern growth</h1>
