@@ -33,12 +33,18 @@ a {
 }
 
 .site-header {
+  position: sticky;
+  top: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
   flex-wrap: wrap;
-  padding-bottom: 24px;
+  padding: 18px 0;
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(10px);
+  z-index: 20;
 }
 
 .brand {
@@ -159,6 +165,134 @@ a {
 
 .card h4 {
   margin-top: 0;
+}
+
+.contact-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  margin-top: 28px;
+}
+
+.contact-card {
+  background: linear-gradient(180deg, #f8fafc, #ffffff);
+  border: 1px solid rgba(37, 99, 235, 0.12);
+}
+
+.contact-card a {
+  color: #2563eb;
+  font-weight: 600;
+  word-break: break-all;
+}
+
+.impact-page {
+  padding-top: 0;
+}
+
+.impact-hero {
+  padding: 60px 32px;
+  border-radius: 32px;
+  background: linear-gradient(135deg, #3730a3, #2563eb 40%, #8b5cf6);
+  color: white;
+  box-shadow: 0 35px 90px rgba(15, 23, 42, 0.14);
+}
+
+.impact-hero .eyebrow {
+  color: #c7d2fe;
+}
+
+.impact-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin: 40px 0;
+}
+
+.impact-card {
+  border-radius: 28px;
+  padding: 32px;
+  color: #0f172a;
+  box-shadow: 0 24px 64px rgba(15, 23, 42, 0.08);
+  min-height: 240px;
+}
+
+.impact-card span {
+  display: inline-flex;
+  margin-bottom: 18px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.impact-card h4 {
+  margin: 0 0 16px;
+}
+
+.impact-card p {
+  margin: 0;
+}
+
+.accent-purple {
+  background: linear-gradient(180deg, #ede9fe, #e0e7ff);
+}
+
+.accent-cyan {
+  background: linear-gradient(180deg, #f0f9ff, #bae6fd);
+}
+
+.accent-sunset {
+  background: linear-gradient(180deg, #fff7ed, #fee2e2);
+}
+
+.impact-highlight-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  margin-bottom: 40px;
+}
+
+.impact-highlight {
+  background: white;
+  border-radius: 24px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  padding: 26px;
+  display: grid;
+  gap: 12px;
+}
+
+.highlight-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 8px 14px;
+  border-radius: 9999px;
+  background: #2563eb;
+  color: white;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.impact-cta {
+  padding: 40px 32px;
+  border-radius: 32px;
+  background: linear-gradient(135deg, #2563eb, #8b5cf6);
+  color: white;
+}
+
+.impact-cta h3,
+.impact-cta p {
+  color: white;
+}
+
+.impact-cta p {
+  max-width: 680px;
+  margin-bottom: 24px;
+}
+
+.impact-cta .button {
+  display: inline-flex;
 }
 
 .accent {
