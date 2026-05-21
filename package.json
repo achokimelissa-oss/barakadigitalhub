@@ -1,0 +1,12 @@
+{
+  "name": "barakadigitalhub",
+  "version": "1.0.0",
+  "description": "Baraka Digital Hub project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
