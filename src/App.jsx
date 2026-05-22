@@ -26,7 +26,7 @@ function App() {
               Home
             </NavLink>
             <NavLink to="/services">Services</NavLink>
-            <NavLink to="/impact">Impact</NavLink>
+            <NavLink to="/impact">Social Impact</NavLink>
             <NavLink to="/about">About</NavLink>
             <NavLink to="/contact">Contact</NavLink>
           </nav>

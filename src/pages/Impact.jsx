@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 
 function Impact() {
   return (
-    <section className="section-block impact-page">
+    <section className="section-block social-impact-page">
       <div className="impact-hero">
         <div className="text-block">
-          <p className="eyebrow">Our impact, reimagined</p>
+          <p className="eyebrow">Social Impact</p>
           <h3>Modern digital work with purpose and color</h3>
           <p>
             Baraka Digital Hub blends global delivery, creative execution, and a real social mission. We help clients scale while creating sustainable opportunity for youth in Nairobi.
