@@ -780,7 +780,6 @@ const AboutPage = ({ goBack, isMobile }) => {
 
 const CareersPage = ({ goBack, isMobile }) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
-  const filters = ["All", "Remote", "Full-time", "Part-time", "Kenya", "AI / Data"];
   return (
     <div style={{ minHeight: "100vh", background: "#f8fafc", paddingTop: 80 }}>
       <div style={{ maxWidth: 980, margin: "0 auto", padding: "48px 24px" }}>
@@ -799,23 +798,13 @@ const CareersPage = ({ goBack, isMobile }) => {
           </div>
         </FadeIn>
 
-        <FadeIn delay={0.05}>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: 30 }}>
-            {filters.map((f, i) => (
-              <button key={i} style={{ padding: "10px 18px", borderRadius: 9999, border: "1px solid rgba(15,23,42,0.12)", background: "white", color: "#0f172a", fontWeight: 600, cursor: "pointer", fontSize: ".9rem" }}>
-                {f}
-              </button>
-            ))}
-          </div>
-        </FadeIn>
-
         <FadeIn delay={0.1}>
           <div style={{ background: "white", borderRadius: 24, padding: "40px 32px", border: "1px solid #e2e8f0", boxShadow: "0 18px 48px rgba(15,23,42,0.06)", textAlign: "center" }}>
             <h2 className="section-h2" style={{ marginBottom: 18 }}>No open roles right now</h2>
             <p style={{ color: "#475569", fontSize: "1rem", lineHeight: 1.8, maxWidth: 660, margin: "0 auto 24px" }}>
               We are not actively hiring at the moment, but we still welcome inquiries from talented people who want to join our mission. If you'd like to connect, send us a note and we’ll let you know when the next opportunities become available.
             </p>
-            <a href="mailto:projects@barakadigitalhub.com" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8, padding: "14px 24px", borderRadius: 12, background: "#1d4ed8", color: "white", fontWeight: 700, textDecoration: "none" }}>
+            <a href="mailto:hr@barakadigitalhub.com" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8, padding: "14px 24px", borderRadius: 12, background: "#1d4ed8", color: "white", fontWeight: 700, textDecoration: "none" }}>
               Contact us about careers <ArrowRight size={16} />
             </a>
           </div>
@@ -840,7 +829,7 @@ const PrivacyPage = ({ goBack, isMobile }) => {
             </div>
             <h1 className="font-display" style={{ fontSize: "2.8rem", fontWeight: 800, color: "#0f172a", letterSpacing: "-0.03em", marginBottom: 14 }}>Privacy and data protection</h1>
             <p style={{ color: "#64748b", fontSize: "1.05rem", maxWidth: 720, lineHeight: 1.75, marginBottom: 24 }}>
-              Baraka Digital Hub respects your privacy. We collect only the information we need to deliver services and keep your data secure with responsible controls.
+              Baraka Digital Hub respects your privacy. We collect only the information we need to deliver services and keep your data secure with responsible controls, aligned with ISO compliance standards.
             </p>
           </div>
         </FadeIn>
