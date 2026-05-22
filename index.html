@@ -479,7 +479,19 @@ const Counter = ({ target, suffix = "", duration = 2000 }) => {
     }, duration / steps);
     return () => clearInterval(timer);
   }, [inView, target, duration]);
-  return <span ref={ref}>{count}{suffix}</span>;
+  return (
+    <span
+      ref={ref}
+      style={{
+        display: "inline-block",
+        maxWidth: "100%",
+        wordBreak: "break-word",
+        overflowWrap: "break-word",
+      }}
+    >
+      {count}{suffix}
+    </span>
+  );
 };
 
 const FadeIn = ({ children, delay = 0, className = "" }) => {
