@@ -26,6 +26,41 @@ function About() {
         </div>
       </section>
 
+      <section className="section-block mission-block">
+        <div className="text-block">
+          <h2>The Mission</h2>
+          <p>
+            Baraka Digital Hub exists to demonstrate that communities in Nairobi can produce production-grade AI training data at global standards. Every successful delivery builds the case that geography is not a limitation.
+          </p>
+        </div>
+
+        <div className="about-grid">
+          <article className="about-panel">
+            <span className="feature-icon">♻️</span>
+            <h3>The Model</h3>
+            <p>
+              Unlike charity-dependent organizations, Baraka is built as a commercial sustainability model. Revenue from AI data services directly funds operations, workforce development, and the broader mission of Baraka Children’s Home.
+            </p>
+          </article>
+
+          <article className="about-panel">
+            <span className="feature-icon">👥</span>
+            <h3>Youth Employment</h3>
+            <p>
+              We prioritize hiring youth from underserved communities in Nairobi, providing structured training, mentorship, and real-world experience in AI data production — skills that transfer to global opportunities.
+            </p>
+          </article>
+
+          <article className="about-panel">
+            <span className="feature-icon">📈</span>
+            <h3>Skills for the Future</h3>
+            <p>
+              Our training programs go beyond task completion. Taskers develop transferable skills in quality assurance, data analysis, client communication, and AI fundamentals — building long-term career foundations.
+            </p>
+          </article>
+        </div>
+      </section>
+
       <section className="section-block">
         <div className="about-grid">
           <article className="about-panel">
