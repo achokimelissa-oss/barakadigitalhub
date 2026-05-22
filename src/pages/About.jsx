@@ -30,7 +30,7 @@ function About() {
         <div className="text-block">
           <h2>The Mission</h2>
           <p>
-            Baraka Digital Hub exists to demonstrate that communities in Nairobi can produce production-grade AI training data at global standards. Every successful delivery builds the case that geography is not a limitation.
+            Baraka Digital Hub exists to demonstrate that communities in Africa can produce production-grade AI training data at global standards. Every successful delivery builds the case that geography is not a limitation.
           </p>
         </div>
 
@@ -47,7 +47,7 @@ function About() {
             <span className="feature-icon">👥</span>
             <h3>Youth Employment</h3>
             <p>
-              We prioritize hiring youth from underserved communities in Nairobi, providing structured training, mentorship, and real-world experience in AI data production — skills that transfer to global opportunities.
+              We prioritize hiring youth from underserved communities in Africa, providing structured training, mentorship, and real-world experience in AI data production — skills that transfer to global opportunities.
             </p>
           </article>
 

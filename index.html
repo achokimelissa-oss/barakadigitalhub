@@ -683,9 +683,9 @@ const AboutPage = ({ goBack }) => {
         </FadeIn>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, marginBottom: 32 }}>
           {[
-            { title: "The Mission", icon: "🎯", text: "Baraka Digital Hub exists to demonstrate that communities in Nairobi can produce production-grade AI training data at global standards. Every successful delivery builds the case that geography is not a limitation." },
+            { title: "The Mission", icon: "🎯", text: "Baraka Digital Hub exists to demonstrate that communities in Africa can produce production-grade AI training data at global standards. Every successful delivery builds the case that geography is not a limitation." },
             { title: "The Model", icon: "♻️", text: "Unlike charity-dependent organizations, Baraka is built as a commercial sustainability model. Revenue from AI data services directly funds operations, workforce development, and the broader mission of Baraka Children's Home." },
-            { title: "Youth Employment", icon: "👥", text: "We prioritize hiring youth from underserved communities in Nairobi, providing structured training, mentorship, and real-world experience in AI data production — skills that transfer to global opportunities." },
+            { title: "Youth Employment", icon: "👥", text: "We prioritize hiring youth from underserved communities in Africa, providing structured training, mentorship, and real-world experience in AI data production — skills that transfer to global opportunities." },
             { title: "Skills for the Future", icon: "📈", text: "Our training programs go beyond task completion. Taskers develop transferable skills in quality assurance, data analysis, client communication, and AI fundamentals — building long-term career foundations." },
           ].map((card, i) => (
             <FadeIn key={i} delay={i * 0.07}>
@@ -697,14 +697,6 @@ const AboutPage = ({ goBack }) => {
             </FadeIn>
           ))}
         </div>
-        <FadeIn delay={0.15}>
-          <div style={{ background: "linear-gradient(135deg, #eff6ff, #ecfdf5)", borderRadius: 20, padding: "36px 32px", border: "1px solid rgba(29,78,216,0.1)", marginBottom: 24 }}>
-            <h3 className="font-display" style={{ fontSize: "1.3rem", fontWeight: 800, color: "#0f172a", marginBottom: 12 }}>About Timothy Mwangi — Founder & Director</h3>
-            <p style={{ color: "#475569", fontSize: "0.92rem", lineHeight: 1.85 }}>
-              Timothy Mwangi leads Baraka Digital Hub's operations, workforce development, and delivery systems — building the organization from grassroots digital work initiatives into a structured AI outsourcing operation focused on scalable annotation, AI training, transcription, and BPO services. His vision is to show that communities in Nairobi can build world-class AI data infrastructure, closing the gap between global AI demand and local economic opportunity.
-            </p>
-          </div>
-        </FadeIn>
       </div>
     </div>
   );
