@@ -518,7 +518,7 @@ const ServicesPage = ({ goBack }) => {
             <p style={{ color: "#64748b", fontSize: "1.05rem", maxWidth: 560, margin: "0 auto", lineHeight: 1.75 }}>Every service is backed by dedicated QA specialists, structured delivery pipelines, and a trained workforce ready to scale.</p>
           </div>
         </FadeIn>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(340px, 1fr))", gap: 20 }}>
+        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(auto-fill, minmax(340px, 1fr))", gap: 20 }}>
           {services.map((s, i) => (
             <FadeIn key={i} delay={i * 0.06}>
               <div style={{ background: "white", border: "1px solid #f1f5f9", borderRadius: 20, overflow: "hidden", boxShadow: "0 2px 12px rgba(0,0,0,0.04)" }}>
@@ -587,7 +587,7 @@ const OperationsPage = ({ goBack }) => {
                 </div>
                 <div style={{ flex: 1, minWidth: 240 }}>
                   <p style={{ color: "#475569", fontSize: "0.92rem", lineHeight: 1.8, marginBottom: 16 }}>{p.desc}</p>
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
+                  <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 8 }}>
                     {p.bullets.map((b, j) => (
                       <div key={j} style={{ display: "flex", alignItems: "flex-start", gap: 8 }}>
                         <CheckCircle2 size={13} style={{ color: p.color, flexShrink: 0, marginTop: 2 }} />
@@ -718,7 +718,7 @@ const AboutPage = ({ goBack }) => {
             </div>
           </div>
         </FadeIn>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, marginBottom: 32 }}>
+        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 20, marginBottom: 32 }}>
           {[
             { title: "The Mission", icon: "🎯", text: "Baraka Digital Hub exists to demonstrate that communities in Africa can produce production-grade AI training data at global standards. Every successful delivery builds the case that geography is not a limitation." },
             { title: "The Model", icon: "♻️", text: "Unlike charity-dependent organizations, Baraka is built as a commercial sustainability model. Revenue from AI data services directly funds operations, workforce development, and the broader mission of Baraka Children's Home." },
@@ -737,7 +737,7 @@ const AboutPage = ({ goBack }) => {
         <FadeIn delay={0.18}>
           <div style={{ background: "white", borderRadius: 24, padding: "36px 32px", border: "1px solid #e2e8f0", boxShadow: "0 18px 48px rgba(15,23,42,0.06)" }}>
             <h2 className="section-h2" style={{ marginBottom: 24 }}>Core Principles</h2>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 20 }}>
+            <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(auto-fit, minmax(220px, 1fr))", gap: 20 }}>
               <div style={{ background: "#f8fafc", borderRadius: 20, padding: "24px", border: "1px solid #e2e8f0" }}>
                 <strong>Teamwork</strong>
                 <p style={{ marginTop: 10, color: "#475569", lineHeight: 1.7 }}>We believe strong results come from collaboration, shared responsibility, and mutual support.</p>
@@ -787,7 +787,7 @@ const ImpactPage = ({ goBack }) => {
         </FadeIn>
 
         <FadeIn delay={0.05}>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 18, marginBottom: 40 }}>
+          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(auto-fit, minmax(220px, 1fr))", gap: 18, marginBottom: 40 }}>
             {[
               { label: "Youth unemployment in informal settlements", value: "67%" },
               { label: "Young people without formal employment", value: "1 in 3" },
@@ -802,7 +802,7 @@ const ImpactPage = ({ goBack }) => {
         </FadeIn>
 
         <FadeIn delay={0.1}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, marginBottom: 40 }}>
+          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 24, marginBottom: 40 }}>
             <div style={{ background: "white", borderRadius: 24, padding: "32px", border: "1px solid #e2e8f0", boxShadow: "0 18px 48px rgba(15,23,42,0.06)" }}>
               <h2 className="section-h2" style={{ marginBottom: 18 }}>Our Origin: Why We Exist</h2>
               <p style={{ color: "#475569", fontSize: "1rem", lineHeight: 1.8, marginBottom: 16 }}>Baraka Digital Hub was born out of <strong>Baraka Children’s Home</strong>.</p>
@@ -824,7 +824,7 @@ const ImpactPage = ({ goBack }) => {
         </FadeIn>
 
         <FadeIn delay={0.15}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, marginBottom: 40 }}>
+          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 24, marginBottom: 40 }}>
             <div style={{ background: "white", borderRadius: 24, padding: "32px", border: "1px solid #e2e8f0", boxShadow: "0 18px 48px rgba(15,23,42,0.06)" }}>
               <h2 className="section-h2" style={{ marginBottom: 18 }}>Our Dual Impact Model</h2>
               <div style={{ display: "grid", gap: 16 }}>
@@ -854,7 +854,7 @@ const ImpactPage = ({ goBack }) => {
         </FadeIn>
 
         <FadeIn delay={0.2}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, marginBottom: 40 }}>
+          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 24, marginBottom: 40 }}>
             <div style={{ background: "white", borderRadius: 24, padding: "32px", border: "1px solid #e2e8f0", boxShadow: "0 18px 48px rgba(15,23,42,0.06)" }}>
               <h2 className="section-h2" style={{ marginBottom: 18 }}>Who We Serve</h2>
               <p style={{ color: "#475569", fontSize: "0.97rem", lineHeight: 1.8, marginBottom: 16 }}>From the Children’s Home: young people who grew up in care and are now transitioning into independence through skills and digital work.</p>
@@ -976,6 +976,13 @@ function BarakaDigitalHub() {
   const [page, setPage] = useState("home");
   const [nav, setNav] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth <= 720 : false);
+  useEffect(()=>{
+    const onResize = () => setIsMobile(window.innerWidth <= 720);
+    window.addEventListener('resize', onResize);
+    onResize();
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
   const goBack = () => { setPage("home"); setNav(false); };
 
   useEffect(() => {
@@ -1056,7 +1063,7 @@ function BarakaDigitalHub() {
           <button onClick={() => setPage("home")} style={{ display:"flex", alignItems:"center", gap:10, background:"none", border:"none", cursor:"pointer", padding:0 }}>
             <img src="/logo.png" alt="Baraka Digital Hub logo" style={{ height:44, width:"auto", objectFit:"contain" }} />
           </button>
-          <div className="hidden-mobile" style={{ display:"flex", gap:28, alignItems:"center" }}>
+          <div className="hidden-mobile" style={{ display: isMobile ? "none" : "flex", gap:28, alignItems:"center" }}>
             {navLinks.map(l => (
               <button key={l.page} onClick={() => setPage(l.page)} className="nav-link">{l.label}</button>
             ))}
@@ -1089,7 +1096,7 @@ function BarakaDigitalHub() {
             <div style={{ position:"absolute", top:"-10%", right:"-5%", width:600, height:600, borderRadius:"50%", background:"radial-gradient(circle,rgba(29,78,216,.07) 0%,transparent 70%)" }} />
             <div style={{ position:"absolute", bottom:"-10%", left:"-5%", width:500, height:500, borderRadius:"50%", background:"radial-gradient(circle,rgba(16,185,129,.07) 0%,transparent 70%)" }} />
             <div className="page-container" style={{ position:"relative", zIndex:1 }}>
-              <div className="hero-grid" style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:56, alignItems:"center" }}>
+              <div className="hero-grid" style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap:56, alignItems:"center" }}>
                 <div>
                   <div style={{ display:"inline-flex", alignItems:"center", gap:8, background:"rgba(29,78,216,.08)", border:"1px solid rgba(29,78,216,.15)", borderRadius:100, padding:"7px 16px", marginBottom:18 }}>
                     <span className="ani-pulse" style={{ width:7, height:7, borderRadius:"50%", background:"#10b981", display:"inline-block" }} />
@@ -1107,7 +1114,7 @@ function BarakaDigitalHub() {
                     <button onClick={() => setPage("pilot")} className="btn-primary">Start Pilot Program <ArrowRight size={17} /></button>
                     <button onClick={() => setPage("services")} className="btn-secondary">Explore Services</button>
                   </div>
-                    <div className="stat-grid" style={{ display:"grid", gridTemplateColumns:"repeat(4,1fr)", gap:10 }}>
+                    <div className="stat-grid" style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(4,1fr)", gap:10 }}>
                     {[{v:"80+",l:"Taskers"},{v:"98%",l:"Avg Accuracy"},{v:"<4hr",l:"Response"},{v:"24hr",l:"Turnaround"}].map((s,i)=>(
                       <div key={i} style={{ background:"rgba(255,255,255,.8)", backdropFilter:"blur(12px)", border:"1px solid rgba(255,255,255,.9)", borderRadius:14, padding:"13px 10px", boxShadow:"0 2px 12px rgba(0,0,0,.04)", textAlign:"center" }}>
                         <div className="font-display" style={{ fontSize:"1.5rem", fontWeight:800, color:"#0f172a" }}>{s.v}</div>
@@ -1117,11 +1124,11 @@ function BarakaDigitalHub() {
                   </div>
                 </div>
                 <div className="hero-right" style={{ position:"relative" }}>
-                  <div className="ani-float" style={{ position:"absolute", top:-20, left:-20, background:"white", borderRadius:18, boxShadow:"0 12px 40px rgba(0,0,0,.12)", padding:"15px 20px", border:"1px solid #f1f5f9", zIndex:10 }}>
+                  <div className="ani-float" style={{ position: isMobile ? "relative" : "absolute", top: isMobile ? 0 : -20, left: isMobile ? 0 : -20, background:"white", borderRadius:18, boxShadow:"0 12px 40px rgba(0,0,0,.12)", padding:"15px 20px", border:"1px solid #f1f5f9", zIndex:10, marginBottom: isMobile ? 12 : 0 }}>
                     <div style={{ fontSize:".68rem", color:"#94a3b8", fontWeight:600, textTransform:"uppercase", letterSpacing:".06em", marginBottom:3 }}>Avg Accuracy</div>
                     <div className="font-display" style={{ fontSize:"2rem", fontWeight:800, color:"#10b981" }}>98%</div>
                   </div>
-                  <div className="ani-floatb" style={{ position:"absolute", bottom:-20, right:-20, background:"#020617", borderRadius:18, boxShadow:"0 12px 40px rgba(0,0,0,.25)", padding:"15px 20px", zIndex:10 }}>
+                  <div className="ani-floatb" style={{ position: isMobile ? "relative" : "absolute", bottom: isMobile ? "auto" : -20, right: isMobile ? "auto" : -20, background:"#020617", borderRadius:18, boxShadow:"0 12px 40px rgba(0,0,0,.25)", padding:"15px 20px", zIndex:10, marginTop: isMobile ? 8 : 0 }}>
                     <div style={{ fontSize:".68rem", color:"#94a3b8", fontWeight:600, textTransform:"uppercase", letterSpacing:".06em", marginBottom:3 }}>Weekly Throughput</div>
                     <div className="font-display" style={{ fontSize:"2rem", fontWeight:800, color:"white" }}>10K+ hrs</div>
                   </div>
