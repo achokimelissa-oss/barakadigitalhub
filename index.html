@@ -928,7 +928,7 @@ const PilotPage = ({ goBack }) => {
           </div>
         </FadeIn>
         <FadeIn delay={0.08}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 12, marginBottom: 36 }}>
+          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr 1fr", gap: 12, marginBottom: 36 }}>
             {[
               { icon: "⚡", title: "Fast Turnaround", desc: "Results returned within 72 hours of project kickoff" },
               { icon: "🔍", title: "Full QA Report", desc: "100% reviewed with per-task accuracy metrics included" },
@@ -1180,7 +1180,7 @@ function BarakaDigitalHub() {
                   <p style={{ color:"#64748b", fontSize:"1rem", maxWidth:480, margin:"0 auto", lineHeight:1.75 }}>End-to-end data labeling and AI training built for production scale.</p>
                 </div>
               </FadeIn>
-              <div className="svc-grid" style={{ display:"grid", gridTemplateColumns:"repeat(3,1fr)", gap:16 }}>
+              <div className="svc-grid" style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3,1fr)", gap:16 }}>
                 {services.map((s,i)=>(
                   <FadeIn key={i} delay={i*.06}>
                     <div className="svc-card" style={{ background:"white", border:"1px solid #f1f5f9", borderRadius:18, padding:"24px 22px", transition:"box-shadow .3s,transform .3s", cursor:"pointer", height:"100%" }} onClick={() => setPage("services")}>
