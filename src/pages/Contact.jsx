@@ -14,7 +14,7 @@ function Contact() {
           <p>
             President and founder. Leads global partnerships, social impact initiatives, and enterprise collaboration.
           </p>
-          <a href="mailto:margrate.kimaru@barakadigitalhub.com" target="_blank" rel="noreferrer noopener">margrate.kimaru@barakadigitalhub.com</a>
+          <a href="mailto:margrate.kimaru@barakadigitalhub.com">margrate.kimaru@barakadigitalhub.com</a>
         </article>
 
         <article className="card contact-card">
@@ -22,7 +22,7 @@ function Contact() {
           <p>
             Head of operations and delivery. Oversees AI data programs, digital operations, and quality client outcomes.
           </p>
-          <a href="mailto:timothy.mwangi@barakadigitalhub.com" target="_blank" rel="noreferrer noopener">timothy.mwangi@barakadigitalhub.com</a>
+          <a href="mailto:timothy.mwangi@barakadigitalhub.com">timothy.mwangi@barakadigitalhub.com</a>
         </article>
       </div>
     </section>

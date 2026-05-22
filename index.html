@@ -4,12 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Baraka Digital Hub</title>
+<link rel="icon" href="/icon.png" type="image/png" />
 <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <style>
   :root {
     font-size: 100%;
+  }
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
   }
   body {
     margin: 0;
@@ -35,6 +44,7 @@
     width: min(100%, 1200px);
     margin: 0 auto;
     padding: 0 24px;
+    box-sizing: border-box;
   }
   .text-block {
     max-width: 68rem;
@@ -545,7 +555,7 @@ const ServicesPage = ({ goBack }) => {
 const OperationsPage = ({ goBack }) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   const pillars = [
-    { n: "80+", label: "Trained Taskers", color: "#1d4ed8", desc: "Our workforce is trained across multiple annotation verticals including computer vision, NLP, audio, transcription, and BPO. Each tasker completes role-specific certification before working on client projects.", bullets: ["Role-specific onboarding tracks", "Certification before live project access", "Organized by vertical (CV, NLP, audio, etc.)", "Mentorship from senior annotators"] },
+    { n: "80+", label: "Trained Taskers", color: "#1d4ed8", desc: "Our workforce is trained across multiple annotation verticals including computer vision, NLP, audio, transcription, and BPO. Each tasker completes role-specific certification before working on client projects. Teams are flexible: our pool of 80+ taskers can be scaled up or reduced to match client requirements.", bullets: ["Role-specific onboarding tracks", "Certification before live project access", "Organized by vertical (CV, NLP, audio, etc.)", "Mentorship from senior annotators"] },
     { n: "100%", label: "QA Review Rate", color: "#10b981", desc: "Unlike many providers who spot-check 10–20%, Baraka runs 100% first-pass QA on standard projects. Our QA team is completely independent from annotation.", bullets: ["Independent QA team, not the same annotators", "First-pass error rate tracked per tasker", "Client-visible daily quality reports", "Inter-annotator agreement scoring available"] },
     { n: "72hr", label: "Turnaround Guarantee", color: "#0ea5e9", desc: "Most standard batches (up to 25K items) are delivered within 72 hours of task assignment. Rush timelines are supported with expanded shift coverage.", bullets: ["25K image batches in 72 hours", "Rush delivery with expanded coverage", "Proactive delay communication", "Daily progress updates to clients"] },
     { n: "Cert.", label: "Structured Onboarding", color: "#7c3aed", desc: "Every new engagement begins with a structured onboarding phase: task certification, calibration exercises, and pilot delivery before full-scale launch.", bullets: ["Task-specific certification tests", "Calibration batch before full launch", "Ongoing recalibration for long-running projects", "Documentation of guidelines and edge cases"] },
@@ -833,16 +843,7 @@ const ImpactPage = ({ goBack }) => {
           </div>
         </FadeIn>
 
-        <FadeIn delay={0.3}>
-          <div style={{ background: "#1d4ed8", borderRadius: 24, padding: "36px 32px", color: "white", textAlign: "center" }}>
-            <h2 className="section-h2" style={{ color: "white", marginBottom: 18 }}>Connect with our leadership team</h2>
-            <p style={{ color: "rgba(255,255,255,0.9)", fontSize: "1rem", lineHeight: 1.8, maxWidth: 720, margin: "0 auto 18px" }}>For strategic partnerships, impact collaborations, or to discuss how your project directly supports youth opportunity, contact our founders.</p>
-            <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 14 }}>
-              <a href="mailto:timothy.mwangi@barakadigitalhub.com" style={{ background: "white", color: "#1d4ed8", borderRadius: 12, padding: "14px 22px", fontWeight: 700, textDecoration: "none" }}>Timothy Mwangi</a>
-              <a href="mailto:margrate.kimaru@barakadigitalhub.com" style={{ background: "white", color: "#1d4ed8", borderRadius: 12, padding: "14px 22px", fontWeight: 700, textDecoration: "none" }}>Margrate Kimaru</a>
-            </div>
-          </div>
-        </FadeIn>
+        {/* Leadership contact section removed per site update */}
       </div>
     </div>
   );
@@ -899,8 +900,8 @@ const PilotPage = ({ goBack }) => {
               <a href="mailto:projects@barakadigitalhub.com" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "white", color: "#0f172a", borderRadius: 12, padding: "14px 24px", fontWeight: 700, fontSize: "0.95rem", textDecoration: "none" }}>
                 projects@barakadigitalhub.com <ArrowUpRight size={16} />
               </a>
-              <a href="tel:0769258118" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(255,255,255,.15)", color: "white", borderRadius: 12, padding: "14px 24px", fontWeight: 700, fontSize: "0.95rem", textDecoration: "none", border: "1px solid rgba(255,255,255,.25)" }}>
-                0769258118 <ArrowUpRight size={16} />
+              <a href="tel:+25769258118" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(255,255,255,.15)", color: "white", borderRadius: 12, padding: "14px 24px", fontWeight: 700, fontSize: "0.95rem", textDecoration: "none", border: "1px solid rgba(255,255,255,.25)" }}>
+                +25769258118 <ArrowUpRight size={16} />
               </a>
             </div>
           </div>
@@ -1056,7 +1057,7 @@ function BarakaDigitalHub() {
                 </div>
                 <div className="hero-right" style={{ position:"relative" }}>
                   <div className="ani-float" style={{ position:"absolute", top:-20, left:-20, background:"white", borderRadius:18, boxShadow:"0 12px 40px rgba(0,0,0,.12)", padding:"15px 20px", border:"1px solid #f1f5f9", zIndex:10 }}>
-                    <div style={{ fontSize:".68rem", color:"#94a3b8", fontWeight:600, textTransform:"uppercase", letterSpacing:".06em", marginBottom:3 }}>QA Accuracy</div>
+                    <div style={{ fontSize:".68rem", color:"#94a3b8", fontWeight:600, textTransform:"uppercase", letterSpacing:".06em", marginBottom:3 }}>Total Accuracy</div>
                     <div className="font-display" style={{ fontSize:"2rem", fontWeight:800, color:"#10b981" }}>98.7%</div>
                   </div>
                   <div className="ani-floatb" style={{ position:"absolute", bottom:-20, right:-20, background:"#020617", borderRadius:18, boxShadow:"0 12px 40px rgba(0,0,0,.25)", padding:"15px 20px", zIndex:10 }}>
@@ -1134,7 +1135,7 @@ function BarakaDigitalHub() {
           <section style={{ padding:"72px 24px", background:"linear-gradient(135deg,#1d4ed8 0%,#0ea5e9 50%,#10b981 100%)", position:"relative", overflow:"hidden" }}>
             <div style={{ position:"absolute", inset:0, opacity:.07, backgroundImage:"linear-gradient(to right,white 1px,transparent 1px),linear-gradient(to bottom,white 1px,transparent 1px)", backgroundSize:"40px 40px" }} />
             <div className="stats-band" style={{ maxWidth:1100, margin:"0 auto", display:"grid", gridTemplateColumns:"repeat(4,1fr)", gap:24, position:"relative", zIndex:1 }}>
-              {[{val:"98.7",suf:"%",l:"QA Accuracy"},{val:"10000",suf:"hrs+",l:"Weekly Throughput"},{val:"80",suf:"+",l:"Trained Taskers"},{val:"4",suf:"hr",l:"Avg Response Time"}].map((s,i)=>(
+              {[{val:"98.7",suf:"%",l:"Total Accuracy"},{val:"10000",suf:"hrs+",l:"Weekly Throughput"},{val:"80",suf:"+",l:"Trained Taskers"},{val:"4",suf:"hr",l:"Avg Response Time"}].map((s,i)=>(
                 <div key={i} style={{ textAlign:"center" }}>
                   <div className="font-display" style={{ fontSize:"3.2rem", fontWeight:800, color:"white", letterSpacing:"-.03em", lineHeight:1 }}>
                     <Counter target={s.val} suffix={s.suf} />
@@ -1244,10 +1245,13 @@ function BarakaDigitalHub() {
                     </button>
                   </div>
                   <div style={{ display:"flex", flexDirection:"column", gap:14 }}>
-                    {[{n:"80+",l:"Youth employed from Nairobi communities",c:"#1d4ed8"},{n:"100%",l:"Revenue reinvested in workforce development",c:"#10b981"},{n:"↑",l:"Sustainable commercial model — not donation-dependent",c:"#d97706"}].map((s,i)=>(
-                      <div key={i} style={{ background:"white", borderRadius:16, padding:"20px 22px", border:"1px solid #f1f5f9", boxShadow:"0 2px 10px rgba(0,0,0,.04)", display:"flex", alignItems:"center", gap:18 }}>
-                        <div className="font-display" style={{ fontSize:"1.8rem", fontWeight:800, color:s.c, flexShrink:0 }}>{s.n}</div>
-                        <p style={{ fontSize:".85rem", color:"#64748b", lineHeight:1.6 }}>{s.l}</p>
+                    {[{n:"67%",l:"Youth unemployment in informal settlements",c:"#1d4ed8"},{n:"1 in 3",l:"Young people without formal employment",c:"#10b981"},{n:"<5%",l:"Children’s home youths in sustainable careers",c:"#d97706"}].map((s,i)=>(
+                      <div key={i} style={{ background:"white", borderRadius:16, padding:"22px 24px", border:"1px solid #f1f5f9", boxShadow:"0 6px 24px rgba(15,23,42,0.04)", display:"flex", alignItems:"flex-start", gap:16 }}>
+                        <div style={{ flexShrink:0, width:64, height:64, borderRadius:12, background:s.c, display:"flex", alignItems:"center", justifyContent:"center", color:"white", fontWeight:800, fontSize:"1.4rem" }}>{s.n}</div>
+                        <div>
+                          <p style={{ fontSize:"0.95rem", color:"#0f172a", fontWeight:700, marginBottom:6 }}>{s.l}</p>
+                          <p style={{ fontSize:"0.87rem", color:"#64748b", lineHeight:1.6, margin:0 }}>We design programs and pathways that address these local challenges through jobs, training, and partnerships with employers.</p>
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -1291,7 +1295,7 @@ function BarakaDigitalHub() {
                   <div style={{ display:"flex", gap:12, marginTop:8 }}>
                     <a href="mailto:projects@barakadigitalhub.com" style={{ color:"rgba(255,255,255,0.95)", textDecoration:"none", fontWeight:700 }}>projects@barakadigitalhub.com</a>
                     <span style={{ color:"rgba(255,255,255,.45)" }}>|</span>
-                    <a href="tel:0769258118" style={{ color:"rgba(255,255,255,0.95)", textDecoration:"none", fontWeight:700 }}>0769258118</a>
+                    <a href="tel:+25769258118" style={{ color:"rgba(255,255,255,0.95)", textDecoration:"none", fontWeight:700 }}>+25769258118</a>
                   </div>
                 </div>
 

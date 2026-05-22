@@ -44,7 +44,40 @@ function App() {
         </main>
 
         <footer className="site-footer">
-          <p>Built with Vite + React · Deployed on Vercel</p>
+          <div className="footer-grid">
+            <div className="footer-section">
+              <h3>About</h3>
+              <p>
+                Baraka Digital Hub connects global clients to social impact digital services while creating sustainable opportunity for youth in Nairobi.
+              </p>
+            </div>
+
+            <div className="footer-section">
+              <h3>Services</h3>
+              <ul className="footer-list">
+                <li>AI training & annotation</li>
+                <li>Transcription & NLP datasets</li>
+                <li>BPO & data operations</li>
+                <li>Audio & speech processing</li>
+              </ul>
+            </div>
+
+            <div className="footer-section">
+              <h3>Social Impact</h3>
+              <ul className="footer-list">
+                <li>Dual-impact delivery model</li>
+                <li>Skills development for underserved youth</li>
+                <li>Support for Baraka Children’s Home</li>
+                <li>Community economic inclusion</li>
+              </ul>
+            </div>
+
+            <div className="footer-section">
+              <h3>Careers</h3>
+              <p>No open roles at this time.</p>
+              <p>Check back for future opportunities or contact us to discuss partnerships and project work.</p>
+            </div>
+          </div>
         </footer>
       </div>
     </Router>
