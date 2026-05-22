@@ -672,8 +672,13 @@ const AboutPage = ({ goBack }) => {
             <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(245,158,11,0.08)", border: "1px solid rgba(245,158,11,0.15)", borderRadius: 100, padding: "6px 16px", marginBottom: 20 }}>
               <span style={{ fontSize: "0.72rem", fontWeight: 700, color: "#d97706", letterSpacing: "0.07em", textTransform: "uppercase" }}>About Baraka Digital Hub</span>
             </div>
-            <h1 className="font-display" style={{ fontSize: "2.8rem", fontWeight: 800, color: "#0f172a", letterSpacing: "-0.03em", marginBottom: 14 }}>Purpose, people, and practice</h1>
-            <p style={{ color: "#64748b", fontSize: "1.05rem", maxWidth: 680, lineHeight: 1.75 }}>Baraka Digital Hub helps businesses move from idea to launch by combining design, engineering, and performance into one seamless workflow. We build digital products, AI annotation, and growth systems that are rooted in professionalism, reliability, and measurable impact.</p>
+            <h1 className="font-display" style={{ fontSize: "2.8rem", fontWeight: 800, color: "#0f172a", letterSpacing: "-0.03em", marginBottom: 14 }}>About Us</h1>
+            <p style={{ color: "#64748b", fontSize: "1.05rem", maxWidth: 680, lineHeight: 1.75, marginBottom: 14 }}>
+              Baraka Digital Hub is a social impact digital services centre based in Nairobi, Kenya. We deliver reliable, measurable digital solutions to international clients across AI training, transcription, BPO services, and specialized data operations, including computer vision annotation, natural language processing datasets, and audio and speech processing.
+            </p>
+            <p style={{ color: "#64748b", fontSize: "1.05rem", maxWidth: 680, lineHeight: 1.75 }}>
+              Each engagement is structured to generate dual impact. It provides fair and consistent income opportunities for young people from underserved communities while simultaneously supporting the education and welfare of children at Baraka Children’s Home and the surrounding community. This dual-impact model is embedded in our operations.
+            </p>
           </div>
         </FadeIn>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, marginBottom: 32 }}>
@@ -717,7 +722,7 @@ const ImpactPage = ({ goBack }) => {
         <FadeIn>
           <div style={{ marginBottom: 40, padding: "36px 28px", borderRadius: 24, background: "white", boxShadow: "0 24px 80px rgba(15,23,42,0.08)", border: "1px solid #e2e8f0" }}>
             <div style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "8px 18px", borderRadius: 100, background: "rgba(29,78,216,0.08)", border: "1px solid rgba(29,78,216,0.16)", marginBottom: 20 }}>
-              <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "#1d4ed8", letterSpacing: "0.08em", textTransform: "uppercase" }}>Our Impact</span>
+              <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "#1d4ed8", letterSpacing: "0.08em", textTransform: "uppercase" }}>Social Impact</span>
             </div>
             <h1 className="font-display" style={{ fontSize: "3rem", fontWeight: 900, color: "#0f172a", letterSpacing: "-0.03em", marginBottom: 18 }}>Baraka Digital Hub</h1>
             <p style={{ color: "#475569", fontSize: "1.08rem", lineHeight: 1.85, maxWidth: 760, marginBottom: 20 }}><strong>From Charity to Dignity. From Dependency to Opportunity.</strong></p>
@@ -935,7 +940,7 @@ function BarakaDigitalHub() {
   const navLinks = [
     { label: "Services", page: "services" },
     { label: "About", page: "about" },
-    { label: "Impact", page: "impact" },
+    { label: "Social Impact", page: "impact" },
     { label: "Operations", page: "operations" },
     { label: "Workflow", page: "workflow" },
     { label: "Pilot", page: "pilot" },
