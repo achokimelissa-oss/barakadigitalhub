@@ -1202,7 +1202,7 @@ function BarakaDigitalHub() {
 
           <section style={{ padding:"72px 24px", background:"linear-gradient(135deg,#1d4ed8 0%,#0ea5e9 50%,#10b981 100%)", position:"relative", overflow:"visible" }}>
             <div style={{ position:"absolute", inset:0, opacity:.07, backgroundImage:"linear-gradient(to right,white 1px,transparent 1px),linear-gradient(to bottom,white 1px,transparent 1px)", backgroundSize:"40px 40px" }} />
-            <div className="stats-band" style={{ maxWidth:1100, margin:"0 auto", display:"grid", gridTemplateColumns:"repeat(4,1fr)", gap:24, position:"relative", zIndex:1 }}>
+            <div className="stats-band" style={{ maxWidth:1100, margin:"0 auto", display:"grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(4,1fr)", gap:24, position:"relative", zIndex:1 }}>
               {[{val:"98",suf:"%",l:"Avg Accuracy"},{val:"10000",suf:"hrs+",l:"Weekly Throughput"},{val:"80",suf:"+",l:"Trained Taskers"},{val:"4",suf:"hr",l:"Avg Response Time"}].map((s,i)=>(
                 <div key={i} style={{ textAlign:"center" }}>
                   <div className="font-display" style={{ fontSize:"3.2rem", fontWeight:800, color:"white", letterSpacing:"-.03em", lineHeight:1 }}>
@@ -1223,7 +1223,7 @@ function BarakaDigitalHub() {
                   <p style={{ color:"#64748b", fontSize:"1rem", maxWidth:500, margin:"0 auto", lineHeight:1.75 }}>Structured infrastructure for production AI workflows and enterprise delivery.</p>
                 </div>
               </FadeIn>
-              <div style={{ display:"grid", gridTemplateColumns:"repeat(3,1fr)", gap:14 }}>
+              <div style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3,1fr)", gap:14 }}>
                 {[
                   { icon:<Users size={18}/>, n:"80+", l:"Trained Taskers", d:"Workforce certified across annotation, NLP, audio, and BPO workflows." },
                   { icon:<Shield size={18}/>, n:"100%", l:"QA Review", d:"Independent QA team reviews every deliverable before client submission." },
@@ -1266,7 +1266,7 @@ function BarakaDigitalHub() {
               </FadeIn>
               <FadeIn delay={0.08}>
                 <div style={{ background:"white", borderRadius:24, border:"1px solid #f1f5f9", boxShadow:"0 12px 48px rgba(0,0,0,.07)", overflow:"hidden" }}>
-                  <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr" }}>
+                  <div style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr" }}>
                     <div style={{ padding:"36px 32px", borderRight:"1px solid #f1f5f9" }}>
                       <div style={{ display:"inline-block", background:"rgba(29,78,216,.08)", color:"#1d4ed8", padding:"5px 13px", borderRadius:100, fontSize:".72rem", fontWeight:700, letterSpacing:".05em", textTransform:"uppercase", marginBottom:20 }}>Example Project</div>
                       <h3 className="font-display" style={{ fontSize:"1.6rem", fontWeight:800, color:"#0f172a", marginBottom:24, lineHeight:1.2 }}>Object Detection Annotation Pipeline</h3>
@@ -1301,7 +1301,7 @@ function BarakaDigitalHub() {
           <section style={{ padding:"88px 24px", background:"#f8fafc" }}>
             <div style={{ maxWidth:1000, margin:"0 auto" }}>
               <FadeIn>
-                <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:48, alignItems:"center" }}>
+                <div style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap:48, alignItems:"center" }}>
                   <div>
                     <div style={{ display:"inline-flex", alignItems:"center", gap:8, background:"rgba(245,158,11,.08)", border:"1px solid rgba(245,158,11,.15)", borderRadius:100, padding:"5px 14px", marginBottom:20 }}>
                       <span style={{ fontSize:".7rem", fontWeight:700, color:"#d97706", letterSpacing:".07em", textTransform:"uppercase" }}>Community Impact</span>
@@ -1360,7 +1360,7 @@ function BarakaDigitalHub() {
 
       <footer style={{ background:"linear-gradient(180deg,#021024,#020617)", padding:"56px 24px 36px", borderTop:"1px solid rgba(255,255,255,.06)" }}>
         <div className="page-container">
-          <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr 280px", gap:28, alignItems:"start", marginBottom:28 }}>
+          <div style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr 280px", gap:28, alignItems:"start", marginBottom:28 }}>
             <div>
               <img src="/logo.png" alt="Baraka Digital Hub logo" style={{ height:48, width:"auto", marginBottom:14 }} />
               <div style={{ display:"flex", flexDirection:"column", gap:6 }}>
