@@ -1084,7 +1084,7 @@ function BarakaDigitalHub() {
 
       {page === "home" && (
         <>
-          <section style={{ paddingTop:120, paddingBottom:80, paddingLeft:24, paddingRight:24, position:"relative", overflow:"hidden", background:"linear-gradient(160deg,#f8fafc 0%,#eff6ff 50%,#ecfdf5 100%)" }}>
+          <section style={{ paddingTop:120, paddingBottom:80, paddingLeft:24, paddingRight:24, position:"relative", overflow:"visible", background:"linear-gradient(160deg,#f8fafc 0%,#eff6ff 50%,#ecfdf5 100%)" }}>
             <div className="dot-grid" style={{ position:"absolute", inset:0, opacity:.6 }} />
             <div style={{ position:"absolute", top:"-10%", right:"-5%", width:600, height:600, borderRadius:"50%", background:"radial-gradient(circle,rgba(29,78,216,.07) 0%,transparent 70%)" }} />
             <div style={{ position:"absolute", bottom:"-10%", left:"-5%", width:500, height:500, borderRadius:"50%", background:"radial-gradient(circle,rgba(16,185,129,.07) 0%,transparent 70%)" }} />
@@ -1107,8 +1107,8 @@ function BarakaDigitalHub() {
                     <button onClick={() => setPage("pilot")} className="btn-primary">Start Pilot Program <ArrowRight size={17} /></button>
                     <button onClick={() => setPage("services")} className="btn-secondary">Explore Services</button>
                   </div>
-                  <div className="stat-grid" style={{ display:"grid", gridTemplateColumns:"repeat(4,1fr)", gap:10 }}>
-                    {[{v:"80+",l:"Taskers"},{v:"98%",l:"Accuracy"},{v:"<4hr",l:"Response"},{v:"24hr",l:"Turnaround"}].map((s,i)=>(
+                    <div className="stat-grid" style={{ display:"grid", gridTemplateColumns:"repeat(4,1fr)", gap:10 }}>
+                    {[{v:"80+",l:"Taskers"},{v:"98%",l:"Avg Accuracy"},{v:"<4hr",l:"Response"},{v:"24hr",l:"Turnaround"}].map((s,i)=>(
                       <div key={i} style={{ background:"rgba(255,255,255,.8)", backdropFilter:"blur(12px)", border:"1px solid rgba(255,255,255,.9)", borderRadius:14, padding:"13px 10px", boxShadow:"0 2px 12px rgba(0,0,0,.04)", textAlign:"center" }}>
                         <div className="font-display" style={{ fontSize:"1.5rem", fontWeight:800, color:"#0f172a" }}>{s.v}</div>
                         <div style={{ fontSize:".72rem", color:"#94a3b8", marginTop:2, fontWeight:500 }}>{s.l}</div>
@@ -1118,14 +1118,14 @@ function BarakaDigitalHub() {
                 </div>
                 <div className="hero-right" style={{ position:"relative" }}>
                   <div className="ani-float" style={{ position:"absolute", top:-20, left:-20, background:"white", borderRadius:18, boxShadow:"0 12px 40px rgba(0,0,0,.12)", padding:"15px 20px", border:"1px solid #f1f5f9", zIndex:10 }}>
-                    <div style={{ fontSize:".68rem", color:"#94a3b8", fontWeight:600, textTransform:"uppercase", letterSpacing:".06em", marginBottom:3 }}>Total Accuracy</div>
-                    <div className="font-display" style={{ fontSize:"2rem", fontWeight:800, color:"#10b981" }}>98.7%</div>
+                    <div style={{ fontSize:".68rem", color:"#94a3b8", fontWeight:600, textTransform:"uppercase", letterSpacing:".06em", marginBottom:3 }}>Avg Accuracy</div>
+                    <div className="font-display" style={{ fontSize:"2rem", fontWeight:800, color:"#10b981" }}>98%</div>
                   </div>
                   <div className="ani-floatb" style={{ position:"absolute", bottom:-20, right:-20, background:"#020617", borderRadius:18, boxShadow:"0 12px 40px rgba(0,0,0,.25)", padding:"15px 20px", zIndex:10 }}>
                     <div style={{ fontSize:".68rem", color:"#94a3b8", fontWeight:600, textTransform:"uppercase", letterSpacing:".06em", marginBottom:3 }}>Weekly Throughput</div>
                     <div className="font-display" style={{ fontSize:"2rem", fontWeight:800, color:"white" }}>10K+ hrs</div>
                   </div>
-                  <div style={{ background:"rgba(255,255,255,.72)", backdropFilter:"blur(20px)", border:"1px solid rgba(255,255,255,.9)", borderRadius:28, boxShadow:"0 24px 80px rgba(0,0,0,.1)", overflow:"hidden" }}>
+                  <div style={{ background:"rgba(255,255,255,.72)", backdropFilter:"blur(20px)", border:"1px solid rgba(255,255,255,.9)", borderRadius:28, boxShadow:"0 24px 80px rgba(0,0,0,.1)", overflow:"visible" }}>
                     <div style={{ height:3, background:"linear-gradient(90deg,#1d4ed8,#06b6d4,#10b981)" }} />
                     <div style={{ padding:28 }}>
                       <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between", marginBottom:22 }}>
@@ -1153,7 +1153,7 @@ function BarakaDigitalHub() {
             </div>
           </section>
 
-          <div style={{ background:"#020617", padding:"12px 0", overflow:"hidden" }}>
+          <div style={{ background:"#020617", padding:"12px 0", overflow:"visible" }}>
             <div className="ani-marquee" style={{ display:"flex", gap:0, whiteSpace:"nowrap", width:"max-content" }}>
               {["Computer Vision","NLP & Text Processing","Audio Annotation","LLM Training","RLHF","Transcription","BPO Services","Quality Assurance","Data Annotation","AI Workforce",
                 "Computer Vision","NLP & Text Processing","Audio Annotation","LLM Training","RLHF","Transcription","BPO Services","Quality Assurance","Data Annotation","AI Workforce"].map((t,i)=>(
@@ -1193,10 +1193,10 @@ function BarakaDigitalHub() {
             </div>
           </section>
 
-          <section style={{ padding:"72px 24px", background:"linear-gradient(135deg,#1d4ed8 0%,#0ea5e9 50%,#10b981 100%)", position:"relative", overflow:"hidden" }}>
+          <section style={{ padding:"72px 24px", background:"linear-gradient(135deg,#1d4ed8 0%,#0ea5e9 50%,#10b981 100%)", position:"relative", overflow:"visible" }}>
             <div style={{ position:"absolute", inset:0, opacity:.07, backgroundImage:"linear-gradient(to right,white 1px,transparent 1px),linear-gradient(to bottom,white 1px,transparent 1px)", backgroundSize:"40px 40px" }} />
             <div className="stats-band" style={{ maxWidth:1100, margin:"0 auto", display:"grid", gridTemplateColumns:"repeat(4,1fr)", gap:24, position:"relative", zIndex:1 }}>
-              {[{val:"98.7",suf:"%",l:"Total Accuracy"},{val:"10000",suf:"hrs+",l:"Weekly Throughput"},{val:"80",suf:"+",l:"Trained Taskers"},{val:"4",suf:"hr",l:"Avg Response Time"}].map((s,i)=>(
+              {[{val:"98",suf:"%",l:"Avg Accuracy"},{val:"10000",suf:"hrs+",l:"Weekly Throughput"},{val:"80",suf:"+",l:"Trained Taskers"},{val:"4",suf:"hr",l:"Avg Response Time"}].map((s,i)=>(
                 <div key={i} style={{ textAlign:"center" }}>
                   <div className="font-display" style={{ fontSize:"3.2rem", fontWeight:800, color:"white", letterSpacing:"-.03em", lineHeight:1 }}>
                     <Counter target={s.val} suffix={s.suf} />
@@ -1263,7 +1263,7 @@ function BarakaDigitalHub() {
                     <div style={{ padding:"36px 32px", borderRight:"1px solid #f1f5f9" }}>
                       <div style={{ display:"inline-block", background:"rgba(29,78,216,.08)", color:"#1d4ed8", padding:"5px 13px", borderRadius:100, fontSize:".72rem", fontWeight:700, letterSpacing:".05em", textTransform:"uppercase", marginBottom:20 }}>Example Project</div>
                       <h3 className="font-display" style={{ fontSize:"1.6rem", fontWeight:800, color:"#0f172a", marginBottom:24, lineHeight:1.2 }}>Object Detection Annotation Pipeline</h3>
-                      {[["Task Type","Bounding Box Annotation"],["Dataset Volume","25,000 Images"],["Timeline","72 Hours"],["QA Method","100% First-Pass Review"],["Final Accuracy","98.7%"],["Reporting","Daily Progress Updates"]].map(([k,v],i)=>(
+                      {[["Task Type","Bounding Box Annotation"],["Dataset Volume","25,000 Images"],["Timeline","72 Hours"],["QA Method","100% First-Pass Review"],["Avg Accuracy","98%"],["Reporting","Daily Progress Updates"]].map(([k,v],i)=>(
                         <div key={i} style={{ display:"flex", justifyContent:"space-between", alignItems:"center", padding:"12px 0", borderBottom:"1px solid #f8fafc" }}>
                           <span style={{ fontSize:".82rem", color:"#94a3b8", fontWeight:500 }}>{k}</span>
                           <span style={{ fontSize:".87rem", fontWeight:700, color:"#0f172a" }}>{v}</span>
@@ -1321,7 +1321,7 @@ function BarakaDigitalHub() {
             </div>
           </section>
 
-          <section style={{ padding:"88px 24px", background:"linear-gradient(160deg,#eff6ff,#ecfdf5)", position:"relative", overflow:"hidden" }}>
+          <section style={{ padding:"88px 24px", background:"linear-gradient(160deg,#eff6ff,#ecfdf5)", position:"relative", overflow:"visible" }}>
             <div className="dot-grid" style={{ position:"absolute", inset:0, opacity:.5 }} />
             <div style={{ maxWidth:680, margin:"0 auto", textAlign:"center", position:"relative", zIndex:1 }}>
               <FadeIn>
@@ -1347,50 +1347,51 @@ function BarakaDigitalHub() {
             </div>
           </section>
 
-          <footer style={{ background:"linear-gradient(180deg,#021024,#020617)", padding:"56px 24px 36px", borderTop:"1px solid rgba(255,255,255,.06)" }}>
-            <div className="page-container">
-              <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr 280px", gap:28, alignItems:"start", marginBottom:28 }}>
-                <div>
-                  <img src="/logo.png" alt="Baraka Digital Hub logo" style={{ height:48, width:"auto", marginBottom:14 }} />
-                  <p style={{ color:"rgba(255,255,255,.85)", fontSize:"0.95rem", lineHeight:1.8, marginBottom:12 }}>Baraka Digital Hub delivers enterprise-ready AI data infrastructure from Nairobi, combining robust quality controls, secure workflows, and scalable delivery for global teams.</p>
-                  <div style={{ display:"flex", gap:12, marginTop:8 }}>
-                    <a href="mailto:projects@barakadigitalhub.com" style={{ color:"rgba(255,255,255,0.95)", textDecoration:"none", fontWeight:700 }}>projects@barakadigitalhub.com</a>
-                    <span style={{ color:"rgba(255,255,255,.45)" }}>|</span>
-                    <a href="tel:+25769258118" style={{ color:"rgba(255,255,255,0.95)", textDecoration:"none", fontWeight:700 }}>+25769258118</a>
-                  </div>
-                </div>
-
-                
-                <div>
-                  <div style={{ fontSize:"0.95rem", fontWeight:700, color:"#ffffff", marginBottom:12 }}>Services</div>
-                  <div style={{ display:"grid", gap:8 }}>
-                    {['Computer Vision','NLP & Text','Audio Annotation','LLM Training','Transcription','BPO Services'].map((s,i)=>(
-                      <button key={i} onClick={() => setPage('services')} style={{ textAlign:"left", background:"none", border:"none", color:"rgba(255,255,255,.8)", padding:0, cursor:"pointer", fontSize:"0.95rem" }}
-                        onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,.8)"}>{s}</button>
-                    ))}
-                  </div>
-                </div>
-
-                <div>
-                  <div style={{ fontSize:"0.95rem", fontWeight:700, color:"#ffffff", marginBottom:12 }}>Company</div>
-                  <div style={{ display:"grid", gap:8 }}>
-                    <a href="#" style={{ color:"rgba(255,255,255,.8)", textDecoration:"none" }}>About</a>
-                    <a href="#" style={{ color:"rgba(255,255,255,.8)", textDecoration:"none" }}>Careers</a>
-                    <a href="#" style={{ color:"rgba(255,255,255,.8)", textDecoration:"none" }}>Privacy</a>
-                  </div>
-                </div>
-              </div>
-
-              <div style={{ borderTop:"1px solid rgba(255,255,255,.06)", paddingTop:18, display:"flex", justifyContent:"space-between", alignItems:"center", flexWrap:"wrap", gap:12 }}>
-                <p style={{ color:"rgba(255,255,255,.6)", fontSize:"0.85rem" }}>© 2026 Baraka Digital Hub. Nairobi, Kenya.</p>
-                <div style={{ display:"flex", gap:14, alignItems:"center" }}>
-                  <span style={{ color:"rgba(255,255,255,.6)", fontSize:"0.85rem" }}>Trusted AI data services for global teams.</span>
-                </div>
-              </div>
-            </div>
-          </footer>
+          
         </>
       )}
+
+      <footer style={{ background:"linear-gradient(180deg,#021024,#020617)", padding:"56px 24px 36px", borderTop:"1px solid rgba(255,255,255,.06)" }}>
+        <div className="page-container">
+          <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr 280px", gap:28, alignItems:"start", marginBottom:28 }}>
+            <div>
+              <img src="/logo.png" alt="Baraka Digital Hub logo" style={{ height:48, width:"auto", marginBottom:14 }} />
+              <p style={{ color:"rgba(255,255,255,.85)", fontSize:"0.95rem", lineHeight:1.8, marginBottom:12 }}>Baraka Digital Hub delivers enterprise-ready AI data infrastructure from Nairobi, combining robust quality controls, secure workflows, and scalable delivery for global teams.</p>
+              <div style={{ display:"flex", gap:12, marginTop:8 }}>
+                <a href="mailto:projects@barakadigitalhub.com" style={{ color:"rgba(255,255,255,0.95)", textDecoration:"none", fontWeight:700 }}>projects@barakadigitalhub.com</a>
+                <span style={{ color:"rgba(255,255,255,.45)" }}>|</span>
+                <a href="tel:+25769258118" style={{ color:"rgba(255,255,255,0.95)", textDecoration:"none", fontWeight:700 }}>+25769258118</a>
+              </div>
+            </div>
+
+            <div>
+              <div style={{ fontSize:"0.95rem", fontWeight:700, color:"#ffffff", marginBottom:12 }}>Services</div>
+              <div style={{ display:"grid", gap:8 }}>
+                {['Computer Vision','NLP & Text','Audio Annotation','LLM Training','Transcription','BPO Services'].map((s,i)=>(
+                  <button key={i} onClick={() => setPage('services')} style={{ textAlign:"left", background:"none", border:"none", color:"rgba(255,255,255,.8)", padding:0, cursor:"pointer", fontSize:"0.95rem" }}
+                    onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,.8)"}>{s}</button>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <div style={{ fontSize:"0.95rem", fontWeight:700, color:"#ffffff", marginBottom:12 }}>Company</div>
+              <div style={{ display:"grid", gap:8 }}>
+                <a href="#" style={{ color:"rgba(255,255,255,.8)", textDecoration:"none" }}>About</a>
+                <a href="#" style={{ color:"rgba(255,255,255,.8)", textDecoration:"none" }}>Careers</a>
+                <a href="#" style={{ color:"rgba(255,255,255,.8)", textDecoration:"none" }}>Privacy</a>
+              </div>
+            </div>
+          </div>
+
+          <div style={{ borderTop:"1px solid rgba(255,255,255,.06)", paddingTop:18, display:"flex", justifyContent:"space-between", alignItems:"center", flexWrap:"wrap", gap:12 }}>
+            <p style={{ color:"rgba(255,255,255,.6)", fontSize:"0.85rem" }}>© 2026 Baraka Digital Hub. Nairobi, Kenya.</p>
+            <div style={{ display:"flex", gap:14, alignItems:"center" }}>
+              <span style={{ color:"rgba(255,255,255,.6)", fontSize:"0.85rem" }}>Trusted AI data services for global teams.</span>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
