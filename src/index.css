@@ -424,28 +424,42 @@ a {
 
 @media (max-width: 900px) {
   .about-hero,
-  .about-grid {
+  .about-grid,
+  .impact-grid,
+  .impact-highlight-grid,
+  .card-grid,
+  .contact-grid {
     grid-template-columns: 1fr;
   }
 
-  .about-hero {
+  .about-hero,
+  .impact-hero {
     padding: 36px 18px;
   }
 
   .about-card,
   .about-panel,
   .text-block,
-  .principle-card {
+  .principle-card,
+  .impact-card,
+  .impact-highlight,
+  .card,
+  .contact-card,
+  .impact-cta {
     width: 100%;
     max-width: 100%;
   }
 
   .about-card,
-  .about-panel {
+  .about-panel,
+  .impact-cta {
     padding: 24px;
   }
 
-  .principle-grid {
+  .principle-grid,
+  .impact-grid,
+  .impact-highlight-grid,
+  .contact-grid {
     gap: 16px;
   }
 }
