@@ -493,7 +493,7 @@ const FadeIn = ({ children, delay = 0, className = "" }) => {
   );
 };
 
-const ServicesPage = ({ goBack }) => {
+const ServicesPage = ({ goBack, isMobile }) => {
   const services = [
     { icon: <Globe size={28} />, title: "Computer Vision Annotation", color: "#1d4ed8", accent: "#eff6ff", items: ["Bounding box annotation for object detection", "Semantic & instance segmentation", "Keypoint / pose estimation", "Image classification & tagging", "3D point cloud annotation", "Video object tracking"] },
     { icon: <Brain size={28} />, title: "NLP & Text Processing", color: "#7c3aed", accent: "#f5f3ff", items: ["Named entity recognition (NER)", "Sentiment & intent labeling", "Text classification & categorization", "Question-answer pair generation", "Dialogue annotation", "Language model evaluation"] },
@@ -552,7 +552,7 @@ const ServicesPage = ({ goBack }) => {
   );
 };
 
-const OperationsPage = ({ goBack }) => {
+const OperationsPage = ({ goBack, isMobile }) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   const pillars = [
     { n: "80+", label: "Trained Taskers", color: "#1d4ed8", desc: "Our workforce is trained across multiple annotation verticals including computer vision, NLP, audio, transcription, and BPO. Each tasker completes role-specific certification before working on client projects. Teams are flexible: our pool of 80+ taskers can be scaled up or reduced to match client requirements.", bullets: ["Role-specific onboarding tracks", "Certification before live project access", "Organized by vertical (CV, NLP, audio, etc.)", "Mentorship from senior annotators"] },
@@ -605,7 +605,7 @@ const OperationsPage = ({ goBack }) => {
   );
 };
 
-const WorkflowPage = ({ goBack, setPage }) => {
+const WorkflowPage = ({ goBack, setPage, isMobile }) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   const steps = [
     { n: 1, title: "Project Intake", desc: "Client shares dataset specs, quality requirements, tooling preferences, and timeline. We review and confirm feasibility within 4 hours.", color: "#1d4ed8" },
@@ -659,7 +659,7 @@ const WorkflowPage = ({ goBack, setPage }) => {
   );
 };
 
-const AboutPage = ({ goBack }) => {
+const AboutPage = ({ goBack, isMobile }) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   return (
     <div style={{ minHeight: "100vh", background: "#f8fafc", paddingTop: 80 }}>
@@ -766,7 +766,7 @@ const AboutPage = ({ goBack }) => {
   );
 };
 
-const ImpactPage = ({ goBack }) => {
+const ImpactPage = ({ goBack, isMobile }) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   return (
     <div style={{ minHeight: "100vh", background: "#f8fafc", paddingTop: 80 }}>
@@ -910,7 +910,7 @@ const ImpactPage = ({ goBack }) => {
   );
 };
 
-const PilotPage = ({ goBack }) => {
+const PilotPage = ({ goBack, isMobile }) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   return (
     <div style={{ minHeight: "100vh", background: "linear-gradient(160deg, #f8fafc, #eff6ff)", paddingTop: 80 }}>
@@ -1082,12 +1082,12 @@ function BarakaDigitalHub() {
         )}
       </nav>
 
-      {page === "services" && <ServicesPage goBack={goBack} />}
-      {page === "about" && <AboutPage goBack={goBack} />}
-      {page === "impact" && <ImpactPage goBack={goBack} />}
-      {page === "operations" && <OperationsPage goBack={goBack} />}
-      {page === "workflow" && <WorkflowPage goBack={goBack} setPage={setPage} />}
-      {page === "pilot" && <PilotPage goBack={goBack} />}
+      {page === "services" && <ServicesPage goBack={goBack} isMobile={isMobile} />}
+      {page === "about" && <AboutPage goBack={goBack} isMobile={isMobile} />}
+      {page === "impact" && <ImpactPage goBack={goBack} isMobile={isMobile} />}
+      {page === "operations" && <OperationsPage goBack={goBack} isMobile={isMobile} />}
+      {page === "workflow" && <WorkflowPage goBack={goBack} setPage={setPage} isMobile={isMobile} />}
+      {page === "pilot" && <PilotPage goBack={goBack} isMobile={isMobile} />}
 
       {page === "home" && (
         <>
