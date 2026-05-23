@@ -659,7 +659,7 @@ const WorkflowPage = ({ goBack, setPage, isMobile }) => {
           <div style={{ marginTop: 48, background: "#020617", borderRadius: 24, padding: "40px 36px", display: "flex", gap: 32, alignItems: "center", flexWrap: "wrap" }}>
             <div style={{ flex: 1, minWidth: 240 }}>
               <h3 className="font-display" style={{ fontSize: "1.5rem", fontWeight: 800, color: "white", marginBottom: 8 }}>Ready to run a pilot?</h3>
-              <p style={{ color: "#64748b", fontSize: "0.92rem", lineHeight: 1.7 }}>Send us your dataset specs and we'll return a delivery plan within 4 hours.</p>
+              <p style={{ color: "#64748b", fontSize: "0.92rem", lineHeight: 1.7 }}>Send us your dataset specs and we'll return a delivery plan within 24 hours.</p>
             </div>
             <button onClick={() => setPage("pilot")} style={{ flexShrink: 0, background: "linear-gradient(135deg, #1d4ed8, #10b981)", color: "white", border: "none", borderRadius: 12, padding: "14px 28px", fontWeight: 700, fontSize: "0.95rem", cursor: "pointer", fontFamily: "inherit", display: "flex", alignItems: "center", gap: 8 }}>
               Start Pilot <ArrowRight size={16} />
@@ -1250,6 +1250,7 @@ function BarakaDigitalHub() {
   ];
 
   const navLinks = [
+    { label: "Home", page: "home" },
     { label: "Services", page: "services" },
     { label: "About", page: "about" },
     { label: "Social Impact", page: "impact" },
@@ -1366,7 +1367,7 @@ function BarakaDigitalHub() {
                     <button onClick={() => setPage("services")} className="btn-secondary">Explore Services</button>
                   </div>
                     <div className="stat-grid" style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(4,1fr)", gap:10 }}>
-                    {[{v:"80+",l:"Taskers"},{v:"98%",l:"Avg Accuracy"},{v:"<4hr",l:"Response"},{v:"24hr",l:"Turnaround"}].map((s,i)=>(
+                    {[{v:"80+",l:"Taskers"},{v:"98%",l:"Avg Accuracy"},{v:"24hr",l:"Response"},{v:"24hr",l:"Turnaround"}].map((s,i)=>(
                       <div key={i} style={{ background:"rgba(255,255,255,.8)", backdropFilter:"blur(12px)", border:"1px solid rgba(255,255,255,.9)", borderRadius:14, padding:"13px 10px", boxShadow:"0 2px 12px rgba(0,0,0,.04)", textAlign:"center" }}>
                         <div className="font-display" style={{ fontSize:"1.5rem", fontWeight:800, color:"#0f172a" }}>{s.v}</div>
                         <div style={{ fontSize:".72rem", color:"#94a3b8", marginTop:2, fontWeight:500 }}>{s.l}</div>
@@ -1564,12 +1565,12 @@ function BarakaDigitalHub() {
                     </button>
                   </div>
                   <div style={{ display:"flex", flexDirection:"column", gap:14 }}>
-                    {[{n:"67%",l:"Youth unemployment in informal settlements",c:"#1d4ed8"},{n:"1 in 3",l:"Young people without formal employment",c:"#10b981"},{n:"<5%",l:"Children’s home youths in sustainable careers",c:"#d97706"}].map((s,i)=>(
-                      <div key={i} style={{ background:"white", borderRadius:16, padding:"22px 24px", border:"1px solid #f1f5f9", boxShadow:"0 6px 24px rgba(15,23,42,0.04)", display:"flex", alignItems:"flex-start", gap:16 }}>
-                        <div style={{ flexShrink:0, width:64, height:64, borderRadius:12, background:s.c, display:"flex", alignItems:"center", justifyContent:"center", color:"white", fontWeight:800, fontSize:"1.4rem" }}>{s.n}</div>
+                    {[{n:"67%",l:"Youth unemployment in informal settlements",c:"#1d4ed8"},{n:"33%",l:"Young people without formal employment",c:"#10b981"},{n:"<5%",l:"Children’s home youths in sustainable careers",c:"#d97706"}].map((s,i)=>(
+                      <div key={i} style={{ background:"white", borderRadius:18, padding:"26px 28px", border:"1px solid #f1f5f9", boxShadow:"0 10px 30px rgba(15,23,42,0.07)", display:"flex", alignItems:"flex-start", gap:18, minHeight:140 }}>
+                        <div style={{ flexShrink:0, width:72, height:72, borderRadius:16, background:s.c, display:"flex", alignItems:"center", justifyContent:"center", color:"white", fontWeight:800, fontSize:"1.5rem" }}>{s.n}</div>
                         <div>
-                          <p style={{ fontSize:"0.95rem", color:"#0f172a", fontWeight:700, marginBottom:6 }}>{s.l}</p>
-                          <p style={{ fontSize:"0.87rem", color:"#64748b", lineHeight:1.6, margin:0 }}>We design programs and pathways that address these local challenges through jobs, training, and partnerships with employers.</p>
+                          <p style={{ fontSize:"0.96rem", color:"#0f172a", fontWeight:700, marginBottom:6 }}>{s.l}</p>
+                          <p style={{ fontSize:"0.88rem", color:"#64748b", lineHeight:1.75, margin:0 }}>We design programs and pathways that address these local challenges through jobs, training, and partnerships with employers.</p>
                         </div>
                       </div>
                     ))}
