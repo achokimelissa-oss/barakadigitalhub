@@ -816,40 +816,212 @@ const CareersPage = ({ goBack, isMobile }) => {
 
 const PrivacyPage = ({ goBack, isMobile }) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
+  const sectionGrid = isMobile ? "1fr" : "repeat(2, minmax(0, 1fr))";
+  const rightsGrid = isMobile ? "1fr" : "repeat(3, minmax(0, 1fr))";
+
   return (
-    <div style={{ minHeight: "100vh", background: "#f8fafc", paddingTop: 80 }}>
-      <div style={{ maxWidth: 980, margin: "0 auto", padding: "48px 24px" }}>
-        <button onClick={goBack} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", cursor: "pointer", color: "#1d4ed8", fontWeight: 600, fontSize: "0.9rem", marginBottom: 32, fontFamily: "inherit" }}>
+    <div style={{ minHeight: "100vh", background: "#f8f9fb", paddingTop: 80 }}>
+      <div style={{ maxWidth: 980, margin: "0 auto", padding: "32px 20px 48px" }}>
+        <button onClick={goBack} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", cursor: "pointer", color: "#0d2b4e", fontWeight: 700, fontSize: "0.95rem", marginBottom: 28, fontFamily: "inherit" }}>
           <ChevronLeft size={18} /> Back to Home
         </button>
+
         <FadeIn>
-          <div style={{ marginBottom: 32 }}>
-            <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(29,78,216,0.08)", border: "1px solid rgba(29,78,216,0.15)", borderRadius: 100, padding: "6px 16px", marginBottom: 20 }}>
-              <span style={{ fontSize: "0.72rem", fontWeight: 700, color: "#1d4ed8", letterSpacing: "0.07em", textTransform: "uppercase" }}>Privacy Policy</span>
+          <div style={{ marginBottom: 24, padding: "26px 24px", borderRadius: 24, background: "#0d2b4e", color: "white" }}>
+            <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#0d7377", borderRadius: 999, padding: "6px 14px", marginBottom: 18 }}>
+              <span style={{ fontSize: "0.72rem", fontWeight: 700, color: "#fff", letterSpacing: "0.08em", textTransform: "uppercase" }}>Compliance & Privacy</span>
             </div>
-            <h1 className="font-display" style={{ fontSize: "2.8rem", fontWeight: 800, color: "#0f172a", letterSpacing: "-0.03em", marginBottom: 14 }}>Privacy and data protection</h1>
-            <p style={{ color: "#64748b", fontSize: "1.05rem", maxWidth: 720, lineHeight: 1.75, marginBottom: 24 }}>
-              Baraka Digital Hub respects your privacy. We collect only the information we need to deliver services and keep your data secure with responsible controls, aligned with ISO compliance standards.
+            <h1 className="font-display" style={{ fontSize: isMobile ? "2rem" : "2.8rem", fontWeight: 800, color: "#fff", letterSpacing: "-0.03em", marginBottom: 18 }}>Our commitment to data security and privacy</h1>
+            <p style={{ color: "#d1d5db", fontSize: isMobile ? "1rem" : "1.05rem", lineHeight: 1.8, maxWidth: 760 }}>
+              Baraka Digital Hub operates in alignment with ISO 27001 and ISO 9001 frameworks. Every client engagement is governed by strict data handling protocols, signed NDAs, and full transparency over how information is stored, processed, and protected.
             </p>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 18 }}>
+              {["ISO 27001 Aligned", "ISO 9001 Aligned", "GDPR Principles", "Kenya Data Protection Act 2019"].map((label, index) => (
+                <span key={index} style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "rgba(13,115,119,0.15)", border: "1px solid rgba(13,115,119,0.22)", borderRadius: 999, padding: "7px 14px", fontSize: "0.82rem", color: "#d1f2f2" }}>
+                  {label}
+                </span>
+              ))}
+            </div>
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={0.05}>
+          <div style={{ display: "grid", gap: 12, gridTemplateColumns: sectionGrid, marginBottom: 16 }}>
+            <div style={{ background: "white", borderRadius: 24, padding: "24px 22px", border: "1px solid rgba(0,0,0,0.08)", boxShadow: "0 16px 40px rgba(15,23,42,0.05)" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 14 }}>
+                <div style={{ width: 36, height: 36, borderRadius: 12, background: "#e6f4f4", display: "grid", placeItems: "center", color: "#0d7377", fontSize: 16 }}>
+                  🔒
+                </div>
+                <h2 className="section-h2" style={{ margin: 0, fontSize: "1.1rem" }}>ISO 27001</h2>
+              </div>
+              <p style={{ color: "#475569", lineHeight: 1.75 }}>
+                Our information security practices are structured around ISO 27001 principles — the international standard for managing information security risks.
+              </p>
+              <ul style={{ listStyle: "none", padding: 0, margin: "18px 0 0", display: "grid", gap: 10, color: "#475569" }}>
+                {[
+                  "All staff sign NDAs before accessing any client data",
+                  "Locked workstations during all client work sessions",
+                  "No personal devices permitted in project areas",
+                  "Managed company email accounts for all taskers",
+                  "Role-based access controls — only assigned personnel access project data",
+                  "Client data deleted upon project completion"
+                ].map((item, index) => (
+                  <li key={index} style={{ display: "flex", gap: 8, alignItems: "flex-start" }}>
+                    <span style={{ color: "#0d7377", marginTop: 2 }}>•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div style={{ background: "white", borderRadius: 24, padding: "24px 22px", border: "1px solid rgba(0,0,0,0.08)", boxShadow: "0 16px 40px rgba(15,23,42,0.05)" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 14 }}>
+                <div style={{ width: 36, height: 36, borderRadius: 12, background: "#fef3dc", display: "grid", placeItems: "center", color: "#a0660d", fontSize: 16 }}>
+                  🏆
+                </div>
+                <h2 className="section-h2" style={{ margin: 0, fontSize: "1.1rem" }}>ISO 9001</h2>
+              </div>
+              <p style={{ color: "#475569", lineHeight: 1.75 }}>
+                Our quality procedures follow ISO 9001 principles — ensuring consistent, measurable, and continuously improving service delivery.
+              </p>
+              <ul style={{ listStyle: "none", padding: 0, margin: "18px 0 0", display: "grid", gap: 10, color: "#475569" }}>
+                {[
+                  "Documented procedures for every service type",
+                  "Minimum 95% certification pass before any live project",
+                  "100% QA review after first pass — not spot-checking",
+                  "Error logging with root-cause categorisation",
+                  "Weekly accuracy and performance reports to clients",
+                  "Continuous improvement through targeted retraining"
+                ].map((item, index) => (
+                  <li key={index} style={{ display: "flex", gap: 8, alignItems: "flex-start" }}>
+                    <span style={{ color: "#a0660d", marginTop: 2 }}>•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </FadeIn>
 
         <FadeIn delay={0.1}>
-          <div style={{ display: "grid", gap: 20 }}>
-            <div style={{ background: "white", borderRadius: 24, padding: "28px 30px", border: "1px solid #e2e8f0", boxShadow: "0 18px 48px rgba(15,23,42,0.06)" }}>
-              <h2 className="section-h2" style={{ marginBottom: 14 }}>What we collect</h2>
-              <p style={{ color: "#475569", lineHeight: 1.8 }}>We may collect your contact details, project requirements, and any information you choose to share so we can respond to inquiries and support our services.</p>
-            </div>
-            <div style={{ background: "white", borderRadius: 24, padding: "28px 30px", border: "1px solid #e2e8f0", boxShadow: "0 18px 48px rgba(15,23,42,0.06)" }}>
-              <h2 className="section-h2" style={{ marginBottom: 14 }}>How we use it</h2>
-              <p style={{ color: "#475569", lineHeight: 1.8 }}>Your data is used only to communicate with you, manage engagements, and improve our service delivery. We do not sell or share your personal information for marketing purposes.</p>
-            </div>
-            <div style={{ background: "white", borderRadius: 24, padding: "28px 30px", border: "1px solid #e2e8f0", boxShadow: "0 18px 48px rgba(15,23,42,0.06)" }}>
-              <h2 className="section-h2" style={{ marginBottom: 14 }}>Your rights</h2>
-              <p style={{ color: "#475569", lineHeight: 1.8 }}>You can request access to your data, ask for corrections, or contact us to remove information we hold about you.</p>
+          <div style={{ background: "white", borderRadius: 24, border: "1px solid rgba(0,0,0,0.08)", padding: "26px 24px", marginBottom: 16 }}>
+            <div style={{ display: "grid", gap: 18, gridTemplateColumns: sectionGrid }}>
+              <div>
+                <p style={{ fontSize: "0.82rem", fontWeight: 700, color: "#0d2b4e", marginBottom: 10 }}>Client-provided data</p>
+                <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: 10, color: "#475569" }}>
+                  {[
+                    "Project files and task materials shared for annotation, transcription, or processing",
+                    "Contact information for communication and invoicing",
+                    "Platform credentials if operating within your environment"
+                  ].map((item, index) => (
+                    <li key={index} style={{ display: "flex", gap: 8, alignItems: "flex-start" }}>
+                      <span style={{ color: "#0d7377", marginTop: 2 }}>•</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <p style={{ fontSize: "0.82rem", fontWeight: 700, color: "#0d2b4e", marginBottom: 10 }}>Website visitor data</p>
+                <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: 10, color: "#475569" }}>
+                  {[
+                    "Name and email address submitted via contact or enquiry forms",
+                    "General analytics data (page visits, device type) — no personal identifiers",
+                    "No advertising cookies or tracking pixels used"
+                  ].map((item, index) => (
+                    <li key={index} style={{ display: "flex", gap: 8, alignItems: "flex-start" }}>
+                      <span style={{ color: "#0d7377", marginTop: 2 }}>•</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         </FadeIn>
+
+        <FadeIn delay={0.15}>
+          <div style={{ display: "grid", gap: 12, gridTemplateColumns: sectionGrid, marginBottom: 16 }}>
+            {[
+              { label: "Project data", title: "Deleted at completion", text: "All client files and task materials are securely deleted upon project sign-off. No retention." },
+              { label: "Contact records", title: "Up to 24 months", text: "Business contact details retained for ongoing client relationship management. Erasable on request." },
+              { label: "Invoicing & billing", title: "7 years", text: "Financial records retained in compliance with Kenyan tax regulations (Income Tax Act)." },
+              { label: "NDAs & agreements", title: "Duration + 5 years", text: "Contractual documents retained for legal compliance and audit purposes." }
+            ].map((card, index) => (
+              <div key={index} style={{ background: "#eff6ff", borderRadius: 20, padding: "22px 20px", border: "1px solid #dbeafe" }}>
+                <span style={{ display: "block", fontSize: "0.78rem", fontWeight: 700, color: "#475569", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 8 }}>{card.label}</span>
+                <strong style={{ display: "block", fontSize: "1rem", color: "#0d2b4e", marginBottom: 10 }}>{card.title}</strong>
+                <p style={{ color: "#475569", lineHeight: 1.65, margin: 0 }}>{card.text}</p>
+              </div>
+            ))}
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={0.2}>
+          <div style={{ background: "white", borderRadius: 24, border: "1px solid rgba(0,0,0,0.08)", padding: "26px 24px", marginBottom: 16 }}>
+            <div style={{ display: "grid", gap: 18, marginBottom: 16 }}>
+              <h2 className="section-h2" style={{ margin: 0, fontSize: "1.35rem", color: "#0d2b4e" }}>Your rights under our privacy framework</h2>
+              <p style={{ color: "#475569", lineHeight: 1.75, margin: 0 }}>
+                In alignment with GDPR principles and the Kenya Data Protection Act 2019, you have the following rights over any personal data we hold:
+              </p>
+            </div>
+            <div style={{ display: "grid", gap: 12, gridTemplateColumns: rightsGrid }}>
+              {[
+                { title: "Access", text: "Request a copy of any personal data we hold about you" },
+                { title: "Rectification", text: "Ask us to correct inaccurate or incomplete data" },
+                { title: "Erasure", text: "Request deletion of your personal data at any time" },
+                { title: "Portability", text: "Receive your data in a structured, machine-readable format" },
+                { title: "Restriction", text: "Ask us to limit how we process your data" },
+                { title: "Objection", text: "Object to processing where legitimate interest applies" }
+              ].map((item, index) => (
+                <div key={index} style={{ background: "#f1f5f9", borderRadius: 18, padding: "18px 16px" }}>
+                  <span style={{ display: "block", fontSize: "0.78rem", fontWeight: 700, color: "#0d7377", marginBottom: 6 }}>{item.title}</span>
+                  <p style={{ color: "#475569", lineHeight: 1.6, margin: 0 }}>{item.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={0.25}>
+          <div style={{ background: "white", borderRadius: 24, border: "1px solid rgba(0,0,0,0.08)", padding: "26px 24px", marginBottom: 16 }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                <div style={{ width: 42, height: 42, borderRadius: 14, background: "#e6f4f4", display: "grid", placeItems: "center", color: "#0d7377", fontSize: 18 }}>🏛️</div>
+                <h2 className="section-h2" style={{ margin: 0, fontSize: "1.25rem", color: "#0d2b4e" }}>Regulatory basis & frameworks</h2>
+              </div>
+              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: 14, color: "#475569" }}>
+                {[
+                  { title: "Kenya Data Protection Act 2019", text: "Our primary regulatory obligation. We are committed to registration with the Office of the Data Protection Commissioner (ODPC) as we formalise operations." },
+                  { title: "GDPR Principles (EU)", text: "Applied voluntarily to all international client engagements — including lawfulness, data minimisation, purpose limitation, and accountability." },
+                  { title: "ISO 27001 Framework", text: "Our information security controls are structured in alignment with ISO 27001. We are working toward formal third-party certification." },
+                  { title: "ISO 9001 Framework", text: "Our quality management system follows ISO 9001 principles, with documented procedures, QA checkpoints, and continuous improvement cycles." }
+                ].map((item, index) => (
+                  <li key={index} style={{ display: "grid", gap: 6 }}>
+                    <strong style={{ color: "#0d2b4e", fontSize: "1rem" }}>{item.title}</strong>
+                    <span style={{ color: "#475569", lineHeight: 1.7 }}>{item.text}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={0.3}>
+          <div style={{ background: "#0d2b4e", borderRadius: 24, padding: "24px 24px", display: "flex", flexDirection: isMobile ? "column" : "row", justifyContent: "space-between", alignItems: isMobile ? "flex-start" : "center", gap: 16, color: "white" }}>
+            <div>
+              <p style={{ margin: 0, fontSize: "1rem", fontWeight: 700 }}>Privacy enquiries & data subject requests</p>
+              <span style={{ display: "block", marginTop: 4, color: "#cbd5e1", fontSize: "0.92rem" }}>We respond to all privacy requests within 72 hours</span>
+            </div>
+            <a href="mailto:privacy@barakadigitalhub.com" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#0d7377", color: "white", padding: "12px 18px", borderRadius: 12, textDecoration: "none", fontWeight: 700 }}>
+              privacy@barakadigitalhub.com
+            </a>
+          </div>
+        </FadeIn>
+
+        <p style={{ marginTop: 24, color: "#64748b", fontSize: "0.95rem", textAlign: "center" }}>
+          Last reviewed: May 2026 · Baraka Digital Hub, Kayole, Nairobi, Kenya
+        </p>
       </div>
     </div>
   );
