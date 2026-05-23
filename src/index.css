@@ -642,12 +642,161 @@ a {
   font-size: 1.05rem;
 }
 
+.principle-card.accent-cyan,
+.about-panel.accent-cyan {
+  background: linear-gradient(180deg, #f0f9ff, #bae6fd);
+}
+
+.principle-card.accent-purple,
+.about-panel.accent-purple {
+  background: linear-gradient(180deg, #ede9fe, #e0e7ff);
+}
+
+.principle-card.accent-sunset,
+.about-panel.accent-sunset {
+  background: linear-gradient(180deg, #fff7ed, #fee2e2);
+}
+
+.outcome-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  margin: 28px 0;
+}
+
+.outcome-card {
+  padding: 32px;
+  border-radius: 28px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.outcome-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 26px 70px rgba(15, 23, 42, 0.09);
+  border-color: rgba(37, 99, 235, 0.15);
+}
+
+.outcome-card h3 {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  color: #0f172a;
+}
+
+.outcome-card p {
+  color: #475569;
+  margin: 0;
+}
+
+.outcome-card.accent-cyan {
+  background: linear-gradient(180deg, #f0f9ff, #bae6fd);
+}
+
+.outcome-card.accent-purple {
+  background: linear-gradient(180deg, #ede9fe, #e0e7ff);
+}
+
+.outcome-card.accent-sunset {
+  background: linear-gradient(180deg, #fff7ed, #fee2e2);
+}
 .site-footer {
   padding: 48px 0 0;
   border-top: 1px solid #e2e8f0;
   color: #475569;
 }
 
+.service-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  margin: 28px 0;
+}
+
+.service-card {
+  padding: 32px;
+  border-radius: 28px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.06);
+  background: white;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 26px 70px rgba(15, 23, 42, 0.09);
+  border-color: rgba(37, 99, 235, 0.15);
+}
+
+.service-card h3 {
+  margin: 12px 0 8px;
+  color: #0f172a;
+}
+
+.service-highlight {
+  color: #2563eb;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.service-card.accent-cyan {
+  background: linear-gradient(180deg, #f0f9ff, #bae6fd);
+}
+
+.service-card.accent-purple {
+  background: linear-gradient(180deg, #ede9fe, #e0e7ff);
+}
+
+.service-card.accent-sunset {
+  background: linear-gradient(180deg, #fff7ed, #fee2e2);
+}
+
+.why-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin: 28px 0;
+}
+
+.why-card {
+  padding: 28px;
+  border-radius: 24px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: white;
+  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 26px 70px rgba(15, 23, 42, 0.09);
+  border-color: rgba(37, 99, 235, 0.15);
+}
+
+.why-card h3 {
+  margin: 12px 0 8px;
+  color: #0f172a;
+}
+
+.why-card.accent-cyan {
+  background: linear-gradient(180deg, #f0f9ff, #bae6fd);
+}
+
+.why-card.accent-purple {
+  background: linear-gradient(180deg, #ede9fe, #e0e7ff);
+}
+
+.why-card.accent-sunset {
+  background: linear-gradient(180deg, #fff7ed, #fee2e2);
+}
+
+.contact-card.accent-cyan {
+  background: linear-gradient(180deg, #f0f9ff, #bae6fd);
+}
+
+.contact-card.accent-purple {
+  background: linear-gradient(180deg, #ede9fe, #e0e7ff);
+}
 .footer-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));

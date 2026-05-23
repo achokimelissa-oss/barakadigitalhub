@@ -111,19 +111,22 @@ function Impact() {
         </div>
 
         <div className="outcome-grid">
-          <article className="outcome-card">
+          <article className="outcome-card accent-cyan">
+            <span className="feature-icon">📚</span>
             <h3>Workforce development</h3>
             <p>
               Every project includes structured training. Youth develop technical skills, client communication, quality assurance discipline, and leadership capabilities that transfer to long-term careers.
             </p>
           </article>
-          <article className="outcome-card">
+          <article className="outcome-card accent-purple">
+            <span className="feature-icon">♻️</span>
             <h3>Sustainable operations</h3>
             <p>
               Unlike aid-dependent models, we operate commercially. Revenue from client work funds operations, growth, and expansion—creating a path to scale impact without dependency.
             </p>
           </article>
-          <article className="outcome-card">
+          <article className="outcome-card accent-sunset">
+            <span className="feature-icon">🤲</span>
             <h3>Community stability</h3>
             <p>
               Profits support Baraka Children's Home directly. Children access care, education, and protection. Young people transition from care into dignified employment.

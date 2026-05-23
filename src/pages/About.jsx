@@ -35,7 +35,8 @@ function About() {
         </div>
 
         <div className="about-grid">
-          <article className="about-panel">
+          <article className="about-panel about-highlight accent-cyan">
+            <span className="feature-icon">🏠</span>
             <h3>Baraka Children's Home (2006)</h3>
             <p>
               Founded by <strong>Margrate Kimaru</strong> (lovingly known as <strong>Mama Baraka</strong>), the Children's Home has provided care, protection, and education to vulnerable children in Nairobi for nearly two decades.
@@ -47,6 +48,9 @@ function About() {
 
           <article className="about-panel">
             <h3>Our core belief</h3>
+                      <article className="about-panel accent-purple">
+                        <span className="feature-icon">⭐</span>
+                        <h3>Our core belief</h3>
             <p>
               Talent is universal, but opportunity is not. We exist to close this gap—connecting underserved young people to structured digital employment, global work, skills development, and long-term economic inclusion.
             </p>
@@ -61,23 +65,28 @@ function About() {
         <div className="text-block">
           <h2>Core principles</h2>
           <div className="principle-grid">
-            <article className="principle-card">
+            <article className="principle-card accent-cyan">
+              <span className="feature-icon">🤝</span>
               <strong>Teamwork</strong>
               <p>Strong results come from collaboration, shared responsibility, and mutual support.</p>
             </article>
-            <article className="principle-card">
+            <article className="principle-card accent-purple">
+              <span className="feature-icon">👤</span>
               <strong>Dignity</strong>
               <p>We create opportunities that respect people, value their contribution, and promote self-worth.</p>
             </article>
-            <article className="principle-card">
+            <article className="principle-card accent-sunset">
+              <span className="feature-icon">✓</span>
               <strong>Accountability</strong>
               <p>We take ownership of our work, our standards, and the impact we create.</p>
             </article>
-            <article className="principle-card">
+            <article className="principle-card accent-cyan">
+              <span className="feature-icon">⚡</span>
               <strong>Excellence</strong>
               <p>We are committed to reliable, high-quality work that meets professional standards.</p>
             </article>
-            <article className="principle-card">
+            <article className="principle-card accent-purple">
+              <span className="feature-icon">🚀</span>
               <strong>Opportunity</strong>
               <p>We exist to open pathways for growth, employment, and long-term transformation.</p>
             </article>

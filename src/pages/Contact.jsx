@@ -20,7 +20,8 @@ function Contact() {
         </div>
 
         <div className="card-grid contact-grid">
-          <article className="card contact-card">
+          <article className="card contact-card accent-cyan">
+            <span className="feature-icon">👑</span>
             <h4>Margrate Kimaru</h4>
             <p className="role">President and Founder</p>
             <p>
@@ -29,7 +30,8 @@ function Contact() {
             <a href="mailto:margrate.kimaru@barakadigitalhub.com">margrate.kimaru@barakadigitalhub.com</a>
           </article>
 
-          <article className="card contact-card">
+          <article className="card contact-card accent-purple">
+            <span className="feature-icon">⚙️</span>
             <h4>Timothy Mwangi</h4>
             <p className="role">Head of Operations</p>
             <p>

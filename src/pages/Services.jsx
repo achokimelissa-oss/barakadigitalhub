@@ -13,7 +13,8 @@ function Services() {
 
       <section className="section-block">
         <div className="service-grid">
-          <article className="service-card">
+          <article className="service-card accent-cyan">
+            <span className="feature-icon">🤖</span>
             <h3>AI Data Services</h3>
             <p className="service-highlight">Production-grade data for machine learning</p>
             <p>
@@ -30,7 +31,8 @@ function Services() {
             </p>
           </article>
 
-          <article className="service-card">
+          <article className="service-card accent-purple">
+            <span className="feature-icon">💻</span>
             <h3>Web Development</h3>
             <p className="service-highlight">Modern, performant digital experiences</p>
             <p>
@@ -47,7 +49,8 @@ function Services() {
             </p>
           </article>
 
-          <article className="service-card">
+          <article className="service-card accent-sunset">
+            <span className="feature-icon">✏️</span>
             <h3>Design & Brand Strategy</h3>
             <p className="service-highlight">Cohesive visual and strategic direction</p>
             <p>
@@ -70,15 +73,18 @@ function Services() {
         <div className="text-block">
           <h2>Why partner with us?</h2>
           <div className="why-grid">
-            <article className="why-card">
+            <article className="why-card accent-cyan">
+              <span className="feature-icon">✔</span>
               <h3>Quality assurance</h3>
               <p>Multiple review layers ensure production-grade quality on every deliverable.</p>
             </article>
-            <article className="why-card">
+            <article className="why-card accent-purple">
+              <span className="feature-icon">🌍</span>
               <h3>Global readiness</h3>
               <p>Responsive across time zones, reliable communication, and professional operations.</p>
             </article>
-            <article className="why-card">
+            <article className="why-card accent-sunset">
+              <span className="feature-icon">❤️</span>
               <h3>Social impact</h3>
               <p>Your partnership funds youth employment, skills development, and community support in Nairobi.</p>
             </article>
