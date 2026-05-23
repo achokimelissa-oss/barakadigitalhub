@@ -475,7 +475,7 @@ const OperationsPage = ({ goBack, isMobile }) => {
   const pillars = [
     { n: "80+", label: "Trained Taskers", color: "#1d4ed8", desc: "Our workforce is trained across multiple annotation verticals including computer vision, NLP, audio, transcription, and BPO. Each tasker completes role-specific certification before working on client projects. Teams are flexible: our pool of 80+ taskers can be scaled up or reduced to match client requirements.", bullets: ["Role-specific onboarding tracks", "Certification before live project access", "Organized by vertical (CV, NLP, audio, etc.)", "Mentorship from senior annotators"] },
     { n: "100%", label: "QA Review Rate", color: "#10b981", desc: "Unlike many providers who spot-check 10–20%, Baraka runs 100% first-pass QA on standard projects. Our QA team is completely independent from annotation.", bullets: ["Independent QA team, not the same annotators", "First-pass error rate tracked per tasker", "Client-visible daily quality reports", "Inter-annotator agreement scoring available"] },
-    { n: "72hr", label: "Turnaround Guarantee", color: "#0ea5e9", desc: "Most standard batches (up to 25K items) are delivered within 72 hours of task assignment. Rush timelines are supported with expanded shift coverage.", bullets: ["25K image batches in 72 hours", "Rush delivery with expanded coverage", "Proactive delay communication", "Daily progress updates to clients"] },
+    { n: "48hr", label: "Turnaround Guarantee", color: "#0ea5e9", desc: "Most standard batches (up to 25K items) are delivered within 48 hours of task assignment. Rush timelines are supported with expanded shift coverage.", bullets: ["25K image batches in 48 hours", "Rush delivery with expanded coverage", "Proactive delay communication", "Daily progress updates to clients"] },
     { n: "Cert.", label: "Structured Onboarding", color: "#7c3aed", desc: "Every new engagement begins with a structured onboarding phase: task certification, calibration exercises, and pilot delivery before full-scale launch.", bullets: ["Task-specific certification tests", "Calibration batch before full launch", "Ongoing recalibration for long-running projects", "Documentation of guidelines and edge cases"] },
     { n: "24/7", label: "Centralized Operations", color: "#d97706", desc: "Baraka's operations team manages scheduling, escalations, communication, and reporting across all active projects. Clients have a single point of contact.", bullets: ["Single client-side point of contact", "Escalation protocols for complex edge cases", "Shift-based scheduling for coverage", "Consolidated reporting dashboard"] },
     { n: "Long", label: "Production-Grade Partnerships", color: "#dc2626", desc: "We are built for long-term engagements, not one-off batches. Our infrastructure supports ongoing annotation pipelines and multi-month production contracts.", bullets: ["Month-over-month consistency tracking", "Volume ramp plans for growing pipelines", "SLA-based delivery commitments", "Dedicated team assignment for continuity"] },
@@ -527,7 +527,7 @@ const WorkflowPage = ({ goBack, setPage, isMobile }) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   const steps = [
     { n: 1, title: "Project Intake", desc: "Client shares dataset specs, quality requirements, tooling preferences, and timeline. We review and confirm feasibility within 4 hours.", color: "#1d4ed8" },
-    { n: 2, title: "Tasker Onboarding", desc: "We assign a specialized team and run task-specific certification. Taskers must pass a calibration test before accessing the live dataset.", color: "#7c3aed" },
+    { n: 2, title: "Tasker Onboarding", desc: "We assign a specialized team and run task-specific certification. Taskers go through training to understand client requirements and must pass a calibration test before accessing the live dataset.", color: "#7c3aed" },
     { n: 3, title: "Dataset Segmentation", desc: "The dataset is divided into manageable batches and assigned across the team. Load is balanced to maintain throughput and reduce bottlenecks.", color: "#0891b2" },
     { n: 4, title: "Annotation Execution", desc: "Taskers work in the client's chosen environment (CVAT, Label Studio, Scale, or custom tooling). All work is tracked in real-time.", color: "#059669" },
     { n: 5, title: "100% QA Review", desc: "An independent QA team reviews every annotation before delivery. Errors are logged, corrected, and fed back into the calibration system.", color: "#d97706" },
@@ -936,7 +936,7 @@ const PilotPage = ({ goBack, isMobile }) => {
         <FadeIn delay={0.08}>
           <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr 1fr", gap: 12, marginBottom: 36 }}>
             {[
-              { icon: "⚡", title: "Fast Turnaround", desc: "Results returned within 72 hours of project kickoff" },
+              { icon: "⚡", title: "Fast Turnaround", desc: "Results returned within 48 hours of project kickoff" },
               { icon: "🔍", title: "Full QA Report", desc: "100% reviewed with per-task accuracy metrics included" },
               { icon: "🤝", title: "No Commitment", desc: "Pilot deliverables have no obligation to continue at scale" },
             ].map((c, i) => (
@@ -1235,7 +1235,7 @@ function BarakaDigitalHub() {
                 {[
                   { icon:<Users size={18}/>, n:"80+", l:"Trained Taskers", d:"Workforce certified across annotation, NLP, audio, and BPO workflows." },
                   { icon:<Shield size={18}/>, n:"100%", l:"QA Review", d:"Independent QA team reviews every deliverable before client submission." },
-                  { icon:<Zap size={18}/>, n:"72hr", l:"Rapid Turnaround", d:"Standard batches of 25K items delivered within 72 hours." },
+                  { icon:<Zap size={18}/>, n:"48hr", l:"Rapid Turnaround", d:"Standard batches of 25K items delivered within 48 hours." },
                   { icon:<CheckCircle2 size={18}/>, n:"Cert.", l:"Structured Onboarding", d:"Task certification and calibration before any live project access." },
                   { icon:<TrendingUp size={18}/>, n:"24/7", l:"Centralized Ops", d:"Managed operations, escalation handling, and daily progress reporting." },
                   { icon:<Clock size={18}/>, n:"Long", l:"Production Support", d:"Built for enduring partnerships, not one-off batches." },
@@ -1278,7 +1278,7 @@ function BarakaDigitalHub() {
                     <div style={{ padding:"36px 32px", borderRight:"1px solid #f1f5f9" }}>
                       <div style={{ display:"inline-block", background:"rgba(29,78,216,.08)", color:"#1d4ed8", padding:"5px 13px", borderRadius:100, fontSize:".72rem", fontWeight:700, letterSpacing:".05em", textTransform:"uppercase", marginBottom:20 }}>Example Project</div>
                       <h3 className="font-display" style={{ fontSize:"1.6rem", fontWeight:800, color:"#0f172a", marginBottom:24, lineHeight:1.2 }}>Object Detection Annotation Pipeline</h3>
-                      {[["Task Type","Bounding Box Annotation"],["Dataset Volume","25,000 Images"],["Timeline","72 Hours"],["QA Method","100% First-Pass Review"],["Avg Accuracy","98%"],["Reporting","Daily Progress Updates"]].map(([k,v],i)=>(
+                      {[["Task Type","Bounding Box Annotation"],["Dataset Volume","25,000 Images"],["Timeline","48 Hours"],["QA Method","100% First-Pass Review"],["Avg Accuracy","98%"],["Reporting","Daily Progress Updates"]].map(([k,v],i)=>(
                         <div key={i} style={{ display:"flex", justifyContent:"space-between", alignItems:"center", padding:"12px 0", borderBottom:"1px solid #f8fafc" }}>
                           <span style={{ fontSize:".82rem", color:"#94a3b8", fontWeight:500 }}>{k}</span>
                           <span style={{ fontSize:".87rem", fontWeight:700, color:"#0f172a" }}>{v}</span>
@@ -1351,7 +1351,7 @@ function BarakaDigitalHub() {
                   <button onClick={() => setPage("workflow")} className="btn-secondary" style={{ fontSize:"1rem", padding:"15px 30px" }}>View Our Process</button>
                 </div>
                 <div style={{ display:"flex", justifyContent:"center", gap:28, flexWrap:"wrap" }}>
-                  {["No upfront commitment","Results in 72 hours","Direct team access"].map((t,i)=>(
+                  {["No upfront commitment","Results in 48 hours","Direct team access"].map((t,i)=>(
                     <div key={i} style={{ display:"flex", alignItems:"center", gap:7 }}>
                       <CheckCircle2 size={13} style={{ color:"#10b981" }} />
                       <span style={{ fontSize:".82rem", color:"#64748b", fontWeight:500 }}>{t}</span>
