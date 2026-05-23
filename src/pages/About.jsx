@@ -1,7 +1,7 @@
 function About() {
   return (
     <>
-      <section className="section-block about-hero">
+      <section className="section-block about-hero section-intro">
         <div className="text-block">
           <p className="highlight-pill">Social impact digital services</p>
           <h1>About Us</h1>
