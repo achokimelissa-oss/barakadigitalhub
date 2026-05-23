@@ -620,7 +620,7 @@ const OperationsPage = ({ goBack, isMobile }) => {
 const WorkflowPage = ({ goBack, setPage, isMobile }) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   const steps = [
-    { n: 1, title: "Project Intake", desc: "Client shares dataset specs, quality requirements, tooling preferences, and timeline. We review and confirm feasibility within 4 hours.", color: "#1d4ed8" },
+    { n: 1, title: "Project Intake", desc: "Client shares dataset specs, quality requirements, tooling preferences, and timeline. We review and confirm feasibility within 24 hours.", color: "#1d4ed8" },
     { n: 2, title: "Tasker Onboarding", desc: "We assign a specialized team and run task-specific certification. Taskers must pass a calibration test before accessing the live dataset.", color: "#7c3aed" },
     { n: 3, title: "Dataset Segmentation", desc: "The dataset is divided into manageable batches and assigned across the team. Load is balanced to maintain throughput and reduce bottlenecks.", color: "#0891b2" },
     { n: 4, title: "Annotation Execution", desc: "Taskers work in the client's chosen environment (CVAT, Label Studio, Scale, or custom tooling). All work is tracked in real-time.", color: "#059669" },
@@ -1039,7 +1039,7 @@ const ImpactPage = ({ goBack, isMobile }) => {
           <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(auto-fit, minmax(220px, 1fr))", gap: 18, marginBottom: 40 }}>
             {[
               { label: "Youth unemployment in informal settlements", value: "67%" },
-              { label: "Young people without formal employment", value: "1 in 3" },
+              { label: "Young people without formal employment", value: "One in three" },
               { label: "Children’s home youths in sustainable careers", value: "<5%" },
             ].map((item, index) => (
               <div key={index} style={{ background: "white", borderRadius: 20, padding: "26px 24px", border: "1px solid #e2e8f0", boxShadow: "0 12px 30px rgba(15,23,42,0.06)" }}>
