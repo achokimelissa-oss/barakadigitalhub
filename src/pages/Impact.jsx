@@ -63,6 +63,18 @@ function Impact() {
           <p>
             We convert commercial digital work into a consistent support system for youth and Baraka Children’s Home. Every project is designed to create measurable social impact, reliable revenue, and a pathway to lasting independence.
           </p>
+          <div className="stat-cards" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 18, marginTop: 28 }}>
+            {[
+              { value: "67%", label: "Youth unemployment in informal settlements" },
+              { value: "1 in 3", label: "Young people without formal employment" },
+              { value: "<5%", label: "Children’s home youths in sustainable careers" },
+            ].map((item, index) => (
+              <article key={index} className="stat-card" style={{ background: "white", borderRadius: 18, padding: "24px 20px", border: "1px solid #e2e8f0" }}>
+                <div className="stat-value" style={{ fontFamily: "'Playfair Display',serif", fontSize: "2rem", fontWeight: 700, color: "#0f172a", marginBottom: 10 }}>{item.value}</div>
+                <div className="stat-label" style={{ fontSize: "0.94rem", color: "#64748b", lineHeight: 1.7 }}>{item.label}</div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -185,36 +197,15 @@ function Impact() {
         </div>
       </section>
 
-      <section className="section-block">
-        <div className="about-grid">
-          <div className="about-card">
-            <h3>From Our Head of Operations</h3>
-            <p>
-              “Baraka Digital Hub was built on a simple belief: talent is universal, but opportunity is not. Our vision is to create a pathway where young people from underserved communities can access meaningful digital work, develop globally competitive skills, and build sustainable futures for themselves and their families.
-            </p>
-            <p>
-              We are building more than a workforce centre. We are building a model of economic inclusion powered by technology, discipline, and purpose. Every project delivered is an opportunity created, a skill strengthened, and a future made more stable.
-            </p>
-            <p>
-              We are ready to partner with organizations that value both excellence and impact.”
-            </p>
-            <p style={{ marginTop: 20, fontWeight: 700 }}>Timothy Mwangi<br />Head of Operations</p>
-            <p>Email: <a href="mailto:timothy.mwangi@barakadigitalhub.com">timothy.mwangi@barakadigitalhub.com</a></p>
-          </div>
-          <div className="about-card about-highlight">
-            <h3>From Our President and Mama Baraka</h3>
-            <p>
-              “My life has always been rooted in children — loving them, raising them, and standing beside them through every season of their growth. As Mama Baraka, my deepest calling has been to ensure that no child under our care ever feels forgotten or without a future.
-            </p>
-            <p>
-              Baraka Digital Hub was born from that responsibility and that love. It is an extension of the Children’s Home, built to ensure that our young people step into adulthood with skills, confidence, and opportunity.
-            </p>
-            <p>
-              Care must evolve into empowerment, and charity must grow into dignity. This work is family. It is love translated into opportunity.”
-            </p>
-            <p style={{ marginTop: 20, fontWeight: 700 }}>Margrate Kimaru<br />President and Mama Baraka</p>
-            <p>Email: <a href="mailto:margrate.kimaru@barakadigitalhub.com">margrate.kimaru@barakadigitalhub.com</a></p>
-          </div>
+      <section className="section-block accent" style={{ marginTop: 18 }}>
+        <div className="text-block">
+          <h3>Bring impact into your next digital project</h3>
+          <p>
+            Collaborate with Baraka Digital Hub to get dependable delivery while helping create real social value for youth and Baraka Children’s Home.
+          </p>
+          <Link className="button primary" to="/contact">
+            Contact us to get started
+          </Link>
         </div>
       </section>
     </>

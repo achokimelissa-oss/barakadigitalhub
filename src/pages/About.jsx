@@ -46,11 +46,9 @@ function About() {
             </p>
           </article>
 
-          <article className="about-panel">
+          <article className="about-panel accent-purple">
+            <span className="feature-icon">⭐</span>
             <h3>Our core belief</h3>
-                      <article className="about-panel accent-purple">
-                        <span className="feature-icon">⭐</span>
-                        <h3>Our core belief</h3>
             <p>
               Talent is universal, but opportunity is not. We exist to close this gap—connecting underserved young people to structured digital employment, global work, skills development, and long-term economic inclusion.
             </p>
@@ -100,6 +98,37 @@ function About() {
           <p>
             Baraka Digital Hub is led by individuals who grew up in the Children's Home and understand firsthand the power of opportunity. This lived experience shapes how we operate, who we hire, and what we build.
           </p>
+        </div>
+
+        <div className="about-grid">
+          <div className="about-card">
+            <h3>From Our Head of Operations</h3>
+            <p>
+              “Baraka Digital Hub was built on a simple belief: talent is universal, but opportunity is not. Our vision is to create a pathway where young people from underserved communities can access meaningful digital work, develop globally competitive skills, and build sustainable futures for themselves and their families.
+            </p>
+            <p>
+              We are building more than a workforce centre. We are building a model of economic inclusion powered by technology, discipline, and purpose. Every project delivered is an opportunity created, a skill strengthened, and a future made more stable.
+            </p>
+            <p>
+              We are ready to partner with organizations that value both excellence and impact.”
+            </p>
+            <p style={{ marginTop: 20, fontWeight: 700 }}>Timothy Mwangi<br />Head of Operations</p>
+            <p>Email: <a href="mailto:timothy.mwangi@barakadigitalhub.com">timothy.mwangi@barakadigitalhub.com</a></p>
+          </div>
+          <div className="about-card about-highlight">
+            <h3>From Our President and Mama Baraka</h3>
+            <p>
+              “My life has always been rooted in children — loving them, raising them, and standing beside them through every season of their growth. As Mama Baraka, my deepest calling has been to ensure that no child under our care ever feels forgotten or without a future.
+            </p>
+            <p>
+              Baraka Digital Hub was born from that responsibility and that love. It is an extension of the Children’s Home, built to ensure that our young people step into adulthood with skills, confidence, and opportunity.
+            </p>
+            <p>
+              Care must evolve into empowerment, and charity must grow into dignity. This work is family. It is love translated into opportunity.”
+            </p>
+            <p style={{ marginTop: 20, fontWeight: 700 }}>Margrate Kimaru<br />President and Mama Baraka</p>
+            <p>Email: <a href="mailto:margrate.kimaru@barakadigitalhub.com">margrate.kimaru@barakadigitalhub.com</a></p>
+          </div>
         </div>
       </section>
     </>
