@@ -4,18 +4,17 @@ function Home() {
   return (
     <section className="hero">
       <div className="hero-copy">
-        <p className="eyebrow">Global digital services with local impact</p>
-        <h2 className="gradient-text">Digital strategy, design, and delivery for brands everywhere.</h2>
+        <p className="eyebrow">Baraka Digital Hub</p>
+        <h2 className="gradient-text">Global digital work. Local impact. Real purpose.</h2>
         <p>
-          Build with a partner that combines modern web performance, strong operations,
-          and social impact for clients across the globe.
+          AI data services, web development, and design for clients worldwide—built by talented youth from underserved communities in Nairobi.
         </p>
         <div className="hero-actions">
-          <Link to="/contact" className="button primary">
-            Get started
-          </Link>
-          <Link to="/services" className="button secondary">
+          <Link to="/services" className="button primary">
             Our services
+          </Link>
+          <Link to="/impact" className="button secondary">
+            See our impact
           </Link>
         </div>
         <div className="scroll-indicator">

@@ -1,31 +1,57 @@
 function Contact() {
   return (
-    <section className="section-block">
-      <div className="text-block">
-        <h3>Reach out to us</h3>
-        <p>
-          Baraka Digital Hub supports clients around the world with digital services, growth systems, and impact-driven delivery. Start a conversation about partnerships, AI work, or global collaboration.
-        </p>
-      </div>
-
-      <div className="card-grid contact-grid">
-        <article className="card contact-card">
-          <h4>Margrate Kimaru</h4>
+    <>
+      <section className="section-block contact-hero section-intro">
+        <div className="text-block">
+          <p className="highlight-pill">Get in touch</p>
+          <h1>Let's work together</h1>
           <p>
-            President and founder. Leads global partnerships, social impact initiatives, and enterprise collaboration.
+            Whether you need AI data services, web development, or design—or you're curious about our impact model—reach out. We'd love to start a conversation.
           </p>
-          <a href="mailto:margrate.kimaru@barakadigitalhub.com">margrate.kimaru@barakadigitalhub.com</a>
-        </article>
+        </div>
+      </section>
 
-        <article className="card contact-card">
-          <h4>Timothy Mwangi</h4>
+      <section className="section-block">
+        <div className="text-block">
+          <h3>Contact our team</h3>
           <p>
-            Head of operations and delivery. Oversees AI data programs, digital operations, and quality client outcomes.
+            Choose who fits your needs, or start with either team member and we'll connect you to the right person.
           </p>
-          <a href="mailto:timothy.mwangi@barakadigitalhub.com">timothy.mwangi@barakadigitalhub.com</a>
-        </article>
-      </div>
-    </section>
+        </div>
+
+        <div className="card-grid contact-grid">
+          <article className="card contact-card">
+            <h4>Margrate Kimaru</h4>
+            <p className="role">President and Founder</p>
+            <p>
+              Global partnerships, strategic collaboration, and social impact initiatives.
+            </p>
+            <a href="mailto:margrate.kimaru@barakadigitalhub.com">margrate.kimaru@barakadigitalhub.com</a>
+          </article>
+
+          <article className="card contact-card">
+            <h4>Timothy Mwangi</h4>
+            <p className="role">Head of Operations</p>
+            <p>
+              AI data programs, web development, design, and client project delivery.
+            </p>
+            <a href="mailto:timothy.mwangi@barakadigitalhub.com">timothy.mwangi@barakadigitalhub.com</a>
+          </article>
+        </div>
+      </section>
+
+      <section className="section-block accent">
+        <div className="text-block">
+          <h3>Why reach out?</h3>
+          <ul className="reason-list">
+            <li>Discuss a project or partnership opportunity</li>
+            <li>Learn more about our AI data services, web development, or design capabilities</li>
+            <li>Understand how the dual-impact model works</li>
+            <li>Explore how your partnership funds youth employment and community support</li>
+          </ul>
+        </div>
+      </section>
+    </>
   );
 }
 
