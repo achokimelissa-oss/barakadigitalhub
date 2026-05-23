@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { BrowserRouter as Router, NavLink, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
@@ -9,6 +10,18 @@ import NotFound from "./pages/NotFound";
 const logo = "/logo.png";
 
 function App() {
+  const [showTop, setShowTop] = useState(false);
+  const year = new Date().getFullYear();
+
+  useEffect(() => {
+    const onScroll = () => setShowTop(window.scrollY > 280);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
   return (
     <Router>
       <div className="app-shell">
@@ -78,7 +91,17 @@ function App() {
               <p>Check back for future opportunities or contact us to discuss partnerships and project work.</p>
             </div>
           </div>
+          <div className="footer-copy">© {year} Baraka Digital Hub. All rights reserved.</div>
         </footer>
+        <button
+          className={`scroll-top ${showTop ? "visible" : ""}`}
+          type="button"
+          onClick={scrollToTop}
+          aria-label="Scroll to top"
+        >
+          <span>↑</span>
+          <span>Back to top</span>
+        </button>
       </div>
     </Router>
   );

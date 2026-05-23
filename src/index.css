@@ -104,6 +104,11 @@ a {
   font-size: clamp(2.5rem, 4vw, 3.6rem);
   margin: 0 0 18px;
   line-height: 1.05;
+  background: linear-gradient(90deg, #2563eb, #8b5cf6, #38bdf8);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shimmer 4s linear infinite;
 }
 
 .hero-copy p {
@@ -129,6 +134,33 @@ a {
 
 .button:hover {
   transform: translateY(-1px);
+}
+
+.scroll-indicator {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 28px;
+  color: #475569;
+  font-size: 0.96rem;
+}
+
+.indicator-arrow {
+  display: inline-flex;
+  font-size: 1.45rem;
+  animation: arrow-bounce 1.8s ease-in-out infinite;
+  line-height: 1;
+}
+
+@keyframes arrow-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
 }
 
 .primary {
@@ -162,6 +194,82 @@ a {
   border-radius: 24px;
   background: white;
   box-shadow: 0 20px 50px rgba(15, 23, 42, 0.06);
+}
+
+.stat-card,
+.card {
+  padding: 24px;
+  border-radius: 24px;
+  background: white;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.06);
+}
+
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 12px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  text-align: left;
+}
+
+.counter-number {
+  font-size: clamp(2.3rem, 4vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: #0f172a;
+}
+
+.counter-suffix {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2563eb;
+  margin-left: 4px;
+}
+
+.impact-stats {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin: 42px 0;
+}
+
+.footer-copy {
+  padding-top: 28px;
+  color: #64748b;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.scroll-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid rgba(15, 23, 42, 0.14);
+  background: white;
+  color: #0f172a;
+  border-radius: 9999px;
+  padding: 14px 18px;
+  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.12);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.28s ease, transform 0.28s ease;
+  pointer-events: none;
+  z-index: 50;
+}
+
+.scroll-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.scroll-top:hover {
+  transform: translateY(-1px);
 }
 
 .card h4 {

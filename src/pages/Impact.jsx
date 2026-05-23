@@ -1,4 +1,57 @@
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+
+function StatCard({ endValue, suffix, title }) {
+  const ref = useRef(null);
+  const [count, setCount] = useState(0);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const node = ref.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.4 }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!visible) return;
+
+    let start = null;
+    const duration = 900;
+
+    const step = (timestamp) => {
+      if (start === null) start = timestamp;
+      const progress = Math.min((timestamp - start) / duration, 1);
+      setCount(Math.round(endValue * progress));
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      }
+    };
+
+    requestAnimationFrame(step);
+  }, [visible, endValue]);
+
+  return (
+    <article ref={ref} className="stat-card">
+      <div className="counter-number">
+        {count}
+        <span className="counter-suffix">{suffix}</span>
+      </div>
+      <p>{title}</p>
+    </article>
+  );
+}
 
 function Impact() {
   return (
@@ -35,6 +88,12 @@ function Impact() {
             Responsive communication, clean workflows, and consistent quality for clients anywhere in the world.
           </p>
         </article>
+      </div>
+
+      <div className="impact-stats">
+        <StatCard endValue={120} suffix="+" title="Projects delivered" />
+        <StatCard endValue={67} suffix="%" title="Youth opportunity" />
+        <StatCard endValue={24} suffix="/7" title="Global readiness" />
       </div>
 
       <div className="impact-highlight-grid">
