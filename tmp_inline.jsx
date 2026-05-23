@@ -527,7 +527,7 @@ const WorkflowPage = ({ goBack, setPage, isMobile }) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   const steps = [
     { n: 1, title: "Project Intake", desc: "Client shares dataset specs, quality requirements, tooling preferences, and timeline. We review and confirm feasibility within 4 hours.", color: "#1d4ed8" },
-    { n: 2, title: "Tasker Onboarding", desc: "We assign a specialized team and run task-specific certification. Taskers go through training to understand client requirements and must pass a calibration test before accessing the live dataset.", color: "#7c3aed" },
+    { n: 2, title: "Tasker Onboarding", desc: "We assign a specialized team and run task-specific certification. Team leaders are trained first and then train their teams. Taskers complete training to understand client requirements and must pass a calibration test before accessing the live dataset.", color: "#7c3aed" },
     { n: 3, title: "Dataset Segmentation", desc: "The dataset is divided into manageable batches and assigned across the team. Load is balanced to maintain throughput and reduce bottlenecks.", color: "#0891b2" },
     { n: 4, title: "Annotation Execution", desc: "Taskers work in the client's chosen environment (CVAT, Label Studio, Scale, or custom tooling). All work is tracked in real-time.", color: "#059669" },
     { n: 5, title: "100% QA Review", desc: "An independent QA team reviews every annotation before delivery. Errors are logged, corrected, and fed back into the calibration system.", color: "#d97706" },
