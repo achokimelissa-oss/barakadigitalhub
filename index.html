@@ -1066,12 +1066,12 @@ const ImpactPage = ({ goBack, isMobile }) => {
         <FadeIn delay={0.05}>
           <div className="impact-grid" style={{ gap: 18, marginBottom: 40 }}>
             {[
-              { label: "Youth unemployment in informal settlements", value: "67%" },
-              { label: "Young people without formal employment", value: "One in three" },
-              { label: "Children’s home youths in sustainable careers", value: "<5%" },
+              { label: "of youth in informal settlements are unemployed", value: "67%" },
+              { label: "of young people lack formal employment", value: "One in three" },
+              { label: "of Baraka children are pursuing sustainable careers", value: "<5%" },
             ].map((item, index) => (
               <div key={index} className="impact-card" style={{ padding: "26px 24px", border: "1px solid #e2e8f0", boxShadow: "0 12px 30px rgba(15,23,42,0.06)" }}>
-                <div style={{ color: "#1d4ed8", fontSize: "2rem", fontWeight: 800, marginBottom: 10 }}>{item.value}</div>
+                <div style={{ color: "#1d4ed8", fontSize: "2rem", fontWeight: 800, fontFamily: "Syne, 'Inter', sans-serif", marginBottom: 10 }}>{item.value}</div>
                 <p style={{ color: "#475569", fontSize: "0.94rem", lineHeight: 1.7 }}>{item.label}</p>
               </div>
             ))}
