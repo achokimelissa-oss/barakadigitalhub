@@ -5,6 +5,7 @@ import Services from "./pages/Services";
 import Impact from "./pages/Impact";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Privacy from "./pages/Privacy";
 import NotFound from "./pages/NotFound";
 
 const logo = "/logo.png";
@@ -41,7 +42,6 @@ function App() {
             <NavLink to="/services">Services</NavLink>
             <NavLink to="/impact">Social Impact</NavLink>
             <NavLink to="/about">About</NavLink>
-            <NavLink to="/contact">Contact</NavLink>
           </nav>
         </header>
 
@@ -51,6 +51,7 @@ function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/impact" element={<Impact />} />
             <Route path="/about" element={<About />} />
+            <Route path="/privacy" element={<Privacy />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
@@ -63,9 +64,10 @@ function App() {
               <p>
                 Baraka Digital Hub connects global clients to social impact digital services while creating sustainable opportunity for youth in Nairobi.
               </p>
-              <p>
-                Reach out on the <NavLink to="/contact">contact page</NavLink> to share your project details.
-              </p>
+              <div className="footer-company-links">
+                <NavLink to="/privacy" className="footer-company-link">Privacy</NavLink>
+                <NavLink to="/contact" className="footer-contact-link">Contact</NavLink>
+              </div>
             </div>
 
             <div className="footer-section">

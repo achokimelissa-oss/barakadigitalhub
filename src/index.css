@@ -947,9 +947,44 @@ a {
   margin: 0 0 10px;
 }
 
-.footer-section--contact a {
-  color: #2563eb;
-  text-decoration: underline;
+.footer-contact-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 16px;
+  border-radius: 9999px;
+  background: #2563eb;
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.16s ease, background 0.16s ease;
+}
+
+.footer-contact-link:hover,
+.footer-contact-link:focus-visible {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.footer-company-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.footer-company-link {
+  margin: 0;
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 720px) {
+  .footer-contact-link {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px 18px;
+  }
 }
 
 .footer-list {
