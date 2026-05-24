@@ -786,7 +786,7 @@ const AboutPage = ({ goBack, isMobile }) => {
                 <p>We are ready to partner with organizations that value both excellence and impact.”</p>
               </div>
               <p style={{ color: "#0f172a", fontWeight: 700, marginTop: 12 }}>Timothy Mwangi<br />Head of Operations</p>
-              <p style={{ color: "#475569", marginTop: 12 }}>Email: <a href="mailto:timothy.mwangi@barakadigitalhub.com" style={{ color: "#1d4ed8", textDecoration: "none" }}>timothy.mwangi@barakadigitalhub.com</a></p>
+              <p style={{ color: "#475569", marginTop: 12 }}>Reach out via the Contact page to send your inquiry directly to our team.</p>
             </div>
             <div style={{ background: "white", borderRadius: 24, padding: "32px", border: "1px solid #e2e8f0", boxShadow: "0 18px 48px rgba(15,23,42,0.06)" }}>
               <h2 className="section-h2" style={{ marginBottom: 18 }}>From Our President and Mama Baraka</h2>
@@ -797,7 +797,7 @@ const AboutPage = ({ goBack, isMobile }) => {
                 <p>This work is family. It is love translated into opportunity.”</p>
               </div>
               <p style={{ color: "#0f172a", fontWeight: 700, marginTop: 12 }}>Margrate Kimaru<br />President and Mama Baraka</p>
-              <p style={{ color: "#475569", marginTop: 12 }}>Email: <a href="mailto:margrate.kimaru@barakadigitalhub.com" style={{ color: "#1d4ed8", textDecoration: "none" }}>margrate.kimaru@barakadigitalhub.com</a></p>
+              <p style={{ color: "#475569", marginTop: 12 }}>Reach out via the Contact page to send your inquiry directly to our team.</p>
             </div>
           </div>
         </FadeIn>
@@ -806,7 +806,7 @@ const AboutPage = ({ goBack, isMobile }) => {
   );
 };
 
-const CareersPage = ({ goBack, isMobile }) => {
+const CareersPage = ({ goBack, setPage, isMobile }) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   return (
     <div style={{ minHeight: "100vh", background: "#f8fafc", paddingTop: 80 }}>
@@ -832,9 +832,9 @@ const CareersPage = ({ goBack, isMobile }) => {
             <p style={{ color: "#475569", fontSize: "1rem", lineHeight: 1.8, maxWidth: 660, margin: "0 auto 24px" }}>
               We are not actively hiring at the moment, but we still welcome inquiries from talented people who want to join our mission. If you'd like to connect, send us a note and we’ll let you know when the next opportunities become available.
             </p>
-            <a href="mailto:hr@barakadigitalhub.com" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8, padding: "14px 24px", borderRadius: 12, background: "#1d4ed8", color: "white", fontWeight: 700, textDecoration: "none" }}>
-              Contact us about careers <ArrowRight size={16} />
-            </a>
+            <button onClick={() => setPage("contact")} style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8, padding: "14px 24px", borderRadius: 12, background: "#1d4ed8", color: "white", fontWeight: 700, border: "none", cursor: "pointer" }}>
+              Use the Contact page to reach us <ArrowRight size={16} />
+            </button>
           </div>
         </FadeIn>
       </div>
@@ -1206,13 +1206,57 @@ const PilotPage = ({ goBack, isMobile }) => {
             <h3 className="font-display" style={{ fontSize: "1.5rem", fontWeight: 800, color: "white", marginBottom: 10 }}>Get in touch</h3>
             <p style={{ color: "rgba(255,255,255,0.85)", marginBottom: 20, fontSize: "0.95rem", maxWidth: "42rem", margin: "0 auto" }}>Contact our team to discuss pilots, custom annotation workflows, or enterprise AI data programs. We reply quickly and can adapt to your tooling and compliance requirements.</p>
             <div style={{ display: "flex", justifyContent: "center", gap: 12, flexWrap: "wrap" }}>
-              <a href="mailto:projects@barakadigitalhub.com" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "white", color: "#0f172a", borderRadius: 12, padding: "14px 24px", fontWeight: 700, fontSize: "0.95rem", textDecoration: "none" }}>
-                projects@barakadigitalhub.com <ArrowUpRight size={16} />
-              </a>
-              <a href="tel:+254769258118" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(255,255,255,.15)", color: "white", borderRadius: 12, padding: "14px 24px", fontWeight: 700, fontSize: "0.95rem", textDecoration: "none", border: "1px solid rgba(255,255,255,.25)" }}>
-                +254769258118 <ArrowUpRight size={16} />
-              </a>
+              <button onClick={() => setPage("contact")} className="btn-primary">Send a message <ArrowRight size={16} /></button>
+              <button onClick={() => setPage("services")} className="btn-secondary">Explore services</button>
             </div>
+          </div>
+        </FadeIn>
+      </div>
+    </div>
+  );
+};
+
+const ContactPage = ({ goBack, isMobile }) => {
+  useEffect(() => { window.scrollTo(0, 0); }, []);
+
+  return (
+    <div style={{ minHeight: "100vh", background: "#f8fafc", paddingTop: 80 }}>
+      <div style={{ maxWidth: 980, margin: "0 auto", padding: "48px 24px" }}>
+        <button onClick={goBack} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", cursor: "pointer", color: "#0d2b4e", fontWeight: 700, fontSize: "0.95rem", marginBottom: 28, fontFamily: "inherit" }}>
+          <ChevronLeft size={18} /> Back to Home
+        </button>
+        <FadeIn>
+          <div style={{ marginBottom: 24, padding: "28px 26px", borderRadius: 24, background: "white", border: "1px solid #e2e8f0", boxShadow: "0 18px 48px rgba(15,23,42,0.06)" }}>
+            <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(29,78,216,0.08)", borderRadius: 999, padding: "6px 16px", marginBottom: 18 }}>
+              <span style={{ fontSize: "0.72rem", fontWeight: 700, color: "#1d4ed8", letterSpacing: "0.07em", textTransform: "uppercase" }}>Contact</span>
+            </div>
+            <h1 className="font-display" style={{ fontSize: isMobile ? "2rem" : "2.8rem", fontWeight: 800, color: "#0f172a", letterSpacing: "-0.03em", marginBottom: 18 }}>Get in touch with Baraka Digital Hub</h1>
+            <p style={{ color: "#64748b", fontSize: "1.05rem", lineHeight: 1.75, maxWidth: 760, marginBottom: 24 }}>
+              Use the form below to share a project inquiry, pilot request, or general partnership question. We’ll respond quickly with details on next steps.
+            </p>
+            <form action="https://formbold.com/s/oPqrV" method="POST" style={{ display: "grid", gap: 18 }}>
+              <div style={{ display: "grid", gap: 14, gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr" }}>
+                <label style={{ display: "flex", flexDirection: "column", gap: 8, fontSize: "0.95rem", color: "#334155" }}>
+                  Your name
+                  <input type="text" name="name" required style={{ width: "100%", padding: "14px 16px", borderRadius: 14, border: "1px solid #cbd5e1", background: "#f8fafc", fontSize: "0.95rem" }} />
+                </label>
+                <label style={{ display: "flex", flexDirection: "column", gap: 8, fontSize: "0.95rem", color: "#334155" }}>
+                  Your email
+                  <input type="email" name="email" required style={{ width: "100%", padding: "14px 16px", borderRadius: 14, border: "1px solid #cbd5e1", background: "#f8fafc", fontSize: "0.95rem" }} />
+                </label>
+              </div>
+              <label style={{ display: "flex", flexDirection: "column", gap: 8, fontSize: "0.95rem", color: "#334155" }}>
+                Subject
+                <input type="text" name="subject" required style={{ width: "100%", padding: "14px 16px", borderRadius: 14, border: "1px solid #cbd5e1", background: "#f8fafc", fontSize: "0.95rem" }} />
+              </label>
+              <label style={{ display: "flex", flexDirection: "column", gap: 8, fontSize: "0.95rem", color: "#334155" }}>
+                Message
+                <textarea name="message" required rows={8} style={{ width: "100%", padding: "14px 16px", borderRadius: 14, border: "1px solid #cbd5e1", background: "#f8fafc", fontSize: "0.95rem", minHeight: 180 }} />
+              </label>
+              <button type="submit" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 10, padding: "16px 24px", borderRadius: 14, border: "none", background: "#1d4ed8", color: "white", fontWeight: 700, cursor: "pointer" }}>
+                Send message
+              </button>
+            </form>
           </div>
         </FadeIn>
       </div>
@@ -1255,6 +1299,7 @@ function BarakaDigitalHub() {
     { label: "Social Impact", page: "impact" },
     { label: "Operations", page: "operations" },
     { label: "Workflow", page: "workflow" },
+    { label: "Contact", page: "contact" },
     { label: "Pilot", page: "pilot" },
   ];
 
@@ -1358,11 +1403,12 @@ function BarakaDigitalHub() {
 
       {page === "services" && <ServicesPage goBack={goBack} isMobile={isMobile} />}
       {page === "about" && <AboutPage goBack={goBack} isMobile={isMobile} />}
-      {page === "careers" && <CareersPage goBack={goBack} isMobile={isMobile} />}
+      {page === "careers" && <CareersPage goBack={goBack} setPage={setPage} isMobile={isMobile} />}
       {page === "privacy" && <PrivacyPage goBack={goBack} isMobile={isMobile} />}
       {page === "impact" && <ImpactPage goBack={goBack} isMobile={isMobile} />}
       {page === "operations" && <OperationsPage goBack={goBack} isMobile={isMobile} />}
       {page === "workflow" && <WorkflowPage goBack={goBack} setPage={setPage} isMobile={isMobile} />}
+      {page === "contact" && <ContactPage goBack={goBack} isMobile={isMobile} />}
       {page === "pilot" && <PilotPage goBack={goBack} isMobile={isMobile} />}
 
       {page === "home" && (
@@ -1641,9 +1687,7 @@ function BarakaDigitalHub() {
               <img src="/logo.png" alt="Baraka Digital Hub logo" style={{ height:48, width:"auto", marginBottom:14 }} />
               <div style={{ display:"flex", flexDirection:"column", gap:6 }}>
                 <div style={{ display:"flex", flexWrap:"wrap", gap:12, marginTop:8 }}>
-                  <a href="mailto:projects@barakadigitalhub.com" style={{ color:"rgba(255,255,255,0.95)", textDecoration:"none", fontWeight:700, minWidth:0, overflowWrap:"anywhere", wordBreak:"break-word" }}>projects@barakadigitalhub.com</a>
-                  <span style={{ color:"rgba(255,255,255,.45)" }}>|</span>
-                  <a href="tel:+254769258118" style={{ color:"rgba(255,255,255,0.95)", textDecoration:"none", fontWeight:700, minWidth:0, overflowWrap:"anywhere", wordBreak:"break-word" }}>+254769258118</a>
+                  <button onClick={() => setPage('contact')} style={{ display:"inline-flex", alignItems:"center", justifyContent:"center", gap:8, padding:"12px 20px", borderRadius:12, background:"rgba(255,255,255,.12)", color:"rgba(255,255,255,0.95)", border:"1px solid rgba(255,255,255,.18)", fontWeight:700, cursor:"pointer", fontFamily:"inherit" }}>Contact</button>
                 </div>
               </div>
             </div>
