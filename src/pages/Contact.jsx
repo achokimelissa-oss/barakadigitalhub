@@ -13,58 +13,64 @@ function Contact() {
 
       <section className="section-block">
         <div className="text-block">
-          <h3>Contact our team</h3>
-          <p>
-            Choose who fits your needs, or start with either team member and we'll connect you to the right person.
+          <h3 className="section-title soft">Contact our team</h3>
+          <p className="section-copy">
+            Pick the right lane, then share the essentials in the form below.
           </p>
         </div>
 
-        <div className="card-grid contact-grid">
-          <article className="card contact-card accent-cyan">
-            <span className="feature-icon">👑</span>
-            <h4>Margrate Kimaru</h4>
-            <p className="role">President and Founder</p>
-            <p>
-              Global partnerships, strategic collaboration, and social impact initiatives.
-            </p>
-            <p>Contact via the form below.</p>
+        <div className="card-grid contact-grid contact-grid--compact">
+          <article className="card contact-card contact-card--small accent-cyan">
+            <div className="contact-card__top">
+              <div className="contact-photo contact-photo--a" aria-hidden="true" />
+              <div>
+                <p className="contact-role">Founder</p>
+                <h4>Margrate Kimaru</h4>
+              </div>
+            </div>
+            <p className="contact-copy">Strategy, partnerships, and community-led digital growth.</p>
           </article>
 
-          <article className="card contact-card accent-purple">
-            <span className="feature-icon">⚙️</span>
-            <h4>Timothy Mwangi</h4>
-            <p className="role">Head of Operations</p>
-            <p>
-              AI data programs, web development, design, and client project delivery.
-            </p>
-            <p>Contact via the form below.</p>
+          <article className="card contact-card contact-card--small accent-purple">
+            <div className="contact-card__top">
+              <div className="contact-photo contact-photo--b" aria-hidden="true" />
+              <div>
+                <p className="contact-role">Operations</p>
+                <h4>Timothy Mwangi</h4>
+              </div>
+            </div>
+            <p className="contact-copy">Delivery, AI tooling, and creative product support.</p>
           </article>
         </div>
+
+        <p className="contact-note">No emails. No phones. Just a clean form and a quick reply.</p>
       </section>
 
-      <section className="section-block form-block">
+      <section className="section-block form-block form-block--compact">
         <div className="text-block">
-          <h3>Send us a message</h3>
-          <p>Use the form below to contact our team directly. We’ll get back to you shortly.</p>
+          <h3 className="section-title soft">Send a message</h3>
+          <p className="section-copy">
+            Tell us what you need in a few lines and we’ll follow up with the next steps.
+          </p>
         </div>
 
-        <form action="https://formbold.com/s/oPqrV" method="POST" className="contact-form">
-          <label>
+        <form action="https://formbold.com/s/oPqrV" method="POST" className="contact-form contact-form--compact">
+          <label className="input-group">
             <span>Email</span>
             <input type="email" name="email" placeholder="Email" required />
           </label>
 
-          <label>
+          <label className="input-group">
             <span>Subject</span>
             <input type="text" name="subject" placeholder="Subject" required />
           </label>
 
-          <label>
+          <label className="input-group">
             <span>Message</span>
-            <textarea name="message" placeholder="Type your message" rows="6" required></textarea>
+            <textarea name="message" placeholder="Type your message" rows="5" required></textarea>
           </label>
 
-          <button type="submit">Send Message</button>
+          <button type="submit">Message us</button>
         </form>
       </section>
 

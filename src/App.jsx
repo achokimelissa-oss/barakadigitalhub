@@ -59,9 +59,12 @@ function App() {
         <footer className="site-footer">
           <div className="footer-grid">
             <div className="footer-section">
-              <h3>About</h3>
+              <h3>Company</h3>
               <p>
                 Baraka Digital Hub connects global clients to social impact digital services while creating sustainable opportunity for youth in Nairobi.
+              </p>
+              <p>
+                Reach out on the <NavLink to="/contact">contact page</NavLink> to share your project details.
               </p>
             </div>
 
@@ -83,14 +86,6 @@ function App() {
                 <li>Support for Baraka Children’s Home</li>
                 <li>Community economic inclusion</li>
               </ul>
-            </div>
-
-            <div className="footer-section">
-              <h3>Careers</h3>
-              <p>No open roles at this time.</p>
-              <p>
-                Check back for future opportunities or <NavLink to="/contact">contact us</NavLink> to discuss partnerships and project work.
-              </p>
             </div>
           </div>
           <div className="footer-copy">© {year} Baraka Digital Hub. All rights reserved.</div>
