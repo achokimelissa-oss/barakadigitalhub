@@ -1299,7 +1299,6 @@ function BarakaDigitalHub() {
     { label: "Social Impact", page: "impact" },
     { label: "Operations", page: "operations" },
     { label: "Workflow", page: "workflow" },
-    { label: "Contact", page: "contact" },
     { label: "Pilot", page: "pilot" },
   ];
 
@@ -1687,7 +1686,6 @@ function BarakaDigitalHub() {
               <img src="/logo.png" alt="Baraka Digital Hub logo" style={{ height:48, width:"auto", marginBottom:14 }} />
               <div style={{ display:"flex", flexDirection:"column", gap:6 }}>
                 <div style={{ display:"flex", flexWrap:"wrap", gap:12, marginTop:8 }}>
-                  <button onClick={() => setPage('contact')} style={{ display:"inline-flex", alignItems:"center", justifyContent:"center", gap:8, padding:"12px 20px", borderRadius:12, background:"rgba(255,255,255,.12)", color:"rgba(255,255,255,0.95)", border:"1px solid rgba(255,255,255,.18)", fontWeight:700, cursor:"pointer", fontFamily:"inherit" }}>Contact</button>
                 </div>
               </div>
             </div>
@@ -1708,6 +1706,7 @@ function BarakaDigitalHub() {
                 <button onClick={() => setPage('about')} style={{ textAlign:"left", background:"none", border:"none", color:"rgba(255,255,255,.8)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>{ e.target.style.color="rgba(255,255,255,.8)"; }}>About</button>
                 <button onClick={() => setPage('careers')} style={{ textAlign:"left", background:"none", border:"none", color:"rgba(255,255,255,.8)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>{ e.target.style.color="rgba(255,255,255,.8)"; }}>Careers</button>
                 <button onClick={() => setPage('privacy')} style={{ textAlign:"left", background:"none", border:"none", color:"rgba(255,255,255,.8)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>{ e.target.style.color="rgba(255,255,255,.8)"; }}>Privacy</button>
+                <button onClick={() => setPage('contact')} style={{ textAlign:"left", background:"none", border:"none", color:"rgba(255,255,255,.8)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>{ e.target.style.color="rgba(255,255,255,.8)"; }}>Contact</button>
               </div>
             </div>
           </div>
