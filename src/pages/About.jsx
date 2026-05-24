@@ -5,6 +5,9 @@ function About() {
         <div className="text-block">
           <p className="highlight-pill">About Baraka</p>
           <h1>Who we are</h1>
+          <p style={{ maxWidth: 720, margin: "0 auto 24px", color: "#334155", fontSize: "1.02rem" }}>
+            We build reliable digital services and sustainable employment pathways for young people from underserved communities.
+          </p>
           <p>
             Baraka Digital Hub is a digital services organization based in Nairobi, Kenya. We deliver AI data services, web development, and design to clients worldwide—built and delivered by talented youth from underserved communities.
           </p>
@@ -12,7 +15,7 @@ function About() {
       </section>
 
       <section className="section-block">
-        <div className="text-block">
+        <article className="about-card accent-cyan">
           <h2>Our story</h2>
           <p>
             Baraka Digital Hub was established from the foundation of Baraka Children's Home, which has served the Kayole community since 2006 as a centre for care, protection, and education for vulnerable children.
@@ -26,7 +29,7 @@ function About() {
           <p>
             Today, we operate as a quality-driven digital services organization focused on delivery excellence, sustainable workforce development, and long-term economic inclusion.
           </p>
-        </div>
+        </article>
       </section>
 
       <section className="section-block">
@@ -94,6 +97,7 @@ function About() {
 
       <section className="section-block">
         <div className="text-block">
+          <div style={{ height: 1, background: "#e2e8f0", margin: "0 0 24px" }} />
           <h2>Leadership</h2>
           <p>
             Baraka Digital Hub is led by individuals who grew up in the Children's Home and understand firsthand the power of opportunity. This lived experience shapes how we operate, who we hire, and what we build.

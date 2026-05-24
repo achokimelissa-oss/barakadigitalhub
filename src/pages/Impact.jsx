@@ -63,13 +63,13 @@ function Impact() {
           <p>
             We convert commercial digital work into a consistent support system for youth and Baraka Children’s Home. Every project is designed to create measurable social impact, reliable revenue, and a pathway to lasting independence.
           </p>
-          <div className="stat-cards" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 18, marginTop: 28 }}>
+          <div className="impact-grid" style={{ marginTop: 28 }}>
             {[
               { value: "67%", label: "Youth unemployment in informal settlements" },
               { value: "1 in 3", label: "Young people without formal employment" },
               { value: "<5%", label: "Children’s home youths in sustainable careers" },
             ].map((item, index) => (
-              <article key={index} className="stat-card" style={{ background: "white", borderRadius: 18, padding: "24px 20px", border: "1px solid #e2e8f0" }}>
+              <article key={index} className="impact-card" style={{ minHeight: 0, padding: "28px 24px" }}>
                 <div className="stat-value" style={{ fontFamily: "'Playfair Display',serif", fontSize: "2rem", fontWeight: 700, color: "#0f172a", marginBottom: 10 }}>{item.value}</div>
                 <div className="stat-label" style={{ fontSize: "0.94rem", color: "#64748b", lineHeight: 1.7 }}>{item.label}</div>
               </article>
