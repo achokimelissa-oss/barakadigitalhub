@@ -1366,7 +1366,7 @@ function BarakaDigitalHub() {
                     <button onClick={() => setPage("services")} className="btn-secondary">Explore Services</button>
                   </div>
                     <div className="stat-grid" style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(4,1fr)", gap:10 }}>
-                    {[{v:"80+",l:"Taskers"},{v:"98%",l:"Avg Accuracy"},{v:"24hr",l:"Response"},{v:"48hr",l:"Turnaround"}].map((s,i)=>(
+                    {[{v:"80+",l:"Taskers"},{v:"98%",l:"Avg Accuracy"},{v:"24hr",l:"Response"},{v:"48 hours",l:"Turnaround"}].map((s,i)=>(
                       <div key={i} style={{ background:"rgba(255,255,255,.8)", backdropFilter:"blur(12px)", border:"1px solid rgba(255,255,255,.9)", borderRadius:14, padding:"13px 10px", boxShadow:"0 2px 12px rgba(0,0,0,.04)", textAlign:"center" }}>
                         <div className="font-display" style={{ fontSize:"1.5rem", fontWeight:800, color:"#0f172a" }}>{s.v}</div>
                         <div style={{ fontSize:".72rem", color:"#94a3b8", marginTop:2, fontWeight:500 }}>{s.l}</div>
