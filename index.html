@@ -1541,7 +1541,7 @@ function BarakaDigitalHub() {
           </section>
 
           <section style={{ padding:"88px 24px", background:"#020617", position:"relative", overflow:"hidden", backgroundImage:"url('background1.png')", backgroundSize:"cover", backgroundRepeat:"no-repeat", backgroundPosition:"center center" }}>
-            <div style={{ position:"absolute", inset:0, background:"linear-gradient(rgba(0,0,0,0.32), rgba(0,0,0,0.18)), radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px)", backgroundBlendMode:"overlay" }} />
+            <div style={{ position:"absolute", inset:0, background:"linear-gradient(rgba(0,0,0,0.82), rgba(0,0,0,0.72)), radial-gradient(circle, rgba(255,255,255,0.02) 1px, transparent 1px)", backgroundBlendMode:"overlay" }} />
             <div style={{ maxWidth:1100, margin:"0 auto", position:"relative", zIndex:1 }}>
               <FadeIn>
                 <div style={{ textAlign:"center", marginBottom:52 }}>
@@ -1559,9 +1559,9 @@ function BarakaDigitalHub() {
                   { icon:<Clock size={18}/>, n:"Long", l:"Production Support", d:"Built for enduring partnerships, not one-off batches." },
                 ].map((o,i)=>(
                   <FadeIn key={i} delay={i*.06}>
-                    <div onClick={() => setPage("operations")} style={{ background:"rgba(255,255,255,.03)", border:"1px solid rgba(255,255,255,.07)", borderRadius:18, padding:"22px 20px", transition:"all .3s", cursor:"pointer" }}
-                      onMouseEnter={e=>{e.currentTarget.style.borderColor="rgba(29,78,216,.4)";e.currentTarget.style.background="rgba(255,255,255,.06)";}}
-                      onMouseLeave={e=>{e.currentTarget.style.borderColor="rgba(255,255,255,.07)";e.currentTarget.style.background="rgba(255,255,255,.03)";}}>
+                    <div onClick={() => setPage("operations")} style={{ background:"rgba(255,255,255,.08)", border:"1px solid rgba(255,255,255,.12)", borderRadius:18, padding:"22px 20px", transition:"all .3s", cursor:"pointer" }}
+                      onMouseEnter={e=>{e.currentTarget.style.borderColor="rgba(29,78,216,.5)";e.currentTarget.style.background="rgba(255,255,255,.12)";}}
+                      onMouseLeave={e=>{e.currentTarget.style.borderColor="rgba(255,255,255,.12)";e.currentTarget.style.background="rgba(255,255,255,.08)";}}>
                       <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom:14 }}>
                         <div style={{ width:36, height:36, borderRadius:10, background:"linear-gradient(135deg,#1d4ed8,#0f9d68)", display:"flex", alignItems:"center", justifyContent:"center", color:"white" }}>{o.icon}</div>
                         <div className="font-display" style={{ fontSize:"1.4rem", fontWeight:800, color:"white" }}>{o.n}</div>
