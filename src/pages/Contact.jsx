@@ -27,7 +27,7 @@ function Contact() {
             <p>
               Global partnerships, strategic collaboration, and social impact initiatives.
             </p>
-            <a href="mailto:margrate.kimaru@barakadigitalhub.com">margrate.kimaru@barakadigitalhub.com</a>
+            <p>Contact via the form below.</p>
           </article>
 
           <article className="card contact-card accent-purple">
@@ -37,9 +37,35 @@ function Contact() {
             <p>
               AI data programs, web development, design, and client project delivery.
             </p>
-            <a href="mailto:timothy.mwangi@barakadigitalhub.com">timothy.mwangi@barakadigitalhub.com</a>
+            <p>Contact via the form below.</p>
           </article>
         </div>
+      </section>
+
+      <section className="section-block form-block">
+        <div className="text-block">
+          <h3>Send us a message</h3>
+          <p>Use the form below to contact our team directly. We’ll get back to you shortly.</p>
+        </div>
+
+        <form action="https://formbold.com/s/oPqrV" method="POST" className="contact-form">
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" placeholder="Email" required />
+          </label>
+
+          <label>
+            <span>Subject</span>
+            <input type="text" name="subject" placeholder="Subject" required />
+          </label>
+
+          <label>
+            <span>Message</span>
+            <textarea name="message" placeholder="Type your message" rows="6" required></textarea>
+          </label>
+
+          <button type="submit">Send Message</button>
+        </form>
       </section>
 
       <section className="section-block accent">

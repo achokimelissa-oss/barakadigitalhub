@@ -88,7 +88,9 @@ function App() {
             <div className="footer-section">
               <h3>Careers</h3>
               <p>No open roles at this time.</p>
-              <p>Check back for future opportunities or contact us to discuss partnerships and project work.</p>
+              <p>
+                Check back for future opportunities or <NavLink to="/contact">contact us</NavLink> to discuss partnerships and project work.
+              </p>
             </div>
           </div>
           <div className="footer-copy">© {year} Baraka Digital Hub. All rights reserved.</div>

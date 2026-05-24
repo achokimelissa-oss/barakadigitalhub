@@ -117,7 +117,6 @@ function About() {
               We are ready to partner with organizations that value both excellence and impact.”
             </p>
             <p style={{ marginTop: 20, fontWeight: 700 }}>Timothy Mwangi<br />Head of Operations</p>
-            <p>Email: <a href="mailto:timothy.mwangi@barakadigitalhub.com">timothy.mwangi@barakadigitalhub.com</a></p>
           </div>
           <div className="about-card about-highlight">
             <h3>From Our President and Mama Baraka</h3>
@@ -131,7 +130,6 @@ function About() {
               Care must evolve into empowerment, and charity must grow into dignity. This work is family. It is love translated into opportunity.”
             </p>
             <p style={{ marginTop: 20, fontWeight: 700 }}>Margrate Kimaru<br />President and Mama Baraka</p>
-            <p>Email: <a href="mailto:margrate.kimaru@barakadigitalhub.com">margrate.kimaru@barakadigitalhub.com</a></p>
           </div>
         </div>
       </section>
