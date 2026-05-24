@@ -569,7 +569,7 @@ const OperationsPage = ({ goBack, isMobile }) => {
   const pillars = [
     { n: "80+", label: "Trained Taskers", color: "#1d4ed8", desc: "Our workforce is trained across multiple annotation verticals including computer vision, NLP, audio, transcription, and BPO. Each tasker completes role-specific certification before working on client projects. Teams are flexible: our pool of 80+ taskers can be scaled up or reduced to match client requirements.", bullets: ["Role-specific onboarding tracks", "Certification before live project access", "Organized by vertical (CV, NLP, audio, etc.)", "Mentorship from senior annotators"] },
     { n: "100%", label: "QA Review Rate", color: "#10b981", desc: "Unlike many providers who spot-check 10–20%, Baraka runs 100% first-pass QA on standard projects. Our QA team is completely independent from annotation.", bullets: ["Independent QA team, not the same annotators", "First-pass error rate tracked per tasker", "Client-visible daily quality reports", "Inter-annotator agreement scoring available"] },
-    { n: "48hr", label: "Turnaround Guarantee", color: "#0ea5e9", desc: "Most standard batches (up to 25K items) are delivered within 48 hours of task assignment. Rush timelines are supported with expanded shift coverage.", bullets: ["25K image batches in 48 hours", "Rush delivery with expanded coverage", "Proactive delay communication", "Daily progress updates to clients"] },
+    { n: "48 hours", label: "Turnaround Guarantee", color: "#0ea5e9", desc: "Most standard batches (up to 25K items) are delivered within 48 hours of task assignment. Rush timelines are supported with expanded shift coverage.", bullets: ["25K image batches in 48 hours", "Rush delivery with expanded coverage", "Proactive delay communication", "Daily progress updates to clients"] },
     { n: "Cert.", label: "Structured Onboarding", color: "#7c3aed", desc: "Every new engagement begins with a structured onboarding phase: task certification, calibration exercises, and pilot delivery before full-scale launch.", bullets: ["Task-specific certification tests", "Calibration batch before full launch", "Ongoing recalibration for long-running projects", "Documentation of guidelines and edge cases"] },
     { n: "24/7", label: "Centralized Operations", color: "#d97706", desc: "Baraka's operations team manages scheduling, escalations, communication, and reporting across all active projects. Clients have a single point of contact.", bullets: ["Single client-side point of contact", "Escalation protocols for complex edge cases", "Shift-based scheduling for coverage", "Consolidated reporting dashboard"] },
     { n: "Long", label: "Production-Grade Partnerships", color: "#dc2626", desc: "We are built for long-term engagements, not one-off batches. Our infrastructure supports ongoing annotation pipelines and multi-month production contracts.", bullets: ["Month-over-month consistency tracking", "Volume ramp plans for growing pipelines", "SLA-based delivery commitments", "Dedicated team assignment for continuity"] },
@@ -770,6 +770,34 @@ const AboutPage = ({ goBack, isMobile }) => {
                 <strong>Opportunity</strong>
                 <p style={{ marginTop: 10, color: "#475569", lineHeight: 1.7 }}>We exist to open pathways for growth, employment, and long-term transformation.</p>
               </div>
+            </div>
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={0.22}>
+          <div style={{ display: "grid", gap: 24, marginBottom: 40 }}>
+            <div style={{ background: "white", borderRadius: 24, padding: "32px", border: "1px solid #e2e8f0", boxShadow: "0 18px 48px rgba(15,23,42,0.06)" }}>
+              <h2 className="section-h2" style={{ marginBottom: 18 }}>From Our Head of Operations</h2>
+              <div style={{ color: "#475569", lineHeight: 1.9, marginBottom: 18 }}>
+                <p>“Baraka Digital Hub was built on a simple belief: talent is universal, but opportunity is not.</p>
+                <p>Our vision is to create a pathway where young people from underserved communities can access meaningful digital work, develop globally competitive skills, and build sustainable futures for themselves and their families.</p>
+                <p>We are building more than a workforce centre. We are building a model of economic inclusion powered by technology, discipline, and purpose.</p>
+                <p>Every project delivered is an opportunity created, a skill strengthened, and a future made more stable.</p>
+                <p>We are ready to partner with organizations that value both excellence and impact.”</p>
+              </div>
+              <p style={{ color: "#0f172a", fontWeight: 700, marginTop: 12 }}>Timothy Mwangi<br />Head of Operations</p>
+              <p style={{ color: "#475569", marginTop: 12 }}>Email: <a href="mailto:timothy.mwangi@barakadigitalhub.com" style={{ color: "#1d4ed8", textDecoration: "none" }}>timothy.mwangi@barakadigitalhub.com</a></p>
+            </div>
+            <div style={{ background: "white", borderRadius: 24, padding: "32px", border: "1px solid #e2e8f0", boxShadow: "0 18px 48px rgba(15,23,42,0.06)" }}>
+              <h2 className="section-h2" style={{ marginBottom: 18 }}>From Our President and Mama Baraka</h2>
+              <div style={{ color: "#475569", lineHeight: 1.9, marginBottom: 18 }}>
+                <p>“My life has always been rooted in children — loving them, raising them, and standing beside them through every season of their growth. As Mama Baraka, my deepest calling has been to ensure that no child under our care ever feels forgotten or without a future.</p>
+                <p>Baraka Digital Hub was born from that responsibility and that love. It is an extension of the Children’s Home, built to ensure that our young people step into adulthood with skills, confidence, and opportunity.</p>
+                <p>Care must evolve into empowerment, and charity must grow into dignity.</p>
+                <p>This work is family. It is love translated into opportunity.”</p>
+              </div>
+              <p style={{ color: "#0f172a", fontWeight: 700, marginTop: 12 }}>Margrate Kimaru<br />President and Mama Baraka</p>
+              <p style={{ color: "#475569", marginTop: 12 }}>Email: <a href="mailto:margrate.kimaru@barakadigitalhub.com" style={{ color: "#1d4ed8", textDecoration: "none" }}>margrate.kimaru@barakadigitalhub.com</a></p>
             </div>
           </div>
         </FadeIn>
@@ -1124,35 +1152,6 @@ const ImpactPage = ({ goBack, isMobile }) => {
           </div>
         </FadeIn>
 
-        <FadeIn delay={0.25}>
-          <div style={{ display: "grid", gap: 24, marginBottom: 40 }}>
-            <div style={{ background: "white", borderRadius: 24, padding: "32px", border: "1px solid #e2e8f0", boxShadow: "0 18px 48px rgba(15,23,42,0.06)" }}>
-              <h2 className="section-h2" style={{ marginBottom: 18 }}>From Our President and Mama Baraka</h2>
-              <div style={{ color: "#475569", lineHeight: 1.9, marginBottom: 18 }}>
-                <p>“My life has always been rooted in children loving them, raising them, and standing beside them through every season of their growth. As Mama Baraka, my deepest calling has been to ensure that no child under our care ever feels forgotten or without a future.</p>
-                <p>For many years, our focus at the Children’s Home was to provide safety, food, education, and love. But as our children grew, I could not ignore a deeper responsibility, preparing them for life beyond care.</p>
-                <p>Baraka Digital Hub was born from that responsibility and that love. It is an extension of the Children’s Home, built to ensure that our young people step into adulthood with skills, confidence, and opportunity.</p>
-                <p>My heart remains with the community in Kayole and every child who passes through our doors. Care must evolve into empowerment, and charity must grow into dignity.</p>
-                <p>This work is family. It is love translated into opportunity.”</p>
-              </div>
-              <p style={{ color: "#0f172a", fontWeight: 700, marginTop: 12 }}>Margrate Kimaru<br />President and Mama Baraka</p>
-              <p style={{ color: "#475569", marginTop: 12 }}>Email: <a href="mailto:margrate.kimaru@barakadigitalhub.com" style={{ color: "#1d4ed8", textDecoration: "none" }}>margrate.kimaru@barakadigitalhub.com</a></p>
-            </div>
-            <div style={{ background: "white", borderRadius: 24, padding: "32px", border: "1px solid #e2e8f0", boxShadow: "0 18px 48px rgba(15,23,42,0.06)" }}>
-              <h2 className="section-h2" style={{ marginBottom: 18 }}>From Our Head of Operations</h2>
-              <div style={{ color: "#475569", lineHeight: 1.9, marginBottom: 18 }}>
-                <p>“Baraka Digital Hub was built on a simple belief: talent is universal, but opportunity is not.</p>
-                <p>Our vision is to create a pathway where young people from underserved communities can access meaningful digital work, develop globally competitive skills, and build sustainable futures for themselves and their families.</p>
-                <p>We are building more than a workforce centre. We are building a model of economic inclusion powered by technology, discipline, and purpose.</p>
-                <p>Every project delivered is an opportunity created, a skill strengthened, and a future made more stable.</p>
-                <p>We are ready to partner with organizations that value both excellence and impact.”</p>
-              </div>
-              <p style={{ color: "#0f172a", fontWeight: 700, marginTop: 12 }}>Timothy Mwangi<br />Head of Operations</p>
-              <p style={{ color: "#475569", marginTop: 12 }}>Email: <a href="mailto:timothy.mwangi@barakadigitalhub.com" style={{ color: "#1d4ed8", textDecoration: "none" }}>timothy.mwangi@barakadigitalhub.com</a></p>
-            </div>
-          </div>
-        </FadeIn>
-
         {/* Leadership contact section removed per site update */}
       </div>
     </div>
@@ -1367,7 +1366,7 @@ function BarakaDigitalHub() {
                     <button onClick={() => setPage("services")} className="btn-secondary">Explore Services</button>
                   </div>
                     <div className="stat-grid" style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(4,1fr)", gap:10 }}>
-                    {[{v:"80+",l:"Taskers"},{v:"98%",l:"Avg Accuracy"},{v:"24hr",l:"Response"},{v:"24hr",l:"Turnaround"}].map((s,i)=>(
+                    {[{v:"80+",l:"Taskers"},{v:"98%",l:"Avg Accuracy"},{v:"24hr",l:"Response"},{v:"48 hours",l:"Turnaround"}].map((s,i)=>(
                       <div key={i} style={{ background:"rgba(255,255,255,.8)", backdropFilter:"blur(12px)", border:"1px solid rgba(255,255,255,.9)", borderRadius:14, padding:"13px 10px", boxShadow:"0 2px 12px rgba(0,0,0,.04)", textAlign:"center" }}>
                         <div className="font-display" style={{ fontSize:"1.5rem", fontWeight:800, color:"#0f172a" }}>{s.v}</div>
                         <div style={{ fontSize:".72rem", color:"#94a3b8", marginTop:2, fontWeight:500 }}>{s.l}</div>
@@ -1479,7 +1478,7 @@ function BarakaDigitalHub() {
                 {[
                   { icon:<Users size={18}/>, n:"80+", l:"Trained Taskers", d:"Workforce certified across annotation, NLP, audio, and BPO workflows." },
                   { icon:<Shield size={18}/>, n:"100%", l:"QA Review", d:"Independent QA team reviews every deliverable before client submission." },
-                  { icon:<Zap size={18}/>, n:"48hr", l:"Rapid Turnaround", d:"Standard batches of 25K items delivered within 48 hours." },
+                  { icon:<Zap size={18}/>, n:"48 hours", l:"Rapid Turnaround", d:"Standard batches of 25K items delivered within 48 hours." },
                   { icon:<CheckCircle2 size={18}/>, n:"Cert.", l:"Structured Onboarding", d:"Task certification and calibration before any live project access." },
                   { icon:<TrendingUp size={18}/>, n:"24/7", l:"Centralized Ops", d:"Managed operations, escalation handling, and daily progress reporting." },
                   { icon:<Clock size={18}/>, n:"Long", l:"Production Support", d:"Built for enduring partnerships, not one-off batches." },
