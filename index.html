@@ -1423,8 +1423,8 @@ function BarakaDigitalHub() {
         <>
           <section style={{ paddingTop:120, paddingBottom:80, paddingLeft:24, paddingRight:24, position:"relative", overflow:"visible", background:"linear-gradient(160deg,#f8fafc 0%,#eff6ff 50%,#ecfdf5 100%)" }}>
             <div className="dot-grid" style={{ position:"absolute", inset:0, opacity:.6 }} />
-            <div style={{ position:"absolute", top:"-10%", right: isMobile ? "-20%" : "-5%", width: isMobile ? 320 : 600, height: isMobile ? 320 : 600, borderRadius:"50%", background:"radial-gradient(circle,rgba(29,78,216,.07) 0%,transparent 70%)" }} />
-            <div style={{ position:"absolute", bottom: isMobile ? "10%" : "-10%", left: isMobile ? "-20%" : "-5%", width: isMobile ? 280 : 500, height: isMobile ? 280 : 500, borderRadius:"50%", background:"radial-gradient(circle,rgba(15,157,104,.07) 0%,transparent 70%)" }} />
+            <div style={{ position:"absolute", top:"-10%", right: isMobile ? "-20%" : "-5%", width: isMobile ? 320 : 600, height: isMobile ? 320 : 600, borderRadius:"50%", background:"radial-gradient(circle,rgba(29,78,216,.07) 0%,transparent 70%)", pointerEvents: "none" }} />
+            <div style={{ position:"absolute", bottom: isMobile ? "10%" : "-10%", left: isMobile ? "-20%" : "-5%", width: isMobile ? 280 : 500, height: isMobile ? 280 : 500, borderRadius:"50%", background:"radial-gradient(circle,rgba(15,157,104,.07) 0%,transparent 70%)", pointerEvents: "none" }} />
             <div className="page-container" style={{ position:"relative", zIndex:1 }}>
               <div className="hero-grid" style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap:56, alignItems:"center" }}>
                 <div>
@@ -1454,11 +1454,11 @@ function BarakaDigitalHub() {
                   </div>
                 </div>
                 <div className="hero-right" style={{ position:"relative" }}>
-                  <div className="ani-float" style={{ position: isMobile ? "relative" : "absolute", top: isMobile ? 0 : -60, left: isMobile ? 0 : -60, background:"white", borderRadius:18, boxShadow:"0 12px 40px rgba(0,0,0,.12)", padding:"15px 20px", border:"1px solid #f1f5f9", zIndex:10, marginBottom: isMobile ? 12 : 0 }}>
+                  <div className="ani-float" style={{ position: isMobile ? "relative" : "absolute", top: isMobile ? 0 : -120, left: isMobile ? 0 : -120, background:"white", borderRadius:18, boxShadow:"0 12px 40px rgba(0,0,0,.12)", padding:"15px 20px", border:"1px solid #f1f5f9", zIndex:10, marginBottom: isMobile ? 12 : 0, pointerEvents: "none" }}>
                     <div style={{ fontSize:".68rem", color:"#94a3b8", fontWeight:600, textTransform:"uppercase", letterSpacing:".06em", marginBottom:3 }}>Avg Accuracy</div>
                     <div className="font-display" style={{ fontSize:"2rem", fontWeight:800, color:"#0f9d68" }}>98%</div>
                   </div>
-                  <div className="ani-floatb" style={{ position: isMobile ? "relative" : "absolute", bottom: isMobile ? "auto" : -60, right: isMobile ? "auto" : -60, background:"#020617", borderRadius:18, boxShadow:"0 12px 40px rgba(0,0,0,.25)", padding:"15px 20px", zIndex:10, marginTop: isMobile ? 8 : 0 }}>
+                  <div className="ani-floatb" style={{ position: isMobile ? "relative" : "absolute", bottom: isMobile ? "auto" : -120, right: isMobile ? "auto" : -120, background:"#020617", borderRadius:18, boxShadow:"0 12px 40px rgba(0,0,0,.25)", padding:"15px 20px", zIndex:10, marginTop: isMobile ? 8 : 0, pointerEvents: "none" }}>
                     <div style={{ fontSize:".68rem", color:"#94a3b8", fontWeight:600, textTransform:"uppercase", letterSpacing:".06em", marginBottom:3 }}>Weekly Throughput</div>
                     <div className="font-display" style={{ fontSize:"2rem", fontWeight:800, color:"white" }}>10K+ hrs</div>
                   </div>
