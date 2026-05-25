@@ -1007,12 +1007,12 @@ function BarakaDigitalHub() {
   }, []);
 
   const services = [
-    { icon: <Globe size={20} />, title: "Computer Vision Annotation", desc: "Bounding boxes, segmentation, keypoints, and classification at production scale.", color: "#1d4ed8" },
-    { icon: <Brain size={20} />, title: "NLP & Text Processing", desc: "Entity recognition, sentiment labeling, and classification for language model training.", color: "#7c3aed" },
-    { icon: <Mic size={20} />, title: "Audio & Speech Processing", desc: "Transcription, speaker diarization, and audio classification at scale.", color: "#0891b2" },
-    { icon: <Cpu size={20} />, title: "LLM Training & RLHF", desc: "Human preference ranking, response evaluation, and reinforcement learning data.", color: "#059669" },
-    { icon: <CheckCircle2 size={20} />, title: "Transcription & QA", desc: "Medical, legal, and general transcription with rigorous multi-pass QA.", color: "#dc2626" },
-    { icon: <Headphones size={20} />, title: "BPO & Virtual Assistance", desc: "Back-office processing, data entry, research, and customer support.", color: "#d97706" },
+    { icon: <Globe size={20} />, title: "Computer Vision Annotation", color: "#1d4ed8" },
+    { icon: <Brain size={20} />, title: "NLP & Text Processing", color: "#7c3aed" },
+    { icon: <Mic size={20} />, title: "Audio & Speech Processing", color: "#0891b2" },
+    { icon: <Cpu size={20} />, title: "LLM Training & RLHF", color: "#059669" },
+    { icon: <CheckCircle2 size={20} />, title: "Transcription & QA", color: "#dc2626" },
+    { icon: <Headphones size={20} />, title: "BPO & Virtual Assistance", color: "#d97706" },
   ];
 
   const navLinks = [
