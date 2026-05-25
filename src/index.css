@@ -230,6 +230,7 @@ a {
 .section-tech-bg {
   position: relative;
   overflow: hidden;
+  background: #f8fafc;
 }
 
 .section-tech-bg::before {
@@ -240,6 +241,7 @@ a {
               radial-gradient(circle at 88% 24%, rgba(11,197,197,0.12) 0%, transparent 34%),
               radial-gradient(circle at 52% 58%, rgba(74,108,247,0.08) 0%, transparent 38%);
   pointer-events: none;
+  animation: tech-bg-glow 18s ease-in-out infinite;
 }
 
 .section-tech-bg::after {
@@ -249,11 +251,32 @@ a {
   background: repeating-linear-gradient(to bottom, transparent 0px, transparent 3px, rgba(0,0,0,0.012) 3px, rgba(0,0,0,0.012) 4px);
   opacity: 0.12;
   pointer-events: none;
+  animation: tech-bg-stripes 12s ease-in-out infinite;
 }
 
 .section-tech-bg > * {
   position: relative;
   z-index: 1;
+}
+
+@keyframes tech-bg-glow {
+  0%, 100% {
+    background-position: 12% 18%, 88% 24%, 52% 58%;
+  }
+  50% {
+    background-position: 18% 12%, 82% 28%, 48% 62%;
+  }
+}
+
+@keyframes tech-bg-stripes {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.12;
+  }
+  50% {
+    transform: translateY(8px);
+    opacity: 0.08;
+  }
 }
 
 .about-panel,
