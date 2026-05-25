@@ -1,7 +1,7 @@
 function Services() {
   return (
     <>
-      <section className="section-block service-hero section-intro">
+      <section className="section-block service-hero section-intro section-tech-bg">
         <div className="text-block">
           <p className="highlight-pill">Our Services</p>
           <h1>What we deliver</h1>
@@ -11,7 +11,7 @@ function Services() {
         </div>
       </section>
 
-      <section className="section-block">
+      <section className="section-block section-tech-bg">
         <div className="service-grid">
           <article className="service-card accent-cyan">
             <span className="feature-icon">🤖</span>
