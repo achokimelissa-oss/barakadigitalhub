@@ -422,7 +422,7 @@ const ServicesPage = ({ goBack, isMobile }) => {
   ];
   useEffect(() => { window.scrollTo(0, 0); }, []);
   return (
-    <div style={{ minHeight: "100vh", background: "#f8fafc", paddingTop: 80 }}>
+    <div className="section-tech-bg" style={{ minHeight: "100vh", background: "#f8fafc", paddingTop: 80 }}>
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "48px 24px" }}>
         <button onClick={goBack} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", cursor: "pointer", color: "#1d4ed8", fontWeight: 600, fontSize: "0.9rem", marginBottom: 32, fontFamily: "inherit" }}>
           <ChevronLeft size={18} /> Back to Home
@@ -928,7 +928,7 @@ const ImpactPage = ({ goBack, isMobile }) => {
   );
 };
 
-const PilotPage = ({ goBack, isMobile }) => {
+const PilotPage = ({ goBack, setPage, isMobile }) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   return (
     <div style={{ minHeight: "100vh", background: "linear-gradient(160deg, #f8fafc, #eff6ff)", paddingTop: 80 }}>
@@ -976,12 +976,9 @@ const PilotPage = ({ goBack, isMobile }) => {
             <h3 className="font-display" style={{ fontSize: "1.5rem", fontWeight: 800, color: "white", marginBottom: 10 }}>Get in touch</h3>
             <p style={{ color: "rgba(255,255,255,0.85)", marginBottom: 20, fontSize: "0.95rem", maxWidth: "42rem", margin: "0 auto" }}>Contact our team to discuss pilots, custom annotation workflows, or enterprise AI data programs. We reply quickly and can adapt to your tooling and compliance requirements.</p>
             <div style={{ display: "flex", justifyContent: "center", gap: 12, flexWrap: "wrap" }}>
-              <a href="mailto:projects@barakadigitalhub.com" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "white", color: "#0f172a", borderRadius: 12, padding: "14px 24px", fontWeight: 700, fontSize: "0.95rem", textDecoration: "none" }}>
-                projects@barakadigitalhub.com <ArrowUpRight size={16} />
-              </a>
-              <a href="tel:+25769258118" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(255,255,255,.15)", color: "white", borderRadius: 12, padding: "14px 24px", fontWeight: 700, fontSize: "0.95rem", textDecoration: "none", border: "1px solid rgba(255,255,255,.25)" }}>
-                +25769258118 <ArrowUpRight size={16} />
-              </a>
+              <button onClick={() => setPage("contact")} style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "white", color: "#0f172a", borderRadius: 12, padding: "14px 24px", fontWeight: 700, fontSize: "0.95rem", textDecoration: "none", border: "none", cursor: "pointer", fontFamily: "inherit" }}>
+                Contact Form <ArrowUpRight size={16} />
+              </button>
             </div>
           </div>
         </FadeIn>
@@ -994,9 +991,9 @@ function BarakaDigitalHub() {
   const [page, setPage] = useState("home");
   const [nav, setNav] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth <= 720 : false);
+  const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth <= 1024 : false);
   useEffect(()=>{
-    const onResize = () => setIsMobile(window.innerWidth <= 720);
+    const onResize = () => setIsMobile(window.innerWidth <= 1024);
     window.addEventListener('resize', onResize);
     onResize();
     return () => window.removeEventListener('resize', onResize);
@@ -1010,12 +1007,12 @@ function BarakaDigitalHub() {
   }, []);
 
   const services = [
-    { icon: <Globe size={20} />, title: "Computer Vision Annotation", desc: "Bounding boxes, segmentation, keypoints, and classification at production scale.", color: "#1d4ed8" },
-    { icon: <Brain size={20} />, title: "NLP & Text Processing", desc: "Entity recognition, sentiment labeling, and classification for language model training.", color: "#7c3aed" },
-    { icon: <Mic size={20} />, title: "Audio & Speech Processing", desc: "Transcription, speaker diarization, and audio classification at scale.", color: "#0891b2" },
-    { icon: <Cpu size={20} />, title: "LLM Training & RLHF", desc: "Human preference ranking, response evaluation, and reinforcement learning data.", color: "#059669" },
-    { icon: <CheckCircle2 size={20} />, title: "Transcription & QA", desc: "Medical, legal, and general transcription with rigorous multi-pass QA.", color: "#dc2626" },
-    { icon: <Headphones size={20} />, title: "BPO & Virtual Assistance", desc: "Back-office processing, data entry, research, and customer support.", color: "#d97706" },
+    { icon: <Globe size={20} />, title: "Computer Vision Annotation", color: "#1d4ed8" },
+    { icon: <Brain size={20} />, title: "NLP & Text Processing", color: "#7c3aed" },
+    { icon: <Mic size={20} />, title: "Audio & Speech Processing", color: "#0891b2" },
+    { icon: <Cpu size={20} />, title: "LLM Training & RLHF", color: "#059669" },
+    { icon: <CheckCircle2 size={20} />, title: "Transcription & QA", color: "#dc2626" },
+    { icon: <Headphones size={20} />, title: "BPO & Virtual Assistance", color: "#d97706" },
   ];
 
   const navLinks = [
@@ -1047,6 +1044,10 @@ function BarakaDigitalHub() {
         .ani-pulse { animation: pulse-slow 3s ease-in-out infinite; }
         .ani-marquee { animation: marquee 24s linear infinite; }
         .dot-grid { background-image: radial-gradient(circle, #94a3b820 1px, transparent 1px); background-size: 28px 28px; }
+        .section-tech-bg { position: relative; overflow: hidden; }
+        .section-tech-bg::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 12% 18%, rgba(155,109,255,0.13) 0%, transparent 36%), radial-gradient(circle at 88% 24%, rgba(11,197,197,0.12) 0%, transparent 34%), radial-gradient(circle at 52% 58%, rgba(74,108,247,0.08) 0%, transparent 38%); pointer-events: none; }
+        .section-tech-bg::after { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(to bottom, transparent 0px, transparent 3px, rgba(0,0,0,0.012) 3px, rgba(0,0,0,0.012) 4px); opacity: 0.12; pointer-events: none; }
+        .section-tech-bg > * { position: relative; z-index: 1; }
         .btn-primary { display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#1d4ed8,#06b6d4);color:white;padding:14px 28px;border-radius:12px;font-weight:600;font-size:.95rem;text-decoration:none;box-shadow:0 8px 32px rgba(29,78,216,.3);transition:transform .2s,box-shadow .2s;border:none;cursor:pointer;font-family:inherit; }
         .btn-primary:hover { transform:translateY(-2px);box-shadow:0 12px 40px rgba(29,78,216,.4); }
         .btn-secondary { display:inline-flex;align-items:center;gap:8px;background:white;color:#1e293b;padding:14px 28px;border-radius:12px;font-weight:600;font-size:.95rem;text-decoration:none;border:1.5px solid #e2e8f0;transition:border-color .2s,color .2s,transform .2s;cursor:pointer;font-family:inherit; }
@@ -1107,7 +1108,7 @@ function BarakaDigitalHub() {
       {page === "impact" && <ImpactPage goBack={goBack} isMobile={isMobile} />}
       {page === "operations" && <OperationsPage goBack={goBack} isMobile={isMobile} />}
       {page === "workflow" && <WorkflowPage goBack={goBack} setPage={setPage} isMobile={isMobile} />}
-      {page === "pilot" && <PilotPage goBack={goBack} isMobile={isMobile} />}
+      {page === "pilot" && <PilotPage goBack={goBack} setPage={setPage} isMobile={isMobile} />}
 
       {page === "home" && (
         <>
@@ -1144,11 +1145,11 @@ function BarakaDigitalHub() {
                   </div>
                 </div>
                 <div className="hero-right" style={{ position:"relative" }}>
-                  <div className="ani-float" style={{ position: isMobile ? "relative" : "absolute", top: isMobile ? 0 : -20, left: isMobile ? 0 : -20, background:"white", borderRadius:18, boxShadow:"0 12px 40px rgba(0,0,0,.12)", padding:"15px 20px", border:"1px solid #f1f5f9", zIndex:10, marginBottom: isMobile ? 12 : 0 }}>
+                  <div className="ani-float" style={{ position: isMobile ? "relative" : "absolute", top: isMobile ? 0 : -60, left: isMobile ? 0 : -60, background:"white", borderRadius:18, boxShadow:"0 12px 40px rgba(0,0,0,.12)", padding:"15px 20px", border:"1px solid #f1f5f9", zIndex:10, marginBottom: isMobile ? 12 : 0 }}>
                     <div style={{ fontSize:".68rem", color:"#94a3b8", fontWeight:600, textTransform:"uppercase", letterSpacing:".06em", marginBottom:3 }}>Avg Accuracy</div>
                     <div className="font-display" style={{ fontSize:"2rem", fontWeight:800, color:"#10b981" }}>98%</div>
                   </div>
-                  <div className="ani-floatb" style={{ position: isMobile ? "relative" : "absolute", bottom: isMobile ? "auto" : -20, right: isMobile ? "auto" : -20, background:"#020617", borderRadius:18, boxShadow:"0 12px 40px rgba(0,0,0,.25)", padding:"15px 20px", zIndex:10, marginTop: isMobile ? 8 : 0 }}>
+                  <div className="ani-floatb" style={{ position: isMobile ? "relative" : "absolute", bottom: isMobile ? "auto" : -60, right: isMobile ? "auto" : -60, background:"#020617", borderRadius:18, boxShadow:"0 12px 40px rgba(0,0,0,.25)", padding:"15px 20px", zIndex:10, marginTop: isMobile ? 8 : 0 }}>
                     <div style={{ fontSize:".68rem", color:"#94a3b8", fontWeight:600, textTransform:"uppercase", letterSpacing:".06em", marginBottom:3 }}>Weekly Throughput</div>
                     <div className="font-display" style={{ fontSize:"2rem", fontWeight:800, color:"white" }}>10K+ hrs</div>
                   </div>
@@ -1192,7 +1193,7 @@ function BarakaDigitalHub() {
             </div>
           </div>
 
-          <section style={{ padding:"88px 24px", background:"#f8fafc" }}>
+          <section className="section-tech-bg" style={{ padding:"88px 24px", background:"#f8fafc" }}>
             <div style={{ maxWidth:1280, margin:"0 auto" }}>
               <FadeIn>
                 <div style={{ textAlign:"center", marginBottom:52 }}>
