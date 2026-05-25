@@ -928,7 +928,7 @@ const ImpactPage = ({ goBack, isMobile }) => {
   );
 };
 
-const PilotPage = ({ goBack, isMobile }) => {
+const PilotPage = ({ goBack, setPage, isMobile }) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   return (
     <div style={{ minHeight: "100vh", background: "linear-gradient(160deg, #f8fafc, #eff6ff)", paddingTop: 80 }}>
@@ -976,12 +976,9 @@ const PilotPage = ({ goBack, isMobile }) => {
             <h3 className="font-display" style={{ fontSize: "1.5rem", fontWeight: 800, color: "white", marginBottom: 10 }}>Get in touch</h3>
             <p style={{ color: "rgba(255,255,255,0.85)", marginBottom: 20, fontSize: "0.95rem", maxWidth: "42rem", margin: "0 auto" }}>Contact our team to discuss pilots, custom annotation workflows, or enterprise AI data programs. We reply quickly and can adapt to your tooling and compliance requirements.</p>
             <div style={{ display: "flex", justifyContent: "center", gap: 12, flexWrap: "wrap" }}>
-              <a href="mailto:projects@barakadigitalhub.com" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "white", color: "#0f172a", borderRadius: 12, padding: "14px 24px", fontWeight: 700, fontSize: "0.95rem", textDecoration: "none" }}>
-                projects@barakadigitalhub.com <ArrowUpRight size={16} />
-              </a>
-              <a href="tel:+25769258118" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(255,255,255,.15)", color: "white", borderRadius: 12, padding: "14px 24px", fontWeight: 700, fontSize: "0.95rem", textDecoration: "none", border: "1px solid rgba(255,255,255,.25)" }}>
-                +25769258118 <ArrowUpRight size={16} />
-              </a>
+              <button onClick={() => setPage("contact")} style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "white", color: "#0f172a", borderRadius: 12, padding: "14px 24px", fontWeight: 700, fontSize: "0.95rem", textDecoration: "none", border: "none", cursor: "pointer", fontFamily: "inherit" }}>
+                Contact Form <ArrowUpRight size={16} />
+              </button>
             </div>
           </div>
         </FadeIn>
@@ -1107,7 +1104,7 @@ function BarakaDigitalHub() {
       {page === "impact" && <ImpactPage goBack={goBack} isMobile={isMobile} />}
       {page === "operations" && <OperationsPage goBack={goBack} isMobile={isMobile} />}
       {page === "workflow" && <WorkflowPage goBack={goBack} setPage={setPage} isMobile={isMobile} />}
-      {page === "pilot" && <PilotPage goBack={goBack} isMobile={isMobile} />}
+      {page === "pilot" && <PilotPage goBack={goBack} setPage={setPage} isMobile={isMobile} />}
 
       {page === "home" && (
         <>

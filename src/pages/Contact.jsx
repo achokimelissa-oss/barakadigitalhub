@@ -29,6 +29,9 @@ function Contact() {
               </div>
             </div>
             <p className="contact-copy">Strategy, partnerships, and community-led digital growth.</p>
+            <p style={{ marginTop: 12, fontSize: "0.9rem" }}>
+              <a href="mailto:margrate.kimaru@barakadigitalhub.com" style={{ color: "#1d4ed8", textDecoration: "none" }}>margrate.kimaru@barakadigitalhub.com</a>
+            </p>
           </article>
 
           <article className="card contact-card contact-card--small accent-purple">
@@ -40,6 +43,9 @@ function Contact() {
               </div>
             </div>
             <p className="contact-copy">Delivery, AI tooling, and creative product support.</p>
+            <p style={{ marginTop: 12, fontSize: "0.9rem" }}>
+              <a href="mailto:timothy.mwangi@barakadigitalhub.com" style={{ color: "#1d4ed8", textDecoration: "none" }}>timothy.mwangi@barakadigitalhub.com</a>
+            </p>
           </article>
         </div>
 
