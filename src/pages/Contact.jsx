@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Contact() {
   return (
     <>
@@ -8,6 +10,10 @@ function Contact() {
           <p>
             Whether you need AI data services, web development, or design—or you're curious about our impact model—reach out. We'd love to start a conversation.
           </p>
+          <div className="hero-actions" style={{ marginTop: '2rem' }}>
+            <a href="#send-message" className="button primary">Send a message</a>
+            <Link to="/services" className="button secondary">Explore services</Link>
+          </div>
         </div>
       </section>
 
@@ -52,7 +58,7 @@ function Contact() {
         <p className="contact-note">No emails. No phones. Just a clean form and a quick reply.</p>
       </section>
 
-      <section className="section-block form-block form-block--compact">
+      <section className="section-block form-block form-block--compact" id="send-message">
         <div className="text-block">
           <h3 className="section-title soft">Send a message</h3>
           <p className="section-copy">

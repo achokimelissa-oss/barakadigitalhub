@@ -548,7 +548,7 @@ function BarakaDigitalHub() {
         .dot-grid { background-image: radial-gradient(circle, #94a3b820 1px, transparent 1px); background-size: 28px 28px; }
         .section-tech-bg { position: relative; overflow: hidden; }
         .section-tech-bg::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 12% 18%, rgba(155,109,255,0.13) 0%, transparent 36%), radial-gradient(circle at 88% 24%, rgba(11,197,197,0.12) 0%, transparent 34%), radial-gradient(circle at 52% 58%, rgba(74,108,247,0.08) 0%, transparent 38%); pointer-events: none; }
-        .section-tech-bg::after { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(to bottom, transparent 0px, transparent 3px, rgba(0,0,0,0.012) 3px, rgba(0,0,0,0.012) 4px); opacity: 0.12; pointer-events: none; }
+        .section-tech-bg::after { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(to bottom, transparent 0px, transparent 3px, rgba(0,0,0,0.012) 3px, rgba(0,0,0,0.012) 4px); opacity: 0; pointer-events: none; }
         .section-tech-bg > * { position: relative; z-index: 1; }
         .btn-primary { display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#1d4ed8,#06b6d4);color:white;padding:14px 28px;border-radius:12px;font-weight:600;font-size:.95rem;text-decoration:none;box-shadow:0 8px 32px rgba(29,78,216,.3);transition:transform .2s,box-shadow .2s;border:none;cursor:pointer;font-family:inherit; }
         .btn-primary:hover { transform:translateY(-2px);box-shadow:0 12px 40px rgba(29,78,216,.4); }

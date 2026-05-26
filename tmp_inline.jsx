@@ -1046,7 +1046,7 @@ function BarakaDigitalHub() {
         .dot-grid { background-image: radial-gradient(circle, #94a3b820 1px, transparent 1px); background-size: 28px 28px; }
         .section-tech-bg { position: relative; overflow: hidden; }
         .section-tech-bg::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 12% 18%, rgba(155,109,255,0.13) 0%, transparent 36%), radial-gradient(circle at 88% 24%, rgba(11,197,197,0.12) 0%, transparent 34%), radial-gradient(circle at 52% 58%, rgba(74,108,247,0.08) 0%, transparent 38%); pointer-events: none; }
-        .section-tech-bg::after { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(to bottom, transparent 0px, transparent 3px, rgba(0,0,0,0.012) 3px, rgba(0,0,0,0.012) 4px); opacity: 0.12; pointer-events: none; }
+        .section-tech-bg::after { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(to bottom, transparent 0px, transparent 3px, rgba(0,0,0,0.012) 3px, rgba(0,0,0,0.012) 4px); opacity: 0; pointer-events: none; }
         .section-tech-bg > * { position: relative; z-index: 1; }
         .btn-primary { display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#1d4ed8,#06b6d4);color:white;padding:14px 28px;border-radius:12px;font-weight:600;font-size:.95rem;text-decoration:none;box-shadow:0 8px 32px rgba(29,78,216,.3);transition:transform .2s,box-shadow .2s;border:none;cursor:pointer;font-family:inherit; }
         .btn-primary:hover { transform:translateY(-2px);box-shadow:0 12px 40px rgba(29,78,216,.4); }
@@ -1145,14 +1145,6 @@ function BarakaDigitalHub() {
                   </div>
                 </div>
                 <div className="hero-right" style={{ position:"relative" }}>
-                  <div className="ani-float" style={{ position: isMobile ? "relative" : "absolute", top: isMobile ? 0 : -60, left: isMobile ? 0 : -60, background:"white", borderRadius:18, boxShadow:"0 12px 40px rgba(0,0,0,.12)", padding:"15px 20px", border:"1px solid #f1f5f9", zIndex:10, marginBottom: isMobile ? 12 : 0 }}>
-                    <div style={{ fontSize:".68rem", color:"#94a3b8", fontWeight:600, textTransform:"uppercase", letterSpacing:".06em", marginBottom:3 }}>Avg Accuracy</div>
-                    <div className="font-display" style={{ fontSize:"2rem", fontWeight:800, color:"#10b981" }}>98%</div>
-                  </div>
-                  <div className="ani-floatb" style={{ position: isMobile ? "relative" : "absolute", bottom: isMobile ? "auto" : -60, right: isMobile ? "auto" : -60, background:"#020617", borderRadius:18, boxShadow:"0 12px 40px rgba(0,0,0,.25)", padding:"15px 20px", zIndex:10, marginTop: isMobile ? 8 : 0 }}>
-                    <div style={{ fontSize:".68rem", color:"#94a3b8", fontWeight:600, textTransform:"uppercase", letterSpacing:".06em", marginBottom:3 }}>Weekly Throughput</div>
-                    <div className="font-display" style={{ fontSize:"2rem", fontWeight:800, color:"white" }}>10K+ hrs</div>
-                  </div>
                   <div style={{ background:"rgba(255,255,255,.72)", backdropFilter:"blur(20px)", border:"1px solid rgba(255,255,255,.9)", borderRadius:28, boxShadow:"0 24px 80px rgba(0,0,0,.1)", overflow:"visible" }}>
                     <div style={{ height:3, background:"linear-gradient(90deg,#1d4ed8,#06b6d4,#10b981)" }} />
                     <div style={{ padding:28 }}>
