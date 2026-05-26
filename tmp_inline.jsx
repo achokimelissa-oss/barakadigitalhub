@@ -976,7 +976,7 @@ const PilotPage = ({ goBack, setPage, isMobile }) => {
             <h3 className="font-display" style={{ fontSize: "1.5rem", fontWeight: 800, color: "white", marginBottom: 10 }}>Get in touch</h3>
             <p style={{ color: "rgba(255,255,255,0.85)", marginBottom: 20, fontSize: "0.95rem", maxWidth: "42rem", margin: "0 auto" }}>Contact our team to discuss pilots, custom annotation workflows, or enterprise AI data programs. We reply quickly and can adapt to your tooling and compliance requirements.</p>
             <div style={{ display: "flex", justifyContent: "center", gap: 12, flexWrap: "wrap" }}>
-              <button onClick={() => setPage("contact")} style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "white", color: "#0f172a", borderRadius: 12, padding: "14px 24px", fontWeight: 700, fontSize: "0.95rem", textDecoration: "none", border: "none", cursor: "pointer", fontFamily: "inherit" }}>
+              <button onClick={() => (window.location.href = '/contact')} style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "white", color: "#0f172a", borderRadius: 12, padding: "14px 24px", fontWeight: 700, fontSize: "0.95rem", textDecoration: "none", border: "none", cursor: "pointer", fontFamily: "inherit" }}>
                 Contact Form <ArrowUpRight size={16} />
               </button>
             </div>
@@ -1133,7 +1133,7 @@ function BarakaDigitalHub() {
                   </p>
                   <div style={{ display:"flex", gap:12, flexWrap:"wrap", marginBottom:36 }}>
                     <button onClick={() => (window.location.href = '/pilot')} className="btn-primary">Start Pilot Program <ArrowRight size={17} /></button>
-                    <button onClick={() => setPage("services")} className="btn-secondary">Explore Services</button>
+                    <button onClick={() => (window.location.href = '/services')} className="btn-secondary">Explore Services</button>
                   </div>
                   <div className="stat-grid" style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3,1fr)", gap:10 }}>
                     {[{v:"80+",l:"Taskers"},{v:"<4hr",l:"Response"},{v:"48 hours",l:"Turnaround"}].map((s,i)=>(
@@ -1196,7 +1196,7 @@ function BarakaDigitalHub() {
               <div className="svc-grid" style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3,1fr)", gap:16 }}>
                 {services.map((s,i)=>(
                   <FadeIn key={i} delay={i*.06}>
-                    <div className="svc-card" style={{ background:"white", border:"1px solid #f1f5f9", borderRadius:18, padding:"24px 22px", transition:"box-shadow .3s,transform .3s", cursor:"pointer", height:"100%" }} onClick={() => setPage("services")}>
+                    <div className="svc-card" style={{ background:"white", border:"1px solid #f1f5f9", borderRadius:18, padding:"24px 22px", transition:"box-shadow .3s,transform .3s", cursor:"pointer", height:"100%" }} onClick={() => (window.location.href = '/services')}>
                       <div style={{ width:44, height:44, borderRadius:12, background:s.color, display:"flex", alignItems:"center", justifyContent:"center", color:"white", marginBottom:16 }}>{s.icon}</div>
                       <h3 className="font-display" style={{ fontSize:"1rem", fontWeight:800, color:"#0f172a", marginBottom:8 }}>{s.title}</h3>
                       <p style={{ fontSize:".84rem", color:"#64748b", lineHeight:1.7, marginBottom:14 }}>{s.desc}</p>
@@ -1207,7 +1207,7 @@ function BarakaDigitalHub() {
               </div>
               <FadeIn delay={0.1}>
                 <div style={{ textAlign:"center", marginTop:36 }}>
-                  <button onClick={() => setPage("services")} className="btn-secondary">View all service details <ArrowRight size={16} /></button>
+                  <button onClick={() => (window.location.href = '/services')} className="btn-secondary">View all service details <ArrowRight size={16} /></button>
                 </div>
               </FadeIn>
             </div>
@@ -1227,8 +1227,7 @@ function BarakaDigitalHub() {
             </div>
           </section>
 
-          <section style={{ padding:"88px 24px", background:"#020617", position:"relative", overflow:"hidden" }}>
-            <div style={{ position:"absolute", inset:0, opacity:.04, backgroundImage:"radial-gradient(circle,#ffffff22 1px,transparent 1px)", backgroundSize:"28px 28px" }} />
+          <section style={{ padding:"88px 24px", position:"relative", overflow:"hidden", backgroundImage:"url('background1.png')", backgroundSize:"cover", backgroundPosition:"center" }}>
             <div style={{ maxWidth:1100, margin:"0 auto", position:"relative", zIndex:1 }}>
               <FadeIn>
                 <div style={{ textAlign:"center", marginBottom:52 }}>
@@ -1391,7 +1390,7 @@ function BarakaDigitalHub() {
               <div style={{ fontSize:"0.95rem", fontWeight:700, color:"#ffffff", marginBottom:12 }}>Services</div>
               <div style={{ display:"grid", gap:8 }}>
                 {['Computer Vision','NLP & Text','Audio Annotation','LLM Training','Transcription','BPO Services'].map((s,i)=>(
-                  <button key={i} onClick={() => setPage('services')} style={{ textAlign:"left", background:"none", border:"none", color:"rgba(255,255,255,.8)", padding:0, cursor:"pointer", fontSize:"0.95rem" }}
+                  <button key={i} onClick={() => (window.location.href = '/services')} style={{ textAlign:"left", background:"none", border:"none", color:"rgba(255,255,255,.8)", padding:0, cursor:"pointer", fontSize:"0.95rem" }}
                     onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,.8)"}>{s}</button>
                 ))}
               </div>
