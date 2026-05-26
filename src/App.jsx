@@ -42,7 +42,7 @@ function App() {
             <NavLink to="/services">Services</NavLink>
             <NavLink to="/impact">Social Impact</NavLink>
             <NavLink to="/about">About</NavLink>
-            <NavLink to="/contact" className="button primary">
+            <NavLink to="/contact" className="nav-cta button primary">
               Start Pilot
             </NavLink>
           </nav>
