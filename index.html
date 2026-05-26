@@ -661,7 +661,7 @@ const WorkflowPage = ({ goBack, setPage, isMobile }) => {
               <h3 className="font-display" style={{ fontSize: "1.35rem", fontWeight: 800, color: "white", marginBottom: 8 }}>Ready to run a pilot?</h3>
               <p style={{ color: "#64748b", fontSize: "0.92rem", lineHeight: 1.7 }}>Send us your dataset specs and we'll return a delivery plan within 24 hours.</p>
             </div>
-            <button onClick={() => setPage("pilot")} style={{ flexShrink: 0, background: "linear-gradient(135deg, #1d4ed8, #0f9d68)", color: "white", border: "none", borderRadius: 12, padding: "14px 28px", fontWeight: 700, fontSize: "0.95rem", cursor: "pointer", fontFamily: "inherit", display: "flex", alignItems: "center", gap: 8 }}>
+            <button onClick={() => (window.location.href = '/pilot')} style={{ flexShrink: 0, background: "linear-gradient(135deg, #1d4ed8, #0f9d68)", color: "white", border: "none", borderRadius: 12, padding: "14px 28px", fontWeight: 700, fontSize: "0.95rem", cursor: "pointer", fontFamily: "inherit", display: "flex", alignItems: "center", gap: 8 }}>
               Start Pilot <ArrowRight size={16} />
             </button>
           </div>
@@ -1206,8 +1206,8 @@ const PilotPage = ({ goBack, isMobile }) => {
             <h3 className="font-display" style={{ fontSize: "1.35rem", fontWeight: 800, color: "white", marginBottom: 10 }}>Get in touch</h3>
             <p style={{ color: "rgba(255,255,255,0.85)", marginBottom: 20, fontSize: "0.95rem", maxWidth: "42rem", margin: "0 auto" }}>Contact our team to discuss pilots, custom annotation workflows, or enterprise AI data programs. We reply quickly and can adapt to your tooling and compliance requirements.</p>
             <div style={{ display: "flex", justifyContent: "center", gap: 12, flexWrap: "wrap" }}>
-              <button onClick={() => setPage("contact")} className="btn-primary">Send a message <ArrowRight size={16} /></button>
-              <button onClick={() => setPage("services")} className="btn-secondary">Explore services</button>
+              <button onClick={() => (window.location.href = '/contact')} className="btn-primary">Send a message <ArrowRight size={16} /></button>
+              <button onClick={() => (window.location.href = '/services')} className="btn-secondary">Explore services</button>
             </div>
           </div>
         </FadeIn>
@@ -1396,7 +1396,7 @@ function BarakaDigitalHub() {
             {navLinks.map(l => (
               <button key={l.page} onClick={() => setPage(l.page)} className="nav-link">{l.label}</button>
             ))}
-            <button onClick={() => setPage("pilot")} className="btn-primary" style={{ padding:"10px 20px", fontSize:".82rem", borderRadius:10 }}>Start Pilot <ArrowRight size={14} /></button>
+            <button onClick={() => (window.location.href = '/pilot')} className="btn-primary" style={{ padding:"10px 20px", fontSize:".82rem", borderRadius:10 }}>Start Pilot <ArrowRight size={14} /></button>
           </div>
           <button onClick={() => setNav(!nav)} className="mobile-menu-btn" style={{ background:"none", border:"none", cursor:"pointer", color:"#0f172a" }}>
             {nav ? <X size={24} /> : <Menu size={24} />}
@@ -1443,11 +1443,11 @@ function BarakaDigitalHub() {
                     We deliver high-quality AI training, data annotation, transcription, and digital outsourcing services. We help AI companies, startups, and global organizations scale reliable data operations with rigorous quality control, transparent performance metrics, and competitive pricing.
                   </p>
                   <div style={{ display:"flex", gap:12, flexWrap:"wrap", marginBottom:36 }}>
-                    <button onClick={() => setPage("pilot")} className="btn-primary">Start Pilot Program <ArrowRight size={17} /></button>
+                    <button onClick={() => (window.location.href = '/pilot')} className="btn-primary">Start Pilot Program <ArrowRight size={17} /></button>
                     <button onClick={() => setPage("services")} className="btn-secondary">Explore Services</button>
                   </div>
-                    <div className="stat-grid" style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(4,1fr)", gap:10 }}>
-                    {[{v:"80+",l:"Taskers"},{v:"98%",l:"Avg Accuracy"},{v:"24hr",l:"Response"},{v:"48 hours",l:"Turnaround"}].map((s,i)=>(
+                  <div className="stat-grid" style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3,1fr)", gap:10 }}>
+                    {[{v:"80+",l:"Taskers"},{v:"<4hr",l:"Response"},{v:"48 hours",l:"Turnaround"}].map((s,i)=>(
                       <div key={i} style={{ background:"rgba(255,255,255,.8)", backdropFilter:"blur(12px)", border:"1px solid rgba(255,255,255,.9)", borderRadius:14, padding:"13px 10px", boxShadow:"0 2px 12px rgba(0,0,0,.04)", textAlign:"center" }}>
                         <div className="font-display" style={{ fontSize:"1.5rem", fontWeight:800, color:"#0f172a" }}>{s.v}</div>
                         <div style={{ fontSize:".72rem", color:"#94a3b8", marginTop:2, fontWeight:500 }}>{s.l}</div>
@@ -1456,14 +1456,7 @@ function BarakaDigitalHub() {
                   </div>
                 </div>
                 <div className="hero-right" style={{ position:"relative" }}>
-                  <div className="ani-float" style={{ position: isMobile ? "relative" : "absolute", top: isMobile ? 0 : -120, left: isMobile ? 0 : -120, background:"white", borderRadius:18, boxShadow:"0 12px 40px rgba(0,0,0,.12)", padding:"15px 20px", border:"1px solid #f1f5f9", zIndex:10, marginBottom: isMobile ? 12 : 0, pointerEvents: "none" }}>
-                    <div style={{ fontSize:".68rem", color:"#94a3b8", fontWeight:600, textTransform:"uppercase", letterSpacing:".06em", marginBottom:3 }}>Avg Accuracy</div>
-                    <div className="font-display" style={{ fontSize:"2rem", fontWeight:800, color:"#0f9d68" }}>98%</div>
-                  </div>
-                  <div className="ani-floatb" style={{ position: isMobile ? "relative" : "absolute", bottom: isMobile ? "auto" : -120, right: isMobile ? "auto" : -120, background:"#020617", borderRadius:18, boxShadow:"0 12px 40px rgba(0,0,0,.25)", padding:"15px 20px", zIndex:10, marginTop: isMobile ? 8 : 0, pointerEvents: "none" }}>
-                    <div style={{ fontSize:".68rem", color:"#94a3b8", fontWeight:600, textTransform:"uppercase", letterSpacing:".06em", marginBottom:3 }}>Weekly Throughput</div>
-                    <div className="font-display" style={{ fontSize:"2rem", fontWeight:800, color:"white" }}>10K+ hrs</div>
-                  </div>
+                  {/* removed floating stat cards for clarity */}
                   <div style={{ background:"rgba(255,255,255,.72)", backdropFilter:"blur(20px)", border:"1px solid rgba(255,255,255,.9)", borderRadius:28, boxShadow:"0 24px 80px rgba(0,0,0,.1)", overflow:"visible" }}>
                     <div style={{ height:3, background:"linear-gradient(90deg,#1d4ed8,#06b6d4,#0f9d68)" }} />
                     <div style={{ padding:28 }}>
@@ -1504,7 +1497,7 @@ function BarakaDigitalHub() {
             </div>
           </div>
 
-          <section className="section-tech-bg" style={{ padding:"88px 24px", background:"#f8fafc" }}>
+          <section className="section-tech-bg" style={{ padding:"88px 24px" }}>
             <div style={{ maxWidth:1280, margin:"0 auto" }}>
               <FadeIn>
                 <div style={{ textAlign:"center", marginBottom:52 }}>
@@ -1535,7 +1528,7 @@ function BarakaDigitalHub() {
           <section style={{ padding:"72px 24px", background:"linear-gradient(135deg,#1d4ed8 0%,#0ea5e9 50%,#0f9d68 100%)", position:"relative", overflow:"visible" }}>
             <div style={{ position:"absolute", inset:0, opacity:.07, backgroundImage:"linear-gradient(to right,white 1px,transparent 1px),linear-gradient(to bottom,white 1px,transparent 1px)", backgroundSize:"40px 40px" }} />
             <div className="stats-band" style={{ maxWidth:1100, margin:"0 auto", display:"grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(4,1fr)", gap:24, position:"relative", zIndex:1 }}>
-              {[{val:"98",suf:"%",l:"Avg Accuracy"},{val:"10",suf:"K+ hrs",l:"Weekly Throughput"},{val:"80",suf:"+",l:"Trained Taskers"},{val:"4",suf:"hr",l:"Avg Response Time"}].map((s,i)=>(
+              {[{val:"80",suf:"+",l:"Trained Taskers"},{val:"4",suf:"hr",l:"Avg Response Time"},{val:"98",suf:"%",l:"Certified QA"}].map((s,i)=>(
                 <div key={i} style={{ textAlign:"center" }}>
                   <div className="font-display" style={{ fontSize:"3.2rem", fontWeight:800, color:"white", letterSpacing:"-.03em", lineHeight:1, whiteSpace:"normal", overflowWrap:"break-word", wordBreak:"break-word" }}>
                     <Counter target={s.val} suffix={s.suf} />
@@ -1602,7 +1595,7 @@ function BarakaDigitalHub() {
                     <div style={{ padding:"36px 32px", borderRight:"1px solid #f1f5f9" }}>
                       <div style={{ display:"inline-block", background:"rgba(29,78,216,.08)", color:"#1d4ed8", padding:"5px 13px", borderRadius:100, fontSize:".72rem", fontWeight:700, letterSpacing:".05em", textTransform:"uppercase", marginBottom:20 }}>Example Project</div>
                       <h3 className="font-display" style={{ fontSize:"1.6rem", fontWeight:800, color:"#0f172a", marginBottom:24, lineHeight:1.2 }}>Object Detection Annotation Pipeline</h3>
-                      {[["Task Type","Bounding Box Annotation"],["Dataset Volume","25,000 Images"],["Timeline","48 Hours"],["QA Method","100% First-Pass Review"],["Avg Accuracy","98%"],["Reporting","Daily Progress Updates"]].map(([k,v],i)=>(
+                      {[["Task Type","Bounding Box Annotation"],["Dataset Volume","25,000 Images"],["Timeline","48 Hours"],["QA Method","100% First-Pass Review"],["Reporting","Daily Progress Updates"]].map(([k,v],i)=>(
                         <div key={i} style={{ display:"flex", justifyContent:"space-between", alignItems:"center", padding:"12px 0", borderBottom:"1px solid #f8fafc" }}>
                           <span style={{ fontSize:".82rem", color:"#94a3b8", fontWeight:500 }}>{k}</span>
                           <span style={{ fontSize:".87rem", fontWeight:700, color:"#0f172a" }}>{v}</span>
@@ -1671,7 +1664,7 @@ function BarakaDigitalHub() {
                 <h2 className="font-display" style={{ fontSize:"2.8rem", fontWeight:800, color:"#0f172a", letterSpacing:"-.03em", marginBottom:16, lineHeight:1.1 }}>Ready to Launch a Pilot?</h2>
                 <p style={{ color:"#64748b", fontSize:"1rem", lineHeight:1.8, marginBottom:36 }}>Start with a small batch. Our team will annotate your dataset, deliver results with full quality reporting, and show you exactly how we operate — before you commit to scale.</p>
                 <div style={{ display:"flex", gap:14, justifyContent:"center", flexWrap:"wrap", marginBottom:32 }}>
-                  <button onClick={() => setPage("pilot")} className="btn-primary" style={{ fontSize:"1rem", padding:"15px 30px" }}>Launch Pilot Program <ArrowRight size={17} /></button>
+                  <button onClick={() => (window.location.href = '/pilot')} className="btn-primary" style={{ fontSize:"1rem", padding:"15px 30px" }}>Launch Pilot Program <ArrowRight size={17} /></button>
                   <button onClick={() => setPage("workflow")} className="btn-secondary" style={{ fontSize:"1rem", padding:"15px 30px" }}>View Our Process</button>
                 </div>
                 <div style={{ display:"flex", justifyContent:"center", gap:28, flexWrap:"wrap" }}>

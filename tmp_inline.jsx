@@ -567,7 +567,7 @@ const WorkflowPage = ({ goBack, setPage, isMobile }) => {
               <h3 className="font-display" style={{ fontSize: "1.5rem", fontWeight: 800, color: "white", marginBottom: 8 }}>Ready to run a pilot?</h3>
               <p style={{ color: "#64748b", fontSize: "0.92rem", lineHeight: 1.7 }}>Send us your dataset specs and we'll return a delivery plan within 4 hours.</p>
             </div>
-            <button onClick={() => setPage("pilot")} style={{ flexShrink: 0, background: "linear-gradient(135deg, #1d4ed8, #10b981)", color: "white", border: "none", borderRadius: 12, padding: "14px 28px", fontWeight: 700, fontSize: "0.95rem", cursor: "pointer", fontFamily: "inherit", display: "flex", alignItems: "center", gap: 8 }}>
+            <button onClick={() => (window.location.href = '/pilot')} style={{ flexShrink: 0, background: "linear-gradient(135deg, #1d4ed8, #10b981)", color: "white", border: "none", borderRadius: 12, padding: "14px 28px", fontWeight: 700, fontSize: "0.95rem", cursor: "pointer", fontFamily: "inherit", display: "flex", alignItems: "center", gap: 8 }}>
               Start Pilot <ArrowRight size={16} />
             </button>
           </div>
@@ -1086,7 +1086,7 @@ function BarakaDigitalHub() {
             {navLinks.map(l => (
               <button key={l.page} onClick={() => setPage(l.page)} className="nav-link">{l.label}</button>
             ))}
-            <button onClick={() => setPage("pilot")} className="btn-primary" style={{ padding:"10px 20px", fontSize:".82rem", borderRadius:10 }}>Start Pilot <ArrowRight size={14} /></button>
+            <button onClick={() => (window.location.href = '/pilot')} className="btn-primary" style={{ padding:"10px 20px", fontSize:".82rem", borderRadius:10 }}>Start Pilot <ArrowRight size={14} /></button>
           </div>
           <button onClick={() => setNav(!nav)} className="mobile-menu-btn" style={{ background:"none", border:"none", cursor:"pointer", color:"#0f172a" }}>
             {nav ? <X size={24} /> : <Menu size={24} />}
@@ -1132,11 +1132,11 @@ function BarakaDigitalHub() {
                     we deliver high-quality AI training, data annotation, transcription, and digital outsourcing services. We help AI companies, startups, and global organizations scale reliable data operations with rigorous quality control, transparent performance metrics, and competitive pricing.
                   </p>
                   <div style={{ display:"flex", gap:12, flexWrap:"wrap", marginBottom:36 }}>
-                    <button onClick={() => setPage("pilot")} className="btn-primary">Start Pilot Program <ArrowRight size={17} /></button>
+                    <button onClick={() => (window.location.href = '/pilot')} className="btn-primary">Start Pilot Program <ArrowRight size={17} /></button>
                     <button onClick={() => setPage("services")} className="btn-secondary">Explore Services</button>
                   </div>
-                    <div className="stat-grid" style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(4,1fr)", gap:10 }}>
-                    {[{v:"80+",l:"Taskers"},{v:"98%",l:"Avg Accuracy"},{v:"<4hr",l:"Response"},{v:"48 hours",l:"Turnaround"}].map((s,i)=>(
+                  <div className="stat-grid" style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3,1fr)", gap:10 }}>
+                    {[{v:"80+",l:"Taskers"},{v:"<4hr",l:"Response"},{v:"48 hours",l:"Turnaround"}].map((s,i)=>(
                       <div key={i} style={{ background:"rgba(255,255,255,.8)", backdropFilter:"blur(12px)", border:"1px solid rgba(255,255,255,.9)", borderRadius:14, padding:"13px 10px", boxShadow:"0 2px 12px rgba(0,0,0,.04)", textAlign:"center" }}>
                         <div className="font-display" style={{ fontSize:"1.5rem", fontWeight:800, color:"#0f172a" }}>{s.v}</div>
                         <div style={{ fontSize:".72rem", color:"#94a3b8", marginTop:2, fontWeight:500 }}>{s.l}</div>
@@ -1185,7 +1185,7 @@ function BarakaDigitalHub() {
             </div>
           </div>
 
-          <section className="section-tech-bg" style={{ padding:"88px 24px", background:"#f8fafc" }}>
+          <section className="section-tech-bg" style={{ padding:"88px 24px" }}>
             <div style={{ maxWidth:1280, margin:"0 auto" }}>
               <FadeIn>
                 <div style={{ textAlign:"center", marginBottom:52 }}>
@@ -1352,7 +1352,7 @@ function BarakaDigitalHub() {
                 <h2 className="font-display" style={{ fontSize:"2.8rem", fontWeight:800, color:"#0f172a", letterSpacing:"-.03em", marginBottom:16, lineHeight:1.1 }}>Ready to Launch a Pilot?</h2>
                 <p style={{ color:"#64748b", fontSize:"1rem", lineHeight:1.8, marginBottom:36 }}>Start with a small batch. Our team will annotate your dataset, deliver results with full quality reporting, and show you exactly how we operate — before you commit to scale.</p>
                 <div style={{ display:"flex", gap:14, justifyContent:"center", flexWrap:"wrap", marginBottom:32 }}>
-                  <button onClick={() => setPage("pilot")} className="btn-primary" style={{ fontSize:"1rem", padding:"15px 30px" }}>Launch Pilot Program <ArrowRight size={17} /></button>
+                  <button onClick={() => (window.location.href = '/pilot')} className="btn-primary" style={{ fontSize:"1rem", padding:"15px 30px" }}>Launch Pilot Program <ArrowRight size={17} /></button>
                   <button onClick={() => setPage("workflow")} className="btn-secondary" style={{ fontSize:"1rem", padding:"15px 30px" }}>View Our Process</button>
                 </div>
                 <div style={{ display:"flex", justifyContent:"center", gap:28, flexWrap:"wrap" }}>
