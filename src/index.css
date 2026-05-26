@@ -92,6 +92,12 @@ a {
   color: #2563eb;
 }
 
+.nav-links .button {
+  padding: 0.9rem 1.35rem;
+  border-radius: 9999px;
+  font-weight: 700;
+}
+
 .hero {
   padding: 64px 0;
 }
