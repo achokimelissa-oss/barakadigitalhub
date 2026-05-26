@@ -1158,7 +1158,7 @@ const ImpactPage = ({ goBack, isMobile }) => {
   );
 };
 
-const PilotPage = ({ goBack, isMobile }) => {
+const PilotPage = ({ goBack, setPage, isMobile }) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   return (
     <div style={{ minHeight: "100vh", background: "linear-gradient(160deg, #f8fafc, #eff6ff)", paddingTop: 80 }}>
@@ -1215,6 +1215,9 @@ const PilotPage = ({ goBack, isMobile }) => {
     </div>
   );
 };
+
+// Floating start pilot button (visible when not on pilot page)
+// Rendered from parent component using its `setPage` state.
 
 const ContactPage = ({ goBack, isMobile }) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
@@ -1678,6 +1681,29 @@ function BarakaDigitalHub() {
 
           
         </>
+      )}
+
+      {page !== "pilot" && (
+        <button onClick={() => setPage("pilot")} style={{
+          position: "fixed",
+          right: 20,
+          bottom: 20,
+          zIndex: 400,
+          background: "linear-gradient(135deg,#1d4ed8,#06b6d4)",
+          color: "white",
+          border: "none",
+          borderRadius: 999,
+          padding: "12px 16px",
+          display: "flex",
+          alignItems: "center",
+          gap: 8,
+          boxShadow: "0 12px 36px rgba(29,78,216,0.28)",
+          cursor: "pointer",
+          fontWeight: 700,
+          fontFamily: "inherit",
+        }}>
+          Start Pilot <ArrowRight size={16} />
+        </button>
       )}
 
       <footer style={{ background:"linear-gradient(180deg,#021024,#020617)", padding:"56px 24px 36px", borderTop:"1px solid rgba(255,255,255,.06)" }}>
