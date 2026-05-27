@@ -567,7 +567,7 @@ const WorkflowPage = ({ goBack, setPage, isMobile }) => {
               <h3 className="font-display" style={{ fontSize: "1.35rem", fontWeight: 800, color: "white", marginBottom: 8 }}>Ready to run a pilot?</h3>
               <p style={{ color: "#64748b", fontSize: "0.92rem", lineHeight: 1.7 }}>Send us your dataset specs and we'll return a delivery plan within 24 hours.</p>
             </div>
-            <button onClick={() => setPage("pilot")} style={{ flexShrink: 0, background: "linear-gradient(135deg, #1d4ed8, #0f9d68)", color: "white", border: "none", borderRadius: 12, padding: "14px 28px", fontWeight: 700, fontSize: "0.95rem", cursor: "pointer", fontFamily: "inherit", display: "flex", alignItems: "center", gap: 8 }}>
+            <button onClick={() => navigate("pilot")} style={{ flexShrink: 0, background: "linear-gradient(135deg, #1d4ed8, #0f9d68)", color: "white", border: "none", borderRadius: 12, padding: "14px 28px", fontWeight: 700, fontSize: "0.95rem", cursor: "pointer", fontFamily: "inherit", display: "flex", alignItems: "center", gap: 8 }}>
               Start Pilot <ArrowRight size={16} />
             </button>
           </div>
@@ -738,7 +738,7 @@ const CareersPage = ({ goBack, setPage, isMobile }) => {
             <p style={{ color: "#475569", fontSize: "1rem", lineHeight: 1.8, maxWidth: 660, margin: "0 auto 24px" }}>
               We are not actively hiring at the moment, but we still welcome inquiries from talented people who want to join our mission. If you'd like to connect, send us a note and we’ll let you know when the next opportunities become available.
             </p>
-            <button onClick={() => setPage("contact")} style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8, padding: "14px 24px", borderRadius: 12, background: "#1d4ed8", color: "white", fontWeight: 700, border: "none", cursor: "pointer" }}>
+            <button onClick={() => navigate("contact")} style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8, padding: "14px 24px", borderRadius: 12, background: "#1d4ed8", color: "white", fontWeight: 700, border: "none", cursor: "pointer" }}>
               Use the Contact page to reach us <ArrowRight size={16} />
             </button>
           </div>
@@ -1112,8 +1112,8 @@ const PilotPage = ({ goBack, setPage, isMobile }) => {
             <h3 className="font-display" style={{ fontSize: "1.35rem", fontWeight: 800, color: "white", marginBottom: 10 }}>Get in touch</h3>
             <p style={{ color: "rgba(255,255,255,0.85)", marginBottom: 20, fontSize: "0.95rem", maxWidth: "42rem", margin: "0 auto" }}>Contact our team to discuss pilots, custom annotation workflows, or enterprise AI data programs. We reply quickly and can adapt to your tooling and compliance requirements.</p>
             <div style={{ display: "flex", justifyContent: "center", gap: 12, flexWrap: "wrap" }}>
-              <button onClick={() => setPage("contact")} className="btn-primary">Send a message <ArrowRight size={16} /></button>
-              <button onClick={() => setPage("services")} className="btn-secondary">Explore services</button>
+              <button onClick={() => navigate("contact")} className="btn-primary">Send a message <ArrowRight size={16} /></button>
+              <button onClick={() => navigate("services")} className="btn-secondary">Explore services</button>
             </div>
           </div>
         </FadeIn>
@@ -1184,7 +1184,42 @@ function BarakaDigitalHub() {
     onResize();
     return () => window.removeEventListener('resize', onResize);
   }, []);
-  const goBack = () => { setPage("home"); setNav(false); };
+  // navigation helper: updates state and browser URL
+  const navigate = (p, { replace = false } = {}) => {
+    setPage(p);
+    const path = p === "home" ? "/" : `/${p}`;
+    try {
+      if (replace) window.history.replaceState({}, "", path);
+      else window.history.pushState({}, "", path);
+    } catch (e) {
+      // ignore (server or older browsers)
+    }
+  };
+
+  const goBack = () => { navigate("home"); setNav(false); };
+
+  // keep page in sync with URL (back/forward buttons and direct links)
+  useEffect(() => {
+    const map = {
+      '/': 'home',
+      '/services': 'services',
+      '/about': 'about',
+      '/careers': 'careers',
+      '/impact': 'impact',
+      '/contact': 'contact',
+      '/privacy': 'privacy',
+      '/pilot': 'pilot',
+      '/workflow': 'workflow',
+      '/operations': 'operations'
+    };
+    const updateFromLocation = () => {
+      const p = map[window.location.pathname] || 'home';
+      setPage(p);
+    };
+    window.addEventListener('popstate', updateFromLocation);
+    updateFromLocation();
+    return () => window.removeEventListener('popstate', updateFromLocation);
+  }, []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -1297,12 +1332,12 @@ function BarakaDigitalHub() {
 
       <nav style={{ position:"fixed", top:0, left:0, right:0, zIndex:100, transition:"all .3s", background: scrolled||page!=="home" ? "rgba(255,255,255,.95)" : "transparent", backdropFilter: scrolled||page!=="home" ? "blur(20px)" : "none", borderBottom: scrolled||page!=="home" ? "1px solid rgba(0,0,0,.06)" : "none", padding:"0 24px" }}>
         <div className="page-container" style={{ display:"flex", alignItems:"center", justifyContent:"space-between", height:68 }}>
-          <button onClick={() => setPage("home")} style={{ display:"flex", alignItems:"center", gap:10, background:"none", border:"none", cursor:"pointer", padding:0 }}>
+          <button onClick={() => navigate("home")} style={{ display:"flex", alignItems:"center", gap:10, background:"none", border:"none", cursor:"pointer", padding:0 }}>
             <img src="/logo.png" alt="Baraka Digital Hub logo" style={{ height:44, width:"auto", objectFit:"contain" }} />
           </button>
           <div className="hidden-mobile" style={{ display: isMobile ? "none" : "flex", gap:28, alignItems:"center" }}>
             {navLinks.map(l => (
-              <button key={l.page} onClick={() => setPage(l.page)} className="nav-link">{l.label}</button>
+              <button key={l.page} onClick={() => navigate(l.page)} className="nav-link">{l.label}</button>
             ))}
           </div>
           <button onClick={() => setNav(!nav)} className="mobile-menu-btn" style={{ background:"none", border:"none", cursor:"pointer", color:"#0f172a" }}>
@@ -1312,7 +1347,7 @@ function BarakaDigitalHub() {
         {nav && (
           <div style={{ background:"white", borderTop:"1px solid #f1f5f9", padding:"12px 0" }}>
             {navLinks.map(l => (
-              <button key={l.page} onClick={() => { setPage(l.page); setNav(false); }} style={{ display:"block", width:"100%", textAlign:"left", padding:"13px 24px", color:"#475569", fontWeight:500, background:"none", border:"none", cursor:"pointer", fontSize:".95rem", fontFamily:"inherit" }}>{l.label}</button>
+              <button key={l.page} onClick={() => { navigate(l.page); setNav(false); }} style={{ display:"block", width:"100%", textAlign:"left", padding:"13px 24px", color:"#475569", fontWeight:500, background:"none", border:"none", cursor:"pointer", fontSize:".95rem", fontFamily:"inherit" }}>{l.label}</button>
             ))}
           </div>
         )}
@@ -1350,8 +1385,8 @@ function BarakaDigitalHub() {
                     We deliver high-quality AI training, data annotation, transcription, and digital outsourcing services. We help AI companies, startups, and global organizations scale reliable data operations with rigorous quality control, transparent performance metrics, and competitive pricing.
                   </p>
                   <div style={{ display:"flex", gap:12, flexWrap:"wrap", marginBottom:36 }}>
-                    <button onClick={() => setPage("pilot")} className="btn-primary">Start Pilot Program <ArrowRight size={17} /></button>
-                    <button onClick={() => setPage("services")} className="btn-secondary">Explore Services</button>
+                    <button onClick={() => navigate("pilot")} className="btn-primary">Start Pilot Program <ArrowRight size={17} /></button>
+                    <button onClick={() => navigate("services")} className="btn-secondary">Explore Services</button>
                   </div>
                   <div className="stat-grid" style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3,1fr)", gap:10 }}>
                     {[{v:"80+",l:"Taskers"},{v:"<4hr",l:"Response"},{v:"48 hours",l:"Turnaround"}].map((s,i)=>(
@@ -1382,7 +1417,7 @@ function BarakaDigitalHub() {
                           <CheckCircle2 size={14} style={{ color:"#1d4ed8", flexShrink:0 }} />
                         </div>
                       ))}
-                      <button onClick={() => setPage("workflow")} style={{ marginTop:16, display:"inline-flex", alignItems:"center", gap:6, color:"#1d4ed8", fontWeight:600, fontSize:".85rem", background:"none", border:"none", cursor:"pointer", fontFamily:"inherit" }}>
+                      <button onClick={() => navigate("workflow")} style={{ marginTop:16, display:"inline-flex", alignItems:"center", gap:6, color:"#1d4ed8", fontWeight:600, fontSize:".85rem", background:"none", border:"none", cursor:"pointer", fontFamily:"inherit" }}>
                         View Workflow Process <ChevronRight size={15} />
                       </button>
                     </div>
@@ -1415,7 +1450,7 @@ function BarakaDigitalHub() {
               <div className="svc-grid" style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3,1fr)", gap:16 }}>
                 {services.map((s,i)=>(
                   <FadeIn key={i} delay={i*.06}>
-                    <div className="svc-card" style={{ background:"white", border:"1px solid #f1f5f9", borderRadius:18, padding:"24px 22px", transition:"box-shadow .3s,transform .3s", cursor:"pointer", height:"100%" }} onClick={() => setPage("services")}>
+                    <div className="svc-card" style={{ background:"white", border:"1px solid #f1f5f9", borderRadius:18, padding:"24px 22px", transition:"box-shadow .3s,transform .3s", cursor:"pointer", height:"100%" }} onClick={() => navigate("services")}>
                       <div style={{ width:44, height:44, borderRadius:12, background:s.color, display:"flex", alignItems:"center", justifyContent:"center", color:"white", marginBottom:16 }}>{s.icon}</div>
                       <h3 className="font-display" style={{ fontSize:"1rem", fontWeight:800, color:"#0f172a", marginBottom:8 }}>{s.title}</h3>
                       <p style={{ fontSize:".84rem", color:"#64748b", lineHeight:1.7, marginBottom:14 }}>{s.desc}</p>
@@ -1426,7 +1461,7 @@ function BarakaDigitalHub() {
               </div>
               <FadeIn delay={0.1}>
                 <div style={{ textAlign:"center", marginTop:36 }}>
-                  <button onClick={() => setPage("services")} className="btn-secondary">View all service details <ArrowRight size={16} /></button>
+                  <button onClick={() => navigate("services")} className="btn-secondary">View all service details <ArrowRight size={16} /></button>
                 </div>
               </FadeIn>
             </div>
@@ -1464,7 +1499,7 @@ function BarakaDigitalHub() {
                   { icon:<Clock size={18}/>, n:"Long", l:"Production Support", d:"Built for enduring partnerships, not one-off batches." },
                 ].map((o,i)=>(
                   <FadeIn key={i} delay={i*.06}>
-                    <div onClick={() => setPage("operations")} style={{ background:"rgba(255,255,255,.08)", border:"1px solid rgba(255,255,255,.12)", borderRadius:18, padding:"22px 20px", transition:"all .3s", cursor:"pointer" }}
+                    <div onClick={() => navigate("operations")} style={{ background:"rgba(255,255,255,.08)", border:"1px solid rgba(255,255,255,.12)", borderRadius:18, padding:"22px 20px", transition:"all .3s", cursor:"pointer" }}
                       onMouseEnter={e=>{e.currentTarget.style.borderColor="rgba(29,78,216,.5)";e.currentTarget.style.background="rgba(255,255,255,.12)";}}
                       onMouseLeave={e=>{e.currentTarget.style.borderColor="rgba(255,255,255,.12)";e.currentTarget.style.background="rgba(255,255,255,.08)";}}>
                       <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom:14 }}>
@@ -1479,7 +1514,7 @@ function BarakaDigitalHub() {
               </div>
               <FadeIn delay={0.15}>
                 <div style={{ textAlign:"center", marginTop:36 }}>
-                  <button onClick={() => setPage("operations")} style={{ display:"inline-flex", alignItems:"center", gap:8, background:"rgba(255,255,255,.07)", border:"1px solid rgba(255,255,255,.12)", borderRadius:12, padding:"13px 24px", color:"white", fontWeight:600, fontSize:".88rem", cursor:"pointer", fontFamily:"inherit" }}>
+                  <button onClick={() => navigate("operations")} style={{ display:"inline-flex", alignItems:"center", gap:8, background:"rgba(255,255,255,.07)", border:"1px solid rgba(255,255,255,.12)", borderRadius:12, padding:"13px 24px", color:"white", fontWeight:600, fontSize:".88rem", cursor:"pointer", fontFamily:"inherit" }}>
                     View full operations detail <ArrowRight size={15} />
                   </button>
                 </div>
@@ -1519,7 +1554,7 @@ function BarakaDigitalHub() {
                           </div>
                         </div>
                       ))}
-                      <button onClick={() => setPage("workflow")} style={{ marginTop:28, display:"inline-flex", alignItems:"center", gap:8, background:"white", color:"#0f172a", border:"none", borderRadius:12, padding:"12px 22px", fontWeight:700, fontSize:".88rem", cursor:"pointer", fontFamily:"inherit" }}>
+                      <button onClick={() => navigate("workflow")} style={{ marginTop:28, display:"inline-flex", alignItems:"center", gap:8, background:"white", color:"#0f172a", border:"none", borderRadius:12, padding:"12px 22px", fontWeight:700, fontSize:".88rem", cursor:"pointer", fontFamily:"inherit" }}>
                         Full Workflow Detail <ArrowRight size={15} />
                       </button>
                     </div>
@@ -1539,7 +1574,7 @@ function BarakaDigitalHub() {
                     </div>
                     <h2 className="font-display" style={{ fontSize:"2.2rem", fontWeight:800, color:"#0f172a", letterSpacing:"-.03em", marginBottom:16, lineHeight:1.15 }}>Work That Creates Real Change</h2>
                     <p style={{ color:"#64748b", fontSize:".92rem", lineHeight:1.85, marginBottom:20 }}>Baraka Digital Hub was built as a long-term sustainability model — creating structured digital employment opportunities while supporting the broader mission of Baraka Children's Home through commercially competitive AI services.</p>
-                    <button onClick={() => setPage("impact")} style={{ display:"inline-flex", alignItems:"center", gap:7, color:"#1d4ed8", fontWeight:700, fontSize:".88rem", background:"none", border:"none", cursor:"pointer", fontFamily:"inherit" }}>
+                    <button onClick={() => navigate("impact")} style={{ display:"inline-flex", alignItems:"center", gap:7, color:"#1d4ed8", fontWeight:700, fontSize:".88rem", background:"none", border:"none", cursor:"pointer", fontFamily:"inherit" }}>
                       Read about our impact <ChevronRight size={15} />
                     </button>
                   </div>
@@ -1570,8 +1605,8 @@ function BarakaDigitalHub() {
                 <h2 className="font-display" style={{ fontSize:"2.8rem", fontWeight:800, color:"#0f172a", letterSpacing:"-.03em", marginBottom:16, lineHeight:1.1 }}>Ready to Launch a Pilot?</h2>
                 <p style={{ color:"#64748b", fontSize:"1rem", lineHeight:1.8, marginBottom:36 }}>Start with a small batch. Our team will annotate your dataset, deliver results with full quality reporting, and show you exactly how we operate — before you commit to scale.</p>
                 <div style={{ display:"flex", gap:14, justifyContent:"center", flexWrap:"wrap", marginBottom:32 }}>
-                  <button onClick={() => setPage("pilot")} className="btn-primary" style={{ fontSize:"1rem", padding:"15px 30px" }}>Launch Pilot Program <ArrowRight size={17} /></button>
-                  <button onClick={() => setPage("workflow")} className="btn-secondary" style={{ fontSize:"1rem", padding:"15px 30px" }}>View Our Process</button>
+                  <button onClick={() => navigate("pilot")} className="btn-primary" style={{ fontSize:"1rem", padding:"15px 30px" }}>Launch Pilot Program <ArrowRight size={17} /></button>
+                  <button onClick={() => navigate("workflow")} className="btn-secondary" style={{ fontSize:"1rem", padding:"15px 30px" }}>View Our Process</button>
                 </div>
                 <div style={{ display:"flex", justifyContent:"center", gap:28, flexWrap:"wrap" }}>
                   {["No upfront commitment","Results in 48 hours","Direct team access"].map((t,i)=>(
@@ -1590,7 +1625,7 @@ function BarakaDigitalHub() {
       )}
 
       {page !== "pilot" && (
-        <button onClick={() => setPage("pilot")} style={{
+        <button onClick={() => navigate("pilot")} style={{
           position: "fixed",
           right: 20,
           bottom: 20,
@@ -1627,7 +1662,7 @@ function BarakaDigitalHub() {
               <div style={{ fontSize:"0.95rem", fontWeight:700, color:"#ffffff", marginBottom:12 }}>Services</div>
               <div style={{ display:"grid", gap:8 }}>
                 {['Computer Vision','NLP & Text','Audio Annotation','LLM Training','Transcription','BPO Services'].map((s,i)=>(
-                  <button key={i} onClick={() => setPage("services")} style={{ textAlign:"left", background:"none", border:"none", color:"rgba(255,255,255,.8)", padding:0, cursor:"pointer", fontSize:"0.95rem" }}
+                  <button key={i} onClick={() => navigate("services")} style={{ textAlign:"left", background:"none", border:"none", color:"rgba(255,255,255,.8)", padding:0, cursor:"pointer", fontSize:"0.95rem" }}
                     onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,.8)"}>{s}</button>
                 ))}
               </div>
@@ -1636,10 +1671,10 @@ function BarakaDigitalHub() {
             <div>
               <div style={{ fontSize:"0.95rem", fontWeight:700, color:"#ffffff", marginBottom:12 }}>Company</div>
               <div style={{ display:"grid", gap:8 }}>
-                <button onClick={() => setPage('about')} style={{ textAlign:"left", background:"none", border:"none", color:"rgba(255,255,255,.8)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>{ e.target.style.color="rgba(255,255,255,.8)"; }}>About</button>
-                <button onClick={() => setPage('careers')} style={{ textAlign:"left", background:"none", border:"none", color:"rgba(255,255,255,.8)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>{ e.target.style.color="rgba(255,255,255,.8)"; }}>Careers</button>
-                <button onClick={() => setPage('privacy')} style={{ textAlign:"left", background:"none", border:"none", color:"rgba(255,255,255,.8)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>{ e.target.style.color="rgba(255,255,255,.8)"; }}>Privacy</button>
-                <button onClick={() => setPage("contact")} style={{ textAlign:"left", background:"none", border:"none", color:"rgba(255,255,255,.8)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>{ e.target.style.color="rgba(255,255,255,.8)"; }}>Contact</button>
+                <button onClick={() => navigate('about')} style={{ textAlign:"left", background:"none", border:"none", color:"rgba(255,255,255,.8)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>{ e.target.style.color="rgba(255,255,255,.8)"; }}>About</button>
+                <button onClick={() => navigate('careers')} style={{ textAlign:"left", background:"none", border:"none", color:"rgba(255,255,255,.8)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>{ e.target.style.color="rgba(255,255,255,.8)"; }}>Careers</button>
+                <button onClick={() => navigate('privacy')} style={{ textAlign:"left", background:"none", border:"none", color:"rgba(255,255,255,.8)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>{ e.target.style.color="rgba(255,255,255,.8)"; }}>Privacy</button>
+                <button onClick={() => navigate("contact")} style={{ textAlign:"left", background:"none", border:"none", color:"rgba(255,255,255,.8)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>{ e.target.style.color="rgba(255,255,255,.8)"; }}>Contact</button>
               </div>
             </div>
           </div>
