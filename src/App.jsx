@@ -1440,7 +1440,7 @@ function BarakaDigitalHub() {
             </div>
           </div>
 
-          <section className="section-tech-bg" style={{ padding:"88px 24px" }}>
+          <section className="section-tech-bg" style={{ padding:"88px 24px", backgroundImage:"url('/background2.jpg')", backgroundSize:"cover", backgroundRepeat:"no-repeat", backgroundPosition:"center center" }}>
             <div style={{ maxWidth:1280, margin:"0 auto" }}>
               <FadeIn>
                 <div style={{ textAlign:"center", marginBottom:52 }}>
