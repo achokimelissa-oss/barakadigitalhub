@@ -1261,14 +1261,13 @@ function BarakaDigitalHub() {
         @keyframes floatB { 0%,100%{transform:translateY(0) rotate(-2deg)} 50%{transform:translateY(-8px) rotate(2deg)} }
         @keyframes pulse-slow { 0%,100%{opacity:1} 50%{opacity:.4} }
         @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
-        @keyframes typing { from { width: 0; } to { width: 37ch; } }
+        @keyframes typing { from { width: 0; } to { width: 52ch; } }
         @keyframes blink-caret { 50% { opacity: 0; } }
-        .typing-effect { display: inline-block; overflow: hidden; white-space: nowrap; width: 0; border-right: .14em solid rgba(15,157,104,.95); animation: typing 2.4s steps(37,end) 0.4s forwards, blink-caret .75s step-end infinite; }
+        .typing-effect { display: inline-block; overflow: hidden; white-space: nowrap; width: 0; border-right: .14em solid rgba(15,157,104,.95); animation: typing 3s steps(52,end) 0.2s forwards, blink-caret .75s step-end infinite; }
         .ani-float { animation: float 5s ease-in-out infinite; }
         .ani-floatb { animation: floatB 6s ease-in-out 1.5s infinite; }
         .ani-pulse { animation: pulse-slow 3s ease-in-out infinite; }
         .ani-marquee { animation: marquee 24s linear infinite; }
-        .typing-effect { display: inline-block; overflow: hidden; white-space: nowrap; width: 0; border-right: .14em solid rgba(15,157,104,.95); animation: typing 2.4s steps(37,end) 0.4s forwards, blink-caret .75s step-end infinite; }
         .hero-tech-overlay { position: absolute; inset: 0; background: radial-gradient(circle at top left, rgba(59,130,246,.16), transparent 22%), radial-gradient(circle at bottom right, rgba(16,185,129,.14), transparent 18%); pointer-events: none; }
         .hero-grid { position: relative; }
         .hero-grid::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(rgba(14,165,233,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(14,165,233,.06) 1px, transparent 1px); background-size: 120px 120px; pointer-events: none; opacity: .35; }
