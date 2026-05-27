@@ -1487,7 +1487,7 @@ function BarakaDigitalHub() {
               <FadeIn>
                 <div style={{ textAlign:"center", marginBottom:52 }}>
                   <h2 className="section-h2 font-display" style={{ fontSize:"2.6rem", fontWeight:800, color:"white", letterSpacing:"-.03em", marginBottom:12 }}>Built for Reliable Scale</h2>
-                  <p style={{ color:"#64748b", fontSize:"1rem", maxWidth:500, margin:"0 auto", lineHeight:1.75 }}>Structured infrastructure for production AI workflows and enterprise delivery.</p>
+                  <p style={{ color:"rgba(255,255,255,.85)", fontSize:"1rem", maxWidth:500, margin:"0 auto", lineHeight:1.75 }}>Structured infrastructure for production AI workflows and enterprise delivery.</p>
                 </div>
               </FadeIn>
               <div style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3,1fr)", gap:14 }}>
@@ -1508,7 +1508,7 @@ function BarakaDigitalHub() {
                         <div className="font-display" style={{ fontSize:"1.4rem", fontWeight:800, color:"white" }}>{o.n}</div>
                       </div>
                       <div style={{ fontSize:".88rem", fontWeight:700, color:"white", marginBottom:6 }}>{o.l}</div>
-                      <p style={{ fontSize:".8rem", color:"#64748b", lineHeight:1.65 }}>{o.d}</p>
+                      <p style={{ fontSize:".8rem", color:"rgba(255,255,255,.78)", lineHeight:1.65 }}>{o.d}</p>
                     </div>
                   </FadeIn>
                 ))}
