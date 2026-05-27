@@ -1261,9 +1261,10 @@ function BarakaDigitalHub() {
         @keyframes floatB { 0%,100%{transform:translateY(0) rotate(-2deg)} 50%{transform:translateY(-8px) rotate(2deg)} }
         @keyframes pulse-slow { 0%,100%{opacity:1} 50%{opacity:.4} }
         @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
-        @keyframes typing { from { width: 0; } to { width: 52ch; } }
+        @keyframes typing { from { width: 0; } to { width: 100%; } }
         @keyframes blink-caret { 50% { opacity: 0; } }
-        .typing-effect { display: inline-block; overflow: hidden; white-space: nowrap; width: 0; border-right: .14em solid rgba(15,157,104,.95); animation: typing 3s steps(52,end) 0.2s forwards, blink-caret .75s step-end infinite; }
+        /* typing-effect now animates to container width so it wraps on small screens */
+        .typing-effect { display: inline-block; overflow: hidden; white-space: normal; width: 0; border-right: .14em solid rgba(15,157,104,.95); animation: typing 2.6s steps(40,end) 0.15s forwards, blink-caret .75s step-end infinite; }
         .ani-float { animation: float 5s ease-in-out infinite; }
         .ani-floatb { animation: floatB 6s ease-in-out 1.5s infinite; }
         .ani-pulse { animation: pulse-slow 3s ease-in-out infinite; }
@@ -1334,6 +1335,7 @@ function BarakaDigitalHub() {
           .stat-grid { grid-template-columns:1fr 1fr !important; }
           .hero-h1 { font-size:2.4rem !important; }
           .section-h2 { font-size:2rem !important; }
+          .typing-effect { animation: typing 3.2s steps(30,end) 0.15s forwards, blink-caret .75s step-end infinite; }
         }
         @media(max-width:768px) {
           .hidden-mobile { display:none !important; }
