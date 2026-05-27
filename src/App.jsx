@@ -1440,7 +1440,7 @@ function BarakaDigitalHub() {
             </div>
           </div>
 
-          <section className="section-tech-bg" style={{ padding:"88px 24px", backgroundImage:"url('/background2.jpg')", backgroundSize:"cover", backgroundRepeat:"no-repeat", backgroundPosition:"center center" }}>
+          <section className="section-tech-bg" style={{ padding:"88px 24px", backgroundColor:"#0f172a", backgroundImage:"url('/background2.jpg')", backgroundSize:"cover", backgroundRepeat:"no-repeat", backgroundPosition:"center center" }}>
             <div style={{ maxWidth:1280, margin:"0 auto" }}>
               <FadeIn>
                 <div style={{ textAlign:"center", marginBottom:52 }}>
@@ -1482,7 +1482,7 @@ function BarakaDigitalHub() {
             </div>
           </section>
 
-          <section style={{ padding:"88px 24px", position:"relative", overflow:"hidden", backgroundImage:"url('background1.png')", backgroundSize:"cover", backgroundRepeat:"no-repeat", backgroundPosition:"center center" }}>
+          <section style={{ padding:"88px 24px", position:"relative", overflow:"hidden", backgroundImage:"url('/background1.png')", backgroundSize:"cover", backgroundRepeat:"no-repeat", backgroundPosition:"center center", backgroundColor: "#0f172a" }}>
             <div style={{ maxWidth:1100, margin:"0 auto", position:"relative", zIndex:1 }}>
               <FadeIn>
                 <div style={{ textAlign:"center", marginBottom:52 }}>
@@ -1654,10 +1654,6 @@ function BarakaDigitalHub() {
             <div>
               <img src="/footerlogo.png" alt="Baraka Digital Hub footer logo" style={{ height:52, width:"auto", marginBottom:18 }} />
               <p style={{ color:"rgba(255,255,255,.75)", maxWidth:360, lineHeight:1.8, marginBottom:24 }}>Professional AI data and digital operations delivered with social impact from Nairobi to global teams.</p>
-              <div style={{ display:"flex", flexDirection:isMobile ? "column" : "row", gap:12, flexWrap:"wrap" }}>
-                <a href="mailto:hello@barakadigitalhub.com" style={{ color:"white", textDecoration:"none", background:"rgba(255,255,255,.08)", padding:"10px 16px", borderRadius:12, fontSize:"0.95rem" }}>hello@barakadigitalhub.com</a>
-                <span style={{ color:"rgba(255,255,255,.6)", fontSize:"0.95rem", alignSelf:"center" }}>Nairobi, Kenya</span>
-              </div>
             </div>
 
             <div>
