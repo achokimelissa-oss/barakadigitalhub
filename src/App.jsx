@@ -1373,11 +1373,11 @@ function BarakaDigitalHub() {
             <div className="page-container" style={{ position:"relative", zIndex:1 }}>
               <div className="hero-grid" style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap:56, alignItems:"center" }}>
                 <div>
-                  <div style={{ display:"inline-flex", alignItems:"center", gap:8, background:"rgba(29,78,216,.08)", border:"1px solid rgba(29,78,216,.15)", borderRadius:100, padding:"7px 16px", marginBottom:18 }}>
-                    <span className="ani-pulse" style={{ width:7, height:7, borderRadius:"50%", background:"#0f9d68", display:"inline-block" }} />
-                    <span style={{ fontSize:".75rem", fontWeight:700, color:"#1d4ed8", letterSpacing:".05em", textTransform:"uppercase" }}>Empowering Futures Through Technology</span>
+                  <div style={{ display:"inline-flex", alignItems:"center", gap:10, background:"linear-gradient(135deg, rgba(14,165,233,.16), rgba(15, 123, 255, .08))", border:"1px solid rgba(14,165,233,.28)", borderRadius:100, padding:"10px 20px", marginBottom:18, boxShadow:"0 18px 40px rgba(15,23,42,.08)" }}>
+                    <span className="ani-pulse" style={{ width:8, height:8, borderRadius:"50%", background:"#0f9d68", display:"inline-block", boxShadow:"0 0 0 4px rgba(15,23,42,.06)" }} />
+                    <span style={{ fontSize:"0.85rem", fontWeight:800, color:"#0f9d68", letterSpacing:"0.12em", textTransform:"uppercase", textShadow:"0 1px 2px rgba(15,23,42,.12)" }}>Empowering Futures Through Technology</span>
                   </div>
-                  <h1 className="hero-h1 font-display" style={{ fontSize:"4.2rem", fontWeight:900, lineHeight:1.02, letterSpacing:"-.02em", color:"#0f172a", marginBottom:18 }}>
+                  <h1 className="hero-h1 font-display" style={{ fontSize:"4.2rem", fontWeight:900, lineHeight:1.02, letterSpacing:"-.02em", color:"#0f172a", marginBottom:18, textShadow:"0 4px 20px rgba(15,23,42,.05)" }}>
                     AI Training & Digital Operations
                     <br />
                     <span style={{ background:"linear-gradient(90deg,#1d4ed8,#06b6d4,#0f9d68)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", backgroundClip:"text", fontWeight:900 }}>Built for Scale</span>
@@ -1623,29 +1623,6 @@ function BarakaDigitalHub() {
 
           
         </>
-      )}
-
-      {page !== "pilot" && (
-        <button onClick={() => navigate("pilot")} style={{
-          position: "fixed",
-          right: 20,
-          bottom: 20,
-          zIndex: 400,
-          background: "linear-gradient(135deg,#1d4ed8,#06b6d4)",
-          color: "white",
-          border: "none",
-          borderRadius: 999,
-          padding: "12px 16px",
-          display: "flex",
-          alignItems: "center",
-          gap: 8,
-          boxShadow: "0 12px 36px rgba(29,78,216,0.28)",
-          cursor: "pointer",
-          fontWeight: 700,
-          fontFamily: "inherit",
-        }}>
-          Start Pilot <ArrowRight size={16} />
-        </button>
       )}
 
       <footer style={{ background:"linear-gradient(180deg,#021024,#020617)", padding:"64px 24px 36px", borderTop:"1px solid rgba(255,255,255,.08)" }}>
