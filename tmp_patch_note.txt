@@ -1,0 +1,1 @@
+patching files: main.jsx and App.jsx to use react-router; wrapping App in BrowserRouter and replacing internal page state with Routes mapped to src/pages components.

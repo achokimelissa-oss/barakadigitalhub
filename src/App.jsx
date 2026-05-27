@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 
 const ArrowRight = ({size=16}) => (<svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>);
@@ -1651,7 +1652,7 @@ function BarakaDigitalHub() {
         <div className="page-container">
           <div style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr 280px", gap:28, alignItems:"start", marginBottom:28 }}>
             <div>
-              <img src="/logo.png" alt="Baraka Digital Hub logo" style={{ height:48, width:"auto", marginBottom:14 }} />
+              <img src="/footerlogo.png" alt="Baraka Digital Hub footer logo" style={{ height:48, width:"auto", marginBottom:14 }} />
               <div style={{ display:"flex", flexDirection:"column", gap:6 }}>
                 <div style={{ display:"flex", flexWrap:"wrap", gap:12, marginTop:8 }}>
                 </div>
