@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router, NavLink, Routes, Route } from "react-router-dom";
-import { HelmetProvider } from "react-helmet-async";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Impact from "./pages/Impact";
@@ -26,9 +25,8 @@ function App() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <HelmetProvider>
-      <Router>
-        <div className="app-shell">
+    <Router>
+      <div className="app-shell">
         <header className="site-header">
           <div className="brand">
             <img src={logo} alt="Baraka Digital Hub logo" className="logo" />
@@ -110,8 +108,7 @@ function App() {
           <span>Back to top</span>
         </button>
       </div>
-      </Router>
-    </HelmetProvider>
+    </Router>
   );
 }
 
