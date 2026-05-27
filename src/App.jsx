@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router, NavLink, Routes, Route } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Impact from "./pages/Impact";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Careers from "./pages/Careers";
 import Privacy from "./pages/Privacy";
 import NotFound from "./pages/NotFound";
 
@@ -24,8 +26,9 @@ function App() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <Router>
-      <div className="app-shell">
+    <HelmetProvider>
+      <Router>
+        <div className="app-shell">
         <header className="site-header">
           <div className="brand">
             <img src={logo} alt="Baraka Digital Hub logo" className="logo" />
@@ -42,6 +45,7 @@ function App() {
             <NavLink to="/services">Services</NavLink>
             <NavLink to="/impact">Social Impact</NavLink>
             <NavLink to="/about">About</NavLink>
+            <NavLink to="/careers">Careers</NavLink>
             <NavLink to="/contact" className="button primary">
               Start Pilot
             </NavLink>
@@ -54,6 +58,7 @@ function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/impact" element={<Impact />} />
             <Route path="/about" element={<About />} />
+            <Route path="/careers" element={<Careers />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
@@ -105,7 +110,8 @@ function App() {
           <span>Back to top</span>
         </button>
       </div>
-    </Router>
+      </Router>
+    </HelmetProvider>
   );
 }
 

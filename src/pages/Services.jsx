@@ -1,6 +1,15 @@
+import { Helmet } from "react-helmet-async";
+
 function Services() {
   return (
     <>
+      <Helmet>
+        <title>AI Data Labeling & Transcription Services | Baraka Digital Hub</title>
+        <meta
+          name="description"
+          content="High-accuracy AI data labeling, transcription, annotation, and digital workforce solutions for global businesses."
+        />
+      </Helmet>
       <section className="section-block service-hero section-intro section-tech-bg">
         <div className="text-block">
           <p className="highlight-pill">Our Services</p>

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 function StatCard({ endValue, suffix, title }) {
   const ref = useRef(null);
@@ -56,6 +57,13 @@ function StatCard({ endValue, suffix, title }) {
 function Impact() {
   return (
     <>
+      <Helmet>
+        <title>Our Impact | Baraka Digital Hub</title>
+        <meta
+          name="description"
+          content="Creating jobs, empowering youth, and driving community impact through technology and digital opportunities."
+        />
+      </Helmet>
       <section className="section-block impact-hero section-intro">
         <div className="text-block">
           <p className="highlight-pill">Social Impact</p>

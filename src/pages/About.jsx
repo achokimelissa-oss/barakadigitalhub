@@ -1,6 +1,15 @@
+import { Helmet } from "react-helmet-async";
+
 function About() {
   return (
     <>
+      <Helmet>
+        <title>About Us | Baraka Digital Hub</title>
+        <meta
+          name="description"
+          content="Learn how Baraka Digital Hub empowers businesses through AI-powered digital solutions and youth employment."
+        />
+      </Helmet>
       <section className="section-block about-hero section-intro">
         <div className="text-block">
           <p className="highlight-pill">About Baraka</p>

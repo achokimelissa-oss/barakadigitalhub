@@ -1,8 +1,21 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 function Home() {
   return (
-    <section className="hero">
+    <>
+      <Helmet>
+        <title>Baraka Digital Hub | AI Data & Digital Solutions</title>
+        <meta
+          name="description"
+          content="Empowering businesses with AI data labeling, transcription, and digital solutions while creating opportunities for African youth."
+        />
+        <meta
+          name="keywords"
+          content="AI data labeling, transcription, annotation, AI training data, outsourcing Africa"
+        />
+      </Helmet>
+      <section className="hero">
       <div className="hero-copy">
         <p className="eyebrow">Social Impact</p>
         <h2 className="gradient-text">Work That Creates Real Change</h2>
@@ -23,6 +36,7 @@ function Home() {
         </div>
       </div>
     </section>
+    </>
   );
 }
 
