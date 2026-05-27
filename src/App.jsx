@@ -1261,6 +1261,9 @@ function BarakaDigitalHub() {
         @keyframes floatB { 0%,100%{transform:translateY(0) rotate(-2deg)} 50%{transform:translateY(-8px) rotate(2deg)} }
         @keyframes pulse-slow { 0%,100%{opacity:1} 50%{opacity:.4} }
         @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+        @keyframes typing { from { width: 0; } to { width: 37ch; } }
+        @keyframes blink-caret { 50% { opacity: 0; } }
+        .typing-effect { display: inline-block; overflow: hidden; white-space: nowrap; width: 0; border-right: .14em solid rgba(15,157,104,.95); animation: typing 2.4s steps(37,end) 0.4s forwards, blink-caret .75s step-end infinite; }
         .ani-float { animation: float 5s ease-in-out infinite; }
         .ani-floatb { animation: floatB 6s ease-in-out 1.5s infinite; }
         .ani-pulse { animation: pulse-slow 3s ease-in-out infinite; }
@@ -1375,7 +1378,7 @@ function BarakaDigitalHub() {
                 <div>
                   <div style={{ display:"inline-flex", alignItems:"center", gap:10, background:"linear-gradient(135deg, rgba(14,165,233,.16), rgba(15, 123, 255, .08))", border:"1px solid rgba(14,165,233,.28)", borderRadius:100, padding:"10px 20px", marginBottom:18, boxShadow:"0 18px 40px rgba(15,23,42,.08)" }}>
                     <span className="ani-pulse" style={{ width:8, height:8, borderRadius:"50%", background:"#0f9d68", display:"inline-block", boxShadow:"0 0 0 4px rgba(15,23,42,.06)" }} />
-                    <span style={{ fontSize:"0.85rem", fontWeight:800, color:"#0f9d68", letterSpacing:"0.12em", textTransform:"uppercase", textShadow:"0 1px 2px rgba(15,23,42,.12)" }}>Empowering Futures Through Technology</span>
+                    <span className="typing-effect" style={{ fontSize:"0.85rem", fontWeight:800, color:"#0f9d68", letterSpacing:"0.12em", textTransform:"uppercase", textShadow:"0 1px 2px rgba(15,23,42,.12)" }}>Empowering Futures Through Technology</span>
                   </div>
                   <h1 className="hero-h1 font-display" style={{ fontSize:"4.2rem", fontWeight:900, lineHeight:1.02, letterSpacing:"-.02em", color:"#0f172a", marginBottom:18, textShadow:"0 4px 20px rgba(15,23,42,.05)" }}>
                     AI Training & Digital Operations
