@@ -1268,6 +1268,16 @@ function BarakaDigitalHub() {
         .ani-floatb { animation: floatB 6s ease-in-out 1.5s infinite; }
         .ani-pulse { animation: pulse-slow 3s ease-in-out infinite; }
         .ani-marquee { animation: marquee 24s linear infinite; }
+        .typing-effect { display: inline-block; overflow: hidden; white-space: nowrap; width: 0; border-right: .14em solid rgba(15,157,104,.95); animation: typing 2.4s steps(37,end) 0.4s forwards, blink-caret .75s step-end infinite; }
+        .hero-tech-overlay { position: absolute; inset: 0; background: radial-gradient(circle at top left, rgba(59,130,246,.16), transparent 22%), radial-gradient(circle at bottom right, rgba(16,185,129,.14), transparent 18%); pointer-events: none; }
+        .hero-grid { position: relative; }
+        .hero-grid::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(rgba(14,165,233,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(14,165,233,.06) 1px, transparent 1px); background-size: 120px 120px; pointer-events: none; opacity: .35; }
+        .code-panel { background: rgba(7,15,30,.94); border: 1px solid rgba(14,165,233,.25); color: #e2e8f0; border-radius: 28px; box-shadow: 0 28px 90px rgba(10,22,51,.22); overflow: hidden; }
+        .code-panel-header { display: flex; align-items: center; gap: 10px; margin-bottom: 22px; }
+        .code-dot { width: 10px; height: 10px; border-radius: 50%; background: #0ea5e9; box-shadow: 0 0 0 4px rgba(14,165,233,.18); }
+        .code-line { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; border-radius: 14px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08); margin-bottom: 10px; }
+        .code-line span { font-size: .88rem; color: #cbd5e1; }
+        .code-line .label { color: #a5b4fc; font-weight: 700; }
         .dot-grid { background-image: radial-gradient(circle, #94a3b820 1px, transparent 1px); background-size: 28px 28px; }
         .section-tech-bg { position: relative; overflow: hidden; background: linear-gradient(180deg, #f8fafc 0%, #ecf5ff 100%); }
         .section-tech-bg::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 14% 22%, rgba(155,109,255,0.22) 0%, transparent 36%), radial-gradient(circle at 86% 18%, rgba(16,185,129,0.18) 0%, transparent 34%), radial-gradient(circle at 52% 54%, rgba(59,130,246,0.14) 0%, transparent 38%); background-repeat: no-repeat; pointer-events: none; animation: tech-bg-glow 18s ease-in-out infinite; }
@@ -1371,6 +1381,7 @@ function BarakaDigitalHub() {
         <>
           <section style={{ paddingTop:120, paddingBottom:80, paddingLeft:24, paddingRight:24, position:"relative", overflow:"visible", background:"linear-gradient(160deg,#f8fafc 0%,#eff6ff 50%,#ecfdf5 100%)" }}>
             <div className="dot-grid" style={{ position:"absolute", inset:0, opacity:.6 }} />
+            <div className="hero-tech-overlay" />
             <div style={{ position:"absolute", top:"-10%", right: isMobile ? "-20%" : "-5%", width: isMobile ? 320 : 600, height: isMobile ? 320 : 600, borderRadius:"50%", background:"radial-gradient(circle,rgba(29,78,216,.07) 0%,transparent 70%)", pointerEvents: "none" }} />
             <div style={{ position:"absolute", bottom: isMobile ? "10%" : "-10%", left: isMobile ? "-20%" : "-5%", width: isMobile ? 280 : 500, height: isMobile ? 280 : 500, borderRadius:"50%", background:"radial-gradient(circle,rgba(15,157,104,.07) 0%,transparent 70%)", pointerEvents: "none" }} />
             <div className="page-container" style={{ position:"relative", zIndex:1 }}>
@@ -1402,26 +1413,28 @@ function BarakaDigitalHub() {
                   </div>
                 </div>
                 <div className="hero-right" style={{ position:"relative" }}>
-                  {/* removed floating stat cards for clarity */}
-                  <div style={{ background:"rgba(255,255,255,.72)", backdropFilter:"blur(20px)", border:"1px solid rgba(255,255,255,.9)", borderRadius:28, boxShadow:"0 24px 80px rgba(0,0,0,.1)", overflow:"visible" }}>
-                    <div style={{ height:3, background:"linear-gradient(90deg,#1d4ed8,#06b6d4,#0f9d68)" }} />
-                    <div style={{ padding:28 }}>
+                  <div className="code-panel">
+                    <div className="code-panel-header" style={{ padding: '24px 28px 0 28px' }}>
+                      <div className="code-dot" />
+                      <div className="code-dot" style={{ background: '#22c55e' }} />
+                      <div className="code-dot" style={{ background: '#f97316' }} />
+                      <div style={{ marginLeft:'auto', fontSize:'.8rem', color:'#94a3b8', fontWeight:600, letterSpacing:'.08em', textTransform:'uppercase' }}>AI Ops</div>
+                    </div>
+                    <div style={{ height:3, background:'linear-gradient(90deg,#1d4ed8,#06b6d4,#0f9d68)', margin:'0 28px 22px 28px', borderRadius:999 }} />
+                    <div style={{ padding:'0 28px 28px 28px' }}>
                       <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between", marginBottom:22 }}>
                         <div>
                           <div style={{ fontSize:".7rem", color:"#94a3b8", fontWeight:600, textTransform:"uppercase", letterSpacing:".06em", marginBottom:3 }}>Operational Capacity</div>
-                          <div className="font-display" style={{ fontSize:"1.1rem", fontWeight:800, color:"#0f172a" }}>AI Workforce Infrastructure</div>
+                          <div className="font-display" style={{ fontSize:"1.1rem", fontWeight:800, color:"#e2e8f0" }}>AI Workforce Infrastructure</div>
                         </div>
                       </div>
                       {["Computer Vision Annotation","Natural Language Processing","Audio & Speech Processing","LLM Training & RLHF","Transcription & QA","Virtual Assistance & BPO"].map((item,i)=>(
-                        <div key={i} style={{ display:"flex", alignItems:"center", justifyContent:"space-between", border:"1px solid #f1f5f9", borderRadius:10, padding:"10px 14px", background:"rgba(255,255,255,.7)", marginBottom: i<5?8:0 }}>
-                          <div style={{ display:"flex", alignItems:"center", gap:9 }}>
-                            <div style={{ width:7, height:7, borderRadius:"50%", background:"linear-gradient(135deg,#0f9d68,#06b6d4)", flexShrink:0 }} />
-                            <span style={{ fontSize:".83rem", fontWeight:500, color:"#334155" }}>{item}</span>
-                          </div>
-                          <CheckCircle2 size={14} style={{ color:"#1d4ed8", flexShrink:0 }} />
+                        <div key={i} className="code-line">
+                          <span className="label">{item}</span>
+                          <span>✓</span>
                         </div>
                       ))}
-                      <button onClick={() => navigate("workflow")} style={{ marginTop:16, display:"inline-flex", alignItems:"center", gap:6, color:"#1d4ed8", fontWeight:600, fontSize:".85rem", background:"none", border:"none", cursor:"pointer", fontFamily:"inherit" }}>
+                      <button onClick={() => navigate("workflow")} style={{ marginTop:16, display:"inline-flex", alignItems:"center", gap:6, color:"#7dd3fc", fontWeight:600, fontSize:".85rem", background:"none", border:"1px solid rgba(125,211,252,.4)", borderRadius:12, padding:"10px 16px", cursor:"pointer", fontFamily:"inherit" }}>
                         View Workflow Process <ChevronRight size={15} />
                       </button>
                     </div>
