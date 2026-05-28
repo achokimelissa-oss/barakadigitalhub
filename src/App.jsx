@@ -630,13 +630,13 @@ const WorkflowPage = ({ goBack, setPage, isMobile }) => {
             <div style={{ display: "grid", gap: 18 }}>
               <div style={{ background: "linear-gradient(135deg, rgba(14,165,233,.98), rgba(16,185,129,.92))", color: "white", borderRadius: 28, padding: "28px 26px", boxShadow: "0 28px 80px rgba(15,23,42,.16)" }}>
                 <div style={{ fontSize: ".85rem", fontWeight: 700, letterSpacing: ".18em", textTransform: "uppercase", marginBottom: 14, opacity: .92 }}>Pilot readiness</div>
-                <h2 className="font-display" style={{ fontSize: "1.72rem", fontWeight: 800, margin: 0, lineHeight: 1.1, marginBottom: 16 }}>Validate quality before scale</h2>
-                <p style={{ color: "rgba(255,255,255,.92)", lineHeight: 1.75, marginBottom: 22 }}>Our pilot phase proves the process, optimizes guidelines, and de-risks production delivery with real feedback and performance metrics.</p>
+                  <h2 className="font-display" style={{ fontSize: "1.72rem", fontWeight: 800, margin: 0, lineHeight: 1.1, marginBottom: 16, color: "white" }}>Validate quality before scale</h2>
+                  <p style={{ color: "rgba(255,255,255,.92)", lineHeight: 1.75, marginBottom: 22 }}>During the pilot we validate processes, refine guidelines, and reduce production risk using real-world feedback and measurable performance metrics.</p>
               </div>
-              <div style={{ background: "white", borderRadius: 28, padding: "28px 26px", border: "1px solid #e2e8f0", boxShadow: "0 24px 60px rgba(15,23,42,.08)" }}>
-                <div style={{ fontSize: ".85rem", fontWeight: 700, letterSpacing: ".18em", textTransform: "uppercase", marginBottom: 14, color: "#0f172a" }}>Discovery planning</div>
-                <h2 className="font-display" style={{ fontSize: "1.72rem", fontWeight: 800, margin: 0, lineHeight: 1.1, marginBottom: 16 }}>Start your project plan</h2>
-                <p style={{ color: "#475569", lineHeight: 1.75, marginBottom: 22 }}>We map your dataset, service mix, compliance needs and timing into a clear operational plan.</p>
+              <div style={{ background: "#0f9d68", borderRadius: 28, padding: "28px 26px", boxShadow: "0 24px 60px rgba(15,23,42,.08)" }}>
+                <div style={{ fontSize: ".85rem", fontWeight: 700, letterSpacing: ".18em", textTransform: "uppercase", marginBottom: 14, color: "white" }}>Discovery planning</div>
+                <h2 className="font-display" style={{ fontSize: "1.72rem", fontWeight: 800, margin: 0, lineHeight: 1.1, marginBottom: 16, color: "white" }}>Start your project plan</h2>
+                <p style={{ color: "rgba(255,255,255,.92)", lineHeight: 1.75, marginBottom: 22 }}>We translate your dataset requirements, selected services, compliance constraints, and timeline into a practical, time-bound operational plan.</p>
               </div>
             </div>
           </div>
