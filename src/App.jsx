@@ -1862,7 +1862,7 @@ function BarakaDigitalHub() {
               </div>
               <div style={{ marginTop: 24, color: 'rgba(255,255,255,.75)', fontSize: '0.95rem', lineHeight: 1.8 }}>
                 <p style={{ margin: 0 }}>projects@barakadigitalhub.com</p>
-                <p style={{ margin: 0 }}>+254 700 000 000</p>
+                <p style={{ margin: 0 }}>+254 793 842 347</p>
                 <p style={{ margin: 0 }}>Nairobi, Kenya</p>
               </div>
             </div>
