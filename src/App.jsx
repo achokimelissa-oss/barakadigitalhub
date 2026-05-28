@@ -677,6 +677,18 @@ const WorkflowPage = ({ goBack, setPage, isMobile }) => {
             ))}
           </div>
         </FadeIn>
+        <FadeIn delay={0.2}>
+          <div style={{ marginTop: 42, background: "white", borderRadius: 28, border: "1px solid #e2e8f0", boxShadow: "0 28px 70px rgba(15,23,42,.08)", padding: "36px 34px", display: "grid", gap: 24, alignItems: "center" }}>
+            <div style={{ maxWidth: 760 }}>
+              <div style={{ display: "inline-flex", alignItems: "center", gap: 10, fontSize: ".85rem", fontWeight: 700, letterSpacing: ".18em", textTransform: "uppercase", color: "#1d4ed8", marginBottom: 12 }}>Ready to move forward?</div>
+              <h2 className="font-display" style={{ fontSize: "2rem", fontWeight: 900, color: "#0f172a", lineHeight: 1.05, marginBottom: 18 }}>One professional delivery path, clearly mapped.</h2>
+              <p style={{ color: "#475569", fontSize: "1rem", lineHeight: 1.8, marginBottom: 0 }}>We combine scoping, pilot validation, production execution, and verified delivery into one streamlined workflow. Reach out to align on requirements, timing, and the right delivery model for your project.</p>
+            </div>
+            <button onClick={() => setPage("contact")} style={{ width: isMobile ? "100%" : "fit-content", background: "#1d4ed8", color: "white", border: "none", borderRadius: 14, padding: "16px 28px", fontWeight: 700, cursor: "pointer", fontFamily: "inherit" }}>
+              Contact us to begin
+            </button>
+          </div>
+        </FadeIn>
       </div>
     </div>
   );
