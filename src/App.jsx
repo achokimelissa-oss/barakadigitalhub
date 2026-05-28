@@ -1535,11 +1535,20 @@ function BarakaDigitalHub() {
                     <div style={{ padding:'0 28px 28px 28px' }}>
                       <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between", marginBottom:22 }}>
                         <div>
-                          <div style={{ fontSize:".7rem", color:"#94a3b8", fontWeight:600, textTransform:"uppercase", letterSpacing:".06em", marginBottom:3 }}>Operational Capacity</div>
-                          <div className="font-display" style={{ fontSize:"1.1rem", fontWeight:800, color:"#e2e8f0" }}>AI Workforce Infrastructure</div>
+                          <div style={{ fontSize:".7rem", color:"#94a3b8", fontWeight:600, textTransform:"uppercase", letterSpacing:".06em", marginBottom:3 }}>Operational Standards</div>
+                          <div className="font-display" style={{ fontSize:"1.1rem", fontWeight:800, color:"#e2e8f0" }}>AI-ready delivery protocols</div>
                         </div>
                       </div>
-                      {["Computer Vision Annotation","Natural Language Processing","Audio & Speech Processing","LLM Training & RLHF","Transcription & QA","Virtual Assistance & BPO"].map((item,i)=>(
+                      {[
+                        "Human-in-the-loop quality control",
+                        "Scalable African digital workforce",
+                        "Secure data handling practices",
+                        "Transparent communication & reporting",
+                        "Fast turnaround with structured QA",
+                        "Flexible workflows tailored to client operations",
+                        "Enterprise-ready delivery standards across all services"
+                      ].map((item,i)=>(
+
                         <div key={i} className="code-line">
                           <span className="label">{item}</span>
                           <span>✓</span>
