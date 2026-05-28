@@ -1732,18 +1732,18 @@ function BarakaDigitalHub() {
                       <span style={{ fontSize:".7rem", fontWeight:700, color:"#d97706", letterSpacing:".07em", textTransform:"uppercase" }}>Community Impact</span>
                     </div>
                     <h2 className="font-display" style={{ fontSize:"2.2rem", fontWeight:800, color:"#0f172a", letterSpacing:"-.03em", marginBottom:16, lineHeight:1.15 }}>Work That Creates Real Change</h2>
-                    <p style={{ color:"#64748b", fontSize:".92rem", lineHeight:1.85, marginBottom:20 }}>Baraka Digital Hub was built as a long-term sustainability model — creating structured digital employment opportunities while supporting the broader mission of Baraka Children's Home through commercially competitive AI services.</p>
+                    <p style={{ color:"#64748b", fontSize:".92rem", lineHeight:1.85, marginBottom:20 }}>A sustainable social impact model that pairs commercial AI services with structured digital work, supporting Baraka Children’s Home while expanding opportunity for local youth.</p>
                     <button onClick={() => navigate("impact")} style={{ display:"inline-flex", alignItems:"center", gap:7, color:"#1d4ed8", fontWeight:700, fontSize:".88rem", background:"none", border:"none", cursor:"pointer", fontFamily:"inherit" }}>
                       Read about our impact <ChevronRight size={15} />
                     </button>
                   </div>
                   <div style={{ display:"flex", flexDirection:"column", gap:14 }}>
-                    {[{n:"67%",l:"Youth unemployment in informal settlements",c:"#1d4ed8"},{n:"33%",l:"Young people without formal employment",c:"#0f9d68"},{n:"<5%",l:"Children’s home youths in sustainable careers",c:"#d97706"}].map((s,i)=>(
+                    {[{n:"67%",l:"Youth unemployment in informal settlements",c:"#1d4ed8",d:"Digital work pathways in underserved communities."},{n:"33%",l:"Young people without formal employment",c:"#0f9d68",d:"Training and employer partnerships that build real opportunity."},{n:"<5%",l:"Children’s Home youths in sustainable careers",c:"#d97706",d:"Focused career support for Baraka Home residents."}].map((s,i)=>(
                       <div key={i} style={{ background:"white", borderRadius:18, padding:"26px 28px", border:"1px solid #f1f5f9", boxShadow:"0 10px 30px rgba(15,23,42,0.07)", display:"flex", alignItems:"flex-start", gap:18, minHeight:140 }}>
                         <div style={{ flexShrink:0, width:72, height:72, borderRadius:16, background:s.c, display:"flex", alignItems:"center", justifyContent:"center", color:"white", fontWeight:800, fontSize:"1.5rem" }}>{s.n}</div>
                         <div>
                           <p style={{ fontSize:"0.96rem", color:"#0f172a", fontWeight:700, marginBottom:6 }}>{s.l}</p>
-                          <p style={{ fontSize:"0.88rem", color:"#64748b", lineHeight:1.75, margin:0 }}>We design programs and pathways that address these local challenges through jobs, training, and partnerships with employers.</p>
+                          <p style={{ fontSize:"0.88rem", color:"#64748b", lineHeight:1.75, margin:0 }}>{s.d}</p>
                         </div>
                       </div>
                     ))}
