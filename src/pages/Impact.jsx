@@ -64,8 +64,9 @@ function Impact() {
           content="Creating jobs, empowering youth, and driving community impact through technology and digital opportunities."
         />
       </Helmet>
-      <section className="section-block impact-hero section-intro">
-        <div className="text-block">
+      <section className="section-block impact-hero section-intro" style={{ position: "relative", overflow: "hidden", background: "linear-gradient(160deg,#f8fafc 0%,#eff6ff 50%,#ecfdf5 100%)" }}>
+        <div className="dot-grid" style={{ position: "absolute", inset: 0, opacity: .24, pointerEvents: "none" }} />
+        <div className="text-block" style={{ position: "relative", zIndex: 1 }}>
           <p className="highlight-pill">Social Impact</p>
           <h1>From Charity to Dignity. From Dependency to Opportunity.</h1>
           <p>
@@ -193,7 +194,7 @@ function Impact() {
         </div>
       </section>
 
-      <section className="section-block accent">
+      <section className="section-block accent impact-cta">
         <div className="text-block">
           <h3>Ready to build with purpose?</h3>
           <p>
@@ -205,7 +206,7 @@ function Impact() {
         </div>
       </section>
 
-      <section className="section-block accent" style={{ marginTop: 18 }}>
+      <section className="section-block accent impact-cta" style={{ marginTop: 18 }}>
         <div className="text-block">
           <h3>Bring impact into your next digital project</h3>
           <p>
