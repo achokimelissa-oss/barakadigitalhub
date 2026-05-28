@@ -528,9 +528,9 @@ const WorkflowPage = ({ goBack, setPage, isMobile }) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   const overview = [
     { title: "Strategic scoping", text: "Define dataset scope, quality standards, tooling, and delivery expectations before work begins.", accent: "#1d4ed8" },
-    { title: "Pilot validation", text: "Validate quality and edge-case handling with a calibrated pilot before scaling.", accent: "#7c3aed" },
-    { title: "Production execution", text: "Execute work in structured batches with real-time tracking and reporting.", accent: "#059669" },
-    { title: "QA & support", text: "Deliver verified outcomes with first-pass review, reporting, and continued support.", accent: "#f59e0b" }
+    { title: "Pilot validation", text: "Validate quality and edge-case handling before scaling.", accent: "#0f9d68" },
+    { title: "Production execution", text: "Execute work in structured batches with transparent tracking and reporting.", accent: "#1d4ed8" },
+    { title: "QA & support", text: "Deliver verified outcomes with first-pass review, reporting, and continued support.", accent: "#0f9d68" }
   ];
   const steps = [
     {
@@ -547,7 +547,7 @@ const WorkflowPage = ({ goBack, setPage, isMobile }) => {
       desc: "A pilot batch validates readiness, identifies edge cases, and calibrates the process before full deployment.",
       chips: ["Pilot batch", "QA benchmarking", "Client feedback", "Guideline refinement", "Workflow recalibration"],
       details: ["Partial visibility", "Occlusions", "Low-quality audio", "Accents", "Handwritten text", "Motion blur", "Low-light imagery", "Overlapping entities", "Ambiguous classes", "Multi-language transcription", "OCR anomalies", "Sensitive escalation"],
-      color: "#7c3aed",
+      color: "#0f9d68",
       banner: "We prove the process on the toughest cases before scaling to production."
     },
     {
@@ -556,7 +556,7 @@ const WorkflowPage = ({ goBack, setPage, isMobile }) => {
       desc: "We deploy specialized teams, onboard securely, and train every tasker to the project’s exact standards.",
       chips: ["AI annotators", "Transcription specialists", "QA reviewers", "OCR operators", "Moderation teams", "Supervisors"],
       details: ["Secure onboarding", "Tool training", "Monitoring", "Escalation", "Compliance"],
-      color: "#059669",
+      color: "#0f172a",
       banner: "Team structure is chosen for each service type, complexity, and turnaround requirement."
     },
     {
@@ -565,7 +565,7 @@ const WorkflowPage = ({ goBack, setPage, isMobile }) => {
       desc: "Tasks are run in balanced production batches with transparent progress tracking and operational reporting.",
       chips: ["Batch allocation", "Throughput tracking", "Daily reporting", "Workflow balancing", "Escalation handling"],
       details: ["Bounding box annotation", "Polygon segmentation", "NLP labeling", "Audio transcription", "OCR digitization", "Lead gen", "Content moderation"],
-      color: "#0ea5e9",
+      color: "#1d4ed8",
       banner: "Our execution model supports AI data, transcription, OCR, and digital operations workloads."
     },
     {
@@ -573,7 +573,7 @@ const WorkflowPage = ({ goBack, setPage, isMobile }) => {
       title: "100% First-Pass QA Review",
       desc: "Every deliverable goes through first-pass review for accuracy, consistency, and guideline compliance.",
       chips: ["Accuracy validation", "Format checks", "Compliance review", "Edge-case validation", "Revalidation"],
-      color: "#f59e0b",
+      color: "#0f9d68",
       banner: "Quality is embedded into the delivery pipeline, not added afterward."
     },
     {
@@ -581,7 +581,7 @@ const WorkflowPage = ({ goBack, setPage, isMobile }) => {
       title: "Error Logging & Continuous Recalibration",
       desc: "Errors are logged, categorized, and used to refine workflows, training, and quality controls.",
       chips: ["Error tracking", "Feedback loops", "Retraining", "Optimization", "Guideline updates"],
-      color: "#fb923c",
+      color: "#0f172a",
       banner: "Continuous improvement is built into every production cycle."
     },
     {
@@ -597,7 +597,7 @@ const WorkflowPage = ({ goBack, setPage, isMobile }) => {
       title: "Post-Delivery Support & Scaling",
       desc: "We remain available for revisions, scaling, and long-term operational support.",
       chips: ["Revisions", "Additional rounds", "Ongoing support", "Workforce scaling", "Partnerships"],
-      color: "#22c55e",
+      color: "#0f9d68",
       banner: "Ongoing collaboration keeps your operation steady and scalable."
     }
   ];
@@ -632,17 +632,11 @@ const WorkflowPage = ({ goBack, setPage, isMobile }) => {
                 <div style={{ fontSize: ".85rem", fontWeight: 700, letterSpacing: ".18em", textTransform: "uppercase", marginBottom: 14, opacity: .92 }}>Pilot readiness</div>
                 <h2 className="font-display" style={{ fontSize: "1.72rem", fontWeight: 800, margin: 0, lineHeight: 1.1, marginBottom: 16 }}>Validate quality before scale</h2>
                 <p style={{ color: "rgba(255,255,255,.92)", lineHeight: 1.75, marginBottom: 22 }}>Our pilot phase proves the process, optimizes guidelines, and de-risks production delivery with real feedback and performance metrics.</p>
-                <button onClick={() => navigate("pilot")} style={{ width: "100%", background: "white", color: "#0f172a", border: "none", borderRadius: 14, padding: "14px 18px", fontWeight: 700, cursor: "pointer", fontFamily: "inherit" }}>
-                  Request a pilot batch
-                </button>
               </div>
               <div style={{ background: "white", borderRadius: 28, padding: "28px 26px", border: "1px solid #e2e8f0", boxShadow: "0 24px 60px rgba(15,23,42,.08)" }}>
                 <div style={{ fontSize: ".85rem", fontWeight: 700, letterSpacing: ".18em", textTransform: "uppercase", marginBottom: 14, color: "#0f172a" }}>Discovery planning</div>
                 <h2 className="font-display" style={{ fontSize: "1.72rem", fontWeight: 800, margin: 0, lineHeight: 1.1, marginBottom: 16 }}>Start your project plan</h2>
                 <p style={{ color: "#475569", lineHeight: 1.75, marginBottom: 22 }}>We map your dataset, service mix, compliance needs and timing into a clear operational plan.</p>
-                <button onClick={() => navigate("contact")} style={{ width: "100%", background: "#1d4ed8", color: "white", border: "none", borderRadius: 14, padding: "14px 18px", fontWeight: 700, cursor: "pointer", fontFamily: "inherit" }}>
-                  Contact our team
-                </button>
               </div>
             </div>
           </div>
@@ -666,25 +660,17 @@ const WorkflowPage = ({ goBack, setPage, isMobile }) => {
                     ))}
                   </div>
                   {s.details && (
-                    <div style={{ background: "#f8fafc", borderRadius: 22, border: "1px solid #e2e8f0", padding: "24px" }}>
-                      <div style={{ fontWeight: 700, color: "#0f172a", marginBottom: 14 }}>Edge-case coverage</div>
-                      <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(2, minmax(0, 1fr))", gap: 14 }}>
-                        {s.details.map((detail, di) => (
-                          <div key={di} style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
-                            <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#0f172a", marginTop: 8, flexShrink: 0 }} />
-                            <p style={{ margin: 0, color: "#475569", fontSize: ".92rem", lineHeight: 1.7 }}>{detail}</p>
-                          </div>
-                        ))}
-                      </div>
+                    <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(2, minmax(0, 1fr))", gap: 14, marginBottom: 24 }}>
+                      {s.details.map((detail, di) => (
+                        <div key={di} style={{ background: "#f8fafc", borderRadius: 20, padding: "18px 16px", border: "1px solid #e2e8f0", color: "#475569", fontSize: ".92rem", lineHeight: 1.7 }}>
+                          {detail}
+                        </div>
+                      ))}
                     </div>
                   )}
-                  <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 20 }}>
-                    <button onClick={() => navigate("pilot")} style={{ background: "#1d4ed8", color: "white", border: "none", borderRadius: 14, padding: "12px 18px", fontWeight: 700, cursor: "pointer", fontFamily: "inherit" }}>
-                      Request pilot batch
-                    </button>
-                    <button onClick={() => navigate("contact")} style={{ background: "transparent", color: "#0f172a", border: "1px solid #cbd5e1", borderRadius: 14, padding: "12px 18px", fontWeight: 700, cursor: "pointer", fontFamily: "inherit" }}>
-                      Talk to operations
-                    </button>
+                  <div style={{ marginTop: 24, background: "#f8fafc", borderRadius: 22, border: "1px solid #e2e8f0", padding: "20px 22px" }}>
+                    <div style={{ fontWeight: 700, color: "#0f172a", marginBottom: 10 }}>What this means</div>
+                    <p style={{ margin: 0, color: "#475569", lineHeight: 1.8, fontSize: ".95rem" }}>{s.banner}</p>
                   </div>
                 </div>
               </div>
