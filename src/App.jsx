@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 
 const ArrowRight = ({size=16}) => (<svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>);
@@ -1293,12 +1293,32 @@ function BarakaDigitalHub() {
   const [nav, setNav] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth <= 720 : false);
+  const location = useLocation();
+
   useEffect(()=>{
     const onResize = () => setIsMobile(window.innerWidth <= 720);
     window.addEventListener('resize', onResize);
     onResize();
     return () => window.removeEventListener('resize', onResize);
   }, []);
+
+  useEffect(() => {
+    const map = {
+      '/': 'home',
+      '/services': 'services',
+      '/about': 'about',
+      '/careers': 'careers',
+      '/impact': 'impact',
+      '/contact': 'contact',
+      '/privacy': 'privacy',
+      '/pilot': 'pilot',
+      '/workflow': 'workflow',
+      '/operations': 'operations'
+    };
+    const p = map[location.pathname] || 'home';
+    setPage(p);
+  }, [location.pathname]);
+
   // navigation helper: updates state and browser URL
   const navigate = (p, { replace = false } = {}) => {
     setPage(p);
@@ -1391,7 +1411,7 @@ function BarakaDigitalHub() {
         .code-line { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; border-radius: 14px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08); margin-bottom: 10px; }
         .code-line span { font-size: .88rem; color: #cbd5e1; }
         .code-line .label { color: #a5b4fc; font-weight: 700; }
-        .dot-grid { background-image: radial-gradient(circle, #94a3b820 1px, transparent 1px); background-size: 28px 28px; }
+        .dot-grid { background-image: radial-gradient(circle, #94a3b820 1px, transparent 1px); background-size: 28px 28px; pointer-events: none; }
         .section-tech-bg { position: relative; overflow: hidden; background: linear-gradient(180deg, #f8fafc 0%, #ecf5ff 100%); }
         .section-tech-bg::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 14% 22%, rgba(155,109,255,0.22) 0%, transparent 36%), radial-gradient(circle at 86% 18%, rgba(16,185,129,0.18) 0%, transparent 34%), radial-gradient(circle at 52% 54%, rgba(59,130,246,0.14) 0%, transparent 38%); background-repeat: no-repeat; pointer-events: none; animation: tech-bg-glow 18s ease-in-out infinite; }
         .section-tech-bg::after { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(to bottom, transparent 0px, transparent 3px, rgba(0,0,0,0.012) 3px, rgba(0,0,0,0.012) 4px); opacity: 0; pointer-events: none; animation: tech-bg-stripes 12s ease-in-out infinite; }
@@ -1499,7 +1519,7 @@ function BarakaDigitalHub() {
       {page === "home" && (
         <>
           <section style={{ paddingTop:120, paddingBottom:80, paddingLeft:24, paddingRight:24, position:"relative", overflow:"visible", background:"linear-gradient(160deg,#f8fafc 0%,#eff6ff 50%,#ecfdf5 100%)" }}>
-            <div className="dot-grid" style={{ position:"absolute", inset:0, opacity:.6 }} />
+            <div className="dot-grid" style={{ position:"absolute", inset:0, opacity:.6, pointerEvents: "none" }} />
             <div className="hero-tech-overlay" />
             <div style={{ position:"absolute", top:"-10%", right: isMobile ? "-20%" : "-5%", width: isMobile ? 320 : 600, height: isMobile ? 320 : 600, borderRadius:"50%", background:"radial-gradient(circle,rgba(29,78,216,.07) 0%,transparent 70%)", pointerEvents: "none" }} />
             <div style={{ position:"absolute", bottom: isMobile ? "10%" : "-10%", left: isMobile ? "-20%" : "-5%", width: isMobile ? 280 : 500, height: isMobile ? 280 : 500, borderRadius:"50%", background:"radial-gradient(circle,rgba(15,157,104,.07) 0%,transparent 70%)", pointerEvents: "none" }} />
@@ -1610,7 +1630,7 @@ function BarakaDigitalHub() {
           </section>
 
           <section style={{ padding:"72px 24px", background:"linear-gradient(135deg,#1d4ed8 0%,#0ea5e9 50%,#0f9d68 100%)", position:"relative", overflow:"visible" }}>
-            <div style={{ position:"absolute", inset:0, opacity:.07, backgroundImage:"linear-gradient(to right,white 1px,transparent 1px),linear-gradient(to bottom,white 1px,transparent 1px)", backgroundSize:"40px 40px" }} />
+            <div style={{ position:"absolute", inset:0, opacity:.07, backgroundImage:"linear-gradient(to right,white 1px,transparent 1px),linear-gradient(to bottom,white 1px,transparent 1px)", backgroundSize:"40px 40px", pointerEvents: "none" }} />
             <div className="stats-band" style={{ maxWidth:1100, margin:"0 auto", display:"grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(4,1fr)", gap:24, position:"relative", zIndex:1 }}>
               {[{val:"98",suf:"%",l:"Avg Accuracy"},{val:"10",suf:"K+ hrs",l:"Weekly Throughput"},{val:"80",suf:"+",l:"Trained Taskers"},{val:"4",suf:"hr",l:"Avg Response Time"}].map((s,i)=>(
                 <div key={i} style={{ textAlign:"center" }}>
@@ -1761,7 +1781,7 @@ function BarakaDigitalHub() {
           </section>
 
           <section style={{ padding:"88px 24px", background:"linear-gradient(160deg,#eff6ff,#ecfdf5)", position:"relative", overflow:"visible" }}>
-            <div className="dot-grid" style={{ position:"absolute", inset:0, opacity:.5 }} />
+            <div className="dot-grid" style={{ position:"absolute", inset:0, opacity:.5, pointerEvents: "none" }} />
             <div style={{ maxWidth:680, margin:"0 auto", textAlign:"center", position:"relative", zIndex:1 }}>
               <FadeIn>
                 <div style={{ display:"inline-flex", alignItems:"center", gap:8, background:"rgba(29,78,216,.08)", border:"1px solid rgba(29,78,216,.15)", borderRadius:100, padding:"6px 16px", marginBottom:22 }}>
