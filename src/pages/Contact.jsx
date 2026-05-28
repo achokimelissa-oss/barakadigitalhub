@@ -1,8 +1,16 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 function Contact() {
   return (
     <>
+      <Helmet>
+        <title>Contact | Baraka Digital Hub</title>
+        <meta
+          name="description"
+          content="Contact Baraka Digital Hub for AI data services, transcription, digital operations, and impact-driven partnerships."
+        />
+      </Helmet>
       <section className="section-block contact-hero section-intro">
         <div className="text-block">
           <p className="highlight-pill">Get in touch</p>
@@ -23,6 +31,11 @@ function Contact() {
           <p className="section-copy">
             Pick the right lane, then share the essentials in the form below.
           </p>
+          <address className="section-copy" style={{ marginTop: '1.5rem', color: '#334155', lineHeight: 1.8 }}>
+            Email: <a href="mailto:projects@barakadigitalhub.com" style={{ color: '#1d4ed8', textDecoration: 'none' }}>projects@barakadigitalhub.com</a><br />
+            Phone: <a href="tel:+254700000000" style={{ color: '#1d4ed8', textDecoration: 'none' }}>+254 700 000 000</a><br />
+            Location: Nairobi, Kenya
+          </address>
         </div>
 
         <div className="card-grid contact-grid contact-grid--compact">
@@ -55,7 +68,7 @@ function Contact() {
           </article>
         </div>
 
-        <p className="contact-note">No emails. No phones. Just a clean form and a quick reply.</p>
+        <p className="contact-note">We reply quickly to direct email and phone inquiries, and our team is ready to support your next AI or digital operations project.</p>
       </section>
 
       <section className="section-block form-block form-block--compact" id="send-message">

@@ -1860,6 +1860,11 @@ function BarakaDigitalHub() {
                 <button onClick={() => navigate("privacy")} style={{ textAlign:"left", background:"none", border:"none", color:"rgba(255,255,255,.85)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,.85)"}>Privacy</button>
                 <button onClick={() => navigate("contact")} style={{ textAlign:"left", background:"none", border:"none", color:"rgba(255,255,255,.85)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,.85)"}>Contact</button>
               </div>
+              <div style={{ marginTop: 24, color: 'rgba(255,255,255,.75)', fontSize: '0.95rem', lineHeight: 1.8 }}>
+                <p style={{ margin: 0 }}>projects@barakadigitalhub.com</p>
+                <p style={{ margin: 0 }}>+254 700 000 000</p>
+                <p style={{ margin: 0 }}>Nairobi, Kenya</p>
+              </div>
             </div>
           </div>
 

@@ -88,6 +88,33 @@ function Impact() {
       </section>
 
       <section className="section-block">
+        <div className="text-block">
+          <h2>Impact at a glance</h2>
+          <p>
+            Real numbers that show how our AI services support both enterprise delivery and social impact in Nairobi.
+          </p>
+        </div>
+        <div className="impact-grid">
+          <article className="impact-card accent-cyan">
+            <h3>80+ trained annotators</h3>
+            <p>Taskers trained in annotation, transcription, NLP, and BPO workflows with ongoing quality coaching.</p>
+          </article>
+          <article className="impact-card accent-purple">
+            <h3>1.2M+ tasks delivered</h3>
+            <p>Computer vision, NLP, audio transcription and dataset labeling completed for global clients.</p>
+          </article>
+          <article className="impact-card accent-sunset">
+            <h3>2,300+ hours delivered</h3>
+            <p>Verified labor hours for annotation, review, and data operations across pilot and production batches.</p>
+          </article>
+          <article className="impact-card accent-cyan">
+            <h3>6+ languages supported</h3>
+            <p>Including English, Swahili, and local Kenyan dialects to support multilingual AI datasets and regional coverage.</p>
+          </article>
+        </div>
+      </section>
+
+      <section className="section-block">
         <div className="about-grid">
           <div className="about-panel">
             <h2>Our Origin: Why We Exist</h2>

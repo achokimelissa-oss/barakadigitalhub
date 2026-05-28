@@ -1,6 +1,15 @@
+import { Helmet } from "react-helmet-async";
+
 function Privacy() {
   return (
     <>
+      <Helmet>
+        <title>Privacy Policy | Baraka Digital Hub</title>
+        <meta
+          name="description"
+          content="Read how Baraka Digital Hub protects client and inquiry data for AI training, annotation, and digital operations services."
+        />
+      </Helmet>
       <section className="section-block contact-hero section-intro">
         <div className="text-block">
           <p className="highlight-pill">Compliance & privacy</p>
