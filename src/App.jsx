@@ -1539,16 +1539,17 @@ function BarakaDigitalHub() {
             </div>
           </section>
 
-          <section style={{ padding:"88px 24px", background:"white" }}>
-            <div style={{ maxWidth:1000, margin:"0 auto" }}>
+          <section style={{ padding: isMobile ? "56px 18px" : "88px 24px", background: "linear-gradient(180deg,#eef7ff 0%,#f8fcff 55%,#ffffff 100%)", position: "relative", overflow: "hidden" }}>
+            <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 18% 20%, rgba(59,130,246,.14), transparent 18%), radial-gradient(circle at 82% 22%, rgba(15,157,104,.12), transparent 20%), repeating-linear-gradient(135deg, transparent 0, transparent 32px, rgba(14,165,233,.05) 32px, rgba(14,165,233,.05) 33px)", pointerEvents: "none" }} />
+            <div style={{ position: "relative", maxWidth:1000, margin:"0 auto" }}>
               <FadeIn>
-                <div style={{ textAlign:"center", marginBottom:52 }}>
+                <div style={{ textAlign:"center", marginBottom: isMobile ? 32 : 52 }}>
                   <h2 className="section-h2 font-display" style={{ fontSize:"2.6rem", fontWeight:800, color:"#0f172a", letterSpacing:"-.03em", marginBottom:12 }}>How Delivery Works</h2>
                   <p style={{ color:"#64748b", fontSize:"1rem", maxWidth:520, margin:"0 auto", lineHeight:1.75 }}>A streamlined operational workflow for AI data and digital delivery, with full process detail available on the workflow page.</p>
                 </div>
               </FadeIn>
               <FadeIn delay={0.08}>
-                <div style={{ background:"white", borderRadius:24, border:"1px solid #f1f5f9", boxShadow:"0 12px 48px rgba(0,0,0,.07)", overflow:"hidden" }}>
+                <div style={{ background:"rgba(255,255,255,.92)", borderRadius:24, border:"1px solid rgba(14,165,233,.12)", boxShadow:"0 12px 48px rgba(14,165,233,.08)", overflow:"hidden" }}>
                   <div style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr" }}>
                     <div style={{ padding:"36px 32px", borderRight: isMobile ? "none" : "1px solid #f1f5f9" }}>
                       <div style={{ display:"inline-block", background:"rgba(29,78,216,.08)", color:"#1d4ed8", padding:"5px 13px", borderRadius:100, fontSize:".72rem", fontWeight:700, letterSpacing:".05em", textTransform:"uppercase", marginBottom:20 }}>Sample Engagement</div>
@@ -1570,18 +1571,21 @@ function BarakaDigitalHub() {
                         </div>
                       ))}
                     </div>
-                    <div style={{ background:"#020617", padding:"36px 32px" }}>
-                      <h3 className="font-display" style={{ fontSize:"1.4rem", fontWeight:800, color:"white", marginBottom:28 }}>Workflow Overview</h3>
-                      {["Discovery & intake","Team assignment & tooling","Execution with transparent tracking","Continuous quality monitoring","Delivery, formatting & reporting"].map((step,i)=>(
-                        <div key={i} style={{ display:"flex", gap:14, paddingBottom: i<4?22:0, position:"relative" }}>
-                          {i<4 && <div style={{ position:"absolute", left:19, top:38, width:2, bottom:0, background:"rgba(255,255,255,.06)" }} />}
-                          <div style={{ flexShrink:0, width:38, height:38, borderRadius:"50%", background:"linear-gradient(135deg,#1d4ed8,#0f9d68)", display:"flex", alignItems:"center", justifyContent:"center", fontFamily:"Syne,sans-serif", fontWeight:800, fontSize:13, color:"white", position:"relative", zIndex:1 }}>{i+1}</div>
-                          <div style={{ paddingTop:8 }}>
-                            <p style={{ color:"#94a3b8", fontSize:".86rem", lineHeight:1.6 }}>{step}</p>
+                    <div style={{ background:"rgba(2,6,23,.95)", padding: isMobile ? "28px 22px" : "36px 32px", minHeight: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between", boxShadow: "0 28px 80px rgba(2,6,23,.16)" }}>
+                      <div>
+                        <div style={{ display:"inline-flex", alignItems:"center", gap:8, marginBottom:24, color:"#7dd3fc", fontSize:"0.88rem", fontWeight:700, textTransform:"uppercase", letterSpacing:"0.12em" }}>AI workflow</div>
+                        <h3 className="font-display" style={{ fontSize:"1.5rem", fontWeight:800, color:"white", marginBottom:24, lineHeight:1.2 }}>Workflow Overview</h3>
+                        { ["Discovery & intake","Team assignment & tooling","Execution with transparent tracking","Continuous quality monitoring","Delivery, formatting & reporting"].map((step,i)=>(
+                          <div key={i} style={{ display:"flex", gap:14, paddingBottom: i<4 ? 22 : 0, position:"relative", marginBottom: i<4 ? 12 : 0 }}>
+                            {i<4 && <div style={{ position:"absolute", left:19, top:38, width:2, bottom:0, background:"rgba(255,255,255,.08)" }} />}
+                            <div style={{ flexShrink:0, width:40, height:40, borderRadius:"50%", background:"linear-gradient(135deg,rgba(56,189,248,.95),rgba(16,185,129,.95))", display:"flex", alignItems:"center", justifyContent:"center", fontFamily:"Syne,sans-serif", fontWeight:800, fontSize:13, color:"white", position:"relative", zIndex:1 }}>{i+1}</div>
+                            <div style={{ paddingTop:8 }}>
+                              <p style={{ color:"#cbd5e1", fontSize:"0.92rem", lineHeight:1.7, maxWidth:isMobile?"100%":"92%" }}>{step}</p>
+                            </div>
                           </div>
-                        </div>
-                      ))}
-                      <button onClick={() => navigate("workflow")} style={{ marginTop:28, display:"inline-flex", alignItems:"center", gap:8, background:"white", color:"#0f172a", border:"none", borderRadius:12, padding:"12px 22px", fontWeight:700, fontSize:".88rem", cursor:"pointer", fontFamily:"inherit" }}>
+                        ))}
+                      </div>
+                      <button onClick={() => navigate("workflow")} style={{ marginTop:28, display:"inline-flex", alignItems:"center", gap:8, background:"white", color:"#0f172a", border:"none", borderRadius:12, padding: isMobile ? "14px 20px" : "12px 22px", fontWeight:700, fontSize:"0.9rem", cursor:"pointer", fontFamily:"inherit", alignSelf:"flex-start" }}>
                         View full workflow <ArrowRight size={15} />
                       </button>
                     </div>
