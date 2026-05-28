@@ -1396,6 +1396,11 @@ function BarakaDigitalHub() {
         .section-tech-bg::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 14% 22%, rgba(155,109,255,0.22) 0%, transparent 36%), radial-gradient(circle at 86% 18%, rgba(16,185,129,0.18) 0%, transparent 34%), radial-gradient(circle at 52% 54%, rgba(59,130,246,0.14) 0%, transparent 38%); background-repeat: no-repeat; pointer-events: none; animation: tech-bg-glow 18s ease-in-out infinite; }
         .section-tech-bg::after { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(to bottom, transparent 0px, transparent 3px, rgba(0,0,0,0.012) 3px, rgba(0,0,0,0.012) 4px); opacity: 0; pointer-events: none; animation: tech-bg-stripes 12s ease-in-out infinite; }
         .section-tech-bg > * { position: relative; z-index: 1; }
+        .impact-section { position: relative; overflow: hidden; background: linear-gradient(180deg, #eef5ff 0%, #f8fbff 45%, #ffffff 100%); }
+        .impact-section::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(circle at 12% 22%, rgba(245,158,11,.14) 0%, transparent 30%), radial-gradient(circle at 78% 18%, rgba(14,165,233,.16) 0%, transparent 28%), radial-gradient(circle at 50% 70%, rgba(16,185,129,.12) 0%, transparent 34%); pointer-events: none; }
+        .impact-section::after { content: ""; position: absolute; inset: 0; background-image: linear-gradient(0deg, rgba(255,255,255,.88) 0%, rgba(255,255,255,0) 45%), repeating-linear-gradient(90deg, transparent 0, transparent 12px, rgba(15,23,42,.03) 12px, rgba(15,23,42,.03) 13px); opacity: .45; pointer-events: none; }
+        .impact-section > * { position: relative; z-index: 1; }
+        .impact-card { background: rgba(255,255,255,.94); border: 1px solid rgba(59,130,246,.16); }
         @keyframes tech-bg-glow { 0%,100% { background-position: 12% 18%, 88% 24%, 52% 58%; } 50% { background-position: 18% 12%, 82% 28%, 48% 62%; } }
         @keyframes tech-bg-stripes { 0%,100% { transform: translateY(0); opacity: 0; } 50% { transform: translateY(8px); opacity: 0; } }
         .btn-primary { display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#1d4ed8,#06b6d4);color:white;padding:14px 28px;border-radius:12px;font-weight:600;font-size:.95rem;text-decoration:none;box-shadow:0 8px 32px rgba(29,78,216,.3);transition:transform .2s,box-shadow .2s;border:none;cursor:pointer;font-family:inherit; }
@@ -1723,7 +1728,9 @@ function BarakaDigitalHub() {
             </div>
           </section>
 
-          <section style={{ padding:"88px 24px", background:"#f8fafc" }}>
+          <section className="impact-section" style={{ padding:"88px 24px" }}>
+            <div style={{ position:"absolute", top:20, right:-40, width:180, height:180, borderRadius:"50%", background:"rgba(245,158,11,.18)", filter:"blur(40px)", pointerEvents:"none" }} />
+            <div style={{ position:"absolute", bottom:-30, left:-60, width:260, height:260, borderRadius:"50%", background:"rgba(16,185,129,.16)", filter:"blur(50px)", pointerEvents:"none" }} />
             <div style={{ maxWidth:1000, margin:"0 auto" }}>
               <FadeIn>
                 <div style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap:48, alignItems:"center" }}>
@@ -1739,7 +1746,7 @@ function BarakaDigitalHub() {
                   </div>
                   <div style={{ display:"flex", flexDirection:"column", gap:14 }}>
                     {[{n:"67%",l:"Youth unemployment in informal settlements",c:"#1d4ed8",d:"Digital work pathways in underserved communities."},{n:"33%",l:"Young people without formal employment",c:"#0f9d68",d:"Training and employer partnerships that build real opportunity."},{n:"<5%",l:"Children’s Home youths in sustainable careers",c:"#d97706",d:"Focused career support for Baraka Home residents."}].map((s,i)=>(
-                      <div key={i} style={{ background:"white", borderRadius:18, padding:"26px 28px", border:"1px solid #f1f5f9", boxShadow:"0 10px 30px rgba(15,23,42,0.07)", display:"flex", alignItems:"flex-start", gap:18, minHeight:140 }}>
+                      <div key={i} className="impact-card" style={{ borderRadius:18, padding:"26px 28px", boxShadow:"0 10px 30px rgba(15,23,42,0.07)", display:"flex", alignItems:"flex-start", gap:18, minHeight:140 }}>
                         <div style={{ flexShrink:0, width:72, height:72, borderRadius:16, background:s.c, display:"flex", alignItems:"center", justifyContent:"center", color:"white", fontWeight:800, fontSize:"1.5rem" }}>{s.n}</div>
                         <div>
                           <p style={{ fontSize:"0.96rem", color:"#0f172a", fontWeight:700, marginBottom:6 }}>{s.l}</p>
