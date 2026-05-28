@@ -538,7 +538,7 @@ const WorkflowPage = ({ goBack, setPage, isMobile }) => {
       title: "Project Scoping & Requirement Alignment",
       desc: "We align on scope, workflows, quality standards, tooling, and delivery expectations before production begins.",
       chips: ["Workflow discovery", "Taxonomy review", "Security alignment", "Tool setup", "SLA confirmation", "Production planning"],
-      color: "#1d4ed8",
+      color: "#0f9d68",
       banner: "Applies across annotation, transcription, OCR, content moderation, and digital operations."
     },
     {
@@ -556,7 +556,7 @@ const WorkflowPage = ({ goBack, setPage, isMobile }) => {
       desc: "We deploy specialized teams, onboard securely, and train every tasker to the project’s exact standards.",
       chips: ["AI annotators", "Transcription specialists", "QA reviewers", "OCR operators", "Moderation teams", "Supervisors"],
       details: ["Secure onboarding", "Tool training", "Monitoring", "Escalation", "Compliance"],
-      color: "#0f172a",
+      color: "#0f9d68",
       banner: "Team structure is chosen for each service type, complexity, and turnaround requirement."
     },
     {
@@ -565,7 +565,7 @@ const WorkflowPage = ({ goBack, setPage, isMobile }) => {
       desc: "Tasks are run in balanced production batches with transparent progress tracking and operational reporting.",
       chips: ["Batch allocation", "Throughput tracking", "Daily reporting", "Workflow balancing", "Escalation handling"],
       details: ["Bounding box annotation", "Polygon segmentation", "NLP labeling", "Audio transcription", "OCR digitization", "Lead gen", "Content moderation"],
-      color: "#1d4ed8",
+      color: "#0f9d68",
       banner: "Our execution model supports AI data, transcription, OCR, and digital operations workloads."
     },
     {
@@ -581,7 +581,7 @@ const WorkflowPage = ({ goBack, setPage, isMobile }) => {
       title: "Error Logging & Continuous Recalibration",
       desc: "Errors are logged, categorized, and used to refine workflows, training, and quality controls.",
       chips: ["Error tracking", "Feedback loops", "Retraining", "Optimization", "Guideline updates"],
-      color: "#0f172a",
+      color: "#0f9d68",
       banner: "Continuous improvement is built into every production cycle."
     },
     {
@@ -589,7 +589,7 @@ const WorkflowPage = ({ goBack, setPage, isMobile }) => {
       title: "Final Validation, Reporting & Delivery",
       desc: "Final verification is completed before secure export and handoff, with analytics and reports included.",
       chips: ["Datasets", "Transcripts", "Documents", "QA reports", "Analytics", "Secure transfer"],
-      color: "#0f172a",
+      color: "#0f9d68",
       banner: "Delivery is complete when the data and the narrative both meet expectations."
     },
     {
@@ -648,7 +648,7 @@ const WorkflowPage = ({ goBack, setPage, isMobile }) => {
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 18, padding: "26px 26px 20px 26px", background: s.color, color: "white" }}>
                   <div>
                     <div style={{ fontSize: ".85rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".16em", opacity: .92, marginBottom: 8 }}>Stage {s.n}</div>
-                    <h2 className="font-display" style={{ fontSize: "1.55rem", fontWeight: 800, margin: 0, lineHeight: 1.1 }}>{s.title}</h2>
+                    <h2 className="font-display" style={{ fontSize: "1.55rem", fontWeight: 800, margin: 0, lineHeight: 1.1, color: "white", fontFamily: "Syne, Inter, system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial" }}>{s.title}</h2>
                   </div>
                   <div style={{ minWidth: 72, minHeight: 72, borderRadius: "50%", background: "rgba(255,255,255,.12)", display: "grid", placeItems: "center", fontSize: "1.35rem", fontWeight: 800, boxShadow: "inset 0 0 0 1px rgba(255,255,255,.12)" }}>{s.n}</div>
                 </div>
