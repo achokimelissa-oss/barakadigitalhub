@@ -607,7 +607,7 @@ const WorkflowPage = ({ goBack, setPage, isMobile }) => {
         <button onClick={goBack} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", cursor: "pointer", color: "#1d4ed8", fontWeight: 600, fontSize: "0.95rem", marginBottom: 32, fontFamily: "inherit" }}>
           <ChevronLeft size={18} /> Back to Home
         </button>
-        <FadeIn>
+        <div>
           <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1.3fr .9fr", gap: 26, marginBottom: 42, alignItems: "stretch" }}>
             <div style={{ background: "white", borderRadius: 32, border: "1px solid #e2e8f0", boxShadow: "0 28px 70px rgba(15,23,42,.08)", padding: isMobile ? "28px 22px" : "36px 34px" }}>
               <div style={{ display: "inline-flex", alignItems: "center", gap: 10, marginBottom: 18, color: "#0f172a", fontWeight: 700, letterSpacing: ".14em", textTransform: "uppercase" }}>
@@ -640,9 +640,8 @@ const WorkflowPage = ({ goBack, setPage, isMobile }) => {
               </div>
             </div>
           </div>
-        </FadeIn>
-        <FadeIn delay={0.1}>
-          <div style={{ display: "grid", gap: 24 }}>
+        </div>
+        <div style={{ display: "grid", gap: 24 }}>
             {steps.map((s, i) => (
               <div key={i} style={{ background: "white", borderRadius: 28, border: "1px solid #e2e8f0", boxShadow: "0 28px 70px rgba(15,23,42,.08)", overflow: "hidden" }}>
                 <div style={{ display: "flex", flexDirection: isMobile ? "column" : "row", justifyContent: "space-between", alignItems: isMobile ? "flex-start" : "center", gap: 18, padding: isMobile ? "20px 20px 16px 20px" : "26px 26px 20px 26px", background: s.color, color: "white" }}>
@@ -676,7 +675,6 @@ const WorkflowPage = ({ goBack, setPage, isMobile }) => {
               </div>
             ))}
           </div>
-        </FadeIn>
         <FadeIn delay={0.2}>
           <div style={{ marginTop: 42, background: "white", borderRadius: 28, border: "1px solid #e2e8f0", boxShadow: "0 28px 70px rgba(15,23,42,.08)", padding: "36px 34px", display: "grid", gap: 24, alignItems: "center" }}>
             <div style={{ maxWidth: 760 }}>
