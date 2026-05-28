@@ -1180,6 +1180,7 @@ a {
 
   .about-grid {
     gap: 24px;
+    grid-template-columns: 1fr;
   }
 
   .about-card,

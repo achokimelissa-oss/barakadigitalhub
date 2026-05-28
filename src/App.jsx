@@ -412,7 +412,7 @@ const FadeIn = ({ children, delay = 0, className = "" }) => {
   );
 };
 
-const ServicesPage = ({ goBack, isMobile }) => {
+const ServicesPage = ({ goBack, navigate, isMobile }) => {
   const services = [
     { icon: <Globe size={28} />, title: "Computer Vision Annotation", color: "#1d4ed8", accent: "#eff6ff", items: ["Bounding box annotation for object detection", "Semantic & instance segmentation", "Keypoint / pose estimation", "Image classification & tagging", "3D point cloud annotation", "Video object tracking"] },
     { icon: <Brain size={28} />, title: "NLP & Text Processing", color: "#7c3aed", accent: "#f5f3ff", items: ["Named entity recognition (NER)", "Sentiment & intent labeling", "Text classification & categorization", "Question-answer pair generation", "Dialogue annotation", "Language model evaluation"] },
@@ -682,7 +682,7 @@ const WorkflowPage = ({ goBack, setPage, isMobile }) => {
               <h2 className="font-display" style={{ fontSize: "2rem", fontWeight: 900, color: "#0f172a", lineHeight: 1.05, marginBottom: 18 }}>One professional delivery path, clearly mapped.</h2>
               <p style={{ color: "#475569", fontSize: "1rem", lineHeight: 1.8, marginBottom: 0 }}>We combine scoping, pilot validation, production execution, and verified delivery into one streamlined workflow. Reach out to align on requirements, timing, and the right delivery model for your project.</p>
             </div>
-            <button onClick={() => setPage("contact")} style={{ width: isMobile ? "100%" : "fit-content", background: "#1d4ed8", color: "white", border: "none", borderRadius: 14, padding: "16px 28px", fontWeight: 700, cursor: "pointer", fontFamily: "inherit" }}>
+            <button onClick={() => navigate("contact")} style={{ width: isMobile ? "100%" : "fit-content", background: "#1d4ed8", color: "white", border: "none", borderRadius: 14, padding: "16px 28px", fontWeight: 700, cursor: "pointer", fontFamily: "inherit" }}>
               Contact us to begin
             </button>
           </div>
@@ -1227,8 +1227,8 @@ const PilotPage = ({ goBack, setPage, isMobile }) => {
             <h3 className="font-display" style={{ fontSize: "1.35rem", fontWeight: 800, color: "white", marginBottom: 10 }}>Get in touch</h3>
             <p style={{ color: "rgba(255,255,255,0.85)", marginBottom: 20, fontSize: "0.95rem", maxWidth: "42rem", margin: "0 auto" }}>Contact our team to discuss pilots, custom annotation workflows, or enterprise AI data programs. We reply quickly and can adapt to your tooling and compliance requirements.</p>
             <div style={{ display: "flex", justifyContent: "center", gap: 12, flexWrap: "wrap" }}>
-              <button onClick={() => setPage("contact")} className="btn-primary">Send a message <ArrowRight size={16} /></button>
-              <button onClick={() => setPage("services")} className="btn-secondary">Explore services</button>
+              <button onClick={() => navigate("contact")} className="btn-primary">Send a message <ArrowRight size={16} /></button>
+              <button onClick={() => navigate("services")} className="btn-secondary">Explore services</button>
             </div>
           </div>
         </FadeIn>
@@ -1506,7 +1506,7 @@ function BarakaDigitalHub() {
         )}
       </nav>
 
-      {page === "services" && <ServicesPage goBack={goBack} isMobile={isMobile} />}
+      {page === "services" && <ServicesPage goBack={goBack} navigate={navigate} isMobile={isMobile} />}
       {page === "about" && <AboutPage goBack={goBack} isMobile={isMobile} />}
       {page === "careers" && <CareersPage goBack={goBack} setPage={setPage} isMobile={isMobile} />}
       {page === "privacy" && <PrivacyPage goBack={goBack} isMobile={isMobile} />}

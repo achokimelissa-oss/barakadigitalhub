@@ -25,50 +25,41 @@ function About() {
 
       <section className="section-block">
         <article className="about-card accent-cyan">
-          <h2>Our story</h2>
+          <h2>How we started</h2>
           <p>
-            Baraka Digital Hub was established from the foundation of Baraka Children's Home, which has served the Kayole community since 2006 as a centre for care, protection, and education for vulnerable children.
+            Baraka Digital Hub was established from the foundation of Baraka Children’s Home, which has served the Kayole community in Nairobi, Kenya since 2006 as a centre for care, protection, and education for vulnerable children.
           </p>
           <p>
-            As children in the home matured, we recognized a gap: excellent care and education, but limited access to sustainable economic opportunity. We started by helping young people access remote work opportunities individually—training them, supporting their onboarding, and guiding them through job platforms.
+            As the children under care matured, a clear gap emerged between access to support and access to sustainable economic opportunity. This transition highlighted the need for a structured pathway that extends beyond care into skills development and meaningful employment.
           </p>
           <p>
-            Through this experience, we saw a larger opportunity. Individual placements helped, but a centralized model could create greater stability, accountability, and scale. In response, Baraka Digital Hub was created—a professional services organization that bridges the gap between potential and opportunity.
+            Before the Hub was formally established, we began by helping young people apply for remote work opportunities individually. We trained them in digital work, guided them through onboarding processes, and supported them in accessing online earning platforms and freelance opportunities.
           </p>
           <p>
-            Today, we operate as a quality-driven digital services organization focused on delivery excellence, sustainable workforce development, and long-term economic inclusion.
+            Through this experience, we recognized a larger opportunity. Individual placements created impact, but a centralized model could create greater stability, accountability, scalability, and employability. By building a structured hub, we could provide shared infrastructure, organized training, quality assurance systems, operational oversight, and a professional working environment that strengthened both consistency and long-term growth.
+          </p>
+          <p>
+            In response, Baraka Digital Hub was created to bridge the gap between potential and opportunity. What began as grassroots support for remote work evolved into a structured digital workforce model capable of delivering professional services to global clients.
+          </p>
+          <p>
+            Today, Baraka Digital Hub operates as a quality-driven digital services organization focused on delivery excellence, workforce development, and long-term economic inclusion.
           </p>
         </article>
       </section>
 
       <section className="section-block">
-        <div className="text-block">
-          <h2>Our foundation</h2>
-        </div>
-
-        <div className="about-grid">
-          <article className="about-panel about-highlight accent-cyan">
-            <span className="feature-icon">🏠</span>
-            <h3>Baraka Children's Home (2006)</h3>
-            <p>
-              Founded by <strong>Margrate Kimaru</strong> (lovingly known as <strong>Mama Baraka</strong>), the Children's Home has provided care, protection, and education to vulnerable children in Nairobi for nearly two decades.
-            </p>
-            <p>
-              Her lifelong dedication to child welfare forms the foundation of everything we do. Baraka Digital Hub is the continuation and evolution of her vision—extending care into opportunity and independence.
-            </p>
-          </article>
-
-          <article className="about-panel accent-purple">
-            <span className="feature-icon">⭐</span>
-            <h3>Our core belief</h3>
-            <p>
-              Talent is universal, but opportunity is not. We exist to close this gap—connecting underserved young people to structured digital employment, global work, skills development, and long-term economic inclusion.
-            </p>
-            <p>
-              We are not a charity. We are a business built for sustainable impact, where commercial success directly funds community outcomes.
-            </p>
-          </article>
-        </div>
+        <article className="about-card accent-purple">
+          <h2>Our identity</h2>
+          <p>
+            Baraka Digital Hub is built on a core belief: talent is universal, but opportunity is not. Our mission is to close this gap by connecting underserved young people to structured digital employment and global work opportunities.
+          </p>
+          <p>
+            We operate as a professional services organization with a strong social impact mandate, combining commercial discipline with measurable community outcomes.
+          </p>
+          <p>
+            We are not a charity. We are a business built for sustainable impact.
+          </p>
+        </article>
       </section>
 
       <section className="section-block accent">
