@@ -827,7 +827,7 @@ const AboutPage = ({ goBack, isMobile }) => {
   );
 };
 
-const CareersPage = ({ goBack, setPage, isMobile }) => {
+const CareersPage = ({ goBack, setPage, navigate, isMobile }) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   return (
     <div style={{ minHeight: "100vh", background: "linear-gradient(160deg,#f8fbff 0%,#eef9ff 50%,#f0fdf4 100%)", paddingTop: 80 }}>
@@ -1179,7 +1179,7 @@ const ImpactPage = ({ goBack, isMobile }) => {
   );
 };
 
-const PilotPage = ({ goBack, setPage, isMobile }) => {
+const PilotPage = ({ goBack, setPage, navigate, isMobile }) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   return (
     <div style={{ minHeight: "100vh", background: "linear-gradient(160deg, #f8fafc, #eff6ff)", paddingTop: 80 }}>
@@ -1508,13 +1508,13 @@ function BarakaDigitalHub() {
 
       {page === "services" && <ServicesPage goBack={goBack} navigate={navigate} isMobile={isMobile} />}
       {page === "about" && <AboutPage goBack={goBack} isMobile={isMobile} />}
-      {page === "careers" && <CareersPage goBack={goBack} setPage={setPage} isMobile={isMobile} />}
+      {page === "careers" && <CareersPage goBack={goBack} setPage={setPage} navigate={navigate} isMobile={isMobile} />}
       {page === "privacy" && <PrivacyPage goBack={goBack} isMobile={isMobile} />}
       {page === "impact" && <ImpactPage goBack={goBack} isMobile={isMobile} />}
       {page === "operations" && <OperationsPage goBack={goBack} isMobile={isMobile} />}
       {page === "workflow" && <WorkflowPage goBack={goBack} setPage={setPage} isMobile={isMobile} />}
       {page === "contact" && <ContactPage goBack={goBack} isMobile={isMobile} />}
-      {page === "pilot" && <PilotPage goBack={goBack} setPage={setPage} isMobile={isMobile} />}
+      {page === "pilot" && <PilotPage goBack={goBack} setPage={setPage} navigate={navigate} isMobile={isMobile} />}
 
       {page === "home" && (
         <>
