@@ -819,7 +819,6 @@ const AboutPage = ({ goBack, isMobile }) => {
                 <p>We are ready to partner with organizations that value both excellence and impact.”</p>
               </div>
               <p style={{ color: "#0f172a", fontWeight: 700, marginTop: 12 }}>Timothy Mwangi<br />Head of Operations</p>
-              <p style={{ color: "#475569", marginTop: 12 }}>Reach out via the Contact page to send your inquiry directly to our team.</p>
             </div>
             <div style={{ background: "white", borderRadius: 24, padding: "32px", border: "1px solid #e2e8f0", boxShadow: "0 18px 48px rgba(15,23,42,0.06)" }}>
               <h2 className="section-h2" style={{ marginBottom: 18 }}>From Our President and Mama Baraka</h2>
@@ -830,7 +829,6 @@ const AboutPage = ({ goBack, isMobile }) => {
                 <p>This work is family. It is love translated into opportunity.”</p>
               </div>
               <p style={{ color: "#0f172a", fontWeight: 700, marginTop: 12 }}>Margrate Kimaru<br />President and Mama Baraka</p>
-              <p style={{ color: "#475569", marginTop: 12 }}>Reach out via the Contact page to send your inquiry directly to our team.</p>
             </div>
           </div>
         </FadeIn>
