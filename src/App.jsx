@@ -526,252 +526,169 @@ const OperationsPage = ({ goBack, isMobile }) => {
 
 const WorkflowPage = ({ goBack, setPage, isMobile }) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
+  const overview = [
+    { title: "Strategic scoping", text: "Define dataset scope, quality standards, tooling, and delivery expectations before work begins.", accent: "#1d4ed8" },
+    { title: "Pilot validation", text: "Validate quality and edge-case handling with a calibrated pilot before scaling.", accent: "#7c3aed" },
+    { title: "Production execution", text: "Execute work in structured batches with real-time tracking and reporting.", accent: "#059669" },
+    { title: "QA & support", text: "Deliver verified outcomes with first-pass review, reporting, and continued support.", accent: "#f59e0b" }
+  ];
   const steps = [
     {
       n: 1,
       title: "Project Scoping & Requirement Alignment",
-      desc: "Every project begins with operational alignment to define scope, workflows, quality standards, tooling, and delivery expectations.",
-      bullets: [
-        "Workflow discovery",
-        "Label taxonomy review",
-        "Data security alignment",
-        "Tool & platform setup",
-        "SLA confirmation",
-        "Production planning"
-      ],
-      color: "#1d4ed8"
+      desc: "We align on scope, workflows, quality standards, tooling, and delivery expectations before production begins.",
+      chips: ["Workflow discovery", "Taxonomy review", "Security alignment", "Tool setup", "SLA confirmation", "Production planning"],
+      color: "#1d4ed8",
+      banner: "Applies across annotation, transcription, OCR, content moderation, and digital operations."
     },
     {
       n: 2,
       title: "Pilot Batch, Edge Cases & Calibration",
-      desc: "A pilot phase validates quality standards, operational readiness, and edge-case handling before full-scale deployment.",
-      bullets: [
-        "Pilot production batch",
-        "QA benchmarking",
-        "Client feedback integration",
-        "Guideline refinement",
-        "Workflow recalibration"
-      ],
-      details: [
-        "Partial object visibility",
-        "Occluded objects",
-        "Low-quality audio",
-        "Accented speech variation",
-        "Handwritten text inconsistencies",
-        "Motion blur",
-        "Low-light imagery",
-        "Overlapping entities",
-        "Ambiguous classifications",
-        "Multi-language transcription cases",
-        "OCR formatting anomalies",
-        "Sensitive content escalation scenarios"
-      ],
-      color: "#7c3aed"
+      desc: "A pilot batch validates readiness, identifies edge cases, and calibrates the process before full deployment.",
+      chips: ["Pilot batch", "QA benchmarking", "Client feedback", "Guideline refinement", "Workflow recalibration"],
+      details: ["Partial visibility", "Occlusions", "Low-quality audio", "Accents", "Handwritten text", "Motion blur", "Low-light imagery", "Overlapping entities", "Ambiguous classes", "Multi-language transcription", "OCR anomalies", "Sensitive escalation"],
+      color: "#7c3aed",
+      banner: "We prove the process on the toughest cases before scaling to production."
     },
     {
       n: 3,
       title: "Workforce Deployment & Training",
-      desc: "Specialized production teams are deployed based on service type, project complexity, and turnaround requirements.",
-      bullets: [
-        "Secure workforce onboarding",
-        "Tool-specific training",
-        "Productivity monitoring",
-        "Escalation management",
-        "Compliance tracking"
-      ],
-      subsections: [
-        {
-          label: "Workforce Structure Includes:",
-          items: [
-            "AI data annotators",
-            "Transcription specialists",
-            "QA reviewers",
-            "OCR operators",
-            "Content moderation teams",
-            "Data processing teams",
-            "Team leads & production supervisors"
-          ]
-        }
-      ],
-      color: "#0891b2"
+      desc: "We deploy specialized teams, onboard securely, and train every tasker to the project’s exact standards.",
+      chips: ["AI annotators", "Transcription specialists", "QA reviewers", "OCR operators", "Moderation teams", "Supervisors"],
+      details: ["Secure onboarding", "Tool training", "Monitoring", "Escalation", "Compliance"],
+      color: "#059669",
+      banner: "Team structure is chosen for each service type, complexity, and turnaround requirement."
     },
     {
       n: 4,
       title: "Production & Task Execution",
-      desc: "Tasks are segmented into structured production batches and distributed across operational pods for scalable execution.",
-      bullets: [
-        "Parallel task allocation",
-        "Real-time throughput tracking",
-        "Daily productivity monitoring",
-        "Workflow balancing",
-        "Escalation handling",
-        "Operational reporting"
-      ],
-      subsections: [
-        {
-          label: "AI Data Services",
-          items: [
-            "Bounding box annotation",
-            "Polygon segmentation",
-            "Classification & tagging",
-            "NLP data labeling",
-            "Image & video annotation"
-          ]
-        },
-        {
-          label: "Transcription & Data Processing",
-          items: [
-            "Audio transcription",
-            "Speech-to-text alignment",
-            "OCR & document digitization",
-            "Data cleaning & formatting",
-            "Metadata enrichment"
-          ]
-        },
-        {
-          label: "Digital Operations Support",
-          items: [
-            "Lead generation",
-            "Research support",
-            "Content moderation",
-            "Data entry operations",
-            "Business process support"
-          ]
-        }
-      ],
-      color: "#059669"
+      desc: "Tasks are run in balanced production batches with transparent progress tracking and operational reporting.",
+      chips: ["Batch allocation", "Throughput tracking", "Daily reporting", "Workflow balancing", "Escalation handling"],
+      details: ["Bounding box annotation", "Polygon segmentation", "NLP labeling", "Audio transcription", "OCR digitization", "Lead gen", "Content moderation"],
+      color: "#0ea5e9",
+      banner: "Our execution model supports AI data, transcription, OCR, and digital operations workloads."
     },
     {
       n: 5,
       title: "100% First-Pass QA Review",
-      desc: "Every completed task undergoes structured quality review before final approval and delivery.",
-      bullets: [
-        "Accuracy validation",
-        "Formatting consistency checks",
-        "Guideline compliance verification",
-        "Edge-case validation",
-        "Escalation of ambiguous cases",
-        "Error correction & revalidation"
-      ],
-      color: "#d97706"
+      desc: "Every deliverable goes through first-pass review for accuracy, consistency, and guideline compliance.",
+      chips: ["Accuracy validation", "Format checks", "Compliance review", "Edge-case validation", "Revalidation"],
+      color: "#f59e0b",
+      banner: "Quality is embedded into the delivery pipeline, not added afterward."
     },
     {
       n: 6,
       title: "Error Logging & Continuous Recalibration",
-      desc: "Errors identified during production and QA are systematically logged to improve operational consistency and workforce performance.",
-      bullets: [
-        "Error categorization",
-        "Annotator & reviewer feedback loops",
-        "Retraining sessions",
-        "Workflow optimization",
-        "Guideline updates",
-        "Accuracy trend monitoring"
-      ],
-      color: "#f97316"
+      desc: "Errors are logged, categorized, and used to refine workflows, training, and quality controls.",
+      chips: ["Error tracking", "Feedback loops", "Retraining", "Optimization", "Guideline updates"],
+      color: "#fb923c",
+      banner: "Continuous improvement is built into every production cycle."
     },
     {
       n: 7,
       title: "Final Validation, Reporting & Delivery",
-      desc: "All deliverables undergo final verification before secure export and handoff.",
-      bullets: [
-        "Production-ready datasets",
-        "Clean transcripts",
-        "Structured documents",
-        "QA & accuracy reports",
-        "Progress analytics",
-        "Custom export formats",
-        "Secure file transfer"
-      ],
-      color: "#0f172a"
+      desc: "Final verification is completed before secure export and handoff, with analytics and reports included.",
+      chips: ["Datasets", "Transcripts", "Documents", "QA reports", "Analytics", "Secure transfer"],
+      color: "#0f172a",
+      banner: "Delivery is complete when the data and the narrative both meet expectations."
     },
     {
       n: 8,
       title: "Post-Delivery Support & Scaling",
-      desc: "Baraka Digital Hub remains available for revisions, scaling, and long-term operational support.",
-      bullets: [
-        "Revision cycles",
-        "Additional annotation rounds",
-        "Ongoing transcription support",
-        "Workforce scaling",
-        "Long-term production partnerships",
-        "Dedicated operational support"
-      ],
-      color: "#22c55e"
+      desc: "We remain available for revisions, scaling, and long-term operational support.",
+      chips: ["Revisions", "Additional rounds", "Ongoing support", "Workforce scaling", "Partnerships"],
+      color: "#22c55e",
+      banner: "Ongoing collaboration keeps your operation steady and scalable."
     }
   ];
   return (
     <div style={{ minHeight: "100vh", background: "linear-gradient(160deg,#f8fbff 0%,#eef9ff 50%,#f0fdf4 100%)", paddingTop: 80 }}>
-      <div style={{ maxWidth: 980, margin: "0 auto", padding: "48px 24px" }}>
-        <button onClick={goBack} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", cursor: "pointer", color: "#1d4ed8", fontWeight: 600, fontSize: "0.9rem", marginBottom: 32, fontFamily: "inherit" }}>
+      <div style={{ maxWidth: 1120, margin: "0 auto", padding: "48px 24px" }}>
+        <button onClick={goBack} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", cursor: "pointer", color: "#1d4ed8", fontWeight: 600, fontSize: "0.95rem", marginBottom: 32, fontFamily: "inherit" }}>
           <ChevronLeft size={18} /> Back to Home
         </button>
         <FadeIn>
-          <div style={{ textAlign: "center", marginBottom: 56 }}>
-            <h1 className="font-display" style={{ fontSize: "2.4rem", fontWeight: 800, color: "#0f172a", letterSpacing: "-0.03em", marginBottom: 14 }}>How We Deliver</h1>
-            <p style={{ color: "#64748b", fontSize: "1.05rem", maxWidth: 520, margin: "0 auto", lineHeight: 1.75 }}>A transparent, six-stage delivery pipeline designed for production-grade AI data annotation.</p>
+          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1.3fr .9fr", gap: 26, marginBottom: 42, alignItems: "stretch" }}>
+            <div style={{ background: "white", borderRadius: 32, border: "1px solid #e2e8f0", boxShadow: "0 28px 70px rgba(15,23,42,.08)", padding: "36px 34px" }}>
+              <div style={{ display: "inline-flex", alignItems: "center", gap: 10, marginBottom: 18, color: "#0f172a", fontWeight: 700, letterSpacing: ".14em", textTransform: "uppercase" }}>
+                <span style={{ width: 10, height: 10, borderRadius: "50%", background: "#1d4ed8" }} />
+                Delivery workflow
+              </div>
+              <h1 className="font-display" style={{ fontSize: "2.75rem", fontWeight: 900, color: "#0f172a", marginBottom: 22, lineHeight: 1.05 }}>How We Deliver</h1>
+              <p style={{ color: "#475569", fontSize: "1.05rem", lineHeight: 1.8, maxWidth: 620, marginBottom: 28 }}>
+                A premium delivery process for AI data, transcription, OCR, and digital operations. We move from discovery and calibration through execution, QA, secure delivery, and long-term support.
+              </p>
+              <div style={{ display: "grid", gap: 14, gridTemplateColumns: isMobile ? "1fr" : "repeat(2, minmax(0, 1fr))" }}>
+                {overview.map((item, index) => (
+                  <div key={index} style={{ background: "rgba(255,255,255,.96)", borderRadius: 22, border: "1px solid #e2e8f0", padding: "22px 20px" }}>
+                    <div style={{ color: item.accent, fontSize: ".95rem", fontWeight: 700, marginBottom: 8 }}>{item.title}</div>
+                    <p style={{ margin: 0, color: "#475569", lineHeight: 1.7, fontSize: ".95rem" }}>{item.text}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div style={{ display: "grid", gap: 18 }}>
+              <div style={{ background: "linear-gradient(135deg, rgba(14,165,233,.98), rgba(16,185,129,.92))", color: "white", borderRadius: 28, padding: "28px 26px", boxShadow: "0 28px 80px rgba(15,23,42,.16)" }}>
+                <div style={{ fontSize: ".85rem", fontWeight: 700, letterSpacing: ".18em", textTransform: "uppercase", marginBottom: 14, opacity: .92 }}>Pilot readiness</div>
+                <h2 className="font-display" style={{ fontSize: "1.72rem", fontWeight: 800, margin: 0, lineHeight: 1.1, marginBottom: 16 }}>Validate quality before scale</h2>
+                <p style={{ color: "rgba(255,255,255,.92)", lineHeight: 1.75, marginBottom: 22 }}>Our pilot phase proves the process, optimizes guidelines, and de-risks production delivery with real feedback and performance metrics.</p>
+                <button onClick={() => navigate("pilot")} style={{ width: "100%", background: "white", color: "#0f172a", border: "none", borderRadius: 14, padding: "14px 18px", fontWeight: 700, cursor: "pointer", fontFamily: "inherit" }}>
+                  Request a pilot batch
+                </button>
+              </div>
+              <div style={{ background: "white", borderRadius: 28, padding: "28px 26px", border: "1px solid #e2e8f0", boxShadow: "0 24px 60px rgba(15,23,42,.08)" }}>
+                <div style={{ fontSize: ".85rem", fontWeight: 700, letterSpacing: ".18em", textTransform: "uppercase", marginBottom: 14, color: "#0f172a" }}>Discovery planning</div>
+                <h2 className="font-display" style={{ fontSize: "1.72rem", fontWeight: 800, margin: 0, lineHeight: 1.1, marginBottom: 16 }}>Start your project plan</h2>
+                <p style={{ color: "#475569", lineHeight: 1.75, marginBottom: 22 }}>We map your dataset, service mix, compliance needs and timing into a clear operational plan.</p>
+                <button onClick={() => navigate("contact")} style={{ width: "100%", background: "#1d4ed8", color: "white", border: "none", borderRadius: 14, padding: "14px 18px", fontWeight: 700, cursor: "pointer", fontFamily: "inherit" }}>
+                  Contact our team
+                </button>
+              </div>
+            </div>
           </div>
         </FadeIn>
-        <div style={{ position: "relative" }}>
-          <div style={{ position: "absolute", left: 27, top: 48, bottom: 48, width: 2, background: "linear-gradient(to bottom, #1d4ed8, #0f9d68)", borderRadius: 2 }} />
+        <FadeIn delay={0.1}>
           <div style={{ display: "grid", gap: 24 }}>
             {steps.map((s, i) => (
-              <FadeIn key={i} delay={i * 0.08}>
-                <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "72px 1fr", gap: 24, alignItems: "flex-start", padding: "28px 26px", borderRadius: 24, border: "1px solid #e2e8f0", background: "white", boxShadow: "0 20px 48px rgba(15,23,42,.06)" }}>
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "center", width: 72, height: 72, borderRadius: "50%", background: s.color, color: "white", fontFamily: "Syne, sans-serif", fontWeight: 800, fontSize: "1.35rem", boxShadow: "0 0 0 6px #f8fafc" }}>{s.n}</div>
+              <div key={i} style={{ background: "white", borderRadius: 28, border: "1px solid #e2e8f0", boxShadow: "0 28px 70px rgba(15,23,42,.08)", overflow: "hidden" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 18, padding: "26px 26px 20px 26px", background: s.color, color: "white" }}>
                   <div>
-                    <h3 className="font-display" style={{ fontSize: "1.3rem", fontWeight: 800, color: "#0f172a", marginBottom: 10 }}>{s.title}</h3>
-                    <p style={{ color: "#475569", fontSize: "0.95rem", lineHeight: 1.85, marginBottom: s.bullets ? 16 : 0 }}>{s.desc}</p>
-                    {s.bullets && (
-                      <div style={{ display: "grid", gap: 10, marginTop: 8 }}>
-                        {s.bullets.map((bullet, bi) => (
-                          <div key={bi} style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
+                    <div style={{ fontSize: ".85rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".16em", opacity: .92, marginBottom: 8 }}>Stage {s.n}</div>
+                    <h2 className="font-display" style={{ fontSize: "1.55rem", fontWeight: 800, margin: 0, lineHeight: 1.1 }}>{s.title}</h2>
+                  </div>
+                  <div style={{ minWidth: 72, minHeight: 72, borderRadius: "50%", background: "rgba(255,255,255,.12)", display: "grid", placeItems: "center", fontSize: "1.35rem", fontWeight: 800, boxShadow: "inset 0 0 0 1px rgba(255,255,255,.12)" }}>{s.n}</div>
+                </div>
+                <div style={{ padding: "28px 26px 26px 26px" }}>
+                  <p style={{ color: "#475569", fontSize: "1rem", lineHeight: 1.85, marginBottom: 22 }}>{s.desc}</p>
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: 22 }}>
+                    {s.chips.map((chip, ci) => (
+                      <span key={ci} style={{ display: "inline-flex", alignItems: "center", padding: "10px 14px", borderRadius: 999, background: "#f8fafc", color: "#475569", fontSize: ".88rem", fontWeight: 600, border: "1px solid #e2e8f0" }}>{chip}</span>
+                    ))}
+                  </div>
+                  {s.details && (
+                    <div style={{ background: "#f8fafc", borderRadius: 22, border: "1px solid #e2e8f0", padding: "24px" }}>
+                      <div style={{ fontWeight: 700, color: "#0f172a", marginBottom: 14 }}>Edge-case coverage</div>
+                      <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(2, minmax(0, 1fr))", gap: 14 }}>
+                        {s.details.map((detail, di) => (
+                          <div key={di} style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
                             <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#0f172a", marginTop: 8, flexShrink: 0 }} />
-                            <p style={{ margin: 0, color: "#475569", lineHeight: 1.75, fontSize: ".93rem" }}>{bullet}</p>
+                            <p style={{ margin: 0, color: "#475569", fontSize: ".92rem", lineHeight: 1.7 }}>{detail}</p>
                           </div>
                         ))}
                       </div>
-                    )}
-                    {s.details && (
-                      <div style={{ marginTop: 18, padding: "18px 18px 18px 16px", background: "#f8fafc", borderRadius: 18, border: "1px solid #e2e8f0" }}>
-                        <div style={{ fontWeight: 700, color: "#0f172a", marginBottom: 12 }}>Updated Edge Cases Include:</div>
-                        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(2, minmax(0, 1fr))", gap: 10 }}>
-                          {s.details.map((item, di) => (
-                            <div key={di} style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
-                              <div style={{ width: 6, height: 6, borderRadius: "50%", background: "#0f172a", marginTop: 8, flexShrink: 0 }} />
-                              <p style={{ margin: 0, color: "#475569", lineHeight: 1.7, fontSize: ".88rem" }}>{item}</p>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-                    {s.subsections && s.subsections.map((group, gi) => (
-                      <div key={gi} style={{ marginTop: 18 }}>
-                        <div style={{ fontWeight: 700, color: "#0f172a", marginBottom: 10 }}>{group.label}</div>
-                        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(2, minmax(0, 1fr))", gap: 10 }}>
-                          {group.items.map((item, ii) => (
-                            <div key={ii} style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
-                              <div style={{ width: 6, height: 6, borderRadius: "50%", background: "#0f172a", marginTop: 8, flexShrink: 0 }} />
-                              <p style={{ margin: 0, color: "#475569", lineHeight: 1.7, fontSize: ".9rem" }}>{item}</p>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    ))}
+                    </div>
+                  )}
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 20 }}>
+                    <button onClick={() => navigate("pilot")} style={{ background: "#1d4ed8", color: "white", border: "none", borderRadius: 14, padding: "12px 18px", fontWeight: 700, cursor: "pointer", fontFamily: "inherit" }}>
+                      Request pilot batch
+                    </button>
+                    <button onClick={() => navigate("contact")} style={{ background: "transparent", color: "#0f172a", border: "1px solid #cbd5e1", borderRadius: 14, padding: "12px 18px", fontWeight: 700, cursor: "pointer", fontFamily: "inherit" }}>
+                      Talk to operations
+                    </button>
                   </div>
                 </div>
-              </FadeIn>
+              </div>
             ))}
-          </div>
-        </div>
-        <FadeIn delay={0.2}>
-          <div style={{ marginTop: 48, background: "#020617", borderRadius: 24, padding: "40px 36px", display: "flex", gap: 32, alignItems: "center", flexWrap: "wrap" }}>
-            <div style={{ flex: 1, minWidth: 240 }}>
-              <h3 className="font-display" style={{ fontSize: "1.35rem", fontWeight: 800, color: "white", marginBottom: 8 }}>Ready to run a pilot?</h3>
-              <p style={{ color: "#64748b", fontSize: "0.92rem", lineHeight: 1.7 }}>Send us your dataset specs and we'll return a delivery plan within 24 hours.</p>
-            </div>
-            <button onClick={() => navigate("pilot")} style={{ flexShrink: 0, background: "linear-gradient(135deg, #1d4ed8, #0f9d68)", color: "white", border: "none", borderRadius: 12, padding: "14px 28px", fontWeight: 700, fontSize: "0.95rem", cursor: "pointer", fontFamily: "inherit", display: "flex", alignItems: "center", gap: 8 }}>
-              Start Pilot <ArrowRight size={16} />
-            </button>
           </div>
         </FadeIn>
       </div>
