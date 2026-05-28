@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 
 const ArrowRight = ({size=16}) => (<svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>);
@@ -19,6 +20,13 @@ const Zap = ({size=18}) => (<svg xmlns="http://www.w3.org/2000/svg" width={size}
 const Shield = ({size=18}) => (<svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>);
 const TrendingUp = ({size=18}) => (<svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>);
 const ArrowUpRight = ({size=16}) => (<svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>);
+
+const PageHelmet = ({ title, description }) => (
+  <Helmet>
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+  </Helmet>
+);
 
 const LOGO = [
   "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAeAAAADMCAIAAAAkr+c7AAEAAElEQVR42s",
@@ -424,6 +432,7 @@ const ServicesPage = ({ goBack, navigate, isMobile }) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   return (
     <div style={{ minHeight: "100vh", background: "linear-gradient(160deg,#f8fbff 0%,#eef9ff 50%,#f0fdf4 100%)", paddingTop: 80 }}>
+      <PageHelmet title="Services | Baraka Digital Hub" description="Discover Baraka Digital Hub’s AI annotation and digital operations services." />
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "48px 24px" }}>
         <button onClick={goBack} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", cursor: "pointer", color: "#1d4ed8", fontWeight: 600, fontSize: "0.9rem", marginBottom: 32, fontFamily: "inherit" }}>
           <ChevronLeft size={18} /> Back to Home
@@ -483,6 +492,7 @@ const OperationsPage = ({ goBack, isMobile }) => {
   ];
   return (
     <div style={{ minHeight: "100vh", background: "linear-gradient(160deg,#f8fbff 0%,#eef9ff 50%,#f0fdf4 100%)", paddingTop: 80 }}>
+      <PageHelmet title="Operations | Baraka Digital Hub" description="Explore Baraka Digital Hub's operations, QA, and delivery capabilities." />
       <div style={{ maxWidth: 1100, margin: "0 auto", padding: "48px 24px" }}>
         <button onClick={goBack} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", cursor: "pointer", color: "#1d4ed8", fontWeight: 600, fontSize: "0.9rem", marginBottom: 32, fontFamily: "inherit" }}>
           <ChevronLeft size={18} /> Back to Home
@@ -603,6 +613,7 @@ const WorkflowPage = ({ goBack, setPage, isMobile }) => {
   ];
   return (
     <div style={{ minHeight: "100vh", background: "linear-gradient(160deg,#f8fbff 0%,#eef9ff 50%,#f0fdf4 100%)", paddingTop: isMobile ? 60 : 80 }}>
+      <PageHelmet title="Workflow | Baraka Digital Hub" description="See Baraka Digital Hub's secure AI data workflow from scoping to delivery." />
       <div style={{ maxWidth: isMobile ? "100%" : 1120, margin: "0 auto", padding: isMobile ? "28px 18px" : "48px 24px" }}>
         <button onClick={goBack} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", cursor: "pointer", color: "#1d4ed8", fontWeight: 600, fontSize: "0.95rem", marginBottom: 32, fontFamily: "inherit" }}>
           <ChevronLeft size={18} /> Back to Home
@@ -696,6 +707,7 @@ const AboutPage = ({ goBack, isMobile }) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   return (
     <div style={{ minHeight: "100vh", background: "linear-gradient(160deg,#f8fbff 0%,#eef9ff 50%,#f0fdf4 100%)", paddingTop: 80 }}>
+      <PageHelmet title="About | Baraka Digital Hub" description="Learn about Baraka Digital Hub's mission and social impact in Nairobi." />
       <div style={{ maxWidth: 980, margin: "0 auto", padding: "48px 24px" }}>
         <button onClick={goBack} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", cursor: "pointer", color: "#1d4ed8", fontWeight: 600, fontSize: "0.9rem", marginBottom: 32, fontFamily: "inherit" }}>
           <ChevronLeft size={18} /> Back to Home
@@ -831,6 +843,7 @@ const CareersPage = ({ goBack, setPage, navigate, isMobile }) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   return (
     <div style={{ minHeight: "100vh", background: "linear-gradient(160deg,#f8fbff 0%,#eef9ff 50%,#f0fdf4 100%)", paddingTop: 80 }}>
+      <PageHelmet title="Careers | Baraka Digital Hub" description="See current careers and connect with Baraka Digital Hub for future opportunities." />
       <div style={{ maxWidth: 980, margin: "0 auto", padding: "48px 24px" }}>
         <button onClick={goBack} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", cursor: "pointer", color: "#1d4ed8", fontWeight: 600, fontSize: "0.9rem", marginBottom: 32, fontFamily: "inherit" }}>
           <ChevronLeft size={18} /> Back to Home
@@ -870,6 +883,7 @@ const PrivacyPage = ({ goBack, isMobile }) => {
 
   return (
     <div style={{ minHeight: "100vh", background: "#f8f9fb", paddingTop: 80 }}>
+      <PageHelmet title="Privacy | Baraka Digital Hub" description="Read Baraka Digital Hub’s privacy and data protection commitments." />
       <div style={{ maxWidth: 980, margin: "0 auto", padding: "32px 20px 48px" }}>
         <button onClick={goBack} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", cursor: "pointer", color: "#0d2b4e", fontWeight: 700, fontSize: "0.95rem", marginBottom: 28, fontFamily: "inherit" }}>
           <ChevronLeft size={18} /> Back to Home
@@ -1068,6 +1082,7 @@ const ImpactPage = ({ goBack, isMobile }) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   return (
     <div style={{ minHeight: "100vh", background: "linear-gradient(160deg,#f8fbff 0%,#eef9ff 50%,#f0fdf4 100%)", paddingTop: 80 }}>
+      <PageHelmet title="Impact | Baraka Digital Hub" description="Understand Baraka Digital Hub’s AI services and social impact work." />
       <div style={{ maxWidth: 980, margin: "0 auto", padding: "48px 24px" }}>
         <button onClick={goBack} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", cursor: "pointer", color: "#1d4ed8", fontWeight: 600, fontSize: "0.9rem", marginBottom: 32, fontFamily: "inherit" }}>
           <ChevronLeft size={18} /> Back to Home
@@ -1183,6 +1198,7 @@ const PilotPage = ({ goBack, setPage, navigate, isMobile }) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   return (
     <div style={{ minHeight: "100vh", background: "linear-gradient(160deg, #f8fafc, #eff6ff)", paddingTop: 80 }}>
+      <PageHelmet title="Pilot | Baraka Digital Hub" description="Start a pilot program with Baraka Digital Hub’s AI data annotation services." />
       <div style={{ maxWidth: 760, margin: "0 auto", padding: "48px 24px" }}>
         <button onClick={goBack} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", cursor: "pointer", color: "#1d4ed8", fontWeight: 600, fontSize: "0.9rem", marginBottom: 40, fontFamily: "inherit" }}>
           <ChevronLeft size={18} /> Back to Home
@@ -1245,6 +1261,7 @@ const ContactPage = ({ goBack, isMobile }) => {
 
   return (
     <div style={{ minHeight: "100vh", background: "linear-gradient(160deg,#f8fbff 0%,#eef9ff 50%,#f0fdf4 100%)", paddingTop: 80 }}>
+      <PageHelmet title="Contact | Baraka Digital Hub" description="Contact Baraka Digital Hub to discuss pilots, annotation workflows, or enterprise AI data programs." />
       <div style={{ maxWidth: 980, margin: "0 auto", padding: "48px 24px" }}>
         <button onClick={goBack} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", cursor: "pointer", color: "#0d2b4e", fontWeight: 700, fontSize: "0.95rem", marginBottom: 28, fontFamily: "inherit" }}>
           <ChevronLeft size={18} /> Back to Home
