@@ -527,12 +527,177 @@ const OperationsPage = ({ goBack, isMobile }) => {
 const WorkflowPage = ({ goBack, setPage, isMobile }) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   const steps = [
-    { n: 1, title: "Project Intake", desc: "Client shares dataset specs, quality requirements, tooling preferences, and timeline. We review and confirm feasibility within 24 hours.", color: "#1d4ed8" },
-    { n: 2, title: "Tasker Onboarding", desc: "We assign a specialized team and run task-specific certification. Team leaders are trained first and then train their teams. Taskers complete training to understand client requirements and must pass a calibration test before accessing the live dataset.", color: "#7c3aed" },
-    { n: 3, title: "Dataset Segmentation", desc: "The dataset is divided into manageable batches and assigned across the team. Load is balanced to maintain throughput and reduce bottlenecks.", color: "#0891b2" },
-    { n: 4, title: "Annotation Execution", desc: "Taskers work in the client's chosen environment (CVAT, Label Studio, Scale, or custom tooling). All work is tracked in real-time.", color: "#059669" },
-    { n: 5, title: "100% QA Review", desc: "An independent QA team reviews every annotation before delivery. Errors are logged, corrected, and fed back into the calibration system.", color: "#d97706" },
-    { n: 6, title: "Final Delivery", desc: "Completed, QA-verified data is exported in the client's required format. A quality report and summary metrics are included with every delivery.", color: "#dc2626" },
+    {
+      n: 1,
+      title: "Project Scoping & Requirement Alignment",
+      desc: "Every project begins with operational alignment to define scope, workflows, quality standards, tooling, and delivery expectations.",
+      bullets: [
+        "Workflow discovery",
+        "Label taxonomy review",
+        "Data security alignment",
+        "Tool & platform setup",
+        "SLA confirmation",
+        "Production planning"
+      ],
+      color: "#1d4ed8"
+    },
+    {
+      n: 2,
+      title: "Pilot Batch, Edge Cases & Calibration",
+      desc: "A pilot phase validates quality standards, operational readiness, and edge-case handling before full-scale deployment.",
+      bullets: [
+        "Pilot production batch",
+        "QA benchmarking",
+        "Client feedback integration",
+        "Guideline refinement",
+        "Workflow recalibration"
+      ],
+      details: [
+        "Partial object visibility",
+        "Occluded objects",
+        "Low-quality audio",
+        "Accented speech variation",
+        "Handwritten text inconsistencies",
+        "Motion blur",
+        "Low-light imagery",
+        "Overlapping entities",
+        "Ambiguous classifications",
+        "Multi-language transcription cases",
+        "OCR formatting anomalies",
+        "Sensitive content escalation scenarios"
+      ],
+      color: "#7c3aed"
+    },
+    {
+      n: 3,
+      title: "Workforce Deployment & Training",
+      desc: "Specialized production teams are deployed based on service type, project complexity, and turnaround requirements.",
+      bullets: [
+        "Secure workforce onboarding",
+        "Tool-specific training",
+        "Productivity monitoring",
+        "Escalation management",
+        "Compliance tracking"
+      ],
+      subsections: [
+        {
+          label: "Workforce Structure Includes:",
+          items: [
+            "AI data annotators",
+            "Transcription specialists",
+            "QA reviewers",
+            "OCR operators",
+            "Content moderation teams",
+            "Data processing teams",
+            "Team leads & production supervisors"
+          ]
+        }
+      ],
+      color: "#0891b2"
+    },
+    {
+      n: 4,
+      title: "Production & Task Execution",
+      desc: "Tasks are segmented into structured production batches and distributed across operational pods for scalable execution.",
+      bullets: [
+        "Parallel task allocation",
+        "Real-time throughput tracking",
+        "Daily productivity monitoring",
+        "Workflow balancing",
+        "Escalation handling",
+        "Operational reporting"
+      ],
+      subsections: [
+        {
+          label: "AI Data Services",
+          items: [
+            "Bounding box annotation",
+            "Polygon segmentation",
+            "Classification & tagging",
+            "NLP data labeling",
+            "Image & video annotation"
+          ]
+        },
+        {
+          label: "Transcription & Data Processing",
+          items: [
+            "Audio transcription",
+            "Speech-to-text alignment",
+            "OCR & document digitization",
+            "Data cleaning & formatting",
+            "Metadata enrichment"
+          ]
+        },
+        {
+          label: "Digital Operations Support",
+          items: [
+            "Lead generation",
+            "Research support",
+            "Content moderation",
+            "Data entry operations",
+            "Business process support"
+          ]
+        }
+      ],
+      color: "#059669"
+    },
+    {
+      n: 5,
+      title: "100% First-Pass QA Review",
+      desc: "Every completed task undergoes structured quality review before final approval and delivery.",
+      bullets: [
+        "Accuracy validation",
+        "Formatting consistency checks",
+        "Guideline compliance verification",
+        "Edge-case validation",
+        "Escalation of ambiguous cases",
+        "Error correction & revalidation"
+      ],
+      color: "#d97706"
+    },
+    {
+      n: 6,
+      title: "Error Logging & Continuous Recalibration",
+      desc: "Errors identified during production and QA are systematically logged to improve operational consistency and workforce performance.",
+      bullets: [
+        "Error categorization",
+        "Annotator & reviewer feedback loops",
+        "Retraining sessions",
+        "Workflow optimization",
+        "Guideline updates",
+        "Accuracy trend monitoring"
+      ],
+      color: "#f97316"
+    },
+    {
+      n: 7,
+      title: "Final Validation, Reporting & Delivery",
+      desc: "All deliverables undergo final verification before secure export and handoff.",
+      bullets: [
+        "Production-ready datasets",
+        "Clean transcripts",
+        "Structured documents",
+        "QA & accuracy reports",
+        "Progress analytics",
+        "Custom export formats",
+        "Secure file transfer"
+      ],
+      color: "#0f172a"
+    },
+    {
+      n: 8,
+      title: "Post-Delivery Support & Scaling",
+      desc: "Baraka Digital Hub remains available for revisions, scaling, and long-term operational support.",
+      bullets: [
+        "Revision cycles",
+        "Additional annotation rounds",
+        "Ongoing transcription support",
+        "Workforce scaling",
+        "Long-term production partnerships",
+        "Dedicated operational support"
+      ],
+      color: "#22c55e"
+    }
   ];
   return (
     <div style={{ minHeight: "100vh", background: "linear-gradient(160deg,#f8fbff 0%,#eef9ff 50%,#f0fdf4 100%)", paddingTop: 80 }}>
@@ -547,15 +712,51 @@ const WorkflowPage = ({ goBack, setPage, isMobile }) => {
           </div>
         </FadeIn>
         <div style={{ position: "relative" }}>
-          <div style={{ position: "absolute", left: 27, top: 48, bottom: 48, width: 2, background: "linear-gradient(to bottom, #1d4ed8, #dc2626)", borderRadius: 2 }} />
-          <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
+          <div style={{ position: "absolute", left: 27, top: 48, bottom: 48, width: 2, background: "linear-gradient(to bottom, #1d4ed8, #0f9d68)", borderRadius: 2 }} />
+          <div style={{ display: "grid", gap: 24 }}>
             {steps.map((s, i) => (
               <FadeIn key={i} delay={i * 0.08}>
-                <div style={{ display: "flex", gap: 24, paddingBottom: i < steps.length - 1 ? 32 : 0 }}>
-                  <div style={{ flexShrink: 0, width: 56, height: 56, borderRadius: "50%", background: s.color, display: "flex", alignItems: "center", justifyContent: "center", color: "white", fontFamily: "Syne, sans-serif", fontWeight: 800, fontSize: 18, position: "relative", zIndex: 1, boxShadow: `0 0 0 4px #f8fafc` }}>{s.n}</div>
-                  <div style={{ background: "white", flex: 1, borderRadius: 16, padding: "20px 24px", border: "1px solid #f1f5f9", boxShadow: "0 2px 12px rgba(0,0,0,0.04)", marginTop: 4 }}>
-                    <h3 className="font-display" style={{ fontSize: "1.1rem", fontWeight: 800, color: "#0f172a", marginBottom: 8 }}>{s.title}</h3>
-                    <p style={{ color: "#64748b", fontSize: "0.9rem", lineHeight: 1.7 }}>{s.desc}</p>
+                <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "72px 1fr", gap: 24, alignItems: "flex-start", padding: "28px 26px", borderRadius: 24, border: "1px solid #e2e8f0", background: "white", boxShadow: "0 20px 48px rgba(15,23,42,.06)" }}>
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "center", width: 72, height: 72, borderRadius: "50%", background: s.color, color: "white", fontFamily: "Syne, sans-serif", fontWeight: 800, fontSize: "1.35rem", boxShadow: "0 0 0 6px #f8fafc" }}>{s.n}</div>
+                  <div>
+                    <h3 className="font-display" style={{ fontSize: "1.3rem", fontWeight: 800, color: "#0f172a", marginBottom: 10 }}>{s.title}</h3>
+                    <p style={{ color: "#475569", fontSize: "0.95rem", lineHeight: 1.85, marginBottom: s.bullets ? 16 : 0 }}>{s.desc}</p>
+                    {s.bullets && (
+                      <div style={{ display: "grid", gap: 10, marginTop: 8 }}>
+                        {s.bullets.map((bullet, bi) => (
+                          <div key={bi} style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
+                            <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#0f172a", marginTop: 8, flexShrink: 0 }} />
+                            <p style={{ margin: 0, color: "#475569", lineHeight: 1.75, fontSize: ".93rem" }}>{bullet}</p>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                    {s.details && (
+                      <div style={{ marginTop: 18, padding: "18px 18px 18px 16px", background: "#f8fafc", borderRadius: 18, border: "1px solid #e2e8f0" }}>
+                        <div style={{ fontWeight: 700, color: "#0f172a", marginBottom: 12 }}>Updated Edge Cases Include:</div>
+                        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(2, minmax(0, 1fr))", gap: 10 }}>
+                          {s.details.map((item, di) => (
+                            <div key={di} style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
+                              <div style={{ width: 6, height: 6, borderRadius: "50%", background: "#0f172a", marginTop: 8, flexShrink: 0 }} />
+                              <p style={{ margin: 0, color: "#475569", lineHeight: 1.7, fontSize: ".88rem" }}>{item}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                    {s.subsections && s.subsections.map((group, gi) => (
+                      <div key={gi} style={{ marginTop: 18 }}>
+                        <div style={{ fontWeight: 700, color: "#0f172a", marginBottom: 10 }}>{group.label}</div>
+                        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(2, minmax(0, 1fr))", gap: 10 }}>
+                          {group.items.map((item, ii) => (
+                            <div key={ii} style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
+                              <div style={{ width: 6, height: 6, borderRadius: "50%", background: "#0f172a", marginTop: 8, flexShrink: 0 }} />
+                              <p style={{ margin: 0, color: "#475569", lineHeight: 1.7, fontSize: ".9rem" }}>{item}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </FadeIn>
@@ -1399,6 +1600,23 @@ function BarakaDigitalHub() {
                   <p style={{ fontSize:"1.02rem", color:"#475569", lineHeight:1.75, marginBottom:32, maxWidth:680 }}>
                     We deliver high-quality AI training, data annotation, transcription, and digital outsourcing services. We help AI companies, startups, and global organizations scale reliable data operations with rigorous quality control, transparent performance metrics, and competitive pricing.
                   </p>
+                  <div style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(2, minmax(0, 1fr))", gap:12, marginBottom:32 }}>
+                    {[
+                      "Project Scoping & Requirement Alignment",
+                      "Pilot Batch, Edge Cases & Calibration",
+                      "Workforce Deployment & Training",
+                      "Production & Task Execution",
+                      "100% First-Pass QA Review",
+                      "Error Logging & Continuous Recalibration",
+                      "Final Validation, Reporting & Delivery",
+                      "Post-Delivery Support & Scaling"
+                    ].map((item, index) => (
+                      <div key={index} style={{ display:"flex", gap:10, alignItems:"flex-start", background:"rgba(255,255,255,.88)", borderRadius:16, padding:"14px 16px", border:"1px solid rgba(15,23,42,.08)" }}>
+                        <span style={{ width:10, height:10, borderRadius:"50%", background:"#0f172a", marginTop:6, flexShrink:0 }} />
+                        <p style={{ margin:0, color:"#334155", fontWeight:600, fontSize:"0.94rem", lineHeight:1.6 }}>{item}</p>
+                      </div>
+                    ))}
+                  </div>
                   <div style={{ display:"flex", gap:12, flexWrap:"wrap", marginBottom:36 }}>
                     <button onClick={() => navigate("pilot")} className="btn-primary">Start Pilot Program <ArrowRight size={17} /></button>
                     <button onClick={() => navigate("services")} className="btn-secondary">Explore Services</button>
