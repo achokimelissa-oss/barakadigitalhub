@@ -1544,27 +1544,37 @@ function BarakaDigitalHub() {
               <FadeIn>
                 <div style={{ textAlign:"center", marginBottom:52 }}>
                   <h2 className="section-h2 font-display" style={{ fontSize:"2.6rem", fontWeight:800, color:"#0f172a", letterSpacing:"-.03em", marginBottom:12 }}>How Delivery Works</h2>
-                  <p style={{ color:"#64748b", fontSize:"1rem", maxWidth:480, margin:"0 auto", lineHeight:1.75 }}>A six-stage pipeline from intake to delivery — transparent, measurable, consistent.</p>
+                  <p style={{ color:"#64748b", fontSize:"1rem", maxWidth:520, margin:"0 auto", lineHeight:1.75 }}>A streamlined operational workflow for AI data and digital delivery, with full process detail available on the workflow page.</p>
                 </div>
               </FadeIn>
               <FadeIn delay={0.08}>
                 <div style={{ background:"white", borderRadius:24, border:"1px solid #f1f5f9", boxShadow:"0 12px 48px rgba(0,0,0,.07)", overflow:"hidden" }}>
                   <div style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr" }}>
-                    <div style={{ padding:"36px 32px", borderRight:"1px solid #f1f5f9" }}>
-                      <div style={{ display:"inline-block", background:"rgba(29,78,216,.08)", color:"#1d4ed8", padding:"5px 13px", borderRadius:100, fontSize:".72rem", fontWeight:700, letterSpacing:".05em", textTransform:"uppercase", marginBottom:20 }}>Example Project</div>
-                      <h3 className="font-display" style={{ fontSize:"1.6rem", fontWeight:800, color:"#0f172a", marginBottom:24, lineHeight:1.2 }}>Object Detection Annotation Pipeline</h3>
-                      {[["Task Type","Bounding Box Annotation"],["Dataset Volume","25,000 Images"],["Timeline","48 Hours"],["QA Method","100% First-Pass Review"],["Reporting","Daily Progress Updates"]].map(([k,v],i)=>(
-                        <div key={i} style={{ display:"flex", justifyContent:"space-between", alignItems:"center", padding:"12px 0", borderBottom:"1px solid #f8fafc" }}>
+                    <div style={{ padding:"36px 32px", borderRight: isMobile ? "none" : "1px solid #f1f5f9" }}>
+                      <div style={{ display:"inline-block", background:"rgba(29,78,216,.08)", color:"#1d4ed8", padding:"5px 13px", borderRadius:100, fontSize:".72rem", fontWeight:700, letterSpacing:".05em", textTransform:"uppercase", marginBottom:20 }}>Sample Engagement</div>
+                      <h3 className="font-display" style={{ fontSize:"1.6rem", fontWeight:800, color:"#0f172a", marginBottom:24, lineHeight:1.2 }}>AI Data Delivery Example</h3>
+                      {[
+                        ["Task Type","Bounding Box Annotation"],
+                        ["Dataset Volume","25,000 Images"],
+                        ["Delivery Timeline","48 Hours"],
+                        ["Annotation Workforce","80 Certified Taskers"],
+                        ["QA Workforce","15 QA Specialists"],
+                        ["Total Productive Hours","1,920+ Annotation Hours + 360 QA Hours"],
+                        ["Quality Assurance","100% Review of All First-Pass Annotations"],
+                        ["Reporting","Real-Time Progress & Daily Accuracy Reports"],
+                        ["Delivery Format","COCO, YOLO, custom JSON, or client-specified formats"]
+                      ].map(([k,v],i)=>(
+                        <div key={i} style={{ display:"flex", justifyContent:"space-between", alignItems:"center", padding:"12px 0", borderBottom: i < 8 ? "1px solid #f8fafc" : "none" }}>
                           <span style={{ fontSize:".82rem", color:"#94a3b8", fontWeight:500 }}>{k}</span>
-                          <span style={{ fontSize:".87rem", fontWeight:700, color:"#0f172a" }}>{v}</span>
+                          <span style={{ fontSize:".87rem", fontWeight:700, color:"#0f172a", textAlign:"right", maxWidth: isMobile ? "55%" : "48%" }}>{v}</span>
                         </div>
                       ))}
                     </div>
                     <div style={{ background:"#020617", padding:"36px 32px" }}>
-                      <h3 className="font-display" style={{ fontSize:"1.4rem", fontWeight:800, color:"white", marginBottom:28 }}>Delivery Stages</h3>
-                      {["Tasker onboarding & certification","Dataset segmentation & assignment","Annotation in client environment","100% QA review & validation","Error logging & recalibration","Final export, report & handoff"].map((step,i)=>(
-                        <div key={i} style={{ display:"flex", gap:14, paddingBottom: i<5?22:0, position:"relative" }}>
-                          {i<5 && <div style={{ position:"absolute", left:19, top:38, width:2, bottom:0, background:"rgba(255,255,255,.06)" }} />}
+                      <h3 className="font-display" style={{ fontSize:"1.4rem", fontWeight:800, color:"white", marginBottom:28 }}>Workflow Overview</h3>
+                      {["Discovery & intake","Team assignment & tooling","Execution with transparent tracking","Continuous quality monitoring","Delivery, formatting & reporting"].map((step,i)=>(
+                        <div key={i} style={{ display:"flex", gap:14, paddingBottom: i<4?22:0, position:"relative" }}>
+                          {i<4 && <div style={{ position:"absolute", left:19, top:38, width:2, bottom:0, background:"rgba(255,255,255,.06)" }} />}
                           <div style={{ flexShrink:0, width:38, height:38, borderRadius:"50%", background:"linear-gradient(135deg,#1d4ed8,#0f9d68)", display:"flex", alignItems:"center", justifyContent:"center", fontFamily:"Syne,sans-serif", fontWeight:800, fontSize:13, color:"white", position:"relative", zIndex:1 }}>{i+1}</div>
                           <div style={{ paddingTop:8 }}>
                             <p style={{ color:"#94a3b8", fontSize:".86rem", lineHeight:1.6 }}>{step}</p>
@@ -1572,7 +1582,7 @@ function BarakaDigitalHub() {
                         </div>
                       ))}
                       <button onClick={() => navigate("workflow")} style={{ marginTop:28, display:"inline-flex", alignItems:"center", gap:8, background:"white", color:"#0f172a", border:"none", borderRadius:12, padding:"12px 22px", fontWeight:700, fontSize:".88rem", cursor:"pointer", fontFamily:"inherit" }}>
-                        Full Workflow Detail <ArrowRight size={15} />
+                        View full workflow <ArrowRight size={15} />
                       </button>
                     </div>
                   </div>
