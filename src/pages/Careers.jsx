@@ -8,7 +8,7 @@ function Careers() {
         <title>Careers | Baraka Digital Hub</title>
         <meta
           name="description"
-          content="Join Baraka Digital Hub and help shape the future of AI data services and digital innovation in Africa."
+          content="Join our growing team of AI data annotators and digital operations specialists in Nairobi, Kenya."
         />
       </Helmet>
       <section className="section-block careers-hero section-intro">

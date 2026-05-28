@@ -7,7 +7,7 @@ function About() {
         <title>About Us | Baraka Digital Hub</title>
         <meta
           name="description"
-          content="Learn how Baraka Digital Hub empowers businesses through AI-powered digital solutions and youth employment."
+          content="Learn about Baraka Digital Hub — a Nairobi-based AI training and digital operations company built on social impact."
         />
       </Helmet>
       <section className="section-block about-hero section-intro">

@@ -7,7 +7,7 @@ function Privacy() {
         <title>Privacy Policy | Baraka Digital Hub</title>
         <meta
           name="description"
-          content="Read how Baraka Digital Hub protects client and inquiry data for AI training, annotation, and digital operations services."
+          content="Baraka Digital Hub privacy policy — how we handle data, protect client information, and maintain compliance."
         />
       </Helmet>
       <section className="section-block contact-hero section-intro">

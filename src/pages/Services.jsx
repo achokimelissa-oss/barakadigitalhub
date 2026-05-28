@@ -4,10 +4,10 @@ function Services() {
   return (
     <>
       <Helmet>
-        <title>AI Data Labeling & Transcription Services | Baraka Digital Hub</title>
+        <title>AI Data Annotation & Training Services | Baraka Digital Hub</title>
         <meta
           name="description"
-          content="High-accuracy AI data labeling, transcription, annotation, and digital workforce solutions for global businesses."
+          content="Expert computer vision annotation, NLP, audio processing, LLM training and BPO services from our Nairobi-based team."
         />
       </Helmet>
       <section className="section-block service-hero section-intro section-tech-bg">

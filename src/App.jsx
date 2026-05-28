@@ -432,7 +432,7 @@ const ServicesPage = ({ goBack, navigate, isMobile }) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   return (
     <div style={{ minHeight: "100vh", background: "linear-gradient(160deg,#f8fbff 0%,#eef9ff 50%,#f0fdf4 100%)", paddingTop: 80 }}>
-      <PageHelmet title="Services | Baraka Digital Hub" description="Discover Baraka Digital Hub’s AI annotation and digital operations services." />
+      <PageHelmet title="AI Data Annotation & Training Services | Baraka Digital Hub" description="Expert computer vision annotation, NLP, audio processing, LLM training and BPO services from our Nairobi-based team." />
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "48px 24px" }}>
         <button onClick={goBack} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", cursor: "pointer", color: "#1d4ed8", fontWeight: 600, fontSize: "0.9rem", marginBottom: 32, fontFamily: "inherit" }}>
           <ChevronLeft size={18} /> Back to Home
@@ -492,7 +492,7 @@ const OperationsPage = ({ goBack, isMobile }) => {
   ];
   return (
     <div style={{ minHeight: "100vh", background: "linear-gradient(160deg,#f8fbff 0%,#eef9ff 50%,#f0fdf4 100%)", paddingTop: 80 }}>
-      <PageHelmet title="Operations | Baraka Digital Hub" description="Explore Baraka Digital Hub's operations, QA, and delivery capabilities." />
+      <PageHelmet title="Operations | Baraka Digital Hub" description="Enterprise-ready operations infrastructure: 80+ certified taskers, 100% QA review, 48-hour turnaround from Nairobi." />
       <div style={{ maxWidth: 1100, margin: "0 auto", padding: "48px 24px" }}>
         <button onClick={goBack} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", cursor: "pointer", color: "#1d4ed8", fontWeight: 600, fontSize: "0.9rem", marginBottom: 32, fontFamily: "inherit" }}>
           <ChevronLeft size={18} /> Back to Home
@@ -613,7 +613,7 @@ const WorkflowPage = ({ goBack, setPage, isMobile }) => {
   ];
   return (
     <div style={{ minHeight: "100vh", background: "linear-gradient(160deg,#f8fbff 0%,#eef9ff 50%,#f0fdf4 100%)", paddingTop: isMobile ? 60 : 80 }}>
-      <PageHelmet title="Workflow | Baraka Digital Hub" description="See Baraka Digital Hub's secure AI data workflow from scoping to delivery." />
+      <PageHelmet title="Our Workflow | Baraka Digital Hub" description="From scoping to delivery — see exactly how Baraka Digital Hub manages AI data projects with structured QA and reporting." />
       <div style={{ maxWidth: isMobile ? "100%" : 1120, margin: "0 auto", padding: isMobile ? "28px 18px" : "48px 24px" }}>
         <button onClick={goBack} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", cursor: "pointer", color: "#1d4ed8", fontWeight: 600, fontSize: "0.95rem", marginBottom: 32, fontFamily: "inherit" }}>
           <ChevronLeft size={18} /> Back to Home
@@ -707,7 +707,7 @@ const AboutPage = ({ goBack, isMobile }) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   return (
     <div style={{ minHeight: "100vh", background: "linear-gradient(160deg,#f8fbff 0%,#eef9ff 50%,#f0fdf4 100%)", paddingTop: 80 }}>
-      <PageHelmet title="About | Baraka Digital Hub" description="Learn about Baraka Digital Hub's mission and social impact in Nairobi." />
+      <PageHelmet title="About Us | Baraka Digital Hub" description="Learn about Baraka Digital Hub — a Nairobi-based AI training and digital operations company built on social impact." />
       <div style={{ maxWidth: 980, margin: "0 auto", padding: "48px 24px" }}>
         <button onClick={goBack} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", cursor: "pointer", color: "#1d4ed8", fontWeight: 600, fontSize: "0.9rem", marginBottom: 32, fontFamily: "inherit" }}>
           <ChevronLeft size={18} /> Back to Home
@@ -841,7 +841,7 @@ const CareersPage = ({ goBack, setPage, navigate, isMobile }) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   return (
     <div style={{ minHeight: "100vh", background: "linear-gradient(160deg,#f8fbff 0%,#eef9ff 50%,#f0fdf4 100%)", paddingTop: 80 }}>
-      <PageHelmet title="Careers | Baraka Digital Hub" description="See current careers and connect with Baraka Digital Hub for future opportunities." />
+      <PageHelmet title="Careers | Baraka Digital Hub" description="Join our growing team of AI data annotators and digital operations specialists in Nairobi, Kenya." />
       <div style={{ maxWidth: 980, margin: "0 auto", padding: "48px 24px" }}>
         <button onClick={goBack} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", cursor: "pointer", color: "#1d4ed8", fontWeight: 600, fontSize: "0.9rem", marginBottom: 32, fontFamily: "inherit" }}>
           <ChevronLeft size={18} /> Back to Home
@@ -881,7 +881,7 @@ const PrivacyPage = ({ goBack, isMobile }) => {
 
   return (
     <div style={{ minHeight: "100vh", background: "#f8f9fb", paddingTop: 80 }}>
-      <PageHelmet title="Privacy | Baraka Digital Hub" description="Read Baraka Digital Hub’s privacy and data protection commitments." />
+      <PageHelmet title="Privacy Policy | Baraka Digital Hub" description="Baraka Digital Hub privacy policy — how we handle data, protect client information, and maintain compliance." />
       <div style={{ maxWidth: 980, margin: "0 auto", padding: "32px 20px 48px" }}>
         <button onClick={goBack} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", cursor: "pointer", color: "#0d2b4e", fontWeight: 700, fontSize: "0.95rem", marginBottom: 28, fontFamily: "inherit" }}>
           <ChevronLeft size={18} /> Back to Home
@@ -1080,7 +1080,7 @@ const ImpactPage = ({ goBack, isMobile }) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   return (
     <div style={{ minHeight: "100vh", background: "linear-gradient(160deg,#f8fbff 0%,#eef9ff 50%,#f0fdf4 100%)", paddingTop: 80 }}>
-      <PageHelmet title="Impact | Baraka Digital Hub" description="Understand Baraka Digital Hub’s AI services and social impact work." />
+      <PageHelmet title="Social Impact | Baraka Digital Hub" description="How Baraka Digital Hub creates sustainable employment for Nairobi youth while delivering world-class AI data services." />
       <div style={{ maxWidth: 980, margin: "0 auto", padding: "48px 24px" }}>
         <button onClick={goBack} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", cursor: "pointer", color: "#1d4ed8", fontWeight: 600, fontSize: "0.9rem", marginBottom: 32, fontFamily: "inherit" }}>
           <ChevronLeft size={18} /> Back to Home
@@ -1196,7 +1196,7 @@ const PilotPage = ({ goBack, setPage, navigate, isMobile }) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   return (
     <div style={{ minHeight: "100vh", background: "linear-gradient(160deg, #f8fafc, #eff6ff)", paddingTop: 80 }}>
-      <PageHelmet title="Pilot | Baraka Digital Hub" description="Start a pilot program with Baraka Digital Hub’s AI data annotation services." />
+      <PageHelmet title="Start a Pilot Program | Baraka Digital Hub" description="Try Baraka Digital Hub with a small batch. Get results in 48 hours with full quality reporting before you commit to scale." />
       <div style={{ maxWidth: 760, margin: "0 auto", padding: "48px 24px" }}>
         <button onClick={goBack} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", cursor: "pointer", color: "#1d4ed8", fontWeight: 600, fontSize: "0.9rem", marginBottom: 40, fontFamily: "inherit" }}>
           <ChevronLeft size={18} /> Back to Home
@@ -1259,7 +1259,7 @@ const ContactPage = ({ goBack, isMobile }) => {
 
   return (
     <div style={{ minHeight: "100vh", background: "linear-gradient(160deg,#f8fbff 0%,#eef9ff 50%,#f0fdf4 100%)", paddingTop: 80 }}>
-      <PageHelmet title="Contact | Baraka Digital Hub" description="Contact Baraka Digital Hub to discuss pilots, annotation workflows, or enterprise AI data programs." />
+      <PageHelmet title="Contact Us | Baraka Digital Hub" description="Get in touch with the Baraka Digital Hub team for AI training data, annotation services, or partnership enquiries." />
       <div style={{ maxWidth: 980, margin: "0 auto", padding: "48px 24px" }}>
         <button onClick={goBack} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", cursor: "pointer", color: "#0d2b4e", fontWeight: 700, fontSize: "0.95rem", marginBottom: 28, fontFamily: "inherit" }}>
           <ChevronLeft size={18} /> Back to Home

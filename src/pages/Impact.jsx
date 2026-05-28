@@ -58,10 +58,10 @@ function Impact() {
   return (
     <>
       <Helmet>
-        <title>Our Impact | Baraka Digital Hub</title>
+        <title>Social Impact | Baraka Digital Hub</title>
         <meta
           name="description"
-          content="Creating jobs, empowering youth, and driving community impact through technology and digital opportunities."
+          content="How Baraka Digital Hub creates sustainable employment for Nairobi youth while delivering world-class AI data services."
         />
       </Helmet>
       <section className="section-block impact-hero section-intro" style={{ position: "relative", overflow: "hidden", background: "#f8fafc" }}>

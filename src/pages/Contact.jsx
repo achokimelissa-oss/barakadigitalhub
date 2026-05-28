@@ -5,10 +5,10 @@ function Contact() {
   return (
     <>
       <Helmet>
-        <title>Contact | Baraka Digital Hub</title>
+        <title>Contact Us | Baraka Digital Hub</title>
         <meta
           name="description"
-          content="Contact Baraka Digital Hub for AI data services, transcription, digital operations, and impact-driven partnerships."
+          content="Get in touch with the Baraka Digital Hub team for AI training data, annotation services, or partnership enquiries."
         />
       </Helmet>
       <section className="section-block contact-hero section-intro">
