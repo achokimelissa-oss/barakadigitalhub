@@ -1113,8 +1113,8 @@ const PilotPage = ({ goBack, setPage, isMobile }) => {
             <h3 className="font-display" style={{ fontSize: "1.35rem", fontWeight: 800, color: "white", marginBottom: 10 }}>Get in touch</h3>
             <p style={{ color: "rgba(255,255,255,0.85)", marginBottom: 20, fontSize: "0.95rem", maxWidth: "42rem", margin: "0 auto" }}>Contact our team to discuss pilots, custom annotation workflows, or enterprise AI data programs. We reply quickly and can adapt to your tooling and compliance requirements.</p>
             <div style={{ display: "flex", justifyContent: "center", gap: 12, flexWrap: "wrap" }}>
-              <button onClick={() => navigate("contact")} className="btn-primary">Send a message <ArrowRight size={16} /></button>
-              <button onClick={() => navigate("services")} className="btn-secondary">Explore services</button>
+              <button onClick={() => setPage("contact")} className="btn-primary">Send a message <ArrowRight size={16} /></button>
+              <button onClick={() => setPage("services")} className="btn-secondary">Explore services</button>
             </div>
           </div>
         </FadeIn>
@@ -1262,9 +1262,8 @@ function BarakaDigitalHub() {
         @keyframes pulse-slow { 0%,100%{opacity:1} 50%{opacity:.4} }
         @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
         @keyframes typing { from { width: 0; } to { width: 100%; } }
-        @keyframes blink-caret { 50% { opacity: 0; } }
         /* typing-effect now animates to container width so it wraps on small screens */
-        .typing-effect { display: inline-block; overflow: hidden; white-space: normal; width: 0; border-right: .14em solid rgba(15,157,104,.95); animation: typing 2.6s steps(40,end) 0.15s forwards, blink-caret .75s step-end infinite; }
+        .typing-effect { display: inline-block; overflow: hidden; white-space: normal; width: 0; animation: typing 2.6s steps(40,end) 0.15s forwards; }
         .ani-float { animation: float 5s ease-in-out infinite; }
         .ani-floatb { animation: floatB 6s ease-in-out 1.5s infinite; }
         .ani-pulse { animation: pulse-slow 3s ease-in-out infinite; }
@@ -1335,7 +1334,7 @@ function BarakaDigitalHub() {
           .stat-grid { grid-template-columns:1fr 1fr !important; }
           .hero-h1 { font-size:2.4rem !important; }
           .section-h2 { font-size:2rem !important; }
-          .typing-effect { animation: typing 3.2s steps(30,end) 0.15s forwards, blink-caret .75s step-end infinite; }
+          .typing-effect { animation: typing 3.2s steps(30,end) 0.15s forwards; }
         }
         @media(max-width:768px) {
           .hidden-mobile { display:none !important; }
