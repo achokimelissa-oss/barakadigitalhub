@@ -64,23 +64,23 @@ function Impact() {
           content="Creating jobs, empowering youth, and driving community impact through technology and digital opportunities."
         />
       </Helmet>
-      <section className="section-block impact-hero section-intro" style={{ position: "relative", overflow: "hidden", background: "linear-gradient(160deg,#f8fafc 0%,#eff6ff 50%,#ecfdf5 100%)" }}>
-        <div className="dot-grid" style={{ position: "absolute", inset: 0, opacity: .24, pointerEvents: "none" }} />
+      <section className="section-block impact-hero section-intro" style={{ position: "relative", overflow: "hidden", background: "#f8fafc" }}>
+        <div className="dot-grid" style={{ position: "absolute", inset: 0, opacity: .35, pointerEvents: "none", backgroundImage: "radial-gradient(circle, rgba(148,163,184,.13) 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
         <div className="text-block" style={{ position: "relative", zIndex: 1 }}>
-          <p className="highlight-pill">Social Impact</p>
+          <p className="highlight-pill">Community Impact</p>
           <h1>From Charity to Dignity. From Dependency to Opportunity.</h1>
           <p>
             We convert commercial digital work into a consistent support system for youth and Baraka Children’s Home. Every project is designed to create measurable social impact, reliable revenue, and a pathway to lasting independence.
           </p>
           <div className="impact-grid" style={{ marginTop: 28 }}>
             {[
-              { value: "67%", label: "Youth unemployment in informal settlements" },
-              { value: "1 in 3", label: "Young people without formal employment" },
-              { value: "<5%", label: "Children’s home youths in sustainable careers" },
+              { value: "67%", label: "Youth unemployment in informal settlements", color: "#1d4ed8" },
+              { value: "1 in 3", label: "Young people without formal employment", color: "#0f9d68" },
+              { value: "<5%", label: "Children’s home youths in sustainable careers", color: "#d97706" },
             ].map((item, index) => (
-              <article key={index} className="impact-card" style={{ minHeight: 0, padding: "28px 24px" }}>
-                <div className="stat-value" style={{ fontFamily: "'Playfair Display',serif", fontSize: "2rem", fontWeight: 700, color: "#0f172a", marginBottom: 10 }}>{item.value}</div>
-                <div className="stat-label" style={{ fontSize: "0.94rem", color: "#64748b", lineHeight: 1.7 }}>{item.label}</div>
+              <article key={index} className="impact-card" style={{ minHeight: 0, padding: "28px 24px", border: "1px solid rgba(148,163,184,.12)", background: "white" }}>
+                <div className="stat-value" style={{ fontFamily: "'Playfair Display',serif", fontSize: "2rem", fontWeight: 700, color: item.color, marginBottom: 10 }}>{item.value}</div>
+                <div className="stat-label" style={{ fontSize: "0.94rem", color: "#475569", lineHeight: 1.7 }}>{item.label}</div>
               </article>
             ))}
           </div>
