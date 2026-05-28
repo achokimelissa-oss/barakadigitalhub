@@ -602,20 +602,20 @@ const WorkflowPage = ({ goBack, setPage, isMobile }) => {
     }
   ];
   return (
-    <div style={{ minHeight: "100vh", background: "linear-gradient(160deg,#f8fbff 0%,#eef9ff 50%,#f0fdf4 100%)", paddingTop: 80 }}>
-      <div style={{ maxWidth: 1120, margin: "0 auto", padding: "48px 24px" }}>
+    <div style={{ minHeight: "100vh", background: "linear-gradient(160deg,#f8fbff 0%,#eef9ff 50%,#f0fdf4 100%)", paddingTop: isMobile ? 60 : 80 }}>
+      <div style={{ maxWidth: isMobile ? "100%" : 1120, margin: "0 auto", padding: isMobile ? "28px 18px" : "48px 24px" }}>
         <button onClick={goBack} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", cursor: "pointer", color: "#1d4ed8", fontWeight: 600, fontSize: "0.95rem", marginBottom: 32, fontFamily: "inherit" }}>
           <ChevronLeft size={18} /> Back to Home
         </button>
         <FadeIn>
           <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1.3fr .9fr", gap: 26, marginBottom: 42, alignItems: "stretch" }}>
-            <div style={{ background: "white", borderRadius: 32, border: "1px solid #e2e8f0", boxShadow: "0 28px 70px rgba(15,23,42,.08)", padding: "36px 34px" }}>
+            <div style={{ background: "white", borderRadius: 32, border: "1px solid #e2e8f0", boxShadow: "0 28px 70px rgba(15,23,42,.08)", padding: isMobile ? "28px 22px" : "36px 34px" }}>
               <div style={{ display: "inline-flex", alignItems: "center", gap: 10, marginBottom: 18, color: "#0f172a", fontWeight: 700, letterSpacing: ".14em", textTransform: "uppercase" }}>
                 <span style={{ width: 10, height: 10, borderRadius: "50%", background: "#1d4ed8" }} />
                 Delivery workflow
               </div>
-              <h1 className="font-display" style={{ fontSize: "2.75rem", fontWeight: 900, color: "#0f172a", marginBottom: 22, lineHeight: 1.05 }}>How We Deliver</h1>
-              <p style={{ color: "#475569", fontSize: "1.05rem", lineHeight: 1.8, maxWidth: 620, marginBottom: 28 }}>
+              <h1 className="font-display" style={{ fontSize: isMobile ? "2rem" : "2.75rem", fontWeight: 900, color: "#0f172a", marginBottom: 22, lineHeight: 1.1, wordBreak: "break-word" }}>How We Deliver</h1>
+              <p style={{ color: "#475569", fontSize: isMobile ? "1rem" : "1.05rem", lineHeight: 1.8, maxWidth: isMobile ? "100%" : 620, marginBottom: 28, wordBreak: "break-word" }}>
                 A premium delivery process for AI data, transcription, OCR, and digital operations. We move from discovery and calibration through execution, QA, secure delivery, and long-term support.
               </p>
               <div style={{ display: "grid", gap: 14, gridTemplateColumns: isMobile ? "1fr" : "repeat(2, minmax(0, 1fr))" }}>
@@ -628,15 +628,15 @@ const WorkflowPage = ({ goBack, setPage, isMobile }) => {
               </div>
             </div>
             <div style={{ display: "grid", gap: 18 }}>
-              <div style={{ background: "linear-gradient(135deg, rgba(14,165,233,.98), rgba(16,185,129,.92))", color: "white", borderRadius: 28, padding: "28px 26px", boxShadow: "0 28px 80px rgba(15,23,42,.16)" }}>
-                <div style={{ fontSize: ".85rem", fontWeight: 700, letterSpacing: ".18em", textTransform: "uppercase", marginBottom: 14, opacity: .92 }}>Pilot readiness</div>
-                  <h2 className="font-display" style={{ fontSize: "1.72rem", fontWeight: 800, margin: 0, lineHeight: 1.1, marginBottom: 16, color: "white" }}>Validate quality before scale</h2>
-                  <p style={{ color: "rgba(255,255,255,.92)", lineHeight: 1.75, marginBottom: 22 }}>During the pilot we validate processes, refine guidelines, and reduce production risk using real-world feedback and measurable performance metrics.</p>
+              <div style={{ background: "linear-gradient(135deg, rgba(14,165,233,.98), rgba(16,185,129,.92))", color: "white", borderRadius: 28, padding: isMobile ? "24px 22px" : "28px 26px", boxShadow: "0 28px 80px rgba(15,23,42,.16)" }}>
+                <div style={{ fontSize: ".8rem", fontWeight: 700, letterSpacing: ".18em", textTransform: "uppercase", marginBottom: 12, opacity: .92 }}>Pilot readiness</div>
+                <h2 className="font-display" style={{ fontSize: isMobile ? "1.4rem" : "1.72rem", fontWeight: 800, margin: 0, lineHeight: 1.15, marginBottom: 16, color: "white", wordBreak: "break-word" }}>Validate quality before scale</h2>
+                <p style={{ color: "rgba(255,255,255,.92)", lineHeight: 1.7, marginBottom: 22, fontSize: isMobile ? ".95rem" : "1rem", wordBreak: "break-word" }}>During the pilot we validate processes, refine guidelines, and reduce production risk using real-world feedback and measurable performance metrics.</p>
               </div>
-              <div style={{ background: "#0f9d68", borderRadius: 28, padding: "28px 26px", boxShadow: "0 24px 60px rgba(15,23,42,.08)" }}>
-                <div style={{ fontSize: ".85rem", fontWeight: 700, letterSpacing: ".18em", textTransform: "uppercase", marginBottom: 14, color: "white" }}>Discovery planning</div>
-                <h2 className="font-display" style={{ fontSize: "1.72rem", fontWeight: 800, margin: 0, lineHeight: 1.1, marginBottom: 16, color: "white" }}>Start your project plan</h2>
-                <p style={{ color: "rgba(255,255,255,.92)", lineHeight: 1.75, marginBottom: 22 }}>We translate your dataset requirements, selected services, compliance constraints, and timeline into a practical, time-bound operational plan.</p>
+              <div style={{ background: "#0f9d68", borderRadius: 28, padding: isMobile ? "24px 22px" : "28px 26px", boxShadow: "0 24px 60px rgba(15,23,42,.08)" }}>
+                <div style={{ fontSize: ".8rem", fontWeight: 700, letterSpacing: ".18em", textTransform: "uppercase", marginBottom: 12, color: "white" }}>Discovery planning</div>
+                <h2 className="font-display" style={{ fontSize: isMobile ? "1.4rem" : "1.72rem", fontWeight: 800, margin: 0, lineHeight: 1.15, marginBottom: 16, color: "white", wordBreak: "break-word" }}>Start your project plan</h2>
+                <p style={{ color: "rgba(255,255,255,.92)", lineHeight: 1.7, marginBottom: 22, fontSize: isMobile ? ".95rem" : "1rem", wordBreak: "break-word" }}>We translate your dataset requirements, selected services, compliance constraints, and timeline into a practical, time-bound operational plan.</p>
               </div>
             </div>
           </div>
@@ -645,32 +645,32 @@ const WorkflowPage = ({ goBack, setPage, isMobile }) => {
           <div style={{ display: "grid", gap: 24 }}>
             {steps.map((s, i) => (
               <div key={i} style={{ background: "white", borderRadius: 28, border: "1px solid #e2e8f0", boxShadow: "0 28px 70px rgba(15,23,42,.08)", overflow: "hidden" }}>
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 18, padding: "26px 26px 20px 26px", background: s.color, color: "white" }}>
+                <div style={{ display: "flex", flexDirection: isMobile ? "column" : "row", justifyContent: "space-between", alignItems: isMobile ? "flex-start" : "center", gap: 18, padding: isMobile ? "20px 20px 16px 20px" : "26px 26px 20px 26px", background: s.color, color: "white" }}>
                   <div>
-                    <div style={{ fontSize: ".85rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".16em", opacity: .92, marginBottom: 8 }}>Stage {s.n}</div>
-                    <h2 className="font-display" style={{ fontSize: "1.55rem", fontWeight: 800, margin: 0, lineHeight: 1.1, color: "white", fontFamily: "Syne, Inter, system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial" }}>{s.title}</h2>
+                    <div style={{ fontSize: ".82rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".16em", opacity: .92, marginBottom: 8 }}>Stage {s.n}</div>
+                    <h2 className="font-display" style={{ fontSize: isMobile ? "1.3rem" : "1.55rem", fontWeight: 800, margin: 0, lineHeight: 1.15, color: "white", fontFamily: "Syne, Inter, system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial", wordBreak: "break-word" }}>{s.title}</h2>
                   </div>
-                  <div style={{ minWidth: 72, minHeight: 72, borderRadius: "50%", background: "rgba(255,255,255,.12)", display: "grid", placeItems: "center", fontSize: "1.35rem", fontWeight: 800, boxShadow: "inset 0 0 0 1px rgba(255,255,255,.12)" }}>{s.n}</div>
+                  <div style={{ width: isMobile ? 60 : 72, height: isMobile ? 60 : 72, minWidth: isMobile ? 60 : 72, minHeight: isMobile ? 60 : 72, borderRadius: "50%", background: "rgba(255,255,255,.12)", display: "grid", placeItems: "center", fontSize: isMobile ? "1.1rem" : "1.35rem", fontWeight: 800, boxShadow: "inset 0 0 0 1px rgba(255,255,255,.12)" }}>{s.n}</div>
                 </div>
-                <div style={{ padding: "28px 26px 26px 26px" }}>
-                  <p style={{ color: "#475569", fontSize: "1rem", lineHeight: 1.85, marginBottom: 22 }}>{s.desc}</p>
+                <div style={{ padding: isMobile ? "22px 20px 22px 20px" : "28px 26px 26px 26px" }}>
+                  <p style={{ color: "#475569", fontSize: isMobile ? ".95rem" : "1rem", lineHeight: 1.85, marginBottom: 22, wordBreak: "break-word" }}>{s.desc}</p>
                   <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: 22 }}>
                     {s.chips.map((chip, ci) => (
-                      <span key={ci} style={{ display: "inline-flex", alignItems: "center", padding: "10px 14px", borderRadius: 999, background: "#f8fafc", color: "#475569", fontSize: ".88rem", fontWeight: 600, border: "1px solid #e2e8f0" }}>{chip}</span>
+                      <span key={ci} style={{ display: "inline-flex", alignItems: "center", padding: isMobile ? "8px 12px" : "10px 14px", borderRadius: 999, background: "#f8fafc", color: "#475569", fontSize: isMobile ? ".84rem" : ".88rem", fontWeight: 600, border: "1px solid #e2e8f0" }}>{chip}</span>
                     ))}
                   </div>
                   {s.details && (
                     <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(2, minmax(0, 1fr))", gap: 14, marginBottom: 24 }}>
                       {s.details.map((detail, di) => (
-                        <div key={di} style={{ background: "#f8fafc", borderRadius: 20, padding: "18px 16px", border: "1px solid #e2e8f0", color: "#475569", fontSize: ".92rem", lineHeight: 1.7 }}>
+                        <div key={di} style={{ background: "#f8fafc", borderRadius: 20, padding: isMobile ? "16px 14px" : "18px 16px", border: "1px solid #e2e8f0", color: "#475569", fontSize: isMobile ? ".9rem" : ".92rem", lineHeight: 1.7, wordBreak: "break-word" }}>
                           {detail}
                         </div>
                       ))}
                     </div>
                   )}
-                  <div style={{ marginTop: 24, background: "#f8fafc", borderRadius: 22, border: "1px solid #e2e8f0", padding: "20px 22px" }}>
+                  <div style={{ marginTop: 24, background: "#f8fafc", borderRadius: 22, border: "1px solid #e2e8f0", padding: isMobile ? "18px 18px" : "20px 22px" }}>
                     <div style={{ fontWeight: 700, color: "#0f172a", marginBottom: 10 }}>What this means</div>
-                    <p style={{ margin: 0, color: "#475569", lineHeight: 1.8, fontSize: ".95rem" }}>{s.banner}</p>
+                    <p style={{ margin: 0, color: "#475569", lineHeight: 1.8, fontSize: isMobile ? ".92rem" : ".95rem", wordBreak: "break-word" }}>{s.banner}</p>
                   </div>
                 </div>
               </div>
