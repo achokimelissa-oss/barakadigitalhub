@@ -1502,12 +1502,12 @@ function BarakaDigitalHub() {
 
       <nav style={{ position:"fixed", top:0, left:0, right:0, zIndex:100, transition:"all .3s", background: scrolled||page!=="home" ? "rgba(255,255,255,.95)" : "transparent", backdropFilter: scrolled||page!=="home" ? "blur(20px)" : "none", borderBottom: scrolled||page!=="home" ? "1px solid rgba(0,0,0,.06)" : "none", padding:"0 24px" }}>
         <div className="page-container" style={{ display:"flex", alignItems:"center", justifyContent:"space-between", height:68 }}>
-          <button onClick={() => navigate("home")} style={{ display:"flex", alignItems:"center", gap:10, background:"none", border:"none", cursor:"pointer", padding:0 }}>
+          <a href="/" onClick={(e) => { e.preventDefault(); navigate("home"); }} style={{ display:"flex", alignItems:"center", gap:10, textDecoration:"none", color:"inherit", padding:0 }}>
             <img src="/logo.png" alt="Baraka Digital Hub logo" style={{ height:44, width:"auto", objectFit:"contain" }} />
-          </button>
+          </a>
           <div className="hidden-mobile" style={{ display: isMobile ? "none" : "flex", gap:28, alignItems:"center" }}>
             {navLinks.map(l => (
-              <button key={l.page} onClick={() => navigate(l.page)} className="nav-link">{l.label}</button>
+              <a key={l.page} href={l.page === "home" ? "/" : `/${l.page}`} onClick={(e) => { e.preventDefault(); navigate(l.page); }} className="nav-link" style={{ textDecoration: "none", color: "inherit" }}>{l.label}</a>
             ))}
           </div>
           <button onClick={() => setNav(!nav)} className="mobile-menu-btn" style={{ background:"none", border:"none", cursor:"pointer", color:"#0f172a" }}>
@@ -1517,7 +1517,7 @@ function BarakaDigitalHub() {
         {nav && (
           <div style={{ background:"white", borderTop:"1px solid #f1f5f9", padding:"12px 0" }}>
             {navLinks.map(l => (
-              <button key={l.page} onClick={() => { navigate(l.page); setNav(false); }} style={{ display:"block", width:"100%", textAlign:"left", padding:"13px 24px", color:"#475569", fontWeight:500, background:"none", border:"none", cursor:"pointer", fontSize:".95rem", fontFamily:"inherit" }}>{l.label}</button>
+              <a key={l.page} href={l.page === "home" ? "/" : `/${l.page}`} onClick={(e) => { e.preventDefault(); navigate(l.page); setNav(false); }} style={{ display:"block", width:"100%", textAlign:"left", padding:"13px 24px", color:"#475569", fontWeight:500, background:"none", border:"none", cursor:"pointer", fontSize:".95rem", fontFamily:"inherit", textDecoration:"none" }}>{l.label}</a>
             ))}
           </div>
         )}
