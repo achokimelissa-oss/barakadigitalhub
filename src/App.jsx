@@ -1512,26 +1512,6 @@ function BarakaDigitalHub() {
                     <br />
                     <span style={{ background:"linear-gradient(90deg,#1d4ed8,#06b6d4,#0f9d68)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", backgroundClip:"text", fontWeight:900 }}>Built for Scale</span>
                   </h1>
-                  <p style={{ fontSize:"1.02rem", color:"#475569", lineHeight:1.75, marginBottom:32, maxWidth:680 }}>
-                    We deliver high-quality AI training, data annotation, transcription, and digital outsourcing services. We help AI companies, startups, and global organizations scale reliable data operations with rigorous quality control, transparent performance metrics, and competitive pricing.
-                  </p>
-                  <div style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(2, minmax(0, 1fr))", gap:12, marginBottom:32 }}>
-                    {[
-                      "Project Scoping & Requirement Alignment",
-                      "Pilot Batch, Edge Cases & Calibration",
-                      "Workforce Deployment & Training",
-                      "Production & Task Execution",
-                      "100% First-Pass QA Review",
-                      "Error Logging & Continuous Recalibration",
-                      "Final Validation, Reporting & Delivery",
-                      "Post-Delivery Support & Scaling"
-                    ].map((item, index) => (
-                      <div key={index} style={{ display:"flex", gap:10, alignItems:"flex-start", background:"rgba(255,255,255,.88)", borderRadius:16, padding:"14px 16px", border:"1px solid rgba(15,23,42,.08)" }}>
-                        <span style={{ width:10, height:10, borderRadius:"50%", background:"#0f172a", marginTop:6, flexShrink:0 }} />
-                        <p style={{ margin:0, color:"#334155", fontWeight:600, fontSize:"0.94rem", lineHeight:1.6 }}>{item}</p>
-                      </div>
-                    ))}
-                  </div>
                   <div style={{ display:"flex", gap:12, flexWrap:"wrap", marginBottom:36 }}>
                     <button onClick={() => navigate("pilot")} className="btn-primary">Start Pilot Program <ArrowRight size={17} /></button>
                     <button onClick={() => navigate("services")} className="btn-secondary">Explore Services</button>
