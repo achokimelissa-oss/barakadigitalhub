@@ -1262,6 +1262,20 @@ function BarakaDigitalHub() {
         @keyframes pulse-slow { 0%,100%{opacity:1} 50%{opacity:.4} }
         @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
         @keyframes typing { from { width: 0; } to { width: 100%; } }
+        @keyframes drift { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(18px, -18px, 0); } }
+        @keyframes soft-pulse { 0%,100% { opacity: .75; } 50% { opacity: .32; } }
+        @keyframes scan-line { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+        .workflow-section { position: relative; overflow: hidden; animation: soft-pulse 10s ease-in-out infinite; }
+        .workflow-section::before, .workflow-section::after { content: ''; position: absolute; width: 300px; height: 300px; border-radius: 50%; filter: blur(80px); opacity: .55; pointer-events: none; }
+        .workflow-section::before { top: -10%; left: 5%; background: rgba(56,189,248,.42); animation: drift 14s linear infinite; }
+        .workflow-section::after { right: -8%; bottom: -8%; background: rgba(16,185,129,.32); animation: drift 18s linear infinite reverse; }
+        .workflow-grid { position: relative; z-index: 1; background: rgba(4,12,28,.96); border: 1px solid rgba(56,189,248,.2); box-shadow: 0 36px 120px rgba(2, 8, 29, .42); }
+        .workflow-grid::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(255,255,255,.08), transparent 25%, rgba(255,255,255,.04) 62%); pointer-events: none; mix-blend-mode: screen; }
+        .workflow-grid::after { content: ''; position: absolute; left: -30%; top: 35%; width: 180%; height: 2px; background: linear-gradient(90deg, transparent, rgba(56,189,248,.32), transparent); transform: translateY(-50%); animation: scan-line 5s linear infinite; pointer-events: none; }
+        .workflow-step { transition: transform .24s ease, opacity .24s ease; }
+        .workflow-step:hover { transform: translateX(2px); opacity: 1; }
+        .workflow-btn { transition: transform .22s ease, box-shadow .22s ease; }
+        .workflow-btn:hover { transform: translateY(-2px); box-shadow: 0 24px 48px rgba(56,189,248,.2); }
         /* typing-effect now animates to container width so it wraps on small screens */
         .typing-effect { display: inline-block; overflow: hidden; white-space: normal; width: 0; animation: typing 2.6s steps(40,end) 0.15s forwards; }
         .ani-float { animation: float 5s ease-in-out infinite; }
@@ -1539,17 +1553,17 @@ function BarakaDigitalHub() {
             </div>
           </section>
 
-          <section style={{ padding: isMobile ? "56px 18px" : "88px 24px", background: "linear-gradient(180deg,#eef7ff 0%,#f8fcff 55%,#ffffff 100%)", position: "relative", overflow: "hidden" }}>
-            <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 18% 20%, rgba(59,130,246,.14), transparent 18%), radial-gradient(circle at 82% 22%, rgba(15,157,104,.12), transparent 20%), repeating-linear-gradient(135deg, transparent 0, transparent 32px, rgba(14,165,233,.05) 32px, rgba(14,165,233,.05) 33px)", pointerEvents: "none" }} />
+          <section className="workflow-section" style={{ padding: isMobile ? "56px 18px" : "88px 24px", background: "linear-gradient(150deg, #020617 0%, #071c3e 40%, #04112a 100%)" }}>
             <div style={{ position: "relative", maxWidth:1000, margin:"0 auto" }}>
               <FadeIn>
                 <div style={{ textAlign:"center", marginBottom: isMobile ? 32 : 52 }}>
-                  <h2 className="section-h2 font-display" style={{ fontSize:"2.6rem", fontWeight:800, color:"#0f172a", letterSpacing:"-.03em", marginBottom:12 }}>How Delivery Works</h2>
-                  <p style={{ color:"#64748b", fontSize:"1rem", maxWidth:520, margin:"0 auto", lineHeight:1.75 }}>A streamlined operational workflow for AI data and digital delivery, with full process detail available on the workflow page.</p>
+                  <h2 className="section-h2 font-display" style={{ fontSize:"2.6rem", fontWeight:800, color:"#e2e8f0", letterSpacing:"-.03em", marginBottom:12 }}>How Delivery Works</h2>
+                  <p style={{ color:"#cbd5e1", fontSize:"1rem", maxWidth:520, margin:"0 auto", lineHeight:1.75 }}>A streamlined operational workflow for AI data and digital delivery, with full process detail available on the workflow page.</p>
                 </div>
               </FadeIn>
               <FadeIn delay={0.08}>
-                <div style={{ background:"rgba(255,255,255,.92)", borderRadius:24, border:"1px solid rgba(14,165,233,.12)", boxShadow:"0 12px 48px rgba(14,165,233,.08)", overflow:"hidden" }}>
+                <div className="workflow-grid" style={{ borderRadius:24, overflow:"hidden" }}>
+                  <div style={{ position:"absolute", inset:0, background:"radial-gradient(circle at 16% 22%, rgba(56,189,248,.16), transparent 18%), radial-gradient(circle at 84% 18%, rgba(16,185,129,.14), transparent 22%)", pointerEvents:"none" }} />
                   <div style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr" }}>
                     <div style={{ padding:"36px 32px", borderRight: isMobile ? "none" : "1px solid #f1f5f9" }}>
                       <div style={{ display:"inline-block", background:"rgba(29,78,216,.08)", color:"#1d4ed8", padding:"5px 13px", borderRadius:100, fontSize:".72rem", fontWeight:700, letterSpacing:".05em", textTransform:"uppercase", marginBottom:20 }}>Sample Engagement</div>
