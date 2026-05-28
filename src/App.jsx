@@ -1706,20 +1706,28 @@ function BarakaDigitalHub() {
                     </div>
                     <div style={{ background:"rgba(2,6,23,.95)", padding: isMobile ? "28px 22px" : "36px 32px", minHeight: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between", boxShadow: "0 28px 80px rgba(2,6,23,.16)" }}>
                       <div>
-                        <div style={{ display:"inline-flex", alignItems:"center", gap:8, marginBottom:24, color:"#7dd3fc", fontSize:"0.88rem", fontWeight:700, textTransform:"uppercase", letterSpacing:"0.12em" }}>AI workflow</div>
-                        <h3 className="font-display" style={{ fontSize:"1.5rem", fontWeight:800, color:"white", marginBottom:24, lineHeight:1.2 }}>Workflow Overview</h3>
-                        { ["Discovery & intake","Team assignment & tooling","Execution with transparent tracking","Continuous quality monitoring","Delivery, formatting & reporting"].map((step,i)=>(
-                          <div key={i} style={{ display:"flex", gap:14, paddingBottom: i<4 ? 22 : 0, position:"relative", marginBottom: i<4 ? 12 : 0 }}>
-                            {i<4 && <div style={{ position:"absolute", left:19, top:38, width:2, bottom:0, background:"rgba(255,255,255,.08)" }} />}
-                            <div style={{ flexShrink:0, width:40, height:40, borderRadius:"50%", background:"linear-gradient(135deg,rgba(56,189,248,.95),rgba(16,185,129,.95))", display:"flex", alignItems:"center", justifyContent:"center", fontFamily:"Syne,sans-serif", fontWeight:800, fontSize:13, color:"white", position:"relative", zIndex:1 }}>{i+1}</div>
-                            <div style={{ paddingTop:8 }}>
-                              <p style={{ color:"#cbd5e1", fontSize:"0.92rem", lineHeight:1.7, maxWidth:isMobile?"100%":"92%" }}>{step}</p>
+                        <h2 className="font-display" style={{ fontSize:"1.6rem", fontWeight:800, color:"white", marginBottom:24, lineHeight:1.1 }}>Workflow</h2>
+                        { [
+                          "Project Scoping & Requirement Alignment",
+                          "Pilot Batch, Edge Cases & Calibration",
+                          "Workforce Deployment & Training",
+                          "Production & Task Execution",
+                          "100% First-Pass QA Review",
+                          "Error Logging & Continuous Recalibration",
+                          "Final Validation, Reporting & Delivery",
+                          "Post-Delivery Support & Scaling"
+                        ].map((step,i)=>(
+                          <div key={i} style={{ display:"flex", gap:14, paddingBottom: i<7 ? 18 : 0, position:"relative", marginBottom: i<7 ? 12 : 0 }}>
+                            {i<7 && <div style={{ position:"absolute", left:19, top:34, width:2, bottom:0, background:"rgba(255,255,255,.06)" }} />}
+                            <div style={{ flexShrink:0, width:40, height:40, borderRadius:"50%", background:"linear-gradient(135deg,rgba(15,157,104,.95),rgba(16,185,129,.95))", display:"flex", alignItems:"center", justifyContent:"center", fontFamily:"ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Segoe UI Mono', monospace", fontWeight:800, fontSize:13, color:"white", position:"relative", zIndex:1 }}>{i+1}</div>
+                            <div style={{ paddingTop:6 }}>
+                              <p style={{ color:"#cbd5e1", fontSize:"0.94rem", lineHeight:1.7, maxWidth:isMobile?"100%":"92%", fontWeight:700 }}>{step}</p>
                             </div>
                           </div>
                         ))}
                       </div>
-                      <button onClick={() => navigate("workflow")} style={{ marginTop:28, display:"inline-flex", alignItems:"center", gap:8, background:"white", color:"#0f172a", border:"none", borderRadius:12, padding: isMobile ? "14px 20px" : "12px 22px", fontWeight:700, fontSize:"0.9rem", cursor:"pointer", fontFamily:"inherit", alignSelf:"flex-start" }}>
-                        View full workflow <ArrowRight size={15} />
+                      <button onClick={() => navigate("workflow")} className="btn-primary" style={{ marginTop:28, display:"inline-flex", alignItems:"center", gap:8, background:"linear-gradient(135deg,#0f9d68,#06b6d4)", color:"white", border:"none", borderRadius:12, padding: isMobile ? "14px 20px" : "12px 22px", fontWeight:800, fontSize:"0.95rem", cursor:"pointer", fontFamily:"ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Segoe UI Mono', monospace", boxShadow:"0 12px 30px rgba(15,157,104,.18)", alignSelf:"flex-start" }}>
+                        Inspect Full Workflow <ArrowRight size={15} />
                       </button>
                     </div>
                   </div>
