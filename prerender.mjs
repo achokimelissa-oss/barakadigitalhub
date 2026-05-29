@@ -2,9 +2,8 @@ import puppeteer from "puppeteer";
 import { spawn } from "child_process";
 import fs from "fs";
 import path from "path";
+import net from "net";
 
-const PORT = 4173;
-const BASE = `http://localhost:${PORT}`;
 const DIST = path.resolve("dist");
 
 const routes = [
@@ -20,9 +19,26 @@ const routes = [
   "/operations",
 ];
 
-function startServer() {
+function getFreePort() {
   return new Promise((resolve, reject) => {
-    const server = spawn("npx", ["vite", "preview", "--port", String(PORT), "--strictPort"], {
+    const server = net.createServer();
+    server.unref();
+    server.on("error", reject);
+    server.listen(0, () => {
+      const address = server.address();
+      if (address && typeof address === "object") {
+        const port = address.port;
+        server.close(() => resolve(port));
+      } else {
+        reject(new Error("Failed to determine free port"));
+      }
+    });
+  });
+}
+
+function startServer(port) {
+  return new Promise((resolve, reject) => {
+    const server = spawn("npx", ["vite", "preview", "--port", String(port), "--strictPort"], {
       stdio: ["ignore", "pipe", "pipe"],
       shell: true,
     });
@@ -50,8 +66,10 @@ function startServer() {
 }
 
 async function prerender() {
-  console.log("🔨 Starting preview server...");
-  const server = await startServer();
+  const port = await getFreePort();
+  const BASE = `http://localhost:${port}`;
+  console.log(`🔨 Starting preview server on port ${port}...`);
+  const server = await startServer(port);
 
   try {
     const browser = await puppeteer.launch({ args: ["--no-sandbox"] });
