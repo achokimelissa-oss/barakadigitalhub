@@ -1833,7 +1833,7 @@ function BarakaDigitalHub() {
         <div className="page-container">
           <div style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "1.6fr 1fr 1fr 1fr", gap:32, alignItems:"start", marginBottom:36 }}>
             <div>
-              <img src="/footerlogo.png" alt="Baraka Digital Hub footer logo" style={{ height:52, width:"auto", marginBottom:18 }} />
+              <img src="/footerlogo.png" alt="Baraka Digital Hub footer logo" loading="lazy" style={{ height:52, width:"auto", marginBottom:18 }} />
               <p style={{ color:"rgba(255,255,255,.75)", maxWidth:360, lineHeight:1.8, marginBottom:24 }}>Professional AI data and digital operations delivered with social impact from Nairobi to global teams.</p>
             </div>
 
