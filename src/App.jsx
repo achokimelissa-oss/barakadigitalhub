@@ -21,10 +21,12 @@ const Shield = ({size=18}) => (<svg xmlns="http://www.w3.org/2000/svg" width={si
 const TrendingUp = ({size=18}) => (<svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>);
 const ArrowUpRight = ({size=16}) => (<svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>);
 
-const PageHelmet = ({ title, description }) => (
+const PageHelmet = ({ title, description, robots, canonical }) => (
   <Helmet>
     <title>{title}</title>
     {description && <meta name="description" content={description} />}
+    {robots && <meta name="robots" content={robots} />}
+    {canonical && <link rel="canonical" href={canonical} />}
   </Helmet>
 );
 
@@ -432,7 +434,7 @@ const ServicesPage = ({ goBack, navigate, isMobile }) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   return (
     <div style={{ minHeight: "100vh", background: "linear-gradient(160deg,#f8fbff 0%,#eef9ff 50%,#f0fdf4 100%)", paddingTop: 80 }}>
-      <PageHelmet title="AI Data Annotation & Training Services | Baraka Digital Hub" description="Expert computer vision annotation, NLP, audio processing, LLM training and BPO services from our Nairobi-based team." />
+      <PageHelmet title="AI Data Annotation & Training Services | Baraka Digital Hub" description="Expert computer vision annotation, NLP, audio processing, LLM training and BPO services from our Nairobi-based team." robots="noindex,follow" canonical="/" />
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "48px 24px" }}>
         <button onClick={goBack} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", cursor: "pointer", color: "#1d4ed8", fontWeight: 600, fontSize: "0.9rem", marginBottom: 32, fontFamily: "inherit" }}>
           <ChevronLeft size={18} /> Back to Home
@@ -492,7 +494,7 @@ const OperationsPage = ({ goBack, isMobile }) => {
   ];
   return (
     <div style={{ minHeight: "100vh", background: "linear-gradient(160deg,#f8fbff 0%,#eef9ff 50%,#f0fdf4 100%)", paddingTop: 80 }}>
-      <PageHelmet title="Operations | Baraka Digital Hub" description="Enterprise-ready operations infrastructure: 80+ certified taskers, 100% QA review, 48-hour turnaround from Nairobi." />
+      <PageHelmet title="Operations | Baraka Digital Hub" description="Enterprise-ready operations infrastructure: 80+ certified taskers, 100% QA review, 48-hour turnaround from Nairobi." robots="noindex,follow" canonical="/" />
       <div style={{ maxWidth: 1100, margin: "0 auto", padding: "48px 24px" }}>
         <button onClick={goBack} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", cursor: "pointer", color: "#1d4ed8", fontWeight: 600, fontSize: "0.9rem", marginBottom: 32, fontFamily: "inherit" }}>
           <ChevronLeft size={18} /> Back to Home
@@ -613,7 +615,7 @@ const WorkflowPage = ({ goBack, setPage, isMobile }) => {
   ];
   return (
     <div style={{ minHeight: "100vh", background: "linear-gradient(160deg,#f8fbff 0%,#eef9ff 50%,#f0fdf4 100%)", paddingTop: isMobile ? 60 : 80 }}>
-      <PageHelmet title="Our Workflow | Baraka Digital Hub" description="From scoping to delivery — see exactly how Baraka Digital Hub manages AI data projects with structured QA and reporting." />
+      <PageHelmet title="Our Workflow | Baraka Digital Hub" description="From scoping to delivery — see exactly how Baraka Digital Hub manages AI data projects with structured QA and reporting." robots="noindex,follow" canonical="/" />
       <div style={{ maxWidth: isMobile ? "100%" : 1120, margin: "0 auto", padding: isMobile ? "28px 18px" : "48px 24px" }}>
         <button onClick={goBack} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", cursor: "pointer", color: "#1d4ed8", fontWeight: 600, fontSize: "0.95rem", marginBottom: 32, fontFamily: "inherit" }}>
           <ChevronLeft size={18} /> Back to Home
@@ -707,7 +709,7 @@ const AboutPage = ({ goBack, isMobile }) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   return (
     <div style={{ minHeight: "100vh", background: "linear-gradient(160deg,#f8fbff 0%,#eef9ff 50%,#f0fdf4 100%)", paddingTop: 80 }}>
-      <PageHelmet title="About Us | Baraka Digital Hub" description="Learn about Baraka Digital Hub — a Nairobi-based AI training and digital operations company built on social impact." />
+      <PageHelmet title="About Us | Baraka Digital Hub" description="Learn about Baraka Digital Hub — a Nairobi-based AI training and digital operations company built on social impact." robots="noindex,follow" canonical="/" />
       <div style={{ maxWidth: 980, margin: "0 auto", padding: "48px 24px" }}>
         <button onClick={goBack} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", cursor: "pointer", color: "#1d4ed8", fontWeight: 600, fontSize: "0.9rem", marginBottom: 32, fontFamily: "inherit" }}>
           <ChevronLeft size={18} /> Back to Home
@@ -1080,7 +1082,7 @@ const ImpactPage = ({ goBack, isMobile }) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   return (
     <div style={{ minHeight: "100vh", background: "linear-gradient(160deg,#f8fbff 0%,#eef9ff 50%,#f0fdf4 100%)", paddingTop: 80 }}>
-      <PageHelmet title="Social Impact | Baraka Digital Hub" description="How Baraka Digital Hub creates sustainable employment for Nairobi youth while delivering world-class AI data services." />
+      <PageHelmet title="Social Impact | Baraka Digital Hub" description="How Baraka Digital Hub creates sustainable employment for Nairobi youth while delivering world-class AI data services." robots="noindex,follow" canonical="/" />
       <div style={{ maxWidth: 980, margin: "0 auto", padding: "48px 24px" }}>
         <button onClick={goBack} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", cursor: "pointer", color: "#1d4ed8", fontWeight: 600, fontSize: "0.9rem", marginBottom: 32, fontFamily: "inherit" }}>
           <ChevronLeft size={18} /> Back to Home
