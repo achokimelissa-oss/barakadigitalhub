@@ -31,12 +31,14 @@ function Workflow() {
       <section className="section-block section-steps" style={{ padding: "40px 20px" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gap: 20 }}>
           {steps.map((s) => (
-            <div key={s.n} style={{ display: "flex", gap: 18, alignItems: "center", background: "#fff", padding: 20, borderRadius: 12, boxShadow: "0 6px 18px rgba(15,23,42,0.06)" }}>
-              <div style={{ width: 64, height: 64, minWidth: 64, borderRadius: "50%", background: "#111827", color: "white", display: "grid", placeItems: "center", fontWeight: 700, fontSize: "1.25rem" }}>{s.n}</div>
-              <div>
-                <div style={{ fontSize: ".78rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".14em", opacity: .85, marginBottom: 6 }}>Stage</div>
-                <h3 style={{ margin: 0, fontSize: "1.1rem" }}>{s.title}</h3>
-                <p style={{ marginTop: 8, marginBottom: 0, color: "#374151" }}>{s.desc}</p>
+            <div key={s.n} style={{ background: "#fff", padding: 20, borderRadius: 12, boxShadow: "0 6px 18px rgba(15,23,42,0.06)" }}>
+              <div style={{ display: "flex", gap: 14, alignItems: "flex-start" }}>
+                <div style={{ width: 48, height: 48, minWidth: 48, borderRadius: 8, background: "#f3f4f6", color: "#111827", display: "grid", placeItems: "center", fontWeight: 700 }}>{s.n}</div>
+                <div>
+                  <div style={{ fontSize: ".78rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".12em", opacity: .85, marginBottom: 6 }}>Stage</div>
+                  <h3 style={{ margin: 0, fontSize: "1.1rem" }}>{s.title}</h3>
+                  <p style={{ marginTop: 8, marginBottom: 0, color: "#374151" }}>{s.desc}</p>
+                </div>
               </div>
             </div>
           ))}
