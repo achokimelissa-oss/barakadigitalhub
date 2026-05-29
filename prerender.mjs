@@ -1,10 +1,16 @@
-import puppeteer from "puppeteer";
-import { spawn } from "child_process";
 import fs from "fs";
 import path from "path";
-import net from "net";
+import { fileURLToPath } from "url";
+import { renderToString } from "react-dom/server";
+import { createServer as createViteServer } from "vite";
+import React from "react";
+import { StaticRouter } from "react-router-dom/server.js";
+import { HelmetProvider } from "react-helmet-async";
 
-const DIST = path.resolve("dist");
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const ROOT = path.resolve(__dirname);
+const DIST = path.resolve(ROOT, "dist");
+const TEMPLATE_PATH = path.resolve(DIST, "index.html");
 
 const routes = [
   "/",
@@ -19,78 +25,59 @@ const routes = [
   "/operations",
 ];
 
-function getFreePort() {
-  return new Promise((resolve, reject) => {
-    const server = net.createServer();
-    server.unref();
-    server.on("error", reject);
-    server.listen(0, () => {
-      const address = server.address();
-      if (address && typeof address === "object") {
-        const port = address.port;
-        server.close(() => resolve(port));
-      } else {
-        reject(new Error("Failed to determine free port"));
-      }
-    });
-  });
-}
-
-function startServer(port) {
-  return new Promise((resolve, reject) => {
-    const server = spawn("npx", ["vite", "preview", "--port", String(port), "--strictPort"], {
-      stdio: ["ignore", "pipe", "pipe"],
-      shell: true,
-    });
-
-    const onReady = (data) => {
-      if (data.toString().includes("Local")) {
-        server.stdout.off("data", onReady);
-        clearTimeout(fallback);
-        resolve(server);
-      }
-    };
-
-    server.stdout.on("data", onReady);
-    server.stderr.on("data", (data) => {
-      console.error(data.toString());
-    });
-
-    const fallback = setTimeout(() => {
-      server.stdout.off("data", onReady);
-      resolve(server);
-    }, 5000);
-
-    server.on("error", reject);
-  });
+function writeHtml(route, html) {
+  const routePath = route === "/" ? DIST : path.join(DIST, route.slice(1));
+  fs.mkdirSync(routePath, { recursive: true });
+  fs.writeFileSync(path.join(routePath, "index.html"), html, "utf-8");
 }
 
 async function prerender() {
-  const port = await getFreePort();
-  const BASE = `http://localhost:${port}`;
-  console.log(`🔨 Starting preview server on port ${port}...`);
-  const server = await startServer(port);
+  if (!fs.existsSync(TEMPLATE_PATH)) {
+    console.error("dist/index.html not found. Run `npm run build` first.");
+    process.exit(1);
+  }
+
+  const template = fs.readFileSync(TEMPLATE_PATH, "utf-8");
+  const vite = await createViteServer({
+    root: ROOT,
+    server: { middlewareMode: "ssr" },
+    appType: "custom",
+  });
 
   try {
-    const browser = await puppeteer.launch({ args: ["--no-sandbox"] });
-    const page = await browser.newPage();
+    const { default: App } = await vite.ssrLoadModule("/src/App.jsx");
 
     for (const route of routes) {
-      console.log(`📄 Rendering ${route}`);
-      await page.goto(`${BASE}${route}`, { waitUntil: "networkidle0", timeout: 15000 });
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      const helmetContext = {};
+      const appHtml = renderToString(
+        React.createElement(
+          HelmetProvider,
+          { context: helmetContext },
+          React.createElement(StaticRouter, { location: route }, React.createElement(App))
+        )
+      );
 
-      const html = await page.content();
-      const dir = path.join(DIST, route === "/" ? "" : route);
-      fs.mkdirSync(dir, { recursive: true });
-      fs.writeFileSync(path.join(dir, "index.html"), html);
-      console.log(`   ✅ Saved to dist${route}/index.html`);
+      const head = [
+        helmetContext.helmet?.title.toString(),
+        helmetContext.helmet?.meta.toString(),
+        helmetContext.helmet?.link.toString(),
+        helmetContext.helmet?.style.toString(),
+        helmetContext.helmet?.script.toString(),
+      ]
+        .filter(Boolean)
+        .join("\n");
+
+      const html = template
+        .replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`)
+        .replace("</head>", `${head}\n</head>`);
+
+      writeHtml(route, html);
+      console.log(`Rendered ${route} -> ${route === "/" ? "dist/index.html" : `dist${route}/index.html`}`);
     }
 
-    await browser.close();
-    console.log("\n🎉 Prerendering complete!");
+    console.log("\n🎉 Prerendering complete without Chromium.");
   } finally {
-    server.kill("SIGTERM");
+    await vite.close();
   }
 }
 

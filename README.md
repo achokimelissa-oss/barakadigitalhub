@@ -22,6 +22,12 @@ npm run dev
 npm run build
 ```
 
+For static prerendering without Chromium, use:
+
+```bash
+npm run build:seo
+```
+
 ## Preview production build
 
 ```bash
