@@ -1393,6 +1393,7 @@ function BarakaDigitalHub() {
     { label: "Social Impact", page: "impact" },
     { label: "Operations", page: "operations" },
     { label: "Workflow", page: "workflow" },
+    { label: "Pilot", page: "pilot" },
   ];
 
   return (
@@ -1533,6 +1534,10 @@ function BarakaDigitalHub() {
 
       {page === "home" && (
         <>
+          <PageHelmet
+            title="Baraka Digital Hub | AI Data & Digital Solutions"
+            description="Empowering businesses with AI data labeling, transcription, and digital solutions while creating opportunities for African youth."
+          />
           <section style={{ paddingTop:120, paddingBottom:80, paddingLeft:24, paddingRight:24, position:"relative", overflow:"visible", background:"linear-gradient(160deg,#f8fafc 0%,#eff6ff 50%,#ecfdf5 100%)" }}>
             <div className="dot-grid" style={{ position:"absolute", inset:0, opacity:.6, pointerEvents: "none" }} />
             <div className="hero-tech-overlay" />
