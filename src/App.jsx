@@ -655,12 +655,11 @@ const WorkflowPage = ({ goBack, setPage, isMobile }) => {
         <div style={{ display: "grid", gap: 24 }}>
             {steps.map((s, i) => (
               <div key={i} style={{ background: "white", borderRadius: 28, border: "1px solid #e2e8f0", boxShadow: "0 28px 70px rgba(15,23,42,.08)", overflow: "hidden" }}>
-                <div style={{ display: "flex", flexDirection: isMobile ? "column" : "row", justifyContent: "space-between", alignItems: isMobile ? "flex-start" : "center", gap: 18, padding: isMobile ? "20px 20px 16px 20px" : "26px 26px 20px 26px", background: s.color, color: "white" }}>
+                <div style={{ display: "flex", flexDirection: isMobile ? "column" : "row", alignItems: isMobile ? "flex-start" : "center", gap: 18, padding: isMobile ? "20px 20px 16px 20px" : "26px 26px 20px 26px", background: s.color, color: "white" }}>
                   <div>
                     <div style={{ fontSize: ".82rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".16em", opacity: .92, marginBottom: 8 }}>Stage {s.n}</div>
                     <h2 className="font-display" style={{ fontSize: isMobile ? "1.3rem" : "1.55rem", fontWeight: 800, margin: 0, lineHeight: 1.15, color: "white", fontFamily: "Syne, Inter, system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial", wordBreak: "break-word" }}>{s.title}</h2>
                   </div>
-                  <div style={{ width: isMobile ? 60 : 72, height: isMobile ? 60 : 72, minWidth: isMobile ? 60 : 72, minHeight: isMobile ? 60 : 72, borderRadius: "50%", background: "rgba(255,255,255,.12)", display: "grid", placeItems: "center", fontSize: isMobile ? "1.1rem" : "1.35rem", fontWeight: 800, boxShadow: "inset 0 0 0 1px rgba(255,255,255,.12)" }}>{s.n}</div>
                 </div>
                 <div style={{ padding: isMobile ? "22px 20px 22px 20px" : "28px 26px 26px 26px" }}>
                   <p style={{ color: "#475569", fontSize: isMobile ? ".95rem" : "1rem", lineHeight: 1.85, marginBottom: 22, wordBreak: "break-word" }}>{s.desc}</p>

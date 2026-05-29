@@ -1,19 +1,5 @@
 {
   "version": 2,
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
-  "routes": [
-    {
-      "src": "/assets/(.*)",
-      "dest": "/assets/$1"
-    },
-    {
-      "src": "/(.+\\.(js|css|png|jpeg|jpg|gif|svg|ico|webp|woff|woff2|eot|ttf|otf))",
-      "dest": "/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
-  ]
+  "buildCommand": "npm run build:seo",
+  "outputDirectory": "dist"
 }
