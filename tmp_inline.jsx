@@ -1214,7 +1214,7 @@ function BarakaDigitalHub() {
           <section style={{ padding:"72px 24px", background:"linear-gradient(135deg,#1d4ed8 0%,#0ea5e9 50%,#10b981 100%)", position:"relative", overflow:"visible" }}>
             <div style={{ position:"absolute", inset:0, opacity:.07, backgroundImage:"linear-gradient(to right,white 1px,transparent 1px),linear-gradient(to bottom,white 1px,transparent 1px)", backgroundSize:"40px 40px" }} />
             <div className="stats-band" style={{ maxWidth:1100, margin:"0 auto", display:"grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(4,1fr)", gap:24, position:"relative", zIndex:1 }}>
-              {[{val:"98",suf:"%",l:"Avg Accuracy"},{val:"10",suf:"K+ hrs",l:"Weekly Throughput"},{val:"80",suf:"+",l:"Trained Taskers"},{val:"4",suf:"hr",l:"Avg Response Time"}].map((s,i)=>(
+              {[{val:"90",suf:"%+",l:"Avg Accuracy"},{val:"10",suf:"K+ hrs",l:"Weekly Throughput"},{val:"80",suf:"+",l:"Trained Taskers"},{val:"4",suf:"hr",l:"Avg Response Time"}].map((s,i)=>(
                 <div key={i} style={{ textAlign:"center" }}>
                   <div className="font-display" style={{ fontSize:"3.2rem", fontWeight:800, color:"white", letterSpacing:"-.03em", lineHeight:1, whiteSpace:"normal", overflowWrap:"break-word", wordBreak:"break-word" }}>
                     <Counter target={s.val} suffix={s.suf} />
@@ -1280,7 +1280,7 @@ function BarakaDigitalHub() {
                     <div style={{ padding:"36px 32px", borderRight:"1px solid #f1f5f9" }}>
                       <div style={{ display:"inline-block", background:"rgba(29,78,216,.08)", color:"#1d4ed8", padding:"5px 13px", borderRadius:100, fontSize:".72rem", fontWeight:700, letterSpacing:".05em", textTransform:"uppercase", marginBottom:20 }}>Example Project</div>
                       <h3 className="font-display" style={{ fontSize:"1.6rem", fontWeight:800, color:"#0f172a", marginBottom:24, lineHeight:1.2 }}>Object Detection Annotation Pipeline</h3>
-                      {[["Task Type","Bounding Box Annotation"],["Dataset Volume","25,000 Images"],["Timeline","48 Hours"],["QA Method","100% First-Pass Review"],["Avg Accuracy","98%"],["Reporting","Daily Progress Updates"]].map(([k,v],i)=>(
+                      {[["Task Type","Bounding Box Annotation"],["Dataset Volume","25,000 Images"],["Timeline","48 Hours"],["QA Method","100% First-Pass Review"],["Avg Accuracy","90%+"],["Reporting","Daily Progress Updates"]].map(([k,v],i)=>(
                         <div key={i} style={{ display:"flex", justifyContent:"space-between", alignItems:"center", padding:"12px 0", borderBottom:"1px solid #f8fafc" }}>
                           <span style={{ fontSize:".82rem", color:"#94a3b8", fontWeight:500 }}>{k}</span>
                           <span style={{ fontSize:".87rem", fontWeight:700, color:"#0f172a" }}>{v}</span>
