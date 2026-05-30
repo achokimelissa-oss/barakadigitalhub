@@ -1323,6 +1323,7 @@ function BarakaDigitalHub() {
     const map = {
       '/': 'home',
       '/services': 'services',
+      '/about': 'about',
       '/careers': 'careers',
       '/impact': 'impact',
       '/contact': 'contact',
@@ -1354,6 +1355,7 @@ function BarakaDigitalHub() {
     const map = {
       '/': 'home',
       '/services': 'services',
+      '/about': 'about',
       '/careers': 'careers',
       '/impact': 'impact',
       '/contact': 'contact',
@@ -1369,7 +1371,7 @@ function BarakaDigitalHub() {
     window.addEventListener('popstate', updateFromLocation);
     updateFromLocation();
     return () => window.removeEventListener('popstate', updateFromLocation);
-  }, []);
+  }, [];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
