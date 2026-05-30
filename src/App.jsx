@@ -1391,6 +1391,7 @@ function BarakaDigitalHub() {
   const navLinks = [
     { label: "Home", page: "home" },
     { label: "Services", page: "services" },
+    { label: "About", page: "about" },
     { label: "Social Impact", page: "impact" },
     { label: "Operations", page: "operations" },
     { label: "Workflow", page: "workflow" },
@@ -1839,6 +1840,7 @@ function BarakaDigitalHub() {
               <div style={{ display:"grid", gap:10 }}>
                 <button onClick={() => navigate("home")} style={{ textAlign:"left", background:"none", border:"none", color:"rgba(255,255,255,.85)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,.85)"}>Home</button>
                 <button onClick={() => navigate("services")} style={{ textAlign:"left", background:"none", border:"none", color:"rgba(255,255,255,.85)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,.85)"}>Services</button>
+                <button onClick={() => navigate("about")} style={{ textAlign:"left", background:"none", border:"none", color:"rgba(255,255,255,.85)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,.85)"}>About</button>
                 <button onClick={() => navigate("impact")} style={{ textAlign:"left", background:"none", border:"none", color:"rgba(255,255,255,.85)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,.85)"}>Impact</button>
               </div>
             </div>
