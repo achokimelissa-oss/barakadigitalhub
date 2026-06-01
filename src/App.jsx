@@ -1460,10 +1460,10 @@ function BarakaDigitalHub() {
         .impact-card { background: rgba(255,255,255,.94); border: 1px solid rgba(59,130,246,.16); }
         @keyframes tech-bg-glow { 0%,100% { background-position: 12% 18%, 88% 24%, 52% 58%; } 50% { background-position: 18% 12%, 82% 28%, 48% 62%; } }
         @keyframes tech-bg-stripes { 0%,100% { transform: translateY(0); opacity: 0; } 50% { transform: translateY(8px); opacity: 0; } }
-        .btn-primary { display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#0f172a,#0f9d68);color:white;padding:14px 28px;border-radius:12px;font-weight:700;font-size:.95rem;text-decoration:none;box-shadow:0 8px 32px rgba(15,23,42,.28);transition:transform .2s,box-shadow .2s,border-color .2s;color:white;border:none;cursor:pointer;font-family:'Segoe UI', Arial, sans-serif; }
-        .btn-primary:hover { transform:translateY(-2px);box-shadow:0 12px 40px rgba(15,23,42,.35); }
-        .btn-secondary { display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#fef3c7,#fb923c);color:#92400e;padding:14px 28px;border-radius:12px;font-weight:700;font-size:.95rem;text-decoration:none;border:1.5px solid rgba(249,115,22,.3);transition:border-color .2s,color .2s,transform .2s;cursor:pointer;font-family:'Segoe UI', Arial, sans-serif; }
-        .btn-secondary:hover { border-color:#f97316;color:#b45309;transform:translateY(-2px); }
+        .btn-primary { display:inline-flex;align-items:center;gap:8px;background:#1d4ed8;color:white;padding:14px 28px;border-radius:12px;font-weight:700;font-size:.95rem;text-decoration:none;box-shadow:0 4px 12px rgba(29,78,216,.2);transition:transform .2s,box-shadow .2s,background .2s;border:none;cursor:pointer;font-family:'Segoe UI', Arial, sans-serif; }
+        .btn-primary:hover { transform:translateY(-2px);box-shadow:0 8px 20px rgba(29,78,216,.3);background:#1e40af; }
+        .btn-secondary { display:inline-flex;align-items:center;gap:8px;background:#f59e0b;color:white;padding:14px 28px;border-radius:12px;font-weight:700;font-size:.95rem;text-decoration:none;border:none;transition:background .2s,transform .2s,box-shadow .2s;cursor:pointer;font-family:'Segoe UI', Arial, sans-serif; }
+        .btn-secondary:hover { background:#d97706;transform:translateY(-2px);box-shadow:0 4px 12px rgba(245,158,11,.3); }
         h1:not(.hero-h1) { color: #0f172a; font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !important; font-size: clamp(2rem, 2.3vw, 2.4rem) !important; font-weight: 700 !important; letter-spacing: -0.02em; line-height: 1.25; margin-bottom: 0.6em; }
         h2 { color: #0f172a; font-family: 'Georgia', 'Times New Roman', serif !important; font-size: clamp(1.55rem, 1.9vw, 2rem) !important; font-weight: 700 !important; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 0.55em; }
         h3 { color: #0f172a; font-family: 'Georgia', 'Times New Roman', serif !important; font-size: clamp(1.15rem, 1.4vw, 1.4rem) !important; font-weight: 700 !important; letter-spacing: -0.01em; line-height: 1.3; margin-bottom: 0.5em; }
@@ -1523,10 +1523,10 @@ function BarakaDigitalHub() {
         .hidden-mobile { display:flex; }
       `}</style>
 
-      <nav style={{ position:"fixed", top:0, left:0, right:0, zIndex:100, transition:"all .3s", background: scrolled||page!=="home" ? "rgba(255,255,255,.95)" : "transparent", backdropFilter: scrolled||page!=="home" ? "blur(20px)" : "none", borderBottom: scrolled||page!=="home" ? "1px solid rgba(0,0,0,.06)" : "none", padding:"0 24px" }}>
-        <div className="page-container" style={{ display:"flex", alignItems:"center", justifyContent:"space-between", height:68 }}>
+      <nav style={{ position:"fixed", top:0, left:0, right:0, zIndex:100, transition:"all .3s", background: scrolled||page!=="home" ? "rgba(255,255,255,.98)" : "transparent", backdropFilter: scrolled||page!=="home" ? "blur(20px)" : "none", borderBottom: scrolled||page!=="home" ? "1px solid rgba(0,0,0,.08)" : "none", padding:"0 24px", paddingTop: scrolled ? "8px" : "0" }}>
+        <div className="page-container" style={{ display:"flex", alignItems:"center", justifyContent:"space-between", height: scrolled ? 72 : 76 }}>
           <a href="/" onClick={(e) => { e.preventDefault(); navigate("home"); }} style={{ display:"flex", alignItems:"center", gap:10, textDecoration:"none", color:"inherit", padding:0 }}>
-            <img src="/favicon-512.png" alt="Baraka Digital Hub logo" style={{ height:44, width:"auto", objectFit:"contain" }} />
+            <img src="/favicon-512.png" alt="Baraka Digital Hub logo" style={{ height:56, width:"auto", objectFit:"contain" }} />
           </a>
           <div className="hidden-mobile" style={{ display: isMobile ? "none" : "flex", gap:28, alignItems:"center" }}>
             {navLinks.map(l => (
@@ -1856,7 +1856,7 @@ function BarakaDigitalHub() {
         <div className="page-container">
           <div style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "1.6fr 1fr 1fr 1fr", gap:32, alignItems:"start", marginBottom:36 }}>
             <div>
-              <img src="/footerlogo.png" alt="Baraka Digital Hub footer logo" style={{ height:52, width:"auto", marginBottom:18 }} />
+              <img src="/favicon-512.png" alt="Baraka Digital Hub footer logo" style={{ height:56, width:"auto", marginBottom:18 }} />
               <p style={{ color:"rgba(255,255,255,.75)", maxWidth:360, lineHeight:1.8, marginBottom:24 }}>Professional AI data and digital operations delivered with social impact from Nairobi to global teams.</p>
             </div>
 
