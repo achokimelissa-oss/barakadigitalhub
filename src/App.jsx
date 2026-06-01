@@ -811,27 +811,41 @@ const AboutPage = ({ goBack, isMobile }) => {
         </FadeIn>
 
         <FadeIn delay={0.22}>
-          <div style={{ display: "grid", gap: 24, marginBottom: 40 }}>
-            <div style={{ background: "white", borderRadius: 24, padding: "32px", border: "1px solid #e2e8f0", boxShadow: "0 18px 48px rgba(15,23,42,0.06)" }}>
-              <h2 className="section-h2" style={{ marginBottom: 18 }}>From Our Head of Operations</h2>
-              <div style={{ color: "#475569", lineHeight: 1.9, marginBottom: 18 }}>
+          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 24, marginBottom: 40 }}>
+            <div style={{ background: "linear-gradient(180deg, #ecfdf5 0%, #ffffff 100%)", borderRadius: 28, padding: "32px", boxShadow: "0 24px 70px rgba(15,23,42,0.08)", border: "1px solid rgba(16,185,129,.18)" }}>
+              <div style={{ display: "inline-flex", alignItems: "center", gap: 10, marginBottom: 18 }}>
+                <span style={{ width: 10, height: 10, borderRadius: "50%", background: "#0f9d68" }} />
+                <span style={{ fontSize: ".78rem", fontWeight: 700, color: "#0f9d68", textTransform: "uppercase", letterSpacing: ".12em" }}>Leadership</span>
+              </div>
+              <h2 className="section-h2" style={{ marginBottom: 18, fontFamily: "Georgia, serif", color: "#0f172a" }}>From Our Head of Operations</h2>
+              <div style={{ color: "#334155", fontSize: "0.98rem", lineHeight: 1.85, marginBottom: 22, fontFamily: "'Segoe UI', Arial, sans-serif" }}>
                 <p>“Baraka Digital Hub was built on a simple belief: talent is universal, but opportunity is not.</p>
                 <p>Our vision is to create a pathway where young people from underserved communities can access meaningful digital work, develop globally competitive skills, and build sustainable futures for themselves and their families.</p>
                 <p>We are building more than a workforce centre. We are building a model of economic inclusion powered by technology, discipline, and purpose.</p>
                 <p>Every project delivered is an opportunity created, a skill strengthened, and a future made more stable.</p>
                 <p>We are ready to partner with organizations that value both excellence and impact.”</p>
               </div>
-              <p style={{ color: "#0f172a", fontWeight: 700, marginTop: 12 }}>Timothy Mwangi<br />Head of Operations</p>
+              <div style={{ padding: "20px 22px", borderRadius: 20, background: "#ecfeef", border: "1px solid rgba(15,157,104,.18)" }}>
+                <p style={{ margin: 0, color: "#0f5132", fontWeight: 700 }}>Timothy Mwangi</p>
+                <p style={{ margin: 0, color: "#334155", fontSize: ".95rem" }}>Head of Operations</p>
+              </div>
             </div>
-            <div style={{ background: "white", borderRadius: 24, padding: "32px", border: "1px solid #e2e8f0", boxShadow: "0 18px 48px rgba(15,23,42,0.06)" }}>
-              <h2 className="section-h2" style={{ marginBottom: 18 }}>From Our President and Mama Baraka</h2>
-              <div style={{ color: "#475569", lineHeight: 1.9, marginBottom: 18 }}>
+            <div style={{ background: "linear-gradient(180deg, #fff1f2 0%, #ffffff 100%)", borderRadius: 28, padding: "32px", boxShadow: "0 24px 70px rgba(15,23,42,0.08)", border: "1px solid rgba(249,115,22,.18)" }}>
+              <div style={{ display: "inline-flex", alignItems: "center", gap: 10, marginBottom: 18 }}>
+                <span style={{ width: 10, height: 10, borderRadius: "50%", background: "#f97316" }} />
+                <span style={{ fontSize: ".78rem", fontWeight: 700, color: "#f97316", textTransform: "uppercase", letterSpacing: ".12em" }}>Leadership</span>
+              </div>
+              <h2 className="section-h2" style={{ marginBottom: 18, fontFamily: "Georgia, serif", color: "#0f172a" }}>From Our President and Mama Baraka</h2>
+              <div style={{ color: "#334155", fontSize: "0.98rem", lineHeight: 1.85, marginBottom: 22, fontFamily: "'Segoe UI', Arial, sans-serif" }}>
                 <p>“My life has always been rooted in children — loving them, raising them, and standing beside them through every season of their growth. As Mama Baraka, my deepest calling has been to ensure that no child under our care ever feels forgotten or without a future.</p>
                 <p>Baraka Digital Hub was born from that responsibility and that love. It is an extension of the Children’s Home, built to ensure that our young people step into adulthood with skills, confidence, and opportunity.</p>
                 <p>Care must evolve into empowerment, and charity must grow into dignity.</p>
                 <p>This work is family. It is love translated into opportunity.”</p>
               </div>
-              <p style={{ color: "#0f172a", fontWeight: 700, marginTop: 12 }}>Margrate Kimaru<br />President and Mama Baraka</p>
+              <div style={{ padding: "20px 22px", borderRadius: 20, background: "#fff4e6", border: "1px solid rgba(249,115,22,.18)" }}>
+                <p style={{ margin: 0, color: "#b45309", fontWeight: 700 }}>Margrate Kimaru</p>
+                <p style={{ margin: 0, color: "#334155", fontSize: ".95rem" }}>President and Mama Baraka</p>
+              </div>
             </div>
           </div>
         </FadeIn>
@@ -1403,11 +1417,14 @@ function BarakaDigitalHub() {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        .font-display { font-family: 'Inter', 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important; }
-        .hero-h1 { font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important; font-size: clamp(3rem, 5vw, 4.2rem) !important; }
+        .font-display { font-family: 'Georgia', 'Times New Roman', serif !important; }
+        .hero-h1 { font-family: 'Georgia', 'Times New Roman', serif !important; font-size: clamp(3rem, 5vw, 4.2rem) !important; }
         .page-container { width: min(100%, 1200px); margin: 0 auto; padding: 0 24px; }
         .section-h2 { font-size: clamp(1.6rem, 2vw, 2rem) !important; color: #0f172a; font-weight: 700; letter-spacing: -0.02em; line-height: 1.16; }
-        .section-copy, .hero-copy, .body-copy { font-size: clamp(1rem, 1vw, 1.05rem); line-height: 1.75; max-width: 64rem; margin: 0 auto; font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important; color: #475569; }
+        .section-copy { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !important; }
+        .hero-copy { font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important; }
+        .body-copy { font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important; }
+        .section-copy, .hero-copy, .body-copy { font-size: clamp(1rem, 1vw, 1.05rem); line-height: 1.75; max-width: 64rem; margin: 0 auto; color: #475569; }
         .text-wrap { word-wrap: break-word; overflow-wrap: break-word; }
         @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
         @keyframes floatB { 0%,100%{transform:translateY(0) rotate(-2deg)} 50%{transform:translateY(-8px) rotate(2deg)} }
@@ -1441,15 +1458,15 @@ function BarakaDigitalHub() {
         .impact-card { background: rgba(255,255,255,.94); border: 1px solid rgba(59,130,246,.16); }
         @keyframes tech-bg-glow { 0%,100% { background-position: 12% 18%, 88% 24%, 52% 58%; } 50% { background-position: 18% 12%, 82% 28%, 48% 62%; } }
         @keyframes tech-bg-stripes { 0%,100% { transform: translateY(0); opacity: 0; } 50% { transform: translateY(8px); opacity: 0; } }
-        .btn-primary { display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#1d4ed8,#06b6d4);color:white;padding:14px 28px;border-radius:12px;font-weight:600;font-size:.95rem;text-decoration:none;box-shadow:0 8px 32px rgba(29,78,216,.3);transition:transform .2s,box-shadow .2s;border:none;cursor:pointer;font-family:inherit; }
-        .btn-primary:hover { transform:translateY(-2px);box-shadow:0 12px 40px rgba(29,78,216,.4); }
-        .btn-secondary { display:inline-flex;align-items:center;gap:8px;background:white;color:#1e293b;padding:14px 28px;border-radius:12px;font-weight:600;font-size:.95rem;text-decoration:none;border:1.5px solid #e2e8f0;transition:border-color .2s,color .2s,transform .2s;cursor:pointer;font-family:inherit; }
-        .btn-secondary:hover { border-color:#1d4ed8;color:#1d4ed8;transform:translateY(-2px); }
-        h1:not(.hero-h1) { color: #0f172a; font-family: 'Inter', 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important; font-size: clamp(2rem, 2.3vw, 2.4rem) !important; font-weight: 700 !important; letter-spacing: -0.02em; line-height: 1.25; margin-bottom: 0.6em; }
-        h2 { color: #0f172a; font-family: 'Inter', 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important; font-size: clamp(1.55rem, 1.9vw, 2rem) !important; font-weight: 700 !important; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 0.55em; }
-        h3 { color: #0f172a; font-family: 'Inter', 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important; font-size: clamp(1.15rem, 1.4vw, 1.4rem) !important; font-weight: 700 !important; letter-spacing: -0.01em; line-height: 1.3; margin-bottom: 0.5em; }
-        .section-h2 { font-size: clamp(1.6rem, 2vw, 2rem) !important; color: #0f172a; font-weight: 700 !important; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 0.55em; }
-        .font-display { font-family: 'Inter', 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important; }
+        .btn-primary { display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#0f172a,#0f9d68);color:white;padding:14px 28px;border-radius:12px;font-weight:700;font-size:.95rem;text-decoration:none;box-shadow:0 8px 32px rgba(15,23,42,.28);transition:transform .2s,box-shadow .2s,border-color .2s;color:white;border:none;cursor:pointer;font-family:'Segoe UI', Arial, sans-serif; }
+        .btn-primary:hover { transform:translateY(-2px);box-shadow:0 12px 40px rgba(15,23,42,.35); }
+        .btn-secondary { display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#fef3c7,#fb923c);color:#92400e;padding:14px 28px;border-radius:12px;font-weight:700;font-size:.95rem;text-decoration:none;border:1.5px solid rgba(249,115,22,.3);transition:border-color .2s,color .2s,transform .2s;cursor:pointer;font-family:'Segoe UI', Arial, sans-serif; }
+        .btn-secondary:hover { border-color:#f97316;color:#b45309;transform:translateY(-2px); }
+        h1:not(.hero-h1) { color: #0f172a; font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !important; font-size: clamp(2rem, 2.3vw, 2.4rem) !important; font-weight: 700 !important; letter-spacing: -0.02em; line-height: 1.25; margin-bottom: 0.6em; }
+        h2 { color: #0f172a; font-family: 'Georgia', 'Times New Roman', serif !important; font-size: clamp(1.55rem, 1.9vw, 2rem) !important; font-weight: 700 !important; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 0.55em; }
+        h3 { color: #0f172a; font-family: 'Georgia', 'Times New Roman', serif !important; font-size: clamp(1.15rem, 1.4vw, 1.4rem) !important; font-weight: 700 !important; letter-spacing: -0.01em; line-height: 1.3; margin-bottom: 0.5em; }
+        .section-h2 { font-family: 'Georgia', 'Times New Roman', serif !important; font-size: clamp(1.6rem, 2vw, 2rem) !important; color: #0f172a; font-weight: 700 !important; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 0.55em; }
+        .font-display { font-family: 'Georgia', 'Times New Roman', serif !important; }
         .svc-card:hover { box-shadow:0 12px 40px rgba(0,0,0,.08);transform:translateY(-4px); }
         .about-card, .about-panel, .impact-card, .stat-card, .card {
           background:white;
@@ -1549,7 +1566,7 @@ function BarakaDigitalHub() {
                 <div>
                   <div style={{ display:"inline-flex", alignItems:"center", gap:10, background:"linear-gradient(135deg, rgba(14,165,233,.16), rgba(15, 123, 255, .08))", border:"1px solid rgba(14,165,233,.28)", borderRadius:100, padding:"10px 20px", marginBottom:18, boxShadow:"0 18px 40px rgba(15,23,42,.08)" }}>
                     <span className="ani-pulse" style={{ width:8, height:8, borderRadius:"50%", background:"#0f9d68", display:"inline-block", boxShadow:"0 0 0 4px rgba(15,23,42,.06)" }} />
-                    <span className="typing-effect" style={{ fontSize:"0.85rem", fontWeight:800, color:"#0f9d68", letterSpacing:"0.12em", textTransform:"uppercase", textShadow:"0 1px 2px rgba(15,23,42,.12)" }}>Empowering Futures Through Technology</span>
+                    <span className="typing-effect" style={{ fontFamily:"'Segoe UI', Arial, sans-serif", fontSize:"0.85rem", fontWeight:800, color:"#0f7a44", letterSpacing:"0.12em", textTransform:"uppercase", textShadow:"0 1px 2px rgba(15,23,42,.12)" }}>Empowering Futures Through Technology</span>
                   </div>
                   <h1 className="hero-h1 font-display" style={{ fontSize:"4.2rem", fontWeight:900, lineHeight:1.02, letterSpacing:"-.02em", color:"#0f172a", marginBottom:18, textShadow:"0 4px 20px rgba(15,23,42,.05)" }}>
                     AI Training & Digital Operations
@@ -1769,10 +1786,12 @@ function BarakaDigitalHub() {
             </div>
           </section>
 
-          <section className="impact-section" style={{ padding:"88px 24px" }}>
+          <section className="impact-section" style={{ padding:"88px 24px", background:"linear-gradient(135deg,#f7fcff 0%,#e7fbf5 38%,#ffffff 100%)", borderRadius:32, border:"1px solid rgba(14,165,233,.18)", boxShadow:"0 36px 90px rgba(15,23,42,.12)", position:"relative", overflow:"hidden" }}>
+            <div style={{ position:"absolute", inset:0, backgroundImage:"radial-gradient(circle at 12% 22%, rgba(245,158,11,.13) 0%, transparent 24%), radial-gradient(circle at 78% 18%, rgba(14,165,233,.14) 0%, transparent 22%), radial-gradient(circle at 50% 70%, rgba(16,185,129,.1) 0%, transparent 30%)", pointerEvents:"none" }} />
+            <div style={{ position:"absolute", inset:0, backgroundImage:"linear-gradient(180deg, rgba(255,255,255,.88), rgba(255,255,255,.18))", pointerEvents:"none" }} />
             <div style={{ position:"absolute", top:20, right:-40, width:180, height:180, borderRadius:"50%", background:"rgba(245,158,11,.18)", filter:"blur(40px)", pointerEvents:"none" }} />
             <div style={{ position:"absolute", bottom:-30, left:-60, width:260, height:260, borderRadius:"50%", background:"rgba(16,185,129,.16)", filter:"blur(50px)", pointerEvents:"none" }} />
-            <div style={{ maxWidth:1000, margin:"0 auto" }}>
+            <div style={{ maxWidth:1000, margin:"0 auto", position:"relative", zIndex:1 }}>
               <FadeIn>
                 <div style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap:48, alignItems:"center" }}>
                   <div>
@@ -1780,8 +1799,8 @@ function BarakaDigitalHub() {
                       <span style={{ fontSize:".7rem", fontWeight:700, color:"#d97706", letterSpacing:".07em", textTransform:"uppercase" }}>Community Impact</span>
                     </div>
                     <h2 className="font-display" style={{ fontSize:"2.2rem", fontWeight:800, color:"#0f172a", letterSpacing:"-.03em", marginBottom:16, lineHeight:1.15 }}>Work That Creates Real Change</h2>
-                    <p style={{ color:"#64748b", fontSize:".92rem", lineHeight:1.85, marginBottom:20 }}>A sustainable social impact model that pairs commercial AI services with structured digital work, supporting Baraka Children’s Home while expanding opportunity for local youth.</p>
-                    <button onClick={() => navigate("impact")} style={{ display:"inline-flex", alignItems:"center", gap:7, color:"#1d4ed8", fontWeight:700, fontSize:".88rem", background:"none", border:"none", cursor:"pointer", fontFamily:"inherit" }}>
+                    <p style={{ color:"#525252", fontSize:"1rem", lineHeight:1.85, marginBottom:20, fontFamily:"'Segoe UI', Arial, sans-serif" }}>A sustainable social impact model that pairs commercial AI services with structured digital work, supporting Baraka Children’s Home while expanding opportunity for local youth.</p>
+                    <button onClick={() => navigate("impact")} className="btn-secondary" style={{ display:"inline-flex", alignItems:"center", gap:7, fontWeight:700, fontSize:".88rem", background:"linear-gradient(135deg,#fde68a,#fb923c)", color:"#92400e", border:"none", cursor:"pointer", boxShadow:"0 12px 28px rgba(251,146,60,.18)", fontFamily:"'Segoe UI', Arial, sans-serif", padding:"12px 18px" }}>
                       Read about our impact <ChevronRight size={15} />
                     </button>
                   </div>
