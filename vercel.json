@@ -1,12 +1,5 @@
 {
   "version": 2,
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
-  "redirects": [
-    {
-      "source": "/about",
-      "destination": "/",
-      "statusCode": 301
-    }
-  ]
+  "buildCommand": "npm run build:seo",
+  "outputDirectory": "dist"
 }
