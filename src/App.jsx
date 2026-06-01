@@ -1558,11 +1558,11 @@ function BarakaDigitalHub() {
 
       {page === "home" && (
         <>
-          <section style={{ width:"100vw", marginLeft:"calc(50% - 50vw)", marginRight:"calc(50% - 50vw)", paddingTop:120, paddingBottom:80, paddingLeft:0, paddingRight:0, position:"relative", overflow:"visible", background:"linear-gradient(135deg, #f0f7ff 0%, #e6f3ff 25%, #ecfdf5 50%, #e0f8f5 75%, #f0f4ff 100%)" }}>
+          <section style={{ position:"relative", left:"50%", right:"50%", width:"100vw", maxWidth:"100vw", marginLeft:"-50vw", marginRight:"-50vw", paddingTop:120, paddingBottom:80, paddingLeft:0, paddingRight:0, overflow:"visible", background:"linear-gradient(135deg, #f0f7ff 0%, #e6f3ff 25%, #ecfdf5 50%, #e0f8f5 75%, #f0f4ff 100%)" }}>
             <div className="dot-grid" style={{ position:"absolute", inset:0, opacity:.6, pointerEvents: "none" }} />
             <div className="hero-tech-overlay" />
-            <div style={{ position:"absolute", top:"-10%", right: isMobile ? "-20%" : "-5%", width: isMobile ? 320 : 600, height: isMobile ? 320 : 600, borderRadius:"50%", background:"radial-gradient(circle,rgba(29,78,216,.07) 0%,transparent 70%)", pointerEvents: "none" }} />
-            <div style={{ position:"absolute", bottom: isMobile ? "10%" : "-10%", left: isMobile ? "-20%" : "-5%", width: isMobile ? 280 : 500, height: isMobile ? 280 : 500, borderRadius:"50%", background:"radial-gradient(circle,rgba(15,157,104,.07) 0%,transparent 70%)", pointerEvents: "none" }} />
+            <div style={{ position:"absolute", top:"-20%", right: isMobile ? "-30%" : "-15%", width: isMobile ? 420 : 800, height: isMobile ? 420 : 800, borderRadius:"50%", background:"radial-gradient(circle,rgba(29,78,216,.08) 0%,transparent 70%)", pointerEvents: "none" }} />
+            <div style={{ position:"absolute", bottom: isMobile ? "-20%" : "-15%", left: isMobile ? "-30%" : "-15%", width: isMobile ? 420 : 700, height: isMobile ? 420 : 700, borderRadius:"50%", background:"radial-gradient(circle,rgba(15,157,104,.08) 0%,transparent 70%)", pointerEvents: "none" }} />
             <div className="page-container" style={{ position:"relative", zIndex:1 }}>
               <div className="hero-grid" style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap:56, alignItems:"center" }}>
                 <div>
