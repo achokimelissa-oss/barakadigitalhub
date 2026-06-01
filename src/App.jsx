@@ -657,12 +657,11 @@ const WorkflowPage = ({ goBack, setPage, isMobile }) => {
         <div style={{ display: "grid", gap: 24 }}>
             {steps.map((s, i) => (
               <div key={i} style={{ background: "white", borderRadius: 28, border: "1px solid #e2e8f0", boxShadow: "0 28px 70px rgba(15,23,42,.08)", overflow: "hidden" }}>
-                <div style={{ display: "flex", flexDirection: isMobile ? "column" : "row", justifyContent: "space-between", alignItems: isMobile ? "flex-start" : "center", gap: 18, padding: isMobile ? "20px 20px 16px 20px" : "26px 26px 20px 26px", background: s.color, color: "white" }}>
+                <div style={{ display: "flex", flexDirection: isMobile ? "column" : "row", justifyContent: "flex-start", alignItems: isMobile ? "flex-start" : "center", gap: 18, padding: isMobile ? "20px 20px 16px 20px" : "26px 26px 20px 26px", background: s.color, color: "white" }}>
                   <div>
                     <div style={{ fontSize: ".82rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".16em", opacity: .92, marginBottom: 8 }}>Stage {s.n}</div>
                     <h2 className="font-display" style={{ fontSize: isMobile ? "1.3rem" : "1.55rem", fontWeight: 800, margin: 0, lineHeight: 1.15, color: "white", fontFamily: "Syne, Inter, system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial", wordBreak: "break-word" }}>{s.title}</h2>
                   </div>
-                  <div style={{ width: isMobile ? 60 : 72, height: isMobile ? 60 : 72, minWidth: isMobile ? 60 : 72, minHeight: isMobile ? 60 : 72, borderRadius: "50%", background: "rgba(255,255,255,.12)", display: "grid", placeItems: "center", fontSize: isMobile ? "1.1rem" : "1.35rem", fontWeight: 800, boxShadow: "inset 0 0 0 1px rgba(255,255,255,.12)" }}>{s.n}</div>
                 </div>
                 <div style={{ padding: isMobile ? "22px 20px 22px 20px" : "28px 26px 26px 26px" }}>
                   <p style={{ color: "#475569", fontSize: isMobile ? ".95rem" : "1rem", lineHeight: 1.85, marginBottom: 22, wordBreak: "break-word" }}>{s.desc}</p>
@@ -1413,7 +1412,7 @@ function BarakaDigitalHub() {
   ];
 
   return (
-    <div style={{ minHeight: "100vh", background: "white", fontFamily: "'DM Sans', sans-serif" }}>
+    <div style={{ minHeight: "100vh", background: "white", fontFamily: "'DM Sans', sans-serif", overflowX: "hidden" }}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -1562,7 +1561,9 @@ function BarakaDigitalHub() {
             <div className="dot-grid" style={{ position:"absolute", inset:0, opacity:.6, pointerEvents: "none" }} />
             <div className="hero-tech-overlay" />
             <div style={{ position:"absolute", top:"-20%", right: isMobile ? "-30%" : "-15%", width: isMobile ? 420 : 800, height: isMobile ? 420 : 800, borderRadius:"50%", background:"radial-gradient(circle,rgba(29,78,216,.08) 0%,transparent 70%)", pointerEvents: "none" }} />
+            <div style={{ position:"absolute", top:0, left:0, width: isMobile ? 300 : 500, height: isMobile ? 300 : 500, borderRadius:"50%", background:"radial-gradient(circle,rgba(59,130,246,.14) 0%,transparent 74%)", pointerEvents:"none", transform:"translate(-25%, -25%)" }} />
             <div style={{ position:"absolute", bottom: isMobile ? "-20%" : "-15%", left: isMobile ? "-30%" : "-15%", width: isMobile ? 420 : 700, height: isMobile ? 420 : 700, borderRadius:"50%", background:"radial-gradient(circle,rgba(15,157,104,.08) 0%,transparent 70%)", pointerEvents: "none" }} />
+            <div style={{ position:"absolute", bottom:0, right:0, width: isMobile ? 300 : 520, height: isMobile ? 300 : 520, borderRadius:"50%", background:"radial-gradient(circle,rgba(16,185,129,.14) 0%,transparent 74%)", pointerEvents:"none", transform:"translate(25%, 25%)" }} />
             <div className="page-container" style={{ position:"relative", zIndex:1 }}>
               <div className="hero-grid" style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap:56, alignItems:"center" }}>
                 <div>
