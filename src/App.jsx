@@ -1438,6 +1438,8 @@ function BarakaDigitalHub() {
         .ani-pulse { animation: pulse-slow 3s ease-in-out infinite; }
         .ani-marquee { animation: marquee 24s linear infinite; }
         .hero-tech-overlay { position: absolute; inset: 0; background: radial-gradient(circle at top left, rgba(59,130,246,.16), transparent 22%), radial-gradient(circle at bottom right, rgba(16,185,129,.14), transparent 18%); pointer-events: none; }
+        .hero-tech-overlay::before { content: ""; position: absolute; inset: 0; background-image: repeating-linear-gradient(90deg, transparent 0px, transparent 40px, rgba(14,165,233,.08) 40px, rgba(14,165,233,.08) 41px), repeating-linear-gradient(0deg, transparent 0px, transparent 40px, rgba(16,185,129,.06) 40px, rgba(16,185,129,.06) 41px); animation: grid-flow 6s linear infinite; }
+        @keyframes grid-flow { 0% { transform: translate(0, 0); } 100% { transform: translate(40px, 40px); } }
         .hero-grid { position: relative; }
         .hero-grid::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(rgba(14,165,233,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(14,165,233,.06) 1px, transparent 1px); background-size: 120px 120px; pointer-events: none; opacity: .35; }
         .code-panel { background: rgba(7,15,30,.94); border: 1px solid rgba(14,165,233,.25); color: #e2e8f0; border-radius: 28px; box-shadow: 0 28px 90px rgba(10,22,51,.22); overflow: hidden; }
@@ -1524,7 +1526,7 @@ function BarakaDigitalHub() {
       <nav style={{ position:"fixed", top:0, left:0, right:0, zIndex:100, transition:"all .3s", background: scrolled||page!=="home" ? "rgba(255,255,255,.95)" : "transparent", backdropFilter: scrolled||page!=="home" ? "blur(20px)" : "none", borderBottom: scrolled||page!=="home" ? "1px solid rgba(0,0,0,.06)" : "none", padding:"0 24px" }}>
         <div className="page-container" style={{ display:"flex", alignItems:"center", justifyContent:"space-between", height:68 }}>
           <a href="/" onClick={(e) => { e.preventDefault(); navigate("home"); }} style={{ display:"flex", alignItems:"center", gap:10, textDecoration:"none", color:"inherit", padding:0 }}>
-            <img src="/logo.png" alt="Baraka Digital Hub logo" style={{ height:44, width:"auto", objectFit:"contain" }} />
+            <img src="/favicon-512.png" alt="Baraka Digital Hub logo" style={{ height:44, width:"auto", objectFit:"contain" }} />
           </a>
           <div className="hidden-mobile" style={{ display: isMobile ? "none" : "flex", gap:28, alignItems:"center" }}>
             {navLinks.map(l => (
@@ -1556,7 +1558,7 @@ function BarakaDigitalHub() {
 
       {page === "home" && (
         <>
-          <section style={{ paddingTop:120, paddingBottom:80, paddingLeft:24, paddingRight:24, position:"relative", overflow:"visible", background:"linear-gradient(160deg,#f8fafc 0%,#eff6ff 50%,#ecfdf5 100%)" }}>
+          <section style={{ paddingTop:120, paddingBottom:80, paddingLeft:24, paddingRight:24, position:"relative", overflow:"visible", background:"linear-gradient(135deg, #f0f7ff 0%, #e6f3ff 25%, #ecfdf5 50%, #e0f8f5 75%, #f0f4ff 100%)" }}>
             <div className="dot-grid" style={{ position:"absolute", inset:0, opacity:.6, pointerEvents: "none" }} />
             <div className="hero-tech-overlay" />
             <div style={{ position:"absolute", top:"-10%", right: isMobile ? "-20%" : "-5%", width: isMobile ? 320 : 600, height: isMobile ? 320 : 600, borderRadius:"50%", background:"radial-gradient(circle,rgba(29,78,216,.07) 0%,transparent 70%)", pointerEvents: "none" }} />

@@ -1079,7 +1079,7 @@ function BarakaDigitalHub() {
       <nav style={{ position:"fixed", top:0, left:0, right:0, zIndex:100, transition:"all .3s", background: scrolled||page!=="home" ? "rgba(255,255,255,.95)" : "transparent", backdropFilter: scrolled||page!=="home" ? "blur(20px)" : "none", borderBottom: scrolled||page!=="home" ? "1px solid rgba(0,0,0,.06)" : "none", padding:"0 24px" }}>
         <div className="page-container" style={{ display:"flex", alignItems:"center", justifyContent:"space-between", height:68 }}>
           <button onClick={() => setPage("home")} style={{ display:"flex", alignItems:"center", gap:10, background:"none", border:"none", cursor:"pointer", padding:0 }}>
-            <img src="/logo.png" alt="Baraka Digital Hub logo" style={{ height:44, width:"auto", objectFit:"contain" }} />
+            <img src="/favicon-512.png" alt="Baraka Digital Hub logo" style={{ height:44, width:"auto", objectFit:"contain" }} />
           </button>
           <div className="hidden-mobile" style={{ display: isMobile ? "none" : "flex", gap:28, alignItems:"center" }}>
             {navLinks.map(l => (
@@ -1110,7 +1110,7 @@ function BarakaDigitalHub() {
 
       {page === "home" && (
         <>
-          <section style={{ paddingTop:120, paddingBottom:80, paddingLeft:24, paddingRight:24, position:"relative", overflow:"visible", background:"linear-gradient(160deg,#f8fafc 0%,#eff6ff 50%,#ecfdf5 100%)" }}>
+          <section style={{ paddingTop:120, paddingBottom:80, paddingLeft:24, paddingRight:24, position:"relative", overflow:"visible", background:"linear-gradient(135deg, #f0f7ff 0%, #e6f3ff 25%, #ecfdf5 50%, #e0f8f5 75%, #f0f4ff 100%)" }}>
             <div className="dot-grid" style={{ position:"absolute", inset:0, opacity:.6 }} />
             <div style={{ position:"absolute", top:"-10%", right: isMobile ? "-20%" : "-5%", width: isMobile ? 320 : 600, height: isMobile ? 320 : 600, borderRadius:"50%", background:"radial-gradient(circle,rgba(29,78,216,.07) 0%,transparent 70%)" }} />
             <div style={{ position:"absolute", bottom: isMobile ? "10%" : "-10%", left: isMobile ? "-20%" : "-5%", width: isMobile ? 280 : 500, height: isMobile ? 280 : 500, borderRadius:"50%", background:"radial-gradient(circle,rgba(16,185,129,.07) 0%,transparent 70%)" }} />
@@ -1372,7 +1372,7 @@ function BarakaDigitalHub() {
         <div className="page-container">
           <div style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr 280px", gap:28, alignItems:"start", marginBottom:28 }}>
             <div>
-              <img src="/logo.png" alt="Baraka Digital Hub logo" style={{ height:48, width:"auto", marginBottom:14 }} />
+              <img src="/favicon-512.png" alt="Baraka Digital Hub logo" style={{ height:48, width:"auto", marginBottom:14 }} />
               <div style={{ display:"flex", flexDirection:"column", gap:6 }}>
                 <p style={{ color:"white", fontSize:"1rem", fontWeight:700, margin:0 }}>Baraka Digital Hub delivers enterprise-ready AI data infrastructure from Nairobi.</p>
                 <p style={{ color:"rgba(255,255,255,.7)", fontSize:"0.95rem", margin:0 }}>Robust quality controls · Secure workflows · Scalable delivery for global teams.</p>
