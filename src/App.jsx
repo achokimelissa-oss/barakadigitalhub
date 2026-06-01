@@ -1558,7 +1558,7 @@ function BarakaDigitalHub() {
 
       {page === "home" && (
         <>
-          <section style={{ paddingTop:120, paddingBottom:80, paddingLeft:24, paddingRight:24, position:"relative", overflow:"visible", background:"linear-gradient(135deg, #f0f7ff 0%, #e6f3ff 25%, #ecfdf5 50%, #e0f8f5 75%, #f0f4ff 100%)" }}>
+          <section style={{ paddingTop:120, paddingBottom:80, paddingLeft:0, paddingRight:0, position:"relative", overflow:"visible", background:"linear-gradient(135deg, #f0f7ff 0%, #e6f3ff 25%, #ecfdf5 50%, #e0f8f5 75%, #f0f4ff 100%)" }}>
             <div className="dot-grid" style={{ position:"absolute", inset:0, opacity:.6, pointerEvents: "none" }} />
             <div className="hero-tech-overlay" />
             <div style={{ position:"absolute", top:"-10%", right: isMobile ? "-20%" : "-5%", width: isMobile ? 320 : 600, height: isMobile ? 320 : 600, borderRadius:"50%", background:"radial-gradient(circle,rgba(29,78,216,.07) 0%,transparent 70%)", pointerEvents: "none" }} />
@@ -1629,6 +1629,13 @@ function BarakaDigitalHub() {
             </div>
           </section>
 
+          <div style={{ position:"relative", overflow:"hidden", height: isMobile ? 96 : 120, marginBottom: 24 }}>
+            <div style={{ position:"absolute", inset:0, background:"radial-gradient(circle at 16% 30%, rgba(14,165,233,.18), transparent 24%), radial-gradient(circle at 84% 22%, rgba(16,185,129,.16), transparent 20%), linear-gradient(135deg, rgba(14,165,233,.08), rgba(15,123,255,.08), rgba(16,185,129,.08))", opacity:.98, pointerEvents:"none" }} />
+            <div style={{ position:"absolute", left:"-15%", top:"10%", width: 240, height: 240, borderRadius:"50%", background:"rgba(14,165,233,.14)", filter:"blur(6px)", pointerEvents:"none" }} />
+            <div style={{ position:"absolute", right:"-18%", bottom:"-10%", width: 240, height: 240, borderRadius:"50%", background:"rgba(16,185,129,.14)", filter:"blur(8px)", pointerEvents:"none" }} />
+            <div style={{ position:"absolute", inset:0, backgroundImage:"repeating-linear-gradient(45deg, transparent 0, transparent 22px, rgba(255,255,255,.08) 22px, rgba(255,255,255,.08) 24px)", opacity:.35, pointerEvents:"none" }} />
+          </div>
+
           <div style={{ background:"#020617", padding:"12px 0", overflow:"visible" }}>
             <div className="ani-marquee" style={{ display:"flex", gap:0, whiteSpace:"nowrap", width:"max-content" }}>
               {["Computer Vision","NLP & Text Processing","Audio Annotation","LLM Training","RLHF","Transcription","BPO Services","Quality Assurance","Data Annotation","AI Workforce",
@@ -1652,7 +1659,7 @@ function BarakaDigitalHub() {
               <div className="svc-grid" style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3,1fr)", gap:16 }}>
                 {services.map((s,i)=>(
                   <FadeIn key={i} delay={i*.06}>
-                    <div className="svc-card" style={{ background:"white", border:"1px solid #f1f5f9", borderRadius:18, padding:"24px 22px", transition:"box-shadow .3s,transform .3s", cursor:"pointer", height:"100%" }} onClick={() => navigate("services")}>
+                    <div className="svc-card" style={{ background:"rgba(255,255,255,.96)", border:"1px solid rgba(226,232,240,.7)", borderRadius:24, padding:"24px 22px", transition:"box-shadow .3s,transform .3s", cursor:"pointer", height:"100%", boxShadow:"0 24px 60px rgba(15,23,42,.08)" }} onClick={() => navigate("services")}>
                       <div style={{ width:44, height:44, borderRadius:12, background:s.color, display:"flex", alignItems:"center", justifyContent:"center", color:"white", marginBottom:16 }}>{s.icon}</div>
                       <h3 className="font-display" style={{ fontSize:"1rem", fontWeight:800, color:"#0f172a", marginBottom:8 }}>{s.title}</h3>
                       <p style={{ fontSize:".84rem", color:"#64748b", lineHeight:1.7, marginBottom:14 }}>{s.desc}</p>
@@ -1669,7 +1676,7 @@ function BarakaDigitalHub() {
             </div>
           </section>
 
-          <section style={{ padding:"72px 24px", background:"linear-gradient(135deg,#1d4ed8 0%,#0ea5e9 50%,#0f9d68 100%)", position:"relative", overflow:"visible" }}>
+          <section style={{ padding:"72px 24px", background:"linear-gradient(135deg,#1d4ed8 0%,#0ea5e9 50%,#0f9d68 100%)", position:"relative", overflow:"visible", borderRadius:"0 0 48px 48px" }}>
             <div style={{ position:"absolute", inset:0, opacity:.07, backgroundImage:"linear-gradient(to right,white 1px,transparent 1px),linear-gradient(to bottom,white 1px,transparent 1px)", backgroundSize:"40px 40px", pointerEvents: "none" }} />
             <div className="stats-band" style={{ maxWidth:1100, margin:"0 auto", display:"grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(4,1fr)", gap:24, position:"relative", zIndex:1 }}>
               {[{val:"90",suf:"%+",l:"Avg Accuracy"},{val:"10",suf:"K+ hrs",l:"Weekly Throughput"},{val:"80",suf:"+",l:"Trained Taskers"},{val:"4",suf:"hr",l:"Avg Response Time"}].map((s,i)=>(
