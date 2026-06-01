@@ -767,10 +767,11 @@ const AboutPage = ({ goBack, isMobile }) => {
         </FadeIn>
         <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 20, marginBottom: 32 }}>
           {[
-            { title: "The Mission", icon: "🎯", text: "Baraka Digital Hub exists to demonstrate that communities in Africa can produce production-grade AI training data at global standards. Every successful delivery builds the case that geography is not a limitation." },
-            { title: "The Model", icon: "♻️", text: "Unlike charity-dependent organizations, Baraka is built as a commercial sustainability model. Revenue from AI data services directly funds operations, workforce development, and the broader mission of Baraka Children's Home." },
-            { title: "Youth Employment", icon: "👥", text: "We prioritize hiring youth from underserved communities in Africa, providing structured training, mentorship, and real-world experience in AI data production — skills that transfer to global opportunities." },
-            { title: "Skills for the Future", icon: "📈", text: "Our training programs go beyond task completion. Taskers develop transferable skills in quality assurance, data analysis, client communication, and AI fundamentals — building long-term career foundations." },
+            { title: "Vision", icon: "🌍", text: "To become Africa's leading impact-driven digital workforce company, connecting global businesses with world-class AI data and digital services while creating sustainable employment opportunities for underserved youth." },
+            { title: "Mission", icon: "🎯", text: "BDH exists to prove that geography is not a limitation to excellence. We empower underserved youth to deliver world-class AI data and digital services, creating value for global businesses while transforming lives and communities." },
+            { title: "Sustainable Impact Model", icon: "♻️", text: "BDH operates on a sustainable, revenue-driven model rather than relying on donations or charity. Income generated through AI data services and digital operations supports business growth, workforce development, and the long-term mission of Baraka Children's Home. Every project delivered creates both commercial value and measurable social impact." },
+            { title: "Youth Employment & Economic Empowerment", icon: "👥", text: "BDH intentionally creates employment opportunities for youth from underserved communities across Africa. Through structured onboarding, practical training, mentorship, and hands-on project experience, participants gain access to meaningful work in the global digital economy while building confidence, professional discipline, and financial independence." },
+            { title: "Future-Ready Skills Development", icon: "📈", text: "At BDH, our focus extends beyond task completion. Team members develop valuable, transferable skills in AI data annotation, quality assurance, data management, client communication, problem-solving, and digital operations. These capabilities prepare them for long-term career growth and emerging opportunities in the rapidly evolving AI and technology sectors." },
           ].map((card, i) => (
             <FadeIn key={i} delay={i * 0.07}>
               <div className="about-card" style={{ padding: "28px 24px", border: "1px solid #f1f5f9", boxShadow: "0 2px 12px rgba(0,0,0,0.04)" }}>
@@ -1484,6 +1485,9 @@ function BarakaDigitalHub() {
           .svc-grid { grid-template-columns:1fr 1fr !important; }
           .stats-band { grid-template-columns:repeat(2,1fr) !important; }
           .hero-h1 { font-size:3rem !important; }
+        }
+        @media(max-width:768px) {
+          .about-grid { grid-template-columns: 1fr !important; }
         }
         @media(max-width:560px) {
           .svc-grid { grid-template-columns:1fr !important; }
