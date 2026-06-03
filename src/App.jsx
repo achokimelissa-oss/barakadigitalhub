@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
 
@@ -1335,6 +1335,8 @@ function BarakaDigitalHub() {
     return () => window.removeEventListener('resize', onResize);
   }, []);
 
+  const router = useNavigate();
+
   useEffect(() => {
     const map = {
       '/': 'home',
@@ -1352,15 +1354,15 @@ function BarakaDigitalHub() {
     setPage(p);
   }, [location.pathname]);
 
-  // navigation helper: updates state and browser URL
+  // navigation helper: updates state and browser URL using React Router
   const navigate = (p, { replace = false } = {}) => {
-    setPage(p);
     const path = p === "home" ? "/" : `/${p}`;
+    setPage(p);
     try {
-      if (replace) window.history.replaceState({}, "", path);
-      else window.history.pushState({}, "", path);
+      if (replace) router(path, { replace: true });
+      else router(path);
     } catch (e) {
-      // ignore (server or older browsers)
+      // ignore if router is not available
     }
   };
 
