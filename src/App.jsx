@@ -1810,62 +1810,84 @@ function BarakaDigitalHub() {
             </div>
           </section>
 
-          <section style={{ padding: isMobile ? "56px 18px" : "88px 24px", background: "linear-gradient(180deg,#eef7ff 0%,#f8fcff 55%,#ffffff 100%)", position: "relative", overflow: "hidden" }}>
-            <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 18% 20%, rgba(59,130,246,.14), transparent 18%), radial-gradient(circle at 82% 22%, rgba(15,157,104,.12), transparent 20%), repeating-linear-gradient(135deg, transparent 0, transparent 32px, rgba(14,165,233,.05) 32px, rgba(14,165,233,.05) 33px)", pointerEvents: "none" }} />
-            <div style={{ position: "relative", maxWidth:1000, margin:"0 auto" }}>
+          <section style={{ padding: isMobile ? "56px 18px" : "88px 24px", background: "linear-gradient(135deg, #0f172a 0%, #1a2b4a 40%, #0f3a4a 100%)", position: "relative", overflow: "hidden" }}>
+            {/* Tech grid background */}
+            <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 20% 50%, rgba(6,182,212,.08), transparent 20%), radial-gradient(circle at 80% 20%, rgba(34,197,94,.06), transparent 25%), linear-gradient(90deg, rgba(6,182,212,.04) 1px, transparent 1px), linear-gradient(0deg, rgba(6,182,212,.04) 1px, transparent 1px)", backgroundSize: "100px 100px", pointerEvents: "none" }} />
+            
+            <div style={{ position: "relative", maxWidth:1200, margin:"0 auto" }}>
               <FadeIn>
                 <div style={{ textAlign:"center", marginBottom: isMobile ? 32 : 52 }}>
-                  <h2 className="section-h2 font-display" style={{ fontSize:"2.6rem", fontWeight:800, color:"#0f172a", letterSpacing:"-.03em", marginBottom:12 }}>How Delivery Works</h2>
-                  <p style={{ color:"#64748b", fontSize:"1rem", maxWidth:520, margin:"0 auto", lineHeight:1.75 }}>A streamlined operational workflow for AI data and digital delivery, with full process detail available on the workflow page.</p>
+                  <div style={{ display:"inline-block", background:"linear-gradient(90deg, rgba(6,182,212,.15), rgba(34,197,94,.15))", color:"#06b6d4", padding:"6px 16px", borderRadius:100, fontSize:".7rem", fontWeight:700, letterSpacing:".1em", textTransform:"uppercase", marginBottom:20, border:"1px solid rgba(6,182,212,.3)", fontFamily:"ui-monospace, 'Courier New', monospace" }}>◆ INTELLIGENT PIPELINE</div>
+                  <h2 className="font-display" style={{ fontSize:"2.8rem", fontWeight:800, color:"#f1f5f9", letterSpacing:"-.03em", marginBottom:12, textShadow:"0 0 30px rgba(6,182,212,.2)" }}>AI-Powered Delivery Engine</h2>
+                  <p style={{ color:"#cbd5e1", fontSize:"1rem", maxWidth:680, margin:"0 auto", lineHeight:1.8, fontFamily:"'Segoe UI', Arial, sans-serif" }}>Production-grade data pipelines with real-time monitoring, intelligent quality assurance, and automated scaling.</p>
                 </div>
               </FadeIn>
               <FadeIn delay={0.08}>
-                <div style={{ background:"white", borderRadius:24, border:"1px solid #f1f5f9", boxShadow:"0 12px 48px rgba(0,0,0,.07)", overflow:"hidden" }}>
-                  <div style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr" }}>
-                    <div style={{ padding:"36px 32px", borderRight: isMobile ? "none" : "1px solid #f1f5f9" }}>
-                      <div style={{ display:"inline-block", background:"rgba(29,78,216,.08)", color:"#1d4ed8", padding:"5px 13px", borderRadius:100, fontSize:".72rem", fontWeight:700, letterSpacing:".05em", textTransform:"uppercase", marginBottom:20 }}>Sample Engagement</div>
-                      <h3 className="font-display" style={{ fontSize:"1.6rem", fontWeight:800, color:"#0f172a", marginBottom:24, lineHeight:1.2 }}>AI Data Delivery Example</h3>
-                      {[
-                        ["Task Type","Bounding Box Annotation"],
-                        ["Dataset Volume","Example: 25,000 Images (actual volume by project)"],
-                        ["Delivery Timeline","Example: 48 Hours (timeline based on scope)"],
-                        ["Annotation Workforce","80 Certified Contractors"],
-                        ["QA Workforce","15 QA Specialists"],
-                        ["Total Productive Hours","1,920+ Annotation Hours + 360 QA Hours"],
-                        ["Quality Assurance","100% Review of All First-Pass Annotations"],
-                        ["Reporting","Real-Time Progress & Daily Accuracy Reports"],
-                        ["Delivery Format","COCO, YOLO, custom JSON, or client-specified formats"]
-                      ].map(([k,v],i)=>(
-                        <div key={i} style={{ display:"flex", justifyContent:"space-between", alignItems:"center", padding:"12px 0", borderBottom: i < 8 ? "1px solid #f8fafc" : "none" }}>
-                          <span style={{ fontSize:".82rem", color:"#94a3b8", fontWeight:500 }}>{k}</span>
-                          <span style={{ fontSize:".87rem", fontWeight:700, color:"#0f172a", textAlign:"right", maxWidth: isMobile ? "55%" : "48%" }}>{v}</span>
-                        </div>
-                      ))}
+                <div style={{ background:"rgba(15,23,42,.8)", backdropFilter:"blur(10px)", borderRadius:20, border:"1px solid rgba(6,182,212,.2)", boxShadow:"0 0 40px rgba(6,182,212,.1), inset 0 1px 1px rgba(255,255,255,.05)", overflow:"hidden" }}>
+                  <div style={{ display:"grid", gridTemplateColumns: "1fr", gap:0 }}>
+                    {/* Row 1 - Operations Data */}
+                    <div style={{ padding: isMobile ? "32px 22px" : "42px 40px", borderBottom: "1px solid rgba(6,182,212,.1)" }}>
+                      <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom:28 }}>
+                        <div style={{ width:8, height:8, borderRadius:"50%", background:"#06b6d4", boxShadow:"0 0 12px #06b6d4" }} />
+                        <h3 className="font-display" style={{ fontSize:"1.4rem", fontWeight:800, color:"#f1f5f9", margin:0, letterSpacing:"-.02em" }}>Production Pipeline</h3>
+                      </div>
+                      
+                      {/* Specs Grid */}
+                      <div style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: isMobile ? "16px 12px" : "18px 32px" }}>
+                        {[
+                          { icon: "▶", label: "Model Type", value: "Computer Vision", color: "#06b6d4" },
+                          { icon: "▶", label: "Task", value: "Bounding Box Annotation", color: "#06b6d4" },
+                          { icon: "▶", label: "Dataset", value: "25,000 Images", color: "#22c55e" },
+                          { icon: "▶", label: "SLA", value: "48 Hours*", color: "#22c55e" },
+                          { icon: "▶", label: "Workforce", value: "80 Trained Agents", color: "#a855f7" },
+                          { icon: "▶", label: "QA Capacity", value: "15 Validators", color: "#a855f7" },
+                          { icon: "▶", label: "Throughput", value: "1,920+ GPU Hours", color: "#f59e0b" },
+                          { icon: "▶", label: "Assurance", value: "100% Multi-Pass QA", color: "#f59e0b" },
+                          { icon: "▶", label: "Reporting", value: "Real-Time Metrics", color: "#06b6d4" },
+                          { icon: "▶", label: "Integration", value: "COCO, YOLO, JSON+", color: "#22c55e" }
+                        ].map((spec, i) => (
+                          <div key={i} style={{ display:"flex", flexDirection:"column", gap:6, paddingBottom:"12px", borderBottom: i < 8 ? "1px solid rgba(6,182,212,.08)" : "none" }}>
+                            <div style={{ display:"flex", alignItems:"center", gap:8 }}>
+                              <span style={{ color: spec.color, fontSize:".7rem", fontWeight:900 }}>{spec.icon}</span>
+                              <span style={{ fontSize:".75rem", color:"#94a3b8", fontWeight:700, letterSpacing:".05em", textTransform:"uppercase", fontFamily:"ui-monospace, 'Courier New', monospace" }}>{spec.label}</span>
+                            </div>
+                            <span style={{ fontSize: isMobile ? ".85rem" : ".9rem", fontWeight:700, color:"#f1f5f9", paddingLeft:18 }}>{spec.value}</span>
+                          </div>
+                        ))}
+                      </div>
+                      
+                      <div style={{ marginTop: 24, fontSize: ".7rem", color: "#64748b", fontFamily:"ui-monospace, 'Courier New', monospace", letterSpacing:".05em" }}>
+                        * Timeline subject to scope, complexity, and quality thresholds
+                      </div>
                     </div>
-                    <div style={{ background:"rgba(2,6,23,.95)", padding: isMobile ? "28px 22px" : "36px 32px", minHeight: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between", boxShadow: "0 28px 80px rgba(2,6,23,.16)" }}>
+
+                    {/* Row 2 - Processing Pipeline */}
+                    <div style={{ background:"linear-gradient(135deg, rgba(6,182,212,.05), rgba(34,197,94,.05))", padding: isMobile ? "32px 22px" : "42px 40px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                       <div>
-                        <h2 className="font-display" style={{ fontSize:"1.6rem", fontWeight:800, color:"white", marginBottom:24, lineHeight:1.1 }}>Workflow</h2>
-                        { [
-                          "Project Scoping & Requirement Alignment",
-                          "Pilot Batch, Edge Cases & Calibration",
-                          "Workforce Deployment & Training",
-                          "Production & Task Execution",
-                          "100% First-Pass QA Review",
-                          "Error Logging & Continuous Recalibration",
-                          "Final Validation, Reporting & Delivery",
-                          "Post-Delivery Support & Scaling"
-                        ].map((step,i)=>(
-                          <div key={i} style={{ display:"flex", gap:14, paddingBottom: i<7 ? 18 : 0, position:"relative", marginBottom: i<7 ? 12 : 0 }}>
-                            {i<7 && <div style={{ position:"absolute", left:19, top:34, width:2, bottom:0, background:"rgba(255,255,255,.06)" }} />}
-                            <div style={{ flexShrink:0, width:40, height:40, borderRadius:"50%", background:"linear-gradient(135deg,rgba(15,157,104,.95),rgba(16,185,129,.95))", display:"flex", alignItems:"center", justifyContent:"center", fontFamily:"ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Segoe UI Mono', monospace", fontWeight:800, fontSize:13, color:"white", position:"relative", zIndex:1 }}>{i+1}</div>
-                            <div style={{ paddingTop:6 }}>
-                              <p style={{ color:"#cbd5e1", fontSize:"0.94rem", lineHeight:1.7, maxWidth:isMobile?"100%":"92%", fontWeight:700 }}>{step}</p>
+                        <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom:28 }}>
+                          <div style={{ width:8, height:8, borderRadius:"50%", background:"#22c55e", boxShadow:"0 0 12px #22c55e" }} />
+                          <h2 className="font-display" style={{ fontSize:"1.4rem", fontWeight:800, color:"#f1f5f9", margin:0, letterSpacing:"-.02em" }}>Processing Pipeline</h2>
+                        </div>
+                        {[
+                          { step: "Input", desc: "Requirements Analysis & Data Ingestion", icon: "→" },
+                          { step: "Learn", desc: "Workforce Calibration & Model Training", icon: "→" },
+                          { step: "Execute", desc: "Parallel Processing & Intelligent Routing", icon: "→" },
+                          { step: "Output", desc: "Quality Validation & Format Delivery", icon: "✓" }
+                        ].map((phase, i) => (
+                          <div key={i} style={{ display:"flex", gap:14, paddingBottom: i < 3 ? 20 : 0, marginBottom: i < 3 ? 12 : 0, position:"relative" }}>
+                            {i < 3 && <div style={{ position:"absolute", left:19, top:32, width:1.5, bottom:0, background:"linear-gradient(180deg, rgba(6,182,212,.3), transparent)" }} />}
+                            <div style={{ flexShrink:0, width:40, height:40, borderRadius:"6px", background: i % 2 === 0 ? "linear-gradient(135deg, rgba(6,182,212,.8), rgba(34,197,94,.8))" : "linear-gradient(135deg, rgba(168,85,247,.8), rgba(249,115,22,.8))", display:"flex", alignItems:"center", justifyContent:"center", fontFamily:"ui-monospace, 'Courier New', monospace", fontWeight:900, fontSize:11, color:"white", position:"relative", zIndex:1, border:"1px solid rgba(255,255,255,.2)" }}>
+                              <span>{phase.step.substring(0,1).toUpperCase()}</span>
+                            </div>
+                            <div style={{ paddingTop:2 }}>
+                              <p style={{ color:"#cbd5e1", fontSize: isMobile ? ".85rem" : ".9rem", lineHeight:1.6, fontWeight:700, margin:"0 0 2px 0" }}>{phase.step}</p>
+                              <p style={{ color:"#94a3b8", fontSize: isMobile ? ".75rem" : ".8rem", lineHeight:1.5, margin:0 }}>{phase.desc}</p>
                             </div>
                           </div>
                         ))}
                       </div>
-                      <a href="/workflow" onClick={(e) => { e.preventDefault(); navigate("workflow"); }} className="btn-primary" style={{ marginTop:28, display:"inline-flex", alignItems:"center", gap:8, fontWeight:800, fontSize:"0.95rem", fontFamily:"ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Segoe UI Mono', monospace", alignSelf:"flex-start" }}>
-                        Inspect Full Workflow <ArrowRight size={15} />
+                      <a href="/workflow" onClick={(e) => { e.preventDefault(); navigate("workflow"); }} className="btn-primary" style={{ marginTop:28, display:"inline-flex", alignItems:"center", gap:8, fontWeight:700, fontSize:"0.85rem", fontFamily:"ui-monospace, 'Courier New', monospace", alignSelf:"flex-start", letterSpacing:".05em", textTransform:"uppercase" }}>
+                        ▷ Execute Workflow <ArrowRight size={14} />
                       </a>
                     </div>
                   </div>
