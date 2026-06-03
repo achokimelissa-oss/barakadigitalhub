@@ -1723,17 +1723,27 @@ function BarakaDigitalHub() {
             </div>
           </section>
 
-          <section style={{ padding:"72px 24px", background:"linear-gradient(135deg,#1d4ed8 0%,#0ea5e9 50%,#0f9d68 100%)", position:"relative", overflow:"visible", borderRadius:"0 0 48px 48px" }}>
-            <div style={{ position:"absolute", inset:0, opacity:.07, backgroundImage:"linear-gradient(to right,white 1px,transparent 1px),linear-gradient(to bottom,white 1px,transparent 1px)", backgroundSize:"40px 40px", pointerEvents: "none" }} />
-            <div className="stats-band" style={{ maxWidth:1100, margin:"0 auto", display:"grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(4,1fr)", gap:24, position:"relative", zIndex:1 }}>
-              {[{val:"90",suf:"%+",l:"Avg Accuracy"},{val:"10",suf:"K+ hrs",l:"Weekly Throughput"},{val:"80",suf:"+",l:"Trained Taskers"},{val:"4",suf:"hr",l:"Avg Response Time"}].map((s,i)=>(
-                <div key={i} style={{ textAlign:"center" }}>
-                  <div className="font-display" style={{ fontSize:"3.2rem", fontWeight:800, color:"white", letterSpacing:"-.03em", lineHeight:1, whiteSpace:"normal", overflowWrap:"break-word", wordBreak:"break-word" }}>
-                    <Counter target={s.val} suffix={s.suf} />
-                  </div>
-                  <div style={{ color:"rgba(255,255,255,.7)", fontSize:".8rem", fontWeight:600, marginTop:8, letterSpacing:".04em", textTransform:"uppercase" }}>{s.l}</div>
+          <section style={{ padding: isMobile ? "56px 18px" : "88px 24px", background: "linear-gradient(180deg,#eef7ff 0%,#f8fcff 55%,#ffffff 100%)", position: "relative", overflow: "hidden" }}>
+            <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 18% 20%, rgba(59,130,246,.14), transparent 18%), radial-gradient(circle at 82% 22%, rgba(15,157,104,.12), transparent 20%), repeating-linear-gradient(135deg, transparent 0, transparent 32px, rgba(14,165,233,.05) 32px, rgba(14,165,233,.05) 33px)", pointerEvents: "none" }} />
+            <div style={{ position: "relative", maxWidth: 1100, margin: "0 auto", zIndex: 1 }}>
+              <FadeIn>
+                <div style={{ textAlign: "center", marginBottom: isMobile ? 32 : 52 }}>
+                  <h2 className="section-h2 font-display" style={{ fontSize: "2.6rem", fontWeight: 800, color: "#0f172a", letterSpacing: "-.03em", marginBottom: 12 }}>Trusted tools and delivery partners</h2>
+                  <p style={{ color: "#64748b", fontSize: "1rem", maxWidth: 520, margin: "0 auto", lineHeight: 1.75 }}>A scrolling showcase of the platforms and systems we use to keep work organized, secure, and ready for scale.</p>
                 </div>
-              ))}
+              </FadeIn>
+              <FadeIn delay={0.08}>
+                <div className="logo-carousel" style={{ marginTop: 24 }}>
+                  <div className="logo-track">
+                    {TOOL_LOGOS.concat(TOOL_LOGOS).map((logo, i) => (
+                      <div className="logo-item" key={i}>
+                        <img src={logo.src} alt={logo.name} />
+                        <span>{logo.name}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </FadeIn>
             </div>
           </section>
 
