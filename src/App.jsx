@@ -1730,7 +1730,7 @@ function BarakaDigitalHub() {
               <FadeIn>
                 <div style={{ textAlign: "center", marginBottom: isMobile ? 32 : 52 }}>
                   <h2 className="section-h2 font-display" style={{ fontSize: "2.6rem", fontWeight: 800, color: "#0f172a", letterSpacing: "-.03em", marginBottom: 12 }}>Trusted tools and delivery partners</h2>
-                  <p style={{ color: "#64748b", fontSize: "1rem", maxWidth: 520, margin: "0 auto", lineHeight: 1.75 }}>A scrolling showcase of the platforms and systems we use to keep work organized, secure, and ready for scale.</p>
+                  <p style={{ color: "#64748b", fontSize: "1rem", maxWidth: 520, margin: "0 auto", lineHeight: 1.75 }}>Platforms and systems we use to keep work organized, secure, and ready for scale.</p>
                 </div>
               </FadeIn>
               <FadeIn delay={0.08}>
