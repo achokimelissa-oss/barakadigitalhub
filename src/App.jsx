@@ -471,21 +471,12 @@ const ServicesPage = ({ goBack, navigate, isMobile }) => {
           ))}
         </div>
         <FadeIn delay={0.2}>
-          <div className="logo-carousel" role="region" aria-label="Trusted tools carousel">
-            <div style={{ maxWidth: 1100, margin: "0 auto", overflow: "hidden" }}>
-              <div className="logo-track" aria-hidden="false">
-                {TOOL_LOGOS.map((logo, i) => (
-                  <div key={`logo-a-${i}`} className="logo-item">
-                    <img src={logo.src} alt={logo.name} />
-                  </div>
-                ))}
-                {TOOL_LOGOS.map((logo, i) => (
-                  <div key={`logo-b-${i}`} className="logo-item" aria-hidden="true">
-                    <img src={logo.src} alt={logo.name} />
-                  </div>
-                ))}
-              </div>
-            </div>
+          <div style={{ marginTop: 48, background: "linear-gradient(135deg, #1d4ed8, #0f9d68)", borderRadius: 24, padding: "40px 36px", textAlign: "center" }}>
+            <h3 className="font-display" style={{ fontSize: "1.4rem", fontWeight: 800, color: "white", marginBottom: 12 }}>Need a custom workflow?</h3>
+            <p style={{ color: "rgba(255,255,255,0.8)", marginBottom: 24, fontSize: "1rem" }}>We tailor annotation pipelines to your exact tooling, formats, and quality thresholds.</p>
+            <button onClick={goBack} style={{ background: "white", color: "#0f172a", border: "none", borderRadius: 12, padding: "14px 28px", fontWeight: 700, fontSize: "0.95rem", cursor: "pointer", fontFamily: "inherit" }}>
+              Start a Pilot →
+            </button>
           </div>
         </FadeIn>
       </div>
@@ -1264,24 +1255,12 @@ const PilotPage = ({ goBack, setPage, navigate, isMobile }) => {
           </div>
         </FadeIn>
         <FadeIn delay={0.16}>
-          <div className="logo-carousel" role="region" aria-label="Trusted tools carousel" style={{ marginTop: 12 }}>
-            <div style={{ maxWidth: 1100, margin: "0 auto", overflow: "hidden" }}>
-              <div style={{ textAlign: "center", marginBottom: 14 }}>
-                <h3 className="font-display" style={{ fontSize: "1.35rem", fontWeight: 800, color: "#e6f7ff", marginBottom: 6 }}>Trusted tools & partners</h3>
-                <p style={{ color: "#b6c7d8", marginBottom: 12, fontSize: "0.95rem", maxWidth: "42rem", margin: "0 auto" }}>We work with tooling and partners across annotation, model evaluation, and data management.</p>
-              </div>
-              <div className="logo-track" aria-hidden="false">
-                {TOOL_LOGOS.map((logo, i) => (
-                  <div key={`logo-c-${i}`} className="logo-item">
-                    <img src={logo.src} alt={logo.name} />
-                  </div>
-                ))}
-                {TOOL_LOGOS.map((logo, i) => (
-                  <div key={`logo-d-${i}`} className="logo-item" aria-hidden="true">
-                    <img src={logo.src} alt={logo.name} />
-                  </div>
-                ))}
-              </div>
+          <div style={{ background: "linear-gradient(135deg, #1d4ed8, #0f9d68)", borderRadius: 20, padding: "36px 32px", textAlign: "center" }}>
+            <h3 className="font-display" style={{ fontSize: "1.35rem", fontWeight: 800, color: "white", marginBottom: 10 }}>Get in touch</h3>
+            <p style={{ color: "rgba(255,255,255,0.85)", marginBottom: 20, fontSize: "0.95rem", maxWidth: "42rem", margin: "0 auto" }}>Contact our team to discuss pilots, custom annotation workflows, or enterprise AI data programs. We reply quickly and can adapt to your tooling and compliance requirements.</p>
+            <div style={{ display: "flex", justifyContent: "center", gap: 12, flexWrap: "wrap" }}>
+              <button onClick={() => navigate("contact")} className="btn-primary">Send a message <ArrowRight size={16} /></button>
+              <button onClick={() => navigate("services")} className="btn-secondary">Explore services</button>
             </div>
           </div>
         </FadeIn>
