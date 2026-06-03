@@ -471,12 +471,21 @@ const ServicesPage = ({ goBack, navigate, isMobile }) => {
           ))}
         </div>
         <FadeIn delay={0.2}>
-          <div style={{ marginTop: 48, background: "linear-gradient(135deg, #1d4ed8, #0f9d68)", borderRadius: 24, padding: "40px 36px", textAlign: "center" }}>
-            <h3 className="font-display" style={{ fontSize: "1.4rem", fontWeight: 800, color: "white", marginBottom: 12 }}>Need a custom workflow?</h3>
-            <p style={{ color: "rgba(255,255,255,0.8)", marginBottom: 24, fontSize: "1rem" }}>We tailor annotation pipelines to your exact tooling, formats, and quality thresholds.</p>
-            <button onClick={goBack} style={{ background: "white", color: "#0f172a", border: "none", borderRadius: 12, padding: "14px 28px", fontWeight: 700, fontSize: "0.95rem", cursor: "pointer", fontFamily: "inherit" }}>
-              Start a Pilot →
-            </button>
+          <div className="logo-carousel" role="region" aria-label="Trusted tools carousel">
+            <div style={{ maxWidth: 1100, margin: "0 auto", overflow: "hidden" }}>
+              <div className="logo-track" aria-hidden="false">
+                {TOOL_LOGOS.map((logo, i) => (
+                  <div key={`logo-a-${i}`} className="logo-item">
+                    <img src={logo.src} alt={logo.name} />
+                  </div>
+                ))}
+                {TOOL_LOGOS.map((logo, i) => (
+                  <div key={`logo-b-${i}`} className="logo-item" aria-hidden="true">
+                    <img src={logo.src} alt={logo.name} />
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </FadeIn>
       </div>
@@ -1478,6 +1487,13 @@ function BarakaDigitalHub() {
         @keyframes tech-bg-stripes { 0%,100% { transform: translateY(0); opacity: 0; } 50% { transform: translateY(8px); opacity: 0; } }
         .btn-primary { display:inline-flex;align-items:center;gap:8px;background:#1d4ed8;color:white;padding:14px 28px;border-radius:12px;font-weight:700;font-size:.95rem;text-decoration:none;box-shadow:0 4px 12px rgba(29,78,216,.2);transition:transform .2s,box-shadow .2s,background .2s;border:none;cursor:pointer;font-family:'Segoe UI', Arial, sans-serif; }
         .btn-primary:hover { transform:translateY(-2px);box-shadow:0 8px 20px rgba(29,78,216,.3);background:#1e40af; }
+        /* logo carousel */
+        .logo-carousel { background: linear-gradient(180deg,#071022 0%, #081426 100%); border-radius: 16px; padding: 20px 12px; margin-top: 28px; }
+        .logo-track { display:flex; gap:36px; align-items:center; width:max-content; animation: marquee-logos 22s linear infinite; }
+        .logo-item { flex: none; display:inline-flex; align-items:center; justify-content:center; padding: 8px 12px; border-radius: 8px; background: rgba(255,255,255,0.02); }
+        .logo-item img { height:40px; width:auto; object-fit:contain; filter:brightness(1) saturate(.6); }
+        .logo-carousel:hover .logo-track { animation-play-state: paused; }
+        @keyframes marquee-logos { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
         .btn-secondary { display:inline-flex;align-items:center;gap:8px;background:#f59e0b;color:white;padding:14px 28px;border-radius:12px;font-weight:700;font-size:.95rem;text-decoration:none;border:none;transition:background .2s,transform .2s,box-shadow .2s;cursor:pointer;font-family:'Segoe UI', Arial, sans-serif; }
         .btn-secondary:hover { background:#d97706;transform:translateY(-2px);box-shadow:0 4px 12px rgba(245,158,11,.3); }
         h1:not(.hero-h1) { color: #0f172a; font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !important; font-size: clamp(2rem, 2.3vw, 2.4rem) !important; font-weight: 700 !important; letter-spacing: -0.02em; line-height: 1.25; margin-bottom: 0.6em; }
