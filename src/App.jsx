@@ -1481,10 +1481,11 @@ function BarakaDigitalHub() {
         .btn-primary { display:inline-flex;align-items:center;gap:8px;background:#1d4ed8;color:white;padding:14px 28px;border-radius:12px;font-weight:700;font-size:.95rem;text-decoration:none;box-shadow:0 4px 12px rgba(29,78,216,.2);transition:transform .2s,box-shadow .2s,background .2s;border:none;cursor:pointer;font-family:'Segoe UI', Arial, sans-serif; }
         .btn-primary:hover { transform:translateY(-2px);box-shadow:0 8px 20px rgba(29,78,216,.3);background:#1e40af; }
         /* logo carousel */
-        .logo-carousel { background: linear-gradient(180deg,#071022 0%, #081426 100%); border-radius: 16px; padding: 20px 12px; margin-top: 28px; }
-        .logo-track { display:flex; gap:36px; align-items:center; width:max-content; animation: marquee-logos 22s linear infinite; }
-        .logo-item { flex: none; display:inline-flex; align-items:center; justify-content:center; padding: 8px 12px; border-radius: 8px; background: rgba(255,255,255,0.02); }
-        .logo-item img { height:40px; width:auto; object-fit:contain; filter:brightness(1) saturate(.6); }
+        .logo-carousel { overflow: hidden; background: linear-gradient(180deg,#f8fbff 0%, #e9f1ff 50%, #edf7ff 100%); border-radius: 24px; padding: 24px 16px; margin-top: 28px; border: 1px solid rgba(15,23,42,.08); box-shadow: 0 24px 80px rgba(15,23,42,.08); }
+        .logo-track { display:flex; gap:24px; align-items:center; width:max-content; animation: marquee-logos 28s linear infinite; }
+        .logo-item { flex: none; display:inline-flex; flex-direction: column; align-items:center; justify-content:center; gap: 10px; padding: 18px 20px; min-width: 140px; min-height: 104px; border-radius: 18px; background: rgba(255,255,255,0.95); border: 1px solid rgba(15,23,42,.08); box-shadow: 0 18px 40px rgba(15,23,42,.08); }
+        .logo-item img { height: 36px; max-width: 120px; width: auto; object-fit: contain; filter: none; }
+        .logo-item span { color: #0f172a; font-size: .86rem; font-weight: 700; text-align: center; white-space: nowrap; }
         .logo-carousel:hover .logo-track { animation-play-state: paused; }
         @keyframes marquee-logos { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
         .btn-secondary { display:inline-flex;align-items:center;gap:8px;background:#f59e0b;color:white;padding:14px 28px;border-radius:12px;font-weight:700;font-size:.95rem;text-decoration:none;border:none;transition:background .2s,transform .2s,box-shadow .2s;cursor:pointer;font-family:'Segoe UI', Arial, sans-serif; }
