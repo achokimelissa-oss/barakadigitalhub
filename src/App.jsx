@@ -366,16 +366,19 @@ const NAV_LOGO = [
     { name: "AWS Transcribe", src: "https://cdn.simpleicons.org/amazonaws/ffffff" },
     { name: "Hugging Face", src: "https://cdn.simpleicons.org/huggingface/ffffff" },
     { name: "Databricks", src: "https://cdn.simpleicons.org/databricks/ffffff" },
-    { name: "Central Dark", src: "/tools/66dac501a8e9a90495970876_Logo%20dark-short.png" },
-  const ref = useRef(null);
-  const [inView, setInView] = useState(false);
-  useEffect(() => {
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) setInView(true); }, { threshold });
-    if (ref.current) obs.observe(ref.current);
-    return () => obs.disconnect();
-  }, []);
-  return [ref, inView];
-};
+    { name: "Central Dark", src: "/tools/66dac501a8e9a90495970876_Logo%20dark-short.png" }
+  ];
+
+  const useInView = (threshold = 0.5) => {
+    const ref = useRef(null);
+    const [inView, setInView] = useState(false);
+    useEffect(() => {
+      const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) setInView(true); }, { threshold });
+      if (ref.current) obs.observe(ref.current);
+      return () => obs.disconnect();
+    }, [threshold]);
+    return [ref, inView];
+  };
 
 const Counter = ({ target, suffix = "", duration = 2000 }) => {
   const [count, setCount] = useState(0);

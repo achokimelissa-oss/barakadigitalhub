@@ -8,7 +8,8 @@ export default defineConfig({
     sitemap({
       hostname: "https://www.barakadigitalhub.com",
       outDir: "dist",
-      generateRobotsTxt: true,
+      // Disabled automatic robots.txt generation to avoid build-time ENOENT
+      generateRobotsTxt: false,
       robots: [{ userAgent: "*", allow: "/" }],
     }),
   ],
