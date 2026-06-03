@@ -1446,9 +1446,13 @@ function BarakaDigitalHub() {
         @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
         .ani-marquee { animation: marquee 16s linear infinite; will-change: transform; }
         .marquee-outer { overflow: hidden; width: 100%; }
-        .marquee-track { display: flex; gap: 36px; align-items: center; }
-        .marquee-item { display: inline-flex; align-items: center; gap: 18px; padding: 0 28px; flex: none; white-space: nowrap; }
-        .marquee-item .marquee-text { font-size: 1.05rem; font-weight: 700; color: #dbeafe; letter-spacing: 0.14em; font-family: 'Orbitron', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; text-transform: uppercase; text-shadow: 0 0 8px rgba(203, 226, 255, 0.18); }
+        .marquee-track { display: flex; gap: 48px; align-items: center; }
+        .marquee-item { display: inline-flex; flex: none; white-space: nowrap; margin-right: 12px; }
+        .marquee-pill { border: none; cursor: default; border-radius: 999px; background: rgba(255,255,255,0.08); padding: 10px 18px; color: #f8fafc; font-size: 0.95rem; font-weight: 700; letter-spacing: 0.04em; font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif; text-transform: none; box-shadow: 0 0 0 1px rgba(56,189,248,0.12), 0 0 22px rgba(56,189,248,0.08); transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+          text-align: center; }
+        .marquee-pill:hover { transform: translateY(-1px); background: rgba(56,189,248,0.12); box-shadow: 0 0 0 1px rgba(56,189,248,0.24), 0 0 28px rgba(56,189,248,0.20); }
+        .marquee-pill:focus-visible { outline: 2px solid rgba(56,189,248,0.45); outline-offset: 3px; }
+        .marquee-pill:not(:last-child) { margin-right: 10px; }
         @keyframes typing { from { width: 0; } to { width: 100%; } }
         /* typing-effect now animates to container width so it wraps on small screens */
         .typing-effect { display: inline-block; overflow: hidden; white-space: normal; width: 0; animation: typing 2.6s steps(40,end) 0.15s forwards; }
@@ -1662,22 +1666,47 @@ function BarakaDigitalHub() {
             <div className="marquee-outer">
               <div className="ani-marquee" style={{ display:"flex", alignItems:"center", width:"200%" }}>
                 {[
-                  { items: "Bounding Box Annotation • Semantic Segmentation • Video Annotation • Text Annotation • Named Entity Recognition (NER) • Prompt Evaluation • RLHF Support • Transcription • Speech Annotation • AI Model Evaluation • Data Validation • Quality Auditing • Data Entry • Document Processing • Research • Virtual Assistance" },
-                ].map((t,i)=> (
-                  <div key={`group1-${i}`} className="marquee-track" aria-hidden="false">
-                    <div className="marquee-item">
-                      <span className="marquee-text">{t.items}</span>
-                    </div>
+                  "Bounding Box Annotation",
+                  "Semantic Segmentation",
+                  "Video Annotation",
+                  "Text Annotation",
+                  "Named Entity Recognition (NER)",
+                  "Prompt Evaluation",
+                  "RLHF Support",
+                  "Transcription",
+                  "Speech Annotation",
+                  "AI Model Evaluation",
+                  "Data Validation",
+                  "Quality Auditing",
+                  "Data Entry",
+                  "Document Processing",
+                  "Research",
+                  "Virtual Assistance"
+                ].map((item, i) => (
+                  <div key={`pill1-${i}`} className="marquee-item">
+                    <button type="button" className="marquee-pill">{item}</button>
                   </div>
                 ))}
-
                 {[
-                  { items: "Bounding Box Annotation • Semantic Segmentation • Video Annotation • Text Annotation • Named Entity Recognition (NER) • Prompt Evaluation • RLHF Support • Transcription • Speech Annotation • AI Model Evaluation • Data Validation • Quality Auditing • Data Entry • Document Processing • Research • Virtual Assistance" },
-                ].map((t,i)=> (
-                  <div key={`group2-${i}`} className="marquee-track" aria-hidden="true">
-                    <div className="marquee-item">
-                      <span className="marquee-text">{t.items}</span>
-                    </div>
+                  "Bounding Box Annotation",
+                  "Semantic Segmentation",
+                  "Video Annotation",
+                  "Text Annotation",
+                  "Named Entity Recognition (NER)",
+                  "Prompt Evaluation",
+                  "RLHF Support",
+                  "Transcription",
+                  "Speech Annotation",
+                  "AI Model Evaluation",
+                  "Data Validation",
+                  "Quality Auditing",
+                  "Data Entry",
+                  "Document Processing",
+                  "Research",
+                  "Virtual Assistance"
+                ].map((item, i) => (
+                  <div key={`pill2-${i}`} className="marquee-item" aria-hidden="true">
+                    <button type="button" className="marquee-pill">{item}</button>
                   </div>
                 ))}
               </div>
