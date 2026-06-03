@@ -1412,12 +1412,12 @@ function BarakaDigitalHub() {
   ];
 
   const TOOL_LOGOS = [
-    { name: "React", src: "https://cdn.simpleicons.org/react/61DAFB" },
-    { name: "Vite", src: "https://cdn.simpleicons.org/vite/646CFF" },
-    { name: "Figma", src: "https://cdn.simpleicons.org/figma/F24E1E" },
-    { name: "OpenAI", src: "https://cdn.simpleicons.org/openai/000000" },
-    { name: "Notion", src: "https://cdn.simpleicons.org/notion/000000" },
-    { name: "Slack", src: "https://cdn.simpleicons.org/slack/4A154B" },
+    { name: "ClickUp", src: "/tools/ClickUP_Logo.jpg" },
+    { name: "Slack", src: "/tools/Slack-logo.png" },
+    { name: "Image A", src: "/tools/images.png" },
+    { name: "Image B", src: "/tools/images%20(1).png" },
+    { name: "Image C", src: "/tools/images%20(2).png" },
+    { name: "Image D", src: "/tools/images%20(3).png" },
   ];
 
   return (
@@ -1641,32 +1641,37 @@ function BarakaDigitalHub() {
                 </div>
               </div>
             </div>
-            <div className="tools-cta-floating" style={{ position: "absolute", left: "50%", bottom: -36, transform: "translateX(-50%)", width: "min(96%, 1080px)", background: "white", border: "1px solid rgba(15,23,42,.1)", borderRadius: 32, boxShadow: "0 30px 90px rgba(15,23,42,.12)", padding: "22px 18px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 24, overflow: "hidden", zIndex: 3 }}>
-              <div style={{ minWidth: 220 }}>
-                <div style={{ textTransform: "uppercase", letterSpacing: ".18em", fontSize: ".72rem", fontWeight: 700, color: "#2563eb", marginBottom: 6 }}>Tools we use</div>
-                <div style={{ fontSize: "1.05rem", fontWeight: 800, color: "#0f172a", lineHeight: 1.2 }}>Trusted platforms orbiting our workflow</div>
+          </section>
+
+          <section className="tools-orbit-section" style={{ padding: "84px 24px", background: "#060814", color: "#f8fafc", position: "relative", overflow: "hidden" }}>
+            <div className="page-container" style={{ maxWidth: 1180, margin: "0 auto", textAlign: "center", position: "relative", zIndex: 1 }}>
+              <div style={{ display: "inline-flex", flexDirection: "column", gap: 16, marginBottom: 40, maxWidth: 680, margin: "0 auto 40px" }}>
+                <div style={{ textTransform: "uppercase", letterSpacing: ".22em", fontSize: ".72rem", fontWeight: 700, color: "#60a5fa" }}>Tools used</div>
+                <h2 className="section-h2 font-display" style={{ color: "#f8fafc", fontSize: "clamp(2rem, 3.5vw, 3rem)", margin: 0 }}>The platforms that orbit our delivery engine</h2>
+                <p style={{ color: "#cbd5e1", fontSize: "1rem", lineHeight: 1.8, maxWidth: 680, margin: "0 auto" }}>
+                  A centered platform hub with partner logos rotating around it, highlighting the tools we rely on for design, collaboration, and AI delivery.
+                </p>
               </div>
-              <div style={{ position: "relative", width: 220, height: 220, flexShrink: 0 }}>
-                <div style={{ position: "absolute", inset: 0, borderRadius: "50%", border: "1px dashed rgba(15,23,42,.08)", zIndex: 1 }} />
-                <div className="orbit-shell" style={{ position: "absolute", inset: 0, zIndex: 2, animation: "orbit 18s linear infinite", transformOrigin: "center center" }}>
+              <div style={{ position: "relative", width: 320, height: 320, margin: "0 auto" }}>
+                <div style={{ position: "absolute", inset: 0, borderRadius: "50%", border: "1px solid rgba(255,255,255,.08)", boxShadow: "0 0 0 1px rgba(255,255,255,.03) inset" }} />
+                <div className="orbit-shell" style={{ position: "absolute", inset: 0, animation: "orbit 18s linear infinite", transformOrigin: "center center" }}>
                   {TOOL_LOGOS.map((tool, i) => {
                     const angle = (360 / TOOL_LOGOS.length) * i;
                     return (
-                      <div key={tool.name} className="orbit-item" style={{ position: "absolute", top: "50%", left: "50%", width: 64, height: 64, transform: `rotate(${angle}deg) translateX(86px)`, transformOrigin: "0 0" }}>
-                        <div style={{ width: 64, height: 64, borderRadius: "50%", background: "rgba(255,255,255,.96)", border: "1px solid rgba(15,23,42,.08)", display: "grid", placeItems: "center", boxShadow: "0 20px 40px rgba(15,23,42,.12)" }}>
-                          <img src={tool.src} alt={tool.name} style={{ width: 32, height: 32, objectFit: "contain", transform: `rotate(${-angle}deg)` }} />
+                      <div key={tool.name} className="orbit-item" style={{ position: "absolute", top: "50%", left: "50%", width: 72, height: 72, transform: `rotate(${angle}deg) translateX(118px)`, transformOrigin: "0 0" }}>
+                        <div style={{ width: 72, height: 72, borderRadius: "50%", background: "rgba(255,255,255,.08)", border: "1px solid rgba(255,255,255,.12)", display: "grid", placeItems: "center", boxShadow: "0 20px 60px rgba(0,0,0,.3)" }}>
+                          <img src={tool.src} alt={tool.name} style={{ width: 40, height: 40, objectFit: "contain", transform: `rotate(${-angle}deg)` }} />
                         </div>
                       </div>
                     );
                   })}
                 </div>
-                <div style={{ position: "absolute", top: "50%", left: "50%", width: 88, height: 88, borderRadius: "50%", background: "white", border: "1px solid rgba(15,23,42,.12)", display: "grid", placeItems: "center", transform: "translate(-50%, -50%)", zIndex: 3, boxShadow: "0 24px 56px rgba(15,23,42,.16)" }}>
-                  <img src="/favicon-512.png" alt="Baraka logo" style={{ width: 46, height: 46, objectFit: "contain" }} />
+                <div style={{ position: "absolute", top: "50%", left: "50%", width: 110, height: 110, borderRadius: "50%", background: "#0f172a", border: "2px solid rgba(255,255,255,.16)", display: "grid", placeItems: "center", transform: "translate(-50%, -50%)", zIndex: 2, boxShadow: "0 32px 90px rgba(0,0,0,.35)" }}>
+                  <img src="/tools/66dac501a8e9a90495970876_Logo%20dark-short.png" alt="Central tool logo" style={{ width: 56, height: 56, objectFit: "contain" }} />
                 </div>
               </div>
             </div>
           </section>
-
           <div style={{ background:"#020617", padding:"12px 0", overflow:"visible" }}>
             <div className="ani-marquee" style={{ display:"flex", gap:0, whiteSpace:"nowrap", width:"max-content" }}>
               {["Computer Vision","NLP & Text Processing","Audio Annotation","LLM Training","RLHF","Transcription","BPO Services","Quality Assurance","Data Annotation","AI Workforce",
