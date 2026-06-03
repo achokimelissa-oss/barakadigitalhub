@@ -353,21 +353,21 @@ const LOGO = [
 ].join("");
 
 const NAV_LOGO = [
-  "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAeAAAADMCAIAAAAkr+c7AAABhGlDQ1BJQ0",
-  "MgcHJvZmlsZQAAKJF9kT1Iw0AcxV9TpSIVBzuIOGSoThZERRy1CkWoEGqFVh1MLv2CJg1Jiouj4Fpw8G",
-  "Ox6uDirKuDqyAIfoA4OjkpukiJ/0sKLWI8OO7Hu3uPu3eA0Kgw1eyaAFTNMlKJuJjNrYrBVwQxghBiiJ",
-  "iZqidTqTQ8x9c9fHy9i/Is73N/jp6cbzDAJxLPMt2wiDeIZzYtnfM+cZiVJIX4nHjCoAsSP3JddvmNc9",
-  "FhgWeGjUxqnjhMLBY7WO5gVjJU4hniuKJqlC9kXVY4b3FWKzXWuid/YTivrayyne UghoQSSIIRQoqqA",
-  "EixWiMVGikyKEh/38EcdPkMumVwGGDsuoAIVsuP/ge/e2sXJCTcpFAe6X2z7YxgI7gLNum0fR7bdnAD+",
-  "Z+DKbvPXGsDMJ+m1phY5gr5t4OK6qSl7wOUOMPLcEVQ5LkshSCgv5+RpeVAH9bjN2zu/X8D8CNS1avwE",
-  "ODoGxImXXvfwu7uxr3/OtP93cBYHBvKz2+pAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAB3RJTUUH6AESD",
-  "AsXmlwcUQAAABl0RVh0Q29tbWVudABDcmVhdGVkIHdpdGggR0lNUFeBDhcAAAAdSURBVHja7cEBDQAAA",
-  "MKg909tDjdhAAAAAAAAAADgbQQAAQ==",
-].join("");
-
-// Note: LOGO continues but truncated for readability — full base64 included in src
-
-const useInView = (threshold = 0.15) => {
+    { name: "ClickUp", src: "/tools/ClickUP_Logo.jpg" },
+    { name: "Slack", src: "/tools/Slack-logo.png" },
+    { name: "Logo 1", src: "/tools/images.png" },
+    { name: "Logo 2", src: "/tools/images%20(1).png" },
+    { name: "Logo 3", src: "/tools/images%20(2).png" },
+    { name: "Logo 4", src: "/tools/images%20(3).png" },
+    { name: "Logo 5", src: "/tools/images%20(4).png" },
+    { name: "Logo 6", src: "/tools/images%20(5).png" },
+    { name: "Logo 7", src: "/tools/images%20(6).png" },
+    { name: "Logo 8", src: "/tools/images%20(7).png" },
+    { name: "Logo 9", src: "/tools/images%20(8).png" },
+    { name: "Logo JFIF", src: "/tools/images.jfif" },
+    { name: "Logo JFIF 1", src: "/tools/images%20(1).jfif" },
+    { name: "Logo JFIF 2", src: "/tools/images%20(2).jfif" },
+    { name: "Central Dark", src: "/tools/66dac501a8e9a90495970876_Logo%20dark-short.png" },
   const ref = useRef(null);
   const [inView, setInView] = useState(false);
   useEffect(() => {
@@ -1654,13 +1654,42 @@ function BarakaDigitalHub() {
               </div>
               <div style={{ position: "relative", width: 320, height: 320, margin: "0 auto" }}>
                 <div style={{ position: "absolute", inset: 0, borderRadius: "50%", border: "1px solid rgba(255,255,255,.08)", boxShadow: "0 0 0 1px rgba(255,255,255,.03) inset" }} />
-                <div className="orbit-shell" style={{ position: "absolute", inset: 0, animation: "orbit 18s linear infinite", transformOrigin: "center center" }}>
-                  {TOOL_LOGOS.map((tool, i) => {
-                    const angle = (360 / TOOL_LOGOS.length) * i;
+                {/* Outer orbit (slow, clockwise) */}
+                <div className="orbit-shell orbit-outer" style={{ position: "absolute", inset: 0, animation: "orbit 28s linear infinite", transformOrigin: "center center" }}>
+                  {TOOL_LOGOS.filter((_, idx) => idx % 3 === 0).map((tool, i, arr) => {
+                    const angle = (360 / arr.length) * i;
                     return (
-                      <div key={tool.name} className="orbit-item" style={{ position: "absolute", top: "50%", left: "50%", width: 72, height: 72, transform: `rotate(${angle}deg) translateX(118px)`, transformOrigin: "0 0" }}>
-                        <div style={{ width: 72, height: 72, borderRadius: "50%", background: "rgba(255,255,255,.08)", border: "1px solid rgba(255,255,255,.12)", display: "grid", placeItems: "center", boxShadow: "0 20px 60px rgba(0,0,0,.3)" }}>
-                          <img src={tool.src} alt={tool.name} style={{ width: 40, height: 40, objectFit: "contain", transform: `rotate(${-angle}deg)` }} />
+                      <div key={tool.name} className="orbit-item" style={{ position: "absolute", top: "50%", left: "50%", width: 72, height: 72, transform: `rotate(${angle}deg) translateX(140px)`, transformOrigin: "0 0" }}>
+                        <div style={{ width: 72, height: 72, borderRadius: "50%", background: "rgba(255,255,255,.06)", border: "1px solid rgba(255,255,255,.08)", display: "grid", placeItems: "center", boxShadow: "0 28px 80px rgba(0,0,0,.45)" }}>
+                          <img src={tool.src} alt={tool.name} style={{ width: 44, height: 44, objectFit: "contain", transform: `rotate(${-angle}deg)` }} />
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+
+                {/* Middle orbit (medium speed, counter-clockwise) */}
+                <div className="orbit-shell orbit-mid" style={{ position: "absolute", inset: 0, animation: "orbit 20s linear infinite reverse", transformOrigin: "center center" }}>
+                  {TOOL_LOGOS.filter((_, idx) => idx % 3 === 1).map((tool, i, arr) => {
+                    const angle = (360 / arr.length) * i;
+                    return (
+                      <div key={tool.name} className="orbit-item" style={{ position: "absolute", top: "50%", left: "50%", width: 64, height: 64, transform: `rotate(${angle}deg) translateX(98px)`, transformOrigin: "0 0" }}>
+                        <div style={{ width: 64, height: 64, borderRadius: "50%", background: "rgba(255,255,255,.06)", border: "1px solid rgba(255,255,255,.08)", display: "grid", placeItems: "center", boxShadow: "0 20px 60px rgba(0,0,0,.38)" }}>
+                          <img src={tool.src} alt={tool.name} style={{ width: 36, height: 36, objectFit: "contain", transform: `rotate(${-angle}deg)` }} />
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+
+                {/* Inner orbit (fast, clockwise) */}
+                <div className="orbit-shell orbit-inner" style={{ position: "absolute", inset: 0, animation: "orbit 14s linear infinite", transformOrigin: "center center" }}>
+                  {TOOL_LOGOS.filter((_, idx) => idx % 3 === 2).map((tool, i, arr) => {
+                    const angle = (360 / arr.length) * i;
+                    return (
+                      <div key={tool.name} className="orbit-item" style={{ position: "absolute", top: "50%", left: "50%", width: 56, height: 56, transform: `rotate(${angle}deg) translateX(62px)`, transformOrigin: "0 0" }}>
+                        <div style={{ width: 56, height: 56, borderRadius: "50%", background: "rgba(255,255,255,.06)", border: "1px solid rgba(255,255,255,.08)", display: "grid", placeItems: "center", boxShadow: "0 12px 36px rgba(0,0,0,.28)" }}>
+                          <img src={tool.src} alt={tool.name} style={{ width: 32, height: 32, objectFit: "contain", transform: `rotate(${-angle}deg)` }} />
                         </div>
                       </div>
                     );
