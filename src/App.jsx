@@ -1411,6 +1411,15 @@ function BarakaDigitalHub() {
     { label: "Workflow", page: "workflow" },
   ];
 
+  const TOOL_LOGOS = [
+    { name: "React", src: "https://cdn.simpleicons.org/react/61DAFB" },
+    { name: "Vite", src: "https://cdn.simpleicons.org/vite/646CFF" },
+    { name: "Figma", src: "https://cdn.simpleicons.org/figma/F24E1E" },
+    { name: "OpenAI", src: "https://cdn.simpleicons.org/openai/000000" },
+    { name: "Notion", src: "https://cdn.simpleicons.org/notion/000000" },
+    { name: "Slack", src: "https://cdn.simpleicons.org/slack/4A154B" },
+  ];
+
   return (
     <div style={{ minHeight: "100vh", background: "white", fontFamily: "'DM Sans', sans-serif", overflowX: "hidden" }}>
       <style>{`
@@ -1436,6 +1445,10 @@ function BarakaDigitalHub() {
         .ani-floatb { animation: floatB 6s ease-in-out 1.5s infinite; }
         .ani-pulse { animation: pulse-slow 3s ease-in-out infinite; }
         .ani-marquee { animation: marquee 24s linear infinite; }
+        @keyframes orbit { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .orbit-shell { animation: orbit 18s linear infinite; }
+        .orbit-item img { transition: transform .25s ease; }
+        .orbit-shell:hover { animation-play-state: paused; }
         .hero-tech-overlay { position: absolute; inset: 0; background: radial-gradient(circle at top left, rgba(59,130,246,.16), transparent 22%), radial-gradient(circle at bottom right, rgba(16,185,129,.14), transparent 18%); pointer-events: none; }
         .hero-tech-overlay::before { content: ""; position: absolute; inset: 0; background-image: repeating-linear-gradient(90deg, transparent 0px, transparent 40px, rgba(14,165,233,.08) 40px, rgba(14,165,233,.08) 41px), repeating-linear-gradient(0deg, transparent 0px, transparent 40px, rgba(16,185,129,.06) 40px, rgba(16,185,129,.06) 41px); animation: grid-flow 6s linear infinite; }
         @keyframes grid-flow { 0% { transform: translate(0, 0); } 100% { transform: translate(40px, 40px); } }
@@ -1625,6 +1638,30 @@ function BarakaDigitalHub() {
                       </button>
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+            <div className="tools-cta-floating" style={{ position: "absolute", left: "50%", bottom: -36, transform: "translateX(-50%)", width: "min(96%, 1080px)", background: "white", border: "1px solid rgba(15,23,42,.1)", borderRadius: 32, boxShadow: "0 30px 90px rgba(15,23,42,.12)", padding: "22px 18px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 24, overflow: "hidden", zIndex: 3 }}>
+              <div style={{ minWidth: 220 }}>
+                <div style={{ textTransform: "uppercase", letterSpacing: ".18em", fontSize: ".72rem", fontWeight: 700, color: "#2563eb", marginBottom: 6 }}>Tools we use</div>
+                <div style={{ fontSize: "1.05rem", fontWeight: 800, color: "#0f172a", lineHeight: 1.2 }}>Trusted platforms orbiting our workflow</div>
+              </div>
+              <div style={{ position: "relative", width: 220, height: 220, flexShrink: 0 }}>
+                <div style={{ position: "absolute", inset: 0, borderRadius: "50%", border: "1px dashed rgba(15,23,42,.08)", zIndex: 1 }} />
+                <div className="orbit-shell" style={{ position: "absolute", inset: 0, zIndex: 2, animation: "orbit 18s linear infinite", transformOrigin: "center center" }}>
+                  {TOOL_LOGOS.map((tool, i) => {
+                    const angle = (360 / TOOL_LOGOS.length) * i;
+                    return (
+                      <div key={tool.name} className="orbit-item" style={{ position: "absolute", top: "50%", left: "50%", width: 64, height: 64, transform: `rotate(${angle}deg) translateX(86px)`, transformOrigin: "0 0" }}>
+                        <div style={{ width: 64, height: 64, borderRadius: "50%", background: "rgba(255,255,255,.96)", border: "1px solid rgba(15,23,42,.08)", display: "grid", placeItems: "center", boxShadow: "0 20px 40px rgba(15,23,42,.12)" }}>
+                          <img src={tool.src} alt={tool.name} style={{ width: 32, height: 32, objectFit: "contain", transform: `rotate(${-angle}deg)` }} />
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+                <div style={{ position: "absolute", top: "50%", left: "50%", width: 88, height: 88, borderRadius: "50%", background: "white", border: "1px solid rgba(15,23,42,.12)", display: "grid", placeItems: "center", transform: "translate(-50%, -50%)", zIndex: 3, boxShadow: "0 24px 56px rgba(15,23,42,.16)" }}>
+                  <img src="/favicon-512.png" alt="Baraka logo" style={{ width: 46, height: 46, objectFit: "contain" }} />
                 </div>
               </div>
             </div>
