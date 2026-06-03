@@ -1440,7 +1440,12 @@ function BarakaDigitalHub() {
         @keyframes floatB { 0%,100%{transform:translateY(0) rotate(-2deg)} 50%{transform:translateY(-8px) rotate(2deg)} }
         @keyframes pulse-slow { 0%,100%{opacity:1} 50%{opacity:.4} }
         @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
-        .ani-marquee { animation: marquee 24s linear infinite; }
+        .ani-marquee { animation: marquee 28s linear infinite; will-change: transform; }
+        .marquee-outer { overflow: hidden; width: 100%; }
+        .marquee-track { display: flex; gap: 56px; align-items: center; }
+        .marquee-item { display: inline-flex; align-items: center; gap: 16px; padding: 0 28px; flex: none; white-space: nowrap; }
+        .marquee-item .marquee-title { font-size: 0.9rem; font-weight: 700; color: #ffffff; letter-spacing: 0.03em; }
+        .marquee-item .marquee-text { font-size: 0.85rem; color: #cbd5e1; max-width: 520px; display: inline-block; line-height: 1.5; overflow: hidden; text-overflow: ellipsis; }
         @keyframes typing { from { width: 0; } to { width: 100%; } }
         /* typing-effect now animates to container width so it wraps on small screens */
         .typing-effect { display: inline-block; overflow: hidden; white-space: normal; width: 0; animation: typing 2.6s steps(40,end) 0.15s forwards; }
@@ -1642,21 +1647,41 @@ function BarakaDigitalHub() {
             </div>
           </section>
 
-          <div style={{ background:"#020617", padding:"16px 0", overflow:"hidden" }}>
-            <div className="ani-marquee" style={{ display:"flex", gap:0, whiteSpace:"nowrap", width:"max-content", alignItems:"center" }}>
-              {[
-                { title: "Computer Vision:", items: "Bounding boxes • Segmentation • Pose estimation • Image tagging • Video tracking • 3D point clouds" },
-                { title: "Natural Language (NLP):", items: "Named entity recognition (NER) • Sentiment analysis • Intent classification • Dialogue labeling • QA generation • Document indexing" },
-                { title: "Speech & Audio:", items: "Transcription • Speaker diarization • Audio tagging • Accent labeling • Subtitle generation • Speech QA" },
-                { title: "LLM & RLHF:", items: "Preference ranking • Instruction evaluation • Safety review • Hallucination detection • Prompt refinement" },
-                { title: "Data Operations:", items: "Cleaning • Transformation • Label correction • Dataset formatting • Enrichment • QA pipelines" },
-                { title: "BPO & Support:", items: "Data entry • Web research • CRM management • Email support • Lead generation • Document processing" },
-              ].map((t,i)=>(
-                <span key={i} style={{ display:"inline-flex", alignItems:"center", gap:16, paddingRight:56, paddingLeft:12 }}>
-                  <span style={{ fontSize:"0.84rem", fontWeight:700, color:"#ffffff", letterSpacing:"0.04em" }}>{t.title}</span>
-                  <span style={{ fontSize:"0.8rem", color:"#cbd5e1", maxWidth:460, display:"inline-block", lineHeight:1.6 }}>{t.items}</span>
-                </span>
-              ))}
+          <div style={{ background:"#020617", padding:"18px 0", overflow:"hidden" }}>
+            <div className="marquee-outer">
+              <div className="ani-marquee" style={{ display:"flex", alignItems:"center", width:"200%" }}>
+                {[
+                  { title: "Computer Vision:", items: "Bounding boxes • Segmentation • Pose estimation • Image tagging • Video tracking • 3D point clouds" },
+                  { title: "Natural Language (NLP):", items: "Named entity recognition (NER) • Sentiment analysis • Intent classification • Dialogue labeling • QA generation • Document indexing" },
+                  { title: "Speech & Audio:", items: "Transcription • Speaker diarization • Audio tagging • Accent labeling • Subtitle generation • Speech QA" },
+                  { title: "LLM & RLHF:", items: "Preference ranking • Instruction evaluation • Safety review • Hallucination detection • Prompt refinement" },
+                  { title: "Data Operations:", items: "Cleaning • Transformation • Label correction • Dataset formatting • Enrichment • QA pipelines" },
+                  { title: "BPO & Support:", items: "Data entry • Web research • CRM management • Email support • Lead generation • Document processing" },
+                ].map((t,i)=> (
+                  <div key={`group1-${i}`} className="marquee-track" aria-hidden="false">
+                    <div className="marquee-item">
+                      <span className="marquee-title">{t.title}</span>
+                      <span className="marquee-text">{t.items}</span>
+                    </div>
+                  </div>
+                ))}
+
+                {[
+                  { title: "Computer Vision:", items: "Bounding boxes • Segmentation • Pose estimation • Image tagging • Video tracking • 3D point clouds" },
+                  { title: "Natural Language (NLP):", items: "Named entity recognition (NER) • Sentiment analysis • Intent classification • Dialogue labeling • QA generation • Document indexing" },
+                  { title: "Speech & Audio:", items: "Transcription • Speaker diarization • Audio tagging • Accent labeling • Subtitle generation • Speech QA" },
+                  { title: "LLM & RLHF:", items: "Preference ranking • Instruction evaluation • Safety review • Hallucination detection • Prompt refinement" },
+                  { title: "Data Operations:", items: "Cleaning • Transformation • Label correction • Dataset formatting • Enrichment • QA pipelines" },
+                  { title: "BPO & Support:", items: "Data entry • Web research • CRM management • Email support • Lead generation • Document processing" },
+                ].map((t,i)=> (
+                  <div key={`group2-${i}`} className="marquee-track" aria-hidden="true">
+                    <div className="marquee-item">
+                      <span className="marquee-title">{t.title}</span>
+                      <span className="marquee-text">{t.items}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
