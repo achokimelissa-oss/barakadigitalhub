@@ -487,16 +487,16 @@ const ServicesPage = ({ goBack, navigate, isMobile }) => {
 const OperationsPage = ({ goBack, isMobile }) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   const pillars = [
-    { n: "80+", label: "Trained Taskers", color: "#1d4ed8", desc: "Our workforce is trained across multiple annotation verticals including computer vision, NLP, audio, transcription, and BPO. Each tasker completes role-specific certification before working on client projects. Teams are flexible: our pool of 80+ taskers can be scaled up or reduced to match client requirements.", bullets: ["Role-specific onboarding tracks", "Certification before live project access", "Organized by vertical (CV, NLP, audio, etc.)", "Mentorship from senior annotators"] },
+    { n: "80+", label: "Certified Contractors", color: "#1d4ed8", desc: "Our workforce is trained across multiple annotation verticals including computer vision, NLP, audio, transcription, and BPO. Each contractor completes role-specific certification before working on client projects. Teams are flexible: our pool of 80+ contractors can be scaled up or reduced to match client requirements.", bullets: ["Role-specific onboarding tracks", "Certification before live project access", "Organized by vertical (CV, NLP, audio, etc.)", "Mentorship from senior specialists"] },
     { n: "100%", label: "QA Review Rate", color: "#0f9d68", desc: "Unlike many providers who spot-check 10–20%, Baraka runs 100% first-pass QA on standard projects. Our QA team is completely independent from annotation.", bullets: ["Independent QA team, not the same annotators", "First-pass error rate tracked per tasker", "Client-visible daily quality reports", "Inter-annotator agreement scoring available"] },
-    { n: "48hr", label: "Turnaround Guarantee", color: "#0ea5e9", desc: "Most standard batches (up to 25K items) are delivered within 48 hours of task assignment. Rush timelines are supported with expanded shift coverage.", bullets: ["25K image batches in 48 hours", "Rush delivery with expanded coverage", "Proactive delay communication", "Daily progress updates to clients"] },
+    { n: "5K+", label: "Hr/Week Capacity", color: "#0ea5e9", desc: "Structured production capacity across all services. Volume scales with project needs via shift-based scheduling and contractor pool expansion. Onboarding and delivery timelines are determined per project scope.", bullets: ["Flexible volume scaling via shift coverage", "Rush capacity with expanded staffing", "Capacity planning with dedicated ops team", "Daily progress and capacity utilization reports"] },
     { n: "Cert.", label: "Structured Onboarding", color: "#7c3aed", desc: "Every new engagement begins with a structured onboarding phase: task certification, calibration exercises, and pilot delivery before full-scale launch.", bullets: ["Task-specific certification tests", "Calibration batch before full launch", "Ongoing recalibration for long-running projects", "Documentation of guidelines and edge cases"] },
     { n: "24/7", label: "Centralized Operations", color: "#d97706", desc: "Baraka's operations team manages scheduling, escalations, communication, and reporting across all active projects. Clients have a single point of contact.", bullets: ["Single client-side point of contact", "Escalation protocols for complex edge cases", "Shift-based scheduling for coverage", "Consolidated reporting dashboard"] },
     { n: "Long", label: "Production-Grade Partnerships", color: "#dc2626", desc: "We are built for long-term engagements, not one-off batches. Our infrastructure supports ongoing annotation pipelines and multi-month production contracts.", bullets: ["Month-over-month consistency tracking", "Volume ramp plans for growing pipelines", "SLA-based delivery commitments", "Dedicated team assignment for continuity"] },
   ];
   return (
     <div style={{ minHeight: "100vh", background: "linear-gradient(160deg,#f8fbff 0%,#eef9ff 50%,#f0fdf4 100%)", paddingTop: 80 }}>
-      <PageHelmet title="Operations | Baraka Digital Hub" description="Enterprise-ready operations infrastructure: 80+ certified taskers, 100% QA review, 48-hour turnaround from Nairobi." robots="noindex,follow" canonical="/" />
+      <PageHelmet title="Operations | Baraka Digital Hub" description="Enterprise-ready operations infrastructure: 80+ certified contractors, 100% QA review, 5K+ Hr/week capacity from Nairobi." robots="noindex,follow" canonical="/" />
       <div style={{ maxWidth: 1100, margin: "0 auto", padding: "48px 24px" }}>
         <button onClick={goBack} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", cursor: "pointer", color: "#1d4ed8", fontWeight: 600, fontSize: "0.9rem", marginBottom: 32, fontFamily: "inherit" }}>
           <ChevronLeft size={18} /> Back to Home
@@ -941,7 +941,7 @@ const PrivacyPage = ({ goBack, isMobile }) => {
                   "All staff sign NDAs before accessing any client data",
                   "Locked workstations during all client work sessions",
                   "No personal devices permitted in project areas",
-                  "Managed company email accounts for all taskers",
+                  "Managed company email accounts for all contractors",
                   "Role-based access controls — only assigned personnel access project data",
                   "Client data deleted upon project completion"
                 ].map((item, index) => (
@@ -1231,7 +1231,7 @@ const PilotPage = ({ goBack, setPage, navigate, isMobile }) => {
         <FadeIn delay={0.08}>
           <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr 1fr", gap: 12, marginBottom: 36 }}>
             {[
-              { icon: "⚡", title: "Fast Turnaround", desc: "Results returned within 48 hours of project kickoff" },
+              { icon: "⚡", title: "Flexible Timelines", desc: "Delivery timelines determined per project scope with dedicated ops support" },
               { icon: "🔍", title: "Full QA Report", desc: "100% reviewed with per-task accuracy metrics included" },
               { icon: "🤝", title: "No Commitment", desc: "Pilot deliverables have no obligation to continue at scale" },
             ].map((c, i) => (
@@ -1614,7 +1614,7 @@ function BarakaDigitalHub() {
                     <button onClick={() => navigate("services")} className="btn-secondary">Explore Services</button>
                   </div>
                   <div className="stat-grid" style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3,1fr)", gap:10 }}>
-                    {[{v:"80+",l:"Taskers"},{v:"<4hr",l:"Response"},{v:"48 hours",l:"Turnaround"}].map((s,i)=>(
+                    {[{v:"80+",l:"Contractors"},{v:"<4hr",l:"Response"},{v:"5K+ Hr",l:"Weekly Capacity"}].map((s,i)=>(
                       <div key={i} style={{ background:"rgba(255,255,255,.8)", backdropFilter:"blur(12px)", border:"1px solid rgba(255,255,255,.9)", borderRadius:14, padding:"13px 10px", boxShadow:"0 2px 12px rgba(0,0,0,.04)", textAlign:"center" }}>
                         <div className="font-display" style={{ fontSize:"1.5rem", fontWeight:800, color:"#0f172a" }}>{s.v}</div>
                         <div style={{ fontSize:".72rem", color:"#94a3b8", marginTop:2, fontWeight:500 }}>{s.l}</div>
@@ -1764,9 +1764,9 @@ function BarakaDigitalHub() {
               </FadeIn>
               <div style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3,1fr)", gap:14 }}>
                 {[
-                  { icon:<Users size={18}/>, n:"80+", l:"Trained Taskers", d:"Workforce certified across annotation, NLP, audio, and BPO workflows." },
+                  { icon:<Users size={18}/>, n:"80+", l:"Certified Contractors", d:"Workforce certified across annotation, NLP, audio, and BPO workflows." },
                   { icon:<Shield size={18}/>, n:"100%", l:"QA Review", d:"Independent QA team reviews every deliverable before client submission." },
-                  { icon:<Zap size={18}/>, n:"48 hours", l:"Rapid Turnaround", d:"Standard batches of 25K items delivered within 48 hours." },
+                  { icon:<Zap size={18}/>, n:"5K+", l:"Hr/Week Capacity", d:"Production-scale volume based on project scope and timeline requirements." },
                   { icon:<CheckCircle2 size={18}/>, n:"Cert.", l:"Structured Onboarding", d:"Task certification and calibration before any live project access." },
                   { icon:<TrendingUp size={18}/>, n:"24/7", l:"Centralized Ops", d:"Managed operations, escalation handling, and daily progress reporting." },
                   { icon:<Clock size={18}/>, n:"Long", l:"Production Support", d:"Built for enduring partnerships, not one-off batches." },
@@ -1812,9 +1812,9 @@ function BarakaDigitalHub() {
                       <h3 className="font-display" style={{ fontSize:"1.6rem", fontWeight:800, color:"#0f172a", marginBottom:24, lineHeight:1.2 }}>AI Data Delivery Example</h3>
                       {[
                         ["Task Type","Bounding Box Annotation"],
-                        ["Dataset Volume","25,000 Images"],
-                        ["Delivery Timeline","48 Hours"],
-                        ["Annotation Workforce","80 Certified Taskers"],
+                        ["Dataset Volume","Example: 25,000 Images (actual volume by project)"],
+                        ["Delivery Timeline","Example: 48 Hours (timeline based on scope)"],
+                        ["Annotation Workforce","80 Certified Contractors"],
                         ["QA Workforce","15 QA Specialists"],
                         ["Total Productive Hours","1,920+ Annotation Hours + 360 QA Hours"],
                         ["Quality Assurance","100% Review of All First-Pass Annotations"],
