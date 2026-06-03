@@ -1810,16 +1810,13 @@ function BarakaDigitalHub() {
             </div>
           </section>
 
-          <section style={{ padding: isMobile ? "56px 18px" : "88px 24px", background: "linear-gradient(135deg, #0f172a 0%, #1a2b4a 40%, #0f3a4a 100%)", position: "relative", overflow: "hidden" }}>
-            {/* Tech grid background */}
-            <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 20% 50%, rgba(6,182,212,.08), transparent 20%), radial-gradient(circle at 80% 20%, rgba(34,197,94,.06), transparent 25%), linear-gradient(90deg, rgba(6,182,212,.04) 1px, transparent 1px), linear-gradient(0deg, rgba(6,182,212,.04) 1px, transparent 1px)", backgroundSize: "100px 100px", pointerEvents: "none" }} />
-            
+          <section style={{ padding: isMobile ? "56px 18px" : "88px 24px", background: "linear-gradient(180deg,#071022 0%,#0b1830 60%)", position: "relative", overflow: "hidden" }}>
             <div style={{ position: "relative", maxWidth:1200, margin:"0 auto" }}>
               <FadeIn>
-                <div style={{ textAlign:"center", marginBottom: isMobile ? 32 : 52 }}>
-                  <div style={{ display:"inline-block", background:"linear-gradient(90deg, rgba(6,182,212,.15), rgba(34,197,94,.15))", color:"#06b6d4", padding:"6px 16px", borderRadius:100, fontSize:".7rem", fontWeight:700, letterSpacing:".1em", textTransform:"uppercase", marginBottom:20, border:"1px solid rgba(6,182,212,.3)", fontFamily:"ui-monospace, 'Courier New', monospace" }}>◆ INTELLIGENT PIPELINE</div>
-                  <h2 className="font-display" style={{ fontSize:"2.8rem", fontWeight:800, color:"#f1f5f9", letterSpacing:"-.03em", marginBottom:12, textShadow:"0 0 30px rgba(6,182,212,.2)" }}>AI-Powered Delivery Engine</h2>
-                  <p style={{ color:"#cbd5e1", fontSize:"1rem", maxWidth:680, margin:"0 auto", lineHeight:1.8, fontFamily:"'Segoe UI', Arial, sans-serif" }}>Production-grade data pipelines with real-time monitoring, intelligent quality assurance, and automated scaling.</p>
+                <div style={{ textAlign:"center", marginBottom: isMobile ? 28 : 48 }}>
+                  <div style={{ display:"inline-block", background:"rgba(255,255,255,0.04)", color:"#9be7ff", padding:"6px 16px", borderRadius:100, fontSize:".72rem", fontWeight:800, letterSpacing:".12em", textTransform:"uppercase", marginBottom:18, border:"1px solid rgba(155,231,255,.06)", fontFamily:"ui-monospace, 'Courier New', monospace" }}>BUILT FOR RELIABLE SCALE</div>
+                  <h2 className="font-display" style={{ fontSize:"2.6rem", fontWeight:900, color:"#e6f7ff", letterSpacing:"-.02em", marginBottom:10 }}>AI-Powered Delivery Engine</h2>
+                  <p style={{ color:"#9fb6c9", fontSize:"1rem", maxWidth:680, margin:"0 auto", lineHeight:1.75, fontFamily:"'Segoe UI', Arial, sans-serif" }}>Production-grade data pipelines with real-time monitoring, deterministic quality assurance, and elastic scaling built for long-term reliability.</p>
                 </div>
               </FadeIn>
               <FadeIn delay={0.08}>
