@@ -1703,11 +1703,17 @@ function BarakaDigitalHub() {
           </section>
           <div style={{ background:"#020617", padding:"12px 0", overflow:"visible" }}>
             <div className="ani-marquee" style={{ display:"flex", gap:0, whiteSpace:"nowrap", width:"max-content" }}>
-              {["Computer Vision","NLP & Text Processing","Audio Annotation","LLM Training","RLHF","Transcription","BPO Services","Quality Assurance","Data Annotation","AI Workforce",
-                "Computer Vision","NLP & Text Processing","Audio Annotation","LLM Training","RLHF","Transcription","BPO Services","Quality Assurance","Data Annotation","AI Workforce"].map((t,i)=>(
+              {[
+                { title: "Computer Vision:", items: "Bounding boxes • Segmentation • Pose estimation • Image tagging • Video tracking • 3D point clouds" },
+                { title: "NLP:", items: "NER • Sentiment analysis • Intent classification • Dialogue labeling • QA generation • LLM evaluation • Document indexing" },
+                { title: "Speech & Audio:", items: "Transcription • Speaker diarization • Audio tagging • Accent labeling • Subtitle generation • Speech QA" },
+                { title: "LLM & RLHF:", items: "Preference ranking • Instruction evaluation • Safety review • Hallucination detection • Prompt refinement" },
+                { title: "Data Operations:", items: "Cleaning • Transformation • Label correction • Dataset formatting • Enrichment • QA pipelines" },
+                { title: "BPO Services:", items: "Data entry • Web research • CRM management • Email support • Lead generation • Document processing" },
+              ].map((t,i)=>(
                 <span key={i} style={{ display:"inline-flex", alignItems:"center", gap:14, paddingRight:44 }}>
-                  <span style={{ fontSize:".72rem", fontWeight:600, color:"#64748b", letterSpacing:".08em", textTransform:"uppercase" }}>{t}</span>
-                  <span style={{ width:4, height:4, borderRadius:"50%", background:"#0f9d68", display:"inline-block" }} />
+                  <span style={{ fontSize:".78rem", fontWeight:700, color:"#e2e8f0", letterSpacing:".02em" }}>{t.title}</span>
+                  <span style={{ fontSize:".72rem", color:"#94a3b8", maxWidth:420, display:"inline-block" }}>{t.items}</span>
                 </span>
               ))}
             </div>
