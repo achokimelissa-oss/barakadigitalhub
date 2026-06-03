@@ -1425,7 +1425,7 @@ function BarakaDigitalHub() {
   return (
     <div style={{ minHeight: "100vh", background: "white", fontFamily: "'DM Sans', sans-serif", overflowX: "hidden" }}>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Orbitron:wght@400;700&display=swap');
         * { box-sizing: border-box; margin: 0; padding: 0; }
         .font-display { font-family: 'Georgia', 'Times New Roman', serif !important; }
         .hero-h1 { font-family: 'Georgia', 'Times New Roman', serif !important; font-size: clamp(3rem, 5vw, 4.2rem) !important; }
@@ -1443,9 +1443,9 @@ function BarakaDigitalHub() {
         .ani-marquee { animation: marquee 28s linear infinite; will-change: transform; }
         .marquee-outer { overflow: hidden; width: 100%; }
         .marquee-track { display: flex; gap: 56px; align-items: center; }
-        .marquee-item { display: inline-flex; align-items: center; gap: 16px; padding: 0 28px; flex: none; white-space: nowrap; }
-        .marquee-item .marquee-title { font-size: 0.9rem; font-weight: 700; color: #ffffff; letter-spacing: 0.03em; }
-        .marquee-item .marquee-text { font-size: 0.85rem; color: #cbd5e1; max-width: 520px; display: inline-block; line-height: 1.5; overflow: hidden; text-overflow: ellipsis; }
+        .marquee-item { display: inline-flex; align-items: center; gap: 18px; padding: 0 36px; flex: none; white-space: nowrap; }
+        .marquee-item .marquee-title { font-size: 0.95rem; font-weight: 700; color: #e6f7ff; letter-spacing: 0.06em; font-family: 'Orbitron', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; }
+        .marquee-item .marquee-text { font-size: 0.88rem; color: #b6c7d8; max-width: 900px; display: inline-block; line-height: 1.5; white-space: nowrap; }
         @keyframes typing { from { width: 0; } to { width: 100%; } }
         /* typing-effect now animates to container width so it wraps on small screens */
         .typing-effect { display: inline-block; overflow: hidden; white-space: normal; width: 0; animation: typing 2.6s steps(40,end) 0.15s forwards; }
