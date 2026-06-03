@@ -15,7 +15,7 @@ function Services() {
           <p className="highlight-pill">Our Services</p>
           <h1>What we deliver</h1>
           <p>
-            Baraka Digital Hub provides AI data operations, human-in-the-loop AI, and BPO services to clients worldwide. Every engagement is backed by trained specialists, independent QA, and structured reporting built for production-grade delivery.
+            Baraka Digital Hub provides AI data operations, human-in-the-loop AI, and BPO services to clients worldwide. We act as a managed execution layer for AI systems and data-heavy enterprise operations, integrating into client infrastructure with minimal disruption. Every engagement is backed by trained specialists, independent QA, and structured reporting built for production-grade delivery.
           </p>
         </div>
       </section>
