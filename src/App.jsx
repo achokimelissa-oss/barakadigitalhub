@@ -353,20 +353,19 @@ const LOGO = [
 ].join("");
 
 const NAV_LOGO = [
-    { name: "ClickUp", src: "/tools/ClickUP_Logo.jpg" },
-    { name: "Slack", src: "/tools/Slack-logo.png" },
-    { name: "Logo 1", src: "/tools/images.png" },
-    { name: "Logo 2", src: "/tools/images%20(1).png" },
-    { name: "Logo 3", src: "/tools/images%20(2).png" },
-    { name: "Logo 4", src: "/tools/images%20(3).png" },
-    { name: "Logo 5", src: "/tools/images%20(4).png" },
-    { name: "Logo 6", src: "/tools/images%20(5).png" },
-    { name: "Logo 7", src: "/tools/images%20(6).png" },
-    { name: "Logo 8", src: "/tools/images%20(7).png" },
-    { name: "Logo 9", src: "/tools/images%20(8).png" },
-    { name: "Logo JFIF", src: "/tools/images.jfif" },
-    { name: "Logo JFIF 1", src: "/tools/images%20(1).jfif" },
-    { name: "Logo JFIF 2", src: "/tools/images%20(2).jfif" },
+    { name: "Labelbox", src: "https://cdn.simpleicons.org/labelbox/ffffff" },
+    { name: "Scale AI", src: "https://cdn.simpleicons.org/scale-ai/ffffff" },
+    { name: "Encord", src: "https://cdn.simpleicons.org/encord/ffffff" },
+    { name: "CVAT", src: "https://cdn.simpleicons.org/cvat/ffffff" },
+    { name: "Label Studio", src: "https://cdn.simpleicons.org/label-studio/ffffff" },
+    { name: "Prodigy", src: "https://cdn.simpleicons.org/prodigy/ffffff" },
+    { name: "Doccano", src: "https://cdn.simpleicons.org/doccano/ffffff" },
+    { name: "SuperAnnotate", src: "https://cdn.simpleicons.org/superannotate/ffffff" },
+    { name: "OpenAI Whisper", src: "https://cdn.simpleicons.org/openai/ffffff" },
+    { name: "Google Speech", src: "https://cdn.simpleicons.org/google/ffffff" },
+    { name: "AWS Transcribe", src: "https://cdn.simpleicons.org/amazonaws/ffffff" },
+    { name: "Hugging Face", src: "https://cdn.simpleicons.org/huggingface/ffffff" },
+    { name: "Databricks", src: "https://cdn.simpleicons.org/databricks/ffffff" },
     { name: "Central Dark", src: "/tools/66dac501a8e9a90495970876_Logo%20dark-short.png" },
   const ref = useRef(null);
   const [inView, setInView] = useState(false);
@@ -1445,8 +1444,8 @@ function BarakaDigitalHub() {
         .ani-floatb { animation: floatB 6s ease-in-out 1.5s infinite; }
         .ani-pulse { animation: pulse-slow 3s ease-in-out infinite; }
         .ani-marquee { animation: marquee 24s linear infinite; }
-        @keyframes orbit { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-        .orbit-shell { animation: orbit 18s linear infinite; }
+        @keyframes orbit { from { transform: rotateX(55deg) rotate(0deg); } to { transform: rotateX(55deg) rotate(360deg); } }
+        .orbit-shell { animation: orbit 18s linear infinite; transform-style: preserve-3d; }
         .orbit-item img { transition: transform .25s ease; }
         .orbit-shell:hover { animation-play-state: paused; }
         .hero-tech-overlay { position: absolute; inset: 0; background: radial-gradient(circle at top left, rgba(59,130,246,.16), transparent 22%), radial-gradient(circle at bottom right, rgba(16,185,129,.14), transparent 18%); pointer-events: none; }
@@ -1644,7 +1643,7 @@ function BarakaDigitalHub() {
           </section>
 
           <section className="tools-orbit-section" style={{ padding: "84px 24px", background: "#060814", color: "#f8fafc", position: "relative", overflow: "hidden" }}>
-            <div className="page-container" style={{ maxWidth: 1180, margin: "0 auto", textAlign: "center", position: "relative", zIndex: 1 }}>
+            <div className="page-container" style={{ maxWidth: 1180, margin: "0 auto", textAlign: "center", position: "relative", zIndex: 1, perspective: 900 }}>
               <div style={{ display: "inline-flex", flexDirection: "column", gap: 16, marginBottom: 40, maxWidth: 680, margin: "0 auto 40px" }}>
                 <div style={{ textTransform: "uppercase", letterSpacing: ".22em", fontSize: ".72rem", fontWeight: 700, color: "#60a5fa" }}>Tools used</div>
                 <h2 className="section-h2 font-display" style={{ color: "#f8fafc", fontSize: "clamp(2rem, 3.5vw, 3rem)", margin: 0 }}>The platforms that orbit our delivery engine</h2>
