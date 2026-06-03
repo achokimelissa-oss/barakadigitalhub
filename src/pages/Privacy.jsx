@@ -41,6 +41,15 @@ function Privacy() {
             <li>Operational SOPs for data handling, incident response, and secure disposal.</li>
           </ul>
 
+          <h4 style={{ marginTop: 18 }}>Data security & confidentiality</h4>
+          <ul className="section-copy">
+            <li>We sign NDAs and project-specific confidentiality agreements before any work begins.</li>
+            <li>Access is granted only through RBAC controls and is audited continuously across workflows.</li>
+            <li>Our processes are GDPR-aware: we limit processing, document lawful basis, and honor data subject rights where applicable.</li>
+            <li>All task-level activity is logged for auditability, including access, modifications, and review actions.</li>
+            <li>Data deletion is handled through secure, agreed procedures, with final verification when client data is purged.</li>
+          </ul>
+
           <h4 style={{ marginTop: 18 }}>Onboarding & environment setup</h4>
           <p className="section-copy">
             Our platform onboarding follows a four-step process to align security, workflows, and quality expectations before production:
