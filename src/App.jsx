@@ -1440,6 +1440,7 @@ function BarakaDigitalHub() {
         @keyframes floatB { 0%,100%{transform:translateY(0) rotate(-2deg)} 50%{transform:translateY(-8px) rotate(2deg)} }
         @keyframes pulse-slow { 0%,100%{opacity:1} 50%{opacity:.4} }
         @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+        .ani-marquee { animation: marquee 24s linear infinite; }
         @keyframes typing { from { width: 0; } to { width: 100%; } }
         /* typing-effect now animates to container width so it wraps on small screens */
         .typing-effect { display: inline-block; overflow: hidden; white-space: normal; width: 0; animation: typing 2.6s steps(40,end) 0.15s forwards; }
@@ -1641,7 +1642,23 @@ function BarakaDigitalHub() {
             </div>
           </section>
 
-          
+          <div style={{ background:"#020617", padding:"12px 0", overflow:"hidden" }}>
+            <div className="ani-marquee" style={{ display:"flex", gap:0, whiteSpace:"nowrap", width:"max-content" }}>
+              {[
+                { title: "Computer Vision:", items: "Bounding boxes • Segmentation • Pose estimation • Image tagging • Video tracking • 3D point clouds" },
+                { title: "NER:", items: "NER • Sentiment analysis • Intent classification • Dialogue labeling • QA generation • LLM evaluation • Document indexing" },
+                { title: "Transcription:", items: "Transcription • Speaker diarization • Audio tagging • Accent labeling • Subtitle generation • Speech" },
+                { title: "LLM & RLHF:", items: "Preference ranking • Instruction evaluation • Safety review • Hallucination detection • Prompt refinement" },
+                { title: "Data Ops:", items: "Cleaning • Transformation • Label correction • Dataset formatting • Enrichment • QA pipelines" },
+                { title: "BPO:", items: "Data entry • Web research • CRM management • Email support • Lead generation • Document processing" },
+              ].map((t,i)=>(
+                <span key={i} style={{ display:"inline-flex", alignItems:"center", gap:14, paddingRight:44 }}>
+                  <span style={{ fontSize:".78rem", fontWeight:700, color:"#e2e8f0", letterSpacing:".02em" }}>{t.title}</span>
+                  <span style={{ fontSize:".72rem", color:"#94a3b8", maxWidth:420, display:"inline-block" }}>{t.items}</span>
+                </span>
+              ))}
+            </div>
+          </div>
           
 
           <section className="section-tech-bg" style={{ padding:"88px 24px", backgroundColor:"#0f172a", backgroundImage:"url('/background2.jpg')", backgroundSize:"cover", backgroundRepeat:"no-repeat", backgroundPosition:"center center" }}>
