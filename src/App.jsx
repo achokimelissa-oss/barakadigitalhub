@@ -1481,8 +1481,8 @@ function BarakaDigitalHub() {
         .impact-card { background: rgba(255,255,255,.94); border: 1px solid rgba(59,130,246,.16); }
         @keyframes tech-bg-glow { 0%,100% { background-position: 12% 18%, 88% 24%, 52% 58%; } 50% { background-position: 18% 12%, 82% 28%, 48% 62%; } }
         @keyframes tech-bg-stripes { 0%,100% { transform: translateY(0); opacity: 0; } 50% { transform: translateY(8px); opacity: 0; } }
-        .btn-primary { display:inline-flex;align-items:center;gap:8px;background:#1d4ed8;color:white;padding:14px 28px;border-radius:12px;font-weight:700;font-size:.95rem;text-decoration:none;box-shadow:0 4px 12px rgba(29,78,216,.2);transition:transform .2s,box-shadow .2s,background .2s;border:none;cursor:pointer;font-family:'Segoe UI', Arial, sans-serif; }
-        .btn-primary:hover { transform:translateY(-2px);box-shadow:0 8px 20px rgba(29,78,216,.3);background:#1e40af; }
+        .btn-primary { display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#1d4ed8,#06b6d4);color:white;padding:16px 30px;border-radius:999px;font-weight:800;font-size:1rem;text-decoration:none;box-shadow:0 18px 40px rgba(29,78,216,.18),0 0 0 1px rgba(255,255,255,.08);transition:transform .22s,box-shadow .22s,background .22s;outline:none;border:none;cursor:pointer;font-family:'Segoe UI', Arial, sans-serif; }
+        .btn-primary:hover { transform:translateY(-2px);box-shadow:0 24px 50px rgba(29,78,216,.28),0 0 0 1px rgba(255,255,255,.18);background:linear-gradient(135deg,#2563eb,#0f9d58); }
         /* logo carousel */
         .logo-carousel { overflow: hidden; background: linear-gradient(180deg,#f8fbff 0%, #e9f1ff 50%, #edf7ff 100%); border-radius: 24px; padding: 24px 16px; margin-top: 28px; border: 1px solid rgba(15,23,42,.08); box-shadow: 0 24px 80px rgba(15,23,42,.08); }
         .logo-track { display:flex; gap:24px; align-items:center; width:max-content; animation: marquee-logos 28s linear infinite; }
@@ -1491,8 +1491,8 @@ function BarakaDigitalHub() {
         .logo-item span { color: #0f172a; font-size: .86rem; font-weight: 700; text-align: center; white-space: nowrap; }
         .logo-carousel:hover .logo-track { animation-play-state: paused; }
         @keyframes marquee-logos { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-        .btn-secondary { display:inline-flex;align-items:center;gap:8px;background:#f59e0b;color:white;padding:14px 28px;border-radius:12px;font-weight:700;font-size:.95rem;text-decoration:none;border:none;transition:background .2s,transform .2s,box-shadow .2s;cursor:pointer;font-family:'Segoe UI', Arial, sans-serif; }
-        .btn-secondary:hover { background:#d97706;transform:translateY(-2px);box-shadow:0 4px 12px rgba(245,158,11,.3); }
+        .btn-secondary { display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#0f9d68,#06b6d4);color:white;padding:16px 30px;border-radius:999px;font-weight:700;font-size:1rem;text-decoration:none;border:none;transition:transform .22s,box-shadow .22s,background .22s;cursor:pointer;font-family:'Segoe UI', Arial, sans-serif;box-shadow:0 18px 36px rgba(16,185,129,.18); }
+        .btn-secondary:hover { background:linear-gradient(135deg,#14b8a6,#0ea5e9);transform:translateY(-2px);box-shadow:0 22px 44px rgba(16,185,129,.28); }
         h1:not(.hero-h1) { color: #0f172a; font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !important; font-size: clamp(2rem, 2.3vw, 2.4rem) !important; font-weight: 700 !important; letter-spacing: -0.02em; line-height: 1.25; margin-bottom: 0.6em; }
         h2 { color: #0f172a; font-family: 'Georgia', 'Times New Roman', serif !important; font-size: clamp(1.55rem, 1.9vw, 2rem) !important; font-weight: 700 !important; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 0.55em; }
         h3 { color: #0f172a; font-family: 'Georgia', 'Times New Roman', serif !important; font-size: clamp(1.15rem, 1.4vw, 1.4rem) !important; font-weight: 700 !important; letter-spacing: -0.01em; line-height: 1.3; margin-bottom: 0.5em; }
@@ -1607,8 +1607,8 @@ function BarakaDigitalHub() {
                     <span style={{ background:"linear-gradient(90deg,#1d4ed8,#06b6d4,#0f9d68)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", backgroundClip:"text", fontWeight:900 }}>Built for Scale</span>
                   </h1>
                   <div style={{ display:"flex", gap:12, flexWrap:"wrap", marginBottom:36 }}>
-                    <button onClick={() => navigate("pilot")} className="btn-primary">Start Pilot Program <ArrowRight size={17} /></button>
-                    <button onClick={() => navigate("services")} className="btn-secondary">Explore Services</button>
+                    <button type="button" onClick={() => navigate("pilot")} className="btn-primary">Start Pilot Program <ArrowRight size={17} /></button>
+                    <button type="button" onClick={() => navigate("services")} className="btn-secondary">Explore Services</button>
                   </div>
                   <div className="stat-grid" style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3,1fr)", gap:10 }}>
                     {[{v:"80+",l:"Contractors"},{v:"<4hr",l:"Response"},{v:"5K+ Hr",l:"Weekly Capacity"}].map((s,i)=>(
@@ -1864,9 +1864,9 @@ function BarakaDigitalHub() {
                           </div>
                         ))}
                       </div>
-                      <button onClick={() => navigate("workflow")} className="btn-primary" style={{ marginTop:28, display:"inline-flex", alignItems:"center", gap:8, background:"linear-gradient(135deg,#0f9d68,#06b6d4)", color:"white", border:"none", borderRadius:12, padding: isMobile ? "14px 20px" : "12px 22px", fontWeight:800, fontSize:"0.95rem", cursor:"pointer", fontFamily:"ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Segoe UI Mono', monospace", boxShadow:"0 12px 30px rgba(15,157,104,.18)", alignSelf:"flex-start" }}>
+                      <a href="/workflow" onClick={(e) => { e.preventDefault(); navigate("workflow"); }} className="btn-primary" style={{ marginTop:28, display:"inline-flex", alignItems:"center", gap:8, fontWeight:800, fontSize:"0.95rem", fontFamily:"ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Segoe UI Mono', monospace", alignSelf:"flex-start" }}>
                         Inspect Full Workflow <ArrowRight size={15} />
-                      </button>
+                      </a>
                     </div>
                   </div>
                 </div>
