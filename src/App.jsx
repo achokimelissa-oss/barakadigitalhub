@@ -696,9 +696,9 @@ const WorkflowPage = ({ goBack, setPage, isMobile }) => {
               <h2 className="font-display" style={{ fontSize: "2rem", fontWeight: 900, color: "#0f172a", lineHeight: 1.05, marginBottom: 18 }}>One professional delivery path, clearly mapped.</h2>
               <p style={{ color: "#475569", fontSize: "1rem", lineHeight: 1.8, marginBottom: 0 }}>We combine scoping, pilot validation, production execution, and verified delivery into one streamlined workflow. Reach out to align on requirements, timing, and the right delivery model for your project.</p>
             </div>
-            <button onClick={() => navigate("contact")} style={{ width: isMobile ? "100%" : "fit-content", background: "#1d4ed8", color: "white", border: "none", borderRadius: 14, padding: "16px 28px", fontWeight: 700, cursor: "pointer", fontFamily: "inherit" }}>
+            <a href="/contact" onClick={(e) => { e.preventDefault(); router("/contact"); setPage("contact"); }} style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: isMobile ? "100%" : "fit-content", background: "#1d4ed8", color: "white", border: "none", borderRadius: 14, padding: "16px 28px", fontWeight: 700, cursor: "pointer", fontFamily: "inherit", textDecoration: "none" }}>
               Contact us to begin
-            </button>
+            </a>
           </div>
         </FadeIn>
       </div>
@@ -1357,13 +1357,13 @@ function BarakaDigitalHub() {
   // navigation helper: updates state and browser URL using React Router
   const navigate = (p, { replace = false } = {}) => {
     const path = p === "home" ? "/" : `/${p}`;
-    setPage(p);
     try {
       if (replace) router(path, { replace: true });
       else router(path);
     } catch (e) {
       // ignore if router is not available
     }
+    setPage(p);
   };
 
   const goBack = () => { navigate("home"); setNav(false); };
