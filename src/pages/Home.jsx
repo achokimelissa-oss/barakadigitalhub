@@ -5,10 +5,10 @@ function Home() {
   return (
     <>
       <Helmet>
-        <title>Baraka Digital Hub | AI Data & Digital Solutions</title>
+        <title>Baraka Digital Hub | AI Data Operations & Training Services</title>
         <meta
           name="description"
-          content="Empowering businesses with AI data labeling, transcription, and digital solutions while creating opportunities for African youth."
+          content="Enterprise-ready AI data operations, human-in-the-loop AI, transcription, and BPO services from Nairobi—designed for global clients and measurable social impact."
         />
         <meta
           name="keywords"
@@ -20,7 +20,7 @@ function Home() {
         <p className="eyebrow">Social Impact</p>
         <h2 className="gradient-text">Work That Creates Real Change</h2>
         <p>
-          AI data services, web development, and design for clients worldwide—built by talented youth from underserved communities in Nairobi.
+          AI data operations, human-in-the-loop AI, transcription, and BPO services for clients worldwide—delivered by trained youth from underserved communities in Nairobi.
         </p>
         <div className="hero-actions">
           <Link to="/services" className="button primary">

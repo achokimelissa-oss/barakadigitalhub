@@ -18,7 +18,7 @@ function About() {
             We build reliable digital services and sustainable employment pathways for young people from underserved communities.
           </p>
           <p>
-            Baraka Digital Hub is a digital services organization based in Nairobi, Kenya. We deliver AI data services, web development, and design to clients worldwide—built and delivered by talented youth from underserved communities.
+            Baraka Digital Hub is a Nairobi-based AI data operations and BPO partner. We deliver AI data services, human-in-the-loop AI, transcription, and back-office operations to clients worldwide—built and delivered by talented youth from underserved communities.
           </p>
         </div>
       </section>

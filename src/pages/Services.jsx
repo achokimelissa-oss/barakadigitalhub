@@ -15,7 +15,7 @@ function Services() {
           <p className="highlight-pill">Our Services</p>
           <h1>What we deliver</h1>
           <p>
-            Baraka Digital Hub provides AI data services, web development, and design solutions to clients worldwide. Each service is backed by trained professionals and quality assurance systems built for global standards.
+            Baraka Digital Hub provides AI data operations, human-in-the-loop AI, and BPO services to clients worldwide. Every engagement is backed by trained specialists, independent QA, and structured reporting built for production-grade delivery.
           </p>
         </div>
       </section>
@@ -41,38 +41,38 @@ function Services() {
           </article>
 
           <article className="service-card accent-purple">
-            <span className="feature-icon">💻</span>
-            <h3>Web Development</h3>
-            <p className="service-highlight">Modern, performant digital experiences</p>
+            <span className="feature-icon">🧠</span>
+            <h3>Human-in-the-Loop AI</h3>
+            <p className="service-highlight">RLHF, evaluation, and model-quality review</p>
             <p>
-              We build fast, responsive web applications that work seamlessly across devices:
+              We support AI teams with human evaluation and training workflows that improve quality and safety:
             </p>
             <ul className="service-list">
-              <li>React-based single-page applications</li>
-              <li>Responsive design for all devices</li>
-              <li>Performance optimization</li>
-              <li>SEO-ready implementations</li>
+              <li>RLHF and preference ranking</li>
+              <li>Prompt evaluation and response review</li>
+              <li>Content moderation and policy classification</li>
+              <li>Ground-truth creation and benchmark datasets</li>
             </ul>
             <p className="service-note">
-              Built to scale with your business and adapt to changing needs.
+              Structured QA and documented workflows make outputs consistent and auditable.
             </p>
           </article>
 
           <article className="service-card accent-sunset">
-            <span className="feature-icon">✏️</span>
-            <h3>Design & Brand Strategy</h3>
-            <p className="service-highlight">Cohesive visual and strategic direction</p>
+            <span className="feature-icon">📊</span>
+            <h3>BPO & Back-Office</h3>
+            <p className="service-highlight">Reliable operations for high-volume support work</p>
             <p>
-              We create design systems and brand strategies that resonate globally:
+              We deliver structured back-office execution for research, data entry, and customer support needs:
             </p>
             <ul className="service-list">
-              <li>Brand positioning and messaging</li>
-              <li>Design system development</li>
-              <li>UI/UX design and prototyping</li>
-              <li>Visual identity and guidelines</li>
+              <li>Data entry and document processing</li>
+              <li>Research and lead generation</li>
+              <li>CRM updates and virtual assistance</li>
+              <li>Customer support and ticket triage</li>
             </ul>
             <p className="service-note">
-              Clear, modern design that communicates your values and attracts your audience.
+              Dedicated project management and QA keep every workflow transparent and reliable.
             </p>
           </article>
         </div>
