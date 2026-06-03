@@ -1450,10 +1450,9 @@ function BarakaDigitalHub() {
         @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
         .ani-marquee { animation: marquee 16s linear infinite; will-change: transform; }
         .marquee-outer { overflow: hidden; width: 100%; }
-        .marquee-track { display: flex; gap: 56px; align-items: center; }
-        .marquee-item { display: inline-flex; align-items: center; gap: 18px; padding: 0 36px; flex: none; white-space: nowrap; }
-        .marquee-item .marquee-title { font-size: 0.95rem; font-weight: 700; color: #e6f7ff; letter-spacing: 0.06em; font-family: 'Orbitron', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; }
-        .marquee-item .marquee-text { font-size: 0.88rem; color: #b6c7d8; max-width: 900px; display: inline-block; line-height: 1.5; white-space: nowrap; }
+        .marquee-track { display: flex; gap: 36px; align-items: center; }
+        .marquee-item { display: inline-flex; align-items: center; gap: 18px; padding: 0 28px; flex: none; white-space: nowrap; }
+        .marquee-item .marquee-text { font-size: 1.05rem; font-weight: 700; color: #dbeafe; letter-spacing: 0.14em; font-family: 'Orbitron', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; text-transform: uppercase; text-shadow: 0 0 8px rgba(203, 226, 255, 0.18); }
         @keyframes typing { from { width: 0; } to { width: 100%; } }
         /* typing-effect now animates to container width so it wraps on small screens */
         .typing-effect { display: inline-block; overflow: hidden; white-space: normal; width: 0; animation: typing 2.6s steps(40,end) 0.15s forwards; }
@@ -1667,12 +1666,7 @@ function BarakaDigitalHub() {
             <div className="marquee-outer">
               <div className="ani-marquee" style={{ display:"flex", alignItems:"center", width:"200%" }}>
                 {[
-                  { title: "Computer Vision:", items: "Bounding boxes • Segmentation • Pose estimation • Image tagging • Video tracking • 3D point clouds" },
-                  { title: "Natural Language (NLP):", items: "Named entity recognition (NER) • Sentiment analysis • Intent classification • Dialogue labeling • QA generation • Document indexing" },
-                  { title: "Speech & Audio:", items: "Transcription • Speaker diarization • Audio tagging • Accent labeling • Subtitle generation • Speech QA" },
-                  { title: "LLM & RLHF:", items: "Preference ranking • Instruction evaluation • Safety review • Hallucination detection • Prompt refinement" },
-                  { title: "Data Operations:", items: "Cleaning • Transformation • Label correction • Dataset formatting • Enrichment • QA pipelines" },
-                  { title: "BPO & Support:", items: "Data entry • Web research • CRM management • Email support • Lead generation • Document processing" },
+                  { items: "Bounding Box Annotation • Semantic Segmentation • Video Annotation • Text Annotation • Named Entity Recognition (NER) • Prompt Evaluation • RLHF Support • Transcription • Speech Annotation • AI Model Evaluation • Data Validation • Quality Auditing • Data Entry • Document Processing • Research • Virtual Assistance" },
                 ].map((t,i)=> (
                   <div key={`group1-${i}`} className="marquee-track" aria-hidden="false">
                     <div className="marquee-item">
@@ -1682,12 +1676,7 @@ function BarakaDigitalHub() {
                 ))}
 
                 {[
-                  { title: "Computer Vision:", items: "Bounding boxes • Segmentation • Pose estimation • Image tagging • Video tracking • 3D point clouds" },
-                  { title: "Natural Language (NLP):", items: "Named entity recognition (NER) • Sentiment analysis • Intent classification • Dialogue labeling • QA generation • Document indexing" },
-                  { title: "Speech & Audio:", items: "Transcription • Speaker diarization • Audio tagging • Accent labeling • Subtitle generation • Speech QA" },
-                  { title: "LLM & RLHF:", items: "Preference ranking • Instruction evaluation • Safety review • Hallucination detection • Prompt refinement" },
-                  { title: "Data Operations:", items: "Cleaning • Transformation • Label correction • Dataset formatting • Enrichment • QA pipelines" },
-                  { title: "BPO & Support:", items: "Data entry • Web research • CRM management • Email support • Lead generation • Document processing" },
+                  { items: "Bounding Box Annotation • Semantic Segmentation • Video Annotation • Text Annotation • Named Entity Recognition (NER) • Prompt Evaluation • RLHF Support • Transcription • Speech Annotation • AI Model Evaluation • Data Validation • Quality Auditing • Data Entry • Document Processing • Research • Virtual Assistance" },
                 ].map((t,i)=> (
                   <div key={`group2-${i}`} className="marquee-track" aria-hidden="true">
                     <div className="marquee-item">
