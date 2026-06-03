@@ -1443,7 +1443,7 @@ function BarakaDigitalHub() {
         .ani-float { animation: float 5s ease-in-out infinite; }
         .ani-floatb { animation: floatB 6s ease-in-out 1.5s infinite; }
         .ani-pulse { animation: pulse-slow 3s ease-in-out infinite; }
-        .ani-marquee { animation: marquee 24s linear infinite; }
+        
         .hero-tech-overlay { position: absolute; inset: 0; background: radial-gradient(circle at top left, rgba(59,130,246,.16), transparent 22%), radial-gradient(circle at bottom right, rgba(16,185,129,.14), transparent 18%); pointer-events: none; }
         .hero-tech-overlay::before { content: ""; position: absolute; inset: 0; background-image: repeating-linear-gradient(90deg, transparent 0px, transparent 40px, rgba(14,165,233,.08) 40px, rgba(14,165,233,.08) 41px), repeating-linear-gradient(0deg, transparent 0px, transparent 40px, rgba(16,185,129,.06) 40px, rgba(16,185,129,.06) 41px); animation: grid-flow 6s linear infinite; }
         @keyframes grid-flow { 0% { transform: translate(0, 0); } 100% { transform: translate(40px, 40px); } }
@@ -1639,23 +1639,7 @@ function BarakaDigitalHub() {
           </section>
 
           
-          <div style={{ background:"#020617", padding:"12px 0", overflow:"visible" }}>
-            <div className="ani-marquee" style={{ display:"flex", gap:0, whiteSpace:"nowrap", width:"max-content" }}>
-              {[
-                { title: "Computer Vision:", items: "Bounding boxes • Segmentation • Pose estimation • Image tagging • Video tracking • 3D point clouds" },
-                { title: "NLP:", items: "NER • Sentiment analysis • Intent classification • Dialogue labeling • QA generation • LLM evaluation • Document indexing" },
-                { title: "Speech & Audio:", items: "Transcription • Speaker diarization • Audio tagging • Accent labeling • Subtitle generation • Speech QA" },
-                { title: "LLM & RLHF:", items: "Preference ranking • Instruction evaluation • Safety review • Hallucination detection • Prompt refinement" },
-                { title: "Data Operations:", items: "Cleaning • Transformation • Label correction • Dataset formatting • Enrichment • QA pipelines" },
-                { title: "BPO Services:", items: "Data entry • Web research • CRM management • Email support • Lead generation • Document processing" },
-              ].map((t,i)=>(
-                <span key={i} style={{ display:"inline-flex", alignItems:"center", gap:14, paddingRight:44 }}>
-                  <span style={{ fontSize:".78rem", fontWeight:700, color:"#e2e8f0", letterSpacing:".02em" }}>{t.title}</span>
-                  <span style={{ fontSize:".72rem", color:"#94a3b8", maxWidth:420, display:"inline-block" }}>{t.items}</span>
-                </span>
-              ))}
-            </div>
-          </div>
+          
 
           <section className="section-tech-bg" style={{ padding:"88px 24px", backgroundColor:"#0f172a", backgroundImage:"url('/background2.jpg')", backgroundSize:"cover", backgroundRepeat:"no-repeat", backgroundPosition:"center center" }}>
             <div style={{ maxWidth:1280, margin:"0 auto" }}>
