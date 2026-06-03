@@ -1455,7 +1455,7 @@ function BarakaDigitalHub() {
         .marquee-outer { overflow: hidden; width: 100%; }
         .marquee-track { display: flex; gap: 48px; align-items: center; }
         .marquee-item { display: inline-flex; flex: none; white-space: nowrap; margin-right: 32px; }
-        .marquee-pill { display: inline-block; color: #f8fafc; font-size: 1rem; font-weight: 700; letter-spacing: 0.08em; font-family: 'Orbitron', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; text-transform: uppercase; }
+        .marquee-pill { display: inline-block; color: #f8fafc; font-size: 1rem; font-weight: 600; letter-spacing: 0.02em; font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-transform: none; }
         .marquee-pill:hover { }
         .marquee-pill:not(:last-child) { }
         @keyframes typing { from { width: 0; } to { width: 100%; } }
