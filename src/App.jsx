@@ -1444,10 +1444,6 @@ function BarakaDigitalHub() {
         .ani-floatb { animation: floatB 6s ease-in-out 1.5s infinite; }
         .ani-pulse { animation: pulse-slow 3s ease-in-out infinite; }
         .ani-marquee { animation: marquee 24s linear infinite; }
-        @keyframes orbit { from { transform: rotateX(55deg) rotate(0deg); } to { transform: rotateX(55deg) rotate(360deg); } }
-        .orbit-shell { animation: orbit 18s linear infinite; transform-style: preserve-3d; }
-        .orbit-item img { transition: transform .25s ease; }
-        .orbit-shell:hover { animation-play-state: paused; }
         .hero-tech-overlay { position: absolute; inset: 0; background: radial-gradient(circle at top left, rgba(59,130,246,.16), transparent 22%), radial-gradient(circle at bottom right, rgba(16,185,129,.14), transparent 18%); pointer-events: none; }
         .hero-tech-overlay::before { content: ""; position: absolute; inset: 0; background-image: repeating-linear-gradient(90deg, transparent 0px, transparent 40px, rgba(14,165,233,.08) 40px, rgba(14,165,233,.08) 41px), repeating-linear-gradient(0deg, transparent 0px, transparent 40px, rgba(16,185,129,.06) 40px, rgba(16,185,129,.06) 41px); animation: grid-flow 6s linear infinite; }
         @keyframes grid-flow { 0% { transform: translate(0, 0); } 100% { transform: translate(40px, 40px); } }
@@ -1642,64 +1638,7 @@ function BarakaDigitalHub() {
             </div>
           </section>
 
-          <section className="tools-orbit-section" style={{ padding: "84px 24px", background: "#060814", color: "#f8fafc", position: "relative", overflow: "hidden" }}>
-            <div className="page-container" style={{ maxWidth: 1180, margin: "0 auto", textAlign: "center", position: "relative", zIndex: 1, perspective: 900 }}>
-              <div style={{ display: "inline-flex", flexDirection: "column", gap: 16, marginBottom: 40, maxWidth: 680, margin: "0 auto 40px" }}>
-                <div style={{ textTransform: "uppercase", letterSpacing: ".22em", fontSize: ".72rem", fontWeight: 700, color: "#60a5fa" }}>Tools used</div>
-                <h2 className="section-h2 font-display" style={{ color: "#f8fafc", fontSize: "clamp(2rem, 3.5vw, 3rem)", margin: 0 }}>The platforms that orbit our delivery engine</h2>
-                <p style={{ color: "#cbd5e1", fontSize: "1rem", lineHeight: 1.8, maxWidth: 680, margin: "0 auto" }}>
-                  A centered platform hub with partner logos rotating around it, highlighting the tools we rely on for design, collaboration, and AI delivery.
-                </p>
-              </div>
-              <div style={{ position: "relative", width: 320, height: 320, margin: "0 auto" }}>
-                <div style={{ position: "absolute", inset: 0, borderRadius: "50%", border: "1px solid rgba(255,255,255,.08)", boxShadow: "0 0 0 1px rgba(255,255,255,.03) inset" }} />
-                {/* Outer orbit (slow, clockwise) */}
-                <div className="orbit-shell orbit-outer" style={{ position: "absolute", inset: 0, animation: "orbit 28s linear infinite", transformOrigin: "center center" }}>
-                  {TOOL_LOGOS.filter((_, idx) => idx % 3 === 0).map((tool, i, arr) => {
-                    const angle = (360 / arr.length) * i;
-                    return (
-                      <div key={tool.name} className="orbit-item" style={{ position: "absolute", top: "50%", left: "50%", width: 72, height: 72, transform: `rotate(${angle}deg) translateX(140px)`, transformOrigin: "0 0" }}>
-                        <div style={{ width: 72, height: 72, borderRadius: "50%", background: "rgba(255,255,255,.06)", border: "1px solid rgba(255,255,255,.08)", display: "grid", placeItems: "center", boxShadow: "0 28px 80px rgba(0,0,0,.45)" }}>
-                          <img src={tool.src} alt={tool.name} style={{ width: 44, height: 44, objectFit: "contain", transform: `rotate(${-angle}deg)` }} />
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-
-                {/* Middle orbit (medium speed, counter-clockwise) */}
-                <div className="orbit-shell orbit-mid" style={{ position: "absolute", inset: 0, animation: "orbit 20s linear infinite reverse", transformOrigin: "center center" }}>
-                  {TOOL_LOGOS.filter((_, idx) => idx % 3 === 1).map((tool, i, arr) => {
-                    const angle = (360 / arr.length) * i;
-                    return (
-                      <div key={tool.name} className="orbit-item" style={{ position: "absolute", top: "50%", left: "50%", width: 64, height: 64, transform: `rotate(${angle}deg) translateX(98px)`, transformOrigin: "0 0" }}>
-                        <div style={{ width: 64, height: 64, borderRadius: "50%", background: "rgba(255,255,255,.06)", border: "1px solid rgba(255,255,255,.08)", display: "grid", placeItems: "center", boxShadow: "0 20px 60px rgba(0,0,0,.38)" }}>
-                          <img src={tool.src} alt={tool.name} style={{ width: 36, height: 36, objectFit: "contain", transform: `rotate(${-angle}deg)` }} />
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-
-                {/* Inner orbit (fast, clockwise) */}
-                <div className="orbit-shell orbit-inner" style={{ position: "absolute", inset: 0, animation: "orbit 14s linear infinite", transformOrigin: "center center" }}>
-                  {TOOL_LOGOS.filter((_, idx) => idx % 3 === 2).map((tool, i, arr) => {
-                    const angle = (360 / arr.length) * i;
-                    return (
-                      <div key={tool.name} className="orbit-item" style={{ position: "absolute", top: "50%", left: "50%", width: 56, height: 56, transform: `rotate(${angle}deg) translateX(62px)`, transformOrigin: "0 0" }}>
-                        <div style={{ width: 56, height: 56, borderRadius: "50%", background: "rgba(255,255,255,.06)", border: "1px solid rgba(255,255,255,.08)", display: "grid", placeItems: "center", boxShadow: "0 12px 36px rgba(0,0,0,.28)" }}>
-                          <img src={tool.src} alt={tool.name} style={{ width: 32, height: 32, objectFit: "contain", transform: `rotate(${-angle}deg)` }} />
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-                <div style={{ position: "absolute", top: "50%", left: "50%", width: 110, height: 110, borderRadius: "50%", background: "#0f172a", border: "2px solid rgba(255,255,255,.16)", display: "grid", placeItems: "center", transform: "translate(-50%, -50%)", zIndex: 2, boxShadow: "0 32px 90px rgba(0,0,0,.35)" }}>
-                  <img src="/tools/66dac501a8e9a90495970876_Logo%20dark-short.png" alt="Central tool logo" style={{ width: 56, height: 56, objectFit: "contain" }} />
-                </div>
-              </div>
-            </div>
-          </section>
+          
           <div style={{ background:"#020617", padding:"12px 0", overflow:"visible" }}>
             <div className="ani-marquee" style={{ display:"flex", gap:0, whiteSpace:"nowrap", width:"max-content" }}>
               {[
