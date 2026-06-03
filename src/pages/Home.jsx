@@ -20,8 +20,26 @@ function Home() {
         <p className="eyebrow">Social Impact</p>
         <h2 className="gradient-text">Work That Creates Real Change</h2>
         <p>
-          AI data operations, human-in-the-loop AI, transcription, and BPO services for clients worldwide—delivered by trained youth from underserved communities in Nairobi.
+          Baraka Digital Hub is a tool-agnostic AI data operations and business process outsourcing partner. We function as a managed execution layer for AI systems and data-heavy enterprise operations, integrating directly into client infrastructure without requiring workflow redesign. Our focus is repeatable, auditable, and scalable production systems for AI and data operations.
         </p>
+        <div className="metrics-strip" style={{display: 'flex', gap: 18, marginTop: 20, flexWrap: 'wrap'}}>
+          <div className="metric" style={{minWidth: 140}}>
+            <div className="metric-value">80+</div>
+            <div className="metric-label">Certified specialists</div>
+          </div>
+          <div className="metric" style={{minWidth: 140}}>
+            <div className="metric-value">100%</div>
+            <div className="metric-label">QA coverage</div>
+          </div>
+          <div className="metric" style={{minWidth: 140}}>
+            <div className="metric-value">90%+</div>
+            <div className="metric-label">Accuracy target</div>
+          </div>
+          <div className="metric" style={{minWidth: 140}}>
+            <div className="metric-value">40–70%</div>
+            <div className="metric-label">Cost vs US/EU</div>
+          </div>
+        </div>
         <div className="hero-actions">
           <Link to="/services" className="button primary">
             Our services

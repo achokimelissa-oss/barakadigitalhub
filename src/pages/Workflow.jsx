@@ -1,10 +1,10 @@
 import { Helmet } from "react-helmet-async";
 
 const steps = [
-  { n: 1, title: "Scoping & Discovery", desc: "Understand objectives, datasets and success metrics." },
-  { n: 2, title: "Tooling & Pilot", desc: "Set up annotation tools, run a pilot and iterate." },
-  { n: 3, title: "Annotation & QA", desc: "Deliver high-quality labeled data with layered QA." },
-  { n: 4, title: "Reporting & Handover", desc: "Provide reports, exports, and handover assets." },
+  { n: 1, title: "Workflow Mapping", desc: "Schema definition, guideline documentation, QA rules, and task specification review." },
+  { n: 2, title: "Environment Setup", desc: "Access provisioning, security alignment, SOP configuration, and platform onboarding." },
+  { n: 3, title: "Pilot Execution", desc: "Accuracy and throughput validation under live conditions before full production ramp." },
+  { n: 4, title: "Production Scaling", desc: "Full deployment with continuous monitoring, reporting, and scaling as volumes grow." },
 ];
 
 function Workflow() {
