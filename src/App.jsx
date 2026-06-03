@@ -541,78 +541,47 @@ const OperationsPage = ({ goBack, isMobile }) => {
 const WorkflowPage = ({ goBack, setPage, isMobile }) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   const overview = [
-    { title: "Strategic scoping", text: "Define dataset scope, quality standards, tooling, and delivery expectations before work begins.", accent: "#1d4ed8" },
-    { title: "Pilot validation", text: "Validate quality and edge-case handling before scaling.", accent: "#0f9d68" },
-    { title: "Production execution", text: "Execute work in structured batches with transparent tracking and reporting.", accent: "#1d4ed8" },
-    { title: "QA & support", text: "Deliver verified outcomes with first-pass review, reporting, and continued support.", accent: "#0f9d68" }
+    { title: "Discovery & Planning", text: "Define scope, quality standards, tooling, and delivery expectations before any live work begins.", accent: "#1d4ed8" },
+    { title: "Team Training & Certification", text: "Onboard and certify the production team on project standards and tooling before pilot execution.", accent: "#0f9d68" },
+    { title: "Pilot Execution", text: "Run a controlled pilot batch to validate the process, capture edge cases, and refine quality before scaling.", accent: "#1d4ed8" },
+    { title: "Review & Production Roadmap", text: "Assess results, refine workflows, and map the next phase for repeatable production.", accent: "#0f9d68" }
   ];
   const steps = [
     {
       n: 1,
-      title: "Project Scoping & Requirement Alignment",
-      desc: "We align on scope, workflows, quality standards, tooling, and delivery expectations before production begins.",
-      chips: ["Workflow discovery", "Taxonomy review", "Security alignment", "Tool setup", "SLA confirmation", "Production planning"],
+      title: "Discovery & Planning",
+      desc: "We align on scope, workflows, quality criteria, tooling, and delivery expectations before building the production model.",
+      chips: ["Workflow discovery", "Taxonomy review", "Tool evaluation", "SLA alignment", "Production planning"],
+      details: ["Dataset scoping", "Guideline definition", "Security review", "QA criteria", "Risk assessment"],
       color: "#0f9d68",
-      banner: "Applies across annotation, transcription, OCR, content moderation, and digital operations."
+      banner: "A shared plan upfront prevents rework and keeps the team focused on the right outcomes."
     },
     {
       n: 2,
-      title: "Pilot Batch, Edge Cases & Calibration",
-      desc: "A pilot batch validates readiness, identifies edge cases, and calibrates the process before full deployment.",
-      chips: ["Pilot batch", "QA benchmarking", "Client feedback", "Guideline refinement", "Workflow recalibration"],
-      details: ["Partial visibility", "Occlusions", "Low-quality audio", "Accents", "Handwritten text", "Motion blur", "Low-light imagery", "Overlapping entities", "Ambiguous classes", "Multi-language transcription", "OCR anomalies", "Sensitive escalation"],
+      title: "Team Training & Certification",
+      desc: "Our specialists are trained and certified to your exact standards before any live work begins.",
+      chips: ["Role-specific training", "Certification tests", "Calibration exercises", "Tool practice", "Quality benchmarking"],
+      details: ["Project-specific onboarding", "Guideline drills", "Sample review", "Accuracy standards", "Certification reporting"],
       color: "#0f9d68",
-      banner: "We prove the process on the toughest cases before scaling to production."
+      banner: "Training and certification happen before execution, not after."
     },
     {
       n: 3,
-      title: "Workforce Deployment & Training",
-      desc: "We deploy specialized teams, onboard securely, and train every tasker to the project’s exact standards.",
-      chips: ["AI annotators", "Transcription specialists", "QA reviewers", "OCR operators", "Moderation teams", "Supervisors"],
-      details: ["Secure onboarding", "Tool training", "Monitoring", "Escalation", "Compliance"],
+      title: "Pilot Execution",
+      desc: "A pilot batch validates accuracy, process flow, and edge-case handling under live conditions.",
+      chips: ["Pilot batch", "QA benchmarking", "Edge-case identification", "Client feedback", "Workflow recalibration"],
+      details: ["Live sample review", "Data quality checks", "Throughput assessment", "Issue resolution", "Pilot reporting"],
       color: "#0f9d68",
-      banner: "Team structure is chosen for each service type, complexity, and turnaround requirement."
+      banner: "Proof the process with real work before scaling into full production."
     },
     {
       n: 4,
-      title: "Production & Task Execution",
-      desc: "Tasks are run in balanced production batches with transparent progress tracking and operational reporting.",
-      chips: ["Batch allocation", "Throughput tracking", "Daily reporting", "Workflow balancing", "Escalation handling"],
-      details: ["Bounding box annotation", "Polygon segmentation", "NLP labeling", "Audio transcription", "OCR digitization", "Lead gen", "Content moderation"],
+      title: "Performance Review & Production Roadmap",
+      desc: "We review results, refine the process, and build a production roadmap for reliable scale.",
+      chips: ["Performance review", "Quality metrics", "Roadmap planning", "Capacity assessment", "Scale recommendations"],
+      details: ["Deliverable analytics", "Process improvements", "Risk mitigation", "Capacity planning", "Ongoing support plan"],
       color: "#0f9d68",
-      banner: "Our execution model supports AI data, transcription, OCR, and digital operations workloads."
-    },
-    {
-      n: 5,
-      title: "100% First-Pass QA Review",
-      desc: "Every deliverable goes through first-pass review for accuracy, consistency, and guideline compliance.",
-      chips: ["Accuracy validation", "Format checks", "Compliance review", "Edge-case validation", "Revalidation"],
-      color: "#0f9d68",
-      banner: "Quality is embedded into the delivery pipeline, not added afterward."
-    },
-    {
-      n: 6,
-      title: "Error Logging & Continuous Recalibration",
-      desc: "Errors are logged, categorized, and used to refine workflows, training, and quality controls.",
-      chips: ["Error tracking", "Feedback loops", "Retraining", "Optimization", "Guideline updates"],
-      color: "#0f9d68",
-      banner: "Continuous improvement is built into every production cycle."
-    },
-    {
-      n: 7,
-      title: "Final Validation, Reporting & Delivery",
-      desc: "Final verification is completed before secure export and handoff, with analytics and reports included.",
-      chips: ["Datasets", "Transcripts", "Documents", "QA reports", "Analytics", "Secure transfer"],
-      color: "#0f9d68",
-      banner: "Delivery is complete when the data and the narrative both meet expectations."
-    },
-    {
-      n: 8,
-      title: "Post-Delivery Support & Scaling",
-      desc: "We remain available for revisions, scaling, and long-term operational support.",
-      chips: ["Revisions", "Additional rounds", "Ongoing support", "Workforce scaling", "Partnerships"],
-      color: "#0f9d68",
-      banner: "Ongoing collaboration keeps your operation steady and scalable."
+      banner: "This phase turns pilot learnings into a repeatable, production-ready roadmap."
     }
   ];
   return (
@@ -1398,12 +1367,39 @@ function BarakaDigitalHub() {
   }, []);
 
   const services = [
-    { icon: <Globe size={20} />, title: "Computer Vision Annotation", color: "#1d4ed8" },
-    { icon: <Brain size={20} />, title: "NLP & Text Processing", color: "#7c3aed" },
-    { icon: <Mic size={20} />, title: "Audio & Speech Processing", color: "#0891b2" },
-    { icon: <Cpu size={20} />, title: "LLM Training & RLHF", color: "#059669" },
-    { icon: <CheckCircle2 size={20} />, title: "Transcription & QA", color: "#dc2626" },
-    { icon: <Headphones size={20} />, title: "BPO & Virtual Assistance", color: "#d97706" },
+    {
+      icon: <Globe size={20} />,
+      title: "AI Data Services",
+      color: "#1d4ed8",
+      desc: "Modality-specialized annotation and data operations that turn raw inputs into machine-learning-ready datasets.",
+      items: [
+        "Computer Vision Annotation – bounding boxes, segmentation, pose estimation, tracking",
+        "Language AI / NLP – NER, intent labeling, text classification, QA generation, document review",
+        "Audio & Speech Processing – transcription, diarization, audio tagging, captioning, transcription QA",
+      ],
+    },
+    {
+      icon: <Brain size={20} />,
+      title: "Human-in-the-Loop AI",
+      color: "#7c3aed",
+      desc: "Human evaluation and review workflows for RLHF, model output quality, and content safety.",
+      items: [
+        "LLM Training & RLHF – preference ranking, instruction evaluation, safety review, prompt refinement",
+        "Model Output Review – accuracy, safety, tone, policy compliance, benchmark dataset creation",
+        "Content Moderation – text, image, and video review, harm classification, policy enforcement",
+      ],
+    },
+    {
+      icon: <Headphones size={20} />,
+      title: "BPO & Back-Office Services",
+      color: "#d97706",
+      desc: "Structured enterprise support for data entry, research, virtual assistance, and customer support.",
+      items: [
+        "Data Entry & Processing – high-volume entry, document extraction, form completion, CRM updates",
+        "Research & Virtual Assistance – web research, lead generation, competitive analysis, administrative support",
+        "Customer & Email Support – ticket triage, query handling, escalation management, response drafting",
+      ],
+    },
   ];
 
   const navLinks = [
@@ -1702,9 +1698,14 @@ function BarakaDigitalHub() {
                   <FadeIn key={i} delay={i*.06}>
                     <div className="svc-card" style={{ background:"rgba(255,255,255,.96)", border:"1px solid rgba(226,232,240,.7)", borderRadius:24, padding:"24px 22px", transition:"box-shadow .3s,transform .3s", cursor:"pointer", height:"100%", boxShadow:"0 24px 60px rgba(15,23,42,.08)" }} onClick={() => navigate("services")}>
                       <div style={{ width:44, height:44, borderRadius:12, background:s.color, display:"flex", alignItems:"center", justifyContent:"center", color:"white", marginBottom:16 }}>{s.icon}</div>
-                      <h3 className="font-display" style={{ fontSize:"1rem", fontWeight:800, color:"#0f172a", marginBottom:8 }}>{s.title}</h3>
-                      <p style={{ fontSize:".84rem", color:"#64748b", lineHeight:1.7, marginBottom:14 }}>{s.desc}</p>
-                      <div style={{ display:"flex", alignItems:"center", gap:5, color:s.color, fontSize:".8rem", fontWeight:600 }}>Learn more <ChevronRight size={14} /></div>
+                      <h3 className="font-display" style={{ fontSize:"1rem", fontWeight:800, color:"#0f172a", marginBottom:10 }}>{s.title}</h3>
+                      <p style={{ fontSize:".9rem", color:"#475569", lineHeight:1.75, marginBottom:18 }}>{s.desc}</p>
+                      <ul style={{ margin:0, paddingLeft:18, color:"#475569", fontSize:"0.9rem", lineHeight:1.7 }}>
+                        {s.items.map((item,j)=>(
+                          <li key={j} style={{ marginBottom: j < s.items.length - 1 ? 10 : 0 }}>{item}</li>
+                        ))}
+                      </ul>
+                      <div style={{ display:"flex", alignItems:"center", gap:5, color:s.color, fontSize:".8rem", fontWeight:600, marginTop:18 }}>Learn more <ChevronRight size={14} /></div>
                     </div>
                   </FadeIn>
                 ))}

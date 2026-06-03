@@ -25,15 +25,14 @@ function Services() {
           <article className="service-card accent-cyan">
             <span className="feature-icon">🤖</span>
             <h3>AI Data Services</h3>
-            <p className="service-highlight">Production-grade data for machine learning</p>
+            <p className="service-highlight">Modality-specialized annotation and data operations</p>
             <p>
-              We deliver high-quality datasets for AI training and development:
+              We deliver high-quality datasets for computer vision, language, and audio applications:
             </p>
             <ul className="service-list">
-              <li>Computer vision annotation and labeling</li>
-              <li>Natural language processing datasets</li>
-              <li>Audio and speech processing</li>
-              <li>Data quality assurance and validation</li>
+              <li><strong>Computer Vision Annotation:</strong> bounding boxes, segmentation, pose estimation, image classification, 3D point cloud annotation, video tracking</li>
+              <li><strong>Language AI / NLP:</strong> NER, sentiment & intent labeling, text classification, QA generation, dialogue annotation, document review</li>
+              <li><strong>Audio & Speech Processing:</strong> transcription, speaker diarization, audio tagging, phonetic annotation, keyword spotting, captioning, transcription QA</li>
             </ul>
             <p className="service-note">
               Each project is overseen by quality systems and delivered by trained professionals following global standards.
@@ -43,36 +42,34 @@ function Services() {
           <article className="service-card accent-purple">
             <span className="feature-icon">🧠</span>
             <h3>Human-in-the-Loop AI</h3>
-            <p className="service-highlight">RLHF, evaluation, and model-quality review</p>
+            <p className="service-highlight">RLHF, model evaluation, and content safety workflows</p>
             <p>
-              We support AI teams with human evaluation and training workflows that improve quality and safety:
+              We support AI teams with human review and evaluation processes that improve model reliability and trust:
             </p>
             <ul className="service-list">
-              <li>RLHF and preference ranking</li>
-              <li>Prompt evaluation and response review</li>
-              <li>Content moderation and policy classification</li>
-              <li>Ground-truth creation and benchmark datasets</li>
+              <li><strong>LLM Training & RLHF:</strong> preference ranking, instruction evaluation, response quality assessment, hallucination review, prompt refinement</li>
+              <li><strong>Model Output Review:</strong> accuracy, safety, tone, policy compliance, benchmark dataset creation, data auditing</li>
+              <li><strong>Content Moderation:</strong> text, image, and video review, harm classification, multi-category policy enforcement</li>
             </ul>
             <p className="service-note">
-              Structured QA and documented workflows make outputs consistent and auditable.
+              Structured QA and documented workflows make outputs consistent, auditable, and safer.
             </p>
           </article>
 
           <article className="service-card accent-sunset">
             <span className="feature-icon">📊</span>
             <h3>BPO & Back-Office</h3>
-            <p className="service-highlight">Reliable operations for high-volume support work</p>
+            <p className="service-highlight">Reliable operations for enterprise workflows and support</p>
             <p>
-              We deliver structured back-office execution for research, data entry, and customer support needs:
+              We deliver structured execution for research, data entry, support, and virtual assistance:
             </p>
             <ul className="service-list">
-              <li>Data entry and document processing</li>
-              <li>Research and lead generation</li>
-              <li>CRM updates and virtual assistance</li>
-              <li>Customer support and ticket triage</li>
+              <li><strong>Data Entry & Processing:</strong> high-volume entry, document extraction, form completion, CRM updates</li>
+              <li><strong>Research & Virtual Assistance:</strong> web research, lead generation, competitive analysis, administrative operations</li>
+              <li><strong>Customer & Email Support:</strong> ticket triage, query handling, escalation management, response drafting</li>
             </ul>
             <p className="service-note">
-              Dedicated project management and QA keep every workflow transparent and reliable.
+              Dedicated project management and independent QA keep every workflow transparent and reliable.
             </p>
           </article>
         </div>
