@@ -1445,6 +1445,13 @@ function BarakaDigitalHub() {
         @keyframes pulse-slow { 0%,100%{opacity:1} 50%{opacity:.4} }
         @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
         .ani-marquee { animation: marquee 16s linear infinite; will-change: transform; }
+        @media(max-width:560px) {
+          .ani-marquee { animation-duration: 8s !important; }
+          .logo-track { animation-duration: 14s !important; }
+          .logo-carousel { overflow: visible !important; }
+          .logo-item { min-width: 90px !important; padding: 10px 12px !important; }
+          .marquee-pill { font-size: 0.9rem !important; }
+        }
         .marquee-outer { overflow: hidden; width: 100%; }
         .marquee-track { display: flex; gap: 48px; align-items: center; }
         .marquee-item { display: inline-flex; flex: none; white-space: nowrap; margin-right: 32px; }
@@ -1815,7 +1822,7 @@ function BarakaDigitalHub() {
               <FadeIn>
                 <div style={{ textAlign:"center", marginBottom: isMobile ? 28 : 48 }}>
                   <div style={{ display:"inline-block", background:"rgba(255,255,255,0.04)", color:"#9be7ff", padding:"6px 16px", borderRadius:100, fontSize:".72rem", fontWeight:800, letterSpacing:".12em", textTransform:"uppercase", marginBottom:18, border:"1px solid rgba(155,231,255,.06)", fontFamily:"ui-monospace, 'Courier New', monospace" }}>BUILT FOR RELIABLE SCALE</div>
-                  <h2 className="font-display" style={{ fontSize:"2.6rem", fontWeight:900, color:"#e6f7ff", letterSpacing:"-.02em", marginBottom:10 }}>AI-Powered Delivery Engine</h2>
+                  <h2 className="font-display" style={{ fontSize:"2.6rem", fontWeight:900, color:"#e6f7ff", letterSpacing:"-.02em", marginBottom:10 }}>How It Works</h2>
                   <p style={{ color:"#9fb6c9", fontSize:"1rem", maxWidth:680, margin:"0 auto", lineHeight:1.75, fontFamily:"'Segoe UI', Arial, sans-serif" }}>Production-grade data pipelines with real-time monitoring, deterministic quality assurance, and elastic scaling built for long-term reliability.</p>
                 </div>
               </FadeIn>
