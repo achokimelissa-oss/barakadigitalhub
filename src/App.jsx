@@ -1676,7 +1676,6 @@ function BarakaDigitalHub() {
                 ].map((t,i)=> (
                   <div key={`group1-${i}`} className="marquee-track" aria-hidden="false">
                     <div className="marquee-item">
-                      <span className="marquee-title">{t.title}</span>
                       <span className="marquee-text">{t.items}</span>
                     </div>
                   </div>
@@ -1692,7 +1691,6 @@ function BarakaDigitalHub() {
                 ].map((t,i)=> (
                   <div key={`group2-${i}`} className="marquee-track" aria-hidden="true">
                     <div className="marquee-item">
-                      <span className="marquee-title">{t.title}</span>
                       <span className="marquee-text">{t.items}</span>
                     </div>
                   </div>
