@@ -1642,24 +1642,24 @@ function BarakaDigitalHub() {
             </div>
           </section>
 
-          <div style={{ background:"#020617", padding:"12px 0", overflow:"hidden" }}>
-            <div className="ani-marquee" style={{ display:"flex", gap:0, whiteSpace:"nowrap", width:"max-content" }}>
+          <div style={{ background:"#020617", padding:"16px 0", overflow:"hidden" }}>
+            <div className="ani-marquee" style={{ display:"flex", gap:0, whiteSpace:"nowrap", width:"max-content", alignItems:"center" }}>
               {[
                 { title: "Computer Vision:", items: "Bounding boxes • Segmentation • Pose estimation • Image tagging • Video tracking • 3D point clouds" },
-                { title: "NER:", items: "NER • Sentiment analysis • Intent classification • Dialogue labeling • QA generation • LLM evaluation • Document indexing" },
-                { title: "Transcription:", items: "Transcription • Speaker diarization • Audio tagging • Accent labeling • Subtitle generation • Speech" },
+                { title: "Natural Language (NLP):", items: "Named entity recognition (NER) • Sentiment analysis • Intent classification • Dialogue labeling • QA generation • Document indexing" },
+                { title: "Speech & Audio:", items: "Transcription • Speaker diarization • Audio tagging • Accent labeling • Subtitle generation • Speech QA" },
                 { title: "LLM & RLHF:", items: "Preference ranking • Instruction evaluation • Safety review • Hallucination detection • Prompt refinement" },
-                { title: "Data Ops:", items: "Cleaning • Transformation • Label correction • Dataset formatting • Enrichment • QA pipelines" },
-                { title: "BPO:", items: "Data entry • Web research • CRM management • Email support • Lead generation • Document processing" },
+                { title: "Data Operations:", items: "Cleaning • Transformation • Label correction • Dataset formatting • Enrichment • QA pipelines" },
+                { title: "BPO & Support:", items: "Data entry • Web research • CRM management • Email support • Lead generation • Document processing" },
               ].map((t,i)=>(
-                <span key={i} style={{ display:"inline-flex", alignItems:"center", gap:14, paddingRight:44 }}>
-                  <span style={{ fontSize:".78rem", fontWeight:700, color:"#e2e8f0", letterSpacing:".02em" }}>{t.title}</span>
-                  <span style={{ fontSize:".72rem", color:"#94a3b8", maxWidth:420, display:"inline-block" }}>{t.items}</span>
+                <span key={i} style={{ display:"inline-flex", alignItems:"center", gap:16, paddingRight:56, paddingLeft:12 }}>
+                  <span style={{ fontSize:"0.84rem", fontWeight:700, color:"#ffffff", letterSpacing:"0.04em" }}>{t.title}</span>
+                  <span style={{ fontSize:"0.8rem", color:"#cbd5e1", maxWidth:460, display:"inline-block", lineHeight:1.6 }}>{t.items}</span>
                 </span>
               ))}
             </div>
           </div>
-          
+
 
           <section className="section-tech-bg" style={{ padding:"88px 24px", backgroundColor:"#0f172a", backgroundImage:"url('/background2.jpg')", backgroundSize:"cover", backgroundRepeat:"no-repeat", backgroundPosition:"center center" }}>
             <div style={{ maxWidth:1280, margin:"0 auto" }}>
