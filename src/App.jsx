@@ -366,21 +366,7 @@ const NAV_LOGO = [
     { name: "AWS Transcribe", src: "https://cdn.simpleicons.org/amazonaws/ffffff" },
     { name: "Hugging Face", src: "https://cdn.simpleicons.org/huggingface/ffffff" },
     { name: "Databricks", src: "https://cdn.simpleicons.org/databricks/ffffff" },
-    { name: "Central Dark", src: "/tools/66dac501a8e9a90495970876_Logo%20dark-short.png" }
-  ];
-
-  const useInView = (threshold = 0.5) => {
-    const ref = useRef(null);
-    const [inView, setInView] = useState(false);
-    useEffect(() => {
-      const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) setInView(true); }, { threshold });
-      if (ref.current) obs.observe(ref.current);
-      return () => obs.disconnect();
-    }, [threshold]);
-    return [ref, inView];
-  };
-
-const Counter = ({ target, suffix = "", duration = 2000 }) => {
+    { name: "Light AI", src: "/tools/66dac501a8e9a90495970876_Logo%20dark-short.png" }
   const [count, setCount] = useState(0);
   const [ref, inView] = useInView(0.5);
   useEffect(() => {
@@ -1425,9 +1411,9 @@ function BarakaDigitalHub() {
     { name: "SuperAnnotate", src: "/tools/images (4).png" },
     { name: "Encord", src: "/tools/images (6).png" },
     { name: "Scale AI", src: "/tools/images (7).png" },
-    { name: "Platform Partner", src: "/tools/images (5).png" },
-    { name: "Platform Partner", src: "/tools/images (8).png" },
-    { name: "Central Dark", src: "/tools/66dac501a8e9a90495970876_Logo dark-short.png" },
+    { name: "CVAT", src: "/tools/images (5).png" },
+    { name: "Labelbox", src: "/tools/images (8).png" },
+    { name: "Light AI", src: "/tools/66dac501a8e9a90495970876_Logo dark-short.png" },
   ];
 
   return (
@@ -1490,7 +1476,7 @@ function BarakaDigitalHub() {
         .logo-carousel { overflow: hidden; background: linear-gradient(180deg,#f8fbff 0%, #e9f1ff 50%, #edf7ff 100%); border-radius: 24px; padding: 24px 16px; margin-top: 28px; border: 1px solid rgba(15,23,42,.08); box-shadow: 0 24px 80px rgba(15,23,42,.08); }
         .logo-track { display:flex; gap:24px; align-items:center; width:max-content; animation: marquee-logos 28s linear infinite; }
         .logo-item { flex: none; display:inline-flex; flex-direction: column; align-items:center; justify-content:center; gap: 10px; padding: 18px 20px; min-width: 140px; min-height: 104px; border-radius: 18px; background: rgba(255,255,255,0.95); border: 1px solid rgba(15,23,42,.08); box-shadow: 0 18px 40px rgba(15,23,42,.08); }
-        .logo-item img { height: 36px; max-width: 120px; width: auto; object-fit: contain; filter: none; }
+        .logo-item img { max-height: 44px; max-width: 140px; width: auto; height: auto; object-fit: contain; filter: none; }
         .logo-item span { color: #0f172a; font-size: .86rem; font-weight: 700; text-align: center; white-space: nowrap; }
         .logo-carousel:hover .logo-track { animation-play-state: paused; }
         @keyframes marquee-logos { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
