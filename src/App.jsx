@@ -1448,7 +1448,7 @@ function BarakaDigitalHub() {
         @keyframes floatB { 0%,100%{transform:translateY(0) rotate(-2deg)} 50%{transform:translateY(-8px) rotate(2deg)} }
         @keyframes pulse-slow { 0%,100%{opacity:1} 50%{opacity:.4} }
         @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
-        .ani-marquee { animation: marquee 28s linear infinite; will-change: transform; }
+        .ani-marquee { animation: marquee 16s linear infinite; will-change: transform; }
         .marquee-outer { overflow: hidden; width: 100%; }
         .marquee-track { display: flex; gap: 56px; align-items: center; }
         .marquee-item { display: inline-flex; align-items: center; gap: 18px; padding: 0 36px; flex: none; white-space: nowrap; }
