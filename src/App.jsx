@@ -1548,8 +1548,22 @@ function BarakaDigitalHub() {
           .svc-grid { grid-template-columns:1fr !important; }
           .stat-grid { grid-template-columns:1fr 1fr !important; }
           .hero-h1 { font-size:2.4rem !important; }
-          .section-h2 { font-size:2rem !important; }
+          .section-h2 { font-size:1.8rem !important; }
           .typing-effect { animation: typing 3.2s steps(30,end) 0.15s forwards; }
+
+          /* Mobile marquee and logos: faster, smaller, visible */
+          .ani-marquee { animation-duration: 8s !important; }
+          .marquee-pill { font-size: 0.9rem !important; padding: 6px 8px !important; }
+          .logo-carousel { overflow: visible !important; padding: 12px 8px !important; }
+          .logo-track { animation-duration: 14s !important; }
+          .logo-item { min-width: 90px !important; padding: 8px 10px !important; min-height: 72px !important; }
+
+          /* Service card adjustments */
+          .svc-card { padding: 14px 12px !important; box-shadow: none !important; }
+          .svc-card h3 { font-size: 1rem !important; }
+
+          /* Reduce large hero spacing */
+          .impact-section, .section-tech-bg { padding: 40px 16px !important; }
         }
         @media(max-width:768px) {
           .hidden-mobile { display:none !important; }
