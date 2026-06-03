@@ -1447,10 +1447,10 @@ function BarakaDigitalHub() {
         .ani-marquee { animation: marquee 16s linear infinite; will-change: transform; }
         .marquee-outer { overflow: hidden; width: 100%; }
         .marquee-track { display: flex; gap: 48px; align-items: center; }
-        .marquee-item { display: inline-flex; flex: none; white-space: nowrap; margin-right: 12px; }
-        .marquee-pill { display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; background: rgba(255,255,255,0.08); padding: 10px 18px; color: #f8fafc; font-size: 0.95rem; font-weight: 700; letter-spacing: 0.04em; font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif; text-transform: none; box-shadow: 0 0 0 1px rgba(56,189,248,0.12), 0 0 22px rgba(56,189,248,0.08); transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease; text-align: center; }
-        .marquee-pill:hover { transform: translateY(-1px); background: rgba(56,189,248,0.12); box-shadow: 0 0 0 1px rgba(56,189,248,0.24), 0 0 28px rgba(56,189,248,0.20); }
-        .marquee-pill:not(:last-child) { margin-right: 10px; }
+        .marquee-item { display: inline-flex; flex: none; white-space: nowrap; margin-right: 32px; }
+        .marquee-pill { display: inline-block; color: #f8fafc; font-size: 1rem; font-weight: 700; letter-spacing: 0.08em; font-family: 'Orbitron', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; text-transform: uppercase; }
+        .marquee-pill:hover { }
+        .marquee-pill:not(:last-child) { }
         @keyframes typing { from { width: 0; } to { width: 100%; } }
         /* typing-effect now animates to container width so it wraps on small screens */
         .typing-effect { display: inline-block; overflow: hidden; white-space: normal; width: 0; animation: typing 2.6s steps(40,end) 0.15s forwards; }
