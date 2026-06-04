@@ -1791,12 +1791,12 @@ function BarakaDigitalHub() {
             </div>
           </section>
 
-          <section style={{ padding:"88px 24px", position:"relative", overflow:"hidden", backgroundImage:"url('/background1.png')", backgroundSize:"cover", backgroundRepeat:"no-repeat", backgroundPosition:"center center", backgroundColor: "#0f172a" }}>
+          <section style={{ padding:"88px 24px", position:"relative", overflow:"hidden", background: "transparent" }}>
             <div style={{ maxWidth:1100, margin:"0 auto", position:"relative", zIndex:1 }}>
               <FadeIn>
                 <div style={{ textAlign:"center", marginBottom:52 }}>
-                  <h2 className="section-h2 font-display" style={{ fontSize:"2.6rem", fontWeight:800, color:"white", letterSpacing:"-.03em", marginBottom:12 }}>Built for Reliable Scale</h2>
-                  <p style={{ color:"rgba(255,255,255,.85)", fontSize:"1rem", maxWidth:500, margin:"0 auto", lineHeight:1.75 }}>Structured infrastructure for production AI workflows and enterprise delivery.</p>
+                  <h2 className="section-h2 font-display" style={{ fontSize:"2.6rem", fontWeight:800, color:"#0f172a", letterSpacing:"-.03em", marginBottom:12 }}>Built for Reliable Scale</h2>
+                  <p style={{ color:"#334155", fontSize:"1rem", maxWidth:560, margin:"0 auto", lineHeight:1.6 }}>Enterprise-grade orchestration for production AI — secure data pipelines, deterministic QA, observability, automated model deployment and retraining, and auditable delivery at scale.</p>
                 </div>
               </FadeIn>
               <div style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3,1fr)", gap:14 }}>
