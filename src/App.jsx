@@ -1798,8 +1798,32 @@ function BarakaDigitalHub() {
             <div style={{ position: "absolute", bottom: "10%", right: "6%", width: isMobile ? 180 : 250, height: isMobile ? 180 : 250, borderRadius: "50%", background: "rgba(16,185,129,.10)", filter: "blur(32px)", pointerEvents: "none" }} />
             <div style={{ position: "absolute", top: "28%", right: "16%", width: isMobile ? 120 : 160, height: isMobile ? 120 : 160, borderRadius: "50%", background: "rgba(96,165,250,.06)", filter: "blur(24px)", pointerEvents: "none" }} />
             <div style={{ position: "absolute", inset: 0, background: "repeating-linear-gradient(135deg, transparent 0px, transparent 32px, rgba(14,165,233,.04) 32px, rgba(14,165,233,.04) 33px)", opacity: 0.22, pointerEvents: "none" }} />
-            <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", pointerEvents: "none", opacity: 0.14 }}>
-              <div style={{ fontSize: isMobile ? "4.2rem" : "7rem", fontWeight: 900, color: "#0f172a", letterSpacing: "0.22em", textTransform: "uppercase", fontFamily: "'Inter', sans-serif", transform: "translateY(-10px)", textShadow: "0 0 28px rgba(59,130,246,0.12)" }}>AI Design</div>
+            <div style={{ position: "absolute", inset: 0, pointerEvents: "none", zIndex: 0 }}>
+              <svg viewBox="0 0 1200 600" preserveAspectRatio="none" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", opacity: isMobile ? 0.10 : 0.16 }}>
+                <defs>
+                  <linearGradient id="g1" x1="0" x2="1">
+                    <stop offset="0%" stopColor="rgba(59,130,246,0.12)" />
+                    <stop offset="100%" stopColor="rgba(14,165,233,0.08)" />
+                  </linearGradient>
+                </defs>
+                <g fill="none" stroke="url(#g1)" strokeWidth="1">
+                  {new Array(10).fill(0).map((_,i) => (
+                    <line key={i} x1={0} y1={60 * i} x2={1200} y2={60 * i} strokeOpacity={0.06 + (i % 2 ? 0.02 : 0)} />
+                  ))}
+                </g>
+                <g fill="none" strokeOpacity="0.12">
+                  <path d="M120 480 C200 380 320 420 440 360 S760 280 880 320" stroke="rgba(59,130,246,0.08)" strokeWidth="1.25" />
+                  <path d="M60 140 L140 120 L200 160 L280 140" stroke="rgba(16,185,129,0.06)" strokeWidth="1" />
+                </g>
+                <g>
+                  <circle cx="220" cy="120" r="2.2" fill="rgba(59,130,246,0.14)" />
+                  <circle cx="880" cy="420" r="2.6" fill="rgba(16,185,129,0.12)" />
+                </g>
+              </svg>
+              <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", pointerEvents: "none" }}>
+                <div style={{ fontSize: isMobile ? "4.6rem" : "8rem", fontWeight: 900, color: "rgba(15,23,42,0.10)", letterSpacing: "0.22em", textTransform: "uppercase", fontFamily: "'Inter', sans-serif", transform: "translateY(-6px)", mixBlendMode: "overlay", WebkitTextStroke: "0.5px rgba(59,130,246,0.06)" }}>AI Design</div>
+              </div>
+              <div style={{ position: "absolute", top: "18%", left: "6%", width: isMobile ? 120 : 220, height: isMobile ? 120 : 220, borderRadius: 6, border: "1px solid rgba(14,165,233,0.06)", transform: "rotate(-18deg)", opacity: 0.6, pointerEvents: "none" }} />
             </div>
             <div style={{ maxWidth: 980, margin: "0 auto", position: "relative", zIndex: 1 }}>
               <FadeIn>
