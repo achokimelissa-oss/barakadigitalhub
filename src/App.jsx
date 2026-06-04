@@ -1733,7 +1733,7 @@ function BarakaDigitalHub() {
           </div>
 
 
-          <section className="section-tech-bg" style={{ padding:"88px 24px", background: "linear-gradient(180deg,#071022 0%,#0b1830 60%)", position:"relative", overflow:"hidden" }}>
+          <section className="section-tech-bg" style={{ padding:"88px 24px", background: "linear-gradient(180deg,#071022 0%,#0b1830 60%)", position:"relative", overflow:"visible" }}>
             <div style={{ position: "absolute", inset:0, background: "radial-gradient(circle at 14% 22%, rgba(155,109,255,0.12) 0%, transparent 36%), radial-gradient(circle at 86% 18%, rgba(16,185,129,0.10) 0%, transparent 34%), radial-gradient(circle at 52% 54%, rgba(59,130,246,0.08) 0%, transparent 38%)", pointerEvents: "none" }} />
             <div style={{ maxWidth:1280, margin:"0 auto", position: "relative", zIndex: 1 }}>
               <FadeIn>
@@ -1883,8 +1883,8 @@ function BarakaDigitalHub() {
             </div>
           </section>
 
-          <section style={{ padding: isMobile ? "56px 18px" : "88px 24px", background: "linear-gradient(180deg,#071022 0%,#0b1830 60%)", position: "relative", overflow: "hidden" }}>
-            <div style={{ position: "relative", maxWidth:1200, margin:"0 auto" }}>
+          <section style={{ padding: isMobile ? "64px 18px" : "88px 24px", background: "linear-gradient(180deg,#071022 0%,#0b1830 60%)", position: "relative", overflow: "visible" }}>
+            <div style={{ position: "relative", width: "100%", maxWidth:1200, margin:"0 auto" }}>
               <FadeIn>
                 <div style={{ textAlign:"center", marginBottom: isMobile ? 28 : 48 }}>
                   <div style={{ display:"inline-block", background:"rgba(255,255,255,0.04)", color:"#9be7ff", padding:"6px 16px", borderRadius:100, fontSize:".72rem", fontWeight:800, letterSpacing:".12em", textTransform:"uppercase", marginBottom:18, border:"1px solid rgba(155,231,255,.06)", fontFamily:"ui-monospace, 'Courier New', monospace" }}>BUILT FOR RELIABLE SCALE</div>
