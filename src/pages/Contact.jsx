@@ -33,7 +33,7 @@ function Contact() {
           </p>
           <address className="section-copy" style={{ marginTop: '1.5rem', color: '#334155', lineHeight: 1.8 }}>
             Email: <a href="mailto:projects@barakadigitalhub.com" style={{ color: '#1d4ed8', textDecoration: 'none' }}>projects@barakadigitalhub.com</a><br />
-            Phone: <a href="tel:+254769258118" style={{ color: '#1d4ed8', textDecoration: 'none' }}>+254 769 258 118</a><br />
+            Phone: <a href="tel:+254793842347" style={{ color: '#1d4ed8', textDecoration: 'none' }}>+254793842347</a><br />
             Location: Nairobi, Kenya
           </address>
         </div>
