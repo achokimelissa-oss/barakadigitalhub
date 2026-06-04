@@ -1801,9 +1801,9 @@ function BarakaDigitalHub() {
             <div style={{ maxWidth: 980, margin: "0 auto", position: "relative", zIndex: 1 }}>
               <FadeIn>
                 <div style={{ textAlign: "center", marginBottom: isMobile ? 28 : 44 }}>
-                  <div style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8, background: "rgba(59,130,246,.08)", border: "1px solid rgba(59,130,246,.18)", borderRadius: 999, padding: "8px 18px", marginBottom: 18, color: "#7dd3fc", fontSize: ".75rem", fontWeight: 700, letterSpacing: ".12em", textTransform: "uppercase", fontFamily: "ui-monospace, 'Courier New', monospace" }}>AI-NATIVE OPERATIONS</div>
-                  <h2 className="section-h2 font-display" style={{ fontSize: isMobile ? "2.2rem" : "2.8rem", fontWeight: 900, color: "#eef2ff", letterSpacing: "-.03em", marginBottom: 16 }}>Built for Reliable Scale</h2>
-                  <p style={{ color: "#cbd5e1", fontSize: isMobile ? ".98rem" : "1.05rem", maxWidth: 620, margin: "0 auto", lineHeight: 1.8 }}>Minimal AI infrastructure for production-ready delivery: secure ingestion, automated validation, and elastic pipeline orchestration that scales with mission-critical workloads.</p>
+                  <div style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8, background: "rgba(59,130,246,.12)", border: "1px solid rgba(59,130,246,.18)", borderRadius: 999, padding: "8px 18px", marginBottom: 18, color: "#0f172a", fontSize: ".75rem", fontWeight: 700, letterSpacing: ".12em", textTransform: "uppercase", fontFamily: "ui-monospace, 'Courier New', monospace" }}>Operations</div>
+                  <h2 className="section-h2 font-display" style={{ fontSize: isMobile ? "2.2rem" : "2.8rem", fontWeight: 900, color: "#0f172a", letterSpacing: "-.03em", marginBottom: 16 }}>Built for Reliable Scale</h2>
+                  <p style={{ color: "#475569", fontSize: isMobile ? ".98rem" : "1.05rem", maxWidth: 620, margin: "0 auto", lineHeight: 1.8 }}>Minimal AI infrastructure for production-ready delivery: secure ingestion, automated validation, and elastic pipeline orchestration that scales with mission-critical workloads.</p>
                 </div>
               </FadeIn>
               <FadeIn delay={0.08}>
