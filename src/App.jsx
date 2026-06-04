@@ -1820,10 +1820,17 @@ function BarakaDigitalHub() {
                   <circle cx="880" cy="420" r="2.6" fill="rgba(16,185,129,0.12)" />
                 </g>
               </svg>
-              <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", pointerEvents: "none" }}>
-                <div style={{ fontSize: isMobile ? "4.6rem" : "8rem", fontWeight: 900, color: "rgba(15,23,42,0.10)", letterSpacing: "0.22em", textTransform: "uppercase", fontFamily: "'Inter', sans-serif", transform: "translateY(-6px)", mixBlendMode: "overlay", WebkitTextStroke: "0.5px rgba(59,130,246,0.06)" }}>AI Design</div>
+              <div style={{ position: "absolute", top: isMobile ? "8%" : "10%", right: isMobile ? "6%" : "8%", width: isMobile ? 110 : 180, height: isMobile ? 110 : 180, opacity: 0.14, pointerEvents: "none" }}>
+                <svg viewBox="0 0 180 180" preserveAspectRatio="xMidYMid meet" style={{ width: "100%", height: "100%" }}>
+                  <g fill="none" stroke="rgba(59,130,246,0.12)" strokeWidth="1">
+                    <rect x="6" y="6" width="168" height="168" rx="8" strokeOpacity="0.06" />
+                    <path d="M18 90 L42 90 M90 18 L90 42 M138 90 L162 90 M90 138 L90 162" strokeOpacity="0.08" />
+                    <circle cx="48" cy="48" r="3" fill="rgba(16,185,129,0.10)" />
+                    <circle cx="132" cy="132" r="3" fill="rgba(59,130,246,0.10)" />
+                    <path d="M36 60 L60 36 L84 60" strokeOpacity="0.06" />
+                  </g>
+                </svg>
               </div>
-              <div style={{ position: "absolute", top: "18%", left: "6%", width: isMobile ? 120 : 220, height: isMobile ? 120 : 220, borderRadius: 6, border: "1px solid rgba(14,165,233,0.06)", transform: "rotate(-18deg)", opacity: 0.6, pointerEvents: "none" }} />
             </div>
             <div style={{ maxWidth: 980, margin: "0 auto", position: "relative", zIndex: 1 }}>
               <FadeIn>
