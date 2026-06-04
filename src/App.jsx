@@ -1798,15 +1798,15 @@ function BarakaDigitalHub() {
             <div style={{ position: "absolute", bottom: "10%", right: "6%", width: isMobile ? 180 : 250, height: isMobile ? 180 : 250, borderRadius: "50%", background: "rgba(16,185,129,.10)", filter: "blur(32px)", pointerEvents: "none" }} />
             <div style={{ position: "absolute", top: "28%", right: "16%", width: isMobile ? 120 : 160, height: isMobile ? 120 : 160, borderRadius: "50%", background: "rgba(96,165,250,.06)", filter: "blur(24px)", pointerEvents: "none" }} />
             <div style={{ position: "absolute", inset: 0, background: "repeating-linear-gradient(135deg, transparent 0px, transparent 32px, rgba(14,165,233,.04) 32px, rgba(14,165,233,.04) 33px)", opacity: 0.22, pointerEvents: "none" }} />
-            <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", pointerEvents: "none", opacity: 0.08 }}>
-              <div style={{ fontSize: isMobile ? "4.2rem" : "7rem", fontWeight: 900, color: "#0f172a", letterSpacing: "0.22em", textTransform: "uppercase", fontFamily: "'Inter', sans-serif", transform: "translateY(-10px)" }}>AI Design</div>
+            <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", pointerEvents: "none", opacity: 0.14 }}>
+              <div style={{ fontSize: isMobile ? "4.2rem" : "7rem", fontWeight: 900, color: "#0f172a", letterSpacing: "0.22em", textTransform: "uppercase", fontFamily: "'Inter', sans-serif", transform: "translateY(-10px)", textShadow: "0 0 28px rgba(59,130,246,0.12)" }}>AI Design</div>
             </div>
             <div style={{ maxWidth: 980, margin: "0 auto", position: "relative", zIndex: 1 }}>
               <FadeIn>
                 <div style={{ textAlign: "center", marginBottom: isMobile ? 28 : 44 }}>
                   <div style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8, background: "rgba(59,130,246,.12)", border: "1px solid rgba(59,130,246,.18)", borderRadius: 999, padding: "8px 18px", marginBottom: 18, color: "#0f172a", fontSize: ".75rem", fontWeight: 700, letterSpacing: ".12em", textTransform: "uppercase", fontFamily: "ui-monospace, 'Courier New', monospace" }}>Operations</div>
                   <h2 className="section-h2 font-display" style={{ fontSize: isMobile ? "2.2rem" : "2.8rem", fontWeight: 900, color: "#0f172a", letterSpacing: "-.03em", marginBottom: 16 }}>Built for Reliable Scale</h2>
-                  <p style={{ color: "#475569", fontSize: isMobile ? ".98rem" : "1.05rem", maxWidth: 620, margin: "0 auto", lineHeight: 1.8 }}>Minimal AI infrastructure for production-ready delivery: secure ingestion, automated validation, and elastic pipeline orchestration that scales with mission-critical workloads.</p>
+                  <p style={{ color: "#475569", fontSize: isMobile ? ".98rem" : "1.05rem", maxWidth: 620, margin: "0 auto", lineHeight: 1.8 }}>Baraka delivers managed digital operations from Nairobi with secure workflows, certified teams, and human-led QA. We convert data, content, and process work into predictable, production-ready delivery backed by transparency and social impact.</p>
                 </div>
               </FadeIn>
               <FadeIn delay={0.08}>
