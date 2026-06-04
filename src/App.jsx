@@ -1887,23 +1887,28 @@ function BarakaDigitalHub() {
                           <div style={{ width:8, height:8, borderRadius:"50%", background:"#22c55e", boxShadow:"0 0 12px #22c55e" }} />
                           <h2 className="font-display" style={{ fontSize:"1.4rem", fontWeight:800, color:"#f1f5f9", margin:0, letterSpacing:"-.02em" }}>Processing Pipeline</h2>
                         </div>
-                        {[
-                          { step: "Input", desc: "Requirements Analysis & Data Ingestion", icon: "→" },
-                          { step: "Learn", desc: "Workforce Calibration & Model Training", icon: "→" },
-                          { step: "Execute", desc: "Parallel Processing & Intelligent Routing", icon: "→" },
-                          { step: "Output", desc: "Quality Validation & Format Delivery", icon: "✓" }
-                        ].map((phase, i) => (
-                          <div key={i} style={{ display:"flex", gap:14, paddingBottom: i < 3 ? 20 : 0, marginBottom: i < 3 ? 12 : 0, position:"relative" }}>
-                            {i < 3 && <div style={{ position:"absolute", left:19, top:32, width:1.5, bottom:0, background:"linear-gradient(180deg, rgba(6,182,212,.3), transparent)" }} />}
-                            <div style={{ flexShrink:0, width:40, height:40, borderRadius:"6px", background: i % 2 === 0 ? "linear-gradient(135deg, rgba(6,182,212,.8), rgba(34,197,94,.8))" : "linear-gradient(135deg, rgba(168,85,247,.8), rgba(249,115,22,.8))", display:"flex", alignItems:"center", justifyContent:"center", fontFamily:"ui-monospace, 'Courier New', monospace", fontWeight:900, fontSize:11, color:"white", position:"relative", zIndex:1, border:"1px solid rgba(255,255,255,.2)" }}>
-                              <span>{phase.step.substring(0,1).toUpperCase()}</span>
-                            </div>
-                            <div style={{ paddingTop:2 }}>
-                              <p style={{ color:"#cbd5e1", fontSize: isMobile ? ".85rem" : ".9rem", lineHeight:1.6, fontWeight:700, margin:"0 0 2px 0" }}>{phase.step}</p>
-                              <p style={{ color:"#94a3b8", fontSize: isMobile ? ".75rem" : ".8rem", lineHeight:1.5, margin:0 }}>{phase.desc}</p>
-                            </div>
-                          </div>
-                        ))}
+                        <div style={{ display: isMobile ? "block" : "grid", gridTemplateColumns: isMobile ? undefined : "1fr 1fr", gap: 24 }}>
+                          {[
+                            { step: "Input", desc: "Requirements Analysis & Data Ingestion", icon: "→" },
+                            { step: "Learn", desc: "Workforce Calibration & Model Training", icon: "→" },
+                            { step: "Execute", desc: "Parallel Processing & Intelligent Routing", icon: "→" },
+                            { step: "Output", desc: "Quality Validation & Format Delivery", icon: "✓" }
+                          ].map((phase, i) => {
+                            const showLine = isMobile ? i < 3 : i < 2;
+                            return (
+                              <div key={i} style={{ display:"flex", gap:14, paddingBottom: showLine ? 20 : 0, marginBottom: showLine ? 12 : 0, position:"relative" }}>
+                                {showLine && <div style={{ position:"absolute", left:19, top:32, width:1.5, bottom:0, background:"linear-gradient(180deg, rgba(6,182,212,.3), transparent)" }} />}
+                                <div style={{ flexShrink:0, width:40, height:40, borderRadius:"6px", background: i % 2 === 0 ? "linear-gradient(135deg, rgba(6,182,212,.8), rgba(34,197,94,.8))" : "linear-gradient(135deg, rgba(168,85,247,.8), rgba(249,115,22,.8))", display:"flex", alignItems:"center", justifyContent:"center", fontFamily:"ui-monospace, 'Courier New', monospace", fontWeight:900, fontSize:11, color:"white", position:"relative", zIndex:1, border:"1px solid rgba(255,255,255,.2)" }}>
+                                  <span>{phase.step.substring(0,1).toUpperCase()}</span>
+                                </div>
+                                <div style={{ paddingTop:2 }}>
+                                  <p style={{ color:"#cbd5e1", fontSize: isMobile ? ".85rem" : ".9rem", lineHeight:1.6, fontWeight:700, margin:"0 0 2px 0" }}>{phase.step}</p>
+                                  <p style={{ color:"#94a3b8", fontSize: isMobile ? ".75rem" : ".8rem", lineHeight:1.5, margin:0 }}>{phase.desc}</p>
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
                       </div>
                       <a href="/workflow" onClick={(e) => { e.preventDefault(); navigate("workflow"); }} className="btn-primary" style={{ marginTop:28, display:"inline-flex", alignItems:"center", gap:8, fontWeight:700, fontSize:"0.85rem", fontFamily:"ui-monospace, 'Courier New', monospace", alignSelf:"flex-start", letterSpacing:".05em", textTransform:"uppercase" }}>
                         ▷ Execute Workflow <ArrowRight size={14} />
