@@ -1535,7 +1535,7 @@ function BarakaDigitalHub() {
         .nav-link:hover { color:#1d4ed8; }
         @media(max-width:1024px) {
           .hero-grid { grid-template-columns:1fr !important; }
-          .hero-right { display:none !important; }
+          .hero-right { display:block !important; }
           .stat-grid { grid-template-columns:repeat(2,1fr) !important; }
           .svc-grid { grid-template-columns:1fr 1fr !important; }
           .stats-band { grid-template-columns:repeat(2,1fr) !important; }
@@ -1733,22 +1733,23 @@ function BarakaDigitalHub() {
           </div>
 
 
-          <section className="section-tech-bg" style={{ padding:"88px 24px", backgroundColor:"#0f172a", backgroundImage:"url('/background2.jpg')", backgroundSize:"cover", backgroundRepeat:"no-repeat", backgroundPosition:"center center" }}>
-            <div style={{ maxWidth:1280, margin:"0 auto" }}>
+          <section className="section-tech-bg" style={{ padding:"88px 24px", background: "linear-gradient(180deg,#071022 0%,#0b1830 60%)", position:"relative", overflow:"hidden" }}>
+            <div style={{ position: "absolute", inset:0, background: "radial-gradient(circle at 14% 22%, rgba(155,109,255,0.12) 0%, transparent 36%), radial-gradient(circle at 86% 18%, rgba(16,185,129,0.10) 0%, transparent 34%), radial-gradient(circle at 52% 54%, rgba(59,130,246,0.08) 0%, transparent 38%)", pointerEvents: "none" }} />
+            <div style={{ maxWidth:1280, margin:"0 auto", position: "relative", zIndex: 1 }}>
               <FadeIn>
                 <div style={{ textAlign:"center", marginBottom:52 }}>
-                  <h2 className="section-h2 font-display" style={{ fontSize:"2.6rem", fontWeight:800, color:"#0f172a", letterSpacing:"-.03em", marginBottom:12 }}>Precision AI Services</h2>
-                  <p style={{ color:"#64748b", fontSize:"1rem", maxWidth:480, margin:"0 auto", lineHeight:1.75 }}>End-to-end data labeling and AI training built for production scale.</p>
+                  <h2 className="section-h2 font-display" style={{ fontSize:"2.6rem", fontWeight:800, color:"#e6f7ff", letterSpacing:"-.03em", marginBottom:12 }}>Precision AI Services</h2>
+                  <p style={{ color:"#9fb6c9", fontSize:"1rem", maxWidth:480, margin:"0 auto", lineHeight:1.75 }}>End-to-end data labeling and AI training built for production scale.</p>
                 </div>
               </FadeIn>
               <div className="svc-grid" style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3,1fr)", gap:16 }}>
                 {services.map((s,i)=>(
                   <FadeIn key={i} delay={i*.06}>
-                    <div className="svc-card" style={{ background:"rgba(255,255,255,.96)", border:"1px solid rgba(226,232,240,.7)", borderRadius:24, padding:"24px 22px", transition:"box-shadow .3s,transform .3s", cursor:"pointer", height:"100%", boxShadow:"0 24px 60px rgba(15,23,42,.08)" }} onClick={() => navigate("services")}>
+                    <div className="svc-card" style={{ background:"linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01))", border:"1px solid rgba(6,182,212,.08)", borderRadius:24, padding:"24px 22px", transition:"box-shadow .3s,transform .3s", cursor:"pointer", height:"100%", boxShadow:"0 18px 48px rgba(6,182,212,.06), inset 0 1px 0 rgba(255,255,255,.02)" }} onClick={() => navigate("services")}>
                       <div style={{ width:44, height:44, borderRadius:12, background:s.color, display:"flex", alignItems:"center", justifyContent:"center", color:"white", marginBottom:16 }}>{s.icon}</div>
-                      <h3 className="font-display" style={{ fontSize:"1rem", fontWeight:800, color:"#0f172a", marginBottom:10 }}>{s.title}</h3>
-                      <p style={{ fontSize:".9rem", color:"#475569", lineHeight:1.75, marginBottom:18 }}>{s.desc}</p>
-                      <ul style={{ margin:0, paddingLeft:18, color:"#475569", fontSize:"0.9rem", lineHeight:1.7 }}>
+                      <h3 className="font-display" style={{ fontSize:"1rem", fontWeight:800, color:"#e6f7ff", marginBottom:10 }}>{s.title}</h3>
+                      <p style={{ fontSize:".9rem", color:"#cbd5e1", lineHeight:1.75, marginBottom:18 }}>{s.desc}</p>
+                      <ul style={{ margin:0, paddingLeft:18, color:"#cbd5e1", fontSize:"0.9rem", lineHeight:1.7 }}>
                         {s.items.map((item,j)=>(
                           <li key={j} style={{ marginBottom: j < s.items.length - 1 ? 10 : 0 }}>{item}</li>
                         ))}
