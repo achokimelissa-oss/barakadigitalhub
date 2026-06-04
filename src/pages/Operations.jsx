@@ -50,17 +50,17 @@ function Operations() {
 
 			<section className="section-block section-ops" style={{ padding: "32px 20px" }}>
 				<div style={{ maxWidth: 1000, margin: "0 auto", display: "grid", gap: 16 }}>
-					<div style={{ background: "#fff", padding: 18, borderRadius: 10, boxShadow: "0 6px 18px rgba(15,23,42,0.06)" }}>
-						<h3 style={{ margin: 0 }}>Onboarding & Training</h3>
-						<p style={{ marginTop: 8, color: "#374151" }}>Rapidly onboard annotators with role-based training, clear guidelines, and sample validations.</p>
+					<div style={{ padding: 18, borderRadius: 10 }}>
+						<h3 style={{ margin: 0 }}>Onboarding & training</h3>
+						<p style={{ marginTop: 8, color: "#0f172a" }}>We quickly train and certify teams with clear instructions and simple tests.</p>
 					</div>
-					<div style={{ background: "#fff", padding: 18, borderRadius: 10, boxShadow: "0 6px 18px rgba(15,23,42,0.06)" }}>
-						<h3 style={{ margin: 0 }}>Quality Assurance</h3>
-						<p style={{ marginTop: 8, color: "#374151" }}>Multi-layered QA, consensus checks, and continuous monitoring to maintain high label accuracy.</p>
+					<div style={{ padding: 18, borderRadius: 10 }}>
+						<h3 style={{ margin: 0 }}>Quality checks</h3>
+						<p style={{ marginTop: 8, color: "#0f172a" }}>Checks at several stages keep labels accurate and consistent.</p>
 					</div>
-					<div style={{ background: "#fff", padding: 18, borderRadius: 10, boxShadow: "0 6px 18px rgba(15,23,42,0.06)" }}>
-						<h3 style={{ margin: 0 }}>Security & Compliance</h3>
-						<p style={{ marginTop: 8, color: "#374151" }}>Secure data handling, partitioned access, and compliance controls for sensitive projects.</p>
+					<div style={{ padding: 18, borderRadius: 10 }}>
+						<h3 style={{ margin: 0 }}>Security & compliance</h3>
+						<p style={{ marginTop: 8, color: "#0f172a" }}>We protect data with strict access controls and privacy rules.</p>
 					</div>
 				</div>
 			</section>
