@@ -1805,11 +1805,25 @@ function BarakaDigitalHub() {
                     <stop offset="0%" stopColor="rgba(59,130,246,0.12)" />
                     <stop offset="100%" stopColor="rgba(14,165,233,0.08)" />
                   </linearGradient>
+                  <pattern id="circuit" width="40" height="40" patternUnits="userSpaceOnUse">
+                    <rect width="40" height="40" fill="transparent" />
+                    <path d="M4 20 L18 20 M20 4 L20 18 M22 22 L36 22" stroke="rgba(59,130,246,0.12)" strokeWidth="1" strokeLinecap="round" />
+                    <circle cx="6" cy="6" r="1.5" fill="rgba(59,130,246,0.14)" />
+                    <circle cx="34" cy="34" r="1.5" fill="rgba(16,185,129,0.10)" />
+                  </pattern>
                 </defs>
+                <rect width="100%" height="100%" fill="url(#circuit)" opacity={isMobile ? 0.06 : 0.08} />
                 <g fill="none" stroke="url(#g1)" strokeWidth="1">
-                  {new Array(10).fill(0).map((_,i) => (
-                    <line key={i} x1={0} y1={60 * i} x2={1200} y2={60 * i} strokeOpacity={0.06 + (i % 2 ? 0.02 : 0)} />
-                  ))}
+                  <line x1={0} y1={0} x2={1200} y2={0} strokeOpacity={0.04} />
+                  <line x1={0} y1={60} x2={1200} y2={60} strokeOpacity={0.06} />
+                  <line x1={0} y1={120} x2={1200} y2={120} strokeOpacity={0.04} />
+                  <line x1={0} y1={180} x2={1200} y2={180} strokeOpacity={0.06} />
+                  <line x1={0} y1={240} x2={1200} y2={240} strokeOpacity={0.04} />
+                  <line x1={0} y1={300} x2={1200} y2={300} strokeOpacity={0.06} />
+                  <line x1={0} y1={360} x2={1200} y2={360} strokeOpacity={0.04} />
+                  <line x1={0} y1={420} x2={1200} y2={420} strokeOpacity={0.06} />
+                  <line x1={0} y1={480} x2={1200} y2={480} strokeOpacity={0.04} />
+                  <line x1={0} y1={540} x2={1200} y2={540} strokeOpacity={0.06} />
                 </g>
                 <g fill="none" strokeOpacity="0.12">
                   <path d="M120 480 C200 380 320 420 440 360 S760 280 880 320" stroke="rgba(59,130,246,0.08)" strokeWidth="1.25" />
