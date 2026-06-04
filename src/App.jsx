@@ -1791,7 +1791,7 @@ function BarakaDigitalHub() {
             </div>
           </section>
 
-          <section style={{ padding: isMobile ? "56px 18px" : "88px 24px", position:"relative", overflow:"hidden", background: "linear-gradient(135deg, #f0f7ff 0%, #e6f3ff 25%, #ecfdf5 50%, #e0f8f5 75%, #f0f4ff 100%)" }}>
+          <section style={{ padding: isMobile ? "56px 18px" : "88px 24px", position:"relative", overflow:"visible", background: "linear-gradient(135deg, #f0f7ff 0%, #e6f3ff 25%, #ecfdf5 50%, #e0f8f5 75%, #f0f4ff 100%)" }}>
             <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 20% 20%, rgba(59,130,246,.16), transparent 26%), radial-gradient(circle at 80% 18%, rgba(16,185,129,.12), transparent 22%), repeating-linear-gradient(90deg, transparent 0, transparent 120px, rgba(59,130,246,.06) 120px, rgba(59,130,246,.06) 121px), repeating-linear-gradient(0deg, transparent 0, transparent 120px, rgba(16,185,129,.05) 120px, rgba(16,185,129,.05) 121px)", opacity: 0.32, pointerEvents: "none" }} />
             <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 50% 18%, rgba(96,165,250,.06), transparent 24%), radial-gradient(circle at 52% 84%, rgba(16,185,129,.06), transparent 20%)", pointerEvents: "none" }} />
             <div style={{ position: "absolute", top: "12%", left: "10%", width: isMobile ? 200 : 280, height: isMobile ? 200 : 280, borderRadius: "50%", background: "rgba(96,165,250,.12)", filter: "blur(34px)", pointerEvents: "none" }} />
@@ -1893,7 +1893,7 @@ function BarakaDigitalHub() {
                 </div>
               </FadeIn>
               <FadeIn delay={0.08}>
-                <div style={{ background:"rgba(15,23,42,.8)", backdropFilter:"blur(10px)", borderRadius:20, border:"1px solid rgba(6,182,212,.2)", boxShadow:"0 0 40px rgba(6,182,212,.1), inset 0 1px 1px rgba(255,255,255,.05)", overflow:"hidden" }}>
+                <div style={{ background:"rgba(15,23,42,.8)", backdropFilter:"blur(10px)", borderRadius:20, border:"1px solid rgba(6,182,212,.2)", boxShadow:"0 0 40px rgba(6,182,212,.1), inset 0 1px 1px rgba(255,255,255,.05)", overflow:"visible" }}>
                   <div style={{ display:"grid", gridTemplateColumns: "1fr", gap:0 }}>
                     {/* Row 1 - Operations Data */}
                     <div style={{ padding: isMobile ? "32px 22px" : "42px 40px", borderBottom: "1px solid rgba(6,182,212,.1)" }}>

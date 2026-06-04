@@ -46,7 +46,7 @@ function Workflow() {
             <p style={{ color: "#9fb6c9", marginTop: 10, maxWidth: 820, marginLeft: "auto", marginRight: "auto" }}>Production-grade data pipelines with deterministic QA and elastic scaling.</p>
           </div>
 
-          <div style={{ background: "rgba(15,23,42,.9)", borderRadius: 16, padding: 0, overflow: "hidden" }}>
+          <div style={{ background: "rgba(15,23,42,.9)", borderRadius: 16, padding: 0, overflow: "visible" }}>
             <div style={{ borderBottom: "1px solid rgba(6,182,212,.08)", padding: isMobile ? "20px" : "36px 40px" }}>
               <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 18 }}>
                 <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#06b6d4", boxShadow: "0 0 12px #06b6d4" }} />
@@ -65,7 +65,7 @@ function Workflow() {
               <div style={{ marginTop: 18, fontSize: ".72rem", color: "#64748b" }}>* Timeline subject to scope and quality thresholds</div>
             </div>
 
-            <div style={{ padding: isMobile ? "20px" : "36px 40px", background: "linear-gradient(135deg, rgba(6,182,212,.03), rgba(34,197,94,.03))" }}>
+            <div style={{ padding: isMobile ? "20px" : "36px 40px", background: "linear-gradient(135deg, rgba(6,182,212,.03), rgba(34,197,94,.03))", minHeight: isMobile ? "auto" : undefined }}>
               <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 18 }}>
                 <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#22c55e", boxShadow: "0 0 12px #22c55e" }} />
                 <h3 style={{ margin: 0, fontSize: "1.15rem", color: "#f1f5f9" }}>Processing Pipeline</h3>
