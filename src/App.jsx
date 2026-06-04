@@ -1791,42 +1791,35 @@ function BarakaDigitalHub() {
             </div>
           </section>
 
-          <section style={{ padding:"88px 24px", position:"relative", overflow:"hidden", background: "transparent" }}>
-            <div style={{ maxWidth:1100, margin:"0 auto", position:"relative", zIndex:1 }}>
+          <section style={{ padding: isMobile ? "56px 18px" : "88px 24px", position:"relative", overflow:"hidden", background: "linear-gradient(180deg, #070b16 0%, #08182e 45%, #04111e 100%)" }}>
+            <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 20% 20%, rgba(59,130,246,.16), transparent 24%), radial-gradient(circle at 80% 18%, rgba(16,185,129,.12), transparent 20%)", pointerEvents: "none" }} />
+            <div style={{ position: "absolute", top: "12%", left: "8%", width: isMobile ? 200 : 320, height: isMobile ? 200 : 320, borderRadius: "50%", background: "rgba(59,130,246,.08)", filter: "blur(40px)", pointerEvents: "none" }} />
+            <div style={{ position: "absolute", bottom: "10%", right: "6%", width: isMobile ? 180 : 280, height: isMobile ? 180 : 280, borderRadius: "50%", background: "rgba(16,185,129,.06)", filter: "blur(36px)", pointerEvents: "none" }} />
+            <div style={{ maxWidth: 980, margin: "0 auto", position: "relative", zIndex: 1 }}>
               <FadeIn>
-                <div style={{ textAlign:"center", marginBottom:52 }}>
-                  <h2 className="section-h2 font-display" style={{ fontSize:"2.6rem", fontWeight:800, color:"#0f172a", letterSpacing:"-.03em", marginBottom:12 }}>Built for Reliable Scale</h2>
-                  <p style={{ color:"#334155", fontSize:"1rem", maxWidth:560, margin:"0 auto", lineHeight:1.6 }}>Enterprise-grade orchestration for production AI — secure data pipelines, deterministic QA, observability, automated model deployment and retraining, and auditable delivery at scale.</p>
+                <div style={{ textAlign: "center", marginBottom: isMobile ? 28 : 44 }}>
+                  <div style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8, background: "rgba(59,130,246,.08)", border: "1px solid rgba(59,130,246,.18)", borderRadius: 999, padding: "8px 18px", marginBottom: 18, color: "#7dd3fc", fontSize: ".75rem", fontWeight: 700, letterSpacing: ".12em", textTransform: "uppercase", fontFamily: "ui-monospace, 'Courier New', monospace" }}>AI-NATIVE OPERATIONS</div>
+                  <h2 className="section-h2 font-display" style={{ fontSize: isMobile ? "2.2rem" : "2.8rem", fontWeight: 900, color: "#eef2ff", letterSpacing: "-.03em", marginBottom: 16 }}>Built for Reliable Scale</h2>
+                  <p style={{ color: "#cbd5e1", fontSize: isMobile ? ".98rem" : "1.05rem", maxWidth: 620, margin: "0 auto", lineHeight: 1.8 }}>Minimal AI infrastructure for production-ready delivery: secure ingestion, automated validation, and elastic pipeline orchestration that scales with mission-critical workloads.</p>
                 </div>
               </FadeIn>
-              <div style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3,1fr)", gap:14 }}>
-                {[
-                  { icon:<Users size={18}/>, n:"80+", l:"Certified Contractors", d:"Workforce certified across annotation, NLP, audio, and BPO workflows." },
-                  { icon:<Shield size={18}/>, n:"100%", l:"QA Review", d:"Independent QA team reviews every deliverable before client submission." },
-                  { icon:<Zap size={18}/>, n:"5K+", l:"Hr/Week Capacity", d:"Production-scale volume based on project scope and timeline requirements." },
-                  { icon:<CheckCircle2 size={18}/>, n:"Cert.", l:"Structured Onboarding", d:"Task certification and calibration before any live project access." },
-                  { icon:<TrendingUp size={18}/>, n:"24/7", l:"Centralized Ops", d:"Managed operations, escalation handling, and daily progress reporting." },
-                  { icon:<Clock size={18}/>, n:"Long", l:"Production Support", d:"Built for enduring partnerships, not one-off batches." },
-                ].map((o,i)=>(
-                  <FadeIn key={i} delay={i*.06}>
-                    <div onClick={() => navigate("operations")} style={{ background:"rgba(255,255,255,.08)", border:"1px solid rgba(255,255,255,.12)", borderRadius:18, padding:"22px 20px", transition:"all .3s", cursor:"pointer" }}
-                      onMouseEnter={e=>{e.currentTarget.style.borderColor="rgba(29,78,216,.5)";e.currentTarget.style.background="rgba(255,255,255,.12)";}}
-                      onMouseLeave={e=>{e.currentTarget.style.borderColor="rgba(255,255,255,.12)";e.currentTarget.style.background="rgba(255,255,255,.08)";}}>
-                            <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom:14 }}>
-                              <div style={{ width:36, height:36, borderRadius:10, background:"linear-gradient(135deg,#1d4ed8,#0f9d68)", display:"flex", alignItems:"center", justifyContent:"center", color:"white" }}>{o.icon}</div>
-                              <div className="font-display" style={{ fontSize:"1.4rem", fontWeight:800, color:"#0f172a" }}>{o.n}</div>
-                            </div>
-                            <div style={{ fontSize:".88rem", fontWeight:700, color:"#0f172a", marginBottom:6 }}>{o.l}</div>
-                            <p style={{ fontSize:".8rem", color:"#475569", lineHeight:1.65 }}>{o.d}</p>
+              <FadeIn delay={0.08}>
+                <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3, minmax(0, 1fr))", gap: 18 }}>
+                  {[
+                    { title: "Secure data mesh", detail: "Encrypted ingestion, lineage, and role-based access for every dataset." },
+                    { title: "Automated QA gate", detail: "Deterministic checks & observability before every release." },
+                    { title: "Elastic execution", detail: "On-demand compute and workforce orchestration for fluctuating production loads." },
+                  ].map((item, idx) => (
+                    <div key={idx} style={{ background: "rgba(14, 25, 53, 0.72)", border: "1px solid rgba(96, 165, 250, 0.18)", backdropFilter: "blur(10px)", borderRadius: 22, padding: isMobile ? "22px 18px" : "28px 24px", minHeight: 170, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+                      <div>
+                        <div style={{ width: 40, height: 40, borderRadius: 14, display: "grid", placeItems: "center", background: "linear-gradient(135deg, rgba(59,130,246,.9), rgba(16,185,129,.9))", color: "white", marginBottom: 16, boxShadow: "0 18px 36px rgba(59,130,246,.16)" }}>
+                          <span style={{ fontSize: "1.1rem", fontWeight: 800 }}>{idx + 1}</span>
+                        </div>
+                        <h3 className="font-display" style={{ fontSize: "1.1rem", fontWeight: 800, color: "#eef2ff", margin: 0, marginBottom: 10 }}>{item.title}</h3>
+                        <p style={{ color: "#cbd5e1", fontSize: ".92rem", lineHeight: 1.75, margin: 0 }}>{item.detail}</p>
+                      </div>
                     </div>
-                  </FadeIn>
-                ))}
-              </div>
-              <FadeIn delay={0.15}>
-                <div style={{ textAlign:"center", marginTop:36 }}>
-                        <button onClick={() => navigate("operations")} className="btn-secondary">
-                          View full operations detail <ArrowRight size={15} />
-                        </button>
+                  ))}
                 </div>
               </FadeIn>
             </div>
