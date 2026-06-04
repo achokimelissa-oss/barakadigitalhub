@@ -1791,12 +1791,13 @@ function BarakaDigitalHub() {
             </div>
           </section>
 
-          <section style={{ padding: isMobile ? "56px 18px" : "88px 24px", position:"relative", overflow:"hidden", background: "linear-gradient(180deg, #0b2757 0%, #134183 45%, #0b314f 100%)" }}>
-            <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 20% 20%, rgba(59,130,246,.18), transparent 24%), radial-gradient(circle at 80% 18%, rgba(16,185,129,.16), transparent 20%), repeating-linear-gradient(90deg, transparent 0, transparent 120px, rgba(59,130,246,.08) 120px, rgba(59,130,246,.08) 121px), repeating-linear-gradient(0deg, transparent 0, transparent 120px, rgba(16,185,129,.06) 120px, rgba(16,185,129,.06) 121px)", opacity: 0.42, pointerEvents: "none" }} />
-            <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 50% 18%, rgba(96,165,250,.08), transparent 24%), radial-gradient(circle at 52% 84%, rgba(16,185,129,.08), transparent 20%)", pointerEvents: "none" }} />
-            <div style={{ position: "absolute", top: "12%", left: "8%", width: isMobile ? 220 : 320, height: isMobile ? 220 : 320, borderRadius: "50%", background: "rgba(96,165,250,.16)", filter: "blur(42px)", pointerEvents: "none" }} />
-            <div style={{ position: "absolute", bottom: "10%", right: "6%", width: isMobile ? 190 : 260, height: isMobile ? 190 : 260, borderRadius: "50%", background: "rgba(16,185,129,.12)", filter: "blur(38px)", pointerEvents: "none" }} />
-            <div style={{ position: "absolute", top: "30%", right: "18%", width: isMobile ? 120 : 180, height: isMobile ? 120 : 180, borderRadius: "50%", background: "rgba(96,165,250,.07)", filter: "blur(28px)", pointerEvents: "none" }} />
+          <section style={{ padding: isMobile ? "56px 18px" : "88px 24px", position:"relative", overflow:"hidden", background: "linear-gradient(135deg, #f0f7ff 0%, #e6f3ff 25%, #ecfdf5 50%, #e0f8f5 75%, #f0f4ff 100%)" }}>
+            <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 20% 20%, rgba(59,130,246,.16), transparent 26%), radial-gradient(circle at 80% 18%, rgba(16,185,129,.12), transparent 22%), repeating-linear-gradient(90deg, transparent 0, transparent 120px, rgba(59,130,246,.06) 120px, rgba(59,130,246,.06) 121px), repeating-linear-gradient(0deg, transparent 0, transparent 120px, rgba(16,185,129,.05) 120px, rgba(16,185,129,.05) 121px)", opacity: 0.32, pointerEvents: "none" }} />
+            <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 50% 18%, rgba(96,165,250,.06), transparent 24%), radial-gradient(circle at 52% 84%, rgba(16,185,129,.06), transparent 20%)", pointerEvents: "none" }} />
+            <div style={{ position: "absolute", top: "12%", left: "10%", width: isMobile ? 200 : 280, height: isMobile ? 200 : 280, borderRadius: "50%", background: "rgba(96,165,250,.12)", filter: "blur(34px)", pointerEvents: "none" }} />
+            <div style={{ position: "absolute", bottom: "10%", right: "6%", width: isMobile ? 180 : 250, height: isMobile ? 180 : 250, borderRadius: "50%", background: "rgba(16,185,129,.10)", filter: "blur(32px)", pointerEvents: "none" }} />
+            <div style={{ position: "absolute", top: "28%", right: "16%", width: isMobile ? 120 : 160, height: isMobile ? 120 : 160, borderRadius: "50%", background: "rgba(96,165,250,.06)", filter: "blur(24px)", pointerEvents: "none" }} />
+            <div style={{ position: "absolute", inset: 0, background: "repeating-linear-gradient(135deg, transparent 0px, transparent 32px, rgba(14,165,233,.04) 32px, rgba(14,165,233,.04) 33px)", opacity: 0.22, pointerEvents: "none" }} />
             <div style={{ maxWidth: 980, margin: "0 auto", position: "relative", zIndex: 1 }}>
               <FadeIn>
                 <div style={{ textAlign: "center", marginBottom: isMobile ? 28 : 44 }}>
