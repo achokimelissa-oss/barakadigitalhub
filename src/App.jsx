@@ -1812,21 +1812,21 @@ function BarakaDigitalHub() {
                     <div onClick={() => navigate("operations")} style={{ background:"rgba(255,255,255,.08)", border:"1px solid rgba(255,255,255,.12)", borderRadius:18, padding:"22px 20px", transition:"all .3s", cursor:"pointer" }}
                       onMouseEnter={e=>{e.currentTarget.style.borderColor="rgba(29,78,216,.5)";e.currentTarget.style.background="rgba(255,255,255,.12)";}}
                       onMouseLeave={e=>{e.currentTarget.style.borderColor="rgba(255,255,255,.12)";e.currentTarget.style.background="rgba(255,255,255,.08)";}}>
-                      <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom:14 }}>
-                        <div style={{ width:36, height:36, borderRadius:10, background:"linear-gradient(135deg,#1d4ed8,#0f9d68)", display:"flex", alignItems:"center", justifyContent:"center", color:"white" }}>{o.icon}</div>
-                        <div className="font-display" style={{ fontSize:"1.4rem", fontWeight:800, color:"white" }}>{o.n}</div>
-                      </div>
-                      <div style={{ fontSize:".88rem", fontWeight:700, color:"white", marginBottom:6 }}>{o.l}</div>
-                      <p style={{ fontSize:".8rem", color:"rgba(255,255,255,.78)", lineHeight:1.65 }}>{o.d}</p>
+                            <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom:14 }}>
+                              <div style={{ width:36, height:36, borderRadius:10, background:"linear-gradient(135deg,#1d4ed8,#0f9d68)", display:"flex", alignItems:"center", justifyContent:"center", color:"white" }}>{o.icon}</div>
+                              <div className="font-display" style={{ fontSize:"1.4rem", fontWeight:800, color:"#0f172a" }}>{o.n}</div>
+                            </div>
+                            <div style={{ fontSize:".88rem", fontWeight:700, color:"#0f172a", marginBottom:6 }}>{o.l}</div>
+                            <p style={{ fontSize:".8rem", color:"#475569", lineHeight:1.65 }}>{o.d}</p>
                     </div>
                   </FadeIn>
                 ))}
               </div>
               <FadeIn delay={0.15}>
                 <div style={{ textAlign:"center", marginTop:36 }}>
-                  <button onClick={() => navigate("operations")} style={{ display:"inline-flex", alignItems:"center", gap:8, background:"rgba(255,255,255,.07)", border:"1px solid rgba(255,255,255,.12)", borderRadius:12, padding:"13px 24px", color:"white", fontWeight:600, fontSize:".88rem", cursor:"pointer", fontFamily:"inherit" }}>
-                    View full operations detail <ArrowRight size={15} />
-                  </button>
+                        <button onClick={() => navigate("operations")} className="btn-secondary">
+                          View full operations detail <ArrowRight size={15} />
+                        </button>
                 </div>
               </FadeIn>
             </div>
