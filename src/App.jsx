@@ -1739,7 +1739,7 @@ function BarakaDigitalHub() {
               <FadeIn>
                 <div style={{ textAlign:"center", marginBottom:52 }}>
                   <h2 className="section-h2 font-display" style={{ fontSize:"2.6rem", fontWeight:800, color:"#e6f7ff", letterSpacing:"-.03em", marginBottom:12 }}>Precision AI Services</h2>
-                  <p style={{ color:"#9fb6c9", fontSize:"1rem", maxWidth:480, margin:"0 auto", lineHeight:1.75 }}>End-to-end data labeling and AI training built for production scale.</p>
+                  <p style={{ color:"#9fb6c9", fontSize:"1rem", maxWidth:480, margin:"0 auto", lineHeight:1.75 }}>Baraka Digital Hub delivers end-to-end AI data services with Nairobi-based teams, production-grade quality, and a social impact mission built into every workflow.</p>
                 </div>
               </FadeIn>
               <div className="svc-grid" style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3,1fr)", gap:16 }}>
@@ -1773,7 +1773,7 @@ function BarakaDigitalHub() {
               <FadeIn>
                 <div style={{ textAlign: "center", marginBottom: isMobile ? 32 : 52 }}>
                   <h2 className="section-h2 font-display" style={{ fontSize: "2.6rem", fontWeight: 800, color: "#0f172a", letterSpacing: "-.03em", marginBottom: 12 }}>Trusted tools and delivery partners</h2>
-                  <p style={{ color: "#64748b", fontSize: "1rem", maxWidth: 520, margin: "0 auto", lineHeight: 1.75 }}>Platforms and systems we use to keep work organized, secure, and ready for scale.</p>
+                  <p style={{ color: "#64748b", fontSize: "1rem", maxWidth: 520, margin: "0 auto", lineHeight: 1.75 }}>Baraka Digital Hub pairs disciplined tooling with secure processes so our Nairobi delivery teams can produce reliable, compliant data operations for global clients.</p>
                 </div>
               </FadeIn>
               <FadeIn delay={0.08}>
@@ -1844,7 +1844,7 @@ function BarakaDigitalHub() {
                 <div style={{ textAlign:"center", marginBottom: isMobile ? 28 : 48 }}>
                   <div style={{ display:"inline-block", background:"rgba(255,255,255,0.04)", color:"#9be7ff", padding:"6px 16px", borderRadius:100, fontSize:".72rem", fontWeight:800, letterSpacing:".12em", textTransform:"uppercase", marginBottom:18, border:"1px solid rgba(155,231,255,.06)", fontFamily:"ui-monospace, 'Courier New', monospace" }}>BUILT FOR RELIABLE SCALE</div>
                   <h2 className="font-display" style={{ fontSize:"2.6rem", fontWeight:900, color:"#e6f7ff", letterSpacing:"-.02em", marginBottom:10 }}>How It Works</h2>
-                  <p style={{ color:"#9fb6c9", fontSize:"1rem", maxWidth:680, margin:"0 auto", lineHeight:1.75, fontFamily:"'Segoe UI', Arial, sans-serif" }}>Production-grade data pipelines with real-time monitoring, deterministic quality assurance, and elastic scaling built for long-term reliability.</p>
+                  <p style={{ color:"#9fb6c9", fontSize:"1rem", maxWidth:680, margin:"0 auto", lineHeight:1.75, fontFamily:"'Segoe UI', Arial, sans-serif" }}>Baraka Digital Hub turns AI workloads into dependable delivery through human-led workflows, quality guardrails, and local operational expertise rooted in impact and accountability.</p>
                 </div>
               </FadeIn>
               <FadeIn delay={0.08}>
@@ -1969,7 +1969,7 @@ function BarakaDigitalHub() {
                   <span style={{ fontSize:".72rem", fontWeight:700, color:"#1d4ed8", letterSpacing:".06em", textTransform:"uppercase" }}>Start Today</span>
                 </div>
                 <h2 className="font-display" style={{ fontSize:"2.8rem", fontWeight:800, color:"#0f172a", letterSpacing:"-.03em", marginBottom:16, lineHeight:1.1 }}>Ready to Launch a Pilot?</h2>
-                <p style={{ color:"#64748b", fontSize:"1rem", lineHeight:1.8, marginBottom:36 }}>Start with a small batch. Our team will annotate your dataset, deliver results with full quality reporting, and show you exactly how we operate — before you commit to scale.</p>
+                <p style={{ color:"#64748b", fontSize:"1rem", lineHeight:1.8, marginBottom:36 }}>Begin with a pilot that proves how Baraka Digital Hub combines trained teams, secure workflows, and transparent reporting to deliver quality results before you scale.</p>
                 <div style={{ display:"flex", gap:14, justifyContent:"center", flexWrap:"wrap", marginBottom:32 }}>
                   <button onClick={() => navigate("pilot")} className="btn-primary" style={{ fontSize:"1rem", padding:"15px 30px" }}>Launch Pilot Program <ArrowRight size={17} /></button>
                   <button onClick={() => navigate("workflow")} className="btn-secondary" style={{ fontSize:"1rem", padding:"15px 30px" }}>View Our Process</button>
