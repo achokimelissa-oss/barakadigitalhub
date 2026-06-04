@@ -369,14 +369,17 @@ const NAV_LOGO = [
     { name: "Light AI", src: "/tools/66dac501a8e9a90495970876_Logo%20dark-short.png" }
   ];
 
-  const useInView = (threshold = 0.5) => {
+  const useInView = (threshold = 0.1, rootMargin = "0px 0px -20% 0px") => {
     const ref = useRef(null);
     const [inView, setInView] = useState(false);
     useEffect(() => {
-      const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) setInView(true); }, { threshold });
+      const obs = new IntersectionObserver(
+        ([entry]) => { if (entry.isIntersecting) setInView(true); },
+        { threshold, rootMargin }
+      );
       if (ref.current) obs.observe(ref.current);
       return () => obs.disconnect();
-    }, [threshold]);
+    }, [threshold, rootMargin]);
     return [ref, inView];
   };
 
