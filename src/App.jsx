@@ -1798,6 +1798,9 @@ function BarakaDigitalHub() {
             <div style={{ position: "absolute", bottom: "10%", right: "6%", width: isMobile ? 180 : 250, height: isMobile ? 180 : 250, borderRadius: "50%", background: "rgba(16,185,129,.10)", filter: "blur(32px)", pointerEvents: "none" }} />
             <div style={{ position: "absolute", top: "28%", right: "16%", width: isMobile ? 120 : 160, height: isMobile ? 120 : 160, borderRadius: "50%", background: "rgba(96,165,250,.06)", filter: "blur(24px)", pointerEvents: "none" }} />
             <div style={{ position: "absolute", inset: 0, background: "repeating-linear-gradient(135deg, transparent 0px, transparent 32px, rgba(14,165,233,.04) 32px, rgba(14,165,233,.04) 33px)", opacity: 0.22, pointerEvents: "none" }} />
+            <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", pointerEvents: "none", opacity: 0.08 }}>
+              <div style={{ fontSize: isMobile ? "4.2rem" : "7rem", fontWeight: 900, color: "#0f172a", letterSpacing: "0.22em", textTransform: "uppercase", fontFamily: "'Inter', sans-serif", transform: "translateY(-10px)" }}>AI Design</div>
+            </div>
             <div style={{ maxWidth: 980, margin: "0 auto", position: "relative", zIndex: 1 }}>
               <FadeIn>
                 <div style={{ textAlign: "center", marginBottom: isMobile ? 28 : 44 }}>
