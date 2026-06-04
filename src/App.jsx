@@ -1791,12 +1791,12 @@ function BarakaDigitalHub() {
             </div>
           </section>
 
-          <section style={{ padding: isMobile ? "56px 18px" : "88px 24px", position:"relative", overflow:"hidden", background: "linear-gradient(180deg, #070b16 0%, #08182e 45%, #04111e 100%)" }}>
-            <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 20% 20%, rgba(59,130,246,.16), transparent 24%), radial-gradient(circle at 80% 18%, rgba(16,185,129,.12), transparent 20%), repeating-linear-gradient(90deg, transparent 0, transparent 120px, rgba(59,130,246,.05) 120px, rgba(59,130,246,.05) 121px), repeating-linear-gradient(0deg, transparent 0, transparent 120px, rgba(16,185,129,.04) 120px, rgba(16,185,129,.04) 121px)", opacity: 0.34, pointerEvents: "none" }} />
-            <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 50% 18%, rgba(96,165,250,.04), transparent 26%), radial-gradient(circle at 52% 84%, rgba(16,185,129,.05), transparent 22%)", pointerEvents: "none" }} />
-            <div style={{ position: "absolute", top: "12%", left: "8%", width: isMobile ? 180 : 280, height: isMobile ? 180 : 280, borderRadius: "50%", background: "rgba(59,130,246,.08)", filter: "blur(38px)", pointerEvents: "none" }} />
-            <div style={{ position: "absolute", bottom: "10%", right: "6%", width: isMobile ? 160 : 240, height: isMobile ? 160 : 240, borderRadius: "50%", background: "rgba(16,185,129,.06)", filter: "blur(34px)", pointerEvents: "none" }} />
-            <div style={{ position: "absolute", top: "30%", right: "18%", width: isMobile ? 120 : 180, height: isMobile ? 120 : 180, borderRadius: "50%", background: "rgba(59,130,246,.05)", filter: "blur(24px)", pointerEvents: "none" }} />
+          <section style={{ padding: isMobile ? "56px 18px" : "88px 24px", position:"relative", overflow:"hidden", background: "linear-gradient(180deg, #0b2757 0%, #134183 45%, #0b314f 100%)" }}>
+            <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 20% 20%, rgba(59,130,246,.18), transparent 24%), radial-gradient(circle at 80% 18%, rgba(16,185,129,.16), transparent 20%), repeating-linear-gradient(90deg, transparent 0, transparent 120px, rgba(59,130,246,.08) 120px, rgba(59,130,246,.08) 121px), repeating-linear-gradient(0deg, transparent 0, transparent 120px, rgba(16,185,129,.06) 120px, rgba(16,185,129,.06) 121px)", opacity: 0.42, pointerEvents: "none" }} />
+            <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 50% 18%, rgba(96,165,250,.08), transparent 24%), radial-gradient(circle at 52% 84%, rgba(16,185,129,.08), transparent 20%)", pointerEvents: "none" }} />
+            <div style={{ position: "absolute", top: "12%", left: "8%", width: isMobile ? 220 : 320, height: isMobile ? 220 : 320, borderRadius: "50%", background: "rgba(96,165,250,.16)", filter: "blur(42px)", pointerEvents: "none" }} />
+            <div style={{ position: "absolute", bottom: "10%", right: "6%", width: isMobile ? 190 : 260, height: isMobile ? 190 : 260, borderRadius: "50%", background: "rgba(16,185,129,.12)", filter: "blur(38px)", pointerEvents: "none" }} />
+            <div style={{ position: "absolute", top: "30%", right: "18%", width: isMobile ? 120 : 180, height: isMobile ? 120 : 180, borderRadius: "50%", background: "rgba(96,165,250,.07)", filter: "blur(28px)", pointerEvents: "none" }} />
             <div style={{ maxWidth: 980, margin: "0 auto", position: "relative", zIndex: 1 }}>
               <FadeIn>
                 <div style={{ textAlign: "center", marginBottom: isMobile ? 28 : 44 }}>
@@ -1812,16 +1812,23 @@ function BarakaDigitalHub() {
                     { title: "Automated QA gate", detail: "Deterministic checks & observability before every release." },
                     { title: "Elastic execution", detail: "On-demand compute and workforce orchestration for fluctuating production loads." },
                   ].map((item, idx) => (
-                    <div key={idx} style={{ background: "rgba(14, 25, 53, 0.72)", border: "1px solid rgba(96, 165, 250, 0.18)", backdropFilter: "blur(10px)", borderRadius: 22, padding: isMobile ? "22px 18px" : "28px 24px", minHeight: 170, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+                    <div key={idx} style={{ background: "rgba(14, 25, 53, 0.82)", border: "1px solid rgba(96, 165, 250, 0.24)", backdropFilter: "blur(10px)", borderRadius: 22, padding: isMobile ? "22px 18px" : "28px 24px", minHeight: 170, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                       <div>
-                        <div style={{ width: 40, height: 40, borderRadius: 14, display: "grid", placeItems: "center", background: "linear-gradient(135deg, rgba(59,130,246,.9), rgba(16,185,129,.9))", color: "white", marginBottom: 16, boxShadow: "0 18px 36px rgba(59,130,246,.16)" }}>
+                        <div style={{ width: 40, height: 40, borderRadius: 14, display: "grid", placeItems: "center", background: "linear-gradient(135deg, rgba(59,130,246,.95), rgba(16,185,129,.95))", color: "white", marginBottom: 16, boxShadow: "0 20px 40px rgba(59,130,246,.22)" }}>
                           <span style={{ fontSize: "1.1rem", fontWeight: 800 }}>{idx + 1}</span>
                         </div>
                         <h3 className="font-display" style={{ fontSize: "1.1rem", fontWeight: 800, color: "#eef2ff", margin: 0, marginBottom: 10 }}>{item.title}</h3>
-                        <p style={{ color: "#cbd5e1", fontSize: ".92rem", lineHeight: 1.75, margin: 0 }}>{item.detail}</p>
+                        <p style={{ color: "#dbeafe", fontSize: ".92rem", lineHeight: 1.75, margin: 0 }}>{item.detail}</p>
                       </div>
                     </div>
                   ))}
+                </div>
+              </FadeIn>
+              <FadeIn delay={0.15}>
+                <div style={{ textAlign: "center", marginTop: 34 }}>
+                  <button onClick={() => navigate("operations")} className="btn-secondary" style={{ background: "linear-gradient(135deg, #38bdf8, #0ea5e9)", color: "white", padding: isMobile ? "14px 22px" : "16px 28px" }}>
+                    Explore operations <ArrowRight size={16} />
+                  </button>
                 </div>
               </FadeIn>
             </div>
