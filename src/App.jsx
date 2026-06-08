@@ -1247,6 +1247,68 @@ const PilotPage = ({ goBack, setPage, navigate, isMobile }) => {
 const ContactPage = ({ goBack, isMobile }) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
+  useEffect(() => {
+    const stylesheets = [
+      "https://cdn.jotfor.ms/stylebuilder/static/form-common.css?v=aa2d234",
+      "https://cdn.jotfor.ms/themes/CSS/5e6b428acc8c4e222d1beb91.css?v=4.1.67550&themeRevisionID=65660e4b326633110492e01a",
+      "https://cdn.jotfor.ms/s/static/f3be05c1446/css/styles/payment/payment_styles.css?4.1.67550",
+      "https://cdn.jotfor.ms/s/static/f3be05c1446/css/styles/payment/payment_feature.css?4.1.67550"
+    ];
+
+    stylesheets.forEach(href => {
+      if (!document.querySelector(`link[href*="${href.split('?')[0]}"]`)) {
+        const link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.type = "text/css";
+        link.href = href;
+        document.head.appendChild(link);
+      }
+    });
+
+    const scripts = [
+      "https://cdn.jotfor.ms/s/static/f3be05c1446/static/prototype.forms.js",
+      "https://cdn.jotfor.ms/s/static/f3be05c1446/static/jotform.forms.js",
+      "https://cdn.jotfor.ms/s/umd/f3be05c1446/for-aria-notify-polyfill.js",
+      "https://cdn.jotfor.ms/s/umd/f3be05c1446/for-form-branding-footer.js",
+      "https://cdn.jotfor.ms/s/static/f3be05c1446/js/vendor/smoothscroll.min.js",
+      "https://cdn.jotfor.ms/s/static/f3be05c1446/js/errorNavigation.js"
+    ];
+
+    scripts.forEach(src => {
+      if (!document.querySelector(`script[src="${src}"]`)) {
+        const script = document.createElement("script");
+        script.src = src;
+        script.type = "text/javascript";
+        script.async = true;
+        if (src.includes("branding-footer")) {
+          script.defer = true;
+        }
+        document.head.appendChild(script);
+      }
+    });
+
+    window.enableEventObserver = true;
+    window.enableRenameUploadFile = false;
+    window.enableDateFieldSelectInputs = false;
+    window.CDN = "https://cdn.jotfor.ms/";
+    window.umdRootPath = "https://cdn.jotfor.ms/s/umd/f3be05c1446/";
+    window.staticRootPath = "https://cdn.jotfor.ms/s/static/f3be05c1446/";
+
+    if (window.JotForm) {
+      window.JotForm.showJotFormPowered = "new_footer";
+      window.JotForm.poweredByText = "Powered by Jotform";
+    }
+
+    const container = document.getElementById("jotform-container");
+    if (container && !document.querySelector("script[src='https://form.jotform.com/jsform/261576400274556']")) {
+      const embedScript = document.createElement("script");
+      embedScript.src = "https://form.jotform.com/jsform/261576400274556";
+      embedScript.type = "text/javascript";
+      embedScript.async = true;
+      container.appendChild(embedScript);
+    }
+  }, []);
+
   return (
     <div style={{ minHeight: "100vh", background: "linear-gradient(160deg,#f8fbff 0%,#eef9ff 50%,#f0fdf4 100%)", paddingTop: 80 }}>
       <PageHelmet title="Contact Us | Baraka Digital Hub" description="Get in touch with the Baraka Digital Hub team for AI training data, annotation services, or partnership enquiries." />
@@ -1263,29 +1325,7 @@ const ContactPage = ({ goBack, isMobile }) => {
             <p style={{ color: "#64748b", fontSize: "1.05rem", lineHeight: 1.75, maxWidth: 760, marginBottom: 24 }}>
               Use the form below to share a project inquiry, pilot request, or general partnership question. We’ll respond quickly with details on next steps.
             </p>
-            <form action="https://formbold.com/s/oPqrV" method="POST" style={{ display: "grid", gap: 18 }}>
-              <div style={{ display: "grid", gap: 14, gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr" }}>
-                <label style={{ display: "flex", flexDirection: "column", gap: 8, fontSize: "0.95rem", color: "#334155" }}>
-                  Your name
-                  <input type="text" name="name" required style={{ width: "100%", padding: "14px 16px", borderRadius: 14, border: "1px solid #cbd5e1", background: "#f8fafc", fontSize: "0.95rem" }} />
-                </label>
-                <label style={{ display: "flex", flexDirection: "column", gap: 8, fontSize: "0.95rem", color: "#334155" }}>
-                  Your email
-                  <input type="email" name="email" required style={{ width: "100%", padding: "14px 16px", borderRadius: 14, border: "1px solid #cbd5e1", background: "#f8fafc", fontSize: "0.95rem" }} />
-                </label>
-              </div>
-              <label style={{ display: "flex", flexDirection: "column", gap: 8, fontSize: "0.95rem", color: "#334155" }}>
-                Subject
-                <input type="text" name="subject" required style={{ width: "100%", padding: "14px 16px", borderRadius: 14, border: "1px solid #cbd5e1", background: "#f8fafc", fontSize: "0.95rem" }} />
-              </label>
-              <label style={{ display: "flex", flexDirection: "column", gap: 8, fontSize: "0.95rem", color: "#334155" }}>
-                Message
-                <textarea name="message" required rows={8} style={{ width: "100%", padding: "14px 16px", borderRadius: 14, border: "1px solid #cbd5e1", background: "#f8fafc", fontSize: "0.95rem", minHeight: 180 }} />
-              </label>
-              <button type="submit" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 10, padding: "16px 24px", borderRadius: 14, border: "none", background: "#1d4ed8", color: "white", fontWeight: 700, cursor: "pointer" }}>
-                Send message
-              </button>
-            </form>
+            <div id="jotform-container" />
           </div>
         </FadeIn>
       </div>
