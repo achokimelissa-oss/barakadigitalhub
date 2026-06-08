@@ -16,7 +16,10 @@ function Pilot() {
           <p className="highlight-pill">Pilot Program</p>
           <h1>Start a pilot with us</h1>
           <p>
-            Validate workflows, measure quality, and receive sample deliverables within 48 hours. Pilots include full QA reporting and recommendations for scaling.
+            Pilot Execution validates accuracy and throughput under live conditions before full production ramp. Expect sample deliverables (often within 48 hours), full QA reporting, error logs, and clear recommendations for scaling.
+          </p>
+          <p>
+            Pilots confirm tooling, SOPs, and performance targets while giving you direct access to the Project Manager and QA insights required to make a confident deployment decision.
           </p>
         </div>
       </section>

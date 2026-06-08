@@ -18,8 +18,39 @@ function About() {
             We build reliable digital services and sustainable employment pathways for young people from underserved communities.
           </p>
           <p>
-            Baraka Digital Hub is a digital services organization based in Nairobi, Kenya. We deliver AI data services, web development, and design to clients worldwide—built and delivered by talented youth from underserved communities.
+            Baraka Digital Hub is a Nairobi-based AI data operations and BPO partner. We deliver AI data services, human-in-the-loop AI, transcription, and back-office operations to clients worldwide—built and delivered by talented youth from underserved communities.
           </p>
+        </div>
+      </section>
+
+      <section className="section-block">
+        <div className="text-block">
+          <h2>Our operational promise</h2>
+          <p>
+            A partner, not a platform — you receive a named Project Manager, dedicated Team Leads, and a fixed workforce cohort trained specifically on your requirements. The same people, the same standards, every engagement.
+          </p>
+          <div style={{ display: 'grid', gap: 12, marginTop: 12, maxWidth: 880 }}>
+            <article className="about-card">
+              <h3>100% independent QA on every output</h3>
+              <p>
+                We review everything — not a sample, not a spot-check. Our QA team is structurally separated from production with no shared management, ensuring objectivity and consistent, auditable results.
+              </p>
+            </article>
+
+            <article className="about-card">
+              <h3>Transparent operations</h3>
+              <p>
+                Daily progress reports, error logs, IAA scores, and direct access to your Project Manager keep operations visible and accountable. You always know what was reviewed and what was corrected.
+              </p>
+            </article>
+
+            <article className="about-card">
+              <h3>Cost advantage and impact</h3>
+              <p>
+                We deliver enterprise-grade operational quality at Nairobi rates with a documented cost advantage compared to many US and EU providers. Social impact is built into every contract — a large portion of client spend flows directly to youth wages and community programmes.
+              </p>
+            </article>
+          </div>
         </div>
       </section>
 

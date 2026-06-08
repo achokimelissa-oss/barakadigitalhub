@@ -366,17 +366,20 @@ const NAV_LOGO = [
     { name: "AWS Transcribe", src: "https://cdn.simpleicons.org/amazonaws/ffffff" },
     { name: "Hugging Face", src: "https://cdn.simpleicons.org/huggingface/ffffff" },
     { name: "Databricks", src: "https://cdn.simpleicons.org/databricks/ffffff" },
-    { name: "Central Dark", src: "/tools/66dac501a8e9a90495970876_Logo%20dark-short.png" }
+    { name: "Light AI", src: "/tools/66dac501a8e9a90495970876_Logo%20dark-short.png" }
   ];
 
-  const useInView = (threshold = 0.5) => {
+  const useInView = (threshold = 0.1, rootMargin = "0px 0px -20% 0px") => {
     const ref = useRef(null);
     const [inView, setInView] = useState(false);
     useEffect(() => {
-      const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) setInView(true); }, { threshold });
+      const obs = new IntersectionObserver(
+        ([entry]) => { if (entry.isIntersecting) setInView(true); },
+        { threshold, rootMargin }
+      );
       if (ref.current) obs.observe(ref.current);
       return () => obs.disconnect();
-    }, [threshold]);
+    }, [threshold, rootMargin]);
     return [ref, inView];
   };
 
@@ -487,16 +490,16 @@ const ServicesPage = ({ goBack, navigate, isMobile }) => {
 const OperationsPage = ({ goBack, isMobile }) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   const pillars = [
-    { n: "80+", label: "Trained Taskers", color: "#1d4ed8", desc: "Our workforce is trained across multiple annotation verticals including computer vision, NLP, audio, transcription, and BPO. Each tasker completes role-specific certification before working on client projects. Teams are flexible: our pool of 80+ taskers can be scaled up or reduced to match client requirements.", bullets: ["Role-specific onboarding tracks", "Certification before live project access", "Organized by vertical (CV, NLP, audio, etc.)", "Mentorship from senior annotators"] },
+    { n: "80+", label: "Certified Contractors", color: "#1d4ed8", desc: "Our workforce is trained across multiple annotation verticals including computer vision, NLP, audio, transcription, and BPO. Each contractor completes role-specific certification before working on client projects. Teams are flexible: our pool of 80+ contractors can be scaled up or reduced to match client requirements.", bullets: ["Role-specific onboarding tracks", "Certification before live project access", "Organized by vertical (CV, NLP, audio, etc.)", "Mentorship from senior specialists"] },
     { n: "100%", label: "QA Review Rate", color: "#0f9d68", desc: "Unlike many providers who spot-check 10–20%, Baraka runs 100% first-pass QA on standard projects. Our QA team is completely independent from annotation.", bullets: ["Independent QA team, not the same annotators", "First-pass error rate tracked per tasker", "Client-visible daily quality reports", "Inter-annotator agreement scoring available"] },
-    { n: "48hr", label: "Turnaround Guarantee", color: "#0ea5e9", desc: "Most standard batches (up to 25K items) are delivered within 48 hours of task assignment. Rush timelines are supported with expanded shift coverage.", bullets: ["25K image batches in 48 hours", "Rush delivery with expanded coverage", "Proactive delay communication", "Daily progress updates to clients"] },
+    { n: "5K+", label: "Hr/Week Capacity", color: "#0ea5e9", desc: "Structured production capacity across all services. Volume scales with project needs via shift-based scheduling and contractor pool expansion. Onboarding and delivery timelines are determined per project scope.", bullets: ["Flexible volume scaling via shift coverage", "Rush capacity with expanded staffing", "Capacity planning with dedicated ops team", "Daily progress and capacity utilization reports"] },
     { n: "Cert.", label: "Structured Onboarding", color: "#7c3aed", desc: "Every new engagement begins with a structured onboarding phase: task certification, calibration exercises, and pilot delivery before full-scale launch.", bullets: ["Task-specific certification tests", "Calibration batch before full launch", "Ongoing recalibration for long-running projects", "Documentation of guidelines and edge cases"] },
     { n: "24/7", label: "Centralized Operations", color: "#d97706", desc: "Baraka's operations team manages scheduling, escalations, communication, and reporting across all active projects. Clients have a single point of contact.", bullets: ["Single client-side point of contact", "Escalation protocols for complex edge cases", "Shift-based scheduling for coverage", "Consolidated reporting dashboard"] },
     { n: "Long", label: "Production-Grade Partnerships", color: "#dc2626", desc: "We are built for long-term engagements, not one-off batches. Our infrastructure supports ongoing annotation pipelines and multi-month production contracts.", bullets: ["Month-over-month consistency tracking", "Volume ramp plans for growing pipelines", "SLA-based delivery commitments", "Dedicated team assignment for continuity"] },
   ];
   return (
     <div style={{ minHeight: "100vh", background: "linear-gradient(160deg,#f8fbff 0%,#eef9ff 50%,#f0fdf4 100%)", paddingTop: 80 }}>
-      <PageHelmet title="Operations | Baraka Digital Hub" description="Enterprise-ready operations infrastructure: 80+ certified taskers, 100% QA review, 48-hour turnaround from Nairobi." robots="noindex,follow" canonical="/" />
+      <PageHelmet title="Operations | Baraka Digital Hub" description="Enterprise-ready operations infrastructure: 80+ certified contractors, 100% QA review, 5K+ Hr/week capacity from Nairobi." robots="noindex,follow" canonical="/" />
       <div style={{ maxWidth: 1100, margin: "0 auto", padding: "48px 24px" }}>
         <button onClick={goBack} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", cursor: "pointer", color: "#1d4ed8", fontWeight: 600, fontSize: "0.9rem", marginBottom: 32, fontFamily: "inherit" }}>
           <ChevronLeft size={18} /> Back to Home
@@ -541,78 +544,47 @@ const OperationsPage = ({ goBack, isMobile }) => {
 const WorkflowPage = ({ goBack, setPage, isMobile }) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   const overview = [
-    { title: "Strategic scoping", text: "Define dataset scope, quality standards, tooling, and delivery expectations before work begins.", accent: "#1d4ed8" },
-    { title: "Pilot validation", text: "Validate quality and edge-case handling before scaling.", accent: "#0f9d68" },
-    { title: "Production execution", text: "Execute work in structured batches with transparent tracking and reporting.", accent: "#1d4ed8" },
-    { title: "QA & support", text: "Deliver verified outcomes with first-pass review, reporting, and continued support.", accent: "#0f9d68" }
+    { title: "Discovery & Planning", text: "Define scope, quality standards, tooling, and delivery expectations before any live work begins.", accent: "#1d4ed8" },
+    { title: "Team Training & Certification", text: "Onboard and certify the production team on project standards and tooling before pilot execution.", accent: "#0f9d68" },
+    { title: "Pilot Execution", text: "Run a controlled pilot batch to validate the process, capture edge cases, and refine quality before scaling.", accent: "#1d4ed8" },
+    { title: "Review & Production Roadmap", text: "Assess results, refine workflows, and map the next phase for repeatable production.", accent: "#0f9d68" }
   ];
   const steps = [
     {
       n: 1,
-      title: "Project Scoping & Requirement Alignment",
-      desc: "We align on scope, workflows, quality standards, tooling, and delivery expectations before production begins.",
-      chips: ["Workflow discovery", "Taxonomy review", "Security alignment", "Tool setup", "SLA confirmation", "Production planning"],
+      title: "Discovery & Planning",
+      desc: "We align on scope, workflows, quality criteria, tooling, and delivery expectations before building the production model.",
+      chips: ["Workflow discovery", "Taxonomy review", "Tool evaluation", "SLA alignment", "Production planning"],
+      details: ["Dataset scoping", "Guideline definition", "Security review", "QA criteria", "Risk assessment"],
       color: "#0f9d68",
-      banner: "Applies across annotation, transcription, OCR, content moderation, and digital operations."
+      banner: "A shared plan upfront prevents rework and keeps the team focused on the right outcomes."
     },
     {
       n: 2,
-      title: "Pilot Batch, Edge Cases & Calibration",
-      desc: "A pilot batch validates readiness, identifies edge cases, and calibrates the process before full deployment.",
-      chips: ["Pilot batch", "QA benchmarking", "Client feedback", "Guideline refinement", "Workflow recalibration"],
-      details: ["Partial visibility", "Occlusions", "Low-quality audio", "Accents", "Handwritten text", "Motion blur", "Low-light imagery", "Overlapping entities", "Ambiguous classes", "Multi-language transcription", "OCR anomalies", "Sensitive escalation"],
+      title: "Team Training & Certification",
+      desc: "Our specialists are trained and certified to your exact standards before any live work begins.",
+      chips: ["Role-specific training", "Certification tests", "Calibration exercises", "Tool practice", "Quality benchmarking"],
+      details: ["Project-specific onboarding", "Guideline drills", "Sample review", "Accuracy standards", "Certification reporting"],
       color: "#0f9d68",
-      banner: "We prove the process on the toughest cases before scaling to production."
+      banner: "Training and certification happen before execution, not after."
     },
     {
       n: 3,
-      title: "Workforce Deployment & Training",
-      desc: "We deploy specialized teams, onboard securely, and train every tasker to the project’s exact standards.",
-      chips: ["AI annotators", "Transcription specialists", "QA reviewers", "OCR operators", "Moderation teams", "Supervisors"],
-      details: ["Secure onboarding", "Tool training", "Monitoring", "Escalation", "Compliance"],
+      title: "Pilot Execution",
+      desc: "A pilot batch validates accuracy, process flow, and edge-case handling under live conditions.",
+      chips: ["Pilot batch", "QA benchmarking", "Edge-case identification", "Client feedback", "Workflow recalibration"],
+      details: ["Live sample review", "Data quality checks", "Throughput assessment", "Issue resolution", "Pilot reporting"],
       color: "#0f9d68",
-      banner: "Team structure is chosen for each service type, complexity, and turnaround requirement."
+      banner: "Proof the process with real work before scaling into full production."
     },
     {
       n: 4,
-      title: "Production & Task Execution",
-      desc: "Tasks are run in balanced production batches with transparent progress tracking and operational reporting.",
-      chips: ["Batch allocation", "Throughput tracking", "Daily reporting", "Workflow balancing", "Escalation handling"],
-      details: ["Bounding box annotation", "Polygon segmentation", "NLP labeling", "Audio transcription", "OCR digitization", "Lead gen", "Content moderation"],
+      title: "Performance Review & Production Roadmap",
+      desc: "We review results, refine the process, and build a production roadmap for reliable scale.",
+      chips: ["Performance review", "Quality metrics", "Roadmap planning", "Capacity assessment", "Scale recommendations"],
+      details: ["Deliverable analytics", "Process improvements", "Risk mitigation", "Capacity planning", "Ongoing support plan"],
       color: "#0f9d68",
-      banner: "Our execution model supports AI data, transcription, OCR, and digital operations workloads."
-    },
-    {
-      n: 5,
-      title: "100% First-Pass QA Review",
-      desc: "Every deliverable goes through first-pass review for accuracy, consistency, and guideline compliance.",
-      chips: ["Accuracy validation", "Format checks", "Compliance review", "Edge-case validation", "Revalidation"],
-      color: "#0f9d68",
-      banner: "Quality is embedded into the delivery pipeline, not added afterward."
-    },
-    {
-      n: 6,
-      title: "Error Logging & Continuous Recalibration",
-      desc: "Errors are logged, categorized, and used to refine workflows, training, and quality controls.",
-      chips: ["Error tracking", "Feedback loops", "Retraining", "Optimization", "Guideline updates"],
-      color: "#0f9d68",
-      banner: "Continuous improvement is built into every production cycle."
-    },
-    {
-      n: 7,
-      title: "Final Validation, Reporting & Delivery",
-      desc: "Final verification is completed before secure export and handoff, with analytics and reports included.",
-      chips: ["Datasets", "Transcripts", "Documents", "QA reports", "Analytics", "Secure transfer"],
-      color: "#0f9d68",
-      banner: "Delivery is complete when the data and the narrative both meet expectations."
-    },
-    {
-      n: 8,
-      title: "Post-Delivery Support & Scaling",
-      desc: "We remain available for revisions, scaling, and long-term operational support.",
-      chips: ["Revisions", "Additional rounds", "Ongoing support", "Workforce scaling", "Partnerships"],
-      color: "#0f9d68",
-      banner: "Ongoing collaboration keeps your operation steady and scalable."
+      banner: "This phase turns pilot learnings into a repeatable, production-ready roadmap."
     }
   ];
   return (
@@ -941,7 +913,7 @@ const PrivacyPage = ({ goBack, isMobile }) => {
                   "All staff sign NDAs before accessing any client data",
                   "Locked workstations during all client work sessions",
                   "No personal devices permitted in project areas",
-                  "Managed company email accounts for all taskers",
+                  "Managed company email accounts for all contractors",
                   "Role-based access controls — only assigned personnel access project data",
                   "Client data deleted upon project completion"
                 ].map((item, index) => (
@@ -1231,7 +1203,7 @@ const PilotPage = ({ goBack, setPage, navigate, isMobile }) => {
         <FadeIn delay={0.08}>
           <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr 1fr", gap: 12, marginBottom: 36 }}>
             {[
-              { icon: "⚡", title: "Fast Turnaround", desc: "Results returned within 48 hours of project kickoff" },
+              { icon: "⚡", title: "Flexible Timelines", desc: "Delivery timelines determined per project scope with dedicated ops support" },
               { icon: "🔍", title: "Full QA Report", desc: "100% reviewed with per-task accuracy metrics included" },
               { icon: "🤝", title: "No Commitment", desc: "Pilot deliverables have no obligation to continue at scale" },
             ].map((c, i) => (
@@ -1398,12 +1370,39 @@ function BarakaDigitalHub() {
   }, []);
 
   const services = [
-    { icon: <Globe size={20} />, title: "Computer Vision Annotation", color: "#1d4ed8" },
-    { icon: <Brain size={20} />, title: "NLP & Text Processing", color: "#7c3aed" },
-    { icon: <Mic size={20} />, title: "Audio & Speech Processing", color: "#0891b2" },
-    { icon: <Cpu size={20} />, title: "LLM Training & RLHF", color: "#059669" },
-    { icon: <CheckCircle2 size={20} />, title: "Transcription & QA", color: "#dc2626" },
-    { icon: <Headphones size={20} />, title: "BPO & Virtual Assistance", color: "#d97706" },
+    {
+      icon: <Globe size={20} />,
+      title: "AI Data Services",
+      color: "#1d4ed8",
+      desc: "Modality-specialized annotation and data operations that turn raw inputs into machine-learning-ready datasets.",
+      items: [
+        "Computer Vision Annotation – bounding boxes, segmentation, pose estimation, tracking",
+        "Language AI / NLP – NER, intent labeling, text classification, QA generation, document review",
+        "Audio & Speech Processing – transcription, diarization, audio tagging, captioning, transcription QA",
+      ],
+    },
+    {
+      icon: <Brain size={20} />,
+      title: "Human-in-the-Loop AI",
+      color: "#7c3aed",
+      desc: "Human evaluation and review workflows for RLHF, model output quality, and content safety.",
+      items: [
+        "LLM Training & RLHF – preference ranking, instruction evaluation, safety review, prompt refinement",
+        "Model Output Review – accuracy, safety, tone, policy compliance, benchmark dataset creation",
+        "Content Moderation – text, image, and video review, harm classification, policy enforcement",
+      ],
+    },
+    {
+      icon: <Headphones size={20} />,
+      title: "BPO & Back-Office Services",
+      color: "#d97706",
+      desc: "Structured enterprise support for data entry, research, virtual assistance, and customer support.",
+      items: [
+        "Data Entry & Processing – high-volume entry, document extraction, form completion, CRM updates",
+        "Research & Virtual Assistance – web research, lead generation, competitive analysis, administrative support",
+        "Customer & Email Support – ticket triage, query handling, escalation management, response drafting",
+      ],
+    },
   ];
 
   const navLinks = [
@@ -1418,10 +1417,16 @@ function BarakaDigitalHub() {
   const TOOL_LOGOS = [
     { name: "ClickUp", src: "/tools/ClickUP_Logo.jpg" },
     { name: "Slack", src: "/tools/Slack-logo.png" },
-    { name: "Image A", src: "/tools/images.png" },
-    { name: "Image B", src: "/tools/images%20(1).png" },
-    { name: "Image C", src: "/tools/images%20(2).png" },
-    { name: "Image D", src: "/tools/images%20(3).png" },
+    { name: "Databricks", src: "/tools/images.png" },
+    { name: "Google Speech-to-Text", src: "/tools/images (1).png" },
+    { name: "OpenAI Whisper", src: "/tools/images (2).png" },
+    { name: "Doccano", src: "/tools/images (3).png" },
+    { name: "SuperAnnotate", src: "/tools/images (4).png" },
+    { name: "Encord", src: "/tools/images (6).png" },
+    { name: "Scale AI", src: "/tools/images (7).png" },
+    { name: "CVAT", src: "/tools/images (5).png" },
+    { name: "Labelbox", src: "/tools/images (8).png" },
+    { name: "Light AI", src: "/tools/66dac501a8e9a90495970876_Logo dark-short.png" },
   ];
 
   return (
@@ -1442,12 +1447,20 @@ function BarakaDigitalHub() {
         @keyframes floatB { 0%,100%{transform:translateY(0) rotate(-2deg)} 50%{transform:translateY(-8px) rotate(2deg)} }
         @keyframes pulse-slow { 0%,100%{opacity:1} 50%{opacity:.4} }
         @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
-        .ani-marquee { animation: marquee 28s linear infinite; will-change: transform; }
+        .ani-marquee { animation: marquee 16s linear infinite; will-change: transform; }
+        @media(max-width:560px) {
+          .ani-marquee { animation-duration: 8s !important; }
+          .logo-track { animation-duration: 14s !important; }
+          .logo-carousel { overflow: visible !important; }
+          .logo-item { min-width: 90px !important; padding: 10px 12px !important; }
+          .marquee-pill { font-size: 0.9rem !important; }
+        }
         .marquee-outer { overflow: hidden; width: 100%; }
-        .marquee-track { display: flex; gap: 56px; align-items: center; }
-        .marquee-item { display: inline-flex; align-items: center; gap: 18px; padding: 0 36px; flex: none; white-space: nowrap; }
-        .marquee-item .marquee-title { font-size: 0.95rem; font-weight: 700; color: #e6f7ff; letter-spacing: 0.06em; font-family: 'Orbitron', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; }
-        .marquee-item .marquee-text { font-size: 0.88rem; color: #b6c7d8; max-width: 900px; display: inline-block; line-height: 1.5; white-space: nowrap; }
+        .marquee-track { display: flex; gap: 48px; align-items: center; }
+        .marquee-item { display: inline-flex; flex: none; white-space: nowrap; margin-right: 32px; }
+        .marquee-pill { display: inline-block; color: #f8fafc; font-size: 1rem; font-weight: 600; letter-spacing: 0.02em; font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-transform: none; }
+        .marquee-pill:hover { }
+        .marquee-pill:not(:last-child) { }
         @keyframes typing { from { width: 0; } to { width: 100%; } }
         /* typing-effect now animates to container width so it wraps on small screens */
         .typing-effect { display: inline-block; overflow: hidden; white-space: normal; width: 0; animation: typing 2.6s steps(40,end) 0.15s forwards; }
@@ -1478,17 +1491,18 @@ function BarakaDigitalHub() {
         .impact-card { background: rgba(255,255,255,.94); border: 1px solid rgba(59,130,246,.16); }
         @keyframes tech-bg-glow { 0%,100% { background-position: 12% 18%, 88% 24%, 52% 58%; } 50% { background-position: 18% 12%, 82% 28%, 48% 62%; } }
         @keyframes tech-bg-stripes { 0%,100% { transform: translateY(0); opacity: 0; } 50% { transform: translateY(8px); opacity: 0; } }
-        .btn-primary { display:inline-flex;align-items:center;gap:8px;background:#1d4ed8;color:white;padding:14px 28px;border-radius:12px;font-weight:700;font-size:.95rem;text-decoration:none;box-shadow:0 4px 12px rgba(29,78,216,.2);transition:transform .2s,box-shadow .2s,background .2s;border:none;cursor:pointer;font-family:'Segoe UI', Arial, sans-serif; }
-        .btn-primary:hover { transform:translateY(-2px);box-shadow:0 8px 20px rgba(29,78,216,.3);background:#1e40af; }
+        .btn-primary { display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#1d4ed8,#06b6d4);color:white;padding:16px 30px;border-radius:999px;font-weight:800;font-size:1rem;text-decoration:none;box-shadow:0 18px 40px rgba(29,78,216,.18),0 0 0 1px rgba(255,255,255,.08);transition:transform .22s,box-shadow .22s,background .22s;outline:none;border:none;cursor:pointer;font-family:'Segoe UI', Arial, sans-serif; }
+        .btn-primary:hover { transform:translateY(-2px);box-shadow:0 24px 50px rgba(29,78,216,.28),0 0 0 1px rgba(255,255,255,.18);background:linear-gradient(135deg,#2563eb,#0f9d58); }
         /* logo carousel */
-        .logo-carousel { background: linear-gradient(180deg,#071022 0%, #081426 100%); border-radius: 16px; padding: 20px 12px; margin-top: 28px; }
-        .logo-track { display:flex; gap:36px; align-items:center; width:max-content; animation: marquee-logos 22s linear infinite; }
-        .logo-item { flex: none; display:inline-flex; align-items:center; justify-content:center; padding: 8px 12px; border-radius: 8px; background: rgba(255,255,255,0.02); }
-        .logo-item img { height:40px; width:auto; object-fit:contain; filter:brightness(1) saturate(.6); }
+        .logo-carousel { overflow: hidden; background: linear-gradient(180deg,#f8fbff 0%, #e9f1ff 50%, #edf7ff 100%); border-radius: 24px; padding: 24px 16px; margin-top: 28px; border: 1px solid rgba(15,23,42,.08); box-shadow: 0 24px 80px rgba(15,23,42,.08); }
+        .logo-track { display:flex; gap:24px; align-items:center; width:max-content; animation: marquee-logos 28s linear infinite; }
+        .logo-item { flex: none; display:inline-flex; flex-direction: column; align-items:center; justify-content:center; gap: 10px; padding: 18px 20px; min-width: 140px; min-height: 104px; border-radius: 18px; background: rgba(255,255,255,0.95); border: 1px solid rgba(15,23,42,.08); box-shadow: 0 18px 40px rgba(15,23,42,.08); }
+        .logo-item img { max-height: 44px; max-width: 140px; width: auto; height: auto; object-fit: contain; filter: none; }
+        .logo-item span { color: #0f172a; font-size: .86rem; font-weight: 700; text-align: center; white-space: nowrap; }
         .logo-carousel:hover .logo-track { animation-play-state: paused; }
         @keyframes marquee-logos { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-        .btn-secondary { display:inline-flex;align-items:center;gap:8px;background:#f59e0b;color:white;padding:14px 28px;border-radius:12px;font-weight:700;font-size:.95rem;text-decoration:none;border:none;transition:background .2s,transform .2s,box-shadow .2s;cursor:pointer;font-family:'Segoe UI', Arial, sans-serif; }
-        .btn-secondary:hover { background:#d97706;transform:translateY(-2px);box-shadow:0 4px 12px rgba(245,158,11,.3); }
+        .btn-secondary { display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#0f9d68,#06b6d4);color:white;padding:16px 30px;border-radius:999px;font-weight:700;font-size:1rem;text-decoration:none;border:none;transition:transform .22s,box-shadow .22s,background .22s;cursor:pointer;font-family:'Segoe UI', Arial, sans-serif;box-shadow:0 18px 36px rgba(16,185,129,.18); }
+        .btn-secondary:hover { background:linear-gradient(135deg,#14b8a6,#0ea5e9);transform:translateY(-2px);box-shadow:0 22px 44px rgba(16,185,129,.28); }
         h1:not(.hero-h1) { color: #0f172a; font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !important; font-size: clamp(2rem, 2.3vw, 2.4rem) !important; font-weight: 700 !important; letter-spacing: -0.02em; line-height: 1.25; margin-bottom: 0.6em; }
         h2 { color: #0f172a; font-family: 'Georgia', 'Times New Roman', serif !important; font-size: clamp(1.55rem, 1.9vw, 2rem) !important; font-weight: 700 !important; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 0.55em; }
         h3 { color: #0f172a; font-family: 'Georgia', 'Times New Roman', serif !important; font-size: clamp(1.15rem, 1.4vw, 1.4rem) !important; font-weight: 700 !important; letter-spacing: -0.01em; line-height: 1.3; margin-bottom: 0.5em; }
@@ -1524,7 +1538,7 @@ function BarakaDigitalHub() {
         .nav-link:hover { color:#1d4ed8; }
         @media(max-width:1024px) {
           .hero-grid { grid-template-columns:1fr !important; }
-          .hero-right { display:none !important; }
+          .hero-right { display:block !important; }
           .stat-grid { grid-template-columns:repeat(2,1fr) !important; }
           .svc-grid { grid-template-columns:1fr 1fr !important; }
           .stats-band { grid-template-columns:repeat(2,1fr) !important; }
@@ -1537,8 +1551,22 @@ function BarakaDigitalHub() {
           .svc-grid { grid-template-columns:1fr !important; }
           .stat-grid { grid-template-columns:1fr 1fr !important; }
           .hero-h1 { font-size:2.4rem !important; }
-          .section-h2 { font-size:2rem !important; }
+          .section-h2 { font-size:1.8rem !important; }
           .typing-effect { animation: typing 3.2s steps(30,end) 0.15s forwards; }
+
+          /* Mobile marquee and logos: faster, smaller, visible */
+          .ani-marquee { animation-duration: 8s !important; }
+          .marquee-pill { font-size: 0.9rem !important; padding: 6px 8px !important; }
+          .logo-carousel { overflow: visible !important; padding: 12px 8px !important; }
+          .logo-track { animation-duration: 14s !important; }
+          .logo-item { min-width: 90px !important; padding: 8px 10px !important; min-height: 72px !important; }
+
+          /* Service card adjustments */
+          .svc-card { padding: 14px 12px !important; box-shadow: none !important; }
+          .svc-card h3 { font-size: 1rem !important; }
+
+          /* Reduce large hero spacing */
+          .impact-section, .section-tech-bg { padding: 40px 16px !important; }
         }
         @media(max-width:768px) {
           .hidden-mobile { display:none !important; }
@@ -1603,11 +1631,11 @@ function BarakaDigitalHub() {
                     <span style={{ background:"linear-gradient(90deg,#1d4ed8,#06b6d4,#0f9d68)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", backgroundClip:"text", fontWeight:900 }}>Built for Scale</span>
                   </h1>
                   <div style={{ display:"flex", gap:12, flexWrap:"wrap", marginBottom:36 }}>
-                    <button onClick={() => navigate("pilot")} className="btn-primary">Start Pilot Program <ArrowRight size={17} /></button>
-                    <button onClick={() => navigate("services")} className="btn-secondary">Explore Services</button>
+                    <button type="button" onClick={() => navigate("pilot")} className="btn-primary">Start Pilot Program <ArrowRight size={17} /></button>
+                    <button type="button" onClick={() => navigate("services")} className="btn-secondary">Explore Services</button>
                   </div>
                   <div className="stat-grid" style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3,1fr)", gap:10 }}>
-                    {[{v:"80+",l:"Taskers"},{v:"<4hr",l:"Response"},{v:"48 hours",l:"Turnaround"}].map((s,i)=>(
+                    {[{v:"80+",l:"Contractors"},{v:"<4hr",l:"Response"},{v:"5K+ Hr",l:"Weekly Capacity"}].map((s,i)=>(
                       <div key={i} style={{ background:"rgba(255,255,255,.8)", backdropFilter:"blur(12px)", border:"1px solid rgba(255,255,255,.9)", borderRadius:14, padding:"13px 10px", boxShadow:"0 2px 12px rgba(0,0,0,.04)", textAlign:"center" }}>
                         <div className="font-display" style={{ fontSize:"1.5rem", fontWeight:800, color:"#0f172a" }}>{s.v}</div>
                         <div style={{ fontSize:".72rem", color:"#94a3b8", marginTop:2, fontWeight:500 }}>{s.l}</div>
@@ -1660,34 +1688,47 @@ function BarakaDigitalHub() {
             <div className="marquee-outer">
               <div className="ani-marquee" style={{ display:"flex", alignItems:"center", width:"200%" }}>
                 {[
-                  { title: "Computer Vision:", items: "Bounding boxes • Segmentation • Pose estimation • Image tagging • Video tracking • 3D point clouds" },
-                  { title: "Natural Language (NLP):", items: "Named entity recognition (NER) • Sentiment analysis • Intent classification • Dialogue labeling • QA generation • Document indexing" },
-                  { title: "Speech & Audio:", items: "Transcription • Speaker diarization • Audio tagging • Accent labeling • Subtitle generation • Speech QA" },
-                  { title: "LLM & RLHF:", items: "Preference ranking • Instruction evaluation • Safety review • Hallucination detection • Prompt refinement" },
-                  { title: "Data Operations:", items: "Cleaning • Transformation • Label correction • Dataset formatting • Enrichment • QA pipelines" },
-                  { title: "BPO & Support:", items: "Data entry • Web research • CRM management • Email support • Lead generation • Document processing" },
-                ].map((t,i)=> (
-                  <div key={`group1-${i}`} className="marquee-track" aria-hidden="false">
-                    <div className="marquee-item">
-                      <span className="marquee-title">{t.title}</span>
-                      <span className="marquee-text">{t.items}</span>
-                    </div>
+                  "Bounding Box Annotation",
+                  "Semantic Segmentation",
+                  "Video Annotation",
+                  "Text Annotation",
+                  "Named Entity Recognition (NER)",
+                  "Prompt Evaluation",
+                  "RLHF Support",
+                  "Transcription",
+                  "Speech Annotation",
+                  "AI Model Evaluation",
+                  "Data Validation",
+                  "Quality Auditing",
+                  "Data Entry",
+                  "Document Processing",
+                  "Research",
+                  "Virtual Assistance"
+                ].map((item, i) => (
+                  <div key={`pill1-${i}`} className="marquee-item">
+                    <span className="marquee-pill">{item}</span>
                   </div>
                 ))}
-
                 {[
-                  { title: "Computer Vision:", items: "Bounding boxes • Segmentation • Pose estimation • Image tagging • Video tracking • 3D point clouds" },
-                  { title: "Natural Language (NLP):", items: "Named entity recognition (NER) • Sentiment analysis • Intent classification • Dialogue labeling • QA generation • Document indexing" },
-                  { title: "Speech & Audio:", items: "Transcription • Speaker diarization • Audio tagging • Accent labeling • Subtitle generation • Speech QA" },
-                  { title: "LLM & RLHF:", items: "Preference ranking • Instruction evaluation • Safety review • Hallucination detection • Prompt refinement" },
-                  { title: "Data Operations:", items: "Cleaning • Transformation • Label correction • Dataset formatting • Enrichment • QA pipelines" },
-                  { title: "BPO & Support:", items: "Data entry • Web research • CRM management • Email support • Lead generation • Document processing" },
-                ].map((t,i)=> (
-                  <div key={`group2-${i}`} className="marquee-track" aria-hidden="true">
-                    <div className="marquee-item">
-                      <span className="marquee-title">{t.title}</span>
-                      <span className="marquee-text">{t.items}</span>
-                    </div>
+                  "Bounding Box Annotation",
+                  "Semantic Segmentation",
+                  "Video Annotation",
+                  "Text Annotation",
+                  "Named Entity Recognition (NER)",
+                  "Prompt Evaluation",
+                  "RLHF Support",
+                  "Transcription",
+                  "Speech Annotation",
+                  "AI Model Evaluation",
+                  "Data Validation",
+                  "Quality Auditing",
+                  "Data Entry",
+                  "Document Processing",
+                  "Research",
+                  "Virtual Assistance"
+                ].map((item, i) => (
+                  <div key={`pill2-${i}`} className="marquee-item" aria-hidden="true">
+                    <span className="marquee-pill">{item}</span>
                   </div>
                 ))}
               </div>
@@ -1695,22 +1736,28 @@ function BarakaDigitalHub() {
           </div>
 
 
-          <section className="section-tech-bg" style={{ padding:"88px 24px", backgroundColor:"#0f172a", backgroundImage:"url('/background2.jpg')", backgroundSize:"cover", backgroundRepeat:"no-repeat", backgroundPosition:"center center" }}>
-            <div style={{ maxWidth:1280, margin:"0 auto" }}>
+          <section className="section-tech-bg" style={{ padding:"88px 24px", background: "linear-gradient(180deg,#071022 0%,#0b1830 60%)", position:"relative", overflow:"visible" }}>
+            <div style={{ position: "absolute", inset:0, background: "radial-gradient(circle at 14% 22%, rgba(155,109,255,0.12) 0%, transparent 36%), radial-gradient(circle at 86% 18%, rgba(16,185,129,0.10) 0%, transparent 34%), radial-gradient(circle at 52% 54%, rgba(59,130,246,0.08) 0%, transparent 38%)", pointerEvents: "none" }} />
+            <div style={{ maxWidth:1280, margin:"0 auto", position: "relative", zIndex: 1 }}>
               <FadeIn>
                 <div style={{ textAlign:"center", marginBottom:52 }}>
-                  <h2 className="section-h2 font-display" style={{ fontSize:"2.6rem", fontWeight:800, color:"#0f172a", letterSpacing:"-.03em", marginBottom:12 }}>Precision AI Services</h2>
-                  <p style={{ color:"#64748b", fontSize:"1rem", maxWidth:480, margin:"0 auto", lineHeight:1.75 }}>End-to-end data labeling and AI training built for production scale.</p>
+                  <h2 className="section-h2 font-display" style={{ fontSize:"2.6rem", fontWeight:800, color:"#e6f7ff", letterSpacing:"-.03em", marginBottom:12 }}>Precision AI Services</h2>
+                  <p style={{ color:"#9fb6c9", fontSize:"1rem", maxWidth:480, margin:"0 auto", lineHeight:1.75 }}>Baraka Digital Hub delivers end-to-end AI data services with Nairobi-based teams, production-grade quality, and a social impact mission built into every workflow.</p>
                 </div>
               </FadeIn>
               <div className="svc-grid" style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3,1fr)", gap:16 }}>
                 {services.map((s,i)=>(
                   <FadeIn key={i} delay={i*.06}>
-                    <div className="svc-card" style={{ background:"rgba(255,255,255,.96)", border:"1px solid rgba(226,232,240,.7)", borderRadius:24, padding:"24px 22px", transition:"box-shadow .3s,transform .3s", cursor:"pointer", height:"100%", boxShadow:"0 24px 60px rgba(15,23,42,.08)" }} onClick={() => navigate("services")}>
+                    <div className="svc-card" style={{ background:"linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01))", border:"1px solid rgba(6,182,212,.08)", borderRadius:24, padding:"24px 22px", transition:"box-shadow .3s,transform .3s", cursor:"pointer", height:"100%", boxShadow:"0 18px 48px rgba(6,182,212,.06), inset 0 1px 0 rgba(255,255,255,.02)" }} onClick={() => navigate("services")}>
                       <div style={{ width:44, height:44, borderRadius:12, background:s.color, display:"flex", alignItems:"center", justifyContent:"center", color:"white", marginBottom:16 }}>{s.icon}</div>
-                      <h3 className="font-display" style={{ fontSize:"1rem", fontWeight:800, color:"#0f172a", marginBottom:8 }}>{s.title}</h3>
-                      <p style={{ fontSize:".84rem", color:"#64748b", lineHeight:1.7, marginBottom:14 }}>{s.desc}</p>
-                      <div style={{ display:"flex", alignItems:"center", gap:5, color:s.color, fontSize:".8rem", fontWeight:600 }}>Learn more <ChevronRight size={14} /></div>
+                      <h3 className="font-display" style={{ fontSize:"1rem", fontWeight:800, color:"#e6f7ff", marginBottom:10 }}>{s.title}</h3>
+                      <p style={{ fontSize:".9rem", color:"#cbd5e1", lineHeight:1.75, marginBottom:18 }}>{s.desc}</p>
+                      <ul style={{ margin:0, paddingLeft:18, color:"#cbd5e1", fontSize:"0.9rem", lineHeight:1.7 }}>
+                        {s.items.map((item,j)=>(
+                          <li key={j} style={{ marginBottom: j < s.items.length - 1 ? 10 : 0 }}>{item}</li>
+                        ))}
+                      </ul>
+                      <div style={{ display:"flex", alignItems:"center", gap:5, color:s.color, fontSize:".8rem", fontWeight:600, marginTop:18 }}>Learn more <ChevronRight size={14} /></div>
                     </div>
                   </FadeIn>
                 ))}
@@ -1723,118 +1770,203 @@ function BarakaDigitalHub() {
             </div>
           </section>
 
-          <section style={{ padding:"72px 24px", background:"linear-gradient(135deg,#1d4ed8 0%,#0ea5e9 50%,#0f9d68 100%)", position:"relative", overflow:"visible", borderRadius:"0 0 48px 48px" }}>
-            <div style={{ position:"absolute", inset:0, opacity:.07, backgroundImage:"linear-gradient(to right,white 1px,transparent 1px),linear-gradient(to bottom,white 1px,transparent 1px)", backgroundSize:"40px 40px", pointerEvents: "none" }} />
-            <div className="stats-band" style={{ maxWidth:1100, margin:"0 auto", display:"grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(4,1fr)", gap:24, position:"relative", zIndex:1 }}>
-              {[{val:"90",suf:"%+",l:"Avg Accuracy"},{val:"10",suf:"K+ hrs",l:"Weekly Throughput"},{val:"80",suf:"+",l:"Trained Taskers"},{val:"4",suf:"hr",l:"Avg Response Time"}].map((s,i)=>(
-                <div key={i} style={{ textAlign:"center" }}>
-                  <div className="font-display" style={{ fontSize:"3.2rem", fontWeight:800, color:"white", letterSpacing:"-.03em", lineHeight:1, whiteSpace:"normal", overflowWrap:"break-word", wordBreak:"break-word" }}>
-                    <Counter target={s.val} suffix={s.suf} />
-                  </div>
-                  <div style={{ color:"rgba(255,255,255,.7)", fontSize:".8rem", fontWeight:600, marginTop:8, letterSpacing:".04em", textTransform:"uppercase" }}>{s.l}</div>
+          <section style={{ padding: isMobile ? "56px 18px" : "88px 24px", background: "linear-gradient(180deg,#eef7ff 0%,#f8fcff 55%,#ffffff 100%)", position: "relative", overflow: "hidden" }}>
+            <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 18% 20%, rgba(59,130,246,.14), transparent 18%), radial-gradient(circle at 82% 22%, rgba(15,157,104,.12), transparent 20%), repeating-linear-gradient(135deg, transparent 0, transparent 32px, rgba(14,165,233,.05) 32px, rgba(14,165,233,.05) 33px)", pointerEvents: "none" }} />
+            <div style={{ position: "relative", maxWidth: 1100, margin: "0 auto", zIndex: 1 }}>
+              <FadeIn>
+                <div style={{ textAlign: "center", marginBottom: isMobile ? 32 : 52 }}>
+                  <h2 className="section-h2 font-display" style={{ fontSize: "2.6rem", fontWeight: 800, color: "#0f172a", letterSpacing: "-.03em", marginBottom: 12 }}>Trusted tools and delivery partners</h2>
+                  <p style={{ color: "#64748b", fontSize: "1rem", maxWidth: 520, margin: "0 auto", lineHeight: 1.75 }}>Baraka Digital Hub pairs disciplined tooling with secure processes so our Nairobi delivery teams can produce reliable, compliant data operations for global clients.</p>
                 </div>
-              ))}
+              </FadeIn>
+              <FadeIn delay={0.08}>
+                <div className="logo-carousel" style={{ marginTop: 24 }}>
+                  <div className="logo-track">
+                    {TOOL_LOGOS.concat(TOOL_LOGOS).map((logo, i) => (
+                      <div className="logo-item" key={i}>
+                        <img src={logo.src} alt={logo.name} />
+                        <span>{logo.name}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </FadeIn>
             </div>
           </section>
 
-          <section style={{ padding:"88px 24px", position:"relative", overflow:"hidden", backgroundImage:"url('/background1.png')", backgroundSize:"cover", backgroundRepeat:"no-repeat", backgroundPosition:"center center", backgroundColor: "#0f172a" }}>
-            <div style={{ maxWidth:1100, margin:"0 auto", position:"relative", zIndex:1 }}>
+          <section style={{ padding: isMobile ? "56px 18px" : "88px 24px", position:"relative", overflow:"visible", background: "linear-gradient(135deg, #f0f7ff 0%, #e6f3ff 25%, #ecfdf5 50%, #e0f8f5 75%, #f0f4ff 100%)" }}>
+            <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 20% 20%, rgba(59,130,246,.16), transparent 26%), radial-gradient(circle at 80% 18%, rgba(16,185,129,.12), transparent 22%), repeating-linear-gradient(90deg, transparent 0, transparent 120px, rgba(59,130,246,.06) 120px, rgba(59,130,246,.06) 121px), repeating-linear-gradient(0deg, transparent 0, transparent 120px, rgba(16,185,129,.05) 120px, rgba(16,185,129,.05) 121px)", opacity: 0.32, pointerEvents: "none" }} />
+            <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 50% 18%, rgba(96,165,250,.06), transparent 24%), radial-gradient(circle at 52% 84%, rgba(16,185,129,.06), transparent 20%)", pointerEvents: "none" }} />
+            <div style={{ position: "absolute", top: "12%", left: "10%", width: isMobile ? 200 : 280, height: isMobile ? 200 : 280, borderRadius: "50%", background: "rgba(96,165,250,.12)", filter: "blur(34px)", pointerEvents: "none" }} />
+            <div style={{ position: "absolute", bottom: "10%", right: "6%", width: isMobile ? 180 : 250, height: isMobile ? 180 : 250, borderRadius: "50%", background: "rgba(16,185,129,.10)", filter: "blur(32px)", pointerEvents: "none" }} />
+            <div style={{ position: "absolute", top: "28%", right: "16%", width: isMobile ? 120 : 160, height: isMobile ? 120 : 160, borderRadius: "50%", background: "rgba(96,165,250,.06)", filter: "blur(24px)", pointerEvents: "none" }} />
+            <div style={{ position: "absolute", inset: 0, background: "repeating-linear-gradient(135deg, transparent 0px, transparent 32px, rgba(14,165,233,.04) 32px, rgba(14,165,233,.04) 33px)", opacity: 0.22, pointerEvents: "none" }} />
+            <div style={{ position: "absolute", inset: 0, pointerEvents: "none", zIndex: 0 }}>
+              <svg viewBox="0 0 1200 600" preserveAspectRatio="none" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", opacity: isMobile ? 0.10 : 0.16 }}>
+                <defs>
+                  <linearGradient id="g1" x1="0" x2="1">
+                    <stop offset="0%" stopColor="rgba(59,130,246,0.12)" />
+                    <stop offset="100%" stopColor="rgba(14,165,233,0.08)" />
+                  </linearGradient>
+                  <pattern id="circuit" width="40" height="40" patternUnits="userSpaceOnUse">
+                    <rect width="40" height="40" fill="transparent" />
+                    <path d="M4 20 L18 20 M20 4 L20 18 M22 22 L36 22" stroke="rgba(59,130,246,0.12)" strokeWidth="1" strokeLinecap="round" />
+                    <circle cx="6" cy="6" r="1.5" fill="rgba(59,130,246,0.14)" />
+                    <circle cx="34" cy="34" r="1.5" fill="rgba(16,185,129,0.10)" />
+                  </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#circuit)" opacity={isMobile ? 0.06 : 0.08} />
+                <g fill="none" stroke="url(#g1)" strokeWidth="1">
+                  <line x1={0} y1={0} x2={1200} y2={0} strokeOpacity={0.04} />
+                  <line x1={0} y1={60} x2={1200} y2={60} strokeOpacity={0.06} />
+                  <line x1={0} y1={120} x2={1200} y2={120} strokeOpacity={0.04} />
+                  <line x1={0} y1={180} x2={1200} y2={180} strokeOpacity={0.06} />
+                  <line x1={0} y1={240} x2={1200} y2={240} strokeOpacity={0.04} />
+                  <line x1={0} y1={300} x2={1200} y2={300} strokeOpacity={0.06} />
+                  <line x1={0} y1={360} x2={1200} y2={360} strokeOpacity={0.04} />
+                  <line x1={0} y1={420} x2={1200} y2={420} strokeOpacity={0.06} />
+                  <line x1={0} y1={480} x2={1200} y2={480} strokeOpacity={0.04} />
+                  <line x1={0} y1={540} x2={1200} y2={540} strokeOpacity={0.06} />
+                </g>
+                <g fill="none" strokeOpacity="0.12">
+                  <path d="M120 480 C200 380 320 420 440 360 S760 280 880 320" stroke="rgba(59,130,246,0.08)" strokeWidth="1.25" />
+                  <path d="M60 140 L140 120 L200 160 L280 140" stroke="rgba(16,185,129,0.06)" strokeWidth="1" />
+                </g>
+                <g>
+                  <circle cx="220" cy="120" r="2.2" fill="rgba(59,130,246,0.14)" />
+                  <circle cx="880" cy="420" r="2.6" fill="rgba(16,185,129,0.12)" />
+                </g>
+              </svg>
+              <div style={{ position: "absolute", top: isMobile ? "8%" : "10%", right: isMobile ? "6%" : "8%", width: isMobile ? 110 : 180, height: isMobile ? 110 : 180, opacity: 0.14, pointerEvents: "none" }}>
+                <svg viewBox="0 0 180 180" preserveAspectRatio="xMidYMid meet" style={{ width: "100%", height: "100%" }}>
+                  <g fill="none" stroke="rgba(59,130,246,0.12)" strokeWidth="1">
+                    <rect x="6" y="6" width="168" height="168" rx="8" strokeOpacity="0.06" />
+                    <path d="M18 90 L42 90 M90 18 L90 42 M138 90 L162 90 M90 138 L90 162" strokeOpacity="0.08" />
+                    <circle cx="48" cy="48" r="3" fill="rgba(16,185,129,0.10)" />
+                    <circle cx="132" cy="132" r="3" fill="rgba(59,130,246,0.10)" />
+                    <path d="M36 60 L60 36 L84 60" strokeOpacity="0.06" />
+                  </g>
+                </svg>
+              </div>
+            </div>
+            <div style={{ maxWidth: 980, margin: "0 auto", position: "relative", zIndex: 1 }}>
               <FadeIn>
-                <div style={{ textAlign:"center", marginBottom:52 }}>
-                  <h2 className="section-h2 font-display" style={{ fontSize:"2.6rem", fontWeight:800, color:"white", letterSpacing:"-.03em", marginBottom:12 }}>Built for Reliable Scale</h2>
-                  <p style={{ color:"rgba(255,255,255,.85)", fontSize:"1rem", maxWidth:500, margin:"0 auto", lineHeight:1.75 }}>Structured infrastructure for production AI workflows and enterprise delivery.</p>
+                <div style={{ textAlign: "center", marginBottom: isMobile ? 28 : 44 }}>
+                  <div style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8, background: "rgba(59,130,246,.12)", border: "1px solid rgba(59,130,246,.18)", borderRadius: 999, padding: "8px 18px", marginBottom: 18, color: "#0f172a", fontSize: ".75rem", fontWeight: 700, letterSpacing: ".12em", textTransform: "uppercase", fontFamily: "ui-monospace, 'Courier New', monospace" }}>Operations</div>
+                  <h2 className="section-h2 font-display" style={{ fontSize: isMobile ? "2.2rem" : "2.8rem", fontWeight: 900, color: "#0f172a", letterSpacing: "-.03em", marginBottom: 16 }}>Built for Reliable Scale</h2>
+                  <p style={{ color: "#475569", fontSize: isMobile ? ".98rem" : "1.05rem", maxWidth: 620, margin: "0 auto", lineHeight: 1.8 }}>Baraka delivers managed digital operations from Nairobi with secure workflows, certified teams, and human-led QA. We convert data, content, and process work into predictable, production-ready delivery backed by transparency and social impact.</p>
                 </div>
               </FadeIn>
-              <div style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3,1fr)", gap:14 }}>
-                {[
-                  { icon:<Users size={18}/>, n:"80+", l:"Trained Taskers", d:"Workforce certified across annotation, NLP, audio, and BPO workflows." },
-                  { icon:<Shield size={18}/>, n:"100%", l:"QA Review", d:"Independent QA team reviews every deliverable before client submission." },
-                  { icon:<Zap size={18}/>, n:"48 hours", l:"Rapid Turnaround", d:"Standard batches of 25K items delivered within 48 hours." },
-                  { icon:<CheckCircle2 size={18}/>, n:"Cert.", l:"Structured Onboarding", d:"Task certification and calibration before any live project access." },
-                  { icon:<TrendingUp size={18}/>, n:"24/7", l:"Centralized Ops", d:"Managed operations, escalation handling, and daily progress reporting." },
-                  { icon:<Clock size={18}/>, n:"Long", l:"Production Support", d:"Built for enduring partnerships, not one-off batches." },
-                ].map((o,i)=>(
-                  <FadeIn key={i} delay={i*.06}>
-                    <div onClick={() => navigate("operations")} style={{ background:"rgba(255,255,255,.08)", border:"1px solid rgba(255,255,255,.12)", borderRadius:18, padding:"22px 20px", transition:"all .3s", cursor:"pointer" }}
-                      onMouseEnter={e=>{e.currentTarget.style.borderColor="rgba(29,78,216,.5)";e.currentTarget.style.background="rgba(255,255,255,.12)";}}
-                      onMouseLeave={e=>{e.currentTarget.style.borderColor="rgba(255,255,255,.12)";e.currentTarget.style.background="rgba(255,255,255,.08)";}}>
-                      <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom:14 }}>
-                        <div style={{ width:36, height:36, borderRadius:10, background:"linear-gradient(135deg,#1d4ed8,#0f9d68)", display:"flex", alignItems:"center", justifyContent:"center", color:"white" }}>{o.icon}</div>
-                        <div className="font-display" style={{ fontSize:"1.4rem", fontWeight:800, color:"white" }}>{o.n}</div>
+              <FadeIn delay={0.08}>
+                <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3, minmax(0, 1fr))", gap: 18 }}>
+                  {[
+                    { title: "Secure data mesh", detail: "Encrypted ingestion, lineage, and role-based access for every dataset." },
+                    { title: "Automated QA gate", detail: "Deterministic checks & observability before every release." },
+                    { title: "Elastic execution", detail: "On-demand compute and workforce orchestration for fluctuating production loads." },
+                  ].map((item, idx) => (
+                    <div key={idx} style={{ background: "rgba(14, 25, 53, 0.82)", border: "1px solid rgba(96, 165, 250, 0.24)", backdropFilter: "blur(10px)", borderRadius: 22, padding: isMobile ? "22px 18px" : "28px 24px", minHeight: 170, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+                      <div>
+                        <div style={{ width: 40, height: 40, borderRadius: 14, display: "grid", placeItems: "center", background: "linear-gradient(135deg, rgba(59,130,246,.95), rgba(16,185,129,.95))", color: "white", marginBottom: 16, boxShadow: "0 20px 40px rgba(59,130,246,.22)" }}>
+                          <span style={{ fontSize: "1.1rem", fontWeight: 800 }}>{idx + 1}</span>
+                        </div>
+                        <h3 className="font-display" style={{ fontSize: "1.1rem", fontWeight: 800, color: "#eef2ff", margin: 0, marginBottom: 10 }}>{item.title}</h3>
+                        <p style={{ color: "#dbeafe", fontSize: ".92rem", lineHeight: 1.75, margin: 0 }}>{item.detail}</p>
                       </div>
-                      <div style={{ fontSize:".88rem", fontWeight:700, color:"white", marginBottom:6 }}>{o.l}</div>
-                      <p style={{ fontSize:".8rem", color:"rgba(255,255,255,.78)", lineHeight:1.65 }}>{o.d}</p>
                     </div>
-                  </FadeIn>
-                ))}
-              </div>
+                  ))}
+                </div>
+              </FadeIn>
               <FadeIn delay={0.15}>
-                <div style={{ textAlign:"center", marginTop:36 }}>
-                  <button onClick={() => navigate("operations")} style={{ display:"inline-flex", alignItems:"center", gap:8, background:"rgba(255,255,255,.07)", border:"1px solid rgba(255,255,255,.12)", borderRadius:12, padding:"13px 24px", color:"white", fontWeight:600, fontSize:".88rem", cursor:"pointer", fontFamily:"inherit" }}>
-                    View full operations detail <ArrowRight size={15} />
+                <div style={{ textAlign: "center", marginTop: 34 }}>
+                  <button onClick={() => navigate("operations")} className="btn-secondary" style={{ background: "linear-gradient(135deg, #38bdf8, #0ea5e9)", color: "white", padding: isMobile ? "14px 22px" : "16px 28px" }}>
+                    Explore operations <ArrowRight size={16} />
                   </button>
                 </div>
               </FadeIn>
             </div>
           </section>
 
-          <section style={{ padding: isMobile ? "56px 18px" : "88px 24px", background: "linear-gradient(180deg,#eef7ff 0%,#f8fcff 55%,#ffffff 100%)", position: "relative", overflow: "hidden" }}>
-            <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 18% 20%, rgba(59,130,246,.14), transparent 18%), radial-gradient(circle at 82% 22%, rgba(15,157,104,.12), transparent 20%), repeating-linear-gradient(135deg, transparent 0, transparent 32px, rgba(14,165,233,.05) 32px, rgba(14,165,233,.05) 33px)", pointerEvents: "none" }} />
-            <div style={{ position: "relative", maxWidth:1000, margin:"0 auto" }}>
+          <section style={{ padding: isMobile ? "64px 18px" : "88px 24px", background: "linear-gradient(180deg,#071022 0%,#0b1830 60%)", position: "relative", overflow: "visible" }}>
+            <div style={{ position: "relative", width: "100%", maxWidth:1200, margin:"0 auto" }}>
               <FadeIn>
-                <div style={{ textAlign:"center", marginBottom: isMobile ? 32 : 52 }}>
-                  <h2 className="section-h2 font-display" style={{ fontSize:"2.6rem", fontWeight:800, color:"#0f172a", letterSpacing:"-.03em", marginBottom:12 }}>How Delivery Works</h2>
-                  <p style={{ color:"#64748b", fontSize:"1rem", maxWidth:520, margin:"0 auto", lineHeight:1.75 }}>A streamlined operational workflow for AI data and digital delivery, with full process detail available on the workflow page.</p>
+                <div style={{ textAlign:"center", marginBottom: isMobile ? 28 : 48 }}>
+                  <div style={{ display:"inline-block", background:"rgba(255,255,255,0.04)", color:"#9be7ff", padding:"6px 16px", borderRadius:100, fontSize:".72rem", fontWeight:800, letterSpacing:".12em", textTransform:"uppercase", marginBottom:18, border:"1px solid rgba(155,231,255,.06)", fontFamily:"ui-monospace, 'Courier New', monospace" }}>BUILT FOR RELIABLE SCALE</div>
+                  <h2 className="font-display" style={{ fontSize:"2.6rem", fontWeight:900, color:"#e6f7ff", letterSpacing:"-.02em", marginBottom:10 }}>How It Works</h2>
+                  <p style={{ color:"#9fb6c9", fontSize:"1rem", maxWidth:680, margin:"0 auto", lineHeight:1.75, fontFamily:"'Segoe UI', Arial, sans-serif" }}>Baraka Digital Hub turns AI workloads into dependable delivery through human-led workflows, quality guardrails, and local operational expertise rooted in impact and accountability.</p>
                 </div>
               </FadeIn>
               <FadeIn delay={0.08}>
-                <div style={{ background:"white", borderRadius:24, border:"1px solid #f1f5f9", boxShadow:"0 12px 48px rgba(0,0,0,.07)", overflow:"hidden" }}>
-                  <div style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr" }}>
-                    <div style={{ padding:"36px 32px", borderRight: isMobile ? "none" : "1px solid #f1f5f9" }}>
-                      <div style={{ display:"inline-block", background:"rgba(29,78,216,.08)", color:"#1d4ed8", padding:"5px 13px", borderRadius:100, fontSize:".72rem", fontWeight:700, letterSpacing:".05em", textTransform:"uppercase", marginBottom:20 }}>Sample Engagement</div>
-                      <h3 className="font-display" style={{ fontSize:"1.6rem", fontWeight:800, color:"#0f172a", marginBottom:24, lineHeight:1.2 }}>AI Data Delivery Example</h3>
-                      {[
-                        ["Task Type","Bounding Box Annotation"],
-                        ["Dataset Volume","25,000 Images"],
-                        ["Delivery Timeline","48 Hours"],
-                        ["Annotation Workforce","80 Certified Taskers"],
-                        ["QA Workforce","15 QA Specialists"],
-                        ["Total Productive Hours","1,920+ Annotation Hours + 360 QA Hours"],
-                        ["Quality Assurance","100% Review of All First-Pass Annotations"],
-                        ["Reporting","Real-Time Progress & Daily Accuracy Reports"],
-                        ["Delivery Format","COCO, YOLO, custom JSON, or client-specified formats"]
-                      ].map(([k,v],i)=>(
-                        <div key={i} style={{ display:"flex", justifyContent:"space-between", alignItems:"center", padding:"12px 0", borderBottom: i < 8 ? "1px solid #f8fafc" : "none" }}>
-                          <span style={{ fontSize:".82rem", color:"#94a3b8", fontWeight:500 }}>{k}</span>
-                          <span style={{ fontSize:".87rem", fontWeight:700, color:"#0f172a", textAlign:"right", maxWidth: isMobile ? "55%" : "48%" }}>{v}</span>
-                        </div>
-                      ))}
-                    </div>
-                    <div style={{ background:"rgba(2,6,23,.95)", padding: isMobile ? "28px 22px" : "36px 32px", minHeight: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between", boxShadow: "0 28px 80px rgba(2,6,23,.16)" }}>
-                      <div>
-                        <h2 className="font-display" style={{ fontSize:"1.6rem", fontWeight:800, color:"white", marginBottom:24, lineHeight:1.1 }}>Workflow</h2>
-                        { [
-                          "Project Scoping & Requirement Alignment",
-                          "Pilot Batch, Edge Cases & Calibration",
-                          "Workforce Deployment & Training",
-                          "Production & Task Execution",
-                          "100% First-Pass QA Review",
-                          "Error Logging & Continuous Recalibration",
-                          "Final Validation, Reporting & Delivery",
-                          "Post-Delivery Support & Scaling"
-                        ].map((step,i)=>(
-                          <div key={i} style={{ display:"flex", gap:14, paddingBottom: i<7 ? 18 : 0, position:"relative", marginBottom: i<7 ? 12 : 0 }}>
-                            {i<7 && <div style={{ position:"absolute", left:19, top:34, width:2, bottom:0, background:"rgba(255,255,255,.06)" }} />}
-                            <div style={{ flexShrink:0, width:40, height:40, borderRadius:"50%", background:"linear-gradient(135deg,rgba(15,157,104,.95),rgba(16,185,129,.95))", display:"flex", alignItems:"center", justifyContent:"center", fontFamily:"ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Segoe UI Mono', monospace", fontWeight:800, fontSize:13, color:"white", position:"relative", zIndex:1 }}>{i+1}</div>
-                            <div style={{ paddingTop:6 }}>
-                              <p style={{ color:"#cbd5e1", fontSize:"0.94rem", lineHeight:1.7, maxWidth:isMobile?"100%":"92%", fontWeight:700 }}>{step}</p>
+                <div style={{ background:"rgba(15,23,42,.8)", backdropFilter:"blur(10px)", borderRadius:20, border:"1px solid rgba(6,182,212,.2)", boxShadow:"0 0 40px rgba(6,182,212,.1), inset 0 1px 1px rgba(255,255,255,.05)", overflow:"visible" }}>
+                  <div style={{ display:"grid", gridTemplateColumns: "1fr", gap:0 }}>
+                    {/* Row 1 - Operations Data */}
+                    <div style={{ padding: isMobile ? "32px 22px" : "42px 40px", borderBottom: "1px solid rgba(6,182,212,.1)" }}>
+                      <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom:28 }}>
+                        <div style={{ width:8, height:8, borderRadius:"50%", background:"#06b6d4", boxShadow:"0 0 12px #06b6d4" }} />
+                        <h3 className="font-display" style={{ fontSize:"1.4rem", fontWeight:800, color:"#f1f5f9", margin:0, letterSpacing:"-.02em" }}>Production Pipeline</h3>
+                      </div>
+                      
+                      {/* Specs Grid */}
+                      <div style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: isMobile ? "16px 12px" : "18px 32px" }}>
+                        {[
+                          { icon: "▶", label: "Model Type", value: "Computer Vision", color: "#06b6d4" },
+                          { icon: "▶", label: "Task", value: "Bounding Box Annotation", color: "#06b6d4" },
+                          { icon: "▶", label: "Dataset", value: "25,000 Images", color: "#22c55e" },
+                          { icon: "▶", label: "SLA", value: "48 Hours*", color: "#22c55e" },
+                          { icon: "▶", label: "Workforce", value: "80 Trained Agents", color: "#a855f7" },
+                          { icon: "▶", label: "QA Capacity", value: "15 Validators", color: "#a855f7" },
+                          { icon: "▶", label: "Throughput", value: "1,920+ GPU Hours", color: "#f59e0b" },
+                          { icon: "▶", label: "Assurance", value: "100% Multi-Pass QA", color: "#f59e0b" },
+                          { icon: "▶", label: "Reporting", value: "Real-Time Metrics", color: "#06b6d4" },
+                          { icon: "▶", label: "Integration", value: "COCO, YOLO, JSON+", color: "#22c55e" }
+                        ].map((spec, i) => (
+                          <div key={i} style={{ display:"flex", flexDirection:"column", gap:6, paddingBottom:"12px", borderBottom: i < 8 ? "1px solid rgba(6,182,212,.08)" : "none" }}>
+                            <div style={{ display:"flex", alignItems:"center", gap:8 }}>
+                              <span style={{ color: spec.color, fontSize:".7rem", fontWeight:900 }}>{spec.icon}</span>
+                              <span style={{ fontSize:".75rem", color:"#94a3b8", fontWeight:700, letterSpacing:".05em", textTransform:"uppercase", fontFamily:"ui-monospace, 'Courier New', monospace" }}>{spec.label}</span>
                             </div>
+                            <span style={{ fontSize: isMobile ? ".85rem" : ".9rem", fontWeight:700, color:"#f1f5f9", paddingLeft:18 }}>{spec.value}</span>
                           </div>
                         ))}
                       </div>
-                      <button onClick={() => navigate("workflow")} className="btn-primary" style={{ marginTop:28, display:"inline-flex", alignItems:"center", gap:8, background:"linear-gradient(135deg,#0f9d68,#06b6d4)", color:"white", border:"none", borderRadius:12, padding: isMobile ? "14px 20px" : "12px 22px", fontWeight:800, fontSize:"0.95rem", cursor:"pointer", fontFamily:"ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Segoe UI Mono', monospace", boxShadow:"0 12px 30px rgba(15,157,104,.18)", alignSelf:"flex-start" }}>
-                        Inspect Full Workflow <ArrowRight size={15} />
-                      </button>
+                      
+                      <div style={{ marginTop: 24, fontSize: ".7rem", color: "#64748b", fontFamily:"ui-monospace, 'Courier New', monospace", letterSpacing:".05em" }}>
+                        * Timeline subject to scope, complexity, and quality thresholds
+                      </div>
+                    </div>
+
+                    {/* Row 2 - Processing Pipeline */}
+                    <div style={{ background:"linear-gradient(135deg, rgba(6,182,212,.05), rgba(34,197,94,.05))", padding: isMobile ? "32px 22px" : "42px 40px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+                      <div>
+                        <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom:28 }}>
+                          <div style={{ width:8, height:8, borderRadius:"50%", background:"#22c55e", boxShadow:"0 0 12px #22c55e" }} />
+                          <h2 className="font-display" style={{ fontSize:"1.4rem", fontWeight:800, color:"#f1f5f9", margin:0, letterSpacing:"-.02em" }}>Processing Pipeline</h2>
+                        </div>
+                        <div style={{ display: isMobile ? "block" : "grid", gridTemplateColumns: isMobile ? undefined : "1fr 1fr", gap: 24 }}>
+                          {[
+                            { step: "Input", desc: "Requirements Analysis & Data Ingestion", icon: "→" },
+                            { step: "Learn", desc: "Workforce Calibration & Model Training", icon: "→" },
+                            { step: "Execute", desc: "Parallel Processing & Intelligent Routing", icon: "→" },
+                            { step: "Output", desc: "Quality Validation & Format Delivery", icon: "✓" }
+                          ].map((phase, i) => {
+                            const showLine = isMobile ? i < 3 : i < 2;
+                            return (
+                              <div key={i} style={{ display:"flex", gap:14, paddingBottom: showLine ? 20 : 0, marginBottom: showLine ? 12 : 0, position:"relative" }}>
+                                {showLine && <div style={{ position:"absolute", left:19, top:32, width:1.5, bottom:0, background:"linear-gradient(180deg, rgba(6,182,212,.3), transparent)" }} />}
+                                <div style={{ flexShrink:0, width:40, height:40, borderRadius:"6px", background: i % 2 === 0 ? "linear-gradient(135deg, rgba(6,182,212,.8), rgba(34,197,94,.8))" : "linear-gradient(135deg, rgba(168,85,247,.8), rgba(249,115,22,.8))", display:"flex", alignItems:"center", justifyContent:"center", fontFamily:"ui-monospace, 'Courier New', monospace", fontWeight:900, fontSize:11, color:"white", position:"relative", zIndex:1, border:"1px solid rgba(255,255,255,.2)" }}>
+                                  <span>{phase.step.substring(0,1).toUpperCase()}</span>
+                                </div>
+                                <div style={{ paddingTop:2 }}>
+                                  <p style={{ color:"#cbd5e1", fontSize: isMobile ? ".85rem" : ".9rem", lineHeight:1.6, fontWeight:700, margin:"0 0 2px 0" }}>{phase.step}</p>
+                                  <p style={{ color:"#94a3b8", fontSize: isMobile ? ".75rem" : ".8rem", lineHeight:1.5, margin:0 }}>{phase.desc}</p>
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                      <a href="/workflow" onClick={(e) => { e.preventDefault(); navigate("workflow"); }} className="btn-primary" style={{ marginTop:28, display:"inline-flex", alignItems:"center", gap:8, fontWeight:700, fontSize:"0.85rem", fontFamily:"ui-monospace, 'Courier New', monospace", alignSelf:"flex-start", letterSpacing:".05em", textTransform:"uppercase" }}>
+                        ▷ Execute Workflow <ArrowRight size={14} />
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -1885,7 +2017,7 @@ function BarakaDigitalHub() {
                   <span style={{ fontSize:".72rem", fontWeight:700, color:"#1d4ed8", letterSpacing:".06em", textTransform:"uppercase" }}>Start Today</span>
                 </div>
                 <h2 className="font-display" style={{ fontSize:"2.8rem", fontWeight:800, color:"#0f172a", letterSpacing:"-.03em", marginBottom:16, lineHeight:1.1 }}>Ready to Launch a Pilot?</h2>
-                <p style={{ color:"#64748b", fontSize:"1rem", lineHeight:1.8, marginBottom:36 }}>Start with a small batch. Our team will annotate your dataset, deliver results with full quality reporting, and show you exactly how we operate — before you commit to scale.</p>
+                <p style={{ color:"#64748b", fontSize:"1rem", lineHeight:1.8, marginBottom:36 }}>Begin with a pilot that proves how Baraka Digital Hub combines trained teams, secure workflows, and transparent reporting to deliver quality results before you scale.</p>
                 <div style={{ display:"flex", gap:14, justifyContent:"center", flexWrap:"wrap", marginBottom:32 }}>
                   <button onClick={() => navigate("pilot")} className="btn-primary" style={{ fontSize:"1rem", padding:"15px 30px" }}>Launch Pilot Program <ArrowRight size={17} /></button>
                   <button onClick={() => navigate("workflow")} className="btn-secondary" style={{ fontSize:"1rem", padding:"15px 30px" }}>View Our Process</button>
@@ -1943,7 +2075,7 @@ function BarakaDigitalHub() {
               </div>
               <div style={{ marginTop: 24, color: 'rgba(255,255,255,.75)', fontSize: '0.95rem', lineHeight: 1.8 }}>
                 <p style={{ margin: 0 }}>projects@barakadigitalhub.com</p>
-                <p style={{ margin: 0 }}>+254 793 842 347</p>
+                <p style={{ margin: 0 }}>+254793842347</p>
                 <p style={{ margin: 0 }}>Nairobi, Kenya</p>
               </div>
             </div>

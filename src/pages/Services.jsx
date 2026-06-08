@@ -15,7 +15,7 @@ function Services() {
           <p className="highlight-pill">Our Services</p>
           <h1>What we deliver</h1>
           <p>
-            Baraka Digital Hub provides AI data services, web development, and design solutions to clients worldwide. Each service is backed by trained professionals and quality assurance systems built for global standards.
+            Baraka Digital Hub provides AI data operations, human-in-the-loop AI, and BPO services to clients worldwide. We act as a managed execution layer for AI systems and data-heavy enterprise operations, integrating into client infrastructure with minimal disruption. Every engagement is backed by trained specialists, independent QA, and structured reporting built for production-grade delivery.
           </p>
         </div>
       </section>
@@ -25,15 +25,14 @@ function Services() {
           <article className="service-card accent-cyan">
             <span className="feature-icon">🤖</span>
             <h3>AI Data Services</h3>
-            <p className="service-highlight">Production-grade data for machine learning</p>
+            <p className="service-highlight">Modality-specialized annotation and data operations</p>
             <p>
-              We deliver high-quality datasets for AI training and development:
+              We deliver high-quality datasets for computer vision, language, and audio applications:
             </p>
             <ul className="service-list">
-              <li>Computer vision annotation and labeling</li>
-              <li>Natural language processing datasets</li>
-              <li>Audio and speech processing</li>
-              <li>Data quality assurance and validation</li>
+              <li><strong>Computer Vision Annotation:</strong> bounding boxes, segmentation, pose estimation, image classification, 3D point cloud annotation, video tracking</li>
+              <li><strong>Language AI / NLP:</strong> NER, sentiment & intent labeling, text classification, QA generation, dialogue annotation, document review</li>
+              <li><strong>Audio & Speech Processing:</strong> transcription, speaker diarization, audio tagging, phonetic annotation, keyword spotting, captioning, transcription QA</li>
             </ul>
             <p className="service-note">
               Each project is overseen by quality systems and delivered by trained professionals following global standards.
@@ -41,38 +40,36 @@ function Services() {
           </article>
 
           <article className="service-card accent-purple">
-            <span className="feature-icon">💻</span>
-            <h3>Web Development</h3>
-            <p className="service-highlight">Modern, performant digital experiences</p>
+            <span className="feature-icon">🧠</span>
+            <h3>Human-in-the-Loop AI</h3>
+            <p className="service-highlight">RLHF, model evaluation, and content safety workflows</p>
             <p>
-              We build fast, responsive web applications that work seamlessly across devices:
+              We support AI teams with human review and evaluation processes that improve model reliability and trust:
             </p>
             <ul className="service-list">
-              <li>React-based single-page applications</li>
-              <li>Responsive design for all devices</li>
-              <li>Performance optimization</li>
-              <li>SEO-ready implementations</li>
+              <li><strong>LLM Training & RLHF:</strong> preference ranking, instruction evaluation, response quality assessment, hallucination review, prompt refinement</li>
+              <li><strong>Model Output Review:</strong> accuracy, safety, tone, policy compliance, benchmark dataset creation, data auditing</li>
+              <li><strong>Content Moderation:</strong> text, image, and video review, harm classification, multi-category policy enforcement</li>
             </ul>
             <p className="service-note">
-              Built to scale with your business and adapt to changing needs.
+              Structured QA and documented workflows make outputs consistent, auditable, and safer.
             </p>
           </article>
 
           <article className="service-card accent-sunset">
-            <span className="feature-icon">✏️</span>
-            <h3>Design & Brand Strategy</h3>
-            <p className="service-highlight">Cohesive visual and strategic direction</p>
+            <span className="feature-icon">📊</span>
+            <h3>BPO & Back-Office</h3>
+            <p className="service-highlight">Reliable operations for enterprise workflows and support</p>
             <p>
-              We create design systems and brand strategies that resonate globally:
+              We deliver structured execution for research, data entry, support, and virtual assistance:
             </p>
             <ul className="service-list">
-              <li>Brand positioning and messaging</li>
-              <li>Design system development</li>
-              <li>UI/UX design and prototyping</li>
-              <li>Visual identity and guidelines</li>
+              <li><strong>Data Entry & Processing:</strong> high-volume entry, document extraction, form completion, CRM updates</li>
+              <li><strong>Research & Virtual Assistance:</strong> web research, lead generation, competitive analysis, administrative operations</li>
+              <li><strong>Customer & Email Support:</strong> ticket triage, query handling, escalation management, response drafting</li>
             </ul>
             <p className="service-note">
-              Clear, modern design that communicates your values and attracts your audience.
+              Dedicated project management and independent QA keep every workflow transparent and reliable.
             </p>
           </article>
         </div>

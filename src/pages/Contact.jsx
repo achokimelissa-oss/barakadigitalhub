@@ -16,7 +16,7 @@ function Contact() {
           <p className="highlight-pill">Get in touch</p>
           <h1>Let's work together</h1>
           <p>
-            Whether you need AI data services, web development, or design—or you're curious about our impact model—reach out. We'd love to start a conversation.
+            Whether you need AI data operations, human-in-the-loop AI, transcription, or BPO support—or you're curious about our impact model—reach out. We'd love to start a conversation.
           </p>
           <div className="hero-actions" style={{ marginTop: '2rem' }}>
             <a href="#send-message" className="button primary">Send a message</a>
@@ -33,7 +33,7 @@ function Contact() {
           </p>
           <address className="section-copy" style={{ marginTop: '1.5rem', color: '#334155', lineHeight: 1.8 }}>
             Email: <a href="mailto:projects@barakadigitalhub.com" style={{ color: '#1d4ed8', textDecoration: 'none' }}>projects@barakadigitalhub.com</a><br />
-            Phone: <a href="tel:+254793842347" style={{ color: '#1d4ed8', textDecoration: 'none' }}>+254 793 842 347</a><br />
+            Phone: <a href="tel:+254793842347" style={{ color: '#1d4ed8', textDecoration: 'none' }}>+254793842347</a><br />
             Location: Nairobi, Kenya
           </address>
         </div>
@@ -87,7 +87,7 @@ function Contact() {
           <h3>Why reach out?</h3>
           <ul className="reason-list">
             <li>Discuss a project or partnership opportunity</li>
-            <li>Learn more about our AI data services, web development, or design capabilities</li>
+            <li>Learn more about our AI data operations, human-in-the-loop AI, and BPO capabilities</li>
             <li>Understand how the dual-impact model works</li>
             <li>Explore how your partnership funds youth employment and community support</li>
           </ul>
