@@ -1466,6 +1466,7 @@ function BarakaDigitalHub() {
     { name: "Scale AI", src: "/tools/images (7).png" },
     { name: "CVAT", src: "/tools/images (5).png" },
     { name: "Labelbox", src: "/tools/images (8).png" },
+    { name: "Label Studio", src: "https://cdn.simpleicons.org/label-studio/000000" },
     { name: "Light AI", src: "/tools/66dac501a8e9a90495970876_Logo dark-short.png" },
   ];
 
