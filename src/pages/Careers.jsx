@@ -62,7 +62,7 @@ function Careers() {
           <p style={{ marginBottom: 24 }}>
             Currently, we're looking for talented individuals to join our growing team. Send your resume and cover letter to careers@barakadigitalhub.com with the position title in the subject line.
           </p>
-          <Link to="/contact" className="button primary">
+          <Link to="/contact#send-message" className="button primary">
             Get In Touch
           </Link>
         </div>

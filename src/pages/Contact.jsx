@@ -79,24 +79,7 @@ function Contact() {
           </p>
         </div>
 
-        <form action="https://formbold.com/s/oPqrV" method="POST" className="contact-form contact-form--compact">
-          <label className="input-group">
-            <span>Email</span>
-            <input type="email" name="email" placeholder="Email" required />
-          </label>
-
-          <label className="input-group">
-            <span>Subject</span>
-            <input type="text" name="subject" placeholder="Subject" required />
-          </label>
-
-          <label className="input-group">
-            <span>Message</span>
-            <textarea name="message" placeholder="Type your message" rows="5" required></textarea>
-          </label>
-
-          <button type="submit">Message us</button>
-        </form>
+        <script type="text/javascript" src="https://form.jotform.com/jsform/261576400274556"></script>
       </section>
 
       <section className="section-block accent">

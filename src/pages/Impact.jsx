@@ -227,7 +227,7 @@ function Impact() {
           <p>
             Partner with us. Get reliable, professional digital services while funding sustainable opportunity for youth from underserved communities.
           </p>
-          <Link className="button primary impact-button-primary" to="/contact">
+          <Link className="button primary impact-button-primary" to="/contact#send-message">
             Start a conversation
           </Link>
         </div>
@@ -239,7 +239,7 @@ function Impact() {
           <p>
             Collaborate with Baraka Digital Hub to get dependable delivery while helping create real social value for youth and Baraka Children’s Home.
           </p>
-          <Link className="button secondary impact-button-secondary" to="/contact">
+          <Link className="button secondary impact-button-secondary" to="/contact#send-message">
             Contact us to get started
           </Link>
         </div>
