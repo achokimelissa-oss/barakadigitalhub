@@ -1466,7 +1466,7 @@ function BarakaDigitalHub() {
     { name: "Scale AI", src: "/tools/images (7).png" },
     { name: "CVAT", src: "/tools/images (5).png" },
     { name: "Labelbox", src: "/tools/images (8).png" },
-    { name: "Label Studio", src: "https://cdn.simpleicons.org/label-studio/000000" },
+    { name: "Label Studio", src: "/tools/labelstudio.svg" },
     { name: "Light AI", src: "/tools/66dac501a8e9a90495970876_Logo dark-short.png" },
   ];
 
@@ -1535,10 +1535,10 @@ function BarakaDigitalHub() {
         .btn-primary { display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#1d4ed8,#06b6d4);color:white;padding:16px 30px;border-radius:999px;font-weight:800;font-size:1rem;text-decoration:none;box-shadow:0 18px 40px rgba(29,78,216,.18),0 0 0 1px rgba(255,255,255,.08);transition:transform .22s,box-shadow .22s,background .22s;outline:none;border:none;cursor:pointer;font-family:'Segoe UI', Arial, sans-serif; }
         .btn-primary:hover { transform:translateY(-2px);box-shadow:0 24px 50px rgba(29,78,216,.28),0 0 0 1px rgba(255,255,255,.18);background:linear-gradient(135deg,#2563eb,#0f9d58); }
         /* logo carousel */
-        .logo-carousel { overflow: hidden; background: linear-gradient(180deg,#f8fbff 0%, #e9f1ff 50%, #edf7ff 100%); border-radius: 24px; padding: 24px 16px; margin-top: 28px; border: 1px solid rgba(15,23,42,.08); box-shadow: 0 24px 80px rgba(15,23,42,.08); }
+        .logo-carousel { overflow: hidden; background: linear-gradient(180deg,#f8fbff 0%, #e9f1ff 50%, #edf7ff 100%); border-radius: 24px; padding: 32px 18px; margin-top: 28px; border: 1px solid rgba(15,23,42,.08); box-shadow: 0 24px 80px rgba(15,23,42,.08); }
         .logo-track { display:flex; gap:24px; align-items:center; width:max-content; animation: marquee-logos 28s linear infinite; }
-        .logo-item { flex: none; display:inline-flex; flex-direction: column; align-items:center; justify-content:center; gap: 10px; padding: 18px 20px; min-width: 140px; min-height: 104px; border-radius: 18px; background: rgba(255,255,255,0.95); border: 1px solid rgba(15,23,42,.08); box-shadow: 0 18px 40px rgba(15,23,42,.08); }
-        .logo-item img { max-height: 44px; max-width: 140px; width: auto; height: auto; object-fit: contain; filter: none; }
+        .logo-item { flex: none; display:inline-flex; flex-direction: column; align-items:center; justify-content:center; gap: 12px; padding: 20px 18px; min-width: 160px; min-height: 120px; border-radius: 20px; background: rgba(255,255,255,0.95); border: 1px solid rgba(15,23,42,.08); box-shadow: 0 18px 40px rgba(15,23,42,.08); }
+        .logo-item img { max-height: 62px; max-width: 120px; width: auto; height: auto; display: block; margin: 0 auto; object-fit: contain; filter: none; }
         .logo-item span { color: #0f172a; font-size: .86rem; font-weight: 700; text-align: center; white-space: nowrap; }
         .logo-carousel:hover .logo-track { animation-play-state: paused; }
         @keyframes marquee-logos { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
@@ -1598,9 +1598,10 @@ function BarakaDigitalHub() {
           /* Mobile marquee and logos: faster, smaller, visible */
           .ani-marquee { animation-duration: 8s !important; }
           .marquee-pill { font-size: 0.9rem !important; padding: 6px 8px !important; }
-          .logo-carousel { overflow: visible !important; padding: 12px 8px !important; }
+          .logo-carousel { overflow: visible !important; padding: 14px 10px !important; }
           .logo-track { animation-duration: 14s !important; }
-          .logo-item { min-width: 90px !important; padding: 8px 10px !important; min-height: 72px !important; }
+          .logo-item { min-width: 110px !important; padding: 12px 14px !important; min-height: 88px !important; }
+          .logo-item img { max-height: 52px !important; max-width: 110px !important; }
 
           /* Service card adjustments */
           .svc-card { padding: 14px 12px !important; box-shadow: none !important; }
