@@ -1457,16 +1457,16 @@ function BarakaDigitalHub() {
   const TOOL_LOGOS = [
     { name: "ClickUp", src: "/tools/ClickUP_Logo.jpg" },
     { name: "Slack", src: "/tools/Slack-logo.png" },
-    { name: "Databricks", src: "/tools/images.png" },
+    { name: "Databricks", src: "/tools/databricks.png" },
     { name: "Google Speech-to-Text", src: "/tools/images (1).png" },
     { name: "OpenAI Whisper", src: "/tools/images (2).png" },
-    { name: "Doccano", src: "/tools/images (3).png" },
+    { name: "Doccano", src: "/tools/doccano.png" },
     { name: "SuperAnnotate", src: "/tools/images (4).png" },
-    { name: "Encord", src: "/tools/images (6).png" },
-    { name: "Scale AI", src: "/tools/images (7).png" },
+    { name: "Encord", src: "/tools/encord.png" },
+    { name: "Scale AI", src: "/tools/scale.png" },
     { name: "CVAT", src: "/tools/images (5).png" },
-    { name: "Labelbox", src: "/tools/images (8).png" },
-    { name: "Label Studio", src: "/tools/labelstudio.svg" },
+    { name: "Labelbox", src: "/tools/labelbox.png" },
+    { name: "Label Studio", src: "/tools/labelstudio.png" },
     { name: "Light AI", src: "/tools/66dac501a8e9a90495970876_Logo dark-short.png" },
   ];
 
