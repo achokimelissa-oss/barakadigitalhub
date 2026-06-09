@@ -368,7 +368,7 @@ const NAV_LOGO = [
     { name: "AWS Transcribe", src: "https://cdn.simpleicons.org/amazonaws/ffffff" },
     { name: "Hugging Face", src: "https://cdn.simpleicons.org/huggingface/ffffff" },
     { name: "Databricks", src: "https://cdn.simpleicons.org/databricks/ffffff" },
-    { name: "Light AI", src: "/tools/66dac501a8e9a90495970876_Logo%20dark-short.png" }
+    { name: "Lightly", src: "/tools/66dac501a8e9a90495970876_Logo%20dark-short.png" }
   ];
 
   const useInView = (threshold = 0.1, rootMargin = "0px 0px -20% 0px") => {
@@ -1263,7 +1263,7 @@ function BarakaDigitalHub() {
     { name: "CVAT", src: "/tools/cvat.png" },
     { name: "Labelbox", src: "/tools/labelbox.png" },
     { name: "Label Studio", src: "/tools/lablestudio.png" },
-    { name: "Light AI", src: "/tools/66dac501a8e9a90495970876_Logo dark-short.png" },
+    { name: "Lightly", src: "/tools/66dac501a8e9a90495970876_Logo dark-short.png" },
   ];
 
   return (
