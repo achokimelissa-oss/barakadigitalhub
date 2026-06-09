@@ -1458,15 +1458,15 @@ function BarakaDigitalHub() {
     { name: "ClickUp", src: "/tools/ClickUP_Logo.jpg" },
     { name: "Slack", src: "/tools/Slack-logo.png" },
     { name: "Databricks", src: "/tools/databricks.png" },
-    { name: "Google Speech-to-Text", src: "/tools/google-speech-to-text.jpg" },
-    { name: "OpenAI Whisper", src: "/tools/openai-whisper.jpg" },
+    { name: "Google Speech-to-Text", src: "/tools/google-speech-to-text.png" },
+    { name: "OpenAI Whisper", src: "/tools/openai-whisper.png" },
     { name: "Doccano", src: "/tools/doccano.png" },
     { name: "SuperAnnotate", src: "/tools/superannotate.png" },
     { name: "Encord", src: "/tools/encord.png" },
     { name: "Scale AI", src: "/tools/scale.png" },
     { name: "CVAT", src: "/tools/cvat.png" },
     { name: "Labelbox", src: "/tools/labelbox.png" },
-    { name: "Label Studio", src: "/tools/labelstudio.png" },
+    { name: "Label Studio", src: "/tools/lablestudio.png" },
     { name: "Light AI", src: "/tools/66dac501a8e9a90495970876_Logo dark-short.png" },
   ];
 
