@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import AboutPage from "./pages/About";
 import PilotPage from "./pages/Pilot";
+import InsightsPage from "./pages/Insights";
 
 
 const ArrowRight = ({size=16}) => (<svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>);
@@ -1156,7 +1157,8 @@ function BarakaDigitalHub() {
       '/privacy': 'privacy',
       '/pilot': 'pilot',
       '/workflow': 'workflow',
-      '/operations': 'operations'
+      '/operations': 'operations',
+      '/insights': 'insights'
     };
     const p = map[location.pathname] || 'home';
     setPage(p);
@@ -1188,7 +1190,8 @@ function BarakaDigitalHub() {
       '/privacy': 'privacy',
       '/pilot': 'pilot',
       '/workflow': 'workflow',
-      '/operations': 'operations'
+      '/operations': 'operations',
+      '/insights': 'insights'
     };
     const updateFromLocation = () => {
       const p = map[window.location.pathname] || 'home';
@@ -1446,6 +1449,7 @@ function BarakaDigitalHub() {
       {page === "workflow" && <WorkflowPage goBack={goBack} setPage={setPage} isMobile={isMobile} />}
       {page === "contact" && <ContactPage goBack={goBack} isMobile={isMobile} />}
       {page === "pilot" && <PilotPage goBack={goBack} setPage={setPage} navigate={navigate} isMobile={isMobile} />}
+      {page === "insights" && <InsightsPage goBack={goBack} />}
 
       {page === "home" && (
         <>
