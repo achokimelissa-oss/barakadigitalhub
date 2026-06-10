@@ -4,6 +4,8 @@ import { Helmet } from "react-helmet-async";
 import AboutPage from "./pages/About";
 import PilotPage from "./pages/Pilot";
 import InsightsPage from "./pages/Insights";
+import BackOfficePage from "./pages/BackOffice";
+import AfricanLanguagesPage from "./pages/AfricanLanguages";
 
 
 const ArrowRight = ({size=16}) => (<svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>);
@@ -1158,7 +1160,9 @@ function BarakaDigitalHub() {
       '/pilot': 'pilot',
       '/workflow': 'workflow',
       '/operations': 'operations',
-      '/insights': 'insights'
+      '/insights': 'insights',
+      '/backoffice': 'backoffice',
+      '/african-languages': 'african-languages'
     };
     const p = map[location.pathname] || 'home';
     setPage(p);
@@ -1191,7 +1195,9 @@ function BarakaDigitalHub() {
       '/pilot': 'pilot',
       '/workflow': 'workflow',
       '/operations': 'operations',
-      '/insights': 'insights'
+      '/insights': 'insights',
+      '/backoffice': 'backoffice',
+      '/african-languages': 'african-languages'
     };
     const updateFromLocation = () => {
       const p = map[window.location.pathname] || 'home';
@@ -1450,6 +1456,8 @@ function BarakaDigitalHub() {
       {page === "contact" && <ContactPage goBack={goBack} isMobile={isMobile} />}
       {page === "pilot" && <PilotPage goBack={goBack} setPage={setPage} navigate={navigate} isMobile={isMobile} />}
       {page === "insights" && <InsightsPage goBack={goBack} />}
+      {page === "backoffice" && <BackOfficePage goBack={goBack} />}
+      {page === "african-languages" && <AfricanLanguagesPage goBack={goBack} />}
 
       {page === "home" && (
         <>
