@@ -1169,7 +1169,7 @@ const BlogsPage = ({ goBack, isMobile }) => {
           {/* badge removed per design request */}
           <h1 className="font-display" style={{ fontSize: isMobile ? "2.6rem" : "3.8rem", fontWeight: 900, letterSpacing: "-.04em", marginBottom: 16, color: "#f8fafc" }}>Baraka Digital Hub Blog</h1>
           <p style={{ color: "rgba(226,232,240,.84)", fontSize: "1rem", lineHeight: 1.8, maxWidth: 740, margin: "0 auto" }}>
-            A curated collection of stories about AI annotation, future-ready workflows, and responsible digital operations for global teams.
+            A curated collection of stories about AI annotation, future-ready workflows, and responsible digital operations for global teams. This blog highlights East African languages and dialects including Swahili, Sheng, Kikuyu, Dholuo, Kamba, Kalenjin, Luganda, Amharic, Oromo, Somali, Tigrinya, Maasai, and Runyoro.
           </p>
         </div>
 
@@ -1191,13 +1191,13 @@ const BlogsPage = ({ goBack, isMobile }) => {
         </div>
       </div>
     </div>
-  );
-};
-
-function BarakaDigitalHub() {
-  const [page, setPage] = useState("home");
-  const [nav, setNav] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+    {
+      title: "The Languages AI Still Cannot Hear — And How BDH Is Changing That",
+      date: "April 2026",
+      excerpt: "Why transcription for Swahili, Sheng, Kikuyu, Dholuo, Kamba, Kalenjin, Luganda, Amharic, Oromo, Somali, Tigrinya, Maasai, and Runyoro is a strategic data advantage — and how BDH collects production-grade datasets in these dialects.",
+      tag: "Language AI",
+      page: "african-languages",
+    },
   const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth <= 720 : false);
   const location = useLocation();
 

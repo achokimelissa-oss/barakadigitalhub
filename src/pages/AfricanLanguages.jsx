@@ -380,10 +380,8 @@ export default function AfricanLanguagesPage({ goBack }) {
             <span className="lang-tag navy">Oromo</span>
             <span className="lang-tag green">Somali</span>
             <span className="lang-tag teal">Tigrinya</span>
-            <span className="lang-tag amber">Lingala</span>
-            <span className="lang-tag navy">Hausa</span>
-            <span className="lang-tag green">Yoruba</span>
-            <span className="lang-tag teal">Zulu</span>
+            <span className="lang-tag amber">Maasai</span>
+            <span className="lang-tag navy">Runyoro</span>
           </div>
 
           <p>Sheng deserves special mention. It is not a language that appears in any standard dataset — it is a fluid, generational urban creole spoken daily across Nairobi, blending Swahili, English, Kikuyu, Dholuo, and Sheng-specific coinages that evolve faster than any dictionary can track. Training a voice or text model to understand Sheng is not a data problem you can solve by scraping the web. It requires on-the-ground human expertise, and BDH has it.</p>
