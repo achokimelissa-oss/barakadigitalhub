@@ -1135,22 +1135,25 @@ const ContactPage = ({ goBack, isMobile }) => {
 const BlogsPage = ({ goBack, isMobile }) => {
   const blogs = [
     {
-      title: "AI Annotation in Africa: Building Data for Global Models",
+      title: "Beyond Bulk Labeling: How Baraka Digital Hub Powers the Next Generation of AI",
       date: "June 2026",
-      excerpt: "Learn how Nairobi-based annotation workflows are powering computer vision and NLP models with local expertise, secure operations, and measurable quality.",
-      tag: "AI Operations",
+      excerpt: "A deep dive into ethical sourcing, tool proficiency, and why AI training data requires more than scale.",
+      tag: "Insights",
+      page: "insights",
     },
     {
-      title: "Future-Proofing Digital Workflows with Human-Led Quality",
+      title: "The Back Office Is Where Growth Goes to Stall — Unless You Outsource It Right",
       date: "May 2026",
-      excerpt: "Explore the next generation of digital work orchestration where human review, scalable tooling, and automation converge for reliable AI dataset delivery.",
-      tag: "Workflow",
+      excerpt: "How managed back-office operations turn process bottlenecks into scalable growth engines for digital teams.",
+      tag: "Back Office",
+      page: "backoffice",
     },
     {
-      title: "Ethical AI through Social Impact and Skilled Teams",
+      title: "The Languages AI Still Cannot Hear — And How BDH Is Changing That",
       date: "April 2026",
-      excerpt: "Discover how impact-driven supply chains create ethical AI data pipelines while expanding opportunity for local youth in underserved communities.",
-      tag: "Social Impact",
+      excerpt: "Why African language transcription is a strategic data advantage, not just a compliance checkbox.",
+      tag: "Language AI",
+      page: "african-languages",
     },
   ];
 
@@ -1179,7 +1182,7 @@ const BlogsPage = ({ goBack, isMobile }) => {
                 <p style={{ color: "rgba(226,232,240,.85)", lineHeight: 1.75, fontSize: "0.98rem", marginBottom: "auto" }}>{blog.excerpt}</p>
                 <div style={{ marginTop: 24, display: "flex", justifyContent: "space-between", alignItems: "center", gap: 16 }}>
                   <span style={{ color: "rgba(226,232,240,.6)", fontSize: ".85rem", fontWeight: 600 }}>{blog.date}</span>
-                  <button style={{ border: "1px solid rgba(124, 211, 252, .45)", background: "rgba(59,130,246,.14)", color: "#cce7ff", borderRadius: 999, padding: "10px 16px", cursor: "pointer", fontWeight: 700, fontFamily: "inherit", fontSize: ".86rem" }}>Read More</button>
+                  <a href={`/${blog.page}`} onClick={(e) => { e.preventDefault(); navigate(blog.page); }} style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", border: "1px solid rgba(124, 211, 252, .45)", background: "rgba(59,130,246,.14)", color: "#cce7ff", borderRadius: 999, padding: "10px 16px", cursor: "pointer", fontWeight: 700, fontFamily: "inherit", fontSize: ".86rem", textDecoration: "none" }}>Read More</a>
                 </div>
               </div>
             </div>
@@ -1220,7 +1223,8 @@ function BarakaDigitalHub() {
       '/operations': 'operations',
       '/insights': 'insights',
       '/backoffice': 'backoffice',
-      '/african-languages': 'african-languages'
+      '/african-languages': 'african-languages',
+      '/blogs': 'blogs'
     };
     const p = map[location.pathname] || 'home';
     setPage(p);
@@ -1313,6 +1317,7 @@ function BarakaDigitalHub() {
     { label: "Home", page: "home" },
     { label: "Services", page: "services" },
     { label: "About", page: "about" },
+    { label: "Blogs", page: "blogs" },
     { label: "Social Impact", page: "impact" },
     { label: "Operations", page: "operations" },
     { label: "Workflow", page: "workflow" },
