@@ -20,25 +20,25 @@ export default function AfricanLanguagesPage({ goBack }) {
         }
 
         :root {
-          --navy:      #02346A;
-          --navy-d:    #0D2B4E;
-          --green:     #33911C;
-          --teal:      #0D7377;
-          --amber:     #E8A020;
-          --off-white: #F5F7FA;
-          --muted:     #6B7A91;
-          --border:    #DDE3EC;
+          --navy:      #f8fafc;
+          --navy-d:    #020617;
+          --green:     #86efac;
+          --teal:      #7dd3fc;
+          --amber:     #fbbf24;
+          --off-white: #e2e8f0;
+          --muted:     #94a3b8;
+          --border:    rgba(255,255,255,.08);
         }
 
         body {
           font-family: 'Inter', sans-serif;
-          background: radial-gradient(circle at top left, rgba(13, 43, 78, .95), transparent 35%), radial-gradient(circle at bottom right, rgba(2, 52, 106, .92), transparent 40%), linear-gradient(135deg, #F5F7FA 0%, #EBF2F9 50%, #E8F1F8 100%);
-          color: var(--navy-d);
+          background: radial-gradient(circle at top, rgba(59,130,246,.18), transparent 28%), radial-gradient(circle at bottom right, rgba(16,185,129,.14), transparent 24%), linear-gradient(180deg, #020617 0%, #08172f 45%, #0b203f 100%);
+          color: #e2e8f0;
           line-height: 1.7;
         }
 
         nav {
-          background: var(--navy-d);
+          background: rgba(1,12,32,.72);
           padding: 0 6%;
           height: 60px;
           display: flex;
@@ -47,6 +47,7 @@ export default function AfricanLanguagesPage({ goBack }) {
           position: sticky;
           top: 0;
           z-index: 100;
+          border-bottom: 1px solid rgba(255,255,255,.08);
         }
 
         .nav-brand {
@@ -132,7 +133,7 @@ export default function AfricanLanguagesPage({ goBack }) {
         .article-body p {
           font-size: 1.05rem;
           line-height: 1.88;
-          color: #2C3A52;
+          color: rgba(226,232,240,.85);
           margin-bottom: 24px;
         }
 
@@ -163,42 +164,43 @@ export default function AfricanLanguagesPage({ goBack }) {
         }
 
         .lang-tag.navy {
-          color: var(--navy);
-          border-color: rgba(2,52,106,0.3);
-          background: rgba(2,52,106,0.06);
+          color: #f8fafc;
+          border-color: rgba(248,250,252,0.3);
+          background: rgba(248,250,252,0.06);
         }
 
         .lang-tag.green {
-          color: var(--green);
-          border-color: rgba(51,145,28,0.35);
-          background: rgba(51,145,28,0.07);
+          color: #86efac;
+          border-color: rgba(134,239,172,0.35);
+          background: rgba(134,239,172,0.07);
         }
 
         .lang-tag.teal {
-          color: var(--teal);
-          border-color: rgba(13,115,119,0.35);
-          background: rgba(13,115,119,0.07);
+          color: #7dd3fc;
+          border-color: rgba(125,211,252,0.35);
+          background: rgba(125,211,252,0.07);
         }
 
         .lang-tag.amber {
-          color: #b87a00;
-          border-color: rgba(232,160,32,0.4);
-          background: rgba(232,160,32,0.08);
+          color: #fbbf24;
+          border-color: rgba(251,191,36,0.4);
+          background: rgba(251,191,36,0.08);
         }
 
         .pull-quote {
-          border-left: 4px solid var(--amber);
+          border-left: 4px solid #fbbf24;
           padding: 18px 24px;
           margin: 40px 0;
-          background: #fff;
+          background: rgba(1,12,32,.72);
           border-radius: 0 10px 10px 0;
+          border: 1px solid rgba(255,255,255,.08);
         }
 
         .pull-quote p {
           font-family: 'Sora', sans-serif;
           font-size: 1.08rem !important;
           font-weight: 600 !important;
-          color: var(--navy) !important;
+          color: #f8fafc !important;
           line-height: 1.55 !important;
           margin: 0 !important;
           font-style: italic;
@@ -212,9 +214,9 @@ export default function AfricanLanguagesPage({ goBack }) {
         }
 
         .industry-card {
-          background: #fff;
-          border: 1px solid var(--border);
-          border-left: 3px solid var(--green);
+          background: rgba(1,12,32,.72);
+          border: 1px solid rgba(255,255,255,.08);
+          border-left: 3px solid #86efac;
           border-radius: 0 8px 8px 0;
           padding: 18px 18px 16px;
         }
