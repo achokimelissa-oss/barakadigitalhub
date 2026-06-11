@@ -38,7 +38,7 @@ function Workflow() {
         <meta name="description" content="How Baraka Digital Hub runs production AI data pipelines: scoping, training, pilot, QA and delivery." />
       </Helmet>
 
-      <section style={{ padding: "48px 20px", background: "linear-gradient(180deg,#071022 0%,#0b1830 60%)" }}>
+      <section style={{ padding: "48px 20px", background: "radial-gradient(circle at top, rgba(59,130,246,.2), transparent 28%), radial-gradient(circle at bottom right, rgba(16,185,129,.16), transparent 28%), linear-gradient(180deg, #020617 0%, #08172f 60%, #0b203f 100%)", minHeight: "100vh" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto", color: "#e6f7ff" }}>
           <div style={{ textAlign: "center", marginBottom: 28 }}>
             <div style={{ display: "inline-block", background: "rgba(255,255,255,0.04)", color: "#9be7ff", padding: "6px 14px", borderRadius: 100, fontSize: ".72rem", fontWeight: 800, letterSpacing: ".12em", textTransform: "uppercase", marginBottom: 12 }}>Built for Reliable Scale</div>

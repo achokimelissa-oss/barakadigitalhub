@@ -11,10 +11,11 @@ function Operations() {
 				/>
 			</Helmet>
 
-			<section className="section-block section-intro">
+			<div style={{ background: "radial-gradient(circle at top, rgba(59,130,246,.18), transparent 28%), radial-gradient(circle at bottom right, rgba(16,185,129,.14), transparent 24%), linear-gradient(180deg, #020617 0%, #08172f 45%, #0b203f 100%)", color: "#e2e8f0", minHeight: "100vh" }}>
+			<section className="section-block section-intro" style={{ background: "transparent" }}>
 				<div className="text-block">
 					<p className="highlight-pill">Operations</p>
-					<h1>Managed digital operations</h1>
+					<h1 style={{ color: "#f8fafc" }}>Managed digital operations</h1>
 					<p>
 						We run reliable, scalable operations — onboarding, workforce management, quality assurance, and secure data handling for AI projects.
 					</p>
@@ -64,6 +65,7 @@ function Operations() {
 					</div>
 				</div>
 			</section>
+			</div>
 		</>
 	);
 }

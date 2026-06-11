@@ -10,17 +10,18 @@ function Services() {
           content="Expert computer vision annotation, NLP, audio processing, LLM training and BPO services from our Nairobi-based team."
         />
       </Helmet>
-      <section className="section-block service-hero section-intro section-tech-bg">
+      <div style={{ background: "radial-gradient(circle at top, rgba(59,130,246,.18), transparent 28%), radial-gradient(circle at bottom right, rgba(16,185,129,.14), transparent 24%), linear-gradient(180deg, #020617 0%, #08172f 45%, #0b203f 100%)", color: "#e2e8f0", minHeight: "100vh" }}>
+      <section className="section-block service-hero section-intro section-tech-bg" style={{ background: "transparent" }}>
         <div className="text-block">
           <p className="highlight-pill">Our Services</p>
-          <h1>What we deliver</h1>
+          <h1 style={{ color: "#f8fafc" }}>What we deliver</h1>
           <p>
             Baraka Digital Hub provides AI data operations, human-in-the-loop AI, and BPO services to clients worldwide. We act as a managed execution layer for AI systems and data-heavy enterprise operations, integrating into client infrastructure with minimal disruption. Every engagement is backed by trained specialists, independent QA, and structured reporting built for production-grade delivery.
           </p>
         </div>
       </section>
 
-      <section className="section-block section-tech-bg">
+      <section className="section-block section-tech-bg" style={{ background: "transparent" }}>
         <div className="service-grid">
           <article className="service-card accent-cyan">
             <span className="feature-icon">🤖</span>
@@ -75,9 +76,9 @@ function Services() {
         </div>
       </section>
 
-      <section className="section-block accent">
+      <section className="section-block accent" style={{ background: "transparent" }}>
         <div className="text-block">
-          <h2>Why partner with us?</h2>
+          <h2 style={{ color: "#f8fafc" }}>Why partner with us?</h2>
           <div className="why-grid">
             <article className="why-card accent-cyan">
               <span className="feature-icon">✔</span>
@@ -97,6 +98,7 @@ function Services() {
           </div>
         </div>
       </section>
+      </div>
     </>
   );
 }

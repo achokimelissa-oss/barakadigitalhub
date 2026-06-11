@@ -32,7 +32,7 @@ export default function AfricanLanguagesPage({ goBack }) {
 
         body {
           font-family: 'Inter', sans-serif;
-          background: var(--off-white);
+          background: radial-gradient(circle at top left, rgba(13, 43, 78, .95), transparent 35%), radial-gradient(circle at bottom right, rgba(2, 52, 106, .92), transparent 40%), linear-gradient(135deg, #F5F7FA 0%, #EBF2F9 50%, #E8F1F8 100%);
           color: var(--navy-d);
           line-height: 1.7;
         }

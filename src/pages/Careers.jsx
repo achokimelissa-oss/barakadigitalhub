@@ -11,11 +11,12 @@ function Careers() {
           content="Join our growing team of AI data annotators and digital operations specialists in Nairobi, Kenya."
         />
       </Helmet>
-      <section className="section-block careers-hero section-intro">
+      <div style={{ background: "radial-gradient(circle at top, rgba(59,130,246,.18), transparent 28%), radial-gradient(circle at bottom right, rgba(16,185,129,.14), transparent 24%), linear-gradient(180deg, #020617 0%, #08172f 45%, #0b203f 100%)", color: "#e2e8f0", minHeight: "100vh" }}>
+      <section className="section-block careers-hero section-intro" style={{ background: "transparent" }}>
         <div className="text-block">
           <p className="highlight-pill">Careers</p>
-          <h1>Join Our Team</h1>
-          <p>
+          <h1 style={{ color: "#f8fafc" }}>Join Our Team</h1>
+          <p style={{ color: "rgba(226,232,240,.84)" }}>
             We're building the future of digital services and social impact in Africa. If you're passionate about technology, innovation, and making a difference, we'd love to hear from you.
           </p>
         </div>
@@ -67,6 +68,7 @@ function Careers() {
           </Link>
         </div>
       </section>
+      </div>
     </>
   );
 }

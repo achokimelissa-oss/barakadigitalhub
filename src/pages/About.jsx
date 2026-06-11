@@ -10,23 +10,24 @@ function About() {
           content="Learn about Baraka Digital Hub — a Nairobi-based AI training and digital operations company built on social impact."
         />
       </Helmet>
-      <section className="section-block about-hero section-intro">
+      <div style={{ background: "radial-gradient(circle at top, rgba(59,130,246,.18), transparent 28%), radial-gradient(circle at bottom right, rgba(16,185,129,.14), transparent 24%), linear-gradient(180deg, #020617 0%, #08172f 45%, #0b203f 100%)", color: "#e2e8f0", minHeight: "100vh" }}>
+      <section className="section-block about-hero section-intro" style={{ background: "transparent" }}>
         <div className="text-block">
           <p className="highlight-pill">About Baraka</p>
           <h1>Who we are</h1>
-          <p style={{ maxWidth: 720, margin: "0 auto 24px", color: "#334155", fontSize: "1.02rem" }}>
+          <p style={{ maxWidth: 720, margin: "0 auto 24px", color: "rgba(226,232,240,.84)", fontSize: "1.02rem" }}>
             We build reliable digital services and sustainable employment pathways for young people from underserved communities.
           </p>
-          <p>
+          <p style={{ color: "rgba(226,232,240,.84)" }}>
             Baraka Digital Hub is a Nairobi-based AI data operations and BPO partner. We deliver AI data services, human-in-the-loop AI, transcription, and back-office operations to clients worldwide—built and delivered by talented youth from underserved communities.
           </p>
         </div>
       </section>
 
-      <section className="section-block">
+      <section className="section-block" style={{ background: "transparent" }}>
         <div className="text-block">
-          <h2>Our operational promise</h2>
-          <p>
+          <h2 style={{ color: "#f8fafc" }}>Our operational promise</h2>
+          <p style={{ color: "rgba(226,232,240,.84)" }}>
             A partner, not a platform — you receive a named Project Manager, dedicated Team Leads, and a fixed workforce cohort trained specifically on your requirements. The same people, the same standards, every engagement.
           </p>
           <div style={{ display: 'grid', gap: 12, marginTop: 12, maxWidth: 880 }}>
@@ -166,6 +167,7 @@ function About() {
           </div>
         </div>
       </section>
+      </div>
     </>
   );
 }

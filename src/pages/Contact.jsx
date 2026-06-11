@@ -69,11 +69,12 @@ function Contact() {
           content="Get in touch with the Baraka Digital Hub team for AI training data, annotation services, or partnership enquiries."
         />
       </Helmet>
-      <section className="section-block contact-hero section-intro">
+      <div style={{ background: "radial-gradient(circle at top, rgba(59,130,246,.18), transparent 28%), radial-gradient(circle at bottom right, rgba(16,185,129,.14), transparent 24%), linear-gradient(180deg, #020617 0%, #08172f 45%, #0b203f 100%)", color: "#e2e8f0", minHeight: "100vh" }}>
+      <section className="section-block contact-hero section-intro" style={{ background: "transparent" }}>
         <div className="text-block">
           <p className="highlight-pill">Get in touch</p>
-          <h1>Let's work together</h1>
-          <p>
+          <h1 style={{ color: "#f8fafc" }}>Let's work together</h1>
+          <p style={{ color: "rgba(226,232,240,.84)" }}>
             Whether you need AI data operations, human-in-the-loop AI, transcription, or BPO support—or you're curious about our impact model—reach out. We'd love to start a conversation.
           </p>
           <div className="hero-actions" style={{ marginTop: '2rem' }}>
@@ -156,6 +157,7 @@ function Contact() {
           </ul>
         </div>
       </section>
+      </div>
     </>
   );
 }

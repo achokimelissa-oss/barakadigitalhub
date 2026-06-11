@@ -64,60 +64,61 @@ function Impact() {
           content="How Baraka Digital Hub creates sustainable employment for Nairobi youth while delivering world-class AI data services."
         />
       </Helmet>
-      <section className="section-block impact-hero section-intro" style={{ position: "relative", overflow: "hidden", background: "#f8fafc" }}>
-        <div className="dot-grid" style={{ position: "absolute", inset: 0, opacity: .35, pointerEvents: "none", backgroundImage: "radial-gradient(circle, rgba(148,163,184,.13) 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
+      <section className="section-block impact-hero section-intro" style={{ position: "relative", overflow: "hidden", background: "radial-gradient(circle at top, rgba(59,130,246,.18), transparent 28%), radial-gradient(circle at bottom right, rgba(16,185,129,.14), transparent 24%), linear-gradient(180deg, #020617 0%, #08172f 45%, #0b203f 100%)", color: "#e2e8f0" }}>
+        <div className="dot-grid" style={{ position: "absolute", inset: 0, opacity: .08, pointerEvents: "none", backgroundImage: "radial-gradient(circle, rgba(226,232,240,.2) 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
         <div className="text-block" style={{ position: "relative", zIndex: 1 }}>
           <p className="highlight-pill">Community Impact</p>
-          <h1>From Charity to Dignity. From Dependency to Opportunity.</h1>
-          <p>
+          <h1 style={{ color: "#f8fafc" }}>From Charity to Dignity. From Dependency to Opportunity.</h1>
+          <p style={{ color: "rgba(226,232,240,.84)" }}>
             We convert commercial digital work into a consistent support system for youth and Baraka Children’s Home. Every project is designed to create measurable social impact, reliable revenue, and a pathway to lasting independence.
           </p>
           <div className="impact-grid" style={{ marginTop: 28 }}>
             {[
-              { value: "67%", label: "Youth unemployment in informal settlements", color: "#1d4ed8" },
-              { value: "1 in 3", label: "Young people without formal employment", color: "#0f9d68" },
-              { value: "<5%", label: "Children’s home youths in sustainable careers", color: "#d97706" },
+              { value: "67%", label: "Youth unemployment in informal settlements", color: "#7dd3fc" },
+              { value: "1 in 3", label: "Young people without formal employment", color: "#86efac" },
+              { value: "<5%", label: "Children's home youths in sustainable careers", color: "#fbbf24" },
             ].map((item, index) => (
-              <article key={index} className="impact-card" style={{ minHeight: 0, padding: "28px 24px", border: "1px solid rgba(148,163,184,.12)", background: "white" }}>
+              <article key={index} className="impact-card" style={{ minHeight: 0, padding: "28px 24px", border: "1px solid rgba(255,255,255,.08)", background: "rgba(1,12,32,.72)", color: "#e2e8f0" }}>
                 <div className="stat-value" style={{ fontFamily: "'Playfair Display',serif", fontSize: "2rem", fontWeight: 700, color: item.color, marginBottom: 10 }}>{item.value}</div>
-                <div className="stat-label" style={{ fontSize: "0.94rem", color: "#475569", lineHeight: 1.7 }}>{item.label}</div>
+                <div className="stat-label" style={{ fontSize: "0.94rem", color: "rgba(226,232,240,.85)", lineHeight: 1.7 }}>{item.label}</div>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section-block">
+      <div style={{ background: "radial-gradient(circle at top, rgba(59,130,246,.08), transparent 40%), radial-gradient(circle at bottom right, rgba(16,185,129,.06), transparent 35%), linear-gradient(180deg, #020617 0%, #08172f 45%, #0b203f 100%)", color: "#e2e8f0" }}>
+      <section className="section-block" style={{ background: "transparent" }}>
         <div className="text-block">
-          <h2>Impact at a glance</h2>
-          <p>
+          <h2 style={{ color: "#f8fafc" }}>Impact at a glance</h2>
+          <p style={{ color: "rgba(226,232,240,.84)" }}>
             Real numbers that show how our AI services support both enterprise delivery and social impact in Nairobi.
           </p>
         </div>
         <div className="impact-grid">
-          <article className="impact-card accent-cyan">
-            <h3>80+ trained annotators</h3>
+          <article className="impact-card accent-cyan" style={{ background: "rgba(1,12,32,.72)", border: "1px solid rgba(255,255,255,.08)", color: "#e2e8f0" }}>
+            <h3 style={{ color: "#f8fafc" }}>80+ trained annotators</h3>
             <p>Taskers trained in annotation, transcription, NLP, and BPO workflows with ongoing quality coaching.</p>
           </article>
-          <article className="impact-card accent-purple">
-            <h3>1.2M+ tasks delivered</h3>
+          <article className="impact-card accent-purple" style={{ background: "rgba(1,12,32,.72)", border: "1px solid rgba(255,255,255,.08)", color: "#e2e8f0" }}>
+            <h3 style={{ color: "#f8fafc" }}>1.2M+ tasks delivered</h3>
             <p>Computer vision, NLP, audio transcription and dataset labeling completed for global clients.</p>
           </article>
-          <article className="impact-card accent-sunset">
-            <h3>2,300+ hours delivered</h3>
+          <article className="impact-card accent-sunset" style={{ background: "rgba(1,12,32,.72)", border: "1px solid rgba(255,255,255,.08)", color: "#e2e8f0" }}>
+            <h3 style={{ color: "#f8fafc" }}>2,300+ hours delivered</h3>
             <p>Verified labor hours for annotation, review, and data operations across pilot and production batches.</p>
           </article>
-          <article className="impact-card accent-cyan">
-            <h3>6+ languages supported</h3>
+          <article className="impact-card accent-cyan" style={{ background: "rgba(1,12,32,.72)", border: "1px solid rgba(255,255,255,.08)", color: "#e2e8f0" }}>
+            <h3 style={{ color: "#f8fafc" }}>6+ languages supported</h3>
             <p>Including English, Swahili, and local Kenyan dialects to support multilingual AI datasets and regional coverage.</p>
           </article>
         </div>
       </section>
 
-      <section className="section-block">
+      <section className="section-block" style={{ background: "transparent" }}>
         <div className="about-grid">
-          <div className="about-panel">
-            <h2>Our Origin: Why We Exist</h2>
+          <div className="about-panel" style={{ background: "rgba(1,12,32,.72)", border: "1px solid rgba(255,255,255,.08)", color: "#e2e8f0" }}>
+            <h2 style={{ color: "#f8fafc" }}>Our Origin: Why We Exist</h2>
             <p>
               Baraka Digital Hub was born out of Baraka Children’s Home. For nearly two decades, the Children’s Home has been a place of refuge, care, and hope for vulnerable children in Kayole, Nairobi.
             </p>
@@ -244,6 +245,7 @@ function Impact() {
           </Link>
         </div>
       </section>
+      </div>
     </>
   );
 }
