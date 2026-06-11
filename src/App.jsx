@@ -1132,6 +1132,64 @@ const ContactPage = ({ goBack, isMobile }) => {
   );
 };
 
+const BlogsPage = ({ goBack, isMobile }) => {
+  const blogs = [
+    {
+      title: "AI Annotation in Africa: Building Data for Global Models",
+      date: "June 2026",
+      excerpt: "Learn how Nairobi-based annotation workflows are powering computer vision and NLP models with local expertise, secure operations, and measurable quality.",
+      tag: "AI Operations",
+    },
+    {
+      title: "Future-Proofing Digital Workflows with Human-Led Quality",
+      date: "May 2026",
+      excerpt: "Explore the next generation of digital work orchestration where human review, scalable tooling, and automation converge for reliable AI dataset delivery.",
+      tag: "Workflow",
+    },
+    {
+      title: "Ethical AI through Social Impact and Skilled Teams",
+      date: "April 2026",
+      excerpt: "Discover how impact-driven supply chains create ethical AI data pipelines while expanding opportunity for local youth in underserved communities.",
+      tag: "Social Impact",
+    },
+  ];
+
+  return (
+    <div style={{ minHeight: "100vh", background: "radial-gradient(circle at top, rgba(59,130,246,.18), transparent 28%), radial-gradient(circle at bottom right, rgba(16,185,129,.14), transparent 24%), linear-gradient(180deg, #020617 0%, #08172f 45%, #0b203f 100%)", color: "#e2e8f0", overflowX: "hidden", paddingTop: 110, paddingBottom: 60 }}>
+      <PageHelmet title="Blogs | Baraka Digital Hub" description="Read blog insights on AI annotation, future-ready workflows, and ethical impact-driven digital operations." />
+      <div className="page-container" style={{ padding: "0 24px" }}>
+        <div style={{ maxWidth: 980, margin: "0 auto", textAlign: "center", paddingBottom: 40 }}>
+          <button onClick={goBack} style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(255,255,255,.08)", border: "1px solid rgba(255,255,255,.12)", borderRadius: 999, color: "#e2e8f0", padding: "10px 18px", cursor: "pointer", fontFamily: "inherit", marginBottom: 24 }}>
+            <ChevronLeft size={18} /> Back to Home
+          </button>
+          <div style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 10, padding: "10px 18px", borderRadius: 999, background: "rgba(14,165,233,.1)", color: "#7dd3fc", marginBottom: 16, textTransform: "uppercase", letterSpacing: ".12em", fontSize: ".78rem", fontWeight: 700, fontFamily: "ui-monospace, 'Courier New', monospace" }}>Futuristic Insights</div>
+          <h1 className="font-display" style={{ fontSize: isMobile ? "2.6rem" : "3.8rem", fontWeight: 900, letterSpacing: "-.04em", marginBottom: 16, color: "#f8fafc" }}>Baraka Digital Hub Blog</h1>
+          <p style={{ color: "rgba(226,232,240,.84)", fontSize: "1rem", lineHeight: 1.8, maxWidth: 740, margin: "0 auto" }}>
+            A curated collection of stories about AI annotation, future-ready workflows, and responsible digital operations for global teams.
+          </p>
+        </div>
+
+        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3, minmax(0, 1fr))", gap: 24 }}>
+          {blogs.map((blog, index) => (
+            <div key={index} style={{ position: "relative", overflow: "hidden", borderRadius: 28, border: "1px solid rgba(255,255,255,.08)", background: "rgba(1,12,32,.72)", boxShadow: "0 30px 80px rgba(0, 0, 0, 0.35)", padding: "32px 28px", minHeight: 320 }}>
+              <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at top left, rgba(59,130,246,.24), transparent 30%), radial-gradient(circle at bottom right, rgba(16,185,129,.18), transparent 28%)", pointerEvents: "none", opacity: 0.65 }} />
+              <div style={{ position: "relative", zIndex: 1, display: "flex", flexDirection: "column", height: "100%" }}>
+                <span style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", color: "#7dd3fc", fontSize: ".82rem", fontWeight: 700, letterSpacing: ".12em", textTransform: "uppercase", marginBottom: 18, background: "rgba(15, 23, 42, .55)", borderRadius: 999, padding: "8px 14px" }}>{blog.tag}</span>
+                <h2 style={{ fontFamily: "'Inter', sans-serif", fontSize: "1.55rem", lineHeight: 1.2, marginBottom: 16, color: "#ffffff" }}>{blog.title}</h2>
+                <p style={{ color: "rgba(226,232,240,.85)", lineHeight: 1.75, fontSize: "0.98rem", marginBottom: "auto" }}>{blog.excerpt}</p>
+                <div style={{ marginTop: 24, display: "flex", justifyContent: "space-between", alignItems: "center", gap: 16 }}>
+                  <span style={{ color: "rgba(226,232,240,.6)", fontSize: ".85rem", fontWeight: 600 }}>{blog.date}</span>
+                  <button style={{ border: "1px solid rgba(124, 211, 252, .45)", background: "rgba(59,130,246,.14)", color: "#cce7ff", borderRadius: 999, padding: "10px 16px", cursor: "pointer", fontWeight: 700, fontFamily: "inherit", fontSize: ".86rem" }}>Read More</button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 function BarakaDigitalHub() {
   const [page, setPage] = useState("home");
   const [nav, setNav] = useState(false);
@@ -1197,7 +1255,8 @@ function BarakaDigitalHub() {
       '/operations': 'operations',
       '/insights': 'insights',
       '/backoffice': 'backoffice',
-      '/african-languages': 'african-languages'
+      '/african-languages': 'african-languages',
+      '/blogs': 'blogs'
     };
     const updateFromLocation = () => {
       const p = map[window.location.pathname] || 'home';
@@ -1454,6 +1513,7 @@ function BarakaDigitalHub() {
       {page === "operations" && <OperationsPage goBack={goBack} isMobile={isMobile} />}
       {page === "workflow" && <WorkflowPage goBack={goBack} setPage={setPage} isMobile={isMobile} />}
       {page === "contact" && <ContactPage goBack={goBack} isMobile={isMobile} />}
+      {page === "blogs" && <BlogsPage goBack={goBack} isMobile={isMobile} />}
       {page === "pilot" && <PilotPage goBack={goBack} setPage={setPage} navigate={navigate} isMobile={isMobile} />}
       {page === "insights" && <InsightsPage goBack={goBack} />}
       {page === "backoffice" && <BackOfficePage goBack={goBack} />}
@@ -1903,6 +1963,7 @@ function BarakaDigitalHub() {
                 <button onClick={() => navigate("services")} style={{ textAlign:"left", background:"none", border:"none", color:"rgba(255,255,255,.85)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,.85)"}>Services</button>
                 <button onClick={() => navigate("about")} style={{ textAlign:"left", background:"none", border:"none", color:"rgba(255,255,255,.85)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,.85)"}>About</button>
                 <button onClick={() => navigate("impact")} style={{ textAlign:"left", background:"none", border:"none", color:"rgba(255,255,255,.85)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,.85)"}>Impact</button>
+                <button onClick={() => navigate("blogs")} style={{ textAlign:"left", background:"none", border:"none", color:"rgba(255,255,255,.85)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,.85)"}>Blogs</button>
               </div>
             </div>
 
