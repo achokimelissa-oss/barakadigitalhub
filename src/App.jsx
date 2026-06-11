@@ -1133,6 +1133,7 @@ const ContactPage = ({ goBack, isMobile }) => {
 };
 
 const BlogsPage = ({ goBack, isMobile }) => {
+  const router = useNavigate();
   const blogs = [
     {
       title: "Beyond Bulk Labeling: How Baraka Digital Hub Powers the Next Generation of AI",
@@ -1165,7 +1166,7 @@ const BlogsPage = ({ goBack, isMobile }) => {
           <button onClick={goBack} style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(255,255,255,.08)", border: "1px solid rgba(255,255,255,.12)", borderRadius: 999, color: "#e2e8f0", padding: "10px 18px", cursor: "pointer", fontFamily: "inherit", marginBottom: 24 }}>
             <ChevronLeft size={18} /> Back to Home
           </button>
-          <div style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 10, padding: "10px 18px", borderRadius: 999, background: "rgba(14,165,233,.1)", color: "#7dd3fc", marginBottom: 16, textTransform: "uppercase", letterSpacing: ".12em", fontSize: ".78rem", fontWeight: 700, fontFamily: "ui-monospace, 'Courier New', monospace" }}>Futuristic Insights</div>
+          {/* badge removed per design request */}
           <h1 className="font-display" style={{ fontSize: isMobile ? "2.6rem" : "3.8rem", fontWeight: 900, letterSpacing: "-.04em", marginBottom: 16, color: "#f8fafc" }}>Baraka Digital Hub Blog</h1>
           <p style={{ color: "rgba(226,232,240,.84)", fontSize: "1rem", lineHeight: 1.8, maxWidth: 740, margin: "0 auto" }}>
             A curated collection of stories about AI annotation, future-ready workflows, and responsible digital operations for global teams.
@@ -1182,7 +1183,7 @@ const BlogsPage = ({ goBack, isMobile }) => {
                 <p style={{ color: "rgba(226,232,240,.85)", lineHeight: 1.75, fontSize: "0.98rem", marginBottom: "auto" }}>{blog.excerpt}</p>
                 <div style={{ marginTop: 24, display: "flex", justifyContent: "space-between", alignItems: "center", gap: 16 }}>
                   <span style={{ color: "rgba(226,232,240,.6)", fontSize: ".85rem", fontWeight: 600 }}>{blog.date}</span>
-                  <a href={`/${blog.page}`} onClick={(e) => { e.preventDefault(); navigate(blog.page); }} style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", border: "1px solid rgba(124, 211, 252, .45)", background: "rgba(59,130,246,.14)", color: "#cce7ff", borderRadius: 999, padding: "10px 16px", cursor: "pointer", fontWeight: 700, fontFamily: "inherit", fontSize: ".86rem", textDecoration: "none" }}>Read More</a>
+                  <a href={`/${blog.page}`} onClick={(e) => { e.preventDefault(); router(`/${blog.page}`); }} style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", border: "1px solid rgba(124, 211, 252, .45)", background: "rgba(59,130,246,.14)", color: "#cce7ff", borderRadius: 999, padding: "10px 16px", cursor: "pointer", fontWeight: 700, fontFamily: "inherit", fontSize: ".86rem", textDecoration: "none" }}>Read More</a>
                 </div>
               </div>
             </div>
