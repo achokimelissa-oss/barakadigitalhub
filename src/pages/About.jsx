@@ -176,7 +176,7 @@ function About({ navigate }) {
             gap:14px;
           }
           .why-list div{
-            color:var(--text);
+            color:#f3f8ff;
             font-size:0.98rem;
           }
           .why-list div::before{
@@ -209,7 +209,7 @@ function About({ navigate }) {
             font-weight:600;
           }
           .principle p{
-            color:var(--text-dim);
+            color:#e8f4ff;
             font-size:0.86rem;
           }
 
@@ -256,7 +256,7 @@ function About({ navigate }) {
             margin:4px 0 10px;
           }
           .leader .email{
-            color:var(--text-dim);
+            color:#e8f4ff;
             font-size:0.85rem;
             font-family:'JetBrains Mono','Courier New',monospace;
           }
