@@ -366,8 +366,8 @@ function About({ navigate }) {
           }
 
           .cta-section{
-            background:rgba(255,255,255,0.06);
-            border:1px solid rgba(255,255,255,0.14);
+            background:rgba(178, 255, 255, 0.08);
+            border:1px solid rgba(148, 255, 255, 0.24);
             border-radius:24px;
             padding:36px 34px;
             margin-bottom:24px;
@@ -381,7 +381,7 @@ function About({ navigate }) {
             width:180px;
             height:180px;
             border-radius:60px;
-            background:rgba(125, 207, 255, 0.12);
+            background:rgba(153, 255, 255, 0.18);
             z-index:0;
           }
           .cta-section::after{
@@ -392,7 +392,7 @@ function About({ navigate }) {
             width:120px;
             height:120px;
             border-radius:24px;
-            background:rgba(255, 255, 255, 0.08);
+            background:rgba(197, 255, 255, 0.12);
             z-index:0;
           }
           .cta-section > * {
@@ -401,7 +401,7 @@ function About({ navigate }) {
           }
           .cta-copy{
             max-width:760px;
-            color:#d9e9ff;
+            color:#d6fbff;
             margin:18px 0 28px;
             line-height:1.8;
           }
@@ -411,8 +411,8 @@ function About({ navigate }) {
             gap:18px;
           }
           .cta-card{
-            background:rgba(7, 29, 74, 0.72);
-            border:1px solid rgba(255,255,255,0.08);
+            background:rgba(4, 32, 66, 0.84);
+            border:1px solid rgba(173, 255, 255, 0.16);
             border-radius:20px;
             padding:26px 24px;
             box-shadow:0 26px 60px rgba(3, 18, 53, 0.18);
@@ -426,7 +426,7 @@ function About({ navigate }) {
             width:48px;
             height:48px;
             border-radius:14px;
-            background:rgba(125, 207, 255, 0.18);
+            background:rgba(158, 255, 255, 0.2);
             z-index:0;
           }
           .cta-card > * {
@@ -442,7 +442,7 @@ function About({ navigate }) {
             letter-spacing:0.2em;
             text-transform:uppercase;
             color:var(--teal);
-            background:rgba(77, 215, 255, 0.1);
+            background:rgba(166, 255, 255, 0.18);
             margin-bottom:16px;
           }
           .cta-card h3{
@@ -561,6 +561,11 @@ function About({ navigate }) {
               <span className="icon">📈</span>
               <h4>Opportunity</h4>
               <p>We exist to open pathways for growth, employment, and long-term transformation.</p>
+            </div>
+            <div className="principle">
+              <span className="icon">🧭</span>
+              <h4>Integrity</h4>
+              <p>We maintain transparency, ethical decisions, and consistency across every team, partner, and project.</p>
             </div>
           </div>
           <div className="principles-cta">
