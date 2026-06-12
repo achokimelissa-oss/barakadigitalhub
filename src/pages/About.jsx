@@ -7,15 +7,15 @@ function About() {
         <title>About Baraka Digital Hub</title>
         <style>{`
           :root{
-            --navy:#02346A;
-            --dark-navy:#0A1F38;
-            --deepest:#040D1A;
-            --green:#4CAF3C;
-            --teal:#3DD9C8;
-            --amber:#F2B544;
-            --text:#F2F5F9;
-            --text-dim:#B7C4D6;
-            --line:rgba(255,255,255,0.10);
+            --navy:#041b45;
+            --dark-navy:#07142a;
+            --deepest:#010810;
+            --green:#2fc4c4;
+            --teal:#4dd7ff;
+            --amber:#7dcfff;
+            --text:#f3f8ff;
+            --text-dim:#b8d1e6;
+            --line:rgba(255,255,255,0.09);
           }
 
           *{margin:0;padding:0;box-sizing:border-box;}
@@ -106,7 +106,7 @@ function About() {
             font-size:0.72rem;
             letter-spacing:0.3em;
             text-transform:uppercase;
-            color:var(--amber);
+            color:var(--teal);
             margin-bottom:14px;
           }
           h2{
@@ -131,7 +131,7 @@ function About() {
             padding:36px 28px;
             transition:background 0.25s ease;
           }
-          .card:hover{ background:rgba(13,115,119,0.08); }
+          .card:hover{ background:rgba(25,138,205,0.12); }
           .card .label{
             font-family:'JetBrains Mono','Courier New',monospace;
             font-size:0.7rem;
@@ -184,10 +184,10 @@ function About() {
           }
           .principle{
             text-align:left;
-            border:1px solid var(--line);
+            border:1px solid rgba(77,147,205,0.18);
             border-radius:10px;
             padding:24px 18px;
-            background:rgba(255,255,255,0.015);
+            background:rgba(32,58,92,0.16);
           }
           .principle .icon{
             font-size:1.5rem;
