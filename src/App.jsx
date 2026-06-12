@@ -1281,7 +1281,7 @@ const BarakaDigitalHub = () => {
   ];
 
   return (
-    <div style={{ minHeight: "100vh", background: "white", fontFamily: "'DM Sans', sans-serif", overflowX: "hidden" }}>
+    <div style={{ minHeight: "100vh", background: page === "about" ? "transparent" : "white", fontFamily: "'DM Sans', sans-serif", overflowX: "hidden" }}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Orbitron:wght@400;700&display=swap');
         * { box-sizing: border-box; margin: 0; padding: 0; }
