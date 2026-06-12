@@ -538,32 +538,64 @@ function About({ navigate }) {
           <h2>Our operating values shape every engagement.</h2>
           <div className="principles">
             <div className="principle">
-              <span className="icon">🤝</span>
+              <span className="icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 8C6 6.89543 6.89543 6 8 6H10C11.1046 6 12 6.89543 12 8V10C12 11.1046 11.1046 12 10 12H8C6.89543 12 6 11.1046 6 10V8Z" fill="currentColor"/>
+                  <path d="M12 12L16 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  <path d="M16 8C16 6.89543 16.8954 6 18 6H20C21.1046 6 22 6.89543 22 8V10C22 11.1046 21.1046 12 20 12H18C16.8954 12 16 11.1046 16 10V8Z" fill="currentColor"/>
+                  <path d="M8 12L12 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                </svg>
+              </span>
               <h4>Teamwork</h4>
               <p>We believe strong results come from collaboration, shared responsibility, and mutual support.</p>
             </div>
             <div className="principle">
-              <span className="icon">🌟</span>
+              <span className="icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 3L13.9021 8.69786L19.5106 9.23528L15.2553 12.8021L16.3371 18.4647L12 15.8L7.66286 18.4647L8.74469 12.8021L4.48934 9.23528L10.0979 8.69786L12 3Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </span>
               <h4>Dignity</h4>
               <p>We create opportunities that respect people, value their contribution, and promote self-worth.</p>
             </div>
             <div className="principle">
-              <span className="icon">🛡️</span>
+              <span className="icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 3L4 6V11C4 16.5 7.5 20.75 12 22C16.5 20.75 20 16.5 20 11V6L12 3Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M12 8V12" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  <path d="M12 16H12.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                </svg>
+              </span>
               <h4>Accountability</h4>
               <p>We take ownership of our work, our standards, and the impact we create.</p>
             </div>
             <div className="principle">
-              <span className="icon">🚀</span>
+              <span className="icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 17L10 3L14 14L20 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M3 21H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                </svg>
+              </span>
               <h4>Excellence</h4>
               <p>We are committed to delivering reliable, high-quality work that meets professional standards.</p>
             </div>
             <div className="principle">
-              <span className="icon">📈</span>
+              <span className="icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 17L9 12L13 16L20 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M4 21H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                </svg>
+              </span>
               <h4>Opportunity</h4>
               <p>We exist to open pathways for growth, employment, and long-term transformation.</p>
             </div>
             <div className="principle">
-              <span className="icon">🧭</span>
+              <span className="icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="2"/>
+                  <path d="M12 7L14.5 14.5L7 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </span>
               <h4>Integrity</h4>
               <p>We maintain transparency, ethical decisions, and consistency across every team, partner, and project.</p>
             </div>
