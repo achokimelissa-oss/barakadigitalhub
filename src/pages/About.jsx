@@ -366,33 +366,34 @@ function About({ navigate }) {
           }
 
           .cta-section{
-            background:rgba(178, 255, 255, 0.08);
-            border:1px solid rgba(148, 255, 255, 0.24);
-            border-radius:24px;
-            padding:36px 34px;
+            position:relative;
+            background:rgba(6, 38, 72, 0.92);
+            border:1px solid rgba(96, 216, 255, 0.16);
+            border-radius:28px;
+            padding:36px 32px;
             margin-bottom:24px;
             overflow:hidden;
           }
           .cta-section::before{
             content:"";
             position:absolute;
-            top:-20px;
-            right:-26px;
-            width:180px;
-            height:180px;
-            border-radius:60px;
-            background:rgba(153, 255, 255, 0.18);
+            top:-26px;
+            right:-24px;
+            width:220px;
+            height:220px;
+            border-radius:50%;
+            background:rgba(173, 255, 255, 0.14);
             z-index:0;
           }
           .cta-section::after{
             content:"";
             position:absolute;
-            bottom:-18px;
-            left:-18px;
-            width:120px;
-            height:120px;
-            border-radius:24px;
-            background:rgba(197, 255, 255, 0.12);
+            bottom:-16px;
+            left:-14px;
+            width:140px;
+            height:140px;
+            border-radius:28px;
+            background:rgba(114, 232, 255, 0.12);
             z-index:0;
           }
           .cta-section > * {
@@ -400,61 +401,76 @@ function About({ navigate }) {
             z-index:1;
           }
           .cta-copy{
-            max-width:760px;
+            max-width:680px;
             color:#d6fbff;
-            margin:18px 0 28px;
+            margin:16px 0 20px;
+            line-height:1.9;
+            font-size:1rem;
+          }
+          .cta-highlight{
+            display:grid;
+            grid-template-columns:1.8fr 1fr;
+            gap:18px;
+            align-items:start;
+          }
+          .cta-main{
+            background:rgba(13, 56, 94, 0.96);
+            border:1px solid rgba(173, 255, 255, 0.22);
+            border-radius:24px;
+            padding:30px 30px 28px;
+            box-shadow:0 26px 65px rgba(0, 0, 0, 0.16);
+          }
+          .cta-main h3{
+            margin:0 0 14px;
+            color:#eff7ff;
+            font-size:1.28rem;
+            line-height:1.35;
+          }
+          .cta-main p{
+            margin:0;
+            color:#d3f2ff;
             line-height:1.8;
           }
-          .cta-grid{
+          .cta-support{
+            background:rgba(0, 21, 45, 0.92);
+            border:1px solid rgba(173, 255, 255, 0.14);
+            border-radius:22px;
+            padding:24px 22px;
             display:grid;
-            grid-template-columns:repeat(2,minmax(0,1fr));
-            gap:18px;
+            gap:14px;
           }
-          .cta-card{
-            background:rgba(4, 32, 66, 0.84);
-            border:1px solid rgba(173, 255, 255, 0.16);
-            border-radius:20px;
-            padding:26px 24px;
-            box-shadow:0 26px 60px rgba(3, 18, 53, 0.18);
-            min-height:220px;
+          .cta-support .stat{
+            display:flex;
+            gap:14px;
+            align-items:flex-start;
           }
-          .cta-card::before{
-            content:"";
-            position:absolute;
-            top:16px;
-            right:16px;
-            width:48px;
-            height:48px;
-            border-radius:14px;
-            background:rgba(158, 255, 255, 0.2);
-            z-index:0;
-          }
-          .cta-card > * {
-            position:relative;
-            z-index:1;
-          }
-          .cta-label{
+          .cta-support .stat span{
             display:inline-flex;
-            padding:6px 12px;
-            border-radius:9999px;
-            font-family:'JetBrains Mono','Courier New',monospace;
-            font-size:0.72rem;
-            letter-spacing:0.2em;
-            text-transform:uppercase;
-            color:var(--teal);
-            background:rgba(166, 255, 255, 0.18);
-            margin-bottom:16px;
+            min-width:52px;
+            height:52px;
+            align-items:center;
+            justify-content:center;
+            border-radius:18px;
+            background:rgba(150, 255, 255, 0.18);
+            color:#082536;
+            font-weight:700;
+            font-size:1.05rem;
           }
-          .cta-card h3{
-            margin:0 0 14px;
-            font-size:1.1rem;
-            line-height:1.4;
-            color:#f8fbff;
-          }
-          .cta-card p{
+          .cta-support .stat p{
             margin:0;
-            color:#dce9ff;
+            color:#d1ecff;
             line-height:1.75;
+            font-size:0.95rem;
+          }
+          .cta-note{
+            margin-top:20px;
+            padding:18px 20px;
+            border-radius:18px;
+            background:rgba(152, 255, 255, 0.08);
+            border:1px dashed rgba(173, 255, 255, 0.18);
+            color:#e4fbff;
+            font-size:0.95rem;
+            line-height:1.7;
           }
 
           .identity-panel{
@@ -736,19 +752,29 @@ function About({ navigate }) {
         </section>
 
         <section className="cta-section">
-          <div className="section-tag">Get Involved</div>
-          <h2>Partner with Baraka Digital Hub to build digital solutions that create measurable impact.</h2>
-          <p className="cta-copy">Every engagement is designed to support meaningful work, skill growth, and sustainable community outcomes. Explore how our hub combines corporate discipline with social impact.</p>
-          <div className="cta-grid">
-            <div className="cta-card">
-              <div className="cta-label">Corporate Services</div>
-              <h3>Reliable delivery for enterprise AI, annotation, and data operations.</h3>
-              <p>We set structured workflows, strong quality controls, and secure handling protocols so global clients can scale with confidence.</p>
+          <div className="section-tag">Strategic Partner</div>
+          <h2>Partner with Baraka Digital Hub for dependable delivery and measurable social impact.</h2>
+          <p className="cta-copy">Our hub is designed for organizations that need enterprise-grade digital work with strong governance, quality assurance, and a partnership model that also delivers community value.</p>
+          <div className="cta-highlight">
+            <div className="cta-main">
+              <div className="cta-label">Trusted engagement</div>
+              <h3>One streamlined delivery model, built for clients and communities.</h3>
+              <p>We combine structured onboarding, secure operations, and continuous quality oversight so every project is both reliable and impact-led.</p>
+              <div className="cta-note">Ideal for AI, annotation, transcription, and digital operations with a social-enterprise advantage.</div>
             </div>
-            <div className="cta-card">
-              <div className="cta-label">Impact Partnership</div>
-              <h3>Align procurement with purpose through a professionally run social enterprise.</h3>
-              <p>Partnering with Baraka Digital Hub means your project delivers measurable business value and real opportunity for underserved youth in Nairobi.</p>
+            <div className="cta-support">
+              <div className="stat">
+                <span>4x</span>
+                <p>Quicker enablement through predefined workflows, training, and monitored performance.</p>
+              </div>
+              <div className="stat">
+                <span>100+</span>
+                <p>Individuals trained across AI data, quality assurance, and digital operations — ready for professional delivery.</p>
+              </div>
+              <div className="stat">
+                <span>24/7</span>
+                <p>Responsive project support and continuity planning to keep delivery on track across time zones.</p>
+              </div>
             </div>
           </div>
         </section>
