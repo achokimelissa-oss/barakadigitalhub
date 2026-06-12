@@ -196,35 +196,130 @@ function About({ navigate }) {
 
           .principles{
             display:grid;
-            grid-template-columns:repeat(5,1fr);
+            grid-template-columns:repeat(3,minmax(0,1fr));
             gap:18px;
           }
           .principle{
+            position:relative;
+            overflow:hidden;
             text-align:left;
             border:1px solid rgba(77,147,205,0.18);
-            border-radius:10px;
-            padding:24px 18px;
-            background:rgba(32,58,92,0.16);
+            border-radius:20px;
+            padding:28px 22px;
+            background:rgba(9, 25, 58, 0.76);
+            box-shadow:0 24px 54px rgba(2, 22, 54, 0.18);
+          }
+          .principle::before{
+            content:"";
+            position:absolute;
+            top:-20px;
+            right:-18px;
+            width:126px;
+            height:126px;
+            border-radius:50%;
+            background:rgba(61, 210, 255, 0.12);
+            z-index:0;
           }
           .principle .icon{
-            font-size:1.5rem;
-            margin-bottom:14px;
-            display:block;
+            position:relative;
+            display:inline-flex;
+            align-items:center;
+            justify-content:center;
+            width:42px;
+            height:42px;
+            margin-bottom:18px;
+            border-radius:14px;
+            background:rgba(125, 207, 255, 0.14);
+            color:var(--teal);
+            font-size:1.25rem;
+            z-index:1;
           }
           .principle h4{
-            color:#fff;
-            font-size:1rem;
-            margin-bottom:8px;
-            font-weight:600;
+            position:relative;
+            color:#f8fbff;
+            font-size:1.02rem;
+            margin-bottom:10px;
+            font-weight:700;
+            z-index:1;
           }
           .principle p{
-            color:#f7fbff;
-            font-size:0.86rem;
+            position:relative;
+            color:#dde7fb;
+            font-size:0.94rem;
+            line-height:1.75;
+            z-index:1;
           }
 
-          .leaders{
+          .principles-cta{
             display:grid;
-            grid-template-columns:1fr 1fr;
+            grid-template-columns:1.4fr 1fr;
+            gap:18px;
+            margin-top:28px;
+          }
+          .principles-cta-card{
+            position:relative;
+            overflow:hidden;
+            border-radius:22px;
+            padding:30px;
+            background:linear-gradient(180deg, rgba(3,24,62,0.82), rgba(7,35,81,0.9));
+            border:1px solid rgba(125,207,255,0.16);
+            box-shadow:0 28px 72px rgba(6, 21, 56, 0.2);
+          }
+          .principles-cta-card::after{
+            content:"";
+            position:absolute;
+            right:-22px;
+            top:-22px;
+            width:96px;
+            height:96px;
+            border-radius:26px;
+            background:rgba(125,207,255,0.12);
+            z-index:0;
+          }
+          .principles-cta-card h3{
+            margin:0 0 16px;
+            color:#eff7ff;
+            font-size:1.2rem;
+            line-height:1.35;
+            z-index:1;
+            position:relative;
+          }
+          .principles-cta-card p{
+            margin:0 0 20px;
+            color:#e4ecfc;
+            line-height:1.75;
+            position:relative;
+            z-index:1;
+          }
+          .principles-cta-card .cta-badge{
+            display:inline-flex;
+            align-items:center;
+            gap:10px;
+            padding:10px 14px;
+            border-radius:9999px;
+            background:rgba(61,210,255,0.14);
+            color:#bdf0ff;
+            font-family:'JetBrains Mono','Courier New',monospace;
+            font-size:0.75rem;
+            letter-spacing:0.18em;
+            text-transform:uppercase;
+            position:relative;
+            z-index:1;
+          }
+          .principles-cta-card .cta-badge::before{
+            content:"➜";
+            display:inline-block;
+            transform:rotate(-20deg);
+          }
+
+          @media (max-width: 980px){
+            .principles{
+              grid-template-columns:repeat(2,minmax(0,1fr));
+            }
+            .principles-cta{
+              grid-template-columns:1fr;
+            }
+          }
             gap:28px;
           }
           .leader{
@@ -441,12 +536,44 @@ function About({ navigate }) {
         <section>
           <div className="section-tag">Core Principles</div>
           <h2>Our operating values shape every engagement.</h2>
-          <div className="origin-body">
-            <p><strong>Teamwork</strong> We believe strong results come from collaboration, shared responsibility, and mutual support.</p>
-            <p><strong>Dignity</strong> We create opportunities that respect people, value their contribution, and promote self-worth.</p>
-            <p><strong>Accountability</strong> We take ownership of our work, our standards, and the impact we create.</p>
-            <p><strong>Excellence</strong> We are committed to delivering reliable, high-quality work that meets professional standards.</p>
-            <p><strong>Opportunity</strong> We exist to open pathways for growth, employment, and long-term transformation.</p>
+          <div className="principles">
+            <div className="principle">
+              <span className="icon">🤝</span>
+              <h4>Teamwork</h4>
+              <p>We believe strong results come from collaboration, shared responsibility, and mutual support.</p>
+            </div>
+            <div className="principle">
+              <span className="icon">🌟</span>
+              <h4>Dignity</h4>
+              <p>We create opportunities that respect people, value their contribution, and promote self-worth.</p>
+            </div>
+            <div className="principle">
+              <span className="icon">🛡️</span>
+              <h4>Accountability</h4>
+              <p>We take ownership of our work, our standards, and the impact we create.</p>
+            </div>
+            <div className="principle">
+              <span className="icon">🚀</span>
+              <h4>Excellence</h4>
+              <p>We are committed to delivering reliable, high-quality work that meets professional standards.</p>
+            </div>
+            <div className="principle">
+              <span className="icon">📈</span>
+              <h4>Opportunity</h4>
+              <p>We exist to open pathways for growth, employment, and long-term transformation.</p>
+            </div>
+          </div>
+          <div className="principles-cta">
+            <div className="principles-cta-card">
+              <div className="cta-badge">Strategic Value</div>
+              <h3>Drive business outcomes with a partner built on professional impact.</h3>
+              <p>Our model blends enterprise-grade delivery with purposeful community investment, so every engagement supports growth and social return.</p>
+            </div>
+            <div className="principles-cta-card">
+              <div className="cta-badge">Future Ready</div>
+              <h3>Turn digital transformation into sustainable opportunity.</h3>
+              <p>From AI data operations to quality assurance, we deliver services that scale with your goals while strengthening local talent and resilience.</p>
+            </div>
           </div>
         </section>
 
