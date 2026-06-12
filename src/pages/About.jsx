@@ -91,7 +91,7 @@ function About() {
           .hero p{
             margin-top:24px;
             font-size:1.15rem;
-            color:var(--text-dim);
+            color:#e9f4ff;
             max-width:720px;
             line-height:1.8;
           }
@@ -154,13 +154,13 @@ function About() {
             font-weight:600;
           }
           .card p{
-            color:rgba(243,248,255,0.87);
+            color:#edf7ff;
             font-size:0.95rem;
           }
 
           .origin-body{
             max-width:760px;
-            color:var(--text-dim);
+            color:#e7f4ff;
             font-size:1.02rem;
             margin-top:16px;
           }
@@ -235,7 +235,7 @@ function About() {
             line-height:1;
           }
           .leader p.quote{
-            color:var(--text);
+            color:#f3f8ff;
             font-size:1.02rem;
             font-style:italic;
             margin-bottom:24px;
