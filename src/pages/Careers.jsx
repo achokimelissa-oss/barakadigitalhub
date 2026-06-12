@@ -23,7 +23,7 @@ function Careers() {
       </section>
 
       <section className="section-block">
-        <div className="page-container">
+        <div style={{ width: '100%', padding: '0 24px' }}>
           <h2>Why Work With Us?</h2>
           <div className="careers-grid">
             <div className="career-card">

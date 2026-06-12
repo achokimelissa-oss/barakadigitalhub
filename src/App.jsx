@@ -1287,12 +1287,12 @@ const BarakaDigitalHub = () => {
         * { box-sizing: border-box; margin: 0; padding: 0; }
         .font-display { font-family: 'Georgia', 'Times New Roman', serif !important; }
         .hero-h1 { font-family: 'Georgia', 'Times New Roman', serif !important; font-size: clamp(3rem, 5vw, 4.2rem) !important; }
-        .page-container { width: min(100%, 1200px); margin: 0 auto; padding: 0 24px; }
+        .page-container { width: 100% !important; max-width: none !important; margin: 0 !important; padding: 0 24px !important; }
         .section-h2 { font-size: clamp(1.6rem, 2vw, 2rem) !important; color: #0f172a; font-weight: 700; letter-spacing: -0.02em; line-height: 1.16; }
         .section-copy { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !important; }
         .hero-copy { font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important; }
         .body-copy { font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important; }
-        .section-copy, .hero-copy, .body-copy { font-size: clamp(1rem, 1vw, 1.05rem); line-height: 1.75; max-width: 64rem; margin: 0 auto; color: #475569; }
+        .section-copy, .hero-copy, .body-copy { font-size: clamp(1rem, 1vw, 1.05rem); line-height: 1.75; max-width: none; margin: 0; color: #475569; }
         .text-wrap { word-wrap: break-word; overflow-wrap: break-word; }
         @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
         @keyframes floatB { 0%,100%{transform:translateY(0) rotate(-2deg)} 50%{transform:translateY(-8px) rotate(2deg)} }
@@ -1342,8 +1342,10 @@ const BarakaDigitalHub = () => {
         .impact-card { background: rgba(255,255,255,.94); border: 1px solid rgba(59,130,246,.16); }
         @keyframes tech-bg-glow { 0%,100% { background-position: 12% 18%, 88% 24%, 52% 58%; } 50% { background-position: 18% 12%, 82% 28%, 48% 62%; } }
         @keyframes tech-bg-stripes { 0%,100% { transform: translateY(0); opacity: 0; } 50% { transform: translateY(8px); opacity: 0; } }
-        .btn-primary { display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#1d4ed8,#06b6d4);color:white;padding:16px 30px;border-radius:999px;font-weight:800;font-size:1rem;text-decoration:none;box-shadow:0 18px 40px rgba(29,78,216,.18),0 0 0 1px rgba(255,255,255,.08);transition:transform .22s,box-shadow .22s,background .22s;outline:none;border:none;cursor:pointer;font-family:'Segoe UI', Arial, sans-serif; }
-        .btn-primary:hover { transform:translateY(-2px);box-shadow:0 24px 50px rgba(29,78,216,.28),0 0 0 1px rgba(255,255,255,.18);background:linear-gradient(135deg,#2563eb,#0f9d58); }
+        .btn-primary { display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#0f4fad,#118ab2);color:white;padding:14px 26px;border-radius:16px;font-weight:700;font-size:0.98rem;text-decoration:none;box-shadow:0 16px 36px rgba(15,55,100,.2);transition:transform .22s,box-shadow .22s,background .22s;outline:none;border:none;cursor:pointer;font-family:'Segoe UI', Arial, sans-serif; }
+        .btn-primary:hover { transform:translateY(-2px);box-shadow:0 20px 42px rgba(15,55,100,.28);background:linear-gradient(135deg,#145d9e,#0d95b6); }
+        .btn-secondary { display:inline-flex;align-items:center;gap:10px;background:rgba(15,75,115,.95);color:white;padding:14px 26px;border-radius:16px;font-weight:700;font-size:0.98rem;text-decoration:none;border:1px solid rgba(94,176,217,.32);transition:transform .22s,box-shadow .22s,background .22s;cursor:pointer;font-family:'Segoe UI', Arial, sans-serif;box-shadow:0 16px 32px rgba(15,75,115,.18); }
+        .btn-secondary:hover { background:rgba(21,97,142,.96);transform:translateY(-2px);box-shadow:0 20px 40px rgba(15,75,115,.26); }
         /* logo carousel */
         .logo-carousel { overflow: hidden; background: linear-gradient(180deg,#f8fbff 0%, #e9f1ff 50%, #edf7ff 100%); border-radius: 24px; padding: 32px 18px; margin-top: 28px; border: 1px solid rgba(15,23,42,.08); box-shadow: 0 24px 80px rgba(15,23,42,.08); }
         .logo-track { display:flex; gap:24px; align-items:center; width:max-content; animation: marquee-logos 28s linear infinite; }

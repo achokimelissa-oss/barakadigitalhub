@@ -368,34 +368,18 @@ function About({ navigate }) {
 
           .cta-section{
             position:relative;
-            background:rgba(6, 38, 72, 0.92);
-            border:1px solid rgba(96, 216, 255, 0.16);
+            display:grid;
+            grid-template-columns:1.7fr 1fr;
+            gap:24px;
+            background:rgba(10, 28, 54, 0.95);
+            border:1px solid rgba(125, 207, 255, 0.16);
             border-radius:28px;
-            padding:36px 32px;
+            padding:42px 38px;
             margin-bottom:24px;
-            overflow:hidden;
           }
-          .cta-section::before{
-            content:"";
-            position:absolute;
-            top:-26px;
-            right:-24px;
-            width:220px;
-            height:220px;
-            border-radius:50%;
-            background:rgba(173, 255, 255, 0.14);
-            z-index:0;
-          }
+          .cta-section::before,
           .cta-section::after{
-            content:"";
-            position:absolute;
-            bottom:-16px;
-            left:-14px;
-            width:140px;
-            height:140px;
-            border-radius:28px;
-            background:rgba(114, 232, 255, 0.12);
-            z-index:0;
+            display:none;
           }
           .cta-section > * {
             position:relative;
@@ -404,25 +388,28 @@ function About({ navigate }) {
           .cta-copy{
             max-width:100%;
             color:#d6fbff;
-            margin:16px 0 20px;
+            margin:16px 0 24px;
             line-height:1.9;
             font-size:1rem;
           }
           .cta-highlight{
             display:grid;
-            grid-template-columns:1.8fr 1fr;
-            gap:18px;
+            grid-template-columns:1.7fr 1fr;
+            gap:24px;
             align-items:start;
           }
           .cta-main{
-            background:rgba(13, 56, 94, 0.96);
-            border:1px solid rgba(173, 255, 255, 0.22);
+            background:rgba(9, 32, 64, 0.96);
+            border:1px solid rgba(125, 207, 255, 0.12);
             border-radius:24px;
-            padding:30px 30px 28px;
-            box-shadow:0 26px 65px rgba(0, 0, 0, 0.16);
+            padding:32px 30px 32px;
+            box-shadow:0 24px 64px rgba(0, 0, 0, 0.14);
+            display:flex;
+            flex-direction:column;
+            gap:20px;
           }
           .cta-main h3{
-            margin:0 0 14px;
+            margin:0;
             color:#eff7ff;
             font-size:1.28rem;
             line-height:1.35;
@@ -432,13 +419,68 @@ function About({ navigate }) {
             color:#d3f2ff;
             line-height:1.8;
           }
-          .cta-support{
-            background:rgba(0, 21, 45, 0.92);
-            border:1px solid rgba(173, 255, 255, 0.14);
-            border-radius:22px;
-            padding:24px 22px;
+          .cta-main ul{
+            list-style:none;
+            padding:0;
+            margin:0;
             display:grid;
             gap:14px;
+          }
+          .cta-main li{
+            display:flex;
+            align-items:flex-start;
+            gap:12px;
+            color:#d6eefc;
+            line-height:1.8;
+          }
+          .cta-main li::before{
+            content:"•";
+            color:var(--teal);
+            font-size:1rem;
+            line-height:1;
+            margin-top:4px;
+          }
+          .cta-actions{
+            display:flex;
+            flex-wrap:wrap;
+            gap:14px;
+          }
+          .cta-actions button,
+          .cta-actions a{
+            display:inline-flex;
+            align-items:center;
+            gap:10px;
+            border-radius:14px;
+            padding:14px 22px;
+            font-weight:700;
+            font-size:0.96rem;
+            text-decoration:none;
+            border:none;
+            cursor:pointer;
+            transition:transform .2s,box-shadow .2s,background .2s;
+          }
+          .cta-actions button{
+            background:linear-gradient(135deg, rgba(79, 158, 219, 0.95), rgba(22, 126, 170, 0.98));
+            color:#fff;
+            border:1px solid rgba(135, 206, 245, 0.22);
+          }
+          .cta-actions a{
+            background:rgba(255,255,255,0.08);
+            color:#dcecff;
+            border:1px solid rgba(255,255,255,0.14);
+          }
+          .cta-actions button:hover,
+          .cta-actions a:hover{
+            transform:translateY(-1px);
+            box-shadow:0 18px 34px rgba(13, 76, 130, 0.18);
+          }
+          .cta-support{
+            background:rgba(3, 14, 32, 0.96);
+            border:1px solid rgba(125, 207, 255, 0.12);
+            border-radius:22px;
+            padding:28px 26px;
+            display:grid;
+            gap:18px;
           }
           .cta-support .stat{
             display:flex;
@@ -809,6 +851,15 @@ function About({ navigate }) {
               <div className="cta-label">Trusted engagement</div>
               <h3>One streamlined delivery model, built for clients and communities.</h3>
               <p>We combine structured onboarding, secure operations, and continuous quality oversight so every project is both reliable and impact-led.</p>
+              <ul>
+                <li>Enterprise-grade delivery with clear governance and quality control.</li>
+                <li>Fast onboarding and consistent performance for data operations.</li>
+                <li>Transparent reporting and accountability across every engagement.</li>
+              </ul>
+              <div className="cta-actions">
+                <button type="button" onClick={() => navigate("services")}>Explore Services</button>
+                <a href="/contact" onClick={(e) => { e.preventDefault(); navigate("contact"); }}>Request a Partnership</a>
+              </div>
               <div className="cta-note">Ideal for AI, annotation, transcription, and digital operations with a social-enterprise advantage.</div>
             </div>
             <div className="cta-support">

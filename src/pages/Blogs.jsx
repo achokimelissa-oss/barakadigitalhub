@@ -51,7 +51,7 @@ export default function BlogsPage({ goBack, isMobile }) {
             <ChevronLeft size={18} /> Back to Home
           </button>
           <h1 className="font-display" style={{ fontSize: isMobile ? "2.6rem" : "3.8rem", fontWeight: 900, letterSpacing: "-.04em", marginBottom: 16, color: "#f8fafc" }}>Baraka Digital Hub Blog</h1>
-          <p style={{ color: "rgba(226,232,240,.84)", fontSize: "1rem", lineHeight: 1.8, maxWidth: 740, margin: "0 auto" }}>
+          <p style={{ color: "rgba(226,232,240,.84)", fontSize: "1rem", lineHeight: 1.8, width: '100%', margin: 0 }}>
             A curated collection of stories about AI annotation, future-ready workflows, and responsible digital operations for global teams. This blog highlights East African languages and dialects including Swahili, Sheng, Kikuyu, Dholuo, Kamba, Kalenjin, Luganda, Amharic, Oromo, Somali, Tigrinya, Maasai, and Runyoro.
           </p>
         </div>
