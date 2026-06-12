@@ -13,9 +13,9 @@ function About({ navigate }) {
             --green:#2fc4c4;
             --teal:#4dd7ff;
             --amber:#7dcfff;
-            --text:#f3f8ff;
-            --text-dim:#b8d1e6;
-            --line:rgba(255,255,255,0.09);
+            --text:#ffffff;
+            --text-dim:#d4e3ff;
+            --line:rgba(255,255,255,0.12);
           }
 
           *{margin:0;padding:0;box-sizing:border-box;}
@@ -91,9 +91,9 @@ function About({ navigate }) {
           .hero p{
             margin-top:24px;
             font-size:1.15rem;
-            color:#e9f4ff;
+            color:#ffffff;
             max-width:720px;
-            line-height:1.8;
+            line-height:1.9;
           }
 
           section{
@@ -160,7 +160,7 @@ function About({ navigate }) {
 
           .origin-body{
             max-width:760px;
-            color:#e7f4ff;
+            color:#fbfdff;
             font-size:1.02rem;
             margin-top:16px;
           }
@@ -176,7 +176,7 @@ function About({ navigate }) {
             gap:14px;
           }
           .why-list div{
-            color:#f3f8ff;
+            color:#ffffff;
             font-size:0.98rem;
           }
           .why-list div::before{
@@ -209,7 +209,7 @@ function About({ navigate }) {
             font-weight:600;
           }
           .principle p{
-            color:#e8f4ff;
+            color:#f7fbff;
             font-size:0.86rem;
           }
 
@@ -256,7 +256,7 @@ function About({ navigate }) {
             margin:4px 0 10px;
           }
           .leader .email{
-            color:#e8f4ff;
+            color:#f4fbff;
             font-size:0.85rem;
             font-family:'JetBrains Mono','Courier New',monospace;
           }
