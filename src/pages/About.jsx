@@ -18,11 +18,11 @@ function About() {
         }}
       >
         <section className="section-block about-hero section-intro" style={{ background: "transparent" }}>
-          <div className="text-block" style={{ color: "#f8fafc" }}>
+          <div className="text-block" style={{ maxWidth: "100%", color: "#f8fafc" }}>
             <p className="highlight-pill">About Baraka</p>
-            <h1>Trusted delivery with meaningful impact</h1>
+            <h1 className="hero-h1" style={{ color: "#f8fafc" }}>Trusted delivery with meaningful impact</h1>
             <p style={{ color: "rgba(226,232,240,.84)" }}>
-              Baraka Digital Hub is a Nairobi-based delivery partner for AI data operations, human-in-the-loop workflows, transcription, and back-office support. We combine dependable execution with structured workforce development for clients who need reliable results and measurable social value.
+              Baraka Digital Hub is a Nairobi-based digital services partner delivering AI data operations, human-in-the-loop workflows, transcription, and back-office support. We combine dependable execution with structured workforce development for clients who need reliable results and measurable social value.
             </p>
           </div>
         </section>
