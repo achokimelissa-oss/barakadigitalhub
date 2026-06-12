@@ -270,6 +270,98 @@ function About({ navigate }) {
             font-family:'JetBrains Mono','Courier New',monospace;
           }
 
+          .cta-section{
+            background:rgba(255,255,255,0.06);
+            border:1px solid rgba(255,255,255,0.14);
+            border-radius:24px;
+            padding:36px 34px;
+            margin-bottom:24px;
+            overflow:hidden;
+          }
+          .cta-section::before{
+            content:"";
+            position:absolute;
+            top:-20px;
+            right:-26px;
+            width:180px;
+            height:180px;
+            border-radius:60px;
+            background:rgba(125, 207, 255, 0.12);
+            z-index:0;
+          }
+          .cta-section::after{
+            content:"";
+            position:absolute;
+            bottom:-18px;
+            left:-18px;
+            width:120px;
+            height:120px;
+            border-radius:24px;
+            background:rgba(255, 255, 255, 0.08);
+            z-index:0;
+          }
+          .cta-section > * {
+            position:relative;
+            z-index:1;
+          }
+          .cta-copy{
+            max-width:760px;
+            color:#d9e9ff;
+            margin:18px 0 28px;
+            line-height:1.8;
+          }
+          .cta-grid{
+            display:grid;
+            grid-template-columns:repeat(2,minmax(0,1fr));
+            gap:18px;
+          }
+          .cta-card{
+            background:rgba(7, 29, 74, 0.72);
+            border:1px solid rgba(255,255,255,0.08);
+            border-radius:20px;
+            padding:26px 24px;
+            box-shadow:0 26px 60px rgba(3, 18, 53, 0.18);
+            min-height:220px;
+          }
+          .cta-card::before{
+            content:"";
+            position:absolute;
+            top:16px;
+            right:16px;
+            width:48px;
+            height:48px;
+            border-radius:14px;
+            background:rgba(125, 207, 255, 0.18);
+            z-index:0;
+          }
+          .cta-card > * {
+            position:relative;
+            z-index:1;
+          }
+          .cta-label{
+            display:inline-flex;
+            padding:6px 12px;
+            border-radius:9999px;
+            font-family:'JetBrains Mono','Courier New',monospace;
+            font-size:0.72rem;
+            letter-spacing:0.2em;
+            text-transform:uppercase;
+            color:var(--teal);
+            background:rgba(77, 215, 255, 0.1);
+            margin-bottom:16px;
+          }
+          .cta-card h3{
+            margin:0 0 14px;
+            font-size:1.1rem;
+            line-height:1.4;
+            color:#f8fbff;
+          }
+          .cta-card p{
+            margin:0;
+            color:#dce9ff;
+            line-height:1.75;
+          }
+
           @media (max-width: 800px){
             h1{ font-size:2.2rem; }
             .grid3{ grid-template-columns:1fr; }
@@ -358,26 +450,36 @@ function About({ navigate }) {
           </div>
         </section>
 
-        <section>
-          <div className="section-tag">Leadership</div>
-          <h2>From our Head of Operations</h2>
-          <div className="leaders">
-            <div className="leader">
-              <p className="quote">Baraka Digital Hub was built on a simple belief: talent is universal, but opportunity is not.</p>
-              <p className="quote">Our vision is to create a pathway where young people from underserved communities can access meaningful digital work, develop globally competitive skills, and build sustainable futures for themselves and their families.</p>
-              <p className="quote">We are building more than a workforce centre. We are building a model of economic inclusion powered by technology, discipline, and purpose.</p>
-              <p className="quote">Every project delivered is an opportunity created, a skill strengthened, and a future made more stable.</p>
-              <p className="quote">We are ready to partner with organizations that value both excellence and impact.</p>
-              <div className="name">Timothy Mwangi</div>
-              <div className="role">Head of Operations</div>
+        <section className="cta-section">
+          <div className="section-tag">Get Involved</div>
+          <h2>Partner with Baraka Digital Hub to build digital solutions that create measurable impact.</h2>
+          <p className="cta-copy">Every engagement is designed to support meaningful work, skill growth, and sustainable community outcomes. Explore how our hub combines corporate discipline with social impact.</p>
+          <div className="cta-grid">
+            <div className="cta-card">
+              <div className="cta-label">Corporate Services</div>
+              <h3>Reliable delivery for enterprise AI, annotation, and data operations.</h3>
+              <p>We set structured workflows, strong quality controls, and secure handling protocols so global clients can scale with confidence.</p>
+            </div>
+            <div className="cta-card">
+              <div className="cta-label">Impact Partnership</div>
+              <h3>Align procurement with purpose through a professionally run social enterprise.</h3>
+              <p>Partnering with Baraka Digital Hub means your project delivers measurable business value and real opportunity for underserved youth in Nairobi.</p>
             </div>
           </div>
         </section>
 
         <section>
           <div className="section-tag">Leadership</div>
-          <h2>From our President and Mama Baraka</h2>
+          <h2>Our leadership brings mission focus, operational excellence, and community roots.</h2>
           <div className="leaders">
+            <div className="leader">
+              <p className="quote">Baraka Digital Hub was built on a simple belief: talent is universal, but opportunity is not.</p>
+              <p className="quote">Our vision is to create a pathway where young people from underserved communities can access meaningful digital work, develop globally competitive skills, and build sustainable futures for themselves and their families.</p>
+              <p className="quote">We are building more than a workforce centre. We are building a model of economic inclusion powered by technology, discipline, and purpose.</p>
+              <p className="quote">Every project delivered is an opportunity created, a skill strengthened, and a future made more stable.</p>
+              <div className="name">Timothy Mwangi</div>
+              <div className="role">Head of Operations</div>
+            </div>
             <div className="leader">
               <p className="quote">My life has always been rooted in children — loving them, raising them, and standing beside them through every season of their growth. As Mama Baraka, my deepest calling has been to ensure that no child under our care ever feels forgotten or without a future.</p>
               <p className="quote">Baraka Digital Hub was born from that responsibility and that love. It is an extension of the Children’s Home, built to ensure that our young people step into adulthood with skills, confidence, and opportunity.</p>
