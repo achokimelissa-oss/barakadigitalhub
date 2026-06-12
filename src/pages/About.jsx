@@ -753,28 +753,6 @@ function About({ navigate }) {
           </div>
         </section>
 
-        <section>
-          <div className="section-tag">Leadership</div>
-          <h2>Our leadership brings mission focus, operational excellence, and community roots.</h2>
-          <div className="leaders">
-            <div className="leader">
-              <p className="quote">Baraka Digital Hub was built on a simple belief: talent is universal, but opportunity is not.</p>
-              <p className="quote">Our vision is to create a pathway where young people from underserved communities can access meaningful digital work, develop globally competitive skills, and build sustainable futures for themselves and their families.</p>
-              <p className="quote">We are building more than a workforce centre. We are building a model of economic inclusion powered by technology, discipline, and purpose.</p>
-              <p className="quote">Every project delivered is an opportunity created, a skill strengthened, and a future made more stable.</p>
-              <div className="name">Timothy Mwangi</div>
-              <div className="role">Head of Operations</div>
-            </div>
-            <div className="leader">
-              <p className="quote">My life has always been rooted in children — loving them, raising them, and standing beside them through every season of their growth. As Mama Baraka, my deepest calling has been to ensure that no child under our care ever feels forgotten or without a future.</p>
-              <p className="quote">Baraka Digital Hub was born from that responsibility and that love. It is an extension of the Children’s Home, built to ensure that our young people step into adulthood with skills, confidence, and opportunity.</p>
-              <p className="quote">Care must evolve into empowerment, and charity must grow into dignity.</p>
-              <p className="quote">This work is family. It is love translated into opportunity.</p>
-              <div className="name">Margrate Kimaru</div>
-              <div className="role">President &amp; Mama Baraka</div>
-            </div>
-          </div>
-        </section>
       </div>
     </>
   );
