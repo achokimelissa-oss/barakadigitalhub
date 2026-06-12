@@ -51,6 +51,15 @@ function About({ navigate }) {
             max-width:980px;
             margin:0 auto;
             padding:0 28px;
+            color:#f8fbff;
+          }
+          .wrap,
+          .wrap * {
+            color:#f8fbff !important;
+          }
+          .wrap a {
+            color:#7dd3fc !important;
+            text-decoration:none;
           }
 
           .hero{
