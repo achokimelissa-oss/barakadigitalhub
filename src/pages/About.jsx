@@ -457,11 +457,124 @@ function About({ navigate }) {
             line-height:1.75;
           }
 
+          .identity-panel{
+            display:grid;
+            grid-template-columns:1.05fr 0.95fr;
+            gap:26px;
+            margin-top:28px;
+          }
+          .identity-summary{
+            position:relative;
+            border-radius:24px;
+            background:rgba(255,255,255,0.06);
+            border:1px solid rgba(255,255,255,0.14);
+            padding:32px 30px;
+            box-shadow:0 28px 70px rgba(2, 18, 45, 0.18);
+          }
+          .identity-summary::before{
+            content:"";
+            position:absolute;
+            top:-18px;
+            left:-18px;
+            width:100px;
+            height:100px;
+            border-radius:28px;
+            background:rgba(158,255,255,0.14);
+            z-index:0;
+          }
+          .identity-summary > *{
+            position:relative;
+            z-index:1;
+          }
+          .identity-summary p{
+            color:#e8f3ff;
+            line-height:1.85;
+            margin-bottom:20px;
+            font-size:1rem;
+          }
+          .identity-summary strong{
+            color:#fff;
+          }
+          .identity-highlight{
+            display:grid;
+            gap:18px;
+          }
+          .identity-card{
+            position:relative;
+            overflow:hidden;
+            border-radius:22px;
+            padding:28px 24px;
+            background:rgba(6, 24, 58, 0.88);
+            border:1px solid rgba(163, 255, 255, 0.12);
+            box-shadow:0 24px 60px rgba(1, 16, 44, 0.22);
+          }
+          .identity-card::before{
+            content:"";
+            position:absolute;
+            top:-18px;
+            right:-18px;
+            width:92px;
+            height:92px;
+            border-radius:26px;
+            background:rgba(152,255,255,0.16);
+            z-index:0;
+          }
+          .identity-label{
+            display:inline-flex;
+            align-items:center;
+            gap:8px;
+            padding:8px 12px;
+            border-radius:9999px;
+            font-family:'JetBrains Mono','Courier New',monospace;
+            font-size:0.72rem;
+            letter-spacing:0.18em;
+            text-transform:uppercase;
+            background:rgba(166,255,255,0.14);
+            color:var(--teal);
+            margin-bottom:16px;
+            position:relative;
+            z-index:1;
+          }
+          .identity-card h3{
+            position:relative;
+            z-index:1;
+            color:#f8fbff;
+            font-size:1.1rem;
+            margin:0 0 14px;
+            line-height:1.4;
+          }
+          .identity-card p{
+            position:relative;
+            z-index:1;
+            color:#d8efff;
+            line-height:1.75;
+            margin:0;
+          }
+          .identity-cta{
+            margin-top:24px;
+            border-radius:22px;
+            padding:28px 26px;
+            background:linear-gradient(180deg, rgba(9, 28, 56, 0.9), rgba(7, 20, 41, 0.95));
+            border:1px solid rgba(149,255,255,0.12);
+          }
+          .identity-cta h3{
+            margin:0 0 12px;
+            color:#f6fdff;
+            font-size:1.15rem;
+            line-height:1.4;
+          }
+          .identity-cta p{
+            margin:0;
+            color:#cdecff;
+            line-height:1.75;
+          }
+
           @media (max-width: 800px){
             h1{ font-size:2.2rem; }
             .grid3{ grid-template-columns:1fr; }
             .principles{ grid-template-columns:repeat(2,1fr); }
             .leaders{ grid-template-columns:1fr; }
+            .identity-panel{ grid-template-columns:1fr; }
             .hero{ padding:72px 0 56px; }
             section{ padding:50px 0; }
             .hero p, .origin-body{ max-width:100%; }
@@ -501,35 +614,43 @@ function About({ navigate }) {
         <section>
           <div className="section-tag">Our Identity</div>
           <h2>Baraka Digital Hub is built on a core belief: talent is universal, but opportunity is not.</h2>
-          <div className="origin-body">
-            <p>Our mission is to close this gap by connecting underserved young people to structured digital employment and global work opportunities.</p>
-            <p>We operate as a professional services organization with a strong social impact mandate, combining commercial discipline with measurable community outcomes.</p>
-            <p>We are not a charity. We are a business built for sustainable impact.</p>
-          </div>
-
-          <div className="origin-body" style={{ marginTop: 24 }}>
-            <h3>Vision</h3>
-            <p>To become Africa's leading impact-driven digital workforce company, connecting global businesses with world-class AI data and digital services while creating sustainable employment opportunities for underserved youth.</p>
-          </div>
-
-          <div className="origin-body" style={{ marginTop: 24 }}>
-            <h3>Mission</h3>
-            <p>BDH exists to prove that geography is not a limitation to excellence. We empower underserved youth to deliver world-class AI data and digital services, creating value for global businesses while transforming lives and communities.</p>
-          </div>
-
-          <div className="origin-body" style={{ marginTop: 24 }}>
-            <h3>Sustainable Impact Model</h3>
-            <p>BDH operates on a sustainable, revenue-driven model rather than relying on donations or charity. Income generated through AI data services and digital operations supports business growth, workforce development, and the long-term mission of Baraka Children's Home. Every project delivered creates both commercial value and measurable social impact.</p>
-          </div>
-
-          <div className="origin-body" style={{ marginTop: 24 }}>
-            <h3>Youth Employment & Economic Empowerment</h3>
-            <p>BDH intentionally creates employment opportunities for youth from underserved communities across Africa. Through structured onboarding, practical training, mentorship, and hands-on project experience, participants gain access to meaningful work in the global digital economy while building confidence, professional discipline, and financial independence.</p>
-          </div>
-
-          <div className="origin-body" style={{ marginTop: 24 }}>
-            <h3>Future-Ready Skills Development</h3>
-            <p>At BDH, our focus extends beyond task completion. Team members develop valuable, transferable skills in AI data annotation, quality assurance, data management, client communication, problem-solving, and digital operations. These capabilities prepare them for long-term career growth and emerging opportunities in the rapidly evolving AI and technology sectors.</p>
+          <div className="identity-panel">
+            <div className="identity-summary">
+              <p>Our mission is to close this gap by connecting underserved young people to structured digital employment and global work opportunities.</p>
+              <p>We operate as a professional services organization with a strong social impact mandate, combining commercial discipline with measurable community outcomes.</p>
+              <p>We are not a charity. We are a business built for sustainable impact.</p>
+              <div className="identity-cta">
+                <h3>Corporate performance with social purpose.</h3>
+                <p>We deliver disciplined digital services under a model that prioritizes reliability, ethical delivery, and long-term impact.</p>
+              </div>
+            </div>
+            <div className="identity-highlight">
+              <div className="identity-card">
+                <div className="identity-label">Vision</div>
+                <h3>Lead Africa’s next wave of impact-driven digital workforce services.</h3>
+                <p>We connect global businesses with world-class AI data and digital services while creating sustainable employment opportunities for underserved youth.</p>
+              </div>
+              <div className="identity-card">
+                <div className="identity-label">Mission</div>
+                <h3>Prove that geography is not a limitation to excellence.</h3>
+                <p>BDH empowers underserved youth to deliver world-class AI data and digital services, creating value for global businesses while transforming lives and communities.</p>
+              </div>
+              <div className="identity-card">
+                <div className="identity-label">Sustainable Impact Model</div>
+                <h3>Revenue-driven delivery that fuels growth and social value.</h3>
+                <p>Income from AI data services and digital operations supports business expansion, workforce development, and the long-term mission of Baraka Children’s Home.</p>
+              </div>
+              <div className="identity-card">
+                <div className="identity-label">Youth Employment</div>
+                <h3>Structured opportunities for meaningful digital work.</h3>
+                <p>Through onboarding, mentorship, and practical project experience, we help young people access purposeful work, professional confidence, and economic independence.</p>
+              </div>
+              <div className="identity-card">
+                <div className="identity-label">Future-Ready Skills</div>
+                <h3>Developing talent for AI, data operations, and digital excellence.</h3>
+                <p>Team members gain transferable skills in annotation, QA, data management, communication, and problem-solving for long-term career readiness.</p>
+              </div>
+            </div>
           </div>
         </section>
 
