@@ -4,165 +4,384 @@ function About() {
   return (
     <>
       <Helmet>
-        <title>About Us | Baraka Digital Hub</title>
-        <meta
-          name="description"
-          content="Learn about Baraka Digital Hub — a Nairobi-based AI training and digital operations company built on social impact."
-        />
+        <title>About Baraka Digital Hub</title>
+        <style>{`
+          :root{
+            --navy:#02346A;
+            --dark-navy:#0A1F38;
+            --deepest:#040D1A;
+            --green:#4CAF3C;
+            --teal:#3DD9C8;
+            --amber:#F2B544;
+            --text:#F2F5F9;
+            --text-dim:#B7C4D6;
+            --line:rgba(255,255,255,0.10);
+          }
+
+          *{margin:0;padding:0;box-sizing:border-box;}
+
+          body{
+            background:
+              radial-gradient(circle at 15% 10%, rgba(13,115,119,0.18), transparent 40%),
+              radial-gradient(circle at 85% 30%, rgba(232,160,32,0.07), transparent 35%),
+              linear-gradient(180deg, var(--deepest) 0%, var(--dark-navy) 100%);
+            color:var(--text);
+            font-family:'Inter', 'Segoe UI', system-ui, sans-serif;
+            line-height:1.65;
+            background-attachment:fixed;
+            overflow-x:hidden;
+          }
+
+          body::before{
+            content:"";
+            position:fixed;
+            top:0;left:0;right:0;bottom:0;
+            background-image:
+              linear-gradient(var(--line) 1px, transparent 1px),
+              linear-gradient(90deg, var(--line) 1px, transparent 1px);
+            background-size:48px 48px;
+            mask-image: radial-gradient(circle at 50% 0%, rgba(0,0,0,0.6), transparent 70%);
+            pointer-events:none;
+            z-index:0;
+          }
+
+          .wrap{
+            position:relative;
+            z-index:1;
+            max-width:980px;
+            margin:0 auto;
+            padding:0 28px;
+          }
+
+          .hero{
+            padding:120px 0 90px;
+            border-bottom:1px solid var(--line);
+            position:relative;
+          }
+          .eyebrow{
+            font-family:'JetBrains Mono', 'Courier New', monospace;
+            font-size:0.78rem;
+            letter-spacing:0.35em;
+            color:var(--teal);
+            text-transform:uppercase;
+            margin-bottom:22px;
+            display:flex;
+            align-items:center;
+            gap:14px;
+          }
+          .eyebrow::before{
+            content:"";
+            width:10px;height:10px;
+            background:var(--teal);
+            border-radius:1px;
+            box-shadow:0 0 12px var(--teal);
+            display:inline-block;
+          }
+          h1{
+            font-size:3.4rem;
+            font-weight:800;
+            line-height:1.08;
+            letter-spacing:-0.02em;
+            background:linear-gradient(120deg,#FFFFFF 40%, var(--teal) 100%);
+            -webkit-background-clip:text;
+            background-clip:text;
+            -webkit-text-fill-color:transparent;
+            max-width:760px;
+          }
+          .hero p{
+            margin-top:24px;
+            font-size:1.15rem;
+            color:var(--text-dim);
+            max-width:620px;
+          }
+
+          section{
+            padding:80px 0;
+            border-bottom:1px solid var(--line);
+          }
+          section:last-child{border-bottom:none;}
+
+          .section-tag{
+            font-family:'JetBrains Mono','Courier New',monospace;
+            font-size:0.72rem;
+            letter-spacing:0.3em;
+            text-transform:uppercase;
+            color:var(--amber);
+            margin-bottom:14px;
+          }
+          h2{
+            font-size:2rem;
+            font-weight:700;
+            color:#fff;
+            margin-bottom:36px;
+            letter-spacing:-0.01em;
+          }
+
+          .grid3{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:1px;
+            background:var(--line);
+            border:1px solid var(--line);
+            border-radius:10px;
+            overflow:hidden;
+          }
+          .card{
+            background:rgba(255,255,255,0.015);
+            padding:36px 28px;
+            transition:background 0.25s ease;
+          }
+          .card:hover{ background:rgba(13,115,119,0.08); }
+          .card .label{
+            font-family:'JetBrains Mono','Courier New',monospace;
+            font-size:0.7rem;
+            letter-spacing:0.25em;
+            color:var(--teal);
+            text-transform:uppercase;
+            margin-bottom:12px;
+          }
+          .card h3{
+            font-size:1.18rem;
+            color:#fff;
+            margin-bottom:12px;
+            font-weight:600;
+          }
+          .card p{
+            color:var(--text-dim);
+            font-size:0.95rem;
+          }
+
+          .origin-body{
+            max-width:680px;
+            color:var(--text-dim);
+            font-size:1.02rem;
+          }
+          .origin-body p{ margin-bottom:18px; }
+          .origin-body strong{ color:#fff; font-weight:600; }
+
+          .why-list{
+            margin-top:34px;
+            border-left:2px solid var(--green);
+            padding-left:24px;
+            display:flex;
+            flex-direction:column;
+            gap:14px;
+          }
+          .why-list div{
+            color:var(--text);
+            font-size:0.98rem;
+          }
+          .why-list div::before{
+            content:"// ";
+            font-family:'JetBrains Mono','Courier New',monospace;
+            color:var(--green);
+          }
+
+          .principles{
+            display:grid;
+            grid-template-columns:repeat(5,1fr);
+            gap:18px;
+          }
+          .principle{
+            text-align:left;
+            border:1px solid var(--line);
+            border-radius:10px;
+            padding:24px 18px;
+            background:rgba(255,255,255,0.015);
+          }
+          .principle .icon{
+            font-size:1.5rem;
+            margin-bottom:14px;
+            display:block;
+          }
+          .principle h4{
+            color:#fff;
+            font-size:1rem;
+            margin-bottom:8px;
+            font-weight:600;
+          }
+          .principle p{
+            color:var(--text-dim);
+            font-size:0.86rem;
+          }
+
+          .leaders{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:28px;
+          }
+          .leader{
+            border:1px solid var(--line);
+            border-radius:10px;
+            padding:32px;
+            background:linear-gradient(160deg, rgba(13,115,119,0.06), rgba(255,255,255,0.01));
+            position:relative;
+          }
+          .leader::before{
+            content:"“";
+            position:absolute;
+            top:18px; right:24px;
+            font-size:3rem;
+            font-family:Georgia, serif;
+            color:rgba(232,160,32,0.18);
+            line-height:1;
+          }
+          .leader p.quote{
+            color:var(--text);
+            font-size:1.02rem;
+            font-style:italic;
+            margin-bottom:24px;
+            position:relative;
+            z-index:1;
+          }
+          .leader .name{
+            color:#fff;
+            font-weight:700;
+            font-size:1.05rem;
+          }
+          .leader .role{
+            color:var(--amber);
+            font-family:'JetBrains Mono','Courier New',monospace;
+            font-size:0.75rem;
+            letter-spacing:0.15em;
+            text-transform:uppercase;
+            margin:4px 0 10px;
+          }
+          .leader .email{
+            color:var(--text-dim);
+            font-size:0.85rem;
+            font-family:'JetBrains Mono','Courier New',monospace;
+          }
+
+          footer{
+            padding:50px 0 70px;
+            text-align:center;
+            color:var(--text-dim);
+            font-family:'JetBrains Mono','Courier New',monospace;
+            font-size:0.78rem;
+            letter-spacing:0.25em;
+            text-transform:uppercase;
+          }
+          footer span{ color:var(--teal); }
+
+          @media (max-width: 800px){
+            h1{ font-size:2.3rem; }
+            .grid3{ grid-template-columns:1fr; }
+            .principles{ grid-template-columns:repeat(2,1fr); }
+            .leaders{ grid-template-columns:1fr; }
+            .hero{ padding:80px 0 60px; }
+            section{ padding:56px 0; }
+          }
+          @media (max-width: 500px){
+            .principles{ grid-template-columns:1fr; }
+          }
+
+          @media (prefers-reduced-motion: reduce){
+            .card{ transition:none; }
+          }
+        `}</style>
       </Helmet>
-      <div
-        style={{
-          background: "radial-gradient(circle at top, rgba(59,130,246,.18), transparent 28%), radial-gradient(circle at bottom right, rgba(16,185,129,.14), transparent 24%), linear-gradient(180deg, #020617 0%, #08172f 45%, #0b203f 100%)",
-          color: "#e2e8f0",
-          minHeight: "100vh",
-        }}
-      >
-        <section className="section-block about-hero section-intro" style={{ background: "transparent" }}>
-          <div className="text-block" style={{ maxWidth: "100%", color: "#f8fafc" }}>
-            <p className="highlight-pill">About Baraka</p>
-            <h1 className="hero-h1" style={{ color: "#f8fafc" }}>Trusted delivery with meaningful impact</h1>
-            <p style={{ color: "rgba(226,232,240,.84)" }}>
-              Baraka Digital Hub is a Nairobi-based digital services partner delivering AI data operations, human-in-the-loop workflows, transcription, and back-office support. We combine dependable execution with structured workforce development for clients who need reliable results and measurable social value.
-            </p>
-          </div>
+      <div className="wrap">
+        <section className="hero">
+          <div className="eyebrow">About Baraka Digital Hub</div>
+          <h1>Trusted delivery with meaningful impact.</h1>
+          <p>Baraka Digital Hub is a Nairobi-based digital services partner delivering AI data operations, human-in-the-loop workflows, transcription, and back-office support — combining dependable execution with structured workforce development for clients who need reliable results and measurable social value.</p>
         </section>
 
-        <section className="section-block" style={{ background: "transparent" }}>
-          <div className="page-container">
-            <div className="text-block" style={{ color: "#f8fafc" }}>
-              <h2>How we work</h2>
-              <p style={{ color: "rgba(226,232,240,.84)" }}>
-                We operate as a professional partner with clear accountability, consistent processes, and transparent reporting. Our approach is designed to make remote operations simple, dependable, and aligned to client needs.
-              </p>
+        <section>
+          <div className="section-tag">How We Work</div>
+          <h2>A professional partner, end to end.</h2>
+          <p style={{ color: "var(--text-dim)", maxWidth: "640px", marginBottom: "40px", marginTop: "-18px" }}>
+            We operate with clear accountability, consistent processes, and transparent reporting — designed to make remote operations simple, dependable, and aligned to client needs.
+          </p>
+          <div className="grid3">
+            <div className="card">
+              <div className="label">01 · Delivery</div>
+              <h3>Dedicated delivery</h3>
+              <p>A named Project Manager, Team Leads, and certified operators keep your engagement aligned from onboarding through execution.</p>
             </div>
-
-            <div className="card-grid" style={{ marginTop: 24 }}>
-              <div className="about-card" style={{ color: "#0f172a" }}>
-                <h3>Dedicated delivery</h3>
-                <p>
-                  A named Project Manager, Team Leads, and certified operators keep your engagement aligned from onboarding through execution.
-                </p>
-              </div>
-              <div className="about-card" style={{ color: "#0f172a" }}>
-                <h3>Visible performance</h3>
-                <p>
-                  Regular progress updates, quality metrics, and operational summaries ensure you always know what was delivered and why.
-                </p>
-              </div>
-              <div className="about-card" style={{ color: "#0f172a" }}>
-                <h3>Impact built in</h3>
-                <p>
-                  We deliver commercial quality at Nairobi rates while directing client investment into wages, training, and long-term opportunity.
-                </p>
-              </div>
+            <div className="card">
+              <div className="label">02 · Reporting</div>
+              <h3>Visible performance</h3>
+              <p>Regular progress updates, quality metrics, and operational summaries ensure you always know what was delivered and why.</p>
+            </div>
+            <div className="card">
+              <div className="label">03 · Impact</div>
+              <h3>Impact built in</h3>
+              <p>We deliver commercial quality at Nairobi rates while directing client investment into wages, training, and long-term opportunity.</p>
             </div>
           </div>
         </section>
 
-        <section className="section-block" style={{ background: "transparent" }}>
-          <div className="page-container">
-            <div className="about-grid">
-              <div className="about-panel" style={{ color: "#0f172a" }}>
-                <h2>Our origin</h2>
-                <p>
-                  Baraka Digital Hub grew out of Baraka Children’s Home in Kayole, Nairobi. Since 2006, the Home has provided care, education, and support to vulnerable children and families.
-                </p>
-                <p>
-                  As those young people transitioned into adulthood, we saw a gap between care and stable employment. The Hub was created to bridge that gap with training, supervision, and paid digital work.
-                </p>
-                <p>
-                  Today, the Hub delivers professional services to clients worldwide while helping youth build skills, confidence, and long-term economic independence.
-                </p>
-              </div>
+        <section>
+          <div className="section-tag">Our Origin</div>
+          <h2>From a children's home to a digital workforce.</h2>
+          <div className="origin-body">
+            <p>Baraka Digital Hub grew out of <strong>Baraka Children's Home in Kayole, Nairobi</strong>. Since 2006, the Home has provided care, education, and support to vulnerable children and families.</p>
+            <p>As those young people transitioned into adulthood, we saw a gap between care and stable employment. The Hub was created to bridge that gap with training, supervision, and paid digital work.</p>
+            <p>Today, the Hub delivers professional services to clients worldwide while helping youth build skills, confidence, and long-term economic independence.</p>
+          </div>
+          <div className="why-list">
+            <div>Support must lead to sustainable opportunity.</div>
+            <div>Operational quality and social impact can coexist.</div>
+            <div>Structured training, coaching, and QA make remote work reliable.</div>
+          </div>
+        </section>
 
-              <div className="about-card about-highlight" style={{ color: "#0f172a" }}>
-                <h3>Why it matters</h3>
-                <ul>
-                  <li>Support must lead to sustainable opportunity.</li>
-                  <li>Operational quality and social impact can coexist.</li>
-                  <li>Structured training, coaching, and QA make remote work reliable.</li>
-                </ul>
-              </div>
+        <section>
+          <div className="section-tag">Core Principles</div>
+          <h2>Respect, reliability, accountability.</h2>
+          <div className="principles">
+            <div className="principle">
+              <span className="icon">🤝</span>
+              <h4>Teamwork</h4>
+              <p>Structured collaboration and shared ownership deliver better results.</p>
+            </div>
+            <div className="principle">
+              <span className="icon">👤</span>
+              <h4>Dignity</h4>
+              <p>We create opportunity that values people and preserves self-respect.</p>
+            </div>
+            <div className="principle">
+              <span className="icon">✓</span>
+              <h4>Accountability</h4>
+              <p>We take ownership of every outcome, every process, and every improvement.</p>
+            </div>
+            <div className="principle">
+              <span className="icon">⚡</span>
+              <h4>Excellence</h4>
+              <p>We deliver work that meets professional standards consistently and predictably.</p>
+            </div>
+            <div className="principle">
+              <span className="icon">🚀</span>
+              <h4>Opportunity</h4>
+              <p>We open pathways for growth, employment, and long-term change.</p>
             </div>
           </div>
         </section>
 
-        <section className="section-block accent">
-          <div className="page-container">
-            <div className="text-block" style={{ color: "#0f172a" }}>
-              <h2>Core principles</h2>
-              <p>
-                Respect, reliability, and accountability are the foundation of our work. These principles keep our services professional and our impact sustainable.
-              </p>
+        <section>
+          <div className="section-tag">Leadership</div>
+          <h2>Lived experience, operational discipline.</h2>
+          <div className="leaders">
+            <div className="leader">
+              <p className="quote">Baraka Digital Hub was built on a simple belief: talent is universal, but opportunity is not. We are creating a path where young people can access meaningful digital work and develop globally competitive skills. Every engagement is designed to improve performance, strengthen capability, and deliver a dependable client experience.</p>
+              <div className="name">Timothy Mwangi</div>
+              <div className="role">Head of Operations</div>
+              <div className="email">timothy.mwangi@barakadigitalhub.com</div>
             </div>
-
-            <div className="principle-grid" style={{ marginTop: 24 }}>
-              <article className="principle-card" style={{ color: "#0f172a" }}>
-                <span className="feature-icon">🤝</span>
-                <strong>Teamwork</strong>
-                <p>Structured collaboration and shared ownership deliver better results.</p>
-              </article>
-              <article className="principle-card" style={{ color: "#0f172a" }}>
-                <span className="feature-icon">👤</span>
-                <strong>Dignity</strong>
-                <p>We create opportunity that values people and preserves self-respect.</p>
-              </article>
-              <article className="principle-card" style={{ color: "#0f172a" }}>
-                <span className="feature-icon">✓</span>
-                <strong>Accountability</strong>
-                <p>We take ownership of every outcome, every process, and every improvement.</p>
-              </article>
-              <article className="principle-card" style={{ color: "#0f172a" }}>
-                <span className="feature-icon">⚡</span>
-                <strong>Excellence</strong>
-                <p>We deliver work that meets professional standards consistently and predictably.</p>
-              </article>
-              <article className="principle-card" style={{ color: "#0f172a" }}>
-                <span className="feature-icon">🚀</span>
-                <strong>Opportunity</strong>
-                <p>We open pathways for growth, employment, and long-term change.</p>
-              </article>
+            <div className="leader">
+              <p className="quote">My work has always been about children — loving them, supporting them, and ensuring they have a future. Baraka Digital Hub extends that care into economic opportunity for young people as they grow. Care should lead to empowerment, and support should lead to dignity.</p>
+              <div className="name">Margrate Kimaru</div>
+              <div className="role">President &amp; Mama Baraka</div>
+              <div className="email">margrate.kimaru@barakadigitalhub.com</div>
             </div>
           </div>
         </section>
 
-        <section className="section-block" style={{ background: "transparent" }}>
-          <div className="page-container">
-            <div className="text-block" style={{ color: "#f8fafc" }}>
-              <div style={{ height: 1, background: "#e2e8f0", margin: "0 0 24px" }} />
-              <h2>Leadership</h2>
-              <p style={{ color: "rgba(226,232,240,.84)" }}>
-                Our leadership brings lived experience from the Children’s Home together with operational discipline and client focus.
-              </p>
-            </div>
-
-            <div className="about-grid" style={{ marginTop: 24 }}>
-              <div className="about-card" style={{ color: "#0f172a" }}>
-                <h3>From our Head of Operations</h3>
-                <p>
-                  “Baraka Digital Hub was built on a simple belief: talent is universal, but opportunity is not. We are creating a path where young people can access meaningful digital work and develop globally competitive skills.
-                </p>
-                <p>
-                  Every engagement is designed to improve performance, strengthen capability, and deliver a dependable client experience.
-                </p>
-                <p style={{ marginTop: 20, fontWeight: 700 }}>Timothy Mwangi<br />Head of Operations</p>
-                <p style={{ marginTop: 12 }}>Email: <a href="mailto:timothy.mwangi@barakadigitalhub.com">timothy.mwangi@barakadigitalhub.com</a></p>
-              </div>
-
-              <div className="about-card about-highlight" style={{ color: "#0f172a" }}>
-                <h3>From our President and Mama Baraka</h3>
-                <p>
-                  “My work has always been about children — loving them, supporting them, and ensuring they have a future. Baraka Digital Hub extends that care into economic opportunity for young people as they grow.
-                </p>
-                <p>
-                  Care should lead to empowerment, and support should lead to dignity. This work is the next step in giving our young people a stable and meaningful future.”
-                </p>
-                <p style={{ marginTop: 20, fontWeight: 700 }}>Margrate Kimaru<br />President and Mama Baraka</p>
-                <p style={{ marginTop: 12 }}>Email: <a href="mailto:margrate.kimaru@barakadigitalhub.com">margrate.kimaru@barakadigitalhub.com</a></p>
-              </div>
-            </div>
-          </div>
-        </section>
+        <footer>
+          Baraka Digital Hub <span>·</span> Nairobi, Kenya
+        </footer>
       </div>
     </>
   );
