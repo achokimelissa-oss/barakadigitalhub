@@ -54,7 +54,7 @@ function About() {
           }
 
           .hero{
-            padding:120px 0 90px;
+            padding:100px 0 70px;
             border-bottom:1px solid var(--line);
             position:relative;
           }
@@ -64,10 +64,10 @@ function About() {
             letter-spacing:0.35em;
             color:var(--teal);
             text-transform:uppercase;
-            margin-bottom:22px;
+            margin-bottom:18px;
             display:flex;
             align-items:center;
-            gap:14px;
+            gap:12px;
           }
           .eyebrow::before{
             content:"";
@@ -92,11 +92,12 @@ function About() {
             margin-top:24px;
             font-size:1.15rem;
             color:var(--text-dim);
-            max-width:620px;
+            max-width:720px;
+            line-height:1.8;
           }
 
           section{
-            padding:80px 0;
+            padding:70px 0;
             border-bottom:1px solid var(--line);
           }
           section:last-child{border-bottom:none;}
@@ -121,17 +122,23 @@ function About() {
             display:grid;
             grid-template-columns:repeat(3,1fr);
             gap:1px;
-            background:var(--line);
-            border:1px solid var(--line);
+            background:rgba(255,255,255,0.06);
+            border:1px solid rgba(255,255,255,0.08);
             border-radius:10px;
             overflow:hidden;
           }
           .card{
-            background:rgba(255,255,255,0.015);
+            background:rgba(3,22,58,0.82);
             padding:36px 28px;
-            transition:background 0.25s ease;
+            transition:background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+            border:1px solid rgba(255,255,255,0.12);
+            box-shadow: 0 26px 70px rgba(12, 47, 95, 0.18);
           }
-          .card:hover{ background:rgba(25,138,205,0.12); }
+          .card:hover{
+            background:rgba(19,63,106,0.92);
+            transform: translateY(-3px);
+            box-shadow: 0 32px 90px rgba(29, 99, 168, 0.26);
+          }
           .card .label{
             font-family:'JetBrains Mono','Courier New',monospace;
             font-size:0.7rem;
@@ -142,21 +149,22 @@ function About() {
           }
           .card h3{
             font-size:1.18rem;
-            color:#fff;
+            color:#f8fafc;
             margin-bottom:12px;
             font-weight:600;
           }
           .card p{
-            color:var(--text-dim);
+            color:rgba(243,248,255,0.87);
             font-size:0.95rem;
           }
 
           .origin-body{
-            max-width:680px;
+            max-width:760px;
             color:var(--text-dim);
             font-size:1.02rem;
+            margin-top:16px;
           }
-          .origin-body p{ margin-bottom:18px; }
+          .origin-body p{ margin-bottom:22px; }
           .origin-body strong{ color:#fff; font-weight:600; }
 
           .why-list{
@@ -265,15 +273,19 @@ function About() {
           footer span{ color:var(--teal); }
 
           @media (max-width: 800px){
-            h1{ font-size:2.3rem; }
+            h1{ font-size:2.2rem; }
             .grid3{ grid-template-columns:1fr; }
             .principles{ grid-template-columns:repeat(2,1fr); }
             .leaders{ grid-template-columns:1fr; }
-            .hero{ padding:80px 0 60px; }
-            section{ padding:56px 0; }
+            .hero{ padding:72px 0 56px; }
+            section{ padding:50px 0; }
+            .hero p, .origin-body{ max-width:100%; }
           }
           @media (max-width: 500px){
             .principles{ grid-template-columns:1fr; }
+            .hero{ padding:60px 0 48px; }
+            h1{ font-size:2rem; }
+            .origin-body{ font-size:1rem; }
           }
 
           @media (prefers-reduced-motion: reduce){
@@ -283,98 +295,98 @@ function About() {
       </Helmet>
       <div className="wrap">
         <section className="hero">
-          <div className="eyebrow">About Baraka Digital Hub</div>
-          <h1>Trusted delivery with meaningful impact.</h1>
-          <p>Baraka Digital Hub is a Nairobi-based digital services partner delivering AI data operations, human-in-the-loop workflows, transcription, and back-office support — combining dependable execution with structured workforce development for clients who need reliable results and measurable social value.</p>
+          <div className="eyebrow">About Us</div>
+          <h1>Baraka Digital Hub is a social impact digital services centre based in Nairobi, Kenya.</h1>
+          <p>We deliver reliable, measurable digital solutions to international clients across AI training, transcription, BPO services, and specialized data operations, including computer vision annotation, natural language processing datasets, and audio and speech processing.</p>
+          <p>Each engagement is structured to generate dual impact. It provides fair and consistent income opportunities for young people from underserved communities while simultaneously supporting the education and welfare of children at Baraka Children’s Home and the surrounding community. This dual-impact model is embedded in our operations.</p>
         </section>
 
         <section>
-          <div className="section-tag">How We Work</div>
-          <h2>A professional partner, end to end.</h2>
-          <p style={{ color: "var(--text-dim)", maxWidth: "640px", marginBottom: "40px", marginTop: "-18px" }}>
-            We operate with clear accountability, consistent processes, and transparent reporting — designed to make remote operations simple, dependable, and aligned to client needs.
-          </p>
-          <div className="grid3">
-            <div className="card">
-              <div className="label">01 · Delivery</div>
-              <h3>Dedicated delivery</h3>
-              <p>A named Project Manager, Team Leads, and certified operators keep your engagement aligned from onboarding through execution.</p>
-            </div>
-            <div className="card">
-              <div className="label">02 · Reporting</div>
-              <h3>Visible performance</h3>
-              <p>Regular progress updates, quality metrics, and operational summaries ensure you always know what was delivered and why.</p>
-            </div>
-            <div className="card">
-              <div className="label">03 · Impact</div>
-              <h3>Impact built in</h3>
-              <p>We deliver commercial quality at Nairobi rates while directing client investment into wages, training, and long-term opportunity.</p>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <div className="section-tag">Our Origin</div>
-          <h2>From a children's home to a digital workforce.</h2>
+          <div className="section-tag">How We Started</div>
+          <h2>Baraka Digital Hub was established from the foundation of Baraka Children’s Home, which has served the Kayole community in Nairobi, Kenya since 2006 as a centre for care, protection, and education for vulnerable children.</h2>
           <div className="origin-body">
-            <p>Baraka Digital Hub grew out of <strong>Baraka Children's Home in Kayole, Nairobi</strong>. Since 2006, the Home has provided care, education, and support to vulnerable children and families.</p>
-            <p>As those young people transitioned into adulthood, we saw a gap between care and stable employment. The Hub was created to bridge that gap with training, supervision, and paid digital work.</p>
-            <p>Today, the Hub delivers professional services to clients worldwide while helping youth build skills, confidence, and long-term economic independence.</p>
+            <p>As the children under care matured, a clear gap emerged between access to support and access to sustainable economic opportunity. This transition highlighted the need for a structured pathway that extends beyond care into skills development and meaningful employment.</p>
+            <p>Before the Hub was formally established, we began by helping young people apply for remote work opportunities individually. We trained them in digital work, guided them through onboarding processes, and supported them in accessing online earning platforms and freelance opportunities.</p>
+            <p>Through this experience, we recognized a larger opportunity. Individual placements created impact, but a centralized model could create greater stability, accountability, scalability, and employability. By building a structured hub, we could provide shared infrastructure, organized training, quality assurance systems, operational oversight, and a professional working environment that strengthened both consistency and long-term growth.</p>
+            <p>In response, Baraka Digital Hub was created to bridge the gap between potential and opportunity. What began as grassroots support for remote work evolved into a structured digital workforce model capable of delivering professional services to global clients.</p>
+            <p>Today, Baraka Digital Hub operates as a quality-driven digital services organization focused on delivery excellence, workforce development, and long-term economic inclusion.</p>
           </div>
-          <div className="why-list">
-            <div>Support must lead to sustainable opportunity.</div>
-            <div>Operational quality and social impact can coexist.</div>
-            <div>Structured training, coaching, and QA make remote work reliable.</div>
+        </section>
+
+        <section>
+          <div className="section-tag">Our Identity</div>
+          <h2>Baraka Digital Hub is built on a core belief: talent is universal, but opportunity is not.</h2>
+          <div className="origin-body">
+            <p>Our mission is to close this gap by connecting underserved young people to structured digital employment and global work opportunities.</p>
+            <p>We operate as a professional services organization with a strong social impact mandate, combining commercial discipline with measurable community outcomes.</p>
+            <p>We are not a charity. We are a business built for sustainable impact.</p>
+          </div>
+
+          <div className="origin-body" style={{ marginTop: 24 }}>
+            <h3>Vision</h3>
+            <p>To become Africa's leading impact-driven digital workforce company, connecting global businesses with world-class AI data and digital services while creating sustainable employment opportunities for underserved youth.</p>
+          </div>
+
+          <div className="origin-body" style={{ marginTop: 24 }}>
+            <h3>Mission</h3>
+            <p>BDH exists to prove that geography is not a limitation to excellence. We empower underserved youth to deliver world-class AI data and digital services, creating value for global businesses while transforming lives and communities.</p>
+          </div>
+
+          <div className="origin-body" style={{ marginTop: 24 }}>
+            <h3>Sustainable Impact Model</h3>
+            <p>BDH operates on a sustainable, revenue-driven model rather than relying on donations or charity. Income generated through AI data services and digital operations supports business growth, workforce development, and the long-term mission of Baraka Children's Home. Every project delivered creates both commercial value and measurable social impact.</p>
+          </div>
+
+          <div className="origin-body" style={{ marginTop: 24 }}>
+            <h3>Youth Employment & Economic Empowerment</h3>
+            <p>BDH intentionally creates employment opportunities for youth from underserved communities across Africa. Through structured onboarding, practical training, mentorship, and hands-on project experience, participants gain access to meaningful work in the global digital economy while building confidence, professional discipline, and financial independence.</p>
+          </div>
+
+          <div className="origin-body" style={{ marginTop: 24 }}>
+            <h3>Future-Ready Skills Development</h3>
+            <p>At BDH, our focus extends beyond task completion. Team members develop valuable, transferable skills in AI data annotation, quality assurance, data management, client communication, problem-solving, and digital operations. These capabilities prepare them for long-term career growth and emerging opportunities in the rapidly evolving AI and technology sectors.</p>
           </div>
         </section>
 
         <section>
           <div className="section-tag">Core Principles</div>
-          <h2>Respect, reliability, accountability.</h2>
-          <div className="principles">
-            <div className="principle">
-              <span className="icon">🤝</span>
-              <h4>Teamwork</h4>
-              <p>Structured collaboration and shared ownership deliver better results.</p>
-            </div>
-            <div className="principle">
-              <span className="icon">👤</span>
-              <h4>Dignity</h4>
-              <p>We create opportunity that values people and preserves self-respect.</p>
-            </div>
-            <div className="principle">
-              <span className="icon">✓</span>
-              <h4>Accountability</h4>
-              <p>We take ownership of every outcome, every process, and every improvement.</p>
-            </div>
-            <div className="principle">
-              <span className="icon">⚡</span>
-              <h4>Excellence</h4>
-              <p>We deliver work that meets professional standards consistently and predictably.</p>
-            </div>
-            <div className="principle">
-              <span className="icon">🚀</span>
-              <h4>Opportunity</h4>
-              <p>We open pathways for growth, employment, and long-term change.</p>
+          <h2>Our operating values shape every engagement.</h2>
+          <div className="origin-body">
+            <p><strong>Teamwork</strong> We believe strong results come from collaboration, shared responsibility, and mutual support.</p>
+            <p><strong>Dignity</strong> We create opportunities that respect people, value their contribution, and promote self-worth.</p>
+            <p><strong>Accountability</strong> We take ownership of our work, our standards, and the impact we create.</p>
+            <p><strong>Excellence</strong> We are committed to delivering reliable, high-quality work that meets professional standards.</p>
+            <p><strong>Opportunity</strong> We exist to open pathways for growth, employment, and long-term transformation.</p>
+          </div>
+        </section>
+
+        <section>
+          <div className="section-tag">Leadership</div>
+          <h2>From our Head of Operations</h2>
+          <div className="leaders">
+            <div className="leader">
+              <p className="quote">Baraka Digital Hub was built on a simple belief: talent is universal, but opportunity is not.</p>
+              <p className="quote">Our vision is to create a pathway where young people from underserved communities can access meaningful digital work, develop globally competitive skills, and build sustainable futures for themselves and their families.</p>
+              <p className="quote">We are building more than a workforce centre. We are building a model of economic inclusion powered by technology, discipline, and purpose.</p>
+              <p className="quote">Every project delivered is an opportunity created, a skill strengthened, and a future made more stable.</p>
+              <p className="quote">We are ready to partner with organizations that value both excellence and impact.</p>
+              <div className="name">Timothy Mwangi</div>
+              <div className="role">Head of Operations</div>
             </div>
           </div>
         </section>
 
         <section>
           <div className="section-tag">Leadership</div>
-          <h2>Lived experience, operational discipline.</h2>
+          <h2>From our President and Mama Baraka</h2>
           <div className="leaders">
             <div className="leader">
-              <p className="quote">Baraka Digital Hub was built on a simple belief: talent is universal, but opportunity is not. We are creating a path where young people can access meaningful digital work and develop globally competitive skills. Every engagement is designed to improve performance, strengthen capability, and deliver a dependable client experience.</p>
-              <div className="name">Timothy Mwangi</div>
-              <div className="role">Head of Operations</div>
-              <div className="email">timothy.mwangi@barakadigitalhub.com</div>
-            </div>
-            <div className="leader">
-              <p className="quote">My work has always been about children — loving them, supporting them, and ensuring they have a future. Baraka Digital Hub extends that care into economic opportunity for young people as they grow. Care should lead to empowerment, and support should lead to dignity.</p>
+              <p className="quote">My life has always been rooted in children — loving them, raising them, and standing beside them through every season of their growth. As Mama Baraka, my deepest calling has been to ensure that no child under our care ever feels forgotten or without a future.</p>
+              <p className="quote">Baraka Digital Hub was born from that responsibility and that love. It is an extension of the Children’s Home, built to ensure that our young people step into adulthood with skills, confidence, and opportunity.</p>
+              <p className="quote">Care must evolve into empowerment, and charity must grow into dignity.</p>
+              <p className="quote">This work is family. It is love translated into opportunity.</p>
               <div className="name">Margrate Kimaru</div>
               <div className="role">President &amp; Mama Baraka</div>
-              <div className="email">margrate.kimaru@barakadigitalhub.com</div>
             </div>
           </div>
         </section>
