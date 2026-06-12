@@ -261,71 +261,6 @@ function About({ navigate }) {
             font-family:'JetBrains Mono','Courier New',monospace;
           }
 
-          footer{
-            background:linear-gradient(180deg,#021024,#020617);
-            padding:64px 24px 36px;
-            border-top:1px solid rgba(255,255,255,.08);
-            color:rgba(255,255,255,.75);
-            font-family:'JetBrains Mono','Courier New',monospace;
-            font-size:0.95rem;
-            letter-spacing:0.02em;
-            text-transform:none;
-          }
-          footer .footer-grid{
-            display:grid;
-            grid-template-columns:1fr 1fr;
-            gap:28px;
-            max-width:980px;
-            margin:0 auto;
-            align-items:start;
-          }
-          footer .footer-brand{
-            max-width:360px;
-            line-height:1.8;
-          }
-          footer .footer-brand p{
-            margin:0;
-            color:rgba(255,255,255,.75);
-          }
-          footer .footer-heading{
-            margin:0 0 14px;
-            color:#ffffff;
-            font-size:0.95rem;
-            font-weight:700;
-          }
-          footer .footer-links{
-            display:grid;
-            gap:10px;
-          }
-          footer .footer-links button{
-            text-align:left;
-            background:none;
-            border:none;
-            color:rgba(255,255,255,.85);
-            padding:0;
-            cursor:pointer;
-            font-size:0.95rem;
-            font-family:inherit;
-          }
-          footer .footer-links button:hover,
-          footer .footer-links button:focus-visible{
-            color:#ffffff;
-          }
-          footer .footer-bottom{
-            border-top:1px solid rgba(255,255,255,.12);
-            padding-top:22px;
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            flex-wrap:wrap;
-            gap:12px;
-            color:rgba(255,255,255,.6);
-          }
-          footer .footer-small{
-            margin:0;
-            font-size:0.85rem;
-          }
-
           @media (max-width: 800px){
             h1{ font-size:2.2rem; }
             .grid3{ grid-template-columns:1fr; }
@@ -444,32 +379,6 @@ function About({ navigate }) {
             </div>
           </div>
         </section>
-
-        <footer>
-          <div className="footer-grid">
-            <div className="footer-brand">
-              <img src="/favicon-512.png" alt="Baraka Digital Hub footer logo" style={{ height:56, width:"auto", marginBottom:18 }} />
-              <p>Professional AI data and digital operations delivered with social impact from Nairobi to global teams.</p>
-            </div>
-            <div>
-              <p className="footer-heading">Explore</p>
-              <div className="footer-links">
-                <button type="button" onClick={() => navigate("home")}>Home</button>
-                <button type="button" onClick={() => navigate("services")}>Services</button>
-                <button type="button" onClick={() => navigate("about")}>About</button>
-                <button type="button" onClick={() => navigate("impact")}>Impact</button>
-                <button type="button" onClick={() => navigate("blogs")}>Blogs</button>
-                <button type="button" onClick={() => navigate("careers")}>Careers</button>
-                <button type="button" onClick={() => navigate("privacy")}>Privacy</button>
-                <button type="button" onClick={() => navigate("contact")}>Contact</button>
-              </div>
-            </div>
-          </div>
-          <div className="footer-bottom">
-            <p className="footer-small">© 2026 Baraka Digital Hub. Nairobi, Kenya.</p>
-            <p className="footer-small">Built for reliable AI data services and sustainable social impact.</p>
-          </div>
-        </footer>
       </div>
     </>
   );
