@@ -48,9 +48,10 @@ function About({ navigate }) {
           .wrap{
             position:relative;
             z-index:1;
-            max-width:980px;
-            margin:0 auto;
-            padding:0 28px;
+            width:100%;
+            max-width:none;
+            margin:0;
+            padding:0 4vw;
             color:#f8fbff;
           }
           .wrap,
@@ -63,6 +64,8 @@ function About({ navigate }) {
           }
 
           .hero{
+            width:100%;
+            max-width:none;
             padding:100px 0 70px;
             border-bottom:1px solid var(--line);
             position:relative;
@@ -95,13 +98,13 @@ function About({ navigate }) {
             -webkit-background-clip:text;
             background-clip:text;
             -webkit-text-fill-color:transparent;
-            max-width:760px;
+            max-width:none;
           }
           .hero p{
             margin-top:24px;
             font-size:1.15rem;
             color:#ffffff;
-            max-width:720px;
+            max-width:100%;
             line-height:1.9;
           }
 
@@ -168,7 +171,7 @@ function About({ navigate }) {
           }
 
           .origin-body{
-            max-width:760px;
+            max-width:100%;
             color:#fbfdff;
             font-size:1.02rem;
             margin-top:16px;
@@ -399,7 +402,7 @@ function About({ navigate }) {
             z-index:1;
           }
           .cta-copy{
-            max-width:680px;
+            max-width:100%;
             color:#d6fbff;
             margin:16px 0 20px;
             line-height:1.9;
