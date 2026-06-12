@@ -1428,17 +1428,17 @@ const BarakaDigitalHub = () => {
         .hidden-mobile { display:flex; }
       `}</style>
 
-      <nav style={{ position:"fixed", top:0, left:0, right:0, zIndex:100, transition:"all .3s", background: scrolled||page!=="home" ? "rgba(255,255,255,.98)" : "transparent", backdropFilter: scrolled||page!=="home" ? "blur(20px)" : "none", borderBottom: scrolled||page!=="home" ? "1px solid rgba(0,0,0,.08)" : "none", padding:"0 24px", paddingTop: scrolled ? "8px" : "0" }}>
+      <nav style={{ position:"fixed", top:0, left:0, right:0, zIndex:100, transition:"all .3s", background: page === "about" ? "transparent" : (scrolled||page!=="home" ? "rgba(255,255,255,.98)" : "transparent"), backdropFilter: page === "about" ? "none" : (scrolled||page!=="home" ? "blur(20px)" : "none"), borderBottom: page === "about" ? "none" : (scrolled||page!=="home" ? "1px solid rgba(0,0,0,.08)" : "none"), padding:"0 24px", paddingTop: scrolled ? "8px" : "0", color: page === "about" ? "#fff" : "inherit" }}>
         <div className="page-container" style={{ display:"flex", alignItems:"center", justifyContent:"space-between", height: scrolled ? 72 : 76 }}>
           <a href="/" onClick={(e) => { e.preventDefault(); navigate("home"); }} style={{ display:"flex", alignItems:"center", gap:10, textDecoration:"none", color:"inherit", padding:0 }}>
             <img src="/favicon-512.png" alt="Baraka Digital Hub logo" style={{ height:56, width:"auto", objectFit:"contain" }} />
           </a>
           <div className="hidden-mobile" style={{ display: isMobile ? "none" : "flex", gap:28, alignItems:"center" }}>
             {navLinks.map(l => (
-              <a key={l.page} href={l.page === "home" ? "/" : `/${l.page}`} onClick={(e) => { e.preventDefault(); navigate(l.page); }} className="nav-link" style={{ textDecoration: "none", color: "inherit" }}>{l.label}</a>
+              <a key={l.page} href={l.page === "home" ? "/" : `/${l.page}`} onClick={(e) => { e.preventDefault(); navigate(l.page); }} className="nav-link" style={{ textDecoration: "none", color: page === "about" ? "#fff" : "inherit" }}>{l.label}</a>
             ))}
           </div>
-          <button onClick={() => setNav(!nav)} className="mobile-menu-btn" style={{ background:"none", border:"none", cursor:"pointer", color:"#0f172a" }}>
+          <button onClick={() => setNav(!nav)} className="mobile-menu-btn" style={{ background:"none", border:"none", cursor:"pointer", color: page === "about" ? "#fff" : "#0f172a" }}>
             {nav ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
