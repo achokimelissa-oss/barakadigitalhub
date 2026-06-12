@@ -1452,7 +1452,7 @@ const BarakaDigitalHub = () => {
       </nav>
 
       {page === "services" && <ServicesPage goBack={goBack} navigate={navigate} isMobile={isMobile} />}
-      {page === "about" && <AboutPage goBack={goBack} isMobile={isMobile} />}
+      {page === "about" && <AboutPage goBack={goBack} navigate={navigate} isMobile={isMobile} />}
       {page === "careers" && <CareersPage goBack={goBack} setPage={setPage} navigate={navigate} isMobile={isMobile} />}
       {page === "privacy" && <PrivacyPage goBack={goBack} isMobile={isMobile} />}
       {page === "impact" && <ImpactPage goBack={goBack} isMobile={isMobile} />}
