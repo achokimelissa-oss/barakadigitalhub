@@ -475,27 +475,28 @@ function About({ navigate }) {
 
           .identity-panel{
             display:grid;
-            grid-template-columns:1.05fr 0.95fr;
+            grid-template-columns:minmax(320px, 1fr) minmax(360px, 1.15fr);
             gap:26px;
             margin-top:28px;
+            align-items:start;
           }
           .identity-summary{
             position:relative;
-            border-radius:24px;
-            background:rgba(255,255,255,0.06);
-            border:1px solid rgba(255,255,255,0.14);
-            padding:32px 30px;
-            box-shadow:0 28px 70px rgba(2, 18, 45, 0.18);
+            border-radius:26px;
+            background:rgba(255,255,255,0.07);
+            border:1px solid rgba(255,255,255,0.16);
+            padding:34px 32px;
+            box-shadow:0 28px 72px rgba(2, 18, 45, 0.18);
           }
           .identity-summary::before{
             content:"";
             position:absolute;
-            top:-18px;
-            left:-18px;
-            width:100px;
-            height:100px;
-            border-radius:28px;
-            background:rgba(158,255,255,0.14);
+            top:-20px;
+            left:-20px;
+            width:112px;
+            height:112px;
+            border-radius:30px;
+            background:rgba(158,255,255,0.16);
             z-index:0;
           }
           .identity-summary > *{
@@ -508,11 +509,30 @@ function About({ navigate }) {
             margin-bottom:20px;
             font-size:1rem;
           }
-          .identity-summary strong{
-            color:#fff;
-          }
-          .identity-highlight{
+          .identity-summary ul{
+            list-style:none;
+            padding:0;
+            margin:0;
             display:grid;
+            gap:12px;
+          }
+          .identity-summary li{
+            display:flex;
+            align-items:flex-start;
+            gap:12px;
+            color:#d9f0ff;
+            line-height:1.8;
+          }
+          .identity-summary li::before{
+            content:"•";
+            color:#7de4ff;
+            font-size:1.2rem;
+            line-height:1;
+            margin-top:4px;
+          }
+          .identity-card-grid{
+            display:grid;
+            grid-template-columns:repeat(2,minmax(0,1fr));
             gap:18px;
           }
           .identity-card{
@@ -520,9 +540,10 @@ function About({ navigate }) {
             overflow:hidden;
             border-radius:22px;
             padding:28px 24px;
-            background:rgba(6, 24, 58, 0.88);
-            border:1px solid rgba(163, 255, 255, 0.12);
+            background:rgba(6, 24, 58, 0.9);
+            border:1px solid rgba(163, 255, 255, 0.14);
             box-shadow:0 24px 60px rgba(1, 16, 44, 0.22);
+            min-height:180px;
           }
           .identity-card::before{
             content:"";
@@ -555,9 +576,9 @@ function About({ navigate }) {
             position:relative;
             z-index:1;
             color:#f8fbff;
-            font-size:1.1rem;
-            margin:0 0 14px;
-            line-height:1.4;
+            font-size:1.08rem;
+            margin:0 0 12px;
+            line-height:1.45;
           }
           .identity-card p{
             position:relative;
@@ -569,14 +590,14 @@ function About({ navigate }) {
           .identity-cta{
             margin-top:24px;
             border-radius:22px;
-            padding:28px 26px;
-            background:linear-gradient(180deg, rgba(9, 28, 56, 0.9), rgba(7, 20, 41, 0.95));
+            padding:24px 26px;
+            background:linear-gradient(180deg, rgba(9, 28, 56, 0.95), rgba(7, 20, 41, 0.98));
             border:1px solid rgba(149,255,255,0.12);
           }
           .identity-cta h3{
             margin:0 0 12px;
             color:#f6fdff;
-            font-size:1.15rem;
+            font-size:1.12rem;
             line-height:1.4;
           }
           .identity-cta p{
@@ -591,6 +612,7 @@ function About({ navigate }) {
             .principles{ grid-template-columns:repeat(2,1fr); }
             .leaders{ grid-template-columns:1fr; }
             .identity-panel{ grid-template-columns:1fr; }
+            .identity-card-grid{ grid-template-columns:1fr; }
             .hero{ padding:72px 0 56px; }
             section{ padding:50px 0; }
             .hero p, .origin-body{ max-width:100%; }
@@ -635,12 +657,17 @@ function About({ navigate }) {
               <p>Our mission is to close this gap by connecting underserved young people to structured digital employment and global work opportunities.</p>
               <p>We operate as a professional services organization with a strong social impact mandate, combining commercial discipline with measurable community outcomes.</p>
               <p>We are not a charity. We are a business built for sustainable impact.</p>
+              <ul>
+                <li>Structured digital employment for underserved talent.</li>
+                <li>Quality-driven delivery that meets client expectations.</li>
+                <li>Impact that is measurable, sustainable, and scalable.</li>
+              </ul>
               <div className="identity-cta">
                 <h3>Corporate performance with social purpose.</h3>
                 <p>We deliver disciplined digital services under a model that prioritizes reliability, ethical delivery, and long-term impact.</p>
               </div>
             </div>
-            <div className="identity-highlight">
+            <div className="identity-card-grid">
               <div className="identity-card">
                 <div className="identity-label">Vision</div>
                 <h3>Lead Africa’s next wave of impact-driven digital workforce services.</h3>
