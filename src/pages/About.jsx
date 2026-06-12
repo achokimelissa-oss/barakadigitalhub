@@ -320,8 +320,6 @@ function About({ navigate }) {
               grid-template-columns:1fr;
             }
           }
-            gap:28px;
-          }
           .leader{
             border:1px solid var(--line);
             border-radius:10px;
@@ -503,6 +501,13 @@ function About({ navigate }) {
             position:relative;
             z-index:1;
           }
+          .identity-summary h3{
+            margin-top:0;
+            color:#f8fbff;
+            font-size:1.35rem;
+            line-height:1.4;
+            margin-bottom:18px;
+          }
           .identity-summary p{
             color:#e8f3ff;
             line-height:1.85;
@@ -530,6 +535,10 @@ function About({ navigate }) {
             line-height:1;
             margin-top:4px;
           }
+          .identity-details{
+            display:grid;
+            gap:18px;
+          }
           .identity-card-grid{
             display:grid;
             grid-template-columns:repeat(2,minmax(0,1fr));
@@ -544,6 +553,13 @@ function About({ navigate }) {
             border:1px solid rgba(163, 255, 255, 0.14);
             box-shadow:0 24px 60px rgba(1, 16, 44, 0.22);
             min-height:180px;
+          }
+          .identity-highlight{
+            border-radius:22px;
+            padding:28px 24px;
+            background:linear-gradient(180deg, rgba(10, 32, 64, 0.94), rgba(7, 21, 43, 0.98));
+            border:1px solid rgba(125, 207, 255, 0.16);
+            box-shadow:0 24px 60px rgba(1, 16, 44, 0.22);
           }
           .identity-card::before{
             content:"";
@@ -654,6 +670,7 @@ function About({ navigate }) {
           <h2>Baraka Digital Hub is built on a core belief: talent is universal, but opportunity is not.</h2>
           <div className="identity-panel">
             <div className="identity-summary">
+              <h3>Corporate focus, community purpose.</h3>
               <p>Our mission is to close this gap by connecting underserved young people to structured digital employment and global work opportunities.</p>
               <p>We operate as a professional services organization with a strong social impact mandate, combining commercial discipline with measurable community outcomes.</p>
               <p>We are not a charity. We are a business built for sustainable impact.</p>
@@ -667,28 +684,30 @@ function About({ navigate }) {
                 <p>We deliver disciplined digital services under a model that prioritizes reliability, ethical delivery, and long-term impact.</p>
               </div>
             </div>
-            <div className="identity-card-grid">
-              <div className="identity-card">
-                <div className="identity-label">Vision</div>
-                <h3>Lead Africa’s next wave of impact-driven digital workforce services.</h3>
-                <p>We connect global businesses with world-class AI data and digital services while creating sustainable employment opportunities for underserved youth.</p>
+            <div className="identity-details">
+              <div className="identity-card-grid">
+                <div className="identity-card">
+                  <div className="identity-label">Vision</div>
+                  <h3>Lead Africa’s next wave of impact-driven digital workforce services.</h3>
+                  <p>We connect global businesses with world-class AI data and digital services while creating sustainable employment opportunities for underserved youth.</p>
+                </div>
+                <div className="identity-card">
+                  <div className="identity-label">Mission</div>
+                  <h3>Prove that geography is not a limitation to excellence.</h3>
+                  <p>BDH empowers underserved youth to deliver world-class AI data and digital services, creating value for global businesses while transforming lives and communities.</p>
+                </div>
+                <div className="identity-card">
+                  <div className="identity-label">Sustainable Impact Model</div>
+                  <h3>Revenue-driven delivery that fuels growth and social value.</h3>
+                  <p>Income from AI data services and digital operations supports business expansion, workforce development, and the long-term mission of Baraka Children’s Home.</p>
+                </div>
+                <div className="identity-card">
+                  <div className="identity-label">Youth Employment</div>
+                  <h3>Structured opportunities for meaningful digital work.</h3>
+                  <p>Through onboarding, mentorship, and practical project experience, we help young people access purposeful work, professional confidence, and economic independence.</p>
+                </div>
               </div>
-              <div className="identity-card">
-                <div className="identity-label">Mission</div>
-                <h3>Prove that geography is not a limitation to excellence.</h3>
-                <p>BDH empowers underserved youth to deliver world-class AI data and digital services, creating value for global businesses while transforming lives and communities.</p>
-              </div>
-              <div className="identity-card">
-                <div className="identity-label">Sustainable Impact Model</div>
-                <h3>Revenue-driven delivery that fuels growth and social value.</h3>
-                <p>Income from AI data services and digital operations supports business expansion, workforce development, and the long-term mission of Baraka Children’s Home.</p>
-              </div>
-              <div className="identity-card">
-                <div className="identity-label">Youth Employment</div>
-                <h3>Structured opportunities for meaningful digital work.</h3>
-                <p>Through onboarding, mentorship, and practical project experience, we help young people access purposeful work, professional confidence, and economic independence.</p>
-              </div>
-              <div className="identity-card">
+              <div className="identity-highlight">
                 <div className="identity-label">Future-Ready Skills</div>
                 <h3>Developing talent for AI, data operations, and digital excellence.</h3>
                 <p>Team members gain transferable skills in annotation, QA, data management, communication, and problem-solving for long-term career readiness.</p>
