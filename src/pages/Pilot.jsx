@@ -21,80 +21,80 @@ function Pilot(props) {
     --disp: 'Space Grotesk', sans-serif;
   }
 
-  *{ margin:0; padding:0; box-sizing:border-box; }
+  .pilot-page *{ margin:0; padding:0; box-sizing:border-box; }
 
   html{ scroll-behavior:smooth; }
 
-  body{ background: var(--navy-deep); color: var(--text-hi); font-family: var(--disp); line-height:1.6; background-image:
+  body.pilot-page{ background: var(--navy-deep); color: var(--text-hi); font-family: var(--disp); line-height:1.6; background-image:
       radial-gradient(circle at 15% 8%, rgba(45,217,200,0.07), transparent 40%),
       radial-gradient(circle at 90% 75%, rgba(251,191,99,0.05), transparent 45%);
     background-attachment: fixed; }
 
   /* Force transparent containers so site chrome doesn't show as white */
-  .wrap, .hero, .section, .topbar, .pipeline, .deliver-grid, .compare, .pricing-box {
+  .pilot-page .wrap, .pilot-page .hero, .pilot-page .section, .pilot-page .topbar, .pilot-page .pipeline, .pilot-page .deliver-grid, .pilot-page .compare, .pilot-page .pricing-box {
     background: transparent !important;
     border-color: rgba(255,255,255,0.04) !important;
   }
 
-  .wrap{ max-width:1080px; margin:0 auto; padding:0 24px; position:relative; z-index:1; }
-  .topbar{ border-bottom:1px solid rgba(255,255,255,0.04); padding:18px 0; background:transparent; position:relative; z-index:25; }
-  .topbar .wrap{ display:flex; align-items:center; justify-content:space-between; }
-  .brand{ display:flex; align-items:center; gap:10px; }
-  .brand-mark{ width:34px; height:34px; border:1.5px solid var(--cyan); border-radius:7px; display:flex; align-items:center; justify-content:center; font-family:var(--mono); font-weight:700; color:var(--cyan); font-size:14px; }
-  .brand-name{ font-weight:700; font-size:15px; letter-spacing:0.5px; }
-  .brand-tag{ font-family:var(--mono); font-size:11px; color:var(--text-dim); }
-  .navlinks{ display:flex; gap:18px; align-items:center; }
-  .navlinks a{ color:var(--text-mid); text-decoration:none; font-family:var(--mono); font-size:13px; }
-  .navlinks a:hover{ color:var(--cyan); }
-  .topbar-meta{ font-family:var(--mono); font-size:11px; color:var(--text-dim); text-align:right; }
+  .pilot-page .wrap{ max-width:1080px; margin:0 auto; padding:0 24px; position:relative; z-index:1; }
+  .pilot-page .topbar{ border-bottom:1px solid rgba(255,255,255,0.04); padding:18px 0; background:transparent; position:relative; z-index:25; }
+  .pilot-page .topbar .wrap{ display:flex; align-items:center; justify-content:space-between; }
+  .pilot-page .brand{ display:flex; align-items:center; gap:10px; }
+  .pilot-page .brand-mark{ width:34px; height:34px; border:1.5px solid var(--cyan); border-radius:7px; display:flex; align-items:center; justify-content:center; font-family:var(--mono); font-weight:700; color:var(--cyan); font-size:14px; }
+  .pilot-page .brand-name{ font-weight:700; font-size:15px; letter-spacing:0.5px; }
+  .pilot-page .brand-tag{ font-family:var(--mono); font-size:11px; color:var(--text-dim); }
+  .pilot-page .navlinks{ display:flex; gap:18px; align-items:center; }
+  .pilot-page .navlinks a{ color:var(--text-mid); text-decoration:none; font-family:var(--mono); font-size:13px; }
+  .pilot-page .navlinks a:hover{ color:var(--cyan); }
+  .pilot-page .topbar-meta{ font-family:var(--mono); font-size:11px; color:var(--text-dim); text-align:right; }
 
-  .hero{ padding:140px 0 56px; position:relative; }
-  .eyebrow{ font-family:var(--mono); font-size:12px; color:var(--cyan); letter-spacing:3px; text-transform:uppercase; margin-bottom:18px; display:flex; align-items:center; gap:10px; }
-  h1{ font-size:clamp(34px, 5.2vw, 56px); font-weight:700; line-height:1.12; letter-spacing:-0.5px; max-width:760px; }
-  .hero-sub{ margin-top:22px; font-size:17px; color:var(--text-mid); max-width:620px; line-height:1.75; }
-  .hero-cta{ margin-top:36px; display:flex; gap:14px; flex-wrap:wrap; }
+  .pilot-page .hero{ padding:140px 0 56px; position:relative; }
+  .pilot-page .eyebrow{ font-family:var(--mono); font-size:12px; color:var(--cyan); letter-spacing:3px; text-transform:uppercase; margin-bottom:18px; display:flex; align-items:center; gap:10px; }
+  .pilot-page h1{ font-size:clamp(34px, 5.2vw, 56px); font-weight:700; line-height:1.12; letter-spacing:-0.5px; max-width:760px; }
+  .pilot-page .hero-sub{ margin-top:22px; font-size:17px; color:var(--text-mid); max-width:620px; line-height:1.75; }
+  .pilot-page .hero-cta{ margin-top:36px; display:flex; gap:14px; flex-wrap:wrap; }
   /* AI-themed subtle overlay inside hero */
-  .hero::before{ content:''; position:absolute; inset:0; background-image: radial-gradient(circle at 10% 20%, rgba(45,217,200,0.03), transparent 20%), linear-gradient(90deg, rgba(45,217,200,0.02), transparent 40%); pointer-events:none; mix-blend-mode:overlay; }
-  .btn{ font-family:var(--mono); font-size:13px; font-weight:600; padding:14px 28px; border-radius:6px; text-decoration:none; letter-spacing:0.5px; display:inline-flex; align-items:center; gap:10px; transition: all .2s ease; }
-  .btn-primary{ background:var(--cyan); color:var(--navy-deep); padding:10px 18px; border-radius:8px; }
-  .btn-ghost{ border:1px solid rgba(255,255,255,0.06); color:var(--text-hi); background:transparent; padding:8px 14px; border-radius:8px; }
+  .pilot-page .hero::before{ content:''; position:absolute; inset:0; background-image: radial-gradient(circle at 10% 20%, rgba(45,217,200,0.03), transparent 20%), linear-gradient(90deg, rgba(45,217,200,0.02), transparent 40%); pointer-events:none; mix-blend-mode:overlay; }
+  .pilot-page .btn{ font-family:var(--mono); font-size:13px; font-weight:600; padding:14px 28px; border-radius:6px; text-decoration:none; letter-spacing:0.5px; display:inline-flex; align-items:center; gap:10px; transition: all .2s ease; }
+  .pilot-page .btn-primary{ background:var(--cyan); color:var(--navy-deep); padding:10px 18px; border-radius:8px; }
+  .pilot-page .btn-ghost{ border:1px solid rgba(255,255,255,0.06); color:var(--text-hi); background:transparent; padding:8px 14px; border-radius:8px; }
 
-  .section{ padding:64px 0; border-top:1px solid var(--navy-line); }
-  .section-head{ margin-bottom:36px; }
-  .section-num{ font-family:var(--mono); font-size:12px; color:var(--cyan); letter-spacing:2px; margin-bottom:10px; }
-  .section-title{ font-size:clamp(24px,3vw,32px); font-weight:700; letter-spacing:-0.3px; }
-  .section-desc{ margin-top:12px; color:var(--text-mid); max-width:640px; font-size:15px; }
+  .pilot-page .section{ padding:64px 0; border-top:1px solid var(--navy-line); }
+  .pilot-page .section-head{ margin-bottom:36px; }
+  .pilot-page .section-num{ font-family:var(--mono); font-size:12px; color:var(--cyan); letter-spacing:2px; margin-bottom:10px; }
+  .pilot-page .section-title{ font-size:clamp(24px,3vw,32px); font-weight:700; letter-spacing:-0.3px; }
+  .pilot-page .section-desc{ margin-top:12px; color:var(--text-mid); max-width:640px; font-size:15px; }
 
-  .eval-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--navy-line); border:1px solid var(--navy-line); border-radius:10px; overflow:hidden; }
-  .eval-cell{ background:var(--navy-panel); padding:22px 18px; min-height:128px; display:flex; flex-direction:column; gap:8px; }
-  .eval-idx{ font-family:var(--mono); font-size:11px; color:var(--cyan); letter-spacing:1px; }
-  .eval-name{ font-weight:600; font-size:14.5px; line-height:1.35; }
-  .eval-desc{ font-size:12.5px; color:var(--text-dim); }
+  .pilot-page .eval-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--navy-line); border:1px solid var(--navy-line); border-radius:10px; overflow:hidden; }
+  .pilot-page .eval-cell{ background:var(--navy-panel); padding:22px 18px; min-height:128px; display:flex; flex-direction:column; gap:8px; }
+  .pilot-page .eval-idx{ font-family:var(--mono); font-size:11px; color:var(--cyan); letter-spacing:1px; }
+  .pilot-page .eval-name{ font-weight:600; font-size:14.5px; line-height:1.35; }
+  .pilot-page .eval-desc{ font-size:12.5px; color:var(--text-dim); }
 
-  .pipeline{ border:1px solid var(--navy-line); border-radius:10px; overflow:hidden; background:var(--navy-panel); }
-  .phase{ display:grid; grid-template-columns:64px 1fr auto; gap:20px; padding:26px 24px; align-items:start; border-bottom:1px solid var(--navy-line); position:relative; }
-  .phase-num{ font-family:var(--mono); font-size:13px; color:var(--navy-deep); background:var(--cyan); width:36px; height:36px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-weight:700; z-index:1; }
+  .pilot-page .pipeline{ border:1px solid var(--navy-line); border-radius:10px; overflow:hidden; background:var(--navy-panel); }
+  .pilot-page .phase{ display:grid; grid-template-columns:64px 1fr auto; gap:20px; padding:26px 24px; align-items:start; border-bottom:1px solid var(--navy-line); position:relative; }
+  .pilot-page .phase-num{ font-family:var(--mono); font-size:13px; color:var(--navy-deep); background:var(--cyan); width:36px; height:36px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-weight:700; z-index:1; }
 
-  .deliver-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
-  .deliver-item{ display:flex; gap:14px; padding:20px; border:1px solid var(--navy-line); border-radius:10px; background:var(--navy-panel); }
+  .pilot-page .deliver-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
+  .pilot-page .deliver-item{ display:flex; gap:14px; padding:20px; border:1px solid var(--navy-line); border-radius:10px; background:var(--navy-panel); }
 
-  .compare{ display:grid; grid-template-columns:1fr 1fr; gap:1px; border:1px solid var(--navy-line); border-radius:10px; overflow:hidden; }
-  .compare-col{ background:var(--navy-panel); padding:28px; }
-  .compare-col.highlight{ background:#0F2A30; }
+  .pilot-page .compare{ display:grid; grid-template-columns:1fr 1fr; gap:1px; border:1px solid var(--navy-line); border-radius:10px; overflow:hidden; }
+  .pilot-page .compare-col{ background:var(--navy-panel); padding:28px; }
+  .pilot-page .compare-col.highlight{ background:#0F2A30; }
 
-  .pricing-box{ border:1px solid var(--navy-line); border-radius:10px; padding:36px; background: linear-gradient(135deg, var(--navy-panel), #0E1F36); display:flex; flex-wrap:wrap; gap:32px; align-items:center; justify-content:space-between; }
+  .pilot-page .pricing-box{ border:1px solid var(--navy-line); border-radius:10px; padding:36px; background: linear-gradient(135deg, var(--navy-panel), #0E1F36); display:flex; flex-wrap:wrap; gap:32px; align-items:center; justify-content:space-between; }
 
-  .final-cta{ text-align:center; padding:80px 0; border-top:1px solid var(--navy-line); }
-  .final-cta .eyebrow{ justify-content:center; }
-  .final-cta h2{ font-size:clamp(28px,4vw,42px); font-weight:700; letter-spacing:-0.5px; max-width:680px; margin:0 auto 18px; }
-  .final-cta p{ color:var(--text-mid); max-width:540px; margin:0 auto 36px; font-size:15.5px; }
-  .final-cta .hero-cta{ justify-content:center; }
+  .pilot-page .final-cta{ text-align:center; padding:80px 0; border-top:1px solid var(--navy-line); }
+  .pilot-page .final-cta .eyebrow{ justify-content:center; }
+  .pilot-page .final-cta h2{ font-size:clamp(28px,4vw,42px); font-weight:700; letter-spacing:-0.5px; max-width:680px; margin:0 auto 18px; }
+  .pilot-page .final-cta p{ color:var(--text-mid); max-width:540px; margin:0 auto 36px; font-size:15.5px; }
+  .pilot-page .final-cta .hero-cta{ justify-content:center; }
 
-  .contact-strip{ margin-top:40px; font-family:var(--mono); font-size:12.5px; color:var(--text-dim); display:flex; gap:28px; justify-content:center; flex-wrap:wrap; }
-  footer{ padding:24px 0; text-align:center; font-family:var(--mono); font-size:12px; color:var(--text-dim); border-top:1px solid rgba(255,255,255,0.04); }
+  .pilot-page .contact-strip{ margin-top:40px; font-family:var(--mono); font-size:12.5px; color:var(--text-dim); display:flex; gap:28px; justify-content:center; flex-wrap:wrap; }
+  .pilot-page footer{ padding:24px 0; text-align:center; font-family:var(--mono); font-size:12px; color:var(--text-dim); border-top:1px solid rgba(255,255,255,0.04); }
 
-  @media (max-width:860px){ .eval-grid{ grid-template-columns:repeat(2,1fr); } }
-  @media (max-width:520px){ .eval-grid{ grid-template-columns:1fr; } }
+  @media (max-width:860px){ .pilot-page .eval-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:520px){ .pilot-page .eval-grid{ grid-template-columns:1fr; } }
     /* Strong overrides to neutralize site-wide white panels on this page */
     .pilot-page, .pilot-page body { background: var(--navy-deep) !important; }
     .pilot-page * { background: transparent !important; color: inherit !important; border-color: rgba(255,255,255,0.04) !important; box-shadow: none !important; }
@@ -104,34 +104,6 @@ function Pilot(props) {
       </Helmet>
 
       <div style={{ background: 'radial-gradient(circle at 15% 8%, rgba(45,217,200,0.07), transparent 40%), radial-gradient(circle at 90% 75%, rgba(251,191,99,0.05), transparent 45%)', color: 'var(--text-hi)', minHeight: '100vh' }}>
-        <div className="topbar">
-          <div className="wrap">
-            <div className="brand">
-              <div className="brand-mark">B</div>
-              <div>
-                <div className="brand-name">BARAKA DIGITAL HUB</div>
-                <div className="brand-tag">AI Data Services &amp; BPO</div>
-              </div>
-            </div>
-            <div className="navlinks">
-              <a href="/">Home</a>
-              <a href="/services">Services</a>
-              <a href="/impact">Impact</a>
-              <a href="/about">About</a>
-              <a href="/careers">Careers</a>
-              <a href="/privacy">Privacy</a>
-              <a href="/contact">Contact</a>
-              <a href="/pilot">Pilot</a>
-              <a href="/workflow">Workflow</a>
-              <a href="/operations">Operations</a>
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-              <a className="btn btn-ghost" href="mailto:projects@barakadigitalhub.com">projects@barakadigitalhub.com</a>
-              <a className="btn btn-primary" href="mailto:projects@barakadigitalhub.com?subject=Pilot%20Enquiry">Start a Pilot</a>
-            </div>
-          </div>
-        </div>
-
         <div className="hero">
           <div className="wrap">
             <div className="eyebrow">pilot_engagement // status: open</div>
@@ -365,11 +337,6 @@ function Pilot(props) {
             </div>
           </div>
         </div>
-
-        <footer>
-          Baraka Digital Hub <span>·</span> Nairobi, Kenya
-        </footer>
-
       </div>
     </>
   );
