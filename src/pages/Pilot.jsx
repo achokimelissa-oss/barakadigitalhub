@@ -463,11 +463,7 @@ function Pilot(props) {
         </div>
       </div>
 
-      {scrolled && (
-        <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} aria-label="Scroll to top" style={{ position: 'fixed', left: '50%', transform: 'translateX(-50%)', bottom: 24, zIndex: 200, width: 48, height: 48, borderRadius: '999px', border: 'none', background: 'linear-gradient(135deg, #1d4ed8, #06b6d4)', color: 'white', boxShadow: '0 18px 40px rgba(29,78,216,.22)', cursor: 'pointer', display: 'grid', placeItems: 'center', fontSize: '1.25rem' }}>
-          ↑
-        </button>
-      )}
+      {/* Use global scroll-to-top button from App.jsx; local button removed */}
     </>
   );
 }
