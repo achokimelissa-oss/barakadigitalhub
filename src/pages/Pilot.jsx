@@ -34,10 +34,21 @@ function Pilot(props) {
       radial-gradient(circle at 25% 90%, rgba(56,189,248,0.08), transparent 28%);
     background-attachment: fixed; }
 
-  /* Force transparent containers so site chrome doesn't show as white */
-  .pilot-page .wrap, .pilot-page .hero, .pilot-page .topbar, .pilot-page .pipeline, .pilot-page .deliver-grid, .pilot-page .compare, .pilot-page .pricing-box {
+  /* Force transparent site chrome containers so white panels don't show through */
+  .pilot-page .wrap,
+  .pilot-page .hero,
+  .pilot-page .topbar,
+  .pilot-page .section-block,
+  .pilot-page .section-intro,
+  .pilot-page .card,
+  .pilot-page .about-panel,
+  .pilot-page .pipeline,
+  .pilot-page .deliver-grid,
+  .pilot-page .compare,
+  .pilot-page .pricing-box {
     background: transparent !important;
     border-color: rgba(255,255,255,0.04) !important;
+    box-shadow: none !important;
   }
 
   .pilot-page .section{ padding:64px 0; border-top:1px solid rgba(255,255,255,0.08); background: rgba(11,22,41,0.75); position:relative; overflow:hidden; }
@@ -83,7 +94,6 @@ function Pilot(props) {
   .pilot-page .btn-warm{ background: linear-gradient(135deg, var(--amber), #f5d078); color: var(--navy-deep); border: none; }
   .pilot-page .btn-ghost{ border:1px solid rgba(255,255,255,0.16); color:var(--text-hi); background: rgba(255,255,255,0.06); padding:10px 18px; border-radius:8px; }
 
-  .pilot-page .section{ padding:64px 0; border-top:1px solid var(--navy-line); }
   .pilot-page .section-head{ margin-bottom:36px; }
   .pilot-page .section-num{ font-family:var(--mono); font-size:12px; color:var(--cyan); letter-spacing:2px; margin-bottom:10px; }
   .pilot-page .section-title{ font-size:clamp(24px,3vw,32px); font-weight:700; letter-spacing:-0.3px; }
