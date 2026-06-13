@@ -171,6 +171,29 @@ function Pilot(props) {
   .pilot-page .final-cta p{ color:var(--text-mid); max-width:540px; margin:0 auto 36px; font-size:15.5px; }
   .pilot-page .final-cta .hero-cta{ justify-content:center; }
 
+  /* Scroll-to-top button: match homepage appearance */
+  .pilot-page .scroll-top {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid rgba(15, 23, 42, 0.14) !important;
+    background: white !important;
+    color: #0f172a !important;
+    border-radius: 9999px !important;
+    padding: 14px 18px !important;
+    box-shadow: 0 18px 48px rgba(15, 23, 42, 0.12) !important;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.28s ease, transform 0.28s ease;
+    pointer-events: none;
+    z-index: 50;
+  }
+  .pilot-page .scroll-top.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+  .pilot-page .scroll-top:hover { transform: translateY(-1px); }
+
   @media (max-width:860px){ .pilot-page .eval-grid{ grid-template-columns:repeat(2,1fr); } }
   @media (max-width:520px){ .pilot-page .eval-grid{ grid-template-columns:1fr; } }
     /* Strong overrides to neutralize site-wide white panels on this page */
