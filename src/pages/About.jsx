@@ -125,13 +125,14 @@ function About({ navigate }) {
             gap:8px;
             padding:10px 14px;
             border-radius:999px;
-            background:rgba(255,255,255,0.08);
+            background:linear-gradient(135deg, rgba(15,23,42,0.92), rgba(8,47,73,0.92));
             border:1px solid rgba(125,207,255,0.18);
             color:#eaf7ff;
-            font-size:0.82rem;
-            letter-spacing:0.14em;
+            font-size:0.78rem;
+            letter-spacing:0.18em;
             text-transform:uppercase;
             font-family:'JetBrains Mono','Courier New',monospace;
+            box-shadow:0 10px 24px rgba(8,15,35,0.25);
           }
           .hero-metrics{
             display:grid;
@@ -152,9 +153,10 @@ function About({ navigate }) {
           }
           .metric-card strong{
             display:block;
-            font-size:1.45rem;
+            font-size:1.55rem;
             color:#fff;
             margin-bottom:6px;
+            letter-spacing:-0.03em;
           }
           .metric-card span{
             color:#d7efff;
@@ -261,8 +263,9 @@ function About({ navigate }) {
           .story-card h3,
           .story-stack h3{
             color:#f7fbff;
-            font-size:1.08rem;
+            font-size:1.12rem;
             margin-bottom:10px;
+            letter-spacing:-0.02em;
           }
           .story-card p,
           .story-stack p{
@@ -293,7 +296,7 @@ function About({ navigate }) {
             margin-top:10px;
             padding:12px 14px;
             border-radius:16px;
-            background:rgba(125,207,255,0.10);
+            background:linear-gradient(135deg, rgba(125,211,252,0.12), rgba(14,165,233,0.08));
             border:1px solid rgba(125,207,255,0.18);
             color:#eff8ff;
             font-size:0.92rem;
@@ -368,10 +371,11 @@ function About({ navigate }) {
           .principle h4{
             position:relative;
             color:#f8fbff;
-            font-size:1.02rem;
+            font-size:1.04rem;
             margin-bottom:10px;
             font-weight:700;
             z-index:1;
+            letter-spacing:-0.02em;
           }
           .principle p{
             position:relative;
@@ -550,9 +554,10 @@ function About({ navigate }) {
           .cta-main h3{
             margin:0;
             color:#eff7ff;
-            font-size:1.28rem;
+            font-size:1.32rem;
             line-height:1.35;
             text-align:left;
+            letter-spacing:-0.02em;
           }
           .cta-main p{
             margin:0;
@@ -632,15 +637,16 @@ function About({ navigate }) {
           }
           .cta-support .stat span{
             display:inline-flex;
-            min-width:52px;
-            height:52px;
+            min-width:54px;
+            height:54px;
             align-items:center;
             justify-content:center;
             border-radius:18px;
-            background:rgba(150, 255, 255, 0.18);
-            color:#082536;
+            background:linear-gradient(135deg, rgba(125,211,252,0.28), rgba(56,189,248,0.18));
+            color:#e6fbff;
             font-weight:700;
-            font-size:1.05rem;
+            font-size:1.02rem;
+            border:1px solid rgba(125,211,252,0.18);
           }
           .cta-support .stat p{
             margin:0;
@@ -801,9 +807,10 @@ function About({ navigate }) {
             position:relative;
             z-index:1;
             color:#f8fbff;
-            font-size:1.08rem;
+            font-size:1.1rem;
             margin:0 0 12px;
             line-height:1.45;
+            letter-spacing:-0.02em;
           }
           .identity-card p{
             position:relative;
