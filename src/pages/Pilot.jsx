@@ -125,10 +125,11 @@ function Pilot(props) {
   .pilot-page .metric-card span{ color: var(--text-mid); font-size:0.95rem; line-height:1.6; }
   .pilot-page .hero-cta{ margin-top:34px; display:flex; gap:14px; flex-wrap:wrap; }
   .pilot-page .btn{ font-family:var(--mono); font-size:13px; font-weight:600; padding:14px 26px; border-radius:12px; text-decoration:none; letter-spacing:0.08em; display:inline-flex; align-items:center; gap:10px; transition: all .22s ease; }
-  .pilot-page .btn-primary{ background:var(--cyan); color:var(--navy-deep); padding:10px 18px; border-radius:8px; }
-  .pilot-page .btn-accent{ background: linear-gradient(135deg, var(--violet), var(--teal)); color: white; border: none; }
-  .pilot-page .btn-warm{ background: linear-gradient(135deg, var(--amber), #f5d078); color: var(--navy-deep); border: none; }
-  .pilot-page .btn-ghost{ border:1px solid rgba(255,255,255,0.16); color:var(--text-hi); background: rgba(255,255,255,0.06); padding:10px 18px; border-radius:8px; }
+  .pilot-page .btn-primary{ background: linear-gradient(135deg, #2DD9C8, #38BDF8); color:#07141d; padding:14px 26px; border-radius:16px; border:none; box-shadow:0 20px 48px rgba(45,217,200,0.18); }
+  .pilot-page .btn-accent{ background: linear-gradient(135deg, #8B5CF6, #0EA5E9); color: white; padding:14px 26px; border:none; box-shadow:0 20px 48px rgba(139,92,246,0.18); }
+  .pilot-page .btn-warm{ background: linear-gradient(135deg, #FBBF63, #F97316); color:#07141d; padding:14px 26px; border:none; box-shadow:0 20px 48px rgba(251,191,99,0.18); }
+  .pilot-page .btn-ghost{ border:1px solid rgba(255,255,255,0.18); color:var(--text-hi); background: rgba(255,255,255,0.05); padding:14px 26px; border-radius:16px; }
+  .pilot-page .btn-steel{ background: linear-gradient(135deg, #334155, #1E293B); color:#cbd5e1; padding:14px 26px; border:1px solid rgba(148,163,184,0.18); border-radius:16px; }
 
   .pilot-page .section-head{ margin-bottom:36px; }
   .pilot-page .section-num{ font-family:var(--mono); font-size:12px; color:var(--cyan); letter-spacing:2px; margin-bottom:10px; }
@@ -159,9 +160,6 @@ function Pilot(props) {
   .pilot-page .final-cta h2{ font-size:clamp(28px,4vw,42px); font-weight:700; letter-spacing:-0.5px; max-width:680px; margin:0 auto 18px; }
   .pilot-page .final-cta p{ color:var(--text-mid); max-width:540px; margin:0 auto 36px; font-size:15.5px; }
   .pilot-page .final-cta .hero-cta{ justify-content:center; }
-
-  .pilot-page .contact-strip{ margin-top:40px; font-family:var(--mono); font-size:12.5px; color:var(--text-dim); display:flex; gap:28px; justify-content:center; flex-wrap:wrap; }
-  .pilot-page footer{ padding:24px 0; text-align:center; font-family:var(--mono); font-size:12px; color:var(--text-dim); border-top:1px solid rgba(255,255,255,0.04); }
 
   @media (max-width:860px){ .pilot-page .eval-grid{ grid-template-columns:repeat(2,1fr); } }
   @media (max-width:520px){ .pilot-page .eval-grid{ grid-template-columns:1fr; } }
@@ -422,14 +420,10 @@ function Pilot(props) {
               24 hours. No commitment required until you've seen the results.
             </p>
             <div className="hero-cta">
-              <a className="btn btn-primary" href="mailto:projects@barakadigitalhub.com?subject=Pilot%20Enquiry">Book a discovery call →</a>
-              <a className="btn btn-accent" href="mailto:projects@barakadigitalhub.com?subject=Pilot%20Proposal">Request a custom proposal</a>
-              <a className="btn btn-warm" href="#contact">Get a quick estimate</a>
-            </div>
-            <div className="contact-strip">
-              <a href="mailto:projects@barakadigitalhub.com"><span>✉</span> projects@barakadigitalhub.com</a>
-              <a href="tel:+254793842347"><span>☎</span> +254 793 842 347</a>
-              <a href="https://www.barakadigitalhub.com"><span>⌬</span> www.barakadigitalhub.com</a>
+              <a className="btn btn-primary" href="#start">Book a discovery call →</a>
+              <a className="btn btn-accent" href="#structure">Explore pilot scope</a>
+              <a className="btn btn-warm" href="#pricing">See pilot pricing</a>
+              <a className="btn btn-steel" href="/contact">Visit Contact page</a>
             </div>
           </div>
         </div>
