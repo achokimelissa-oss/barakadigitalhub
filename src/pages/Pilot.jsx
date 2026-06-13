@@ -1,29 +1,357 @@
 import { Helmet } from "react-helmet-async";
 
-function Pilot() {
+function Pilot(props) {
   return (
     <>
       <Helmet>
-        <title>Start a Pilot Program | Baraka Digital Hub</title>
-        <meta
-          name="description"
-          content="Try Baraka Digital Hub with a small batch. Get results in 48 hours with full quality reporting before you commit to scale."
-        />
+        <title>The BDH Pilot — Baraka Digital Hub</title>
+        <meta name="description" content="Structured pilots: real work, QA reports, and a clear path to production." />
+        <style>{`
+  :root{
+    --navy-deep:   #0A1626;
+    --navy-panel:  #101F35;
+    --navy-line:   #1E3650;
+    --cyan:        #2DD9C8;
+    --cyan-dim:    #1A8C80;
+    --amber:       #FBBF63;
+    --text-hi:     #EAF1F8;
+    --text-mid:    #9FB4CC;
+    --text-dim:    #5E7891;
+    --mono: 'JetBrains Mono', monospace;
+    --disp: 'Space Grotesk', sans-serif;
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+
+  html{ scroll-behavior:smooth; }
+
+  body{ background: var(--navy-deep); color: var(--text-hi); font-family: var(--disp); line-height:1.6; }
+
+  .wrap{ max-width:1080px; margin:0 auto; padding:0 24px; position:relative; z-index:1; }
+  .topbar{ border-bottom:1px solid var(--navy-line); padding:18px 0; background:transparent; }
+  .topbar .wrap{ display:flex; align-items:center; justify-content:space-between; }
+  .brand{ display:flex; align-items:center; gap:10px; }
+  .brand-mark{ width:34px; height:34px; border:1.5px solid var(--cyan); border-radius:7px; display:flex; align-items:center; justify-content:center; font-family:var(--mono); font-weight:700; color:var(--cyan); font-size:14px; }
+  .brand-name{ font-weight:700; font-size:15px; letter-spacing:0.5px; }
+  .brand-tag{ font-family:var(--mono); font-size:11px; color:var(--text-dim); }
+  .navlinks{ display:flex; gap:18px; align-items:center; }
+  .navlinks a{ color:var(--text-mid); text-decoration:none; font-family:var(--mono); font-size:13px; }
+  .navlinks a:hover{ color:var(--cyan); }
+  .topbar-meta{ font-family:var(--mono); font-size:11px; color:var(--text-dim); text-align:right; }
+
+  .hero{ padding:72px 0 56px; }
+  .eyebrow{ font-family:var(--mono); font-size:12px; color:var(--cyan); letter-spacing:3px; text-transform:uppercase; margin-bottom:18px; display:flex; align-items:center; gap:10px; }
+  h1{ font-size:clamp(34px, 5.2vw, 56px); font-weight:700; line-height:1.12; letter-spacing:-0.5px; max-width:760px; }
+  .hero-sub{ margin-top:22px; font-size:17px; color:var(--text-mid); max-width:620px; line-height:1.75; }
+  .hero-cta{ margin-top:36px; display:flex; gap:14px; flex-wrap:wrap; }
+  .btn{ font-family:var(--mono); font-size:13px; font-weight:600; padding:14px 28px; border-radius:6px; text-decoration:none; letter-spacing:0.5px; display:inline-flex; align-items:center; gap:10px; transition: all .2s ease; }
+  .btn-primary{ background:var(--cyan); color:var(--navy-deep); }
+  .btn-ghost{ border:1px solid var(--navy-line); color:var(--text-hi); background:transparent; }
+
+  .section{ padding:64px 0; border-top:1px solid var(--navy-line); }
+  .section-head{ margin-bottom:36px; }
+  .section-num{ font-family:var(--mono); font-size:12px; color:var(--cyan); letter-spacing:2px; margin-bottom:10px; }
+  .section-title{ font-size:clamp(24px,3vw,32px); font-weight:700; letter-spacing:-0.3px; }
+  .section-desc{ margin-top:12px; color:var(--text-mid); max-width:640px; font-size:15px; }
+
+  .eval-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--navy-line); border:1px solid var(--navy-line); border-radius:10px; overflow:hidden; }
+  .eval-cell{ background:var(--navy-panel); padding:22px 18px; min-height:128px; display:flex; flex-direction:column; gap:8px; }
+  .eval-idx{ font-family:var(--mono); font-size:11px; color:var(--cyan); letter-spacing:1px; }
+  .eval-name{ font-weight:600; font-size:14.5px; line-height:1.35; }
+  .eval-desc{ font-size:12.5px; color:var(--text-dim); }
+
+  .pipeline{ border:1px solid var(--navy-line); border-radius:10px; overflow:hidden; background:var(--navy-panel); }
+  .phase{ display:grid; grid-template-columns:64px 1fr auto; gap:20px; padding:26px 24px; align-items:start; border-bottom:1px solid var(--navy-line); position:relative; }
+  .phase-num{ font-family:var(--mono); font-size:13px; color:var(--navy-deep); background:var(--cyan); width:36px; height:36px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-weight:700; z-index:1; }
+
+  .deliver-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
+  .deliver-item{ display:flex; gap:14px; padding:20px; border:1px solid var(--navy-line); border-radius:10px; background:var(--navy-panel); }
+
+  .compare{ display:grid; grid-template-columns:1fr 1fr; gap:1px; border:1px solid var(--navy-line); border-radius:10px; overflow:hidden; }
+  .compare-col{ background:var(--navy-panel); padding:28px; }
+  .compare-col.highlight{ background:#0F2A30; }
+
+  .pricing-box{ border:1px solid var(--navy-line); border-radius:10px; padding:36px; background: linear-gradient(135deg, var(--navy-panel), #0E1F36); display:flex; flex-wrap:wrap; gap:32px; align-items:center; justify-content:space-between; }
+
+  .final-cta{ text-align:center; padding:80px 0; border-top:1px solid var(--navy-line); }
+  .final-cta .eyebrow{ justify-content:center; }
+  .final-cta h2{ font-size:clamp(28px,4vw,42px); font-weight:700; letter-spacing:-0.5px; max-width:680px; margin:0 auto 18px; }
+  .final-cta p{ color:var(--text-mid); max-width:540px; margin:0 auto 36px; font-size:15.5px; }
+  .final-cta .hero-cta{ justify-content:center; }
+
+  .contact-strip{ margin-top:40px; font-family:var(--mono); font-size:12.5px; color:var(--text-dim); display:flex; gap:28px; justify-content:center; flex-wrap:wrap; }
+  footer{ padding:24px 0; text-align:center; font-family:var(--mono); font-size:12px; color:var(--text-dim); border-top:1px solid rgba(255,255,255,0.04); }
+
+  @media (max-width:860px){ .eval-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:520px){ .eval-grid{ grid-template-columns:1fr; } }
+`}</style>
       </Helmet>
 
-      <div style={{ background: "radial-gradient(circle at top, rgba(59,130,246,.18), transparent 28%), radial-gradient(circle at bottom right, rgba(16,185,129,.14), transparent 24%), linear-gradient(180deg, #020617 0%, #08172f 45%, #0b203f 100%)", color: "#e2e8f0", minHeight: "100vh" }}>
-      <section className="section-block section-intro" style={{ background: "transparent" }}>
-        <div className="text-block">
-          <p className="highlight-pill">Pilot Program</p>
-          <h1 style={{ color: "#f8fafc" }}>Start a pilot with us</h1>
-          <p style={{ color: "rgba(226,232,240,.84)" }}>
-            Pilot Execution validates accuracy and throughput under live conditions before full production ramp. Expect sample deliverables (often within 48 hours), full QA reporting, error logs, and clear recommendations for scaling.
-          </p>
-          <p style={{ color: "rgba(226,232,240,.84)" }}>
-            Pilots confirm tooling, SOPs, and performance targets while giving you direct access to the Project Manager and QA insights required to make a confident deployment decision.
-          </p>
+      <div style={{ background: 'radial-gradient(circle at 15% 8%, rgba(45,217,200,0.07), transparent 40%), radial-gradient(circle at 90% 75%, rgba(251,191,99,0.05), transparent 45%)', color: 'var(--text-hi)', minHeight: '100vh' }}>
+        <div className="topbar">
+          <div className="wrap">
+            <div className="brand">
+              <div className="brand-mark">B</div>
+              <div>
+                <div className="brand-name">BARAKA DIGITAL HUB</div>
+                <div className="brand-tag">AI Data Services &amp; BPO</div>
+              </div>
+            </div>
+            <div className="navlinks">
+              <a href="/">Home</a>
+              <a href="/services">Services</a>
+              <a href="/impact">Impact</a>
+              <a href="/about">About</a>
+              <a href="/careers">Careers</a>
+              <a href="/privacy">Privacy</a>
+              <a href="/contact">Contact</a>
+              <a href="/pilot">Pilot</a>
+              <a href="/workflow">Workflow</a>
+              <a href="/operations">Operations</a>
+            </div>
+            <div className="topbar-meta">
+              <a href="mailto:projects@barakadigitalhub.com">projects@barakadigitalhub.com</a>
+            </div>
+          </div>
         </div>
-      </section>
+
+        <div className="hero">
+          <div className="wrap">
+            <div className="eyebrow">pilot_engagement // status: open</div>
+            <h1>A trial <span className="accent">partnership</span>, not a trial task.</h1>
+            <p className="hero-sub">
+              Before any production engagement, BDH runs a structured pilot — real work, on your data,
+              under your quality bar, executed by the same team and QA framework used at full scale.
+              Low cost. Zero obligation. A clear path to production if it fits.
+            </p>
+            <div className="hero-cta">
+              <a className="btn btn-primary" href="#start">Start a pilot →</a>
+              <a className="btn btn-ghost" href="#structure">See how it works</a>
+            </div>
+          </div>
+        </div>
+
+        <div className="section">
+          <div className="wrap">
+            <div className="section-head">
+              <div className="section-num">01 — EVALUATION SCOPE</div>
+              <div className="section-title">What the pilot evaluates</div>
+              <p className="section-desc">The pilot isn't a quality test in isolation — it's a working model of the full
+                partnership. Eight dimensions are assessed before any production decision is made.</p>
+            </div>
+
+            <div className="eval-grid">
+              <div className="eval-cell">
+                <div className="eval-idx">// 01</div>
+                <div className="eval-name">Quality &amp; Accuracy</div>
+                <div className="eval-desc">Output measured against your defined benchmarks and quality standards.</div>
+              </div>
+              <div className="eval-cell">
+                <div className="eval-idx">// 02</div>
+                <div className="eval-name">Communication</div>
+                <div className="eval-desc">Response time, clarity of updates, and proactive issue flagging.</div>
+              </div>
+              <div className="eval-cell">
+                <div className="eval-idx">// 03</div>
+                <div className="eval-name">Workflow Fit</div>
+                <div className="eval-desc">How smoothly BDH integrates into your tools, processes, and systems.</div>
+              </div>
+              <div className="eval-cell">
+                <div className="eval-idx">// 04</div>
+                <div className="eval-name">Scalability</div>
+                <div className="eval-desc">Whether the team absorbs increased volume without quality loss.</div>
+              </div>
+              <div className="eval-cell">
+                <div className="eval-idx">// 05</div>
+                <div className="eval-name">Reporting</div>
+                <div className="eval-desc">Completeness and clarity of daily updates, QA reports, and metrics.</div>
+              </div>
+              <div className="eval-cell">
+                <div className="eval-idx">// 06</div>
+                <div className="eval-name">Security &amp; Compliance</div>
+                <div className="eval-desc">Adherence to your data handling policies and access requirements.</div>
+              </div>
+              <div className="eval-cell">
+                <div className="eval-idx">// 07</div>
+                <div className="eval-name">Platform Integration</div>
+                <div className="eval-desc">Ability to work within your proprietary tools and environments.</div>
+              </div>
+              <div className="eval-cell">
+                <div className="eval-idx">// 08</div>
+                <div className="eval-name">Adaptability</div>
+                <div className="eval-desc">How effectively the team adjusts to evolving requirements mid-run.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="section" id="structure">
+          <div className="wrap">
+            <div className="section-head">
+              <div className="section-num">02 — PILOT STRUCTURE</div>
+              <div className="section-title">Four phases. Same framework as production.</div>
+              <p className="section-desc">Training happens before execution — not after. Every phase runs under the same
+                PM-led, QA-independent structure used in full-scale engagements.</p>
+            </div>
+
+            <div className="pipeline">
+              <div className="phase">
+                <div className="phase-num">01</div>
+                <div className="phase-body">
+                  <h3>Discovery &amp; Planning</h3>
+                  <p>Requirements reviewed and documented. Success criteria defined. Workflow mapped
+                     and quality benchmarks agreed in writing before any contractor is assigned.</p>
+                </div>
+                <div className="phase-tag">sign-off required</div>
+              </div>
+
+              <div className="phase">
+                <div className="phase-num">02</div>
+                <div className="phase-body">
+                  <h3>Team Training &amp; Certification</h3>
+                  <p>The agreed contractor cohort is trained specifically on your documentation and
+                     guidelines. No one touches live work until certified against your quality bar.</p>
+                </div>
+                <div className="phase-tag">complexity-dependent</div>
+              </div>
+
+              <div className="phase">
+                <div className="phase-num">03</div>
+                <div className="phase-body">
+                  <h3>Pilot Execution</h3>
+                  <p>The trained team executes the agreed scope under full BDH structure — Project
+                     Manager, Team Lead, and Independent QA reviewing 100% of output.</p>
+                </div>
+                <div className="phase-tag">per agreed scope</div>
+              </div>
+
+              <div className="phase">
+                <div className="phase-num">04</div>
+                <div className="phase-body">
+                  <h3>Performance Review &amp; Roadmap</h3>
+                  <p>Deliverables, QA report, IAA scores, and a production roadmap are handed over —
+                     ready to activate only when you give the signal.</p>
+                </div>
+                <div className="phase-tag">your decision</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="section">
+          <div className="wrap">
+            <div className="section-head">
+              <div className="section-num">03 — DELIVERABLES</div>
+              <div className="section-title">What you receive at the end</div>
+            </div>
+
+            <div className="deliver-grid">
+              <div className="deliver-item">
+                <div className="deliver-icon">▣</div>
+                <div className="deliver-text">
+                  <h4>Completed Pilot Deliverables</h4>
+                  <p>The agreed scope of work, fully executed and ready for review.</p>
+                </div>
+              </div>
+              <div className="deliver-item">
+                <div className="deliver-icon">✓</div>
+                <div className="deliver-text">
+                  <h4>Independent QA Report</h4>
+                  <p>100% output review with error classification and accuracy scoring.</p>
+                </div>
+              </div>
+              <div className="deliver-item">
+                <div className="deliver-icon">∑</div>
+                <div className="deliver-text">
+                  <h4>IAA Scores</h4>
+                  <p>Inter-Annotator Agreement — consistency metrics across the contractor cohort.</p>
+                </div>
+              </div>
+              <div className="deliver-item">
+                <div className="deliver-icon">→</div>
+                <div className="deliver-text">
+                  <h4>Production Roadmap</h4>
+                  <p>Staffing, QA structure, and scaling plan — ready to activate on your signal.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="section">
+          <div className="wrap">
+            <div className="section-head">
+              <div className="section-num">04 — WHY START HERE</div>
+              <div className="section-title">Pilot vs. jumping straight to production</div>
+            </div>
+
+            <div className="compare">
+              <div className="compare-col">
+                <div className="compare-head">Without a pilot</div>
+                <div className="compare-row"><span className="compare-mark">×</span> Vendor selected on promises and sales decks</div>
+                <div className="compare-row"><span className="compare-mark">×</span> Quality issues surface weeks into production</div>
+                <div className="compare-row"><span className="compare-mark">×</span> Rework costs discovered after volume scales</div>
+                <div className="compare-row"><span className="compare-mark">×</span> Weeks of onboarding before any output exists</div>
+              </div>
+              <div className="compare-col highlight">
+                <div className="compare-head">With the BDH pilot</div>
+                <div className="compare-row"><span className="compare-mark">✓</span> Vendor selected on delivered, QA-verified results</div>
+                <div className="compare-row"><span className="compare-mark">✓</span> Quality validated on real data before commitment</div>
+                <div className="compare-row"><span className="compare-mark">✓</span> Issues surface in the pilot — before they scale</div>
+                <div className="compare-row"><span className="compare-mark">✓</span> A working relationship, tested and proven</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="section">
+          <div className="wrap">
+            <div className="section-head">
+              <div className="section-num">05 — PRICING</div>
+              <div className="section-title">Scoped to your project</div>
+            </div>
+
+            <div className="pricing-box">
+              <div className="pricing-text">
+                <h3>No fixed pilot fee — scoped to what you need</h3>
+                <p>
+                  Pilot pricing depends on task type, complexity, and required contractor count.
+                  A scope and cost estimate are returned within 24 hours of the discovery call —
+                  with no obligation to proceed. All production rates are all-inclusive: project
+                  management, independent QA, reporting, and contractor training.
+                </p>
+              </div>
+              <div className="pricing-stamp">
+                <div className="num">24 hrs</div>
+                <div className="lbl">scope &amp; estimate</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="final-cta" id="start">
+          <div className="wrap">
+            <div className="eyebrow">ready_when_you_are</div>
+            <h2>The next step takes 30 minutes.</h2>
+            <p>
+              We'll confirm your requirements, scope the pilot, and issue an agreement within
+              24 hours. No commitment required until you've seen the results.
+            </p>
+            <div className="hero-cta">
+              <a className="btn btn-primary" href="mailto:projects@barakadigitalhub.com?subject=Pilot%20Enquiry">Book a discovery call →</a>
+            </div>
+            <div className="contact-strip">
+              <a href="mailto:projects@barakadigitalhub.com"><span>✉</span> projects@barakadigitalhub.com</a>
+              <a href="tel:+254793842347"><span>☎</span> +254 793 842 347</a>
+              <a href="https://www.barakadigitalhub.com"><span>⌬</span> www.barakadigitalhub.com</a>
+            </div>
+          </div>
+        </div>
+
+        <footer>
+          Baraka Digital Hub <span>·</span> Nairobi, Kenya
+        </footer>
+
       </div>
     </>
   );
