@@ -22,9 +22,9 @@ function About({ navigate }) {
 
           body{
             background:
-              radial-gradient(circle at 15% 10%, rgba(13,115,119,0.18), transparent 40%),
-              radial-gradient(circle at 85% 30%, rgba(232,160,32,0.07), transparent 35%),
-              linear-gradient(180deg, var(--deepest) 0%, var(--dark-navy) 100%);
+              radial-gradient(circle at 15% 10%, rgba(14,165,233,0.12), transparent 32%),
+              radial-gradient(circle at 85% 18%, rgba(56,189,248,0.08), transparent 28%),
+              linear-gradient(180deg, #020617 0%, #07111f 45%, #040b16 100%);
             color:var(--text);
             font-family:'Inter', 'Segoe UI', system-ui, sans-serif;
             line-height:1.65;
@@ -49,8 +49,8 @@ function About({ navigate }) {
             position:relative;
             z-index:1;
             width:100%;
-            max-width:none;
-            margin:0;
+            max-width:1400px;
+            margin:0 auto;
             padding:0 4vw;
             color:#f8fbff;
           }
@@ -67,6 +67,7 @@ function About({ navigate }) {
             width:100%;
             max-width:none;
             padding:150px 0 70px;
+            border-radius:0 0 32px 32px;
             border-bottom:1px solid var(--line);
             position:relative;
             text-align:center;
@@ -92,12 +93,12 @@ function About({ navigate }) {
             display:inline-block;
           }
           h1{
-            font-size:3.4rem;
+            font-size:clamp(2.8rem, 7vw, 4.4rem);
             font-weight:800;
-            line-height:1.08;
-            letter-spacing:-0.02em;
+            line-height:1.02;
+            letter-spacing:-0.04em;
             text-align:center;
-            background:linear-gradient(120deg,#FFFFFF 40%, var(--teal) 100%);
+            background:linear-gradient(135deg,#ffffff 0%, #d6f5ff 45%, #7dd3fc 100%);
             -webkit-background-clip:text;
             background-clip:text;
             -webkit-text-fill-color:transparent;
@@ -105,15 +106,64 @@ function About({ navigate }) {
           }
           .hero p{
             margin:24px auto 0;
-            font-size:1.15rem;
-            color:#ffffff;
-            max-width:920px;
+            font-size:1.08rem;
+            color:#eaf6ff;
+            max-width:980px;
             line-height:1.9;
             text-align:center;
           }
+          .hero-badges{
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:center;
+            gap:10px;
+            margin-top:28px;
+          }
+          .hero-badge{
+            display:inline-flex;
+            align-items:center;
+            gap:8px;
+            padding:10px 14px;
+            border-radius:999px;
+            background:rgba(255,255,255,0.08);
+            border:1px solid rgba(125,207,255,0.18);
+            color:#eaf7ff;
+            font-size:0.82rem;
+            letter-spacing:0.14em;
+            text-transform:uppercase;
+            font-family:'JetBrains Mono','Courier New',monospace;
+          }
+          .hero-metrics{
+            display:grid;
+            grid-template-columns:repeat(3, minmax(0, 1fr));
+            gap:18px;
+            margin-top:32px;
+          }
+          .metric-card{
+            border-radius:24px;
+            padding:22px;
+            background:
+              linear-gradient(180deg, rgba(7, 20, 41, 0.98), rgba(3, 12, 27, 0.99));
+            border:1px solid rgba(125,207,255,0.16);
+            box-shadow:
+              0 18px 36px rgba(2, 6, 23, 0.28),
+              inset 0 1px 0 rgba(255,255,255,0.04);
+            text-align:left;
+          }
+          .metric-card strong{
+            display:block;
+            font-size:1.45rem;
+            color:#fff;
+            margin-bottom:6px;
+          }
+          .metric-card span{
+            color:#d7efff;
+            font-size:0.95rem;
+            line-height:1.6;
+          }
 
           section{
-            padding:70px 0;
+            padding:78px 0;
             border-bottom:1px solid var(--line);
           }
           section:last-child{border-bottom:none;}
@@ -128,11 +178,11 @@ function About({ navigate }) {
             text-align:center;
           }
           h2{
-            font-size:2rem;
+            font-size:clamp(1.45rem, 4vw, 2.25rem);
             font-weight:700;
             color:#fff;
             margin:0 auto 36px;
-            letter-spacing:-0.01em;
+            letter-spacing:-0.02em;
             text-align:center;
             max-width:980px;
           }
@@ -177,6 +227,77 @@ function About({ navigate }) {
             font-size:0.95rem;
           }
 
+          .story-grid{
+            display:grid;
+            grid-template-columns:1.1fr 0.9fr;
+            gap:22px;
+            align-items:start;
+          }
+          .story-grid::before{
+            content:"";
+            position:absolute;
+            inset:0;
+            border-radius:28px;
+            background:linear-gradient(135deg, rgba(56,189,248,0.06), transparent 40%);
+            pointer-events:none;
+          }
+          .story-card,
+          .story-stack > div{
+            border-radius:24px;
+            padding:24px;
+            background:
+              linear-gradient(180deg, rgba(7, 20, 42, 0.96), rgba(4, 12, 27, 0.98));
+            border:1px solid rgba(125,207,255,0.14);
+            box-shadow:
+              0 14px 30px rgba(2, 6, 23, 0.35),
+              inset 0 1px 0 rgba(255,255,255,0.04);
+            transition:transform .2s ease, border-color .2s ease;
+          }
+          .story-card:hover,
+          .story-stack > div:hover{
+            transform:translateY(-2px);
+            border-color:rgba(125,207,255,0.26);
+          }
+          .story-card h3,
+          .story-stack h3{
+            color:#f7fbff;
+            font-size:1.08rem;
+            margin-bottom:10px;
+          }
+          .story-card p,
+          .story-stack p{
+            color:#d9efff;
+            font-size:0.98rem;
+            line-height:1.8;
+            margin-bottom:14px;
+          }
+          .story-list{
+            display:grid;
+            gap:10px;
+            margin-top:12px;
+          }
+          .story-list li{
+            list-style:none;
+            display:flex;
+            gap:10px;
+            color:#e8f6ff;
+            font-size:0.95rem;
+            line-height:1.7;
+          }
+          .story-list li::before{
+            content:"▹";
+            color:#7dd3fc;
+            font-weight:700;
+          }
+          .story-note{
+            margin-top:10px;
+            padding:12px 14px;
+            border-radius:16px;
+            background:rgba(125,207,255,0.10);
+            border:1px solid rgba(125,207,255,0.18);
+            color:#eff8ff;
+            font-size:0.92rem;
+          }
           .origin-body{
             max-width:100%;
             color:#fbfdff;
@@ -214,9 +335,9 @@ function About({ navigate }) {
             overflow:hidden;
             text-align:left;
             border:1px solid rgba(77,147,205,0.18);
-            border-radius:20px;
+            border-radius:22px;
             padding:28px 22px;
-            background:rgba(9, 25, 58, 0.76);
+            background:linear-gradient(180deg, rgba(8, 24, 54, 0.96), rgba(4, 14, 30, 0.98));
             box-shadow:0 24px 54px rgba(2, 22, 54, 0.18);
           }
           .principle::before{
@@ -271,7 +392,7 @@ function About({ navigate }) {
             overflow:hidden;
             border-radius:22px;
             padding:30px;
-            background:linear-gradient(180deg, rgba(3,24,62,0.82), rgba(7,35,81,0.9));
+            background:linear-gradient(135deg, rgba(7, 22, 50, 0.98), rgba(7, 33, 68, 0.95));
             border:1px solid rgba(125,207,255,0.16);
             box-shadow:0 28px 72px rgba(6, 21, 56, 0.2);
           }
@@ -378,7 +499,8 @@ function About({ navigate }) {
             display:grid;
             grid-template-columns:1fr;
             gap:24px;
-            background:rgba(10, 28, 54, 0.95);
+            background:
+              linear-gradient(145deg, rgba(8, 23, 47, 0.98), rgba(4, 14, 29, 0.98));
             border:1px solid rgba(125, 207, 255, 0.16);
             border-radius:28px;
             padding:42px 38px;
@@ -414,6 +536,16 @@ function About({ navigate }) {
             display:flex;
             flex-direction:column;
             gap:20px;
+          }
+          .cta-label{
+            display:inline-flex;
+            align-items:center;
+            gap:8px;
+            color:#9be8ff;
+            font-family:'JetBrains Mono','Courier New',monospace;
+            font-size:0.72rem;
+            letter-spacing:0.18em;
+            text-transform:uppercase;
           }
           .cta-main h3{
             margin:0;
@@ -516,6 +648,9 @@ function About({ navigate }) {
             line-height:1.75;
             font-size:0.95rem;
           }
+          .cta-support .stat:hover{
+            transform:translateY(-1px);
+          }
           .cta-chip-row{
             display:flex;
             flex-wrap:wrap;
@@ -555,8 +690,8 @@ function About({ navigate }) {
           .identity-summary{
             position:relative;
             border-radius:26px;
-            background:rgba(255,255,255,0.07);
-            border:1px solid rgba(255,255,255,0.16);
+            background:linear-gradient(180deg, rgba(8, 22, 46, 0.95), rgba(4, 12, 27, 0.98));
+            border:1px solid rgba(125,207,255,0.14);
             padding:34px 32px;
             box-shadow:0 28px 72px rgba(2, 18, 45, 0.18);
           }
@@ -623,7 +758,7 @@ function About({ navigate }) {
             overflow:hidden;
             border-radius:22px;
             padding:28px 24px;
-            background:rgba(6, 24, 58, 0.9);
+            background:linear-gradient(180deg, rgba(7, 21, 46, 0.95), rgba(4, 12, 27, 0.98));
             border:1px solid rgba(163, 255, 255, 0.14);
             box-shadow:0 24px 60px rgba(1, 16, 44, 0.22);
             min-height:180px;
@@ -703,6 +838,8 @@ function About({ navigate }) {
             .leaders{ grid-template-columns:1fr; }
             .identity-panel{ grid-template-columns:1fr; }
             .identity-card-grid{ grid-template-columns:1fr; }
+            .story-grid{ grid-template-columns:1fr; }
+            .hero-metrics{ grid-template-columns:1fr; }
             .hero{ padding:72px 0 56px; }
             section{ padding:50px 0; }
             .hero p, .origin-body{ max-width:100%; }
@@ -724,18 +861,44 @@ function About({ navigate }) {
           <div className="eyebrow">About Us</div>
           <h1>Baraka Digital Hub is a social impact digital services centre based in Nairobi, Kenya.</h1>
           <p>We deliver reliable, measurable digital solutions to international clients across AI training, transcription, BPO services, and specialized data operations, including computer vision annotation, natural language processing datasets, and audio and speech processing.</p>
-          <p>Each engagement is structured to generate dual impact. It provides fair and consistent income opportunities for young people from underserved communities while simultaneously supporting the education and welfare of children at Baraka Children’s Home and the surrounding community. This dual-impact model is embedded in our operations.</p>
+          <p>Each engagement is structured to generate dual impact: fair income for underserved talent, and long-term support for the children and community around Baraka Children’s Home.</p>
+          <div className="hero-badges">
+            <span className="hero-badge">AI Data Operations</span>
+            <span className="hero-badge">BPO & QA</span>
+            <span className="hero-badge">Social Impact</span>
+            <span className="hero-badge">Global Delivery</span>
+          </div>
+          <div className="hero-metrics">
+            <div className="metric-card"><strong>100+</strong><span>Young professionals trained in digital operations, QA, and AI data workflows.</span></div>
+            <div className="metric-card"><strong>4x</strong><span>Faster onboarding through documented SOPs, structured systems, and quality oversight.</span></div>
+            <div className="metric-card"><strong>24/7</strong><span>Delivery support designed for global clients that need reliable, consistent execution.</span></div>
+          </div>
         </section>
 
         <section>
           <div className="section-tag">How We Started</div>
-          <h2>Baraka Digital Hub was established from the foundation of Baraka Children’s Home, which has served the Kayole community in Nairobi, Kenya since 2006 as a centre for care, protection, and education for vulnerable children.</h2>
-          <div className="origin-body">
-            <p>As the children under care matured, a clear gap emerged between access to support and access to sustainable economic opportunity. This transition highlighted the need for a structured pathway that extends beyond care into skills development and meaningful employment.</p>
-            <p>Before the Hub was formally established, we began by helping young people apply for remote work opportunities individually. We trained them in digital work, guided them through onboarding processes, and supported them in accessing online earning platforms and freelance opportunities.</p>
-            <p>Through this experience, we recognized a larger opportunity. Individual placements created impact, but a centralized model could create greater stability, accountability, scalability, and employability. By building a structured hub, we could provide shared infrastructure, organized training, quality assurance systems, operational oversight, and a professional working environment that strengthened both consistency and long-term growth.</p>
-            <p>In response, Baraka Digital Hub was created to bridge the gap between potential and opportunity. What began as grassroots support for remote work evolved into a structured digital workforce model capable of delivering professional services to global clients.</p>
-            <p>Today, Baraka Digital Hub operates as a quality-driven digital services organization focused on delivery excellence, workforce development, and long-term economic inclusion.</p>
+          <h2>A community-led idea evolved into a professional digital services company.</h2>
+          <div className="story-grid">
+            <article className="story-card">
+              <h3>From care to opportunity</h3>
+              <p>Baraka Children’s Home has served the Kayole community since 2006. As the children under care grew older, the need for sustainable work pathways became clear. What began as informal support for remote work turned into a structured model for fair, professional digital employment.</p>
+              <p>We saw that individual placements could create impact, but a central hub could create consistency, accountability, and scalable growth for both talent and clients. That insight became the foundation of Baraka Digital Hub.</p>
+              <div className="story-note">Today, the model combines commercial discipline with measurable social return.</div>
+            </article>
+            <aside className="story-stack">
+              <div>
+                <h3>Why this model works</h3>
+                <ul className="story-list">
+                  <li>Shared infrastructure for training, communication, and delivery.</li>
+                  <li>Operational oversight and QA to meet professional client standards.</li>
+                  <li>Structured pathways that create employment and confidence for underserved youth.</li>
+                </ul>
+              </div>
+              <div>
+                <h3>What changed</h3>
+                <p>We moved from one-off freelance support to a scalable, governance-ready digital operations partner. The result is a business that is both commercially capable and community-centered.</p>
+              </div>
+            </aside>
           </div>
         </section>
 
