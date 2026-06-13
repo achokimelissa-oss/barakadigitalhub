@@ -125,9 +125,9 @@ function Pilot(props) {
   .pilot-page .metric-card span{ color: var(--text-mid); font-size:0.95rem; line-height:1.6; }
   .pilot-page .hero-cta{ margin-top:34px; display:flex; gap:14px; flex-wrap:wrap; }
   .pilot-page .btn{ font-family:var(--mono); font-size:13px; font-weight:600; padding:14px 26px; border-radius:12px; text-decoration:none; letter-spacing:0.08em; display:inline-flex; align-items:center; gap:10px; transition: all .22s ease; }
-  .pilot-page .btn-primary{ background: linear-gradient(135deg, #0f4fad, #118ab2); color:white; padding:14px 26px; border-radius:16px; border:none; box-shadow:0 16px 36px rgba(15,55,100,0.2); transition: transform .22s, box-shadow .22s, background .22s; }
-  .pilot-page .btn-secondary{ background: rgba(15,75,115,0.95); color:white; padding:14px 26px; border-radius:16px; border:1px solid rgba(94,176,217,0.32); box-shadow:0 16px 32px rgba(15,75,115,0.18); transition: transform .22s, box-shadow .22s, background .22s; }
-  .pilot-page .btn-secondary:hover{ background: rgba(21,97,142,0.96); }
+  .pilot-page .btn-primary{ background: linear-gradient(135deg, #0f4fad, #118ab2); color:white; padding:14px 26px; border-radius:16px; border:none; box-shadow:0 16px 36px rgba(15,55,100,0.24); transition: transform .22s, box-shadow .22s, background .22s; }
+  .pilot-page .btn-secondary{ background: linear-gradient(135deg, #0f7fcf, #1296e6); color:white; padding:14px 26px; border-radius:16px; border:none; box-shadow:0 18px 38px rgba(12,100,148,0.28); transition: transform .22s, box-shadow .22s, background .22s; }
+  .pilot-page .btn-secondary:hover{ background: linear-gradient(135deg, #12a6f8, #0cc8ff); }
   .pilot-page .btn-warm{ background: linear-gradient(135deg, #FBBF63, #F97316); color:#07141d; padding:14px 26px; border:none; box-shadow:0 20px 48px rgba(251,191,99,0.18); }
   .pilot-page .btn-ghost{ border:1px solid rgba(255,255,255,0.18); color:var(--text-hi); background: rgba(255,255,255,0.05); padding:14px 26px; border-radius:16px; }
 
@@ -421,7 +421,6 @@ function Pilot(props) {
             <div className="hero-cta">
               <a className="btn btn-primary" href="#start">Book a discovery call →</a>
               <a className="btn btn-secondary" href="#structure">Explore pilot scope</a>
-              <a className="btn btn-secondary" href="#pricing">See pilot pricing</a>
               <a className="btn btn-secondary" href="/contact">Visit Contact page</a>
             </div>
           </div>
