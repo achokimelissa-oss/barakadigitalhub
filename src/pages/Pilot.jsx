@@ -6,7 +6,7 @@ function Pilot(props) {
       <Helmet>
         <title>The BDH Pilot — Baraka Digital Hub</title>
         <meta name="description" content="Structured pilots: real work, QA reports, and a clear path to production." />
-        <style>{`
+          <style>{`
   :root{
     --navy-deep:   #0A1626;
     --navy-panel:  #101F35;
@@ -25,10 +25,19 @@ function Pilot(props) {
 
   html{ scroll-behavior:smooth; }
 
-  body{ background: var(--navy-deep); color: var(--text-hi); font-family: var(--disp); line-height:1.6; }
+  body{ background: var(--navy-deep); color: var(--text-hi); font-family: var(--disp); line-height:1.6; background-image:
+      radial-gradient(circle at 15% 8%, rgba(45,217,200,0.07), transparent 40%),
+      radial-gradient(circle at 90% 75%, rgba(251,191,99,0.05), transparent 45%);
+    background-attachment: fixed; }
+
+  /* Force transparent containers so site chrome doesn't show as white */
+  .wrap, .hero, .section, .topbar, .pipeline, .deliver-grid, .compare, .pricing-box {
+    background: transparent !important;
+    border-color: rgba(255,255,255,0.04) !important;
+  }
 
   .wrap{ max-width:1080px; margin:0 auto; padding:0 24px; position:relative; z-index:1; }
-  .topbar{ border-bottom:1px solid var(--navy-line); padding:18px 0; background:transparent; }
+  .topbar{ border-bottom:1px solid rgba(255,255,255,0.04); padding:18px 0; background:transparent; }
   .topbar .wrap{ display:flex; align-items:center; justify-content:space-between; }
   .brand{ display:flex; align-items:center; gap:10px; }
   .brand-mark{ width:34px; height:34px; border:1.5px solid var(--cyan); border-radius:7px; display:flex; align-items:center; justify-content:center; font-family:var(--mono); font-weight:700; color:var(--cyan); font-size:14px; }
