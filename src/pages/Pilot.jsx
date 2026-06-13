@@ -37,7 +37,7 @@ function Pilot(props) {
   }
 
   .wrap{ max-width:1080px; margin:0 auto; padding:0 24px; position:relative; z-index:1; }
-  .topbar{ border-bottom:1px solid rgba(255,255,255,0.04); padding:18px 0; background:transparent; }
+  .topbar{ border-bottom:1px solid rgba(255,255,255,0.04); padding:18px 0; background:transparent; position:relative; z-index:25; }
   .topbar .wrap{ display:flex; align-items:center; justify-content:space-between; }
   .brand{ display:flex; align-items:center; gap:10px; }
   .brand-mark{ width:34px; height:34px; border:1.5px solid var(--cyan); border-radius:7px; display:flex; align-items:center; justify-content:center; font-family:var(--mono); font-weight:700; color:var(--cyan); font-size:14px; }
@@ -48,14 +48,16 @@ function Pilot(props) {
   .navlinks a:hover{ color:var(--cyan); }
   .topbar-meta{ font-family:var(--mono); font-size:11px; color:var(--text-dim); text-align:right; }
 
-  .hero{ padding:72px 0 56px; }
+  .hero{ padding:140px 0 56px; position:relative; }
   .eyebrow{ font-family:var(--mono); font-size:12px; color:var(--cyan); letter-spacing:3px; text-transform:uppercase; margin-bottom:18px; display:flex; align-items:center; gap:10px; }
   h1{ font-size:clamp(34px, 5.2vw, 56px); font-weight:700; line-height:1.12; letter-spacing:-0.5px; max-width:760px; }
   .hero-sub{ margin-top:22px; font-size:17px; color:var(--text-mid); max-width:620px; line-height:1.75; }
   .hero-cta{ margin-top:36px; display:flex; gap:14px; flex-wrap:wrap; }
+  /* AI-themed subtle overlay inside hero */
+  .hero::before{ content:''; position:absolute; inset:0; background-image: radial-gradient(circle at 10% 20%, rgba(45,217,200,0.03), transparent 20%), linear-gradient(90deg, rgba(45,217,200,0.02), transparent 40%); pointer-events:none; mix-blend-mode:overlay; }
   .btn{ font-family:var(--mono); font-size:13px; font-weight:600; padding:14px 28px; border-radius:6px; text-decoration:none; letter-spacing:0.5px; display:inline-flex; align-items:center; gap:10px; transition: all .2s ease; }
-  .btn-primary{ background:var(--cyan); color:var(--navy-deep); }
-  .btn-ghost{ border:1px solid var(--navy-line); color:var(--text-hi); background:transparent; }
+  .btn-primary{ background:var(--cyan); color:var(--navy-deep); padding:10px 18px; border-radius:8px; }
+  .btn-ghost{ border:1px solid rgba(255,255,255,0.06); color:var(--text-hi); background:transparent; padding:8px 14px; border-radius:8px; }
 
   .section{ padding:64px 0; border-top:1px solid var(--navy-line); }
   .section-head{ margin-bottom:36px; }
@@ -123,8 +125,9 @@ function Pilot(props) {
               <a href="/workflow">Workflow</a>
               <a href="/operations">Operations</a>
             </div>
-            <div className="topbar-meta">
-              <a href="mailto:projects@barakadigitalhub.com">projects@barakadigitalhub.com</a>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+              <a className="btn btn-ghost" href="mailto:projects@barakadigitalhub.com">projects@barakadigitalhub.com</a>
+              <a className="btn btn-primary" href="mailto:projects@barakadigitalhub.com?subject=Pilot%20Enquiry">Start a Pilot</a>
             </div>
           </div>
         </div>
@@ -141,6 +144,7 @@ function Pilot(props) {
             <div className="hero-cta">
               <a className="btn btn-primary" href="#start">Start a pilot →</a>
               <a className="btn btn-ghost" href="#structure">See how it works</a>
+              <a className="btn btn-ghost" href="#contact">Contact Sales</a>
             </div>
           </div>
         </div>
