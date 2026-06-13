@@ -14,6 +14,8 @@ function Pilot(props) {
     --cyan:        #2DD9C8;
     --cyan-dim:    #1A8C80;
     --amber:       #FBBF63;
+    --violet:      #8B5CF6;
+    --teal:        #38BDF8;
     --text-hi:     #EAF1F8;
     --text-mid:    #9FB4CC;
     --text-dim:    #5E7891;
@@ -26,8 +28,9 @@ function Pilot(props) {
   html{ scroll-behavior:smooth; }
 
   body.pilot-page{ background: var(--navy-deep); color: var(--text-hi); font-family: var(--disp); line-height:1.6; background-image:
-      radial-gradient(circle at 15% 8%, rgba(45,217,200,0.07), transparent 40%),
-      radial-gradient(circle at 90% 75%, rgba(251,191,99,0.05), transparent 45%);
+      radial-gradient(circle at 15% 8%, rgba(45,217,200,0.18), transparent 30%),
+      radial-gradient(circle at 90% 75%, rgba(251,191,99,0.12), transparent 35%),
+      radial-gradient(circle at 60% 20%, rgba(139,92,246,0.08), transparent 25%);
     background-attachment: fixed; }
 
   /* Force transparent containers so site chrome doesn't show as white */
@@ -48,16 +51,26 @@ function Pilot(props) {
   .pilot-page .navlinks a:hover{ color:var(--cyan); }
   .pilot-page .topbar-meta{ font-family:var(--mono); font-size:11px; color:var(--text-dim); text-align:right; }
 
-  .pilot-page .hero{ padding:140px 0 56px; position:relative; }
+  .pilot-page .hero{ padding:140px 0 56px; position:relative; overflow:hidden; }
+  .pilot-page .hero::after{ content:''; position:absolute; inset:0; background-image:
+      repeating-linear-gradient(0deg, rgba(255,255,255,0.06) 0, rgba(255,255,255,0) 1px, rgba(255,255,255,0) 24px),
+      repeating-linear-gradient(90deg, rgba(255,255,255,0.06) 0, rgba(255,255,255,0) 1px, rgba(255,255,255,0) 24px),
+      radial-gradient(circle at 20% 20%, rgba(45,217,200,0.18), transparent 18%),
+      radial-gradient(circle at 80% 25%, rgba(139,92,246,0.12), transparent 18%),
+      radial-gradient(circle at 65% 85%, rgba(251,191,99,0.12), transparent 20%);
+    pointer-events:none; opacity:.72; mix-blend-mode:screen; }
   .pilot-page .eyebrow{ font-family:var(--mono); font-size:12px; color:var(--cyan); letter-spacing:3px; text-transform:uppercase; margin-bottom:18px; display:flex; align-items:center; gap:10px; }
   .pilot-page h1{ font-size:clamp(34px, 5.2vw, 56px); font-weight:700; line-height:1.12; letter-spacing:-0.5px; max-width:760px; }
+  .pilot-page .accent{ background: linear-gradient(90deg, var(--cyan), var(--teal), var(--violet)); -webkit-background-clip: text; color: transparent; }
   .pilot-page .hero-sub{ margin-top:22px; font-size:17px; color:var(--text-mid); max-width:620px; line-height:1.75; }
   .pilot-page .hero-cta{ margin-top:36px; display:flex; gap:14px; flex-wrap:wrap; }
   /* AI-themed subtle overlay inside hero */
-  .pilot-page .hero::before{ content:''; position:absolute; inset:0; background-image: radial-gradient(circle at 10% 20%, rgba(45,217,200,0.03), transparent 20%), linear-gradient(90deg, rgba(45,217,200,0.02), transparent 40%); pointer-events:none; mix-blend-mode:overlay; }
+  .pilot-page .hero::before{ content:''; position:absolute; inset:0; background-image: radial-gradient(circle at 10% 20%, rgba(45,217,200,0.10), transparent 18%), linear-gradient(90deg, rgba(45,217,200,0.04), transparent 40%); pointer-events:none; mix-blend-mode:overlay; }
   .pilot-page .btn{ font-family:var(--mono); font-size:13px; font-weight:600; padding:14px 28px; border-radius:6px; text-decoration:none; letter-spacing:0.5px; display:inline-flex; align-items:center; gap:10px; transition: all .2s ease; }
   .pilot-page .btn-primary{ background:var(--cyan); color:var(--navy-deep); padding:10px 18px; border-radius:8px; }
-  .pilot-page .btn-ghost{ border:1px solid rgba(255,255,255,0.06); color:var(--text-hi); background:transparent; padding:8px 14px; border-radius:8px; }
+  .pilot-page .btn-accent{ background: linear-gradient(135deg, var(--violet), var(--teal)); color: white; border: none; }
+  .pilot-page .btn-warm{ background: linear-gradient(135deg, var(--amber), #f5d078); color: var(--navy-deep); border: none; }
+  .pilot-page .btn-ghost{ border:1px solid rgba(255,255,255,0.16); color:var(--text-hi); background: rgba(255,255,255,0.06); padding:10px 18px; border-radius:8px; }
 
   .pilot-page .section{ padding:64px 0; border-top:1px solid var(--navy-line); }
   .pilot-page .section-head{ margin-bottom:36px; }
@@ -115,7 +128,8 @@ function Pilot(props) {
             </p>
             <div className="hero-cta">
               <a className="btn btn-primary" href="#start">Start a pilot →</a>
-              <a className="btn btn-ghost" href="#structure">See how it works</a>
+              <a className="btn btn-accent" href="#structure">Explore pilot scope</a>
+              <a className="btn btn-warm" href="#pricing">Request a brief</a>
               <a className="btn btn-ghost" href="#contact">Contact Sales</a>
             </div>
           </div>
