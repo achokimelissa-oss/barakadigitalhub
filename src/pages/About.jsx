@@ -1066,7 +1066,8 @@ function About({ navigate }) {
           </div>
         </section>
 
-    </>
+        </div>
+      </>
   );
 }
 
