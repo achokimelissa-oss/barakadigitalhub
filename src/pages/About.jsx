@@ -526,8 +526,8 @@ function About({ navigate }) {
             font-size:1rem;
           }
           .cta-highlight{
-            display:grid;
-            grid-template-columns:1.15fr 0.85fr;
+            display:flex;
+            justify-content:center;
             gap:24px;
             align-items:stretch;
           }
@@ -540,6 +540,8 @@ function About({ navigate }) {
             display:flex;
             flex-direction:column;
             gap:20px;
+            max-width:980px;
+            width:100%;
           }
           .cta-label{
             display:inline-flex;
@@ -589,6 +591,7 @@ function About({ navigate }) {
             display:flex;
             flex-wrap:wrap;
             gap:14px;
+            justify-content:center;
           }
           .cta-actions button,
           .cta-actions a{
