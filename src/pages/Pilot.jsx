@@ -1,6 +1,15 @@
+import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 
 function Pilot(props) {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <>
       <Helmet bodyAttributes={{ class: "pilot-page" }}>
@@ -125,9 +134,10 @@ function Pilot(props) {
   .pilot-page .metric-card span{ color: var(--text-mid); font-size:0.95rem; line-height:1.6; }
   .pilot-page .hero-cta{ margin-top:34px; display:flex; gap:14px; flex-wrap:wrap; }
   .pilot-page .btn{ font-family:var(--mono) !important; font-size:13px !important; font-weight:600 !important; padding:14px 26px !important; border-radius:12px !important; text-decoration:none !important; letter-spacing:0.08em !important; display:inline-flex !important; align-items:center !important; gap:10px !important; transition: all .22s ease !important; }
-  .pilot-page .btn-primary{ background: linear-gradient(135deg, #0f4fad, #118ab2) !important; color:white !important; padding:14px 26px !important; border-radius:16px !important; border:none !important; box-shadow:0 18px 42px rgba(15,55,100,0.28) !important; transition: transform .22s, box-shadow .22s, background .22s !important; }
-  .pilot-page .btn-secondary{ background: linear-gradient(135deg, #12b8f1, #0be1ff) !important; color:#07141d !important; padding:14px 26px !important; border-radius:16px !important; border:none !important; box-shadow:0 20px 48px rgba(12,164,233,0.32) !important; transition: transform .22s, box-shadow .22s, background .22s !important; }
-  .pilot-page .btn-secondary:hover{ background: linear-gradient(135deg, #14e4ff, #89f7ff) !important; }
+  .pilot-page .btn-primary{ background: linear-gradient(135deg, #0f4fad, #118ab2) !important; color:white !important; padding:14px 26px !important; border-radius:16px !important; border:none !important; box-shadow:0 18px 42px rgba(15,55,100,0.28) !important; transition: transform .22s, box-shadow .22s, background .22s !important; cursor:pointer !important; }
+  .pilot-page .btn-primary:hover{ transform: translateY(-2px) !important; }
+  .pilot-page .btn-secondary{ background: linear-gradient(135deg, #12b8f1, #0be1ff) !important; color:#07141d !important; padding:14px 26px !important; border-radius:16px !important; border:none !important; box-shadow:0 20px 48px rgba(12,164,233,0.32) !important; transition: transform .22s, box-shadow .22s, background .22s !important; cursor:pointer !important; font-weight:700 !important; }
+  .pilot-page .btn-secondary:hover{ background: linear-gradient(135deg, #14e4ff, #89f7ff) !important; transform: translateY(-2px) !important; }
   .pilot-page .btn-warm{ background: linear-gradient(135deg, #FBBF63, #F97316); color:#07141d; padding:14px 26px; border:none; box-shadow:0 20px 48px rgba(251,191,99,0.18); }
   .pilot-page .btn-ghost{ border:1px solid rgba(255,255,255,0.18); color:var(--text-hi); background: rgba(255,255,255,0.05); padding:14px 26px; border-radius:16px; }
 
@@ -426,6 +436,12 @@ function Pilot(props) {
           </div>
         </div>
       </div>
+
+      {scrolled && (
+        <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} aria-label="Scroll to top" style={{ position: 'fixed', left: '50%', transform: 'translateX(-50%)', bottom: 24, zIndex: 200, width: 48, height: 48, borderRadius: '999px', border: 'none', background: 'linear-gradient(135deg, #1d4ed8, #06b6d4)', color: 'white', boxShadow: '0 18px 40px rgba(29,78,216,.22)', cursor: 'pointer', display: 'grid', placeItems: 'center', fontSize: '1.25rem' }}>
+          ↑
+        </button>
+      )}
     </>
   );
 }
