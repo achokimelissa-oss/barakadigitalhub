@@ -3,10 +3,10 @@ import { Helmet } from "react-helmet-async";
 function Pilot(props) {
   return (
     <>
-      <Helmet>
+      <Helmet bodyAttributes={{ class: "pilot-page" }}>
         <title>The BDH Pilot — Baraka Digital Hub</title>
         <meta name="description" content="Structured pilots: real work, QA reports, and a clear path to production." />
-          <style>{`
+        <style>{`
   :root{
     --navy-deep:   #0A1626;
     --navy-panel:  #101F35;
@@ -93,6 +93,11 @@ function Pilot(props) {
 
   @media (max-width:860px){ .eval-grid{ grid-template-columns:repeat(2,1fr); } }
   @media (max-width:520px){ .eval-grid{ grid-template-columns:1fr; } }
+    /* Strong overrides to neutralize site-wide white panels on this page */
+    .pilot-page, .pilot-page body { background: var(--navy-deep) !important; }
+    .pilot-page * { background: transparent !important; color: inherit !important; border-color: rgba(255,255,255,0.04) !important; box-shadow: none !important; }
+    .pilot-page .eval-cell, .pilot-page .deliver-item, .pilot-page .pipeline, .pilot-page .phase, .pilot-page .compare-col, .pilot-page .pricing-box { background: var(--navy-panel) !important; box-shadow: none !important; }
+    .pilot-page .card, .pilot-page .about-panel, .pilot-page .section-block, .pilot-page .section-intro { background: transparent !important; border: none !important; box-shadow: none !important; }
 `}</style>
       </Helmet>
 
