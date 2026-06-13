@@ -1430,8 +1430,8 @@ const BarakaDigitalHub = () => {
         .hidden-mobile { display:flex; }
       `}</style>
 
-      <nav style={{ position:"fixed", top:0, left:0, right:0, zIndex:100, transition:"all .3s", background: page === "about" ? "transparent" : (scrolled||page!=="home" ? "rgba(255,255,255,.98)" : "transparent"), backdropFilter: page === "about" ? "none" : (scrolled||page!=="home" ? "blur(20px)" : "none"), borderBottom: page === "about" ? "none" : (scrolled||page!=="home" ? "1px solid rgba(0,0,0,.08)" : "none"), padding:"0 24px", paddingTop: scrolled ? "8px" : "0", color: page === "about" ? "#fff" : "inherit" }}>
-        <div className="page-container" style={{ display:"flex", alignItems:"center", justifyContent:"space-between", height: scrolled ? 72 : 76 }}>
+      <nav style={{ position:"fixed", top:0, left:0, right:0, zIndex:100, transition:"all .3s", background: (scrolled||page!=="home"||page==="about") ? "rgba(255,255,255,.98)" : "transparent", backdropFilter: (scrolled||page!=="home"||page==="about") ? "blur(20px)" : "none", borderBottom: (scrolled||page!=="home"||page==="about") ? "1px solid rgba(0,0,0,.08)" : "none", padding:"0", paddingTop: scrolled ? "8px" : "0", color: "#0f172a" }}>
+        <div className="page-container" style={{ display:"flex", alignItems:"center", justifyContent:"space-between", height: scrolled ? 72 : 76, padding: "0 24px" }}>
           <a href="/" onClick={(e) => { e.preventDefault(); navigate("home"); }} style={{ display:"flex", alignItems:"center", gap:10, textDecoration:"none", color:"inherit", padding:0 }}>
             <img src="/favicon-512.png" alt="Baraka Digital Hub logo" style={{ height:56, width:"auto", objectFit:"contain" }} />
           </a>

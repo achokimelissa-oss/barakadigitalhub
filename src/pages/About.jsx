@@ -1063,24 +1063,9 @@ function About({ navigate }) {
               </div>
               <div className="cta-note">Built for AI data work, digital operations, and partner teams that need dependable execution.</div>
             </div>
-            <div className="cta-support">
-              <div className="stat">
-                <span>01</span>
-                <p>Rapid setup with documented workflows, team onboarding, and clear delivery checkpoints.</p>
-              </div>
-              <div className="stat">
-                <span>02</span>
-                <p>Structured quality assurance that keeps output consistent, reviewable, and production-ready.</p>
-              </div>
-              <div className="stat">
-                <span>03</span>
-                <p>Measured community impact, with talent development and long-term employment pathways built in.</p>
-              </div>
-            </div>
           </div>
         </section>
 
-      </div>
     </>
   );
 }
