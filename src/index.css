@@ -800,6 +800,197 @@ a {
   display: inline-flex;
 }
 
+.impact-page {
+  background: radial-gradient(circle at top, rgba(59,130,246,.08), transparent 38%), radial-gradient(circle at bottom right, rgba(16,185,129,.06), transparent 44%), linear-gradient(180deg, #020617 0%, #08172f 45%, #0b203f 100%);
+  color: #e2e8f0;
+}
+
+.impact-page .impact-hero {
+  padding: 64px 40px;
+  border-radius: 32px;
+  background: radial-gradient(circle at top left, rgba(59,130,246,.12), transparent 30%), radial-gradient(circle at bottom right, rgba(16,185,129,.12), transparent 26%), linear-gradient(180deg, rgba(5,11,20,.96), rgba(8,18,34,.95));
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow: 0 35px 90px rgba(0,0,0,.45);
+  overflow: hidden;
+  position: relative;
+}
+
+.impact-page .impact-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(135deg, rgba(14,165,233,.08), transparent 25%), radial-gradient(circle at top left, rgba(59,130,246,.08), transparent 30%);
+  pointer-events: none;
+}
+
+.impact-page .impact-hero .text-block {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+}
+
+.impact-page .impact-hero-grid {
+  margin-top: 32px;
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.impact-page .impact-hero-stat {
+  padding: 28px 24px;
+  border-radius: 28px;
+  background: rgba(8, 18, 32, 0.88);
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow: 0 18px 42px rgba(0,0,0,.24);
+}
+
+.impact-page .impact-hero-stat span {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #7dd3fc;
+}
+
+.impact-page .impact-hero-stat h4 {
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  line-height: 1.05;
+}
+
+.impact-page .impact-hero-stat p {
+  margin: 0;
+  color: rgba(226,232,240,.74);
+}
+
+.impact-page .section-tag {
+  color: #7dd3fc;
+  margin-bottom: 14px;
+}
+
+.impact-page .section-block {
+  padding: 56px 0;
+  background: rgba(6,14,28,.78);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 32px;
+  box-shadow: 0 28px 70px rgba(0,0,0,.35);
+}
+
+.impact-page .section-block.accent {
+  background: linear-gradient(180deg, rgba(15,23,42,.75), rgba(8,20,40,.85));
+  border-color: rgba(56,189,248,.12);
+}
+
+.impact-page .about-panel,
+.impact-page .about-card,
+.impact-page .impact-card,
+.impact-page .impact-highlight {
+  background: rgba(8,18,34,.92);
+  border: 1px solid rgba(255,255,255,.08);
+  color: #e2e8f0;
+}
+
+.impact-page .impact-card.accent-cyan {
+  background: linear-gradient(180deg, rgba(59,130,246,.12), rgba(8,18,34,.94));
+}
+
+.impact-page .impact-card.accent-purple {
+  background: linear-gradient(180deg, rgba(168,85,247,.14), rgba(8,18,34,.94));
+}
+
+.impact-page .impact-card.accent-sunset {
+  background: linear-gradient(180deg, rgba(251,146,60,.14), rgba(8,18,34,.94));
+}
+
+.impact-page .impact-card span {
+  color: #7dd3fc;
+}
+
+.impact-page .impact-card p {
+  color: rgba(226,232,240,.74);
+}
+
+.impact-page .impact-card h4 {
+  color: #f8fafc;
+}
+
+.impact-page .about-card.about-highlight {
+  background: linear-gradient(180deg, rgba(13,49,85,.94), rgba(6,18,34,.98));
+  border-color: rgba(37,99,235,.18);
+}
+
+.impact-page .about-panel h2,
+.impact-page .about-card h3,
+.impact-page .impact-card h3,
+.impact-page .impact-block-quote strong,
+.impact-page .impact-cta h3,
+.impact-page .impact-hero h1,
+.impact-page .impact-hero h2 {
+  color: #f8fafc;
+}
+
+.impact-page .about-panel p,
+.impact-page .about-card p,
+.impact-page .impact-card p,
+.impact-page .impact-highlight p,
+.impact-page .impact-hero p,
+.impact-page .impact-cta p {
+  color: rgba(226,232,240,.84);
+}
+
+.impact-page .impact-highlight-grid {
+  gap: 20px;
+}
+
+.impact-page .impact-highlight {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+.impact-page .impact-highlight strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 2rem;
+  color: #f8fafc;
+}
+
+.impact-page .impact-cta {
+  background: rgba(15, 23, 42, 0.94);
+  border: 1px solid rgba(59,130,246,.22);
+  box-shadow: 0 28px 80px rgba(0,0,0,.24);
+}
+
+.impact-page .impact-cta-secondary {
+  background: rgba(5, 11, 22, 0.9);
+  border: 1px solid rgba(37,99,235,.14);
+}
+
+.impact-page .impact-button-primary {
+  background: linear-gradient(135deg, #0f9d68, #06b6d4);
+  color: white;
+  border: none;
+}
+
+.impact-page .impact-button-primary:hover {
+  background: linear-gradient(135deg, #14b8a6, #0ea5e9);
+}
+
+.impact-page .impact-button-secondary {
+  background: rgba(255,255,255,.08);
+  color: #7dd3fc;
+  border: 1.5px solid rgba(125,207,255,.24);
+}
+
+.impact-page .impact-button-secondary:hover {
+  background: rgba(255,255,255,.13);
+}
+
+.impact-page .impact-block-quote {
+  background: linear-gradient(180deg, rgba(8,22,44,.85), rgba(12,30,56,.96));
+  border-color: rgba(37,99,235,.14);
+}
+
 .accent {
   background: #eff6ff;
   border-radius: 32px;
