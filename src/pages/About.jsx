@@ -66,9 +66,10 @@ function About({ navigate }) {
           .hero{
             width:100%;
             max-width:none;
-            padding:100px 0 70px;
+            padding:150px 0 70px;
             border-bottom:1px solid var(--line);
             position:relative;
+            text-align:center;
           }
           .eyebrow{
             font-family:'JetBrains Mono', 'Courier New', monospace;
@@ -79,6 +80,7 @@ function About({ navigate }) {
             margin-bottom:18px;
             display:flex;
             align-items:center;
+            justify-content:center;
             gap:12px;
           }
           .eyebrow::before{
@@ -94,6 +96,7 @@ function About({ navigate }) {
             font-weight:800;
             line-height:1.08;
             letter-spacing:-0.02em;
+            text-align:center;
             background:linear-gradient(120deg,#FFFFFF 40%, var(--teal) 100%);
             -webkit-background-clip:text;
             background-clip:text;
@@ -101,11 +104,12 @@ function About({ navigate }) {
             max-width:none;
           }
           .hero p{
-            margin-top:24px;
+            margin:24px auto 0;
             font-size:1.15rem;
             color:#ffffff;
-            max-width:100%;
+            max-width:920px;
             line-height:1.9;
+            text-align:center;
           }
 
           section{
@@ -121,13 +125,16 @@ function About({ navigate }) {
             text-transform:uppercase;
             color:var(--teal);
             margin-bottom:14px;
+            text-align:center;
           }
           h2{
             font-size:2rem;
             font-weight:700;
             color:#fff;
-            margin-bottom:36px;
+            margin:0 auto 36px;
             letter-spacing:-0.01em;
+            text-align:center;
+            max-width:980px;
           }
 
           .grid3{
@@ -369,7 +376,7 @@ function About({ navigate }) {
           .cta-section{
             position:relative;
             display:grid;
-            grid-template-columns:1.7fr 1fr;
+            grid-template-columns:1fr;
             gap:24px;
             background:rgba(10, 28, 54, 0.95);
             border:1px solid rgba(125, 207, 255, 0.16);
@@ -394,9 +401,9 @@ function About({ navigate }) {
           }
           .cta-highlight{
             display:grid;
-            grid-template-columns:1.7fr 1fr;
+            grid-template-columns:1.15fr 0.85fr;
             gap:24px;
-            align-items:start;
+            align-items:stretch;
           }
           .cta-main{
             background:rgba(9, 32, 64, 0.96);
@@ -413,6 +420,7 @@ function About({ navigate }) {
             color:#eff7ff;
             font-size:1.28rem;
             line-height:1.35;
+            text-align:left;
           }
           .cta-main p{
             margin:0;
@@ -449,25 +457,28 @@ function About({ navigate }) {
           .cta-actions a{
             display:inline-flex;
             align-items:center;
+            justify-content:center;
             gap:10px;
             border-radius:14px;
-            padding:14px 22px;
+            padding:14px 18px;
             font-weight:700;
-            font-size:0.96rem;
+            font-size:0.95rem;
             text-decoration:none;
             border:none;
             cursor:pointer;
             transition:transform .2s,box-shadow .2s,background .2s;
+            min-height:48px;
           }
           .cta-actions button{
-            background:linear-gradient(135deg, rgba(79, 158, 219, 0.95), rgba(22, 126, 170, 0.98));
+            background:linear-gradient(135deg, #1d4ed8 0%, #38bdf8 100%);
             color:#fff;
-            border:1px solid rgba(135, 206, 245, 0.22);
+            border:1px solid rgba(125, 211, 252, 0.25);
+            box-shadow:0 18px 32px rgba(56, 189, 248, 0.18);
           }
           .cta-actions a{
             background:rgba(255,255,255,0.08);
-            color:#dcecff;
-            border:1px solid rgba(255,255,255,0.14);
+            color:#eff7ff;
+            border:1px solid rgba(148, 163, 184, 0.24);
           }
           .cta-actions button:hover,
           .cta-actions a:hover{
@@ -504,6 +515,24 @@ function About({ navigate }) {
             color:#d1ecff;
             line-height:1.75;
             font-size:0.95rem;
+          }
+          .cta-chip-row{
+            display:flex;
+            flex-wrap:wrap;
+            gap:10px;
+          }
+          .cta-chip{
+            display:inline-flex;
+            align-items:center;
+            border-radius:999px;
+            padding:8px 12px;
+            background:rgba(125, 211, 252, 0.12);
+            border:1px solid rgba(125, 211, 252, 0.18);
+            color:#d6f3ff;
+            font-family:'JetBrains Mono','Courier New',monospace;
+            font-size:0.72rem;
+            letter-spacing:0.18em;
+            text-transform:uppercase;
           }
           .cta-note{
             margin-top:20px;
@@ -844,36 +873,42 @@ function About({ navigate }) {
 
         <section className="cta-section">
           <div className="section-tag">Strategic Partner</div>
-          <h2>Partner with Baraka Digital Hub for dependable delivery and measurable social impact.</h2>
-          <p className="cta-copy">Our hub is designed for organizations that need enterprise-grade digital work with strong governance, quality assurance, and a partnership model that also delivers community value.</p>
+          <h2>Partner with Baraka Digital Hub for disciplined delivery, measurable quality, and real community impact.</h2>
+          <p className="cta-copy">Our delivery model is built for organizations that need reliable digital operations, clear governance, and a social-impact partner that can move from pilot to production without friction.</p>
           <div className="cta-highlight">
             <div className="cta-main">
-              <div className="cta-label">Trusted engagement</div>
-              <h3>One streamlined delivery model, built for clients and communities.</h3>
-              <p>We combine structured onboarding, secure operations, and continuous quality oversight so every project is both reliable and impact-led.</p>
+              <div className="cta-label">Delivery model</div>
+              <h3>Launch a pilot, validate the workflow, and scale with confidence.</h3>
+              <p>Our team combines structured onboarding, QA, and reporting so your programs can move from setup to production with clear ownership and measurable output.</p>
               <ul>
-                <li>Enterprise-grade delivery with clear governance and quality control.</li>
-                <li>Fast onboarding and consistent performance for data operations.</li>
-                <li>Transparent reporting and accountability across every engagement.</li>
+                <li>Secure workflows, documented SOPs, and quality checkpoints for every engagement.</li>
+                <li>Fast onboarding for AI training, transcription, annotation, and BPO-style operations.</li>
+                <li>Executive-ready reporting so teams can track progress, quality, and delivery milestones.</li>
               </ul>
               <div className="cta-actions">
-                <button type="button" onClick={() => navigate("services")}>Explore Services</button>
-                <a href="/contact" onClick={(e) => { e.preventDefault(); navigate("contact"); }}>Request a Partnership</a>
+                <button type="button" onClick={() => navigate("pilot")}>Start a Pilot</button>
+                <button type="button" onClick={() => navigate("contact")}>Book a Discovery Call</button>
+                <a href="/services" onClick={(e) => { e.preventDefault(); navigate("services"); }}>Review Delivery Stack</a>
               </div>
-              <div className="cta-note">Ideal for AI, annotation, transcription, and digital operations with a social-enterprise advantage.</div>
+              <div className="cta-chip-row">
+                <span className="cta-chip">QA-led</span>
+                <span className="cta-chip">Secure Ops</span>
+                <span className="cta-chip">Impact model</span>
+              </div>
+              <div className="cta-note">Built for AI data work, digital operations, and partner teams that need dependable execution.</div>
             </div>
             <div className="cta-support">
               <div className="stat">
-                <span>4x</span>
-                <p>Quicker enablement through predefined workflows, training, and monitored performance.</p>
+                <span>01</span>
+                <p>Rapid setup with documented workflows, team onboarding, and clear delivery checkpoints.</p>
               </div>
               <div className="stat">
-                <span>100+</span>
-                <p>Individuals trained across AI data, quality assurance, and digital operations — ready for professional delivery.</p>
+                <span>02</span>
+                <p>Structured quality assurance that keeps output consistent, reviewable, and production-ready.</p>
               </div>
               <div className="stat">
-                <span>24/7</span>
-                <p>Responsive project support and continuity planning to keep delivery on track across time zones.</p>
+                <span>03</span>
+                <p>Measured community impact, with talent development and long-term employment pathways built in.</p>
               </div>
             </div>
           </div>

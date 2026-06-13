@@ -1437,10 +1437,10 @@ const BarakaDigitalHub = () => {
           </a>
           <div className="hidden-mobile" style={{ display: isMobile ? "none" : "flex", gap:28, alignItems:"center" }}>
             {navLinks.map(l => (
-              <a key={l.page} href={l.page === "home" ? "/" : `/${l.page}`} onClick={(e) => { e.preventDefault(); navigate(l.page); }} className="nav-link" style={{ textDecoration: "none", color: page === "about" ? "#fff" : "inherit" }}>{l.label}</a>
+              <a key={l.page} href={l.page === "home" ? "/" : `/${l.page}`} onClick={(e) => { e.preventDefault(); navigate(l.page); }} className="nav-link" style={{ textDecoration: "none", color: page === "about" ? "#0f172a" : "inherit" }}>{l.label}</a>
             ))}
           </div>
-          <button onClick={() => setNav(!nav)} className="mobile-menu-btn" style={{ background:"none", border:"none", cursor:"pointer", color: page === "about" ? "#fff" : "#0f172a" }}>
+          <button onClick={() => setNav(!nav)} className="mobile-menu-btn" style={{ background:"none", border:"none", cursor:"pointer", color: page === "about" ? "#0f172a" : "#0f172a" }}>
             {nav ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
