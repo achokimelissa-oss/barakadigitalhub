@@ -35,85 +35,140 @@ function Impact() {
         </div>
 
         <section className="section-block impact-hero">
-          <div className="text-block">
+          <div className="impact-hero-left">
             <p className="highlight-pill">Social Impact</p>
             <h1>Baraka Digital Hub</h1>
             <p>
-              <strong>From Charity to Dignity. From Dependency to Opportunity.</strong>
+              We convert commercial digital work into a consistent support system for youth and Baraka Children’s Home. Every engagement is structured for reliable delivery, measurable outcomes, and enterprise accountability.
             </p>
-            <p>
-              We convert commercial digital work into a consistent support system for youth and Baraka Children’s Home. Every project is designed to create measurable social impact, reliable revenue, and a pathway to lasting independence.
-            </p>
+            <div className="impact-hero-actions">
+              <Link to="/services" className="button primary">
+                Explore our services
+              </Link>
+              <Link to="/contact#send-message" className="button secondary">
+                Schedule a briefing
+              </Link>
+            </div>
           </div>
 
-          <div className="impact-grid impact-hero-grid">
-            <article className="impact-card impact-hero-stat">
-              <span>67%</span>
-              <h4>of youth in informal settlements are unemployed</h4>
-            </article>
-            <article className="impact-card impact-hero-stat">
-              <span>One in three</span>
-              <h4>of young people lack formal employment</h4>
-            </article>
-            <article className="impact-card impact-hero-stat">
-              <span>&lt;5%</span>
-              <h4>of Baraka children are pursuing sustainable careers</h4>
+          <div className="impact-hero-right">
+            <div className="impact-hero-grid">
+              <article className="impact-card impact-hero-stat">
+                <span>67%</span>
+                <h4>of youth in informal settlements are unemployed</h4>
+              </article>
+              <article className="impact-card impact-hero-stat">
+                <span>1 in 3</span>
+                <h4>young people lack formal employment</h4>
+              </article>
+              <article className="impact-card impact-hero-stat">
+                <span>&lt;5%</span>
+                <h4>of Baraka children are pursuing sustainable careers</h4>
+              </article>
+            </div>
+            <div className="impact-hero-panel">
+              <h3>Enterprise-ready impact</h3>
+              <p>
+                Our team delivers scalable annotation, transcription, and data pipeline operations with audit-ready processes and strong governance.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="section-block impact-split">
+          <div className="about-grid">
+            <div className="about-panel">
+              <h2>Our Origin: Why We Exist</h2>
+              <p>
+                Baraka Digital Hub was born out of <strong>Baraka Children’s Home</strong>. For nearly two decades, the Home has been a place of refuge, care, and hope for vulnerable children in Kayole, Nairobi.
+              </p>
+              <p>
+                As those children grew, a clear gap emerged: young people leaving care often lacked market-ready skills, stable opportunity, and a reliable pathway to independence.
+              </p>
+              <p>
+                <strong>Baraka Digital Hub was created to close that gap. It is the bridge between care and independence.</strong>
+              </p>
+            </div>
+            <article className="impact-card impact-cta-card accent-cyan">
+              <h3>Professional delivery with purpose</h3>
+              <ul>
+                <li>Structured talent development</li>
+                <li>Measured quality and compliance</li>
+                <li>Sustainable revenue for community support</li>
+              </ul>
             </article>
           </div>
         </section>
 
-        <section className="section-block">
-          <div className="text-block">
-            <h2>Our Origin: Why We Exist</h2>
-            <p>
-              Baraka Digital Hub was born out of <strong>Baraka Children’s Home</strong>.
-            </p>
-            <p>
-              For nearly two decades, the Children’s Home has been a place of refuge, care, and hope for vulnerable children in Kayole, Nairobi. It provided what every child deserves: safety, food, education, and love.
-            </p>
-            <p>
-              But as those children grew, a difficult reality became clear. Many faced an uncertain transition into adulthood, where access to opportunity, employment, and sustainable livelihoods was limited.
-            </p>
-            <p>
-              <strong>Baraka Digital Hub was created to close that gap. It is the bridge between care and independence.</strong>
-            </p>
+        <section className="section-block impact-split">
+          <div className="about-grid">
+            <div className="about-panel">
+              <h2>The Problem We Address</h2>
+              <p>
+                Traditional charity systems are disconnected from the economic realities of youth transition. That creates an unreliable support model and missed commercial opportunity.
+              </p>
+              <p>
+                Baraka Digital Hub makes client spend part of the solution, not just the expense.
+              </p>
+            </div>
+            <article className="impact-card impact-cta-card accent-purple">
+              <h3>Where the gap appears</h3>
+              <ul>
+                <li>Unpredictable donations</li>
+                <li>Lack of employment pathways</li>
+                <li>No clear transition from care to career</li>
+              </ul>
+            </article>
           </div>
         </section>
 
-        <section className="section-block">
-          <div className="text-block">
-            <h2>The Problem We Address</h2>
-            <p>
-              Traditional charity systems face structural limits that leave young people without a real pathway to economic independence.
-            </p>
-            <ul>
-              <li>Donations are unpredictable</li>
-              <li>Youth age out of care without market-ready skills</li>
-              <li>There is no clear pathway from protection to employment</li>
-            </ul>
-            <p>
-              <strong>Baraka Digital Hub exists to change this outcome.</strong>
-            </p>
-          </div>
-        </section>
-
-        <section className="section-block">
-          <div className="text-block">
-            <h2>Our Dual Impact Model</h2>
-          </div>
-          <div className="impact-grid">
-            <article className="impact-card accent-cyan">
-              <h3>Impact 1</h3>
-              <p>Youth gain access to real digital work, earning fair income and building professional experience.</p>
-            </article>
-            <article className="impact-card accent-purple">
-              <h3>Impact 2</h3>
-              <p>Baraka Children’s Home receives consistent support for education, food, and care.</p>
-            </article>
+        <section className="section-block impact-model-block">
+          <div className="about-grid">
+            <div className="about-panel">
+              <h2>The Dual Impact Model</h2>
+              <p>
+                Every client engagement generates two measurable outcomes: professional delivery for clients, and sustainable opportunity for young people and Baraka Children’s Home.
+              </p>
+            </div>
+            <div className="impact-grid">
+              <article className="impact-card accent-cyan">
+                <h3>Impact 1</h3>
+                <p>Youth gain access to real digital work, earning fair income and building professional experience.</p>
+              </article>
+              <article className="impact-card accent-purple">
+                <h3>Impact 2</h3>
+                <p>The Children’s Home receives consistent support for education, food, and care from client-funded operations.</p>
+              </article>
+            </div>
           </div>
           <div className="about-card about-highlight impact-block-quote">
             <p><strong>Your invoice is also a school fees receipt.</strong></p>
           </div>
+        </section>
+
+        <section className="section-block impact-cta-grid">
+          <article className="impact-card impact-cta-card">
+            <h3>Turn delivery into impact</h3>
+            <p>
+              Engage with a partner that scales data services while embedding measurable social value at every phase.
+            </p>
+            <div className="impact-hero-actions">
+              <Link to="/contact#send-message" className="button primary">
+                Start a project conversation
+              </Link>
+            </div>
+          </article>
+          <article className="impact-card impact-cta-card accent-sunset">
+            <h3>Strengthen your AI supply chain</h3>
+            <p>
+              Build a dependable annotation and transcription pipeline backed by documented quality processes and ethical employment.
+            </p>
+            <div className="impact-hero-actions">
+              <Link to="/services" className="button secondary">
+                Review delivery capabilities
+              </Link>
+            </div>
+          </article>
         </section>
 
         <section className="section-block">
@@ -136,26 +191,32 @@ function Impact() {
           </div>
         </section>
 
-        <section className="section-block">
-          <div className="text-block">
-            <h2>Who We Serve</h2>
-            <p>From the Children’s Home: young people who grew up in care and are now transitioning into independence through skills and digital work.</p>
-            <p>From the wider community: out-of-school youth, orphans, and young women from marginalized backgrounds.</p>
-            <p><strong>We do not define people by where they come from. We define them by what they are ready to build.</strong></p>
-          </div>
-        </section>
-
-        <section className="section-block">
-          <div className="text-block">
-            <h2>The Ripple Effect</h2>
-            <ul>
-              <li>Client work generates income for youth.</li>
-              <li>Youth support their families and gain independence.</li>
-              <li>Operations sustain training and quality systems.</li>
-              <li>The Children’s Home receives continuous support for education and care.</li>
-            </ul>
-            <p>As young people grow, they return as mentors and trainers, strengthening the next generation.</p>
-            <p><strong>This is not charity. This is structured economic inclusion.</strong></p>
+        <section className="section-block impact-split">
+          <div className="about-grid">
+            <article className="about-card">
+              <h3>Who We Serve</h3>
+              <p>
+                From the Children’s Home: young people who grew up in care and are now transitioning into independence through skills and digital work.
+              </p>
+              <p>
+                From the wider community: out-of-school youth, orphans, and young women from marginalized backgrounds.
+              </p>
+              <p>
+                <strong>We define people by what they are ready to build, not by where they come from.</strong>
+              </p>
+            </article>
+            <article className="about-card about-highlight">
+              <h3>The Ripple Effect</h3>
+              <ul>
+                <li>Client work generates income for youth.</li>
+                <li>Youth support their families and gain independence.</li>
+                <li>Operations sustain training and quality systems.</li>
+                <li>The Children’s Home receives continuous support for education and care.</li>
+              </ul>
+              <p>
+                <strong>This is not charity. This is structured economic inclusion.</strong>
+              </p>
+            </article>
           </div>
         </section>
       </div>
