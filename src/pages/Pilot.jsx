@@ -10,6 +10,11 @@ function Pilot(props) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    document.body.classList.add("pilot-page");
+    return () => document.body.classList.remove("pilot-page");
+  }, []);
+
   return (
     <>
       <Helmet bodyAttributes={{ class: "pilot-page" }}>
@@ -133,13 +138,13 @@ function Pilot(props) {
   .pilot-page .metric-card strong{ font-size:1.55rem; color:#fff; letter-spacing:-0.02em; }
   .pilot-page .metric-card span{ color: var(--text-mid); font-size:0.95rem; line-height:1.6; }
   .pilot-page .hero-cta{ margin-top:34px; display:flex; gap:14px; flex-wrap:wrap; }
-  .pilot-page .btn{ font-family:var(--mono) !important; font-size:13px !important; font-weight:600 !important; padding:14px 26px !important; border-radius:12px !important; text-decoration:none !important; letter-spacing:0.08em !important; display:inline-flex !important; align-items:center !important; gap:10px !important; transition: all .22s ease !important; }
-  .pilot-page .btn-primary{ background: linear-gradient(135deg, #0f4fad, #118ab2) !important; color:white !important; padding:14px 26px !important; border-radius:16px !important; border:none !important; box-shadow:0 18px 42px rgba(15,55,100,0.28) !important; transition: transform .22s, box-shadow .22s, background .22s !important; cursor:pointer !important; }
-  .pilot-page .btn-primary:hover{ transform: translateY(-2px) !important; }
-  .pilot-page .btn-secondary{ display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#0f9d68,#06b6d4) !important;color:white !important;padding:16px 30px !important;border-radius:999px !important;font-weight:700 !important;font-size:1rem !important;text-decoration:none !important;border:none !important;transition:transform .22s,box-shadow .22s,background .22s !important;cursor:pointer !important;font-family:'Segoe UI', Arial, sans-serif !important;box-shadow:0 18px 36px rgba(16,185,129,.18) !important; }
-  .pilot-page .btn-secondary:hover{ background:linear-gradient(135deg,#14b8a6,#0ea5e9) !important;transform:translateY(-2px) !important;box-shadow:0 22px 44px rgba(16,185,129,.28) !important; }
-  .pilot-page .btn-warm{ background: linear-gradient(135deg, #FBBF63, #F97316); color:#07141d; padding:14px 26px; border:none; box-shadow:0 20px 48px rgba(251,191,99,0.18); }
-  .pilot-page .btn-ghost{ border:1px solid rgba(255,255,255,0.18); color:var(--text-hi); background: rgba(255,255,255,0.05); padding:14px 26px; border-radius:16px; }
+  body.pilot-page .btn{ font-family:var(--mono) !important; font-size:13px !important; font-weight:600 !important; padding:14px 26px !important; border-radius:12px !important; text-decoration:none !important; letter-spacing:0.08em !important; display:inline-flex !important; align-items:center !important; gap:10px !important; transition: all .22s ease !important; }
+  body.pilot-page .btn-primary{ background: linear-gradient(135deg, #0f4fad, #118ab2) !important; color:white !important; padding:14px 26px !important; border-radius:16px !important; border:none !important; box-shadow:0 18px 42px rgba(15,55,100,0.28) !important; transition: transform .22s, box-shadow .22s, background .22s !important; cursor:pointer !important; }
+  body.pilot-page .btn-primary:hover{ transform: translateY(-2px) !important; }
+  body.pilot-page .btn-secondary{ display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#0f9d68,#06b6d4) !important;color:white !important;padding:16px 30px !important;border-radius:999px !important;font-weight:700 !important;font-size:1rem !important;text-decoration:none !important;border:none !important;transition:transform .22s,box-shadow .22s,background .22s !important;cursor:pointer !important;font-family:'Segoe UI', Arial, sans-serif !important;box-shadow:0 18px 36px rgba(16,185,129,.18) !important; }
+  body.pilot-page .btn-secondary:hover{ background:linear-gradient(135deg,#14b8a6,#0ea5e9) !important;transform:translateY(-2px) !important;box-shadow:0 22px 44px rgba(16,185,129,.28) !important; }
+  body.pilot-page .btn-warm{ background: linear-gradient(135deg, #FBBF63, #F97316); color:#07141d; padding:14px 26px; border:none; box-shadow:0 20px 48px rgba(251,191,99,0.18); }
+  body.pilot-page .btn-ghost{ border:1px solid rgba(255,255,255,0.18); color:var(--text-hi); background: rgba(255,255,255,0.05); padding:14px 26px; border-radius:16px; }
 
   .pilot-page .section-head{ margin-bottom:36px; }
   .pilot-page .section-num{ font-family:var(--mono); font-size:12px; color:var(--cyan); letter-spacing:2px; margin-bottom:10px; }
