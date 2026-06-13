@@ -165,7 +165,8 @@ function Pilot(props) {
   @media (max-width:520px){ .pilot-page .eval-grid{ grid-template-columns:1fr; } }
     /* Strong overrides to neutralize site-wide white panels on this page */
     .pilot-page, .pilot-page body { background: var(--navy-deep) !important; }
-    .pilot-page * { background: transparent !important; color: inherit !important; border-color: rgba(255,255,255,0.04) !important; box-shadow: none !important; }
+    .pilot-page *:not(.btn):not(.btn-primary):not(.btn-accent):not(.btn-warm):not(.btn-ghost):not(.btn-steel) { background: transparent !important; color: inherit !important; border-color: rgba(255,255,255,0.04) !important; box-shadow: none !important; }
+    .pilot-page .btn, .pilot-page .btn-primary, .pilot-page .btn-accent, .pilot-page .btn-warm, .pilot-page .btn-ghost, .pilot-page .btn-steel { color: inherit !important; }
     .pilot-page .eval-cell, .pilot-page .deliver-item, .pilot-page .pipeline, .pilot-page .phase, .pilot-page .compare-col, .pilot-page .pricing-box { background: var(--navy-panel) !important; box-shadow: none !important; }
     .pilot-page .card, .pilot-page .about-panel, .pilot-page .section-block, .pilot-page .section-intro { background: transparent !important; border: none !important; box-shadow: none !important; }
 `}</style>
