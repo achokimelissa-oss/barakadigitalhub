@@ -295,9 +295,7 @@ a {
 
 .about-panel,
 .about-card,
-.impact-card,
-.card,
-.principle-card {
+.card {
   background: white;
   border-radius: 24px;
   border: 1px solid rgba(15, 23, 42, 0.08);
@@ -307,7 +305,6 @@ a {
 
 .about-panel:hover,
 .about-card:hover,
-.impact-card:hover,
 .card:hover,
 .principle-card:hover {
   transform: translateY(-3px);
@@ -317,13 +314,8 @@ a {
 
 .about-panel h2,
 .about-card h3,
-.principle-card strong,
-.impact-card h4 {
+.principle-card strong {
   color: #0f172a;
-}
-
-.principle-card {
-  background: white;
 }
 
 .section-block.accent {
@@ -379,10 +371,10 @@ a {
 }
 
 .card,
+.stat-card,
 .about-panel,
 .contact-card,
-.impact-card,
-.stat-card {
+.impact-card {
   transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
 }
 
@@ -396,15 +388,8 @@ a {
   border-color: rgba(37, 99, 235, 0.15);
 }
 
-.card {
-  padding: 24px;
-  border-radius: 24px;
-  background: white;
-  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.06);
-}
-
-.stat-card,
-.card {
+.card,
+.stat-card {
   padding: 24px;
   border-radius: 24px;
   background: white;
@@ -622,10 +607,6 @@ a {
   box-shadow: 0 18px 40px rgba(37, 99, 235, 0.24);
 }
 
-.impact-page {
-  padding-top: 0;
-}
-
 .impact-hero {
   padding: 60px 40px;
   border-radius: 32px;
@@ -724,36 +705,15 @@ a {
 }
 
 .impact-cta {
-  padding: 44px 42px;
-  border-radius: 32px;
-  background: white;
-  color: #0f172a;
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  box-shadow: 0 35px 90px rgba(15, 23, 42, 0.08);
-}
-
-.impact-cta h3,
-.impact-cta p {
-  color: #0f172a;
-}
-
-.impact-cta {
-  background: linear-gradient(160deg, #ecfdf5 0%, #eff6ff 45%, #ffffff 100%);
-  border: 1px solid rgba(59, 130, 246, 0.14);
-}
-
-.impact-cta {
   display: block;
   width: 100%;
   max-width: 100%;
+  padding: 44px 42px;
+  border-radius: 32px;
   background: linear-gradient(180deg, #f8fafc, #eff6ff);
   border: 1px solid rgba(37, 99, 235, 0.14);
   box-shadow: 0 24px 70px rgba(15, 23, 42, 0.07);
-}
-
-.impact-cta .text-block {
-  width: 100%;
-  max-width: 100%;
+  color: #0f172a;
 }
 
 .impact-cta h3 {
@@ -765,10 +725,17 @@ a {
 .impact-cta p {
   max-width: 680px;
   margin-bottom: 26px;
-  color: #475569;
+  color: #0f172a;
+}
+
+.impact-cta .text-block {
+  width: 100%;
+  max-width: 100%;
 }
 
 .impact-cta .button {
+  display: inline-flex;
+  align-items: center;
   padding: 15px 28px;
   border-radius: 14px;
   font-weight: 700;
@@ -796,13 +763,14 @@ a {
   background: rgba(59, 130, 246, 0.08);
 }
 
-.impact-cta .button {
-  display: inline-flex;
-}
-
+body.impact-page,
 .impact-page {
+  min-height: 100vh;
+  overflow-x: hidden;
+  padding-top: 0;
   background: radial-gradient(circle at top, rgba(59,130,246,.08), transparent 38%), radial-gradient(circle at bottom right, rgba(16,185,129,.06), transparent 44%), linear-gradient(180deg, #020617 0%, #08172f 45%, #0b203f 100%);
   color: #e2e8f0;
+  background-attachment: fixed;
 }
 
 .impact-page .impact-hero {
@@ -884,8 +852,7 @@ a {
 
 .impact-page .about-panel,
 .impact-page .about-card,
-.impact-page .impact-card,
-.impact-page .impact-highlight {
+.impact-page .impact-card {
   background: rgba(8,18,34,.92);
   border: 1px solid rgba(255,255,255,.08);
   color: #e2e8f0;
@@ -1286,14 +1253,6 @@ a {
   font-size: 0.95rem;
 }
 
-@media (max-width: 720px) {
-  .footer-contact-link {
-    display: block;
-    width: 100%;
-    text-align: center;
-    padding: 12px 18px;
-  }
-}
 
 .footer-list {
   list-style: none;
@@ -1430,6 +1389,13 @@ a {
 
   .site-footer {
     padding: 36px 0 0;
+  }
+
+  .footer-contact-link {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px 18px;
   }
 
   .impact-cta {
