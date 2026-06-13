@@ -1031,6 +1031,7 @@ body.impact-page,
   color: #0f172a;
 }
 
+/* impact card colors and text retain a clean corporate light palette */
 .impact-page .impact-card.accent-cyan {
   background: linear-gradient(180deg, rgba(59,130,246,.08), #ffffff);
 }
@@ -1108,84 +1109,7 @@ body.impact-page,
   margin-top: 36px;
 }
 
-.impact-page .about-panel,
-.impact-page .about-card,
-.impact-page .impact-card {
-  background: rgba(8,18,34,.92);
-  border: 1px solid rgba(255,255,255,.08);
-  color: #e2e8f0;
-}
-
-.impact-page .impact-card.accent-cyan {
-  background: linear-gradient(180deg, rgba(59,130,246,.12), rgba(8,18,34,.94));
-}
-
-.impact-page .impact-card.accent-purple {
-  background: linear-gradient(180deg, rgba(168,85,247,.14), rgba(8,18,34,.94));
-}
-
-.impact-page .impact-card.accent-sunset {
-  background: linear-gradient(180deg, rgba(251,146,60,.14), rgba(8,18,34,.94));
-}
-
-.impact-page .impact-card span {
-  color: #7dd3fc;
-}
-
-.impact-page .impact-card p {
-  color: rgba(226,232,240,.86);
-}
-
-.impact-page .impact-card h3,
-.impact-page .impact-card h4 {
-  color: #f8fafc;
-}
-
-.impact-page .impact-card h4 {
-  color: #f8fafc;
-}
-
-.impact-page .about-card.about-highlight {
-  background: linear-gradient(180deg, rgba(13,49,85,.94), rgba(6,18,34,.98));
-  border-color: rgba(37,99,235,.18);
-}
-
-.impact-page .about-panel h2,
-.impact-page .about-card h3,
-.impact-page .impact-card h3,
-.impact-page .impact-block-quote strong,
-.impact-page .impact-cta h3,
-.impact-page .impact-hero h1,
-.impact-page .impact-hero h2,
-.impact-page .section-block h2,
-.impact-page .section-block h3 {
-  color: #f8fafc;
-}
-
-.impact-page .about-panel p,
-.impact-page .about-card p,
-.impact-page .impact-card p,
-.impact-page .impact-highlight p,
-.impact-page .impact-hero p,
-.impact-page .impact-cta p {
-  color: rgba(226,232,240,.84);
-}
-
-.impact-page .impact-highlight-grid {
-  gap: 20px;
-}
-
-.impact-page .impact-highlight {
-  background: rgba(255,255,255,.04);
-  border: 1px solid rgba(255,255,255,.08);
-}
-
-.impact-page .impact-highlight strong {
-  display: block;
-  margin-bottom: 8px;
-  font-size: 2rem;
-  color: #f8fafc;
-}
+/* remove duplicate dark theme styling to preserve the corporate light palette */
 
 .impact-page .impact-cta {
   background: rgba(15, 23, 42, 0.94);

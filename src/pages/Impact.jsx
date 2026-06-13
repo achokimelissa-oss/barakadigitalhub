@@ -37,13 +37,13 @@ function Impact() {
         <section className="section-block impact-hero">
           <div className="impact-hero-left">
             <p className="highlight-pill">Social Impact</p>
-            <h1>Baraka Digital Hub</h1>
+            <h1>From charity to dignity. From dependency to opportunity.</h1>
             <p>
-              We convert commercial digital work into a consistent support system for youth and Baraka Children’s Home. Every engagement is structured for reliable delivery, measurable outcomes, and enterprise accountability.
+              We convert commercial digital work into a consistent support system for youth and Baraka Children’s Home. Every engagement is designed for measurable outcomes, reliable delivery, and enterprise accountability.
             </p>
             <div className="impact-hero-actions">
               <Link to="/services" className="button primary">
-                Explore our services
+                Explore services
               </Link>
               <Link to="/contact#send-message" className="button secondary">
                 Schedule a briefing
@@ -69,7 +69,7 @@ function Impact() {
             <div className="impact-hero-panel">
               <h3>Enterprise-ready impact</h3>
               <p>
-                Our team delivers scalable annotation, transcription, and data pipeline operations with audit-ready processes and strong governance.
+                Scalable annotation, transcription, and data operations delivered with audit-ready processes and clear performance measures.
               </p>
             </div>
           </div>
@@ -80,16 +80,16 @@ function Impact() {
             <div className="about-panel">
               <h2>Our Origin: Why We Exist</h2>
               <p>
-                Baraka Digital Hub was born out of <strong>Baraka Children’s Home</strong>. For nearly two decades, the Home has been a place of refuge, care, and hope for vulnerable children in Kayole, Nairobi.
+                Baraka Digital Hub was born out of Baraka Children’s Home. For nearly two decades, the Home has been a place of refuge, care, and hope for vulnerable children in Kayole, Nairobi.
               </p>
               <p>
-                As those children grew, a clear gap emerged: young people leaving care often lacked market-ready skills, stable opportunity, and a reliable pathway to independence.
+                As those children grew, a difficult gap emerged: opportunity, employment pathways, and professional experience were missing for youth leaving care.
               </p>
               <p>
                 <strong>Baraka Digital Hub was created to close that gap. It is the bridge between care and independence.</strong>
               </p>
             </div>
-            <article className="impact-card impact-cta-card accent-cyan">
+            <article className="impact-card accent-cyan">
               <h3>Professional delivery with purpose</h3>
               <ul>
                 <li>Structured talent development</li>
@@ -105,13 +105,13 @@ function Impact() {
             <div className="about-panel">
               <h2>The Problem We Address</h2>
               <p>
-                Traditional charity systems are disconnected from the economic realities of youth transition. That creates an unreliable support model and missed commercial opportunity.
+                Traditional charity systems are disconnected from the economic realities of youth transition, creating unreliable support models and missed long-term impact.
               </p>
               <p>
                 Baraka Digital Hub makes client spend part of the solution, not just the expense.
               </p>
             </div>
-            <article className="impact-card impact-cta-card accent-purple">
+            <article className="impact-card accent-purple">
               <h3>Where the gap appears</h3>
               <ul>
                 <li>Unpredictable donations</li>
@@ -127,7 +127,7 @@ function Impact() {
             <div className="about-panel">
               <h2>The Dual Impact Model</h2>
               <p>
-                Every client engagement generates two measurable outcomes: professional delivery for clients, and sustainable opportunity for young people and Baraka Children’s Home.
+                Every client engagement generates two measurable outcomes: professional delivery for clients and sustainable opportunity for youth and Baraka Children’s Home.
               </p>
             </div>
             <div className="impact-grid">
@@ -142,33 +142,10 @@ function Impact() {
             </div>
           </div>
           <div className="about-card about-highlight impact-block-quote">
-            <p><strong>Your invoice is also a school fees receipt.</strong></p>
+            <p>
+              <strong>Your invoice is also a school fees receipt.</strong>
+            </p>
           </div>
-        </section>
-
-        <section className="section-block impact-cta-grid">
-          <article className="impact-card impact-cta-card">
-            <h3>Turn delivery into impact</h3>
-            <p>
-              Engage with a partner that scales data services while embedding measurable social value at every phase.
-            </p>
-            <div className="impact-hero-actions">
-              <Link to="/contact#send-message" className="button primary">
-                Start a project conversation
-              </Link>
-            </div>
-          </article>
-          <article className="impact-card impact-cta-card accent-sunset">
-            <h3>Strengthen your AI supply chain</h3>
-            <p>
-              Build a dependable annotation and transcription pipeline backed by documented quality processes and ethical employment.
-            </p>
-            <div className="impact-hero-actions">
-              <Link to="/services" className="button secondary">
-                Review delivery capabilities
-              </Link>
-            </div>
-          </article>
         </section>
 
         <section className="section-block">
@@ -196,7 +173,7 @@ function Impact() {
             <article className="about-card">
               <h3>Who We Serve</h3>
               <p>
-                From the Children’s Home: young people who grew up in care and are now transitioning into independence through skills and digital work.
+                From the Children’s Home: young people who grew up in care and are now transitioning into independence through structured digital skills training and paid work.
               </p>
               <p>
                 From the wider community: out-of-school youth, orphans, and young women from marginalized backgrounds.
@@ -217,6 +194,23 @@ function Impact() {
                 <strong>This is not charity. This is structured economic inclusion.</strong>
               </p>
             </article>
+          </div>
+        </section>
+
+        <section className="section-block accent">
+          <div className="text-block">
+            <h3>Ready to build with purpose?</h3>
+            <p>
+              Partner with us for dependable AI delivery that also creates sustainable opportunity and reliable revenue for underserved Nairobi youth.
+            </p>
+            <div className="impact-hero-actions">
+              <Link to="/contact#send-message" className="button primary">
+                Start a conversation
+              </Link>
+              <Link to="/services" className="button secondary">
+                Review services
+              </Link>
+            </div>
           </div>
         </section>
       </div>
