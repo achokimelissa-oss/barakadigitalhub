@@ -1430,14 +1430,14 @@ const BarakaDigitalHub = () => {
         .hidden-mobile { display:flex; }
       `}</style>
 
-      <nav style={{ position:"fixed", top:0, left:0, right:0, zIndex:100, transition:"all .3s", background: (scrolled||page!=="home"||page==="about") ? "rgba(255,255,255,.98)" : "transparent", backdropFilter: (scrolled||page!=="home"||page==="about") ? "blur(20px)" : "none", borderBottom: (scrolled||page!=="home"||page==="about") ? "1px solid rgba(0,0,0,.08)" : "none", padding:"0", paddingTop: scrolled ? "8px" : "0", color: "#0f172a" }}>
+      <nav style={{ position:"fixed", top:0, left:0, right:0, zIndex:100, transition:"all .3s", background: (scrolled||page!=="home") ? (page === "pilot" ? "rgba(4, 12, 22, 0.92)" : "rgba(255,255,255,.98)") : "transparent", backdropFilter: (scrolled||page!=="home") ? "blur(20px)" : "none", borderBottom: (scrolled||page!=="home") ? (page === "pilot" ? "1px solid rgba(255,255,255,0.08)" : "1px solid rgba(0,0,0,.08)") : "none", padding:"0", paddingTop: scrolled ? "8px" : "0", color: page === "pilot" ? "#e7f7ff" : "#0f172a" }}>
         <div className="page-container" style={{ display:"flex", alignItems:"center", justifyContent:"space-between", height: scrolled ? 72 : 76, padding: "0 24px" }}>
           <a href="/" onClick={(e) => { e.preventDefault(); navigate("home"); }} style={{ display:"flex", alignItems:"center", gap:10, textDecoration:"none", color:"inherit", padding:0 }}>
             <img src="/favicon-512.png" alt="Baraka Digital Hub logo" style={{ height:56, width:"auto", objectFit:"contain" }} />
           </a>
           <div className="hidden-mobile" style={{ display: isMobile ? "none" : "flex", gap:28, alignItems:"center" }}>
             {navLinks.map(l => (
-              <a key={l.page} href={l.page === "home" ? "/" : `/${l.page}`} onClick={(e) => { e.preventDefault(); navigate(l.page); }} className="nav-link" style={{ textDecoration: "none", color: page === "about" ? "#0f172a" : "inherit" }}>{l.label}</a>
+              <a key={l.page} href={l.page === "home" ? "/" : `/${l.page}`} onClick={(e) => { e.preventDefault(); navigate(l.page); }} className="nav-link" style={{ textDecoration: "none", color: page === "pilot" ? "#e7f7ff" : page === "about" ? "#0f172a" : "inherit" }}>{l.label}</a>
             ))}
           </div>
           <button onClick={() => setNav(!nav)} className="mobile-menu-btn" style={{ background:"none", border:"none", cursor:"pointer", color: page === "about" ? "#0f172a" : "#0f172a" }}>

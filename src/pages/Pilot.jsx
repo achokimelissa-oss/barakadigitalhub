@@ -8,9 +8,9 @@ function Pilot(props) {
         <meta name="description" content="Structured pilots: real work, QA reports, and a clear path to production." />
         <style>{`
   :root{
-    --navy-deep:   #0A1626;
-    --navy-panel:  #101F35;
-    --navy-line:   #1E3650;
+    --navy-deep:   #050b14;
+    --navy-panel:  #081426;
+    --navy-line:   rgba(255,255,255,0.08);
     --cyan:        #2DD9C8;
     --cyan-dim:    #1A8C80;
     --amber:       #FBBF63;
@@ -18,7 +18,7 @@ function Pilot(props) {
     --teal:        #38BDF8;
     --text-hi:     #EAF1F8;
     --text-mid:    #9FB4CC;
-    --text-dim:    #5E7891;
+    --text-dim:    #7A92B0;
     --mono: 'JetBrains Mono', monospace;
     --disp: 'Space Grotesk', sans-serif;
   }
@@ -27,14 +27,43 @@ function Pilot(props) {
 
   html{ scroll-behavior:smooth; }
 
-  body.pilot-page{ background: var(--navy-deep); color: var(--text-hi); font-family: var(--disp); line-height:1.6; background-image:
-      radial-gradient(circle at 15% 8%, rgba(45,217,200,0.26), transparent 26%),
-      radial-gradient(circle at 92% 76%, rgba(251,191,99,0.18), transparent 32%),
-      radial-gradient(circle at 58% 18%, rgba(139,92,246,0.12), transparent 22%),
-      radial-gradient(circle at 25% 90%, rgba(56,189,248,0.08), transparent 28%);
-    background-attachment: fixed; }
+  body.pilot-page{ background: linear-gradient(180deg, #050b14 0%, #071826 42%, #061020 100%); color: var(--text-hi); font-family: var(--disp); line-height:1.65; background-attachment: fixed; }
 
-  /* Force transparent site chrome containers so white panels don't show through */
+  body.pilot-page::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 72px 72px;
+    opacity: 0.16;
+    pointer-events:none;
+    z-index:0;
+  }
+
+  body.pilot-page::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+      radial-gradient(circle at 15% 12%, rgba(45,217,200,0.16), transparent 16%),
+      radial-gradient(circle at 88% 22%, rgba(139,92,246,0.14), transparent 18%),
+      radial-gradient(circle at 48% 78%, rgba(251,191,99,0.12), transparent 20%);
+    opacity: 0.78;
+    pointer-events:none;
+    mix-blend-mode: screen;
+    z-index:0;
+  }
+
+  .pilot-page .page-shell{
+    position:relative;
+    min-height:100vh;
+    z-index:1;
+    overflow:hidden;
+    padding-bottom:80px;
+  }
+
   .pilot-page .wrap,
   .pilot-page .hero,
   .pilot-page .topbar,
@@ -51,7 +80,7 @@ function Pilot(props) {
     box-shadow: none !important;
   }
 
-  .pilot-page .section{ padding:64px 0; border-top:1px solid rgba(255,255,255,0.08); background: rgba(11,22,41,0.75); position:relative; overflow:hidden; }
+  .pilot-page .section{ padding:64px 0; border:1px solid rgba(255,255,255,0.08); background: rgba(8,16,30,0.82); border-radius:28px; position:relative; overflow:hidden; }
   .pilot-page .section::before{ content:''; position:absolute; inset:0; background-image:
       radial-gradient(circle at 20% 20%, rgba(45,217,200,0.08), transparent 20%),
       radial-gradient(circle at 80% 15%, rgba(139,92,246,0.06), transparent 18%),
@@ -73,22 +102,29 @@ function Pilot(props) {
   .pilot-page .navlinks a:hover{ color:var(--cyan); }
   .pilot-page .topbar-meta{ font-family:var(--mono); font-size:11px; color:var(--text-dim); text-align:right; }
 
-  .pilot-page .hero{ padding:140px 0 56px; position:relative; overflow:hidden; }
+  .pilot-page .hero{ padding:160px 0 56px; position:relative; overflow:hidden; }
   .pilot-page .hero::after{ content:''; position:absolute; inset:0; background-image:
-      repeating-linear-gradient(0deg, rgba(255,255,255,0.06) 0, rgba(255,255,255,0) 1px, rgba(255,255,255,0) 24px),
-      repeating-linear-gradient(90deg, rgba(255,255,255,0.06) 0, rgba(255,255,255,0) 1px, rgba(255,255,255,0) 24px),
-      radial-gradient(circle at 20% 20%, rgba(45,217,200,0.18), transparent 18%),
-      radial-gradient(circle at 80% 25%, rgba(139,92,246,0.12), transparent 18%),
-      radial-gradient(circle at 65% 85%, rgba(251,191,99,0.12), transparent 20%);
+      linear-gradient(135deg, rgba(56,189,248,0.08), transparent 30%),
+      radial-gradient(circle at 18% 22%, rgba(45,217,200,0.2), transparent 24%),
+      radial-gradient(circle at 84% 24%, rgba(139,92,246,0.14), transparent 20%),
+      radial-gradient(circle at 60% 82%, rgba(251,191,99,0.12), transparent 20%);
     pointer-events:none; opacity:.72; mix-blend-mode:screen; }
+  .pilot-page .hero::before{ content:''; position:absolute; inset:0; background-image:
+      repeating-linear-gradient(90deg, rgba(255,255,255,0.05) 0, rgba(255,255,255,0) 1px, rgba(255,255,255,0) 32px),
+      repeating-linear-gradient(0deg, rgba(255,255,255,0.05) 0, rgba(255,255,255,0) 1px, rgba(255,255,255,0) 32px);
+    pointer-events:none; opacity:.34; mix-blend-mode:overlay; }
   .pilot-page .eyebrow{ font-family:var(--mono); font-size:12px; color:var(--cyan); letter-spacing:3px; text-transform:uppercase; margin-bottom:18px; display:flex; align-items:center; gap:10px; }
-  .pilot-page h1{ font-size:clamp(34px, 5.2vw, 56px); font-weight:700; line-height:1.12; letter-spacing:-0.5px; max-width:760px; }
+  .pilot-page h1{ font-size:clamp(36px, 5.4vw, 62px); font-weight:800; line-height:1.08; letter-spacing:-0.5px; max-width:760px; }
   .pilot-page .accent{ background: linear-gradient(90deg, var(--cyan), var(--teal), var(--violet)); -webkit-background-clip: text; color: transparent; }
-  .pilot-page .hero-sub{ margin-top:22px; font-size:17px; color:var(--text-mid); max-width:620px; line-height:1.75; }
-  .pilot-page .hero-cta{ margin-top:36px; display:flex; gap:14px; flex-wrap:wrap; }
-  /* AI-themed subtle overlay inside hero */
-  .pilot-page .hero::before{ content:''; position:absolute; inset:0; background-image: radial-gradient(circle at 10% 20%, rgba(45,217,200,0.10), transparent 18%), linear-gradient(90deg, rgba(45,217,200,0.04), transparent 40%); pointer-events:none; mix-blend-mode:overlay; }
-  .pilot-page .btn{ font-family:var(--mono); font-size:13px; font-weight:600; padding:14px 28px; border-radius:6px; text-decoration:none; letter-spacing:0.5px; display:inline-flex; align-items:center; gap:10px; transition: all .2s ease; }
+  .pilot-page .hero-sub{ margin-top:24px; font-size:17.5px; color:var(--text-mid); max-width:680px; line-height:1.75; }
+  .pilot-page .hero-badges{ display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
+  .pilot-page .hero-badge{ display:inline-flex; align-items:center; gap:8px; padding:12px 16px; border-radius:999px; background: rgba(52, 62, 97, 0.7); border:1px solid rgba(255,255,255,0.08); color: var(--text-hi); font-size:0.82rem; letter-spacing:0.14em; text-transform:uppercase; }
+  .pilot-page .hero-metrics{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin-top:28px; }
+  .pilot-page .metric-card{ background: rgba(10,18,34,0.9); border:1px solid rgba(255,255,255,0.08); border-radius:20px; padding:20px 22px; display:flex; flex-direction:column; gap:10px; }
+  .pilot-page .metric-card strong{ font-size:1.55rem; color:#fff; letter-spacing:-0.02em; }
+  .pilot-page .metric-card span{ color: var(--text-mid); font-size:0.95rem; line-height:1.6; }
+  .pilot-page .hero-cta{ margin-top:34px; display:flex; gap:14px; flex-wrap:wrap; }
+  .pilot-page .btn{ font-family:var(--mono); font-size:13px; font-weight:600; padding:14px 26px; border-radius:12px; text-decoration:none; letter-spacing:0.08em; display:inline-flex; align-items:center; gap:10px; transition: all .22s ease; }
   .pilot-page .btn-primary{ background:var(--cyan); color:var(--navy-deep); padding:10px 18px; border-radius:8px; }
   .pilot-page .btn-accent{ background: linear-gradient(135deg, var(--violet), var(--teal)); color: white; border: none; }
   .pilot-page .btn-warm{ background: linear-gradient(135deg, var(--amber), #f5d078); color: var(--navy-deep); border: none; }
@@ -99,13 +135,13 @@ function Pilot(props) {
   .pilot-page .section-title{ font-size:clamp(24px,3vw,32px); font-weight:700; letter-spacing:-0.3px; }
   .pilot-page .section-desc{ margin-top:12px; color:var(--text-mid); max-width:640px; font-size:15px; }
 
-  .pilot-page .eval-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--navy-line); border:1px solid var(--navy-line); border-radius:10px; overflow:hidden; }
-  .pilot-page .eval-cell{ background:var(--navy-panel); padding:22px 18px; min-height:128px; display:flex; flex-direction:column; gap:8px; }
+  .pilot-page .eval-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; border:none; background:transparent; }
+  .pilot-page .eval-cell{ background: linear-gradient(180deg, rgba(8,16,34,0.95), rgba(11,24,44,0.95)); padding:24px 20px; min-height:160px; display:flex; flex-direction:column; gap:12px; border:1px solid rgba(255,255,255,0.08); border-radius:18px; box-shadow:0 18px 40px rgba(0,0,0,0.19); }
   .pilot-page .eval-idx{ font-family:var(--mono); font-size:11px; color:var(--cyan); letter-spacing:1px; }
-  .pilot-page .eval-name{ font-weight:600; font-size:14.5px; line-height:1.35; }
-  .pilot-page .eval-desc{ font-size:12.5px; color:var(--text-dim); }
+  .pilot-page .eval-name{ font-weight:700; font-size:15px; line-height:1.35; color:#f8fbff; }
+  .pilot-page .eval-desc{ font-size:13px; color:var(--text-mid); }
 
-  .pilot-page .pipeline{ border:1px solid var(--navy-line); border-radius:10px; overflow:hidden; background:var(--navy-panel); }
+  .pilot-page .pipeline{ border:1px solid rgba(255,255,255,0.08); border-radius:18px; overflow:hidden; background: rgba(7,16,30,0.9); }
   .pilot-page .phase{ display:grid; grid-template-columns:64px 1fr auto; gap:20px; padding:26px 24px; align-items:start; border-bottom:1px solid var(--navy-line); position:relative; }
   .pilot-page .phase-num{ font-family:var(--mono); font-size:13px; color:var(--navy-deep); background:var(--cyan); width:36px; height:36px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-weight:700; z-index:1; }
 
@@ -137,7 +173,7 @@ function Pilot(props) {
 `}</style>
       </Helmet>
 
-      <div style={{ background: 'radial-gradient(circle at 15% 8%, rgba(45,217,200,0.07), transparent 40%), radial-gradient(circle at 90% 75%, rgba(251,191,99,0.05), transparent 45%)', color: 'var(--text-hi)', minHeight: '100vh' }}>
+      <div className="page-shell">
         <div className="hero">
           <div className="wrap">
             <div className="eyebrow">pilot_engagement // status: open</div>
@@ -147,11 +183,30 @@ function Pilot(props) {
               under your quality bar, executed by the same team and QA framework used at full scale.
               Low cost. Zero obligation. A clear path to production if it fits.
             </p>
+            <div className="hero-badges">
+              <span className="hero-badge">Pilot-first process</span>
+              <span className="hero-badge">QA-backed output</span>
+              <span className="hero-badge">Data-ready deliverables</span>
+            </div>
             <div className="hero-cta">
               <a className="btn btn-primary" href="#start">Start a pilot →</a>
               <a className="btn btn-accent" href="#structure">Explore pilot scope</a>
               <a className="btn btn-warm" href="#pricing">Request a brief</a>
               <a className="btn btn-ghost" href="#contact">Contact Sales</a>
+            </div>
+            <div className="hero-metrics">
+              <div className="metric-card">
+                <strong>100% QA review</strong>
+                <span>Every pilot batch includes full independent quality validation for reliability.</span>
+              </div>
+              <div className="metric-card">
+                <strong>48h turn</strong>
+                <span>Early deliverables and pilot scope are scoped and shared within 48 hours.</span>
+              </div>
+              <div className="metric-card">
+                <strong>Zero obligation</strong>
+                <span>Run the pilot, validate the approach, and decide before moving into production.</span>
+              </div>
             </div>
           </div>
         </div>
