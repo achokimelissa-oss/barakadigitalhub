@@ -775,6 +775,7 @@ function About({ navigate }) {
             background:linear-gradient(180deg, rgba(10, 32, 64, 0.94), rgba(7, 21, 43, 0.98));
             border:1px solid rgba(125, 207, 255, 0.16);
             box-shadow:0 24px 60px rgba(1, 16, 44, 0.22);
+            margin-top:0;
           }
           .identity-card::before{
             content:"";
@@ -1059,11 +1060,6 @@ function About({ navigate }) {
                 <button type="button" onClick={() => navigate("pilot")}>Start a Pilot</button>
                 <button type="button" onClick={() => navigate("contact")}>Book a Discovery Call</button>
                 <a href="/services" onClick={(e) => { e.preventDefault(); navigate("services"); }}>Review Delivery Stack</a>
-              </div>
-              <div className="cta-chip-row">
-                <span className="cta-chip">QA-led</span>
-                <span className="cta-chip">Secure Ops</span>
-                <span className="cta-chip">Impact model</span>
               </div>
               <div className="cta-note">Built for AI data work, digital operations, and partner teams that need dependable execution.</div>
             </div>
