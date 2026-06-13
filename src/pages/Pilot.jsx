@@ -125,11 +125,11 @@ function Pilot(props) {
   .pilot-page .metric-card span{ color: var(--text-mid); font-size:0.95rem; line-height:1.6; }
   .pilot-page .hero-cta{ margin-top:34px; display:flex; gap:14px; flex-wrap:wrap; }
   .pilot-page .btn{ font-family:var(--mono); font-size:13px; font-weight:600; padding:14px 26px; border-radius:12px; text-decoration:none; letter-spacing:0.08em; display:inline-flex; align-items:center; gap:10px; transition: all .22s ease; }
-  .pilot-page .btn-primary{ background: linear-gradient(135deg, #2DD9C8, #38BDF8); color:#07141d; padding:14px 26px; border-radius:16px; border:none; box-shadow:0 20px 48px rgba(45,217,200,0.18); }
-  .pilot-page .btn-accent{ background: linear-gradient(135deg, #8B5CF6, #0EA5E9); color: white; padding:14px 26px; border:none; box-shadow:0 20px 48px rgba(139,92,246,0.18); }
+  .pilot-page .btn-primary{ background: linear-gradient(135deg, #0f4fad, #118ab2); color:white; padding:14px 26px; border-radius:16px; border:none; box-shadow:0 16px 36px rgba(15,55,100,0.2); transition: transform .22s, box-shadow .22s, background .22s; }
+  .pilot-page .btn-secondary{ background: rgba(15,75,115,0.95); color:white; padding:14px 26px; border-radius:16px; border:1px solid rgba(94,176,217,0.32); box-shadow:0 16px 32px rgba(15,75,115,0.18); transition: transform .22s, box-shadow .22s, background .22s; }
+  .pilot-page .btn-secondary:hover{ background: rgba(21,97,142,0.96); }
   .pilot-page .btn-warm{ background: linear-gradient(135deg, #FBBF63, #F97316); color:#07141d; padding:14px 26px; border:none; box-shadow:0 20px 48px rgba(251,191,99,0.18); }
   .pilot-page .btn-ghost{ border:1px solid rgba(255,255,255,0.18); color:var(--text-hi); background: rgba(255,255,255,0.05); padding:14px 26px; border-radius:16px; }
-  .pilot-page .btn-steel{ background: linear-gradient(135deg, #334155, #1E293B); color:#cbd5e1; padding:14px 26px; border:1px solid rgba(148,163,184,0.18); border-radius:16px; }
 
   .pilot-page .section-head{ margin-bottom:36px; }
   .pilot-page .section-num{ font-family:var(--mono); font-size:12px; color:var(--cyan); letter-spacing:2px; margin-bottom:10px; }
@@ -165,8 +165,7 @@ function Pilot(props) {
   @media (max-width:520px){ .pilot-page .eval-grid{ grid-template-columns:1fr; } }
     /* Strong overrides to neutralize site-wide white panels on this page */
     .pilot-page, .pilot-page body { background: var(--navy-deep) !important; }
-    .pilot-page *:not(.btn):not(.btn-primary):not(.btn-accent):not(.btn-warm):not(.btn-ghost):not(.btn-steel) { background: transparent !important; color: inherit !important; border-color: rgba(255,255,255,0.04) !important; box-shadow: none !important; }
-    .pilot-page .btn, .pilot-page .btn-primary, .pilot-page .btn-accent, .pilot-page .btn-warm, .pilot-page .btn-ghost, .pilot-page .btn-steel { color: inherit !important; }
+    .pilot-page *:not(.btn):not(.btn-primary):not(.btn-secondary):not(.btn-warm):not(.btn-ghost):not(.btn-steel) { background: transparent !important; color: inherit !important; border-color: rgba(255,255,255,0.04) !important; box-shadow: none !important; }
     .pilot-page .eval-cell, .pilot-page .deliver-item, .pilot-page .pipeline, .pilot-page .phase, .pilot-page .compare-col, .pilot-page .pricing-box { background: var(--navy-panel) !important; box-shadow: none !important; }
     .pilot-page .card, .pilot-page .about-panel, .pilot-page .section-block, .pilot-page .section-intro { background: transparent !important; border: none !important; box-shadow: none !important; }
 `}</style>
@@ -189,9 +188,8 @@ function Pilot(props) {
             </div>
             <div className="hero-cta">
               <a className="btn btn-primary" href="#start">Start a pilot →</a>
-              <a className="btn btn-accent" href="#structure">Explore pilot scope</a>
-              <a className="btn btn-warm" href="#pricing">Request a brief</a>
-              <a className="btn btn-ghost" href="#contact">Contact Sales</a>
+              <a className="btn btn-secondary" href="#structure">Explore pilot scope</a>
+              <a className="btn btn-secondary" href="/contact">Contact Sales</a>
             </div>
             <div className="hero-metrics">
               <div className="metric-card">
@@ -324,8 +322,8 @@ function Pilot(props) {
               <div className="section-title">What you receive at the end</div>
             </div>
             <div className="section-cta">
-              <a className="btn btn-accent" href="#start">Review deliverables</a>
-              <a className="btn btn-warm" href="#contact">Schedule QA review</a>
+              <a className="btn btn-secondary" href="#start">Review deliverables</a>
+              <a className="btn btn-secondary" href="/contact">Schedule QA review</a>
             </div>
 
             <div className="deliver-grid">
@@ -422,9 +420,9 @@ function Pilot(props) {
             </p>
             <div className="hero-cta">
               <a className="btn btn-primary" href="#start">Book a discovery call →</a>
-              <a className="btn btn-accent" href="#structure">Explore pilot scope</a>
-              <a className="btn btn-warm" href="#pricing">See pilot pricing</a>
-              <a className="btn btn-steel" href="/contact">Visit Contact page</a>
+              <a className="btn btn-secondary" href="#structure">Explore pilot scope</a>
+              <a className="btn btn-secondary" href="#pricing">See pilot pricing</a>
+              <a className="btn btn-secondary" href="/contact">Visit Contact page</a>
             </div>
           </div>
         </div>
