@@ -765,9 +765,10 @@ a {
 
 body.impact-page,
 .impact-page {
+  position: relative;
   min-height: 100vh;
   overflow-x: hidden;
-  padding-top: 120px;
+  padding-top: 72px;
   background: radial-gradient(circle at top, rgba(59,130,246,.08), transparent 38%), radial-gradient(circle at bottom right, rgba(16,185,129,.06), transparent 44%), linear-gradient(180deg, #020617 0%, #08172f 45%, #0b203f 100%);
   color: #e2e8f0;
   background-attachment: fixed;
@@ -794,8 +795,8 @@ body.impact-page,
 }
 
 .impact-page .impact-hero {
-  padding: 84px 46px;
-  border-radius: 32px;
+  padding: 48px 46px 40px 46px;
+  border-radius: 28px;
   background: radial-gradient(circle at top left, rgba(59,130,246,.14), transparent 30%), radial-gradient(circle at bottom right, rgba(16,185,129,.14), transparent 26%), linear-gradient(180deg, rgba(5,11,20,.96), rgba(8,18,34,.95));
   border: 1px solid rgba(255,255,255,.08);
   box-shadow: 0 35px 90px rgba(0,0,0,.45);
@@ -894,6 +895,28 @@ body.impact-page,
   gap: 16px;
   margin-top: 32px;
 }
+
+.impact-page .impact-hero .button.primary {
+  background: linear-gradient(135deg, #0f4fad, #118ab2);
+  color: white;
+  padding: 12px 26px;
+  border-radius: 14px;
+  box-shadow: 0 20px 50px rgba(15,55,100,.22);
+  font-weight: 700;
+}
+
+.impact-page .impact-hero .button.primary:hover { transform: translateY(-2px); }
+
+.impact-page .impact-hero .button.secondary {
+  background: rgba(255,255,255,.08);
+  color: white;
+  padding: 12px 26px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.12);
+  font-weight: 700;
+}
+
+.impact-page .impact-hero .button.secondary:hover { background: rgba(255,255,255,.14); transform: translateY(-2px); }
 .impact-page .impact-cta .button.primary {
   display: inline-flex;
   align-items: center;
@@ -929,6 +952,70 @@ body.impact-page,
 .impact-page .impact-cta .button.secondary:hover {
   transform: translateY(-2px);
   background: rgba(255,255,255,.14);
+}
+
+/* Ensure high contrast and readable copy across the Impact page */
+.impact-page h1,
+.impact-page h2,
+.impact-page h3,
+.impact-page h4,
+.impact-page p,
+.impact-page li,
+.impact-page a,
+.impact-page span {
+  color: #e6eef8;
+}
+
+.impact-page a {
+  color: #7dd3fc;
+  text-decoration: none;
+}
+
+/* Darker, more premium cards */
+.impact-page .impact-card,
+.impact-page .about-card,
+.impact-page .about-panel {
+  background: linear-gradient(180deg, rgba(6,12,22,.88), rgba(8,18,34,.9));
+  border: 1px solid rgba(255,255,255,.05);
+  box-shadow: 0 26px 80px rgba(0,0,0,.36);
+  color: #e6eef8;
+}
+
+.impact-page .impact-card h3,
+.impact-page .impact-card h4,
+.impact-page .about-card h3,
+.impact-page .about-panel h2 {
+  color: #f8fafc;
+}
+
+/* Stronger CTA panels */
+.impact-page .impact-cta {
+  padding: 44px 48px;
+  border-radius: 28px;
+}
+
+.impact-page .impact-cta .button.primary,
+.impact-page .impact-cta .button.secondary {
+  min-width: 260px;
+  padding: 14px 30px;
+  font-size: 1rem;
+}
+
+.impact-page .impact-cta-primary .button.primary {
+  background: linear-gradient(135deg,#0f4fad,#118ab2);
+  box-shadow: 0 22px 60px rgba(15,55,100,.28);
+}
+
+.impact-page .impact-cta-secondary .button.secondary {
+  background: linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  border: 1px solid rgba(255,255,255,.14);
+  color: #e6eef8;
+}
+
+/* Make stat values stand out */
+.impact-page .impact-hero-stat h4 {
+  font-size: clamp(2.2rem, 3.2vw, 3rem);
+  color: #f8fafc !important;
 }
 
 .impact-page .impact-overview {
@@ -1031,7 +1118,12 @@ body.impact-page,
 }
 
 .impact-page .impact-card p {
-  color: rgba(226,232,240,.74);
+  color: rgba(226,232,240,.86);
+}
+
+.impact-page .impact-card h3,
+.impact-page .impact-card h4 {
+  color: #f8fafc;
 }
 
 .impact-page .impact-card h4 {
