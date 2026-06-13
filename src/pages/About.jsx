@@ -955,11 +955,7 @@ function About({ navigate }) {
                   <p>Through onboarding, mentorship, and practical project experience, we help young people access purposeful work, professional confidence, and economic independence.</p>
                 </div>
               </div>
-              <div className="identity-highlight">
-                <div className="identity-label">Future-Ready Skills</div>
-                <h3>Developing talent for AI, data operations, and digital excellence.</h3>
-                <p>Team members gain transferable skills in annotation, QA, data management, communication, and problem-solving for long-term career readiness.</p>
-              </div>
+              
             </div>
           </div>
         </section>
