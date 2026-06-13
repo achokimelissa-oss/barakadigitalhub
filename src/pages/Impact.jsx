@@ -10,6 +10,54 @@ function Impact() {
           name="description"
           content="We convert commercial digital work into a consistent support system for youth and Baraka Children’s Home."
         />
+        <style>{`
+          :root{
+            --navy:#041b45;
+            --dark-navy:#07142a;
+            --deepest:#010810;
+            --green:#2fc4c4;
+            --teal:#4dd7ff;
+            --amber:#7dcfff;
+            --text:#ffffff;
+            --text-dim:#d4e3ff;
+            --line:rgba(255,255,255,0.12);
+          }
+
+          *{margin:0;padding:0;box-sizing:border-box;}
+
+          body{
+            background:
+              radial-gradient(circle at 15% 10%, rgba(14,165,233,0.12), transparent 32%),
+              radial-gradient(circle at 85% 18%, rgba(56,189,248,0.08), transparent 28%),
+              linear-gradient(180deg, #020617 0%, #07111f 45%, #040b16 100%);
+            color:var(--text);
+            font-family:'Inter', 'Segoe UI', system-ui, sans-serif;
+            line-height:1.65;
+            background-attachment:fixed;
+            overflow-x:hidden;
+          }
+
+          .wrap{ max-width:1400px; margin:0 auto; padding:0 4vw; }
+
+          /* CTA styles copied from About page */
+          .cta-section{ position:relative; display:grid; grid-template-columns:1fr; gap:24px; background: linear-gradient(145deg, rgba(8, 23, 47, 0.98), rgba(4, 14, 29, 0.98)); border:1px solid rgba(125, 207, 255, 0.16); border-radius:28px; padding:42px 38px; margin-bottom:24px; }
+          .cta-section > * { position:relative; z-index:1; }
+          .cta-copy{ max-width:100%; color:#d6fbff; margin:16px 0 24px; line-height:1.9; font-size:1rem; }
+          .cta-highlight{ display:flex; justify-content:center; gap:24px; align-items:stretch; }
+          .cta-main{ background:rgba(9, 32, 64, 0.96); border:1px solid rgba(125, 207, 255, 0.12); border-radius:24px; padding:32px 30px 32px; box-shadow:0 24px 64px rgba(0, 0, 0, 0.14); display:flex; flex-direction:column; gap:20px; max-width:980px; width:100%; }
+          .cta-label{ display:inline-flex; align-items:center; gap:8px; color:#9be8ff; font-family:'JetBrains Mono','Courier New',monospace; font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; }
+          .cta-main h3{ margin:0 0 16px; color:#eff7ff; font-size:1.32rem; line-height:1.35; text-align:left; }
+          .cta-main p{ margin:0; color:#d3f2ff; line-height:1.8; }
+          .cta-actions{ display:flex; flex-wrap:wrap; gap:14px; justify-content:center; }
+          .cta-actions a, .cta-actions button{ display:inline-flex; align-items:center; justify-content:center; gap:10px; border-radius:14px; padding:14px 18px; font-weight:700; font-size:0.95rem; text-decoration:none; border:none; cursor:pointer; transition:transform .2s,box-shadow .2s,background .2s; min-height:48px; }
+          .cta-actions button{ background:linear-gradient(135deg, #1d4ed8 0%, #38bdf8 100%); color:#fff; border:1px solid rgba(125, 211, 252, 0.25); box-shadow:0 18px 32px rgba(56, 189, 248, 0.18); }
+          .cta-actions a{ background:rgba(255,255,255,0.08); color:#eff7ff; border:1px solid rgba(148, 163, 184, 0.24); }
+          .cta-actions button:hover, .cta-actions a:hover{ transform:translateY(-1px); box-shadow:0 18px 34px rgba(13, 76, 130, 0.18); }
+
+          /* allow Link elements styled as primary */
+          .cta-actions a.primary{ background:linear-gradient(135deg, #1d4ed8 0%, #38bdf8 100%); color:#fff; border:1px solid rgba(125, 211, 252, 0.25); box-shadow:0 18px 32px rgba(56, 189, 248, 0.18); }
+          .cta-actions a.primary:hover{ transform:translateY(-1px); box-shadow:0 18px 34px rgba(13, 76, 130, 0.18); }
+        `}</style>
       </Helmet>
 
       <div className="impact-page">
@@ -41,11 +89,11 @@ function Impact() {
             <p>
               We convert commercial digital work into a consistent support system for youth and Baraka Children’s Home. Every engagement is designed for measurable outcomes, reliable delivery, and enterprise accountability.
             </p>
-            <div className="impact-hero-actions">
-              <Link to="/services" className="button primary">
+            <div className="impact-hero-actions cta-actions">
+              <Link to="/services" className="primary">
                 Explore services
               </Link>
-              <Link to="/contact#send-message" className="button secondary">
+              <Link to="/contact#send-message" className="">
                 Schedule a briefing
               </Link>
             </div>
@@ -203,11 +251,11 @@ function Impact() {
             <p>
               Partner with us for dependable AI delivery that also creates sustainable opportunity and reliable revenue for underserved Nairobi youth.
             </p>
-            <div className="impact-hero-actions">
-              <Link to="/contact#send-message" className="button primary">
+            <div className="impact-hero-actions cta-actions">
+              <Link to="/contact#send-message" className="primary">
                 Start a conversation
               </Link>
-              <Link to="/services" className="button secondary">
+              <Link to="/services" className="">
                 Review services
               </Link>
             </div>
