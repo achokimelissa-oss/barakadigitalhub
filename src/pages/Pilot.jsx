@@ -171,32 +171,6 @@ function Pilot(props) {
   .pilot-page .final-cta p{ color:var(--text-mid); max-width:540px; margin:0 auto 36px; font-size:15.5px; }
   .pilot-page .final-cta .hero-cta{ justify-content:center; }
 
-  /* Scroll-to-top button: match homepage blue circular button */
-  .pilot-page .scroll-top {
-    position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 24px;
-    z-index: 200;
-    width: 48px;
-    height: 48px;
-    display: grid;
-    place-items: center;
-    border: none !important;
-    background: linear-gradient(135deg, #1d4ed8, #06b6d4) !important;
-    color: white !important;
-    border-radius: 999px !important;
-    box-shadow: 0 18px 40px rgba(29,78,216,.22) !important;
-    cursor: pointer !important;
-    font-size: 1.25rem !important;
-    opacity: 0;
-    transform: translateX(-50%) translateY(10px);
-    transition: opacity 0.28s ease, transform 0.28s ease;
-    pointer-events: none;
-  }
-  .pilot-page .scroll-top.visible { opacity: 1; transform: translateX(-50%) translateY(0); pointer-events: auto; }
-  .pilot-page .scroll-top:hover { transform: translateX(-50%) translateY(-1px); }
-
   @media (max-width:860px){ .pilot-page .eval-grid{ grid-template-columns:repeat(2,1fr); } }
   @media (max-width:520px){ .pilot-page .eval-grid{ grid-template-columns:1fr; } }
     /* Strong overrides to neutralize site-wide white panels on this page */
