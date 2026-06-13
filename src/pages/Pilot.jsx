@@ -28,16 +28,27 @@ function Pilot(props) {
   html{ scroll-behavior:smooth; }
 
   body.pilot-page{ background: var(--navy-deep); color: var(--text-hi); font-family: var(--disp); line-height:1.6; background-image:
-      radial-gradient(circle at 15% 8%, rgba(45,217,200,0.18), transparent 30%),
-      radial-gradient(circle at 90% 75%, rgba(251,191,99,0.12), transparent 35%),
-      radial-gradient(circle at 60% 20%, rgba(139,92,246,0.08), transparent 25%);
+      radial-gradient(circle at 15% 8%, rgba(45,217,200,0.26), transparent 26%),
+      radial-gradient(circle at 92% 76%, rgba(251,191,99,0.18), transparent 32%),
+      radial-gradient(circle at 58% 18%, rgba(139,92,246,0.12), transparent 22%),
+      radial-gradient(circle at 25% 90%, rgba(56,189,248,0.08), transparent 28%);
     background-attachment: fixed; }
 
   /* Force transparent containers so site chrome doesn't show as white */
-  .pilot-page .wrap, .pilot-page .hero, .pilot-page .section, .pilot-page .topbar, .pilot-page .pipeline, .pilot-page .deliver-grid, .pilot-page .compare, .pilot-page .pricing-box {
+  .pilot-page .wrap, .pilot-page .hero, .pilot-page .topbar, .pilot-page .pipeline, .pilot-page .deliver-grid, .pilot-page .compare, .pilot-page .pricing-box {
     background: transparent !important;
     border-color: rgba(255,255,255,0.04) !important;
   }
+
+  .pilot-page .section{ padding:64px 0; border-top:1px solid rgba(255,255,255,0.08); background: rgba(11,22,41,0.75); position:relative; overflow:hidden; }
+  .pilot-page .section::before{ content:''; position:absolute; inset:0; background-image:
+      radial-gradient(circle at 20% 20%, rgba(45,217,200,0.08), transparent 20%),
+      radial-gradient(circle at 80% 15%, rgba(139,92,246,0.06), transparent 18%),
+      linear-gradient(180deg, rgba(255,255,255,0.02), transparent 35%);
+    pointer-events:none; }
+  .pilot-page .section-head{ position:relative; z-index:2; }
+  .pilot-page .section-cta{ display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; position:relative; z-index:2; }
+  .pilot-page .section-subtle{ color: rgba(234,241,248,0.72); }
 
   .pilot-page .wrap{ max-width:1080px; margin:0 auto; padding:0 24px; position:relative; z-index:1; }
   .pilot-page .topbar{ border-bottom:1px solid rgba(255,255,255,0.04); padding:18px 0; background:transparent; position:relative; z-index:25; }
@@ -248,6 +259,10 @@ function Pilot(props) {
               <div className="section-num">03 — DELIVERABLES</div>
               <div className="section-title">What you receive at the end</div>
             </div>
+            <div className="section-cta">
+              <a className="btn btn-accent" href="#start">Review deliverables</a>
+              <a className="btn btn-warm" href="#contact">Schedule QA review</a>
+            </div>
 
             <div className="deliver-grid">
               <div className="deliver-item">
@@ -343,6 +358,8 @@ function Pilot(props) {
             </p>
             <div className="hero-cta">
               <a className="btn btn-primary" href="mailto:projects@barakadigitalhub.com?subject=Pilot%20Enquiry">Book a discovery call →</a>
+              <a className="btn btn-accent" href="mailto:projects@barakadigitalhub.com?subject=Pilot%20Proposal">Request a custom proposal</a>
+              <a className="btn btn-warm" href="#contact">Get a quick estimate</a>
             </div>
             <div className="contact-strip">
               <a href="mailto:projects@barakadigitalhub.com"><span>✉</span> projects@barakadigitalhub.com</a>
