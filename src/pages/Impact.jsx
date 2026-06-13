@@ -15,9 +15,9 @@ function Impact() {
         <section className="section-block impact-hero section-intro">
           <div className="text-block">
             <p className="highlight-pill">Community Impact</p>
-            <h1>From Charity to Dignity. From Dependency to Opportunity.</h1>
+            <h1>Professional AI services powered by a Nairobi-based social impact model.</h1>
             <p>
-              We convert commercial digital work into a consistent support system for youth and Baraka Children’s Home. Every project is designed to create measurable social impact, reliable revenue, and a pathway to lasting independence.
+              We deliver enterprise-grade annotation, transcription, and data operations while transforming client spend into sustainable employment, skills, and support for young people in Nairobi.
             </p>
           </div>
           <div className="impact-grid impact-hero-grid">
@@ -170,9 +170,9 @@ function Impact() {
           <div className="text-block">
             <h3>Ready to build with purpose?</h3>
             <p>
-              Partner with us. Get reliable, professional digital services while funding sustainable opportunity for youth from underserved communities.
+              Partner with us for dependable AI delivery that also creates sustainable opportunity and reliable revenue for underserved Nairobi youth.
             </p>
-            <Link className="button primary impact-button-primary" to="/contact#send-message">
+            <Link className="button primary" to="/contact#send-message">
               Start a conversation
             </Link>
           </div>
@@ -182,9 +182,9 @@ function Impact() {
           <div className="text-block">
             <h3>Bring impact into your next digital project</h3>
             <p>
-              Collaborate with Baraka Digital Hub to get dependable delivery while helping create real social value for youth and Baraka Children’s Home.
+              Work with Baraka Digital Hub to combine professional data operations with measurable social return and community resilience.
             </p>
-            <Link className="button secondary impact-button-secondary" to="/contact#send-message">
+            <Link className="button secondary" to="/contact#send-message">
               Contact us to get started
             </Link>
           </div>
