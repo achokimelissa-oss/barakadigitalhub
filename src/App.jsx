@@ -7,6 +7,7 @@ import InsightsPage from "./pages/Insights";
 import BackOfficePage from "./pages/BackOffice";
 import AfricanLanguagesPage from "./pages/AfricanLanguages";
 import BlogsPage from "./pages/Blogs";
+import ImpactRoutePage from "./pages/Impact";
 
 
 const ArrowRight = ({size=16}) => (<svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>);
@@ -1457,7 +1458,7 @@ const BarakaDigitalHub = () => {
       {page === "about" && <AboutPage goBack={goBack} navigate={navigate} isMobile={isMobile} />}
       {page === "careers" && <CareersPage goBack={goBack} setPage={setPage} navigate={navigate} isMobile={isMobile} />}
       {page === "privacy" && <PrivacyPage goBack={goBack} isMobile={isMobile} />}
-      {page === "impact" && <ImpactPage goBack={goBack} isMobile={isMobile} />}
+      {page === "impact" && <ImpactRoutePage />}
       {page === "operations" && <OperationsPage goBack={goBack} isMobile={isMobile} />}
       {page === "workflow" && <WorkflowPage goBack={goBack} setPage={setPage} isMobile={isMobile} />}
       {page === "contact" && <ContactPage goBack={goBack} isMobile={isMobile} />}
