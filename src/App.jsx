@@ -1278,7 +1278,7 @@ const BarakaDigitalHub = () => {
 
       {page === "home" && (
         <>
-          <section style={{ position:"relative", left:"50%", right:"50%", width:"100vw", maxWidth:"100vw", marginLeft:"-50vw", marginRight:"-50vw", paddingTop:120, paddingBottom:80, paddingLeft:0, paddingRight:0, overflow:"visible", background:"linear-gradient(135deg, #f0f7ff 0%, #e6f3ff 25%, #ecfdf5 50%, #e0f8f5 75%, #f0f4ff 100%)" }}>
+          <section style={{ position:"relative", left:"50%", right:"50%", width:"100vw", maxWidth:"100vw", marginLeft:"-50vw", marginRight:"-50vw", paddingTop:72, paddingBottom:80, paddingLeft:0, paddingRight:0, overflow:"visible", background:"linear-gradient(135deg, #f0f7ff 0%, #e6f3ff 25%, #ecfdf5 50%, #e0f8f5 75%, #f0f4ff 100%)" }}>
             <div className="dot-grid" style={{ position:"absolute", inset:0, opacity:.6, pointerEvents: "none" }} />
             <div className="hero-tech-overlay" />
             <div style={{ position:"absolute", top:"-20%", right: isMobile ? "-30%" : "-15%", width: isMobile ? 420 : 800, height: isMobile ? 420 : 800, borderRadius:"50%", background:"radial-gradient(circle,rgba(29,78,216,.08) 0%,transparent 70%)", pointerEvents: "none" }} />
