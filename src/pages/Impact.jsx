@@ -37,6 +37,36 @@ function Impact() {
             overflow-x:hidden;
           }
 
+          body.impact-page .section-block,
+          body.impact-page .about-card,
+          body.impact-page .about-panel,
+          body.impact-page .impact-card {
+            background: rgba(3, 12, 24, 0.78);
+            border-color: rgba(125, 207, 255, 0.16);
+            box-shadow: 0 20px 50px rgba(2, 8, 23, 0.28);
+          }
+
+          body.impact-page .section-block p,
+          body.impact-page .section-block li,
+          body.impact-page .section-block strong,
+          body.impact-page .about-card p,
+          body.impact-page .about-card li,
+          body.impact-page .about-panel p,
+          body.impact-page .impact-card p,
+          body.impact-page .impact-card li {
+            color: #dce9ff;
+          }
+
+          body.impact-page .section-block h1,
+          body.impact-page .section-block h2,
+          body.impact-page .section-block h3,
+          body.impact-page .section-block h4,
+          body.impact-page .about-card h3,
+          body.impact-page .about-panel h2,
+          body.impact-page .impact-card h4 {
+            color: #f8fafc;
+          }
+
           .wrap{ max-width:1400px; margin:0 auto; padding:0 4vw; }
 
           /* CTA styles copied from About page */

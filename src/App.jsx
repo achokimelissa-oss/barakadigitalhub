@@ -1338,7 +1338,7 @@ const BarakaDigitalHub = () => {
         .section-tech-bg > * { position: relative; z-index: 1; }
         .impact-section { position: relative; overflow: hidden; background: linear-gradient(180deg, #eef5ff 0%, #f8fbff 45%, #ffffff 100%); }
         .impact-section::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(circle at 12% 22%, rgba(245,158,11,.14) 0%, transparent 30%), radial-gradient(circle at 78% 18%, rgba(14,165,233,.16) 0%, transparent 28%), radial-gradient(circle at 50% 70%, rgba(16,185,129,.12) 0%, transparent 34%); pointer-events: none; }
-        .impact-section::after { content: ""; position: absolute; inset: 0; background-image: linear-gradient(0deg, rgba(255,255,255,.88) 0%, rgba(255,255,255,0) 45%), repeating-linear-gradient(90deg, transparent 0, transparent 12px, rgba(15,23,42,.03) 12px, rgba(15,23,42,.03) 13px); opacity: .45; pointer-events: none; }
+        .impact-section::after { content: ""; position: absolute; inset: 0; background-image: linear-gradient(0deg, rgba(15,23,42,.12) 0%, rgba(255,255,255,0) 45%), repeating-linear-gradient(90deg, transparent 0, transparent 12px, rgba(15,23,42,.02) 12px, rgba(15,23,42,.02) 13px); opacity: .2; pointer-events: none; }
         .impact-section > * { position: relative; z-index: 1; }
         .impact-card { background: rgba(255,255,255,.94); border: 1px solid rgba(59,130,246,.16); }
         @keyframes tech-bg-glow { 0%,100% { background-position: 12% 18%, 88% 24%, 52% 58%; } 50% { background-position: 18% 12%, 82% 28%, 48% 62%; } }
