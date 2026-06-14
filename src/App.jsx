@@ -966,6 +966,13 @@ const BarakaDigitalHub = () => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
+  // Ensure we scroll to top on route change so navigations start at the top of the page
+  useEffect(() => {
+    // Small timeout to allow route content to render before scrolling
+    const id = setTimeout(() => window.scrollTo({ top: 0, left: 0, behavior: 'instant' in Window.prototype ? 'instant' : 'auto' }), 0);
+    return () => clearTimeout(id);
+  }, [location.pathname]);
+
   useEffect(()=>{
     const onResize = () => setIsMobile(window.innerWidth <= 720);
     window.addEventListener('resize', onResize);
@@ -1750,9 +1757,9 @@ const BarakaDigitalHub = () => {
             </div>
 
             <div>
-              <div style={{ fontSize: "0.95rem", fontWeight: 700, color: "#ffffff", marginBottom: 12 }}>Pages</div>
+              <div style={{ fontSize: "0.95rem", fontWeight: 700, color: "#ffffff", marginBottom: 12 }}>Explore</div>
               <div style={{ display: "grid", gap: 8 }}>
-                {['/', '/services', '/about', '/impact', '/blogs', '/insights', '/backoffice', '/african-languages', '/operations', '/pilot', '/careers', '/privacy', '/contact'].map((p) => {
+                {['/', '/services', '/impact', '/blogs', '/insights'].map((p) => {
                   const label = p === '/' ? 'Home' : p.replace('/','').replace('-', ' ').replace(/\b\w/g, c=>c.toUpperCase());
                   const to = p === '/' ? '/' : p.replace(/^\//, '');
                   return (
@@ -1763,12 +1770,22 @@ const BarakaDigitalHub = () => {
             </div>
 
             <div>
-              <div style={{ fontSize: "0.95rem", fontWeight: 700, color: "#ffffff", marginBottom: 12 }}>Services</div>
+              <div style={{ fontSize: "0.95rem", fontWeight: 700, color: "#ffffff", marginBottom: 12 }}>Solutions</div>
               <div style={{ display: "grid", gap: 8 }}>
-                <button onClick={() => navigate("services")} style={{ textAlign: "left", background: "none", border: "none", color: "rgba(255,255,255,0.85)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,.85)"}>Computer Vision</button>
-                <button onClick={() => navigate("services")} style={{ textAlign: "left", background: "none", border: "none", color: "rgba(255,255,255,0.85)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,.85)"}>NLP & Text</button>
-                <button onClick={() => navigate("services")} style={{ textAlign: "left", background: "none", border: "none", color: "rgba(255,255,255,0.85)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,.85)"}>Audio Annotation</button>
-                <button onClick={() => navigate("services")} style={{ textAlign: "left", background: "none", border: "none", color: "rgba(255,255,255,0.85)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,.85)"}>LLM Training</button>
+                <button onClick={() => navigate("backoffice")} style={{ textAlign: "left", background: "none", border: "none", color: "rgba(255,255,255,0.85)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,0.85)"}>Back Office</button>
+                <button onClick={() => navigate("african-languages")} style={{ textAlign: "left", background: "none", border: "none", color: "rgba(255,255,255,0.85)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,0.85)"}>African Languages</button>
+                <button onClick={() => navigate("operations")} style={{ textAlign: "left", background: "none", border: "none", color: "rgba(255,255,255,0.85)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,0.85)"}>Operations</button>
+                <button onClick={() => navigate("pilot")} style={{ textAlign: "left", background: "none", border: "none", color: "rgba(255,255,255,0.85)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,0.85)"}>Pilot Program</button>
+              </div>
+            </div>
+
+            <div>
+              <div style={{ fontSize: "0.95rem", fontWeight: 700, color: "#ffffff", marginBottom: 12 }}>Company</div>
+              <div style={{ display: "grid", gap: 8 }}>
+                <button onClick={() => navigate("about")} style={{ textAlign: "left", background: "none", border: "none", color: "rgba(255,255,255,0.85)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,0.85)"}>About</button>
+                <button onClick={() => navigate("careers")} style={{ textAlign: "left", background: "none", border: "none", color: "rgba(255,255,255,0.85)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,0.85)"}>Careers</button>
+                <button onClick={() => navigate("contact")} style={{ textAlign: "left", background: "none", border: "none", color: "rgba(255,255,255,0.85)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,0.85)"}>Contact</button>
+                <button onClick={() => navigate("privacy")} style={{ textAlign: "left", background: "none", border: "none", color: "rgba(255,255,255,0.85)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,0.85)"}>Privacy</button>
               </div>
             </div>
           </div>
