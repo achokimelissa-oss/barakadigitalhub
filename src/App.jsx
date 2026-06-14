@@ -446,9 +446,14 @@ const ServicesPage = ({ goBack, navigate, isMobile }) => {
   ];
   useEffect(() => { window.scrollTo(0, 0); }, []);
   return (
-    <div style={{ minHeight: "100vh", background: "radial-gradient(circle at 15% 10%, rgba(56,189,248,0.12), transparent 32%), radial-gradient(circle at 85% 18%, rgba(56,189,248,0.08), transparent 28%), linear-gradient(180deg, #020617 0%, #07111f 45%, #040b16 100%)", paddingTop: 48, color: "#f8fbff" }}>
+    <div style={{ minHeight: "100vh", position: "relative", overflow: "hidden", background: "radial-gradient(circle at 14% 12%, rgba(56,189,248,0.22), transparent 24%), radial-gradient(circle at 84% 10%, rgba(16,185,129,0.14), transparent 22%), linear-gradient(180deg, #020617 0%, #07111f 40%, #020a1a 100%)", paddingTop: 48, color: "#f8fbff" }}>
+      <div style={{ position: "absolute", inset: 0, backgroundImage: "repeating-linear-gradient(180deg, transparent 0, transparent 40px, rgba(125,207,255,0.18) 40px, rgba(125,207,255,0.18) 41px), repeating-linear-gradient(90deg, transparent 0, transparent 40px, rgba(56,189,248,0.14) 40px, rgba(56,189,248,0.14) 41px)", opacity: 0.68, pointerEvents: "none" }} />
+      <div style={{ position: "absolute", top: "8%", left: "4%", width: 220, height: 220, borderRadius: "50%", background: "rgba(96,165,250,0.14)", filter: "blur(42px)", pointerEvents: "none" }} />
+      <div style={{ position: "absolute", top: "18%", right: "8%", width: 180, height: 180, borderRadius: "50%", background: "rgba(16,185,129,0.12)", filter: "blur(38px)", pointerEvents: "none" }} />
+      <div style={{ position: "absolute", bottom: "6%", left: "10%", width: 240, height: 240, borderRadius: "50%", background: "rgba(59,130,246,0.12)", filter: "blur(50px)", pointerEvents: "none" }} />
+      <div style={{ position: "absolute", top: "25%", left: "50%", width: 320, height: 320, borderRadius: "50%", background: "rgba(255,255,255,0.04)", filter: "blur(48px)", pointerEvents: "none", transform: "translateX(-50%)" }} />
       <PageHelmet title="AI Data Annotation & Training Services | Baraka Digital Hub" description="Expert computer vision annotation, NLP, audio processing, LLM training and BPO services from our Nairobi-based team." robots="noindex,follow" canonical="/" />
-      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "48px 24px" }}>
+      <div style={{ position: "relative", zIndex: 1, maxWidth: 1200, margin: "0 auto", padding: "48px 24px" }}>
         <button onClick={goBack} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", cursor: "pointer", color: "#7dd3fc", fontWeight: 600, fontSize: "0.9rem", marginBottom: 32, fontFamily: "inherit" }}>
           <ChevronLeft size={18} /> Back to Home
         </button>
