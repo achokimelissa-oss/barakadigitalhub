@@ -1301,9 +1301,9 @@ const BarakaDigitalHub = () => {
             <div style={{ position:"absolute", top:0, left:0, width: isMobile ? 300 : 500, height: isMobile ? 300 : 500, borderRadius:"50%", background:"radial-gradient(circle,rgba(59,130,246,.14) 0%,transparent 74%)", pointerEvents:"none", transform:"translate(-25%, -25%)" }} />
             <div style={{ position:"absolute", bottom: isMobile ? "-20%" : "-15%", left: isMobile ? "-30%" : "-15%", width: isMobile ? 420 : 700, height: isMobile ? 420 : 700, borderRadius:"50%", background:"radial-gradient(circle,rgba(15,157,104,.08) 0%,transparent 70%)", pointerEvents: "none" }} />
             <div style={{ position:"absolute", bottom:0, right:0, width: isMobile ? 300 : 520, height: isMobile ? 300 : 520, borderRadius:"50%", background:"radial-gradient(circle,rgba(16,185,129,.14) 0%,transparent 74%)", pointerEvents:"none", transform:"translate(25%, 25%)" }} />
-            <div className="page-container" style={{ position:"relative", zIndex:1, maxWidth:1200, margin:"0 auto", padding:"0 24px" }}>
-              <div className="hero-grid" style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "1.2fr 0.8fr", gap:64, alignItems:"center" }}>
-                <div>
+            <div className="page-container" style={{ position:"relative", zIndex:1, maxWidth:960, margin:"0 auto", padding:"0 24px" }}>
+              <div className="hero-grid" style={{ display:"grid", gridTemplateColumns: "1fr", gap:56, alignItems:"center", justifyItems:"center" }}>
+                <div style={{ width:"100%", maxWidth:760, textAlign: isMobile ? "left" : "center" }}>
                   <div style={{ display:"inline-flex", alignItems:"center", gap:10, background:"linear-gradient(135deg, rgba(14,165,233,.16), rgba(15, 123, 255, .08))", border:"1px solid rgba(14,165,233,.28)", borderRadius:100, padding:"12px 24px", marginBottom:20, boxShadow:"0 20px 50px rgba(15,23,42,.08)" }}>
                     <span className="ani-pulse" style={{ width:8, height:8, borderRadius:"50%", background:"#0f9d68", display:"inline-block", boxShadow:"0 0 0 4px rgba(15,23,42,.06)" }} />
                     <span className="typing-effect" style={{ fontFamily:"'Segoe UI', Arial, sans-serif", fontSize:"0.88rem", fontWeight:800, color:"#0f7a44", letterSpacing:"0.14em", textTransform:"uppercase", textShadow:"0 1px 2px rgba(15,23,42,.12)" }}>Empowering Futures Through Technology</span>
@@ -1313,10 +1313,10 @@ const BarakaDigitalHub = () => {
                     <br />
                     <span style={{ background:"linear-gradient(90deg,#1d4ed8,#06b6d4,#0f9d68)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", backgroundClip:"text", fontWeight:900 }}>Built for Scale</span>
                   </h1>
-                  <p style={{ maxWidth:720, color:"#475569", fontSize: isMobile ? "1rem" : "1.05rem", lineHeight:1.85, marginBottom:36, fontFamily:"'Inter', Arial, sans-serif" }}>
+                  <p style={{ color:"#475569", fontSize: isMobile ? "1rem" : "1.05rem", lineHeight:1.85, marginBottom:36, fontFamily:"'Inter', Arial, sans-serif" }}>
                     Baraka Digital Hub delivers enterprise-ready AI data operations with disciplined execution, secure workflows, and measurable outcomes. Our Nairobi-based teams support global clients with repeatable delivery, quality governance, and production-grade transparency.
                   </p>
-                  <div style={{ display:"flex", gap:16, flexWrap:"wrap", marginBottom:40 }}>
+                  <div style={{ display:"flex", justifyContent: isMobile ? "flex-start" : "center", gap:16, flexWrap:"wrap", marginBottom:40 }}>
                     <button type="button" onClick={() => navigate("pilot")} className="btn-primary">Start Pilot Program <ArrowRight size={17} /></button>
                     <button type="button" onClick={() => navigate("services")} className="btn-secondary-alt">Explore Services</button>
                   </div>
@@ -1327,32 +1327,6 @@ const BarakaDigitalHub = () => {
                         <div style={{ fontSize:"0.86rem", color:"#64748b", marginTop:8, fontWeight:600 }}>{s.l}</div>
                       </div>
                     ))}
-                  </div>
-                </div>
-                <div style={{ display:"grid", gap:24 }}>
-                  <div style={{ background:"rgba(255,255,255,.95)", border:"1px solid rgba(15,23,42,.08)", borderRadius:28, padding:"36px 32px", boxShadow:"0 24px 80px rgba(15,23,42,.09)", minHeight: isMobile ? undefined : 360 }}>
-                    <div style={{ fontSize:"0.78rem", letterSpacing:"0.16em", textTransform:"uppercase", color:"#475569", marginBottom:16, fontWeight:700 }}>
-                      Enterprise-grade delivery
-                    </div>
-                    <h2 style={{ fontSize: isMobile ? "1.95rem" : "2.4rem", lineHeight:1.08, fontWeight:800, color:"#0f172a", marginBottom:18 }}>Secure workflows. Consistent scale. Trusted execution.</h2>
-                    <p style={{ color:"#475569", fontSize:"1rem", lineHeight:1.75, maxWidth:520, marginBottom:24 }}>
-                      We combine managed operational controls, robust QA, and transparent reporting so your AI programs stay on time, on budget, and compliant across every delivery cycle.
-                    </p>
-                    <div style={{ display:"grid", gap:14 }}>
-                      {[
-                        "Structured quality governance",
-                        "Secure data handling & compliance",
-                        "Scalable African delivery teams",
-                        "Transparent progress reporting"
-                      ].map((item, idx) => (
-                        <div key={idx} style={{ display:"flex", alignItems:"flex-start", gap:12 }}>
-                          <div style={{ minWidth:24, height:24, borderRadius:8, background:"#0f4fad", display:"grid", placeItems:"center", color:"white", fontSize:"0.85rem", fontWeight:700 }}>
-                            ✓
-                          </div>
-                          <div style={{ color:"#475569", fontSize:"0.98rem", lineHeight:1.7, fontWeight:600 }}>{item}</div>
-                        </div>
-                      ))}
-                    </div>
                   </div>
                 </div>
               </div>
