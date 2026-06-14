@@ -8,6 +8,7 @@ import BackOfficePage from "./pages/BackOffice";
 import AfricanLanguagesPage from "./pages/AfricanLanguages";
 import BlogsPage from "./pages/Blogs";
 import ImpactRoutePage from "./pages/Impact";
+import OperationsPage from "./pages/Operations";
 
 
 const ArrowRight = ({size=16}) => (<svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>);
@@ -494,198 +495,6 @@ const ServicesPage = ({ goBack, navigate, isMobile }) => {
   );
 };
 
-const OperationsPage = ({ goBack, isMobile }) => {
-  useEffect(() => { window.scrollTo(0, 0); }, []);
-  const pillars = [
-    { n: "80+", label: "Certified Contractors", color: "#1d4ed8", desc: "Our workforce is trained across multiple annotation verticals including computer vision, NLP, audio, transcription, and BPO. Each contractor completes role-specific certification before working on client projects. Teams are flexible: our pool of 80+ contractors can be scaled up or reduced to match client requirements.", bullets: ["Role-specific onboarding tracks", "Certification before live project access", "Organized by vertical (CV, NLP, audio, etc.)", "Mentorship from senior specialists"] },
-    { n: "100%", label: "QA Review Rate", color: "#0f9d68", desc: "Unlike many providers who spot-check 10–20%, Baraka runs 100% first-pass QA on standard projects. Our QA team is completely independent from annotation.", bullets: ["Independent QA team, not the same annotators", "First-pass error rate tracked per tasker", "Client-visible daily quality reports", "Inter-annotator agreement scoring available"] },
-    { n: "5K+", label: "Hr/Week Capacity", color: "#0ea5e9", desc: "Structured production capacity across all services. Volume scales with project needs via shift-based scheduling and contractor pool expansion. Onboarding and delivery timelines are determined per project scope.", bullets: ["Flexible volume scaling via shift coverage", "Rush capacity with expanded staffing", "Capacity planning with dedicated ops team", "Daily progress and capacity utilization reports"] },
-    { n: "Cert.", label: "Structured Onboarding", color: "#7c3aed", desc: "Every new engagement begins with a structured onboarding phase: task certification, calibration exercises, and pilot delivery before full-scale launch.", bullets: ["Task-specific certification tests", "Calibration batch before full launch", "Ongoing recalibration for long-running projects", "Documentation of guidelines and edge cases"] },
-    { n: "24/7", label: "Centralized Operations", color: "#d97706", desc: "Baraka's operations team manages scheduling, escalations, communication, and reporting across all active projects. Clients have a single point of contact.", bullets: ["Single client-side point of contact", "Escalation protocols for complex edge cases", "Shift-based scheduling for coverage", "Consolidated reporting dashboard"] },
-    { n: "Long", label: "Production-Grade Partnerships", color: "#dc2626", desc: "We are built for long-term engagements, not one-off batches. Our infrastructure supports ongoing annotation pipelines and multi-month production contracts.", bullets: ["Month-over-month consistency tracking", "Volume ramp plans for growing pipelines", "SLA-based delivery commitments", "Dedicated team assignment for continuity"] },
-  ];
-  return (
-    <div style={{ minHeight: "100vh", background: "linear-gradient(160deg,#f8fbff 0%,#eef9ff 50%,#f0fdf4 100%)", paddingTop: 80 }}>
-      <PageHelmet title="Operations | Baraka Digital Hub" description="Enterprise-ready operations infrastructure: 80+ certified contractors, 100% QA review, 5K+ Hr/week capacity from Nairobi." robots="noindex,follow" canonical="/" />
-      <div style={{ maxWidth: 1100, margin: "0 auto", padding: "48px 24px" }}>
-        <button onClick={goBack} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", cursor: "pointer", color: "#1d4ed8", fontWeight: 600, fontSize: "0.9rem", marginBottom: 32, fontFamily: "inherit" }}>
-          <ChevronLeft size={18} /> Back to Home
-        </button>
-        <FadeIn>
-          <div style={{ textAlign: "center", marginBottom: 56 }}>
-            <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(15,157,104,0.07)", border: "1px solid rgba(15,157,104,0.12)", borderRadius: 100, padding: "6px 16px", marginBottom: 20 }}>
-              <span style={{ fontSize: "0.72rem", fontWeight: 700, color: "#0f9d68", letterSpacing: "0.07em", textTransform: "uppercase" }}>Operational Infrastructure</span>
-            </div>
-            <h1 className="font-display" style={{ fontSize: "2.4rem", fontWeight: 800, color: "#0f172a", letterSpacing: "-0.03em", marginBottom: 14 }}>Built for Reliable Scale</h1>
-            <p style={{ color: "#64748b", fontSize: "1.05rem", maxWidth: 560, margin: "0 auto", lineHeight: 1.75 }}>Six pillars that make Baraka Digital Hub a trustworthy long-term AI data partner.</p>
-          </div>
-        </FadeIn>
-        <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
-          {pillars.map((p, i) => (
-            <FadeIn key={i} delay={i * 0.05}>
-              <div style={{ background: "white", border: "1px solid #f1f5f9", borderRadius: 20, padding: "28px 32px", boxShadow: "0 2px 12px rgba(0,0,0,0.04)", display: "flex", gap: 28, alignItems: "flex-start", flexWrap: "wrap" }}>
-                <div style={{ flexShrink: 0 }}>
-                  <div className="font-display" style={{ fontSize: "2.4rem", fontWeight: 800, color: p.color, letterSpacing: "-0.03em", lineHeight: 1 }}>{p.n}</div>
-                  <div style={{ fontSize: "0.75rem", fontWeight: 700, color: "#94a3b8", textTransform: "uppercase", letterSpacing: "0.07em", marginTop: 4 }}>{p.label}</div>
-                </div>
-                <div style={{ flex: 1, minWidth: 240 }}>
-                  <p style={{ color: "#475569", fontSize: "0.92rem", lineHeight: 1.8, marginBottom: 16 }}>{p.desc}</p>
-                  <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 8 }}>
-                    {p.bullets.map((b, j) => (
-                      <div key={j} style={{ display: "flex", alignItems: "flex-start", gap: 8 }}>
-                        <CheckCircle2 size={13} style={{ color: p.color, flexShrink: 0, marginTop: 2 }} />
-                        <span style={{ fontSize: "0.82rem", color: "#64748b", lineHeight: 1.5 }}>{b}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </FadeIn>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-};
-
-const WorkflowPage = ({ goBack, setPage, isMobile }) => {
-  useEffect(() => { window.scrollTo(0, 0); }, []);
-  const overview = [
-    { title: "Discovery & Planning", text: "Define scope, quality standards, tooling, and delivery expectations before any live work begins.", accent: "#1d4ed8" },
-    { title: "Team Training & Certification", text: "Onboard and certify the production team on project standards and tooling before pilot execution.", accent: "#0f9d68" },
-    { title: "Pilot Execution", text: "Run a controlled pilot batch to validate the process, capture edge cases, and refine quality before scaling.", accent: "#1d4ed8" },
-    { title: "Review & Production Roadmap", text: "Assess results, refine workflows, and map the next phase for repeatable production.", accent: "#0f9d68" }
-  ];
-  const steps = [
-    {
-      n: 1,
-      title: "Discovery & Planning",
-      desc: "We align on scope, workflows, quality criteria, tooling, and delivery expectations before building the production model.",
-      chips: ["Workflow discovery", "Taxonomy review", "Tool evaluation", "SLA alignment", "Production planning"],
-      details: ["Dataset scoping", "Guideline definition", "Security review", "QA criteria", "Risk assessment"],
-      color: "#0f9d68",
-      banner: "A shared plan upfront prevents rework and keeps the team focused on the right outcomes."
-    },
-    {
-      n: 2,
-      title: "Team Training & Certification",
-      desc: "Our specialists are trained and certified to your exact standards before any live work begins.",
-      chips: ["Role-specific training", "Certification tests", "Calibration exercises", "Tool practice", "Quality benchmarking"],
-      details: ["Project-specific onboarding", "Guideline drills", "Sample review", "Accuracy standards", "Certification reporting"],
-      color: "#0f9d68",
-      banner: "Training and certification happen before execution, not after."
-    },
-    {
-      n: 3,
-      title: "Pilot Execution",
-      desc: "A pilot batch validates accuracy, process flow, and edge-case handling under live conditions.",
-      chips: ["Pilot batch", "QA benchmarking", "Edge-case identification", "Client feedback", "Workflow recalibration"],
-      details: ["Live sample review", "Data quality checks", "Throughput assessment", "Issue resolution", "Pilot reporting"],
-      color: "#0f9d68",
-      banner: "Proof the process with real work before scaling into full production."
-    },
-    {
-      n: 4,
-      title: "Performance Review & Production Roadmap",
-      desc: "We review results, refine the process, and build a production roadmap for reliable scale.",
-      chips: ["Performance review", "Quality metrics", "Roadmap planning", "Capacity assessment", "Scale recommendations"],
-      details: ["Deliverable analytics", "Process improvements", "Risk mitigation", "Capacity planning", "Ongoing support plan"],
-      color: "#0f9d68",
-      banner: "This phase turns pilot learnings into a repeatable, production-ready roadmap."
-    }
-  ];
-  return (
-    <div style={{ minHeight: "100vh", background: "linear-gradient(160deg,#f8fbff 0%,#eef9ff 50%,#f0fdf4 100%)", paddingTop: isMobile ? 60 : 80 }}>
-      <PageHelmet title="Our Workflow | Baraka Digital Hub" description="From scoping to delivery — see exactly how Baraka Digital Hub manages AI data projects with structured QA and reporting." robots="noindex,follow" canonical="/" />
-      <div style={{ maxWidth: isMobile ? "100%" : 1120, margin: "0 auto", padding: isMobile ? "28px 18px" : "48px 24px" }}>
-        <button onClick={goBack} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", cursor: "pointer", color: "#1d4ed8", fontWeight: 600, fontSize: "0.95rem", marginBottom: 32, fontFamily: "inherit" }}>
-          <ChevronLeft size={18} /> Back to Home
-        </button>
-        <div>
-          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1.3fr .9fr", gap: 26, marginBottom: 42, alignItems: "stretch" }}>
-            <div style={{ background: "white", borderRadius: 32, border: "1px solid #e2e8f0", boxShadow: "0 28px 70px rgba(15,23,42,.08)", padding: isMobile ? "28px 22px" : "36px 34px" }}>
-              <div style={{ display: "inline-flex", alignItems: "center", gap: 10, marginBottom: 18, color: "#0f172a", fontWeight: 700, letterSpacing: ".14em", textTransform: "uppercase" }}>
-                <span style={{ width: 10, height: 10, borderRadius: "50%", background: "#1d4ed8" }} />
-                Delivery workflow
-              </div>
-              <h1 className="font-display" style={{ fontSize: isMobile ? "2rem" : "2.75rem", fontWeight: 900, color: "#0f172a", marginBottom: 22, lineHeight: 1.1, wordBreak: "break-word" }}>How We Deliver</h1>
-              <p style={{ color: "#475569", fontSize: isMobile ? "1rem" : "1.05rem", lineHeight: 1.8, maxWidth: isMobile ? "100%" : 620, marginBottom: 28, wordBreak: "break-word" }}>
-                A premium delivery process for AI data, transcription, OCR, and digital operations. We move from discovery and calibration through execution, QA, secure delivery, and long-term support.
-              </p>
-              <div style={{ display: "grid", gap: 14, gridTemplateColumns: isMobile ? "1fr" : "repeat(2, minmax(0, 1fr))" }}>
-                {overview.map((item, index) => (
-                  <div key={index} style={{ background: "rgba(255,255,255,.96)", borderRadius: 22, border: "1px solid #e2e8f0", padding: "22px 20px" }}>
-                    <div style={{ color: item.accent, fontSize: ".95rem", fontWeight: 700, marginBottom: 8 }}>{item.title}</div>
-                    <p style={{ margin: 0, color: "#475569", lineHeight: 1.7, fontSize: ".95rem" }}>{item.text}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div style={{ display: "grid", gap: 18 }}>
-              <div style={{ background: "linear-gradient(135deg, rgba(14,165,233,.98), rgba(16,185,129,.92))", color: "white", borderRadius: 28, padding: isMobile ? "24px 22px" : "28px 26px", boxShadow: "0 28px 80px rgba(15,23,42,.16)" }}>
-                <div style={{ fontSize: ".8rem", fontWeight: 700, letterSpacing: ".18em", textTransform: "uppercase", marginBottom: 12, opacity: .92 }}>Pilot readiness</div>
-                <h2 className="font-display" style={{ fontSize: isMobile ? "1.4rem" : "1.72rem", fontWeight: 800, margin: 0, lineHeight: 1.15, marginBottom: 16, color: "white", wordBreak: "break-word" }}>Validate quality before scale</h2>
-                <p style={{ color: "rgba(255,255,255,.92)", lineHeight: 1.7, marginBottom: 22, fontSize: isMobile ? ".95rem" : "1rem", wordBreak: "break-word" }}>During the pilot we validate processes, refine guidelines, and reduce production risk using real-world feedback and measurable performance metrics.</p>
-              </div>
-              <div style={{ background: "#0f9d68", borderRadius: 28, padding: isMobile ? "24px 22px" : "28px 26px", boxShadow: "0 24px 60px rgba(15,23,42,.08)" }}>
-                <div style={{ fontSize: ".8rem", fontWeight: 700, letterSpacing: ".18em", textTransform: "uppercase", marginBottom: 12, color: "white" }}>Discovery planning</div>
-                <h2 className="font-display" style={{ fontSize: isMobile ? "1.4rem" : "1.72rem", fontWeight: 800, margin: 0, lineHeight: 1.15, marginBottom: 16, color: "white", wordBreak: "break-word" }}>Start your project plan</h2>
-                <p style={{ color: "rgba(255,255,255,.92)", lineHeight: 1.7, marginBottom: 22, fontSize: isMobile ? ".95rem" : "1rem", wordBreak: "break-word" }}>We translate your dataset requirements, selected services, compliance constraints, and timeline into a practical, time-bound operational plan.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div style={{ display: "grid", gap: 24 }}>
-            {steps.map((s, i) => (
-              <div key={i} style={{ background: "white", borderRadius: 28, border: "1px solid #e2e8f0", boxShadow: "0 28px 70px rgba(15,23,42,.08)", overflow: "hidden" }}>
-                <div style={{ display: "flex", flexDirection: isMobile ? "column" : "row", justifyContent: "flex-start", alignItems: isMobile ? "flex-start" : "center", gap: 18, padding: isMobile ? "20px 20px 16px 20px" : "26px 26px 20px 26px", background: s.color, color: "white" }}>
-                  <div>
-                    <div style={{ fontSize: ".82rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".16em", opacity: .92, marginBottom: 8 }}>Stage {s.n}</div>
-                    <h2 className="font-display" style={{ fontSize: isMobile ? "1.3rem" : "1.55rem", fontWeight: 800, margin: 0, lineHeight: 1.15, color: "white", fontFamily: "Syne, Inter, system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial", wordBreak: "break-word" }}>{s.title}</h2>
-                  </div>
-                </div>
-                <div style={{ padding: isMobile ? "22px 20px 22px 20px" : "28px 26px 26px 26px" }}>
-                  <p style={{ color: "#475569", fontSize: isMobile ? ".95rem" : "1rem", lineHeight: 1.85, marginBottom: 22, wordBreak: "break-word" }}>{s.desc}</p>
-                  <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: 22 }}>
-                    {s.chips.map((chip, ci) => (
-                      <span key={ci} style={{ display: "inline-flex", alignItems: "center", padding: isMobile ? "8px 12px" : "10px 14px", borderRadius: 999, background: "#f8fafc", color: "#475569", fontSize: isMobile ? ".84rem" : ".88rem", fontWeight: 600, border: "1px solid #e2e8f0" }}>{chip}</span>
-                    ))}
-                  </div>
-                  {s.details && (
-                    <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(2, minmax(0, 1fr))", gap: 14, marginBottom: 24 }}>
-                      {s.details.map((detail, di) => (
-                        <div key={di} style={{ background: "#f8fafc", borderRadius: 20, padding: isMobile ? "16px 14px" : "18px 16px", border: "1px solid #e2e8f0", color: "#475569", fontSize: isMobile ? ".9rem" : ".92rem", lineHeight: 1.7, wordBreak: "break-word" }}>
-                          {detail}
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                  <div style={{ marginTop: 24, background: "#f8fafc", borderRadius: 22, border: "1px solid #e2e8f0", padding: isMobile ? "18px 18px" : "20px 22px" }}>
-                    <div style={{ fontWeight: 700, color: "#0f172a", marginBottom: 10 }}>What this means</div>
-                    <p style={{ margin: 0, color: "#475569", lineHeight: 1.8, fontSize: isMobile ? ".92rem" : ".95rem", wordBreak: "break-word" }}>{s.banner}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        <FadeIn delay={0.2}>
-          <div style={{ marginTop: 42, background: "white", borderRadius: 28, border: "1px solid #e2e8f0", boxShadow: "0 28px 70px rgba(15,23,42,.08)", padding: "36px 34px", display: "grid", gap: 24, alignItems: "center" }}>
-            <div style={{ maxWidth: 760 }}>
-              <div style={{ display: "inline-flex", alignItems: "center", gap: 10, fontSize: ".85rem", fontWeight: 700, letterSpacing: ".18em", textTransform: "uppercase", color: "#1d4ed8", marginBottom: 12 }}>Ready to move forward?</div>
-              <h2 className="font-display" style={{ fontSize: "2rem", fontWeight: 900, color: "#0f172a", lineHeight: 1.05, marginBottom: 18 }}>One professional delivery path, clearly mapped.</h2>
-              <p style={{ color: "#475569", fontSize: "1rem", lineHeight: 1.8, marginBottom: 0 }}>We combine scoping, pilot validation, production execution, and verified delivery into one streamlined workflow. Reach out to align on requirements, timing, and the right delivery model for your project.</p>
-            </div>
-            <a href="/contact#send-message" onClick={(e) => { e.preventDefault(); router("/contact#send-message"); setPage("contact"); }} style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: isMobile ? "100%" : "fit-content", background: "#1d4ed8", color: "white", border: "none", borderRadius: 14, padding: "16px 28px", fontWeight: 700, cursor: "pointer", fontFamily: "inherit", textDecoration: "none" }}>
-              Contact us to begin
-            </a>
-          </div>
-        </FadeIn>
-      </div>
-    </div>
-  );
-};
-
-
 const CareersPage = ({ goBack, setPage, navigate, isMobile }) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   return (
@@ -1161,7 +970,7 @@ const BarakaDigitalHub = () => {
       '/contact': 'contact',
       '/privacy': 'privacy',
       '/pilot': 'pilot',
-      '/workflow': 'workflow',
+      '/workflow': 'operations',
       '/operations': 'operations',
       '/insights': 'insights',
       '/backoffice': 'backoffice',
@@ -1197,7 +1006,7 @@ const BarakaDigitalHub = () => {
       '/contact': 'contact',
       '/privacy': 'privacy',
       '/pilot': 'pilot',
-      '/workflow': 'workflow',
+      '/workflow': 'operations',
       '/operations': 'operations',
       '/insights': 'insights',
       '/backoffice': 'backoffice',
@@ -1459,8 +1268,8 @@ const BarakaDigitalHub = () => {
       {page === "careers" && <CareersPage goBack={goBack} setPage={setPage} navigate={navigate} isMobile={isMobile} />}
       {page === "privacy" && <PrivacyPage goBack={goBack} isMobile={isMobile} />}
       {page === "impact" && <ImpactRoutePage />}
-      {page === "operations" && <OperationsPage goBack={goBack} isMobile={isMobile} />}
-      {page === "workflow" && <WorkflowPage goBack={goBack} setPage={setPage} isMobile={isMobile} />}
+      {page === "operations" && <OperationsPage />}
+      {page === "workflow" && <OperationsPage />}
       {page === "contact" && <ContactPage goBack={goBack} isMobile={isMobile} />}
       {page === "blogs" && <BlogsPage goBack={goBack} isMobile={isMobile} />}
       {page === "pilot" && <PilotPage goBack={goBack} setPage={setPage} navigate={navigate} isMobile={isMobile} />}
