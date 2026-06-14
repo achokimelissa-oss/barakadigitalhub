@@ -124,8 +124,14 @@ function Impact() {
 
           * { margin: 0; padding: 0; box-sizing: border-box; }
 
+          html, body, #root {
+            background: #0b1f3a !important;
+            margin: 0;
+            padding: 0;
+          }
+
           body {
-            background: #0b1f3a;
+            background: #0b1f3a !important;
             font-family: 'Inter', sans-serif;
             color: var(--text);
             min-height: 100vh;
@@ -136,6 +142,7 @@ function Impact() {
           .impact-page {
             position: relative;
             min-height: 100vh;
+            background: #0b1f3a !important;
           }
 
           .impact-bg {
@@ -152,7 +159,7 @@ function Impact() {
             z-index: 1;
             max-width: 900px;
             margin: 0 auto;
-            padding: 80px 40px 100px;
+            padding: 56px 40px 100px;
           }
 
           .tag {
