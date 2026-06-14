@@ -20,25 +20,25 @@ export default function AfricanLanguagesPage({ goBack }) {
         }
 
         :root {
-          --navy:      #f8fafc;
-          --navy-d:    #020617;
-          --green:     #86efac;
-          --teal:      #7dd3fc;
-          --amber:     #fbbf24;
-          --off-white: #e2e8f0;
-          --muted:     #94a3b8;
-          --border:    rgba(255,255,255,.08);
+          --navy:      #02346A;
+          --navy-d:    #0D2B4E;
+          --green:     #33911C;
+          --teal:      #0D7377;
+          --amber:     #E8A020;
+          --off-white: #F5F7FA;
+          --muted:     #6B7A91;
+          --border:    #DDE3EC;
         }
 
         body {
           font-family: 'Inter', sans-serif;
-          background: radial-gradient(circle at top, rgba(59,130,246,.18), transparent 28%), radial-gradient(circle at bottom right, rgba(16,185,129,.14), transparent 24%), linear-gradient(180deg, #020617 0%, #08172f 45%, #0b203f 100%);
-          color: #e2e8f0;
+          background: var(--off-white);
+          color: var(--navy-d);
           line-height: 1.7;
         }
 
         nav {
-          background: rgba(1,12,32,.72);
+          background: var(--navy-d);
           padding: 0 6%;
           height: 60px;
           display: flex;
@@ -47,7 +47,6 @@ export default function AfricanLanguagesPage({ goBack }) {
           position: sticky;
           top: 0;
           z-index: 100;
-          border-bottom: 1px solid rgba(255,255,255,.08);
         }
 
         .nav-brand {
@@ -89,10 +88,6 @@ export default function AfricanLanguagesPage({ goBack }) {
           max-width: 740px;
           margin: 0 auto;
           padding: 64px 5% 100px;
-          background: #ffffff;
-          color: #0b1220;
-          border-radius: 12px;
-          box-shadow: 0 12px 30px rgba(2,6,23,0.06);
         }
 
         .article-category {
@@ -120,7 +115,7 @@ export default function AfricanLanguagesPage({ goBack }) {
           font-family: 'Sora', sans-serif;
           font-size: clamp(1.75rem, 4vw, 2.5rem);
           font-weight: 800;
-          color: #0b1220;
+          color: var(--navy);
           line-height: 1.16;
           letter-spacing: -0.025em;
           margin-bottom: 28px;
@@ -137,7 +132,7 @@ export default function AfricanLanguagesPage({ goBack }) {
         .article-body p {
           font-size: 1.05rem;
           line-height: 1.88;
-          color: #334155;
+          color: #2C3A52;
           margin-bottom: 24px;
         }
 
@@ -168,43 +163,42 @@ export default function AfricanLanguagesPage({ goBack }) {
         }
 
         .lang-tag.navy {
-          color: #f8fafc;
-          border-color: rgba(248,250,252,0.3);
-          background: rgba(248,250,252,0.06);
+          color: var(--navy);
+          border-color: rgba(2,52,106,0.3);
+          background: rgba(2,52,106,0.06);
         }
 
         .lang-tag.green {
-          color: #86efac;
-          border-color: rgba(134,239,172,0.35);
-          background: rgba(134,239,172,0.07);
+          color: var(--green);
+          border-color: rgba(51,145,28,0.35);
+          background: rgba(51,145,28,0.07);
         }
 
         .lang-tag.teal {
-          color: #7dd3fc;
-          border-color: rgba(125,211,252,0.35);
-          background: rgba(125,211,252,0.07);
+          color: var(--teal);
+          border-color: rgba(13,115,119,0.35);
+          background: rgba(13,115,119,0.07);
         }
 
         .lang-tag.amber {
-          color: #fbbf24;
-          border-color: rgba(251,191,36,0.4);
-          background: rgba(251,191,36,0.08);
+          color: #b87a00;
+          border-color: rgba(232,160,32,0.4);
+          background: rgba(232,160,32,0.08);
         }
 
         .pull-quote {
-          border-left: 4px solid #fbbf24;
+          border-left: 4px solid var(--amber);
           padding: 18px 24px;
           margin: 40px 0;
-          background: rgba(1,12,32,.72);
+          background: #fff;
           border-radius: 0 10px 10px 0;
-          border: 1px solid rgba(255,255,255,.08);
         }
 
         .pull-quote p {
           font-family: 'Sora', sans-serif;
           font-size: 1.08rem !important;
           font-weight: 600 !important;
-          color: #f8fafc !important;
+          color: var(--navy) !important;
           line-height: 1.55 !important;
           margin: 0 !important;
           font-style: italic;
@@ -218,9 +212,9 @@ export default function AfricanLanguagesPage({ goBack }) {
         }
 
         .industry-card {
-          background: rgba(1,12,32,.72);
-          border: 1px solid rgba(255,255,255,.08);
-          border-left: 3px solid #86efac;
+          background: #fff;
+          border: 1px solid var(--border);
+          border-left: 3px solid var(--green);
           border-radius: 0 8px 8px 0;
           padding: 18px 18px 16px;
         }
@@ -386,8 +380,10 @@ export default function AfricanLanguagesPage({ goBack }) {
             <span className="lang-tag navy">Oromo</span>
             <span className="lang-tag green">Somali</span>
             <span className="lang-tag teal">Tigrinya</span>
-            <span className="lang-tag amber">Maasai</span>
-            <span className="lang-tag navy">Runyoro</span>
+            <span className="lang-tag amber">Lingala</span>
+            <span className="lang-tag navy">Hausa</span>
+            <span className="lang-tag green">Yoruba</span>
+            <span className="lang-tag teal">Zulu</span>
           </div>
 
           <p>Sheng deserves special mention. It is not a language that appears in any standard dataset — it is a fluid, generational urban creole spoken daily across Nairobi, blending Swahili, English, Kikuyu, Dholuo, and Sheng-specific coinages that evolve faster than any dictionary can track. Training a voice or text model to understand Sheng is not a data problem you can solve by scraping the web. It requires on-the-ground human expertise, and BDH has it.</p>
@@ -486,6 +482,10 @@ export default function AfricanLanguagesPage({ goBack }) {
           <p>Reach out to discuss your language requirements and data volumes: <strong>projects@barakadigitalhub.com</strong></p>
         </div>
       </div>
+
+      <footer>
+        © 2026 <span>Baraka Digital Hub</span> · Nairobi, Kenya · projects@barakadigitalhub.com
+      </footer>
     </>
   );
 }

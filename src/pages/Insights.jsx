@@ -20,25 +20,25 @@ export default function InsightsPage({ goBack }) {
         }
 
         :root {
-          --navy:      #f8fafc;
-          --navy-d:    #020617;
-          --green:     #86efac;
-          --teal:      #7dd3fc;
-          --amber:     #fbbf24;
-          --off-white: #e2e8f0;
-          --muted:     #94a3b8;
-          --border:    rgba(255,255,255,.08);
+          --navy:      #02346A;
+          --navy-d:    #0D2B4E;
+          --green:     #33911C;
+          --teal:      #0D7377;
+          --amber:     #E8A020;
+          --off-white: #F5F7FA;
+          --muted:     #6B7A91;
+          --border:    #DDE3EC;
         }
 
         body {
           font-family: 'Inter', sans-serif;
-          background: radial-gradient(circle at top, rgba(59,130,246,.18), transparent 28%), radial-gradient(circle at bottom right, rgba(16,185,129,.14), transparent 24%), linear-gradient(180deg, #020617 0%, #08172f 45%, #0b203f 100%);
-          color: #e2e8f0;
+          background: var(--off-white);
+          color: var(--navy-d);
           line-height: 1.7;
         }
 
         nav {
-          background: rgba(1,12,32,.72);
+          background: var(--navy-d);
           padding: 0 6%;
           height: 60px;
           display: flex;
@@ -47,7 +47,6 @@ export default function InsightsPage({ goBack }) {
           position: sticky;
           top: 0;
           z-index: 100;
-          border-bottom: 1px solid rgba(255,255,255,.08);
         }
 
         .nav-brand {
@@ -89,10 +88,6 @@ export default function InsightsPage({ goBack }) {
           max-width: 740px;
           margin: 0 auto;
           padding: 64px 5% 100px;
-          background: #ffffff;
-          color: #0b1220;
-          border-radius: 12px;
-          box-shadow: 0 12px 30px rgba(2,6,23,0.06);
         }
 
         .article-category {
@@ -120,7 +115,7 @@ export default function InsightsPage({ goBack }) {
           font-family: 'Sora', sans-serif;
           font-size: clamp(1.75rem, 4vw, 2.5rem);
           font-weight: 800;
-          color: #0b1220;
+          color: var(--navy);
           line-height: 1.16;
           letter-spacing: -0.025em;
           margin-bottom: 28px;
@@ -137,7 +132,7 @@ export default function InsightsPage({ goBack }) {
         .article-body p {
           font-size: 1.05rem;
           line-height: 1.88;
-          color: #334155;
+          color: #2C3A52;
           margin-bottom: 24px;
         }
 
@@ -153,17 +148,16 @@ export default function InsightsPage({ goBack }) {
         .platform-block {
           border-left: 3px solid var(--green);
           padding: 16px 20px;
-          background: rgba(1,12,32,.72);
+          background: #fff;
           border-radius: 0 8px 8px 0;
           margin: 18px 0;
-          border: 1px solid rgba(255,255,255,.08);
         }
 
         .platform-block .platform-name {
           font-family: 'Sora', sans-serif;
           font-weight: 700;
           font-size: 0.88rem;
-          color: #f8fafc;
+          color: var(--navy);
           margin-bottom: 6px;
         }
 
@@ -200,7 +194,7 @@ export default function InsightsPage({ goBack }) {
 
         .service-item ul li {
           font-size: 0.95rem;
-          color: rgba(226,232,240,.85);
+          color: #2C3A52;
           padding: 10px 0 10px 20px;
           border-bottom: 1px solid var(--border);
           position: relative;
@@ -451,7 +445,9 @@ export default function InsightsPage({ goBack }) {
         </div>
       </div>
 
-      
+      <footer>
+        © 2026 <span>Baraka Digital Hub</span> · Nairobi, Kenya · projects@barakadigitalhub.com
+      </footer>
     </>
   );
 }
