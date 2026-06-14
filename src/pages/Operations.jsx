@@ -105,13 +105,13 @@ function Operations() {
           .sla-row span:last-child{font-family:var(--mono);font-size:12.5px;color:var(--cyan);font-weight:600;}
           .final{padding:80px 0;text-align:center;border-top:1px solid var(--line);}
           .final .tag{justify-content:center;}
-          .final h2{font-size:clamp(26px,4vw,40px);font-weight:700;letter-spacing:-.5px;margin:0 auto 16px;}
-          .final p{color:var(--mid);max-width:540px;margin:0 auto 34px;font-size:15.5px;}
+          .final h2{font-size:clamp(26px,4vw,40px);font-weight:700;letter-spacing:-.5px;margin:0 auto 16px;color:var(--hi);}
+          .final p{color:rgba(236,243,250,.88);max-width:540px;margin:0 auto 34px;font-size:15.5px;}
           .btn{font-family:var(--mono);font-size:12.5px;font-weight:600;padding:14px 26px;border-radius:7px;text-decoration:none;letter-spacing:.5px;display:inline-flex;align-items:center;gap:8px;transition:.18s ease;cursor:pointer;border:none;}
-          .btn-p{background:var(--cyan);color:var(--navy);}
-          .btn-p:hover{box-shadow:0 0 28px rgba(45,217,200,.45);transform:translateY(-1px);}
-          .btn-g{border:1px solid var(--line);color:var(--hi);background:transparent;margin-left:12px;}
-          .btn-g:hover{border-color:var(--cyan);color:var(--cyan);}
+          .btn-primary{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#0f4fad,#118ab2);color:white;padding:14px 26px;border-radius:16px;font-weight:700;font-size:0.98rem;text-decoration:none;box-shadow:0 16px 36px rgba(15,55,100,.2);transition:transform .22s,box-shadow .22s,background .22s;outline:none;border:none;cursor:pointer;font-family:'Segoe UI', Arial, sans-serif;}
+          .btn-primary:hover{transform:translateY(-2px);box-shadow:0 20px 42px rgba(15,55,100,.28);background:linear-gradient(135deg,#145d9e,#0d95b6);}
+          .btn-secondary{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#0f9d68,#06b6d4);color:white;padding:14px 26px;border-radius:16px;font-weight:700;font-size:0.98rem;text-decoration:none;border:1px solid rgba(94,176,217,.32);transition:transform .22s,box-shadow .22s,background .22s;cursor:pointer;font-family:'Segoe UI', Arial, sans-serif;box-shadow:0 16px 32px rgba(15,75,115,.18);}
+          .btn-secondary:hover{background:linear-gradient(135deg,#14b8a6,#0ea5e9);transform:translateY(-2px);box-shadow:0 20px 40px rgba(15,75,115,.26);}
           .cstrip{margin-top:36px;font-family:var(--mono);font-size:12px;color:var(--dim);display:flex;gap:26px;justify-content:center;flex-wrap:wrap;}
           .cstrip a{color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:7px;}
           .cstrip a:hover{color:var(--cyan);}
@@ -420,8 +420,8 @@ function Operations() {
             <h2>Ready to move forward?</h2>
             <p>One professional delivery path, clearly mapped. Reach out to align on requirements, timing, and the right delivery model for your project.</p>
             <div>
-              <button className="btn btn-p" onClick={() => navigate("contact")}>Contact us to begin →</button>
-              <button className="btn btn-g" onClick={() => navigate("pilot")}>Learn about the pilot</button>
+              <button className="btn-primary" onClick={() => navigate("contact")}>Contact us to begin →</button>
+              <button className="btn-secondary" onClick={() => navigate("pilot")}>Learn about the pilot</button>
             </div>
           </div>
         </div>
