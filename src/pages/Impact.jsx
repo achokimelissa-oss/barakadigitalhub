@@ -236,42 +236,50 @@ function Impact() {
             margin-bottom: 80px;
           }
 
-          .btn-primary {
+          .impact-page .button.primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
             background: linear-gradient(135deg, #0f4fad, #118ab2);
-            color: #fff;
+            color: white;
             border: none;
             border-radius: 16px;
-            padding: 14px 24px;
-            font-size: 14px;
+            padding: 14px 26px;
+            font-size: 0.98rem;
             font-weight: 700;
-            letter-spacing: 0.01em;
-            font-family: inherit;
+            text-decoration: none;
+            box-shadow: 0 18px 42px rgba(15,55,100,0.2);
+            transition: transform .22s, box-shadow .22s, background .22s;
             cursor: pointer;
+            font-family: inherit;
+          }
+
+          .impact-page .button.primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 42px rgba(15,55,100,0.28);
+          }
+
+          .impact-page .button.secondary {
+            background: rgba(255,255,255,0.08);
+            color: #e2e8f0;
+            border: 1px solid rgba(255,255,255,0.14);
+            border-radius: 16px;
+            padding: 14px 26px;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
             gap: 10px;
+            font-size: 0.98rem;
+            font-weight: 700;
             transition: transform .22s, box-shadow .22s, background .22s;
-            box-shadow: 0 18px 42px rgba(15,55,100,0.18);
-          }
-
-          .btn-primary:hover { transform: translateY(-2px); }
-
-          .btn-ghost {
-            background: transparent;
-            color: var(--text);
-            border: 1px solid rgba(143, 168, 200, 0.35);
-            border-radius: 8px;
-            padding: 13px 28px;
-            font-size: 14px;
-            font-weight: 600;
             cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            transition: border-color 0.2s, color 0.2s;
+            font-family: inherit;
           }
 
-          .btn-ghost:hover { border-color: var(--text-dim); color: var(--text); }
+          .impact-page .button.secondary:hover {
+            transform: translateY(-2px);
+            background: rgba(255,255,255,0.12);
+          }
 
           .stats-grid {
             display: grid;
@@ -584,10 +592,10 @@ function Impact() {
             We convert commercial digital work into a consistent support system for youth and Baraka Children’s Home. Every engagement is designed for measurable outcomes, reliable delivery, and enterprise accountability.
           </p>
           <div className="cta-row">
-            <Link className="btn-primary" to="/services">
+            <Link className="button primary" to="/services">
               Explore services
             </Link>
-            <Link className="btn-ghost" to="/contact#send-message">
+            <Link className="button secondary" to="/contact#send-message">
               Schedule a briefing
             </Link>
           </div>
@@ -779,10 +787,10 @@ function Impact() {
               Reliable annotation, transcription, and data operations — with measurable social impact built in from Nairobi to global teams.
             </p>
             <div className="cta-row">
-              <Link className="btn-primary" to="/contact#send-message">
+              <Link className="button primary" to="/contact#send-message">
                 Start a conversation
               </Link>
-              <Link className="btn-ghost" to="/services">
+              <Link className="button secondary" to="/services">
                 Review services
               </Link>
             </div>

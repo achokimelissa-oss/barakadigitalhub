@@ -1289,10 +1289,6 @@ const BarakaDigitalHub = () => {
         .font-display { font-family: 'Georgia', 'Times New Roman', serif !important; }
         .hero-h1 { font-family: 'Georgia', 'Times New Roman', serif !important; font-size: clamp(3rem, 5vw, 4.2rem) !important; }
         .page-container { width: 100% !important; max-width: none !important; margin: 0 !important; padding: 0 24px !important; }
-        /* Pilot / Impact specific container and nav overrides to match Pilot topbar */
-        body.pilot-page .page-container, body.impact-page .page-container { max-width: 1080px !important; margin: 0 auto !important; padding: 0 24px !important; }
-        body.pilot-page .nav-link, body.impact-page .nav-link { color: #9FB4CC !important; font-family: 'JetBrains Mono', monospace !important; font-size: 13px !important; }
-        body.pilot-page .nav-link:hover, body.impact-page .nav-link:hover { color: #2DD9C8 !important; }
         .section-h2 { font-size: clamp(1.6rem, 2vw, 2rem) !important; color: #0f172a; font-weight: 700; letter-spacing: -0.02em; line-height: 1.16; }
         .section-copy { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !important; }
         .hero-copy { font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important; }
@@ -1393,10 +1389,8 @@ const BarakaDigitalHub = () => {
         .highlight-pill { display: inline-flex; align-items: center; justify-content: center; width: fit-content; padding: 10px 16px; border-radius: 9999px; background: #2563eb; color: white; font-size: 0.88rem; font-weight: 700; }
         .about-grid, .impact-grid, .impact-highlight-grid { width: 100%; }
         .nav-link { color: inherit; font-weight:500;font-size:.88rem;text-decoration:none;cursor:pointer;transition:color .2s;background:none;border:none;font-family:inherit; }
-        .nav-link:hover { color: rgba(255,255,255,0.85); }
-        /* Pilot-like nav styling for pilot and impact pages */
-        body.pilot-page .nav-link, body.impact-page .nav-link { color: #9FB4CC; font-family: 'JetBrains Mono', monospace; }
-        body.pilot-page .nav-link:hover, body.impact-page .nav-link:hover { color: #2DD9C8; }
+        .nav-link:hover { color: #1d4ed8; }
+        .about-card, .about-panel, .impact-card, .stat-card, .card {
         @media(max-width:1024px) {
           .hero-grid { grid-template-columns:1fr !important; }
           .hero-right { display:block !important; }
@@ -1438,24 +1432,24 @@ const BarakaDigitalHub = () => {
         .hidden-mobile { display:flex; }
       `}</style>
 
-      <nav style={{ position: (page === "pilot" || page === "impact") ? "relative" : "fixed", top:0, left:0, right:0, zIndex: (page === "pilot" || page === "impact") ? 25 : 100, transition:"all .3s", background: (page === "pilot" || page === "impact") ? (scrolled ? "rgba(4, 12, 22, 0.92)" : "transparent") : ((scrolled||page!=="home") ? "rgba(255,255,255,.98)" : "transparent"), backdropFilter: (scrolled||page!=="home") ? "blur(20px)" : "none", borderBottom: (page === "pilot" || page === "impact") ? "1px solid rgba(255,255,255,0.04)" : ((scrolled||page!=="home") ? "1px solid rgba(0,0,0,.08)" : "none"), padding: (page === "pilot" || page === "impact") ? "18px 0" : "0", color: (page === "pilot" || page === "impact") ? "#e7f7ff" : "#0f172a" }}>
-        <div className="page-container" style={{ display:"flex", alignItems:"center", justifyContent:"space-between", height: (page === "pilot" || page === "impact") ? "auto" : (scrolled ? 72 : 76), padding: "0 24px" }}>
+      <nav style={{ position: "fixed", top:0, left:0, right:0, zIndex: 100, transition:"all .3s", background: (scrolled||page!=="home") ? "rgba(255,255,255,.98)" : "transparent", backdropFilter: (scrolled||page!=="home") ? "blur(20px)" : "none", borderBottom: (scrolled||page!=="home") ? "1px solid rgba(0,0,0,.08)" : "none", padding: "0", color: "#0f172a" }}>
+        <div className="page-container" style={{ display:"flex", alignItems:"center", justifyContent:"space-between", height: scrolled ? 72 : 76, padding: "0 24px" }}>
           <a href="/" onClick={(e) => { e.preventDefault(); navigate("home"); }} style={{ display:"flex", alignItems:"center", gap:10, textDecoration:"none", color:"inherit", padding:0 }}>
             <img src="/favicon-512.png" alt="Baraka Digital Hub logo" style={{ height:56, width:"auto", objectFit:"contain" }} />
           </a>
           <div className="hidden-mobile" style={{ display: isMobile ? "none" : "flex", gap:28, alignItems:"center" }}>
             {navLinks.map(l => (
-              <a key={l.page} href={l.page === "home" ? "/" : `/${l.page}`} onClick={(e) => { e.preventDefault(); navigate(l.page); }} className="nav-link" style={{ textDecoration: "none", color: (page === "pilot" || page === "impact") ? "#e7f7ff" : "#0f172a" }}>{l.label}</a>
+              <a key={l.page} href={l.page === "home" ? "/" : `/${l.page}`} onClick={(e) => { e.preventDefault(); navigate(l.page); }} className="nav-link" style={{ textDecoration: "none" }}>{l.label}</a>
             ))}
           </div>
-          <button onClick={() => setNav(!nav)} className="mobile-menu-btn" style={{ background:"none", border:"none", cursor:"pointer", color: (page === "pilot" || page === "impact") ? "#e7f7ff" : "#0f172a" }}>
+          <button onClick={() => setNav(!nav)} className="mobile-menu-btn" style={{ background:"none", border:"none", cursor:"pointer", color: "#0f172a" }}>
             {nav ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
         {nav && (
-          <div style={{ background:"white", borderTop:"1px solid #f1f5f9", padding:"12px 0" }}>
+          <div className="mobile-menu-panel" style={{ padding:"12px 0" }}>
             {navLinks.map(l => (
-              <a key={l.page} href={l.page === "home" ? "/" : `/${l.page}`} onClick={(e) => { e.preventDefault(); navigate(l.page); setNav(false); }} style={{ display:"block", width:"100%", textAlign:"left", padding:"13px 24px", color:"#475569", fontWeight:500, background:"none", border:"none", cursor:"pointer", fontSize:".95rem", fontFamily:"inherit", textDecoration:"none" }}>{l.label}</a>
+              <a key={l.page} href={l.page === "home" ? "/" : `/${l.page}`} onClick={(e) => { e.preventDefault(); navigate(l.page); setNav(false); }} style={{ display:"block", width:"100%", textAlign:"left", padding:"13px 24px", color: "#475569", fontWeight:500, background:"none", border:"none", cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit", textDecoration:"none" }}>{l.label}</a>
             ))}
           </div>
         )}
