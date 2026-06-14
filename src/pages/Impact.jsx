@@ -192,7 +192,7 @@ function Impact() {
             max-width: 1160px;
             width: 100%;
             margin: 0 auto;
-            padding: 72px 40px 100px;
+            padding: 120px 40px 100px;
           }
 
           .tag {
@@ -575,7 +575,7 @@ function Impact() {
             .impact-grid { grid-template-columns: 1fr; }
             .alloc-row { grid-template-columns: 70px 1fr 60px; gap: 12px; }
             .cta-block { padding: 40px 24px; }
-            .page { padding: 60px 24px 80px; }
+            .page { padding: 100px 24px 80px; }
           }
         `}</style>
       </Helmet>
