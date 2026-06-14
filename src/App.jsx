@@ -1301,59 +1301,55 @@ const BarakaDigitalHub = () => {
             <div style={{ position:"absolute", top:0, left:0, width: isMobile ? 300 : 500, height: isMobile ? 300 : 500, borderRadius:"50%", background:"radial-gradient(circle,rgba(59,130,246,.14) 0%,transparent 74%)", pointerEvents:"none", transform:"translate(-25%, -25%)" }} />
             <div style={{ position:"absolute", bottom: isMobile ? "-20%" : "-15%", left: isMobile ? "-30%" : "-15%", width: isMobile ? 420 : 700, height: isMobile ? 420 : 700, borderRadius:"50%", background:"radial-gradient(circle,rgba(15,157,104,.08) 0%,transparent 70%)", pointerEvents: "none" }} />
             <div style={{ position:"absolute", bottom:0, right:0, width: isMobile ? 300 : 520, height: isMobile ? 300 : 520, borderRadius:"50%", background:"radial-gradient(circle,rgba(16,185,129,.14) 0%,transparent 74%)", pointerEvents:"none", transform:"translate(25%, 25%)" }} />
-            <div className="page-container" style={{ position:"relative", zIndex:1 }}>
-              <div className="hero-grid" style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap:56, alignItems:"center" }}>
+            <div className="page-container" style={{ position:"relative", zIndex:1, maxWidth:1200, margin:"0 auto", padding:"0 24px" }}>
+              <div className="hero-grid" style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "1.2fr 0.8fr", gap:64, alignItems:"center" }}>
                 <div>
-                  <div style={{ display:"inline-flex", alignItems:"center", gap:10, background:"linear-gradient(135deg, rgba(14,165,233,.16), rgba(15, 123, 255, .08))", border:"1px solid rgba(14,165,233,.28)", borderRadius:100, padding:"10px 20px", marginBottom:18, boxShadow:"0 18px 40px rgba(15,23,42,.08)" }}>
+                  <div style={{ display:"inline-flex", alignItems:"center", gap:10, background:"linear-gradient(135deg, rgba(14,165,233,.16), rgba(15, 123, 255, .08))", border:"1px solid rgba(14,165,233,.28)", borderRadius:100, padding:"12px 24px", marginBottom:20, boxShadow:"0 20px 50px rgba(15,23,42,.08)" }}>
                     <span className="ani-pulse" style={{ width:8, height:8, borderRadius:"50%", background:"#0f9d68", display:"inline-block", boxShadow:"0 0 0 4px rgba(15,23,42,.06)" }} />
-                    <span className="typing-effect" style={{ fontFamily:"'Segoe UI', Arial, sans-serif", fontSize:"0.85rem", fontWeight:800, color:"#0f7a44", letterSpacing:"0.12em", textTransform:"uppercase", textShadow:"0 1px 2px rgba(15,23,42,.12)" }}>Empowering Futures Through Technology</span>
+                    <span className="typing-effect" style={{ fontFamily:"'Segoe UI', Arial, sans-serif", fontSize:"0.88rem", fontWeight:800, color:"#0f7a44", letterSpacing:"0.14em", textTransform:"uppercase", textShadow:"0 1px 2px rgba(15,23,42,.12)" }}>Empowering Futures Through Technology</span>
                   </div>
-                  <h1 className="hero-h1 font-display" style={{ fontSize:"4.2rem", fontWeight:900, lineHeight:1.02, letterSpacing:"-.02em", color:"#0f172a", marginBottom:18, textShadow:"0 4px 20px rgba(15,23,42,.05)" }}>
+                  <h1 className="hero-h1 font-display" style={{ fontSize: isMobile ? "3rem" : "4.6rem", fontWeight:900, lineHeight:1.04, letterSpacing:"-.03em", color:"#0f172a", marginBottom:22, textShadow:"0 6px 24px rgba(15,23,42,.06)" }}>
                     AI Training & Digital Operations
                     <br />
                     <span style={{ background:"linear-gradient(90deg,#1d4ed8,#06b6d4,#0f9d68)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", backgroundClip:"text", fontWeight:900 }}>Built for Scale</span>
                   </h1>
-                  <div style={{ display:"flex", gap:12, flexWrap:"wrap", marginBottom:36 }}>
+                  <p style={{ maxWidth:720, color:"#475569", fontSize: isMobile ? "1rem" : "1.05rem", lineHeight:1.85, marginBottom:36, fontFamily:"'Inter', Arial, sans-serif" }}>
+                    Baraka Digital Hub delivers enterprise-ready AI data operations with disciplined execution, secure workflows, and measurable outcomes. Our Nairobi-based teams support global clients with repeatable delivery, quality governance, and production-grade transparency.
+                  </p>
+                  <div style={{ display:"flex", gap:16, flexWrap:"wrap", marginBottom:40 }}>
                     <button type="button" onClick={() => navigate("pilot")} className="btn-primary">Start Pilot Program <ArrowRight size={17} /></button>
                     <button type="button" onClick={() => navigate("services")} className="btn-secondary-alt">Explore Services</button>
                   </div>
-                  <div className="stat-grid" style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3,1fr)", gap:10 }}>
+                  <div className="stat-grid" style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3,1fr)", gap:14 }}>
                     {[{v:"100+",l:"Contractors"},{v:"<4hr",l:"Response"},{v:"5K+ Hr",l:"Weekly Capacity"}].map((s,i)=>(
-                      <div key={i} style={{ background:"rgba(255,255,255,.8)", backdropFilter:"blur(12px)", border:"1px solid rgba(255,255,255,.9)", borderRadius:14, padding:"13px 10px", boxShadow:"0 2px 12px rgba(0,0,0,.04)", textAlign:"center" }}>
-                        <div className="font-display" style={{ fontSize:"1.5rem", fontWeight:800, color:"#0f172a" }}>{s.v}</div>
-                        <div style={{ fontSize:".72rem", color:"#94a3b8", marginTop:2, fontWeight:500 }}>{s.l}</div>
+                      <div key={i} style={{ background:"rgba(255,255,255,.92)", border:"1px solid rgba(15,23,42,.08)", borderRadius:16, padding:"18px 16px", boxShadow:"0 12px 30px rgba(15,23,42,.08)", textAlign:"center" }}>
+                        <div className="font-display" style={{ fontSize:"1.75rem", fontWeight:800, color:"#0f172a" }}>{s.v}</div>
+                        <div style={{ fontSize:"0.86rem", color:"#64748b", marginTop:8, fontWeight:600 }}>{s.l}</div>
                       </div>
                     ))}
                   </div>
                 </div>
-                <div className="hero-right" style={{ position:"relative" }}>
-                  <div className="code-panel">
-                    <div className="code-panel-header">
-                      <div className="code-dot" />
-                      <div className="code-dot" style={{ background: '#22c55e' }} />
-                      <div className="code-dot" style={{ background: '#f97316' }} />
-                      <div style={{ marginLeft:'auto', fontSize:'.78rem', color:'#cbd5e1', fontWeight:700, letterSpacing:'.12em', textTransform:'uppercase' }}>AI Ops</div>
+                <div style={{ display:"grid", gap:24 }}>
+                  <div style={{ background:"rgba(255,255,255,.95)", border:"1px solid rgba(15,23,42,.08)", borderRadius:28, padding:"36px 32px", boxShadow:"0 24px 80px rgba(15,23,42,.09)", minHeight: isMobile ? undefined : 360 }}>
+                    <div style={{ fontSize:"0.78rem", letterSpacing:"0.16em", textTransform:"uppercase", color:"#475569", marginBottom:16, fontWeight:700 }}>
+                      Enterprise-grade delivery
                     </div>
-                    <div style={{ height:3, background:'linear-gradient(90deg,#1d4ed8,#06b6d4,#0f9d68)', margin:'0 28px 22px 28px', borderRadius:999, opacity:0.86 }} />
-                    <div style={{ padding:'0 28px 28px 28px' }}>
-                      <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between", marginBottom:18 }}>
-                        <div>
-                          <div style={{ fontSize:".72rem", color:"#94a3b8", fontWeight:700, textTransform:"uppercase", letterSpacing:".12em", marginBottom:6 }}>Operational Standards</div>
-                          <div className="font-display" style={{ fontSize:"1.08rem", fontWeight:800, color:"#f8fafc", letterSpacing:"-.02em" }}>AI-ready delivery protocols</div>
-                        </div>
-                      </div>
+                    <h2 style={{ fontSize: isMobile ? "1.95rem" : "2.4rem", lineHeight:1.08, fontWeight:800, color:"#0f172a", marginBottom:18 }}>Secure workflows. Consistent scale. Trusted execution.</h2>
+                    <p style={{ color:"#475569", fontSize:"1rem", lineHeight:1.75, maxWidth:520, marginBottom:24 }}>
+                      We combine managed operational controls, robust QA, and transparent reporting so your AI programs stay on time, on budget, and compliant across every delivery cycle.
+                    </p>
+                    <div style={{ display:"grid", gap:14 }}>
                       {[
-                        "Human-in-the-loop quality control",
-                        "Scalable African digital workforce",
-                        "Secure data handling practices",
-                        "Transparent communication & reporting",
-                        "Fast turnaround with structured QA",
-                        "Flexible workflows tailored to client operations",
-                        "Enterprise-ready delivery standards across all services"
-                      ].map((item,i)=>(
-                        <div key={i} className="code-line">
-                          <span className="label">{item}</span>
-                          <span>✓</span>
+                        "Structured quality governance",
+                        "Secure data handling & compliance",
+                        "Scalable African delivery teams",
+                        "Transparent progress reporting"
+                      ].map((item, idx) => (
+                        <div key={idx} style={{ display:"flex", alignItems:"flex-start", gap:12 }}>
+                          <div style={{ minWidth:24, height:24, borderRadius:8, background:"#0f4fad", display:"grid", placeItems:"center", color:"white", fontSize:"0.85rem", fontWeight:700 }}>
+                            ✓
+                          </div>
+                          <div style={{ color:"#475569", fontSize:"0.98rem", lineHeight:1.7, fontWeight:600 }}>{item}</div>
                         </div>
                       ))}
                     </div>
