@@ -1129,12 +1129,14 @@ const BarakaDigitalHub = () => {
         @keyframes grid-flow { 0% { transform: translate(0, 0); } 100% { transform: translate(40px, 40px); } }
         .hero-grid { position: relative; }
         .hero-grid::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(rgba(14,165,233,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(14,165,233,.06) 1px, transparent 1px); background-size: 120px 120px; pointer-events: none; opacity: .35; }
-        .code-panel { background: rgba(7,15,30,.94); border: 1px solid rgba(14,165,233,.25); color: #e2e8f0; border-radius: 28px; box-shadow: 0 28px 90px rgba(10,22,51,.22); overflow: hidden; }
-        .code-panel-header { display: flex; align-items: center; gap: 10px; margin-bottom: 22px; }
-        .code-dot { width: 10px; height: 10px; border-radius: 50%; background: #0ea5e9; box-shadow: 0 0 0 4px rgba(14,165,233,.18); }
-        .code-line { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; border-radius: 14px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08); margin-bottom: 10px; }
-        .code-line span { font-size: .88rem; color: #cbd5e1; }
-        .code-line .label { color: #a5b4fc; font-weight: 700; }
+        .code-panel { position: relative; background: rgba(8,18,36,.92); border: 1px solid rgba(148,163,184,.22); color: #e2e8f0; border-radius: 28px; box-shadow: 0 28px 100px rgba(10,22,51,.30); overflow: hidden; backdrop-filter: blur(10px); font-family: 'Inter', Arial, sans-serif; }
+        .code-panel::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px); background-size: 88px 88px; opacity: .12; pointer-events: none; }
+        .code-panel-header { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; padding: 0 28px 0 28px; }
+        .code-dot { width: 10px; height: 10px; border-radius: 50%; background: #0ea5e9; border: 1px solid rgba(255,255,255,.18); box-shadow: 0 0 0 3px rgba(14,165,233,.12); }
+        .code-line { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; border-radius: 14px; background: rgba(255,255,255,.06); border: 1px solid rgba(148,163,184,.16); margin-bottom: 10px; }
+        .code-line span { font-size: .95rem; color: #e2e8f0; }
+        .code-line .label { color: #cbd5e1; font-weight: 700; letter-spacing: .01em; }
+        .code-line span:last-child { color: #86efac; font-weight: 700; }
         .dot-grid { background-image: radial-gradient(circle, #94a3b820 1px, transparent 1px); background-size: 28px 28px; pointer-events: none; }
         .section-tech-bg { position: relative; overflow: hidden; background: linear-gradient(180deg, #f8fafc 0%, #ecf5ff 100%); }
         .section-tech-bg::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 14% 22%, rgba(155,109,255,0.22) 0%, transparent 36%), radial-gradient(circle at 86% 18%, rgba(16,185,129,0.18) 0%, transparent 34%), radial-gradient(circle at 52% 54%, rgba(59,130,246,0.14) 0%, transparent 38%); background-repeat: no-repeat; pointer-events: none; animation: tech-bg-glow 18s ease-in-out infinite; }
@@ -1326,18 +1328,18 @@ const BarakaDigitalHub = () => {
                 </div>
                 <div className="hero-right" style={{ position:"relative" }}>
                   <div className="code-panel">
-                    <div className="code-panel-header" style={{ padding: '24px 28px 0 28px' }}>
+                    <div className="code-panel-header">
                       <div className="code-dot" />
                       <div className="code-dot" style={{ background: '#22c55e' }} />
                       <div className="code-dot" style={{ background: '#f97316' }} />
-                      <div style={{ marginLeft:'auto', fontSize:'.8rem', color:'#94a3b8', fontWeight:600, letterSpacing:'.08em', textTransform:'uppercase' }}>AI Ops</div>
+                      <div style={{ marginLeft:'auto', fontSize:'.78rem', color:'#cbd5e1', fontWeight:700, letterSpacing:'.12em', textTransform:'uppercase' }}>AI Ops</div>
                     </div>
-                    <div style={{ height:3, background:'linear-gradient(90deg,#1d4ed8,#06b6d4,#0f9d68)', margin:'0 28px 22px 28px', borderRadius:999 }} />
+                    <div style={{ height:3, background:'linear-gradient(90deg,#1d4ed8,#06b6d4,#0f9d68)', margin:'0 28px 22px 28px', borderRadius:999, opacity:0.86 }} />
                     <div style={{ padding:'0 28px 28px 28px' }}>
-                      <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between", marginBottom:22 }}>
+                      <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between", marginBottom:18 }}>
                         <div>
-                          <div style={{ fontSize:".7rem", color:"#94a3b8", fontWeight:600, textTransform:"uppercase", letterSpacing:".06em", marginBottom:3 }}>Operational Standards</div>
-                          <div className="font-display" style={{ fontSize:"1.1rem", fontWeight:800, color:"#e2e8f0" }}>AI-ready delivery protocols</div>
+                          <div style={{ fontSize:".72rem", color:"#94a3b8", fontWeight:700, textTransform:"uppercase", letterSpacing:".12em", marginBottom:6 }}>Operational Standards</div>
+                          <div className="font-display" style={{ fontSize:"1.08rem", fontWeight:800, color:"#f8fafc", letterSpacing:"-.02em" }}>AI-ready delivery protocols</div>
                         </div>
                       </div>
                       {[
@@ -1349,15 +1351,11 @@ const BarakaDigitalHub = () => {
                         "Flexible workflows tailored to client operations",
                         "Enterprise-ready delivery standards across all services"
                       ].map((item,i)=>(
-
                         <div key={i} className="code-line">
                           <span className="label">{item}</span>
                           <span>✓</span>
                         </div>
                       ))}
-                      <button onClick={() => navigate("workflow")} style={{ marginTop:16, display:"inline-flex", alignItems:"center", gap:6, color:"#7dd3fc", fontWeight:600, fontSize:".85rem", background:"none", border:"1px solid rgba(125,211,252,.4)", borderRadius:12, padding:"10px 16px", cursor:"pointer", fontFamily:"inherit" }}>
-                        View Workflow Process <ChevronRight size={15} />
-                      </button>
                     </div>
                   </div>
                 </div>
