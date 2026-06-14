@@ -1,7 +1,106 @@
+import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
 function Impact() {
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext("2d");
+    let W = 0;
+    let H = 0;
+    let nodes = [];
+    let animationFrame = 0;
+
+    const resize = () => {
+      W = canvas.width = window.innerWidth;
+      H = canvas.height = window.innerHeight;
+      init();
+    };
+
+    const init = () => {
+      nodes = [];
+      const count = Math.floor((W * H) / 18000);
+      for (let i = 0; i < count; i += 1) {
+        nodes.push({
+          x: Math.random() * W,
+          y: Math.random() * H,
+          vx: (Math.random() - 0.5) * 0.3,
+          vy: (Math.random() - 0.5) * 0.3,
+          r: Math.random() * 1.5 + 0.5,
+          pulse: Math.random() * Math.PI * 2,
+          bright: Math.random() > 0.85,
+        });
+      }
+    };
+
+    const draw = () => {
+      ctx.clearRect(0, 0, W, H);
+
+      const gridSize = 48;
+      for (let x = gridSize; x < W; x += gridSize) {
+        for (let y = gridSize; y < H; y += gridSize) {
+          ctx.beginPath();
+          ctx.arc(x, y, 0.8, 0, Math.PI * 2);
+          ctx.fillStyle = "rgba(46,158,68,0.08)";
+          ctx.fill();
+        }
+      }
+
+      const t = Date.now() * 0.001;
+
+      for (let i = 0; i < nodes.length; i += 1) {
+        for (let j = i + 1; j < nodes.length; j += 1) {
+          const a = nodes[i];
+          const b = nodes[j];
+          const dx = a.x - b.x;
+          const dy = a.y - b.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < 140) {
+            const alpha = (1 - dist / 140) * 0.12;
+            ctx.beginPath();
+            ctx.moveTo(a.x, a.y);
+            ctx.lineTo(b.x, b.y);
+            ctx.strokeStyle = `rgba(46,158,68,${alpha})`;
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        }
+      }
+
+      for (const n of nodes) {
+        n.x += n.vx;
+        n.y += n.vy;
+        if (n.x < 0 || n.x > W) n.vx *= -1;
+        if (n.y < 0 || n.y > H) n.vy *= -1;
+
+        const pulse = Math.sin(t * 1.2 + n.pulse) * 0.3 + 0.7;
+        const alpha = n.bright ? 0.8 * pulse : 0.25 * pulse;
+        const color = n.bright ? `rgba(46,158,68,${alpha})` : `rgba(27,80,180,${alpha})`;
+
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, n.r * (n.bright ? 1.5 : 1), 0, Math.PI * 2);
+        ctx.fillStyle = color;
+        ctx.fill();
+      }
+
+      animationFrame = requestAnimationFrame(draw);
+    };
+
+    resize();
+    draw();
+    window.addEventListener("resize", resize);
+
+    return () => {
+      cancelAnimationFrame(animationFrame);
+      window.removeEventListener("resize", resize);
+    };
+  }, []);
+
   return (
     <>
       <Helmet bodyAttributes={{ class: "impact-page" }}>
@@ -11,286 +110,639 @@ function Impact() {
           content="We convert commercial digital work into a consistent support system for youth and Baraka Children’s Home."
         />
         <style>{`
-          :root{
-            --navy:#041b45;
-            --dark-navy:#07142a;
-            --deepest:#010810;
-            --green:#2fc4c4;
-            --teal:#4dd7ff;
-            --amber:#7dcfff;
-            --text:#ffffff;
-            --text-dim:#d4e3ff;
-            --line:rgba(255,255,255,0.12);
+          :root {
+            --navy: #041b45;
+            --dark-navy: #07142a;
+            --deepest: #010810;
+            --green: #2e9e44;
+            --teal: #4dd7ff;
+            --amber: #7dcfff;
+            --text: #f3f7ff;
+            --text-dim: #8fa8c8;
+            --line: rgba(255,255,255,0.12);
           }
 
-          *{margin:0;padding:0;box-sizing:border-box;}
+          * { margin: 0; padding: 0; box-sizing: border-box; }
 
-          body{
-            background:
-              radial-gradient(circle at 15% 10%, rgba(14,165,233,0.12), transparent 32%),
-              radial-gradient(circle at 85% 18%, rgba(56,189,248,0.08), transparent 28%),
-              linear-gradient(180deg, #020617 0%, #07111f 45%, #040b16 100%);
-            color:var(--text);
-            font-family:'Inter', 'Segoe UI', system-ui, sans-serif;
-            line-height:1.65;
-            background-attachment:fixed;
-            overflow-x:hidden;
+          body {
+            background: #0b1f3a;
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
           }
 
-          body.impact-page .section-block,
-          body.impact-page .about-card,
-          body.impact-page .about-panel,
-          body.impact-page .impact-card {
-            background: rgba(3, 12, 24, 0.78);
-            border-color: rgba(125, 207, 255, 0.16);
-            box-shadow: 0 20px 50px rgba(2, 8, 23, 0.28);
+          .impact-page {
+            position: relative;
+            min-height: 100vh;
           }
 
-          body.impact-page .section-block p,
-          body.impact-page .section-block li,
-          body.impact-page .section-block strong,
-          body.impact-page .about-card p,
-          body.impact-page .about-card li,
-          body.impact-page .about-panel p,
-          body.impact-page .impact-card p,
-          body.impact-page .impact-card li {
-            color: #dce9ff;
+          .impact-bg {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
           }
 
-          body.impact-page .section-block h1,
-          body.impact-page .section-block h2,
-          body.impact-page .section-block h3,
-          body.impact-page .section-block h4,
-          body.impact-page .about-card h3,
-          body.impact-page .about-panel h2,
-          body.impact-page .impact-card h4 {
-            color: #f8fafc;
+          .page {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 40px 100px;
           }
 
-          .wrap{ max-width:1400px; margin:0 auto; padding:0 4vw; }
+          .tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--green);
+            border: 1px solid rgba(46, 158, 68, 0.4);
+            border-radius: 20px;
+            padding: 5px 14px;
+            margin-bottom: 28px;
+          }
 
-          /* CTA styles copied from About page */
-          .cta-section{ position:relative; display:grid; grid-template-columns:1fr; gap:24px; background: linear-gradient(145deg, rgba(8, 23, 47, 0.96), rgba(4, 14, 29, 0.96)); border:1px solid rgba(125, 207, 255, 0.16); border-radius:28px; padding:42px 38px; margin-bottom:24px; }
-          .cta-section > * { position:relative; z-index:1; }
-          .cta-copy{ max-width:100%; color:#d6fbff; margin:16px 0 24px; line-height:1.9; font-size:1rem; }
-          .cta-highlight{ display:flex; justify-content:center; gap:24px; align-items:stretch; }
-          .cta-main{ background:rgba(9, 32, 64, 0.96); border:1px solid rgba(125, 207, 255, 0.12); border-radius:24px; padding:32px 30px 32px; box-shadow:0 24px 64px rgba(0, 0, 0, 0.14); display:flex; flex-direction:column; gap:20px; max-width:980px; width:100%; }
-          .cta-label{ display:inline-flex; align-items:center; gap:8px; color:#9be8ff; font-family:'JetBrains Mono','Courier New',monospace; font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; }
-          .cta-main h3{ margin:0 0 16px; color:#eff7ff; font-size:1.32rem; line-height:1.35; text-align:left; }
-          .cta-main p{ margin:0; color:#d3f2ff; line-height:1.8; }
-          .cta-actions{ display:flex; flex-wrap:wrap; gap:14px; justify-content:center; }
-          .cta-actions a, .cta-actions button{ display:inline-flex; align-items:center; justify-content:center; gap:10px; border-radius:14px; padding:14px 18px; font-weight:700; font-size:0.95rem; text-decoration:none; border:none; cursor:pointer; transition:transform .2s,box-shadow .2s,background .2s; min-height:48px; }
-          .cta-actions button{ background:linear-gradient(135deg, #1d4ed8 0%, #38bdf8 100%); color:#fff; border:1px solid rgba(125, 211, 252, 0.25); box-shadow:0 18px 32px rgba(56, 189, 248, 0.18); }
-          .cta-actions a{ background:rgba(255,255,255,0.08); color:#eff7ff; border:1px solid rgba(148, 163, 184, 0.24); }
-          .cta-actions button:hover, .cta-actions a:hover{ transform:translateY(-1px); box-shadow:0 18px 34px rgba(13, 76, 130, 0.18); }
+          h1 {
+            font-size: clamp(32px, 5vw, 52px);
+            font-weight: 700;
+            line-height: 1.15;
+            color: #ffffff;
+            max-width: 700px;
+            margin-bottom: 20px;
+          }
 
-          /* allow Link elements styled as primary */
-          .cta-actions a.primary{ background:linear-gradient(135deg, #1d4ed8 0%, #38bdf8 100%); color:#fff; border:1px solid rgba(125, 211, 252, 0.25); box-shadow:0 18px 32px rgba(56, 189, 248, 0.18); }
-          .cta-actions a.primary:hover{ transform:translateY(-1px); box-shadow:0 18px 34px rgba(13, 76, 130, 0.18); }
+          h1 span {
+            color: var(--green);
+          }
+
+          .hero-sub {
+            font-size: 17px;
+            color: var(--text-dim);
+            line-height: 1.7;
+            max-width: 560px;
+            margin-bottom: 48px;
+          }
+
+          .cta-row {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 80px;
+          }
+
+          .btn-primary {
+            background: var(--green);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 13px 28px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.2s;
+          }
+
+          .btn-primary:hover { background: #26883b; }
+
+          .btn-ghost {
+            background: transparent;
+            color: var(--text-dim);
+            border: 1px solid rgba(143, 168, 200, 0.3);
+            border-radius: 8px;
+            padding: 13px 28px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: border-color 0.2s, color 0.2s;
+          }
+
+          .btn-ghost:hover { border-color: var(--text-dim); color: var(--text); }
+
+          .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 80px;
+          }
+
+          .stat-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 28px 24px;
+            position: relative;
+            overflow: hidden;
+          }
+
+          .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: var(--green);
+            opacity: 0.6;
+          }
+
+          .stat-num {
+            font-size: 36px;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1;
+            margin-bottom: 8px;
+          }
+
+          .stat-num span { color: var(--green); }
+
+          .stat-label {
+            font-size: 13px;
+            color: #6b8bad;
+            line-height: 1.5;
+          }
+
+          .section-label {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--green);
+            margin-bottom: 12px;
+          }
+
+          h2 {
+            font-size: clamp(24px, 3.5vw, 36px);
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.25;
+            margin-bottom: 16px;
+          }
+
+          .section-sub {
+            font-size: 15px;
+            color: #7a9abf;
+            line-height: 1.7;
+            max-width: 520px;
+            margin-bottom: 48px;
+          }
+
+          .origin-block {
+            margin-bottom: 80px;
+          }
+
+          .origin-card {
+            background: rgba(27, 58, 107, 0.35);
+            border: 1px solid rgba(46, 158, 68, 0.2);
+            border-radius: 14px;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+          }
+
+          .origin-text p {
+            font-size: 15px;
+            color: var(--text-dim);
+            line-height: 1.8;
+            margin-bottom: 16px;
+          }
+
+          .origin-text p:last-child { margin-bottom: 0; }
+
+          .origin-bridge {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--green);
+            border-top: 1px solid rgba(46, 158, 68, 0.25);
+            padding-top: 20px;
+            margin-top: 4px;
+          }
+
+          .origin-pillars {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+          }
+
+          .pillar {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 10px;
+            padding: 18px 20px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+          }
+
+          .pillar-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--green);
+            flex-shrink: 0;
+          }
+
+          .pillar span {
+            font-size: 14px;
+            color: #c5d5e8;
+            font-weight: 500;
+          }
+
+          .dual-block {
+            margin-bottom: 80px;
+          }
+
+          .impact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 24px;
+          }
+
+          .impact-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 12px;
+            padding: 32px 28px;
+            position: relative;
+          }
+
+          .impact-num {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--green);
+            margin-bottom: 16px;
+          }
+
+          .impact-card h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 10px;
+            line-height: 1.4;
+          }
+
+          .impact-card p {
+            font-size: 14px;
+            color: #6b8bad;
+            line-height: 1.7;
+          }
+
+          .invoice-callout {
+            background: rgba(46,158,68,0.08);
+            border: 1px solid rgba(46,158,68,0.25);
+            border-radius: 10px;
+            padding: 20px 28px;
+            text-align: center;
+            font-size: 15px;
+            font-weight: 500;
+            color: #85d49a;
+            letter-spacing: 0.01em;
+          }
+
+          .alloc-block { margin-bottom: 80px; }
+
+          .alloc-bars { display: flex; flex-direction: column; gap: 20px; }
+
+          .alloc-row {
+            display: grid;
+            grid-template-columns: 100px 1fr 80px;
+            align-items: center;
+            gap: 20px;
+          }
+
+          .alloc-pct {
+            font-size: 26px;
+            font-weight: 700;
+            color: #ffffff;
+            text-align: right;
+          }
+
+          .alloc-track {
+            background: rgba(255,255,255,0.07);
+            border-radius: 4px;
+            height: 8px;
+            overflow: hidden;
+          }
+
+          .alloc-fill {
+            height: 100%;
+            border-radius: 4px;
+            background: var(--green);
+          }
+
+          .alloc-fill.mid { background: #1b6c8a; }
+          .alloc-fill.low { background: #1b3a6b; border: 1px solid rgba(46,158,68,0.5); }
+
+          .alloc-desc {
+            font-size: 13px;
+            color: #6b8bad;
+            line-height: 1.5;
+          }
+
+          .ripple-block { margin-bottom: 80px; }
+
+          .ripple-chain { display: flex; flex-direction: column; gap: 0; }
+
+          .ripple-step { display: flex; gap: 24px; align-items: stretch; }
+
+          .ripple-connector {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-shrink: 0;
+            width: 20px;
+          }
+
+          .ripple-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--green);
+            border: 2px solid #0b1f3a;
+            outline: 2px solid rgba(46,158,68,0.3);
+            flex-shrink: 0;
+          }
+
+          .ripple-line {
+            width: 2px;
+            flex: 1;
+            background: rgba(46,158,68,0.2);
+            min-height: 32px;
+          }
+
+          .ripple-content { padding: 0 0 32px; }
+
+          .ripple-content p {
+            font-size: 15px;
+            color: var(--text-dim);
+            line-height: 1.6;
+            padding-top: 0;
+            margin-top: -2px;
+          }
+
+          .cta-block {
+            background: rgba(27,58,107,0.4);
+            border: 1px solid rgba(46,158,68,0.2);
+            border-radius: 16px;
+            padding: 56px 48px;
+            text-align: center;
+          }
+
+          .cta-block h2 { margin-bottom: 14px; }
+
+          .cta-block p {
+            font-size: 16px;
+            color: #7a9abf;
+            margin-bottom: 36px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+          .cta-block .cta-row {
+            justify-content: center;
+            margin-bottom: 0;
+          }
+
+          @media (max-width: 640px) {
+            .stats-grid { grid-template-columns: 1fr; }
+            .origin-card { grid-template-columns: 1fr; }
+            .impact-grid { grid-template-columns: 1fr; }
+            .alloc-row { grid-template-columns: 70px 1fr 60px; gap: 12px; }
+            .cta-block { padding: 40px 24px; }
+            .page { padding: 60px 24px 80px; }
+          }
         `}</style>
       </Helmet>
 
       <div className="impact-page">
-        <div className="top-accent" aria-hidden="true">
-          <svg viewBox="0 0 1200 160" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
-            <defs>
-              <linearGradient id="g1" x1="0%" x2="100%" y1="0%" y2="0%">
-                <stop offset="0%" stopColor="#38bdf8" stopOpacity="0.18" />
-                <stop offset="50%" stopColor="#7dd3fc" stopOpacity="0.14" />
-                <stop offset="100%" stopColor="#60a5fa" stopOpacity="0.12" />
-              </linearGradient>
-            </defs>
-            <g fill="none" stroke="url(#g1)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M40 110 C140 20, 360 20, 460 110 S780 200, 980 110" opacity="0.9" />
-              <path d="M120 90 C220 10, 420 10, 520 90 S820 180, 1020 90" opacity="0.7" />
-            </g>
-            <g fill="#a7f3d0" opacity="0.9">
-              <circle cx="80" cy="112" r="3.6" />
-              <circle cx="460" cy="112" r="3.6" />
-              <circle cx="980" cy="112" r="3.6" />
-            </g>
-          </svg>
-        </div>
+        <canvas ref={canvasRef} className="impact-bg" />
 
-        <section className="section-block impact-hero">
-          <div className="impact-hero-left">
-            <p className="highlight-pill">Social Impact</p>
-            <h1>From charity to dignity. From dependency to opportunity.</h1>
-            <p>
-              We convert commercial digital work into a consistent support system for youth and Baraka Children’s Home. Every engagement is designed for measurable outcomes, reliable delivery, and enterprise accountability.
-            </p>
-            <div className="impact-hero-actions cta-actions">
-              <Link to="/services" className="primary">
-                Explore services
-              </Link>
-              <Link to="/contact#send-message" className="">
-                Schedule a briefing
-              </Link>
-            </div>
+        <div className="page">
+          <div className="tag">Social Impact</div>
+          <h1>
+            From charity to dignity.<br />From dependency to <span>opportunity.</span>
+          </h1>
+          <p className="hero-sub">
+            We convert commercial digital work into a consistent support system for youth and Baraka Children’s Home. Every engagement is designed for measurable outcomes, reliable delivery, and enterprise accountability.
+          </p>
+          <div className="cta-row">
+            <Link className="btn-primary" to="/services">
+              Explore services
+            </Link>
+            <Link className="btn-ghost" to="/contact#send-message">
+              Schedule a briefing
+            </Link>
           </div>
 
-          <div className="impact-hero-right">
-            <div className="impact-hero-grid">
-              <article className="impact-card impact-hero-stat">
+          <div className="stats-grid">
+            <div className="stat-card">
+              <div className="stat-num">
                 <span>67%</span>
-                <h4>of youth in informal settlements are unemployed</h4>
-              </article>
-              <article className="impact-card impact-hero-stat">
-                <span>1 in 3</span>
-                <h4>young people lack formal employment</h4>
-              </article>
-              <article className="impact-card impact-hero-stat">
+              </div>
+              <div className="stat-label">of youth in informal settlements are unemployed</div>
+            </div>
+            <div className="stat-card">
+              <div className="stat-num">
+                1 in <span>3</span>
+              </div>
+              <div className="stat-label">young people lack formal employment</div>
+            </div>
+            <div className="stat-card">
+              <div className="stat-num">
                 <span>&lt;5%</span>
-                <h4>of Baraka children are pursuing sustainable careers</h4>
-              </article>
-            </div>
-            <div className="impact-hero-panel">
-              <h3>Enterprise-ready impact</h3>
-              <p>
-                Scalable annotation, transcription, and data operations delivered with audit-ready processes and clear performance measures.
-              </p>
+              </div>
+              <div className="stat-label">of Baraka children pursuing sustainable careers</div>
             </div>
           </div>
-        </section>
 
-        <section className="section-block impact-split">
-          <div className="about-grid">
-            <div className="about-panel">
-              <h2>Our Origin: Why We Exist</h2>
-              <p>
-                Baraka Digital Hub was born out of Baraka Children’s Home. For nearly two decades, the Home has been a place of refuge, care, and hope for vulnerable children in Kayole, Nairobi.
-              </p>
-              <p>
-                As those children grew, a difficult gap emerged: opportunity, employment pathways, and professional experience were missing for youth leaving care.
-              </p>
-              <p>
-                <strong>Baraka Digital Hub was created to close that gap. It is the bridge between care and independence.</strong>
-              </p>
+          <div className="origin-block">
+            <div className="section-label">Our Origin</div>
+            <h2>Why We Exist</h2>
+            <p className="section-sub">
+              Baraka Digital Hub was born out of Baraka Children’s Home — a place of refuge for vulnerable children in Kayole, Nairobi for nearly two decades.
+            </p>
+
+            <div className="origin-card">
+              <div className="origin-text">
+                <p>
+                  As those children grew, a difficult gap emerged: opportunity, employment pathways, and professional experience were missing for youth leaving care.
+                </p>
+                <p>Baraka Digital Hub was created to close that gap.</p>
+                <div className="origin-bridge">It is the bridge between care and independence.</div>
+              </div>
+              <div className="origin-pillars">
+                <div className="pillar">
+                  <div className="pillar-dot" />
+                  <span>Structured talent development</span>
+                </div>
+                <div className="pillar">
+                  <div className="pillar-dot" />
+                  <span>Measured quality and compliance</span>
+                </div>
+                <div className="pillar">
+                  <div className="pillar-dot" />
+                  <span>Sustainable revenue for community support</span>
+                </div>
+                <div className="pillar" style={{ borderColor: "rgba(46,158,68,0.25)", background: "rgba(46,158,68,0.06)" }}>
+                  <div className="pillar-dot" />
+                  <span style={{ color: "#85d49a" }}>Enterprise-ready impact</span>
+                </div>
+              </div>
             </div>
-            <article className="impact-card accent-cyan">
-              <h3>Professional delivery with purpose</h3>
-              <ul>
-                <li>Structured talent development</li>
-                <li>Measured quality and compliance</li>
-                <li>Sustainable revenue for community support</li>
-              </ul>
-            </article>
           </div>
-        </section>
 
-        <section className="section-block impact-split">
-          <div className="about-grid">
-            <div className="about-panel">
-              <h2>The Problem We Address</h2>
-              <p>
-                Traditional charity systems are disconnected from the economic realities of youth transition, creating unreliable support models and missed long-term impact.
-              </p>
-              <p>
-                Baraka Digital Hub makes client spend part of the solution, not just the expense.
-              </p>
-            </div>
-            <article className="impact-card accent-purple">
-              <h3>Where the gap appears</h3>
-              <ul>
-                <li>Unpredictable donations</li>
-                <li>Lack of employment pathways</li>
-                <li>No clear transition from care to career</li>
-              </ul>
-            </article>
-          </div>
-        </section>
+          <div className="dual-block">
+            <div className="section-label">The Dual Impact Model</div>
+            <h2>Two Outcomes. One Engagement.</h2>
+            <p className="section-sub">
+              Every client engagement generates two measurable outcomes: professional delivery for clients and sustainable opportunity for youth and Baraka Children’s Home.
+            </p>
 
-        <section className="section-block impact-model-block">
-          <div className="about-grid">
-            <div className="about-panel">
-              <h2>The Dual Impact Model</h2>
-              <p>
-                Every client engagement generates two measurable outcomes: professional delivery for clients and sustainable opportunity for youth and Baraka Children’s Home.
-              </p>
-            </div>
             <div className="impact-grid">
-              <article className="impact-card accent-cyan">
-                <h3>Impact 1</h3>
-                <p>Youth gain access to real digital work, earning fair income and building professional experience.</p>
-              </article>
-              <article className="impact-card accent-purple">
-                <h3>Impact 2</h3>
-                <p>The Children’s Home receives consistent support for education, food, and care from client-funded operations.</p>
-              </article>
+              <div className="impact-card">
+                <div className="impact-num">Impact 01</div>
+                <h3>Youth earn. Youth grow.</h3>
+                <p>
+                  Youth gain access to real digital work, earning fair income and building professional experience that compounds over time.
+                </p>
+              </div>
+              <div className="impact-card">
+                <div className="impact-num">Impact 02</div>
+                <h3>The Home stays supported.</h3>
+                <p>
+                  Baraka Children’s Home receives consistent funding for education, food, and essential care — directly from client-funded operations.
+                </p>
+              </div>
             </div>
+
+            <div className="invoice-callout">Your invoice is also a school fees receipt.</div>
           </div>
-          <div className="about-card about-highlight impact-block-quote">
-            <p>
-              <strong>Your invoice is also a school fees receipt.</strong>
+
+          <div className="alloc-block">
+            <div className="section-label">How Every Dollar Is Used</div>
+            <h2>Transparent Allocation</h2>
+            <p className="section-sub">
+              Every client payment flows through a clear, purpose-built model designed for dignity and long-term sustainability.
             </p>
-          </div>
-        </section>
 
-        <section className="section-block">
-          <div className="text-block">
-            <h2>How Every Dollar Is Used</h2>
+            <div className="alloc-bars">
+              <div className="alloc-row">
+                <div className="alloc-pct">70–80%</div>
+                <div>
+                  <div className="alloc-track">
+                    <div className="alloc-fill" style={{ width: "75%" }} />
+                  </div>
+                  <div className="alloc-desc" style={{ marginTop: "8px" }}>
+                    Youth earnings — building independence and dignity
+                  </div>
+                </div>
+              </div>
+              <div className="alloc-row">
+                <div className="alloc-pct">10–15%</div>
+                <div>
+                  <div className="alloc-track">
+                    <div className="alloc-fill mid" style={{ width: "15%" }} />
+                  </div>
+                  <div className="alloc-desc" style={{ marginTop: "8px" }}>
+                    Operations — internet, training, QA, infrastructure
+                  </div>
+                </div>
+              </div>
+              <div className="alloc-row">
+                <div className="alloc-pct">5–10%</div>
+                <div>
+                  <div className="alloc-track">
+                    <div className="alloc-fill low" style={{ width: "8%" }} />
+                  </div>
+                  <div className="alloc-desc" style={{ marginTop: "8px" }}>
+                    Baraka Children’s Home — school fees, meals, care
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="impact-highlight-grid">
-            <div className="impact-highlight">
-              <strong>70–80%</strong>
-              <p>Goes to youth earnings so they can build independence and dignity.</p>
-            </div>
-            <div className="impact-highlight">
-              <strong>10–15%</strong>
-              <p>Supports operations including internet, training, quality assurance, and infrastructure.</p>
-            </div>
-            <div className="impact-highlight">
-              <strong>5–10%</strong>
-              <p>Supports Baraka Children’s Home including school fees, meals, and essential care.</p>
-            </div>
-          </div>
-        </section>
 
-        <section className="section-block impact-split">
-          <div className="about-grid">
-            <article className="about-card">
-              <h3>Who We Serve</h3>
-              <p>
-                From the Children’s Home: young people who grew up in care and are now transitioning into independence through structured digital skills training and paid work.
-              </p>
-              <p>
-                From the wider community: out-of-school youth, orphans, and young women from marginalized backgrounds.
-              </p>
-              <p>
-                <strong>We define people by what they are ready to build, not by where they come from.</strong>
-              </p>
-            </article>
-            <article className="about-card about-highlight">
-              <h3>The Ripple Effect</h3>
-              <ul>
-                <li>Client work generates income for youth.</li>
-                <li>Youth support their families and gain independence.</li>
-                <li>Operations sustain training and quality systems.</li>
-                <li>The Children’s Home receives continuous support for education and care.</li>
-              </ul>
-              <p>
-                <strong>This is not charity. This is structured economic inclusion.</strong>
-              </p>
-            </article>
-          </div>
-        </section>
-
-        <section className="section-block accent">
-          <div className="text-block">
-            <h3>Ready to build with purpose?</h3>
-            <p>
-              Partner with us for dependable AI delivery that also creates sustainable opportunity and reliable revenue for underserved Nairobi youth.
+          <div className="ripple-block">
+            <div className="section-label">The Ripple Effect</div>
+            <h2>Structured Economic Inclusion</h2>
+            <p className="section-sub">
+              This is not charity. This is a self-reinforcing system where each layer sustains the next.
             </p>
-            <div className="impact-hero-actions cta-actions">
-              <Link to="/contact#send-message" className="primary">
+
+            <div className="ripple-chain">
+              <div className="ripple-step">
+                <div className="ripple-connector">
+                  <div className="ripple-dot" />
+                  <div className="ripple-line" />
+                </div>
+                <div className="ripple-content">
+                  <p>Client work generates income for youth.</p>
+                </div>
+              </div>
+              <div className="ripple-step">
+                <div className="ripple-connector">
+                  <div className="ripple-dot" />
+                  <div className="ripple-line" />
+                </div>
+                <div className="ripple-content">
+                  <p>Youth support their families and gain independence.</p>
+                </div>
+              </div>
+              <div className="ripple-step">
+                <div className="ripple-connector">
+                  <div className="ripple-dot" />
+                  <div className="ripple-line" />
+                </div>
+                <div className="ripple-content">
+                  <p>Operations sustain training and quality systems.</p>
+                </div>
+              </div>
+              <div className="ripple-step">
+                <div className="ripple-connector">
+                  <div
+                    className="ripple-dot"
+                    style={{ background: "#1b3a6b", outlineColor: "rgba(27,58,107,0.5)", borderColor: "#2e9e44", borderWidth: "2px" }}
+                  />
+                  <div className="ripple-line" style={{ opacity: 0 }} />
+                </div>
+                <div className="ripple-content">
+                  <p>The Children’s Home receives continuous support for education and care.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="cta-block">
+            <div className="section-label" style={{ textAlign: "center" }}>
+              Ready to build with purpose?
+            </div>
+            <h2>Partner with us for dependable AI delivery.</h2>
+            <p>
+              Reliable annotation, transcription, and data operations — with measurable social impact built in from Nairobi to global teams.
+            </p>
+            <div className="cta-row">
+              <Link className="btn-primary" to="/contact#send-message">
                 Start a conversation
               </Link>
-              <Link to="/services" className="">
+              <Link className="btn-ghost" to="/services">
                 Review services
               </Link>
             </div>
           </div>
-        </section>
+        </div>
       </div>
     </>
   );
