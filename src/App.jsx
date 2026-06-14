@@ -1759,7 +1759,7 @@ const BarakaDigitalHub = () => {
             <div>
               <div style={{ fontSize: "0.95rem", fontWeight: 700, color: "#ffffff", marginBottom: 12 }}>Explore</div>
               <div style={{ display: "grid", gap: 8 }}>
-                {['/', '/services', '/impact', '/blogs', '/insights'].map((p) => {
+                {['/', '/services', '/impact', '/blogs'].map((p) => {
                   const label = p === '/' ? 'Home' : p.replace('/','').replace('-', ' ').replace(/\b\w/g, c=>c.toUpperCase());
                   const to = p === '/' ? '/' : p.replace(/^\//, '');
                   return (
@@ -1772,8 +1772,7 @@ const BarakaDigitalHub = () => {
             <div>
               <div style={{ fontSize: "0.95rem", fontWeight: 700, color: "#ffffff", marginBottom: 12 }}>Solutions</div>
               <div style={{ display: "grid", gap: 8 }}>
-                <button onClick={() => navigate("backoffice")} style={{ textAlign: "left", background: "none", border: "none", color: "rgba(255,255,255,0.85)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,0.85)"}>Back Office</button>
-                <button onClick={() => navigate("african-languages")} style={{ textAlign: "left", background: "none", border: "none", color: "rgba(255,255,255,0.85)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,0.85)"}>African Languages</button>
+                
                 <button onClick={() => navigate("operations")} style={{ textAlign: "left", background: "none", border: "none", color: "rgba(255,255,255,0.85)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,0.85)"}>Operations</button>
                 <button onClick={() => navigate("pilot")} style={{ textAlign: "left", background: "none", border: "none", color: "rgba(255,255,255,0.85)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,0.85)"}>Pilot Program</button>
               </div>
