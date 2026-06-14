@@ -241,12 +241,16 @@ function Impact() {
             color: #fff;
             border: none;
             border-radius: 16px;
-            padding: 13px 28px;
+            padding: 14px 24px;
             font-size: 14px;
             font-weight: 700;
+            letter-spacing: 0.01em;
+            font-family: inherit;
             cursor: pointer;
             text-decoration: none;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
             transition: transform .22s, box-shadow .22s, background .22s;
             box-shadow: 0 18px 42px rgba(15,55,100,0.18);
           }

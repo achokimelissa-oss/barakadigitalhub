@@ -1289,6 +1289,10 @@ const BarakaDigitalHub = () => {
         .font-display { font-family: 'Georgia', 'Times New Roman', serif !important; }
         .hero-h1 { font-family: 'Georgia', 'Times New Roman', serif !important; font-size: clamp(3rem, 5vw, 4.2rem) !important; }
         .page-container { width: 100% !important; max-width: none !important; margin: 0 !important; padding: 0 24px !important; }
+        /* Pilot / Impact specific container and nav overrides to match Pilot topbar */
+        body.pilot-page .page-container, body.impact-page .page-container { max-width: 1080px !important; margin: 0 auto !important; padding: 0 24px !important; }
+        body.pilot-page .nav-link, body.impact-page .nav-link { color: #9FB4CC !important; font-family: 'JetBrains Mono', monospace !important; font-size: 13px !important; }
+        body.pilot-page .nav-link:hover, body.impact-page .nav-link:hover { color: #2DD9C8 !important; }
         .section-h2 { font-size: clamp(1.6rem, 2vw, 2rem) !important; color: #0f172a; font-weight: 700; letter-spacing: -0.02em; line-height: 1.16; }
         .section-copy { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !important; }
         .hero-copy { font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important; }
