@@ -446,34 +446,34 @@ const ServicesPage = ({ goBack, navigate, isMobile }) => {
   ];
   useEffect(() => { window.scrollTo(0, 0); }, []);
   return (
-    <div style={{ minHeight: "100vh", background: "linear-gradient(160deg,#f8fbff 0%,#eef9ff 50%,#f0fdf4 100%)", paddingTop: 48 }}>
+    <div style={{ minHeight: "100vh", background: "radial-gradient(circle at 15% 10%, rgba(56,189,248,0.12), transparent 32%), radial-gradient(circle at 85% 18%, rgba(56,189,248,0.08), transparent 28%), linear-gradient(180deg, #020617 0%, #07111f 45%, #040b16 100%)", paddingTop: 48, color: "#f8fbff" }}>
       <PageHelmet title="AI Data Annotation & Training Services | Baraka Digital Hub" description="Expert computer vision annotation, NLP, audio processing, LLM training and BPO services from our Nairobi-based team." robots="noindex,follow" canonical="/" />
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "48px 24px" }}>
-        <button onClick={goBack} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", cursor: "pointer", color: "#1d4ed8", fontWeight: 600, fontSize: "0.9rem", marginBottom: 32, fontFamily: "inherit" }}>
+        <button onClick={goBack} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", cursor: "pointer", color: "#7dd3fc", fontWeight: 600, fontSize: "0.9rem", marginBottom: 32, fontFamily: "inherit" }}>
           <ChevronLeft size={18} /> Back to Home
         </button>
         <FadeIn>
           <div style={{ textAlign: "center", marginBottom: 56 }}>
-            <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(29,78,216,0.07)", border: "1px solid rgba(29,78,216,0.12)", borderRadius: 100, padding: "6px 16px", marginBottom: 20 }}>
-              <span style={{ fontSize: "0.72rem", fontWeight: 700, color: "#1d4ed8", letterSpacing: "0.07em", textTransform: "uppercase" }}>Full Service Catalog</span>
+            <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(15,23,42,0.84)", border: "1px solid rgba(125,207,255,0.18)", borderRadius: 100, padding: "6px 16px", marginBottom: 20 }}>
+              <span style={{ fontSize: "0.72rem", fontWeight: 700, color: "#7dd3fc", letterSpacing: "0.07em", textTransform: "uppercase" }}>Full Service Catalog</span>
             </div>
-            <h1 className="font-display" style={{ fontSize: "2.4rem", fontWeight: 800, color: "#0f172a", letterSpacing: "-0.03em", marginBottom: 14 }}>Our AI Services in Detail</h1>
-            <p style={{ color: "#64748b", fontSize: "1.05rem", maxWidth: 560, margin: "0 auto", lineHeight: 1.75 }}>Every service is backed by dedicated QA specialists, structured delivery pipelines, and a trained workforce ready to scale.</p>
+            <h1 className="font-display" style={{ fontSize: "2.4rem", fontWeight: 800, background: "linear-gradient(135deg,#ffffff 0%, #d6f5ff 45%, #7dd3fc 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", color: "transparent", letterSpacing: "-0.03em", marginBottom: 14 }}>Our AI Services in Detail</h1>
+            <p style={{ color: "#d4e3ff", fontSize: "1.05rem", maxWidth: 560, margin: "0 auto", lineHeight: 1.75 }}>Every service is backed by dedicated QA specialists, structured delivery pipelines, and a trained workforce ready to scale.</p>
           </div>
         </FadeIn>
         <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(auto-fill, minmax(340px, 1fr))", gap: 20 }}>
           {services.map((s, i) => (
             <FadeIn key={i} delay={i * 0.06}>
-              <div style={{ background: "white", border: "1px solid #f1f5f9", borderRadius: 20, overflow: "hidden", boxShadow: "0 2px 12px rgba(0,0,0,0.04)" }}>
-                <div style={{ background: s.accent, padding: "24px 28px", borderBottom: "1px solid #f1f5f9", display: "flex", alignItems: "center", gap: 14 }}>
+              <div style={{ background: "rgba(6,18,44,0.88)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 20, overflow: "hidden", boxShadow: "0 24px 60px rgba(0,0,0,0.25)" }}>
+                <div style={{ background: s.color === "#0891b2" ? "rgba(2,75,124,0.95)" : s.color === "#059669" ? "rgba(4,88,70,0.95)" : s.color === "#dc2626" ? "rgba(136,19,55,0.95)" : s.color === "#d97706" ? "rgba(111,66,22,0.95)" : "rgba(29,78,216,0.95)", padding: "24px 28px", borderBottom: "1px solid rgba(255,255,255,0.06)", display: "flex", alignItems: "center", gap: 14 }}>
                   <div style={{ width: 52, height: 52, borderRadius: 14, background: s.color, display: "flex", alignItems: "center", justifyContent: "center", color: "white", flexShrink: 0 }}>{s.icon}</div>
-                  <h2 className="font-display" style={{ fontSize: "1.1rem", fontWeight: 800, color: "#0f172a", lineHeight: 1.3 }}>{s.title}</h2>
+                  <h2 className="font-display" style={{ fontSize: "1.1rem", fontWeight: 800, color: "#f8fbff", lineHeight: 1.3 }}>{s.title}</h2>
                 </div>
                 <div style={{ padding: "20px 28px" }}>
                   {s.items.map((item, j) => (
                     <div key={j} style={{ display: "flex", alignItems: "flex-start", gap: 10, marginBottom: j < s.items.length - 1 ? 12 : 0 }}>
                       <div style={{ width: 6, height: 6, borderRadius: "50%", background: s.color, flexShrink: 0, marginTop: 6 }} />
-                      <span style={{ fontSize: "0.87rem", color: "#475569", lineHeight: 1.6 }}>{item}</span>
+                      <span style={{ fontSize: "0.87rem", color: "#cbd5e1", lineHeight: 1.6 }}>{item}</span>
                     </div>
                   ))}
                 </div>
@@ -482,9 +482,9 @@ const ServicesPage = ({ goBack, navigate, isMobile }) => {
           ))}
         </div>
         <FadeIn delay={0.2}>
-          <div style={{ marginTop: 48, background: "linear-gradient(135deg, #1d4ed8, #0f9d68)", borderRadius: 24, padding: "40px 36px", textAlign: "center" }}>
+          <div style={{ marginTop: 48, background: "linear-gradient(135deg, rgba(29,78,216,0.96), rgba(6,95,170,0.94))", borderRadius: 24, padding: "40px 36px", textAlign: "center", boxShadow: "0 24px 64px rgba(0,0,0,0.28)" }}>
             <h3 className="font-display" style={{ fontSize: "1.4rem", fontWeight: 800, color: "white", marginBottom: 12 }}>Need a custom workflow?</h3>
-            <p style={{ color: "rgba(255,255,255,0.8)", marginBottom: 24, fontSize: "1rem" }}>We tailor annotation pipelines to your exact tooling, formats, and quality thresholds.</p>
+            <p style={{ color: "rgba(255,255,255,0.88)", marginBottom: 24, fontSize: "1rem" }}>We tailor annotation pipelines to your exact tooling, formats, and quality thresholds.</p>
             <button onClick={goBack} style={{ background: "white", color: "#0f172a", border: "none", borderRadius: 12, padding: "14px 28px", fontWeight: 700, fontSize: "0.95rem", cursor: "pointer", fontFamily: "inherit" }}>
               Start a Pilot →
             </button>
