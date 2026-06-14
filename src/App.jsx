@@ -1071,7 +1071,6 @@ const BarakaDigitalHub = () => {
     { label: "Blogs", page: "blogs" },
     { label: "Social Impact", page: "impact" },
     { label: "Operations", page: "operations" },
-    { label: "Workflow", page: "workflow" },
   ];
 
   const TOOL_LOGOS = [

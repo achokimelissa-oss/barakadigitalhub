@@ -18,7 +18,7 @@ function Operations() {
           content="Operations and delivery for AI data services — structured capacity, independent QA, certification, and a repeatable workflow."
         />
         <style>{`
-          :root{--navy:#07121F;--panel:#0D1E30;--card:#111F30;--line:#1C3248;--cyan:#2DD9C8;--cyand:#1A8C80;--cyang:rgba(45,217,200,.12);--amber:#FFD166;--hi:#ECF3FA;--mid:#8AAEC8;--dim:#4D6A82;--mono:'JetBrains Mono',monospace;--sans:'Space Grotesk',sans-serif;}
+          :root{--navy:#07121F;--panel:#0D1E30;--card:#111F30;--line:#1C3248;--cyan:#2DD9C8;--cyand:#1A8C80;--cyang:rgba(45,217,200,.12);--amber:#FFD166;--hi:#ECF3FA;--mid:#A7DDF0;--dim:#98CFE5;--mono:'JetBrains Mono',monospace;--sans:'Space Grotesk',sans-serif;}
           *{margin:0;padding:0;box-sizing:border-box;}
           html{scroll-behavior:smooth;}
           body.operations-page{background:var(--navy);color:var(--hi);font-family:var(--sans);line-height:1.65;min-height:100vh;overflow-x:hidden;}
@@ -420,22 +420,8 @@ function Operations() {
             <h2>Ready to move forward?</h2>
             <p>One professional delivery path, clearly mapped. Reach out to align on requirements, timing, and the right delivery model for your project.</p>
             <div>
-              <a className="btn btn-p" href="mailto:projects@barakadigitalhub.com?subject=BDH%20Enquiry">Contact us to begin →</a>
+              <button className="btn btn-p" onClick={() => navigate("contact")}>Contact us to begin →</button>
               <button className="btn btn-g" onClick={() => navigate("pilot")}>Learn about the pilot</button>
-            </div>
-            <div className="cstrip">
-              <a href="mailto:projects@barakadigitalhub.com">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
-                projects@barakadigitalhub.com
-              </a>
-              <a href="tel:+254793842347">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 013.07 10.8a19.79 19.79 0 01-3.07-8.7A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
-                +254 793 842 347
-              </a>
-              <a href="https://www.barakadigitalhub.com">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-                www.barakadigitalhub.com
-              </a>
             </div>
           </div>
         </div>
