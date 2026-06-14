@@ -1124,11 +1124,11 @@ const BarakaDigitalHub = () => {
         .ani-floatb { animation: floatB 6s ease-in-out 1.5s infinite; }
         .ani-pulse { animation: pulse-slow 3s ease-in-out infinite; }
         
-        .hero-tech-overlay { position: absolute; inset: 0; background: radial-gradient(circle at top left, rgba(59,130,246,.16), transparent 22%), radial-gradient(circle at bottom right, rgba(16,185,129,.14), transparent 18%); pointer-events: none; }
-        .hero-tech-overlay::before { content: ""; position: absolute; inset: 0; background-image: repeating-linear-gradient(90deg, transparent 0px, transparent 40px, rgba(14,165,233,.08) 40px, rgba(14,165,233,.08) 41px), repeating-linear-gradient(0deg, transparent 0px, transparent 40px, rgba(16,185,129,.06) 40px, rgba(16,185,129,.06) 41px); animation: grid-flow 6s linear infinite; }
+        .hero-tech-overlay { position: absolute; inset: 0; background: radial-gradient(circle at top left, rgba(59,130,246,.12), transparent 22%), radial-gradient(circle at bottom right, rgba(16,185,129,.10), transparent 18%); pointer-events: none; }
+        .hero-tech-overlay::before { content: ""; position: absolute; inset: 0; background-image: repeating-linear-gradient(90deg, rgba(14,165,233,.08) 0px, rgba(14,165,233,.08) 1px, transparent 1px, transparent 120px), repeating-linear-gradient(0deg, rgba(16,185,129,.06) 0px, rgba(16,185,129,.06) 1px, transparent 1px, transparent 120px); background-size: 120px 120px; animation: grid-flow 8s linear infinite; opacity: .5; pointer-events: none; }
         @keyframes grid-flow { 0% { transform: translate(0, 0); } 100% { transform: translate(40px, 40px); } }
         .hero-grid { position: relative; }
-        .hero-grid::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(rgba(14,165,233,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(14,165,233,.06) 1px, transparent 1px); background-size: 120px 120px; pointer-events: none; opacity: .35; }
+        .hero-grid::before { display: none; }
         .code-panel { position: relative; background: rgba(8,18,36,.92); border: 1px solid rgba(148,163,184,.22); color: #e2e8f0; border-radius: 28px; box-shadow: 0 28px 100px rgba(10,22,51,.30); overflow: hidden; backdrop-filter: blur(10px); font-family: 'Inter', Arial, sans-serif; }
         .code-panel::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px); background-size: 88px 88px; opacity: .12; pointer-events: none; }
         .code-panel-header { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; padding: 0 28px 0 28px; }
