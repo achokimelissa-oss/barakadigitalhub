@@ -192,7 +192,7 @@ function Impact() {
             max-width: 1160px;
             width: 100%;
             margin: 0 auto;
-            padding: 120px 40px 100px;
+            padding: 80px 40px 100px;
           }
 
           .tag {
@@ -205,7 +205,7 @@ function Impact() {
             border: 1px solid rgba(46, 158, 68, 0.4);
             border-radius: 20px;
             padding: 5px 14px;
-            margin-bottom: 28px;
+            margin-bottom: 22px;
           }
 
           h1 {

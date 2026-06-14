@@ -28,7 +28,7 @@ function Operations() {
           .div{border:none;border-top:1px solid var(--line);}
           .tag{font-family:var(--mono);font-size:11px;color:var(--cyan);letter-spacing:3px;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px;margin-bottom:20px;}
           .tag::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan);display:inline-block;}
-          .hero{padding:80px 0 64px;}
+          .hero{padding:100px 0 64px;}
           h1{font-size:clamp(34px,5vw,54px);font-weight:700;line-height:1.1;letter-spacing:-.6px;max-width:820px;background:linear-gradient(90deg,#1d4ed8,#06b6d4,#0f9d68);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent !important;}
           /* Ensure operations page headings are bright even if other styles apply */
           body.operations-page h2, body.operations-page .section-h2, body.operations-page .final h2, body.operations-page .font-display { color: var(--hi) !important; -webkit-text-fill-color: initial !important; background: none !important; }
