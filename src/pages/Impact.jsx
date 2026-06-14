@@ -676,12 +676,10 @@ function Impact() {
                 <div className="impact-num">Impact 02</div>
                 <h3>The Home stays supported.</h3>
                 <p>
-                  Baraka Children’s Home receives consistent funding for education, food, and essential care — directly from client-funded operations.
+                  Baraka Children’s Home and the community around it receive consistent funding for education, food, and essential care — directly from client-funded operations.
                 </p>
               </div>
             </div>
-
-            <div className="invoice-callout">Your invoice is also a school fees receipt.</div>
           </div>
 
           <div className="alloc-block">
