@@ -503,19 +503,24 @@ const ServicesPage = ({ goBack, navigate, isMobile }) => {
 const CareersPage = ({ goBack, setPage, navigate, isMobile }) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   return (
-    <div style={{ minHeight: "100vh", background: "linear-gradient(160deg,#f8fbff 0%,#eef9ff 50%,#f0fdf4 100%)", paddingTop: 48 }}>
+    <div style={{ minHeight: "100vh", position: "relative", overflow: "hidden", background: "radial-gradient(circle at 14% 12%, rgba(56,189,248,0.22), transparent 24%), radial-gradient(circle at 84% 10%, rgba(16,185,129,0.14), transparent 22%), linear-gradient(180deg, #020617 0%, #07111f 40%, #020a1a 100%)", paddingTop: 48, color: "#f8fbff" }}>
+      <div style={{ position: "absolute", inset: 0, backgroundImage: "repeating-linear-gradient(180deg, transparent 0, transparent 40px, rgba(125,207,255,0.18) 40px, rgba(125,207,255,0.18) 41px), repeating-linear-gradient(90deg, transparent 0, transparent 40px, rgba(56,189,248,0.14) 40px, rgba(56,189,248,0.14) 41px)", opacity: 0.68, pointerEvents: "none" }} />
+      <div style={{ position: "absolute", top: "8%", left: "4%", width: 220, height: 220, borderRadius: "50%", background: "rgba(96,165,250,0.14)", filter: "blur(42px)", pointerEvents: "none" }} />
+      <div style={{ position: "absolute", top: "18%", right: "8%", width: 180, height: 180, borderRadius: "50%", background: "rgba(16,185,129,0.12)", filter: "blur(38px)", pointerEvents: "none" }} />
+      <div style={{ position: "absolute", bottom: "6%", left: "10%", width: 240, height: 240, borderRadius: "50%", background: "rgba(59,130,246,0.12)", filter: "blur(50px)", pointerEvents: "none" }} />
+      <div style={{ position: "absolute", top: "25%", left: "50%", width: 320, height: 320, borderRadius: "50%", background: "rgba(255,255,255,0.04)", filter: "blur(48px)", pointerEvents: "none", transform: "translateX(-50%)" }} />
       <PageHelmet title="Careers | Baraka Digital Hub" description="Join our growing team of AI data annotators and digital operations specialists in Nairobi, Kenya." />
-      <div style={{ maxWidth: 980, margin: "0 auto", padding: "48px 24px" }}>
-        <button onClick={goBack} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", cursor: "pointer", color: "#1d4ed8", fontWeight: 600, fontSize: "0.9rem", marginBottom: 32, fontFamily: "inherit" }}>
+      <div style={{ maxWidth: 980, margin: "0 auto", padding: "48px 24px", position: "relative", zIndex: 1 }}>
+        <button onClick={goBack} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", cursor: "pointer", color: "#7dd3fc", fontWeight: 600, fontSize: "0.9rem", marginBottom: 32, fontFamily: "inherit" }}>
           <ChevronLeft size={18} /> Back to Home
         </button>
         <FadeIn>
           <div style={{ marginBottom: 32 }}>
-            <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(29,78,216,0.08)", border: "1px solid rgba(29,78,216,0.15)", borderRadius: 100, padding: "6px 16px", marginBottom: 20 }}>
-              <span style={{ fontSize: "0.72rem", fontWeight: 700, color: "#1d4ed8", letterSpacing: "0.07em", textTransform: "uppercase" }}>Careers</span>
+            <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(15,23,42,0.84)", border: "1px solid rgba(125,207,255,0.18)", borderRadius: 100, padding: "6px 16px", marginBottom: 20 }}>
+              <span style={{ fontSize: "0.72rem", fontWeight: 700, color: "#7dd3fc", letterSpacing: "0.07em", textTransform: "uppercase" }}>Careers</span>
             </div>
-            <h1 className="font-display" style={{ fontSize: "2.4rem", fontWeight: 800, color: "#0f172a", letterSpacing: "-0.03em", marginBottom: 14 }}>Join our growing team</h1>
-            <p style={{ color: "#64748b", fontSize: "1.05rem", maxWidth: 720, lineHeight: 1.75, marginBottom: 24 }}>
+            <h1 className="font-display" style={{ fontSize: "2.4rem", fontWeight: 800, background: "linear-gradient(135deg,#ffffff 0%, #d6f5ff 45%, #7dd3fc 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", color: "transparent", letterSpacing: "-0.03em", marginBottom: 14 }}>Join our growing team</h1>
+            <p style={{ color: "#d4e3ff", fontSize: "1.05rem", maxWidth: 720, lineHeight: 1.75, marginBottom: 24 }}>
               Explore career opportunities at Baraka Digital Hub. We build dependable AI data services while creating sustainable income and training pathways for young people in Nairobi.
             </p>
           </div>
@@ -527,7 +532,7 @@ const CareersPage = ({ goBack, setPage, navigate, isMobile }) => {
             <p style={{ color: "#475569", fontSize: "1rem", lineHeight: 1.8, maxWidth: 660, margin: "0 auto 24px" }}>
               We are not actively hiring at the moment, but we still welcome inquiries from talented people who want to join our mission. If you'd like to connect, send us a note and we’ll let you know when the next opportunities become available.
             </p>
-            <button onClick={() => navigate("contact")} style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8, padding: "14px 24px", borderRadius: 12, background: "#1d4ed8", color: "white", fontWeight: 700, border: "none", cursor: "pointer" }}>
+            <button onClick={() => navigate("contact")} style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8, padding: "14px 24px", borderRadius: 12, background: "linear-gradient(135deg, rgba(29,78,216,0.96), rgba(6,95,170,0.94))", color: "white", fontWeight: 700, border: "none", cursor: "pointer" }}>
               Use the Contact page to reach us <ArrowRight size={16} />
             </button>
           </div>
@@ -543,7 +548,12 @@ const PrivacyPage = ({ goBack, isMobile }) => {
   const rightsGrid = isMobile ? "1fr" : "repeat(3, minmax(0, 1fr))";
 
   return (
-    <div style={{ minHeight: "100vh", background: "#f8f9fb", paddingTop: 48 }}>
+    <div style={{ minHeight: "100vh", position: "relative", overflow: "hidden", background: "radial-gradient(circle at 14% 12%, rgba(56,189,248,0.22), transparent 24%), radial-gradient(circle at 84% 10%, rgba(16,185,129,0.14), transparent 22%), linear-gradient(180deg, #020617 0%, #07111f 40%, #020a1a 100%)", paddingTop: 48, color: "#f8fbff" }}>
+      <div style={{ position: "absolute", inset: 0, backgroundImage: "repeating-linear-gradient(180deg, transparent 0, transparent 40px, rgba(125,207,255,0.18) 40px, rgba(125,207,255,0.18) 41px), repeating-linear-gradient(90deg, transparent 0, transparent 40px, rgba(56,189,248,0.14) 40px, rgba(56,189,248,0.14) 41px)", opacity: 0.68, pointerEvents: "none" }} />
+      <div style={{ position: "absolute", top: "8%", left: "4%", width: 220, height: 220, borderRadius: "50%", background: "rgba(96,165,250,0.14)", filter: "blur(42px)", pointerEvents: "none" }} />
+      <div style={{ position: "absolute", top: "18%", right: "8%", width: 180, height: 180, borderRadius: "50%", background: "rgba(16,185,129,0.12)", filter: "blur(38px)", pointerEvents: "none" }} />
+      <div style={{ position: "absolute", bottom: "6%", left: "10%", width: 240, height: 240, borderRadius: "50%", background: "rgba(59,130,246,0.12)", filter: "blur(50px)", pointerEvents: "none" }} />
+      <div style={{ position: "absolute", top: "25%", left: "50%", width: 320, height: 320, borderRadius: "50%", background: "rgba(255,255,255,0.04)", filter: "blur(48px)", pointerEvents: "none", transform: "translateX(-50%)" }} />
       <PageHelmet title="Privacy Policy | Baraka Digital Hub" description="Baraka Digital Hub privacy policy — how we handle data, protect client information, and maintain compliance." />
       <div style={{ maxWidth: 980, margin: "0 auto", padding: "32px 20px 48px" }}>
         <button onClick={goBack} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", cursor: "pointer", color: "#0d2b4e", fontWeight: 700, fontSize: "0.95rem", marginBottom: 28, fontFamily: "inherit" }}>
