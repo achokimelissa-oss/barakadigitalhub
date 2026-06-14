@@ -1302,6 +1302,7 @@ const BarakaDigitalHub = () => {
         {page === "pilot" && <PilotPage goBack={goBack} setPage={setPage} navigate={navigate} isMobile={isMobile} />}
         {page === "insights" && <InsightsPage goBack={goBack} />}
         {page === "backoffice" && <BackOfficePage goBack={goBack} />}
+        {page === "african-languages" && <AfricanLanguagesPage goBack={goBack} />}
           </div>
         </div>
       ) : (
