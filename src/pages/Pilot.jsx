@@ -157,9 +157,18 @@ function Pilot(props) {
   .pilot-page .eval-name{ font-weight:700; font-size:15px; line-height:1.35; color:#f8fbff; }
   .pilot-page .eval-desc{ font-size:13px; color:var(--text-mid); }
 
-  .pilot-page .pipeline{ border:1px solid rgba(255,255,255,0.08); border-radius:18px; overflow:hidden; background: rgba(7,16,30,0.9); }
-  .pilot-page .phase{ display:grid; grid-template-columns:64px 1fr auto; gap:20px; padding:26px 24px; align-items:start; border-bottom:1px solid var(--navy-line); position:relative; }
-  .pilot-page .phase-num{ font-family:var(--mono); font-size:13px; color:var(--navy-deep); background:var(--cyan); width:36px; height:36px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-weight:700; z-index:1; }
+  .pilot-page .structure-table{ width:100%; border-collapse:separate; border-spacing:0; margin-top:28px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:24px; overflow:hidden; }
+  .pilot-page .structure-table th,
+  .pilot-page .structure-table td{ padding:24px 22px; }
+  .pilot-page .structure-table th{ text-align:left; font-family:var(--mono); font-size:0.78rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--text-mid); border-bottom:1px solid rgba(255,255,255,0.08); }
+  .pilot-page .structure-table tbody tr{ border-bottom:1px solid rgba(255,255,255,0.08); }
+  .pilot-page .structure-table tbody tr:last-child{ border-bottom:none; }
+  .pilot-page .structure-table tbody td{ background:rgba(255,255,255,0.03); }
+  .pilot-page .structure-table tbody tr:hover td{ background:rgba(255,255,255,0.08); }
+  .pilot-page .phase-index{ font-family:var(--mono); font-size:0.9rem; color:var(--cyan); font-weight:700; }
+  .pilot-page .phase-title{ font-size:1.05rem; font-weight:700; margin-bottom:8px; }
+  .pilot-page .phase-desc{ font-size:0.95rem; color:var(--text-mid); line-height:1.75; max-width:760px; }
+  .pilot-page .phase-tag{ display:inline-flex; align-items:center; justify-content:center; padding:10px 14px; border-radius:999px; background:rgba(45,217,200,0.14); color:#EAF1F8; font-family:var(--mono); font-size:0.78rem; letter-spacing:0.08em; text-transform:uppercase; white-space:nowrap; }
 
   .pilot-page .deliver-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
   .pilot-page .deliver-item{ display:flex; gap:14px; padding:20px; border:1px solid var(--navy-line); border-radius:10px; background:var(--navy-panel); }
@@ -286,47 +295,49 @@ function Pilot(props) {
                 PM-led, QA-independent structure used in full-scale engagements.</p>
             </div>
 
-            <div className="pipeline">
-              <div className="phase">
-                <div className="phase-num">01</div>
-                <div className="phase-body">
-                  <h3>Discovery &amp; Planning</h3>
-                  <p>Requirements reviewed and documented. Success criteria defined. Workflow mapped
-                     and quality benchmarks agreed in writing before any contractor is assigned.</p>
-                </div>
-                <div className="phase-tag">sign-off required</div>
-              </div>
-
-              <div className="phase">
-                <div className="phase-num">02</div>
-                <div className="phase-body">
-                  <h3>Team Training &amp; Certification</h3>
-                  <p>The agreed contractor cohort is trained specifically on your documentation and
-                     guidelines. No one touches live work until certified against your quality bar.</p>
-                </div>
-                <div className="phase-tag">complexity-dependent</div>
-              </div>
-
-              <div className="phase">
-                <div className="phase-num">03</div>
-                <div className="phase-body">
-                  <h3>Pilot Execution</h3>
-                  <p>The trained team executes the agreed scope under full BDH structure — Project
-                     Manager, Team Lead, and Independent QA reviewing 100% of output.</p>
-                </div>
-                <div className="phase-tag">per agreed scope</div>
-              </div>
-
-              <div className="phase">
-                <div className="phase-num">04</div>
-                <div className="phase-body">
-                  <h3>Performance Review &amp; Roadmap</h3>
-                  <p>Deliverables, QA report, IAA scores, and a production roadmap are handed over —
-                     ready to activate only when you give the signal.</p>
-                </div>
-                <div className="phase-tag">your decision</div>
-              </div>
-            </div>
+            <table className="structure-table">
+              <thead>
+                <tr>
+                  <th>Phase</th>
+                  <th>What happens</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="phase-index">01</td>
+                  <td>
+                    <div className="phase-title">Discovery &amp; Planning</div>
+                    <div className="phase-desc">Requirements reviewed and documented. Success criteria defined. Workflow mapped and quality benchmarks agreed in writing before any contractor is assigned.</div>
+                  </td>
+                  <td><span className="phase-tag">sign-off required</span></td>
+                </tr>
+                <tr>
+                  <td className="phase-index">02</td>
+                  <td>
+                    <div className="phase-title">Team Training &amp; Certification</div>
+                    <div className="phase-desc">The agreed contractor cohort is trained specifically on your documentation and guidelines. No one touches live work until certified against your quality bar.</div>
+                  </td>
+                  <td><span className="phase-tag">complexity-dependent</span></td>
+                </tr>
+                <tr>
+                  <td className="phase-index">03</td>
+                  <td>
+                    <div className="phase-title">Pilot Execution</div>
+                    <div className="phase-desc">The trained team executes the agreed scope under full BDH structure — Project Manager, Team Lead, and Independent QA reviewing 100% of output.</div>
+                  </td>
+                  <td><span className="phase-tag">per agreed scope</span></td>
+                </tr>
+                <tr>
+                  <td className="phase-index">04</td>
+                  <td>
+                    <div className="phase-title">Performance Review &amp; Roadmap</div>
+                    <div className="phase-desc">Deliverables, QA report, IAA scores, and a production roadmap are handed over — ready to activate only when you give the signal.</div>
+                  </td>
+                  <td><span className="phase-tag">your decision</span></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
 
