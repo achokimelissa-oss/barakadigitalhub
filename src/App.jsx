@@ -1390,7 +1390,6 @@ const BarakaDigitalHub = () => {
         .about-grid, .impact-grid, .impact-highlight-grid { width: 100%; }
         .nav-link { color: inherit; font-weight:500;font-size:.88rem;text-decoration:none;cursor:pointer;transition:color .2s;background:none;border:none;font-family:inherit; }
         .nav-link:hover { color: #1d4ed8; }
-        .about-card, .about-panel, .impact-card, .stat-card, .card {
         @media(max-width:1024px) {
           .hero-grid { grid-template-columns:1fr !important; }
           .hero-right { display:block !important; }
