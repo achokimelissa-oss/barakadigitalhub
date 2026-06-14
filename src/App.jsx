@@ -1388,8 +1388,8 @@ const BarakaDigitalHub = () => {
         .impact-highlight-grid { display:grid; gap:20px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); width:100%; }
         .highlight-pill { display: inline-flex; align-items: center; justify-content: center; width: fit-content; padding: 10px 16px; border-radius: 9999px; background: #2563eb; color: white; font-size: 0.88rem; font-weight: 700; }
         .about-grid, .impact-grid, .impact-highlight-grid { width: 100%; }
-        .nav-link { color:#475569;font-weight:500;font-size:.88rem;text-decoration:none;cursor:pointer;transition:color .2s;background:none;border:none;font-family:inherit; }
-        .nav-link:hover { color:#1d4ed8; }
+        .nav-link { color: inherit; font-weight:500;font-size:.88rem;text-decoration:none;cursor:pointer;transition:color .2s;background:none;border:none;font-family:inherit; }
+        .nav-link:hover { color: rgba(255,255,255,0.85); }
         @media(max-width:1024px) {
           .hero-grid { grid-template-columns:1fr !important; }
           .hero-right { display:block !important; }
@@ -1431,17 +1431,17 @@ const BarakaDigitalHub = () => {
         .hidden-mobile { display:flex; }
       `}</style>
 
-      <nav style={{ position:"fixed", top:0, left:0, right:0, zIndex:100, transition:"all .3s", background: (scrolled||page!=="home") ? (page === "pilot" ? "rgba(4, 12, 22, 0.92)" : "rgba(255,255,255,.98)") : "transparent", backdropFilter: (scrolled||page!=="home") ? "blur(20px)" : "none", borderBottom: (scrolled||page!=="home") ? (page === "pilot" ? "1px solid rgba(255,255,255,0.08)" : "1px solid rgba(0,0,0,.08)") : "none", padding:"0", paddingTop: scrolled ? "8px" : "0", color: page === "pilot" ? "#e7f7ff" : "#0f172a" }}>
+      <nav style={{ position:"fixed", top:0, left:0, right:0, zIndex:100, transition:"all .3s", background: (scrolled||page!=="home") ? ((page === "pilot" || page === "impact") ? "rgba(4, 12, 22, 0.92)" : "rgba(255,255,255,.98)") : "transparent", backdropFilter: (scrolled||page!=="home") ? "blur(20px)" : "none", borderBottom: (scrolled||page!=="home") ? ((page === "pilot" || page === "impact") ? "1px solid rgba(255,255,255,0.08)" : "1px solid rgba(0,0,0,.08)") : "none", padding:"0", paddingTop: scrolled ? "8px" : "0", color: (page === "pilot" || page === "impact") ? "#e7f7ff" : "#0f172a" }}>
         <div className="page-container" style={{ display:"flex", alignItems:"center", justifyContent:"space-between", height: scrolled ? 72 : 76, padding: "0 24px" }}>
           <a href="/" onClick={(e) => { e.preventDefault(); navigate("home"); }} style={{ display:"flex", alignItems:"center", gap:10, textDecoration:"none", color:"inherit", padding:0 }}>
             <img src="/favicon-512.png" alt="Baraka Digital Hub logo" style={{ height:56, width:"auto", objectFit:"contain" }} />
           </a>
           <div className="hidden-mobile" style={{ display: isMobile ? "none" : "flex", gap:28, alignItems:"center" }}>
             {navLinks.map(l => (
-              <a key={l.page} href={l.page === "home" ? "/" : `/${l.page}`} onClick={(e) => { e.preventDefault(); navigate(l.page); }} className="nav-link" style={{ textDecoration: "none", color: page === "pilot" ? "#e7f7ff" : page === "about" ? "#0f172a" : "inherit" }}>{l.label}</a>
+              <a key={l.page} href={l.page === "home" ? "/" : `/${l.page}`} onClick={(e) => { e.preventDefault(); navigate(l.page); }} className="nav-link" style={{ textDecoration: "none", color: (page === "pilot" || page === "impact") ? "#e7f7ff" : "#0f172a" }}>{l.label}</a>
             ))}
           </div>
-          <button onClick={() => setNav(!nav)} className="mobile-menu-btn" style={{ background:"none", border:"none", cursor:"pointer", color: page === "about" ? "#0f172a" : "#0f172a" }}>
+          <button onClick={() => setNav(!nav)} className="mobile-menu-btn" style={{ background:"none", border:"none", cursor:"pointer", color: (page === "pilot" || page === "impact") ? "#e7f7ff" : "#0f172a" }}>
             {nav ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>

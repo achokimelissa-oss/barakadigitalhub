@@ -140,27 +140,26 @@ function Impact() {
             position: relative;
           }
 
-          body.impact-page .impact-page,
-          body.impact-page .page,
-          body.impact-page .impact-bg,
-          body.impact-page .tag,
-          body.impact-page h1,
-          body.impact-page h2,
-          body.impact-page h3,
-          body.impact-page h4,
-          body.impact-page p,
-          body.impact-page a,
-          body.impact-page span,
-          body.impact-page .hero-sub,
-          body.impact-page .stat-label,
-          body.impact-page .section-sub,
-          body.impact-page .origin-text p,
-          body.impact-page .impact-card h3,
-          body.impact-page .impact-card p,
-          body.impact-page .alloc-desc,
-          body.impact-page .cta-block p,
-          body.impact-page .pillar span,
-          body.impact-page .btn-ghost {
+          .impact-page,
+          .impact-page .page,
+          .impact-page .impact-bg,
+          .impact-page .tag,
+          .impact-page h1,
+          .impact-page h2,
+          .impact-page h3,
+          .impact-page h4,
+          .impact-page p,
+          .impact-page span,
+          .impact-page .hero-sub,
+          .impact-page .stat-label,
+          .impact-page .section-sub,
+          .impact-page .origin-text p,
+          .impact-page .impact-card h3,
+          .impact-page .impact-card p,
+          .impact-page .alloc-desc,
+          .impact-page .cta-block p,
+          .impact-page .pillar span,
+          .impact-page .btn-ghost {
             color: #f3f7ff !important;
           }
 
@@ -190,9 +189,10 @@ function Impact() {
           .page {
             position: relative;
             z-index: 1;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 56px 40px 100px;
+            max-width: none;
+            width: min(1160px, 100%);
+            margin: 0;
+            padding: 72px 56px 100px;
           }
 
           .tag {
