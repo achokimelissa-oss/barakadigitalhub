@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
 function Pilot(props) {
   const [scrolled, setScrolled] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -213,7 +215,7 @@ function Pilot(props) {
             <div className="hero-cta">
               <a className="btn btn-primary" href="#start">Start a pilot →</a>
               <a className="btn btn-secondary" href="#structure">Explore pilot scope</a>
-              <a className="btn btn-secondary" href="/contact">Contact Sales</a>
+              <button type="button" className="btn btn-secondary" onClick={() => navigate("contact")}>Contact Sales</button>
             </div>
             <div className="hero-metrics">
               <div className="metric-card">
@@ -349,7 +351,7 @@ function Pilot(props) {
             </div>
             <div className="section-cta">
               <a className="btn btn-secondary" href="#start">Review deliverables</a>
-              <a className="btn btn-secondary" href="/contact">Schedule QA review</a>
+              <button type="button" className="btn btn-secondary" onClick={() => navigate("contact")}>Schedule QA review</button>
             </div>
 
             <div className="deliver-grid">
@@ -447,7 +449,7 @@ function Pilot(props) {
             <div className="hero-cta">
               <a className="btn btn-primary" href="#start">Book a discovery call →</a>
               <a className="btn btn-secondary" href="#structure">Explore pilot scope</a>
-              <a className="btn btn-secondary" href="/contact">Visit Contact page</a>
+              <button type="button" className="btn btn-secondary" onClick={() => navigate("contact")}>Visit Contact page</button>
             </div>
           </div>
         </div>
