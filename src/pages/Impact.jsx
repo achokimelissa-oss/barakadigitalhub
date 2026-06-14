@@ -583,6 +583,10 @@ function Impact() {
       <div className="impact-page">
         <canvas ref={canvasRef} className="impact-bg" />
 
+        <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 0 }} aria-hidden>
+          <div style={{ position: 'absolute', inset: 0, backgroundImage: "repeating-linear-gradient(180deg, transparent 0, transparent 40px, rgba(125,207,255,0.18) 40px, rgba(125,207,255,0.18) 41px), repeating-linear-gradient(90deg, transparent 0, transparent 40px, rgba(56,189,248,0.14) 40px, rgba(56,189,248,0.14) 41px)", opacity: 0.68 }} />
+        </div>
+
         <div className="page">
           <div className="tag">Social Impact</div>
           <h1>
