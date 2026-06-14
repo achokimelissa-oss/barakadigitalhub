@@ -573,7 +573,7 @@ function Impact() {
             .stats-grid { grid-template-columns: 1fr; }
             .origin-card { grid-template-columns: 1fr; }
             .impact-grid { grid-template-columns: 1fr; }
-            .alloc-row { grid-template-columns: 70px 1fr 60px; gap: 12px; }
+            .alloc-row { grid-template-columns: 1fr; gap: 12px; }
             .cta-block { padding: 40px 24px; }
             .page { padding: 100px 24px 80px; }
           }

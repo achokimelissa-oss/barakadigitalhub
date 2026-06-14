@@ -187,8 +187,16 @@ function Pilot(props) {
   .pilot-page .final-cta p{ color:var(--text-mid); max-width:540px; margin:0 auto 36px; font-size:15.5px; }
   .pilot-page .final-cta .hero-cta{ justify-content:center; }
 
-  @media (max-width:860px){ .pilot-page .eval-grid{ grid-template-columns:repeat(2,1fr); } }
-  @media (max-width:520px){ .pilot-page .eval-grid{ grid-template-columns:1fr; } }
+  @media (max-width:860px){
+    .pilot-page .eval-grid{ grid-template-columns:repeat(2,1fr); }
+    .pilot-page .hero-metrics{ grid-template-columns: repeat(2,1fr); }
+  }
+  @media (max-width:520px){
+    .pilot-page .eval-grid{ grid-template-columns:1fr; }
+    .pilot-page .hero-metrics{ grid-template-columns: 1fr; }
+    .pilot-page .deliver-grid{ grid-template-columns:1fr; }
+    .pilot-page .compare{ grid-template-columns:1fr; }
+  }
     /* Strong overrides to neutralize site-wide white panels on this page */
     .pilot-page, .pilot-page body { background: var(--navy-deep) !important; }
     .pilot-page *:not(.btn):not(.btn-primary):not(.btn-secondary):not(.btn-warm):not(.btn-ghost):not(.btn-steel) { background: transparent !important; color: inherit !important; border-color: rgba(255,255,255,0.04) !important; box-shadow: none !important; }

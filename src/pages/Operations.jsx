@@ -122,9 +122,10 @@ function Operations() {
           @media(max-width:860px){.pillars{grid-template-columns:repeat(2,1fr);}} 
           @media(max-width:520px){.pillars{grid-template-columns:1fr;}} 
           @media(max-width:700px){.wf-strip{grid-template-columns:repeat(2,1fr);}} 
-          @media(max-width:420px){.wf-strip{grid-template-columns:1fr;}} 
+          @media(max-width:560px){.wf-strip{grid-template-columns:1fr;}} 
           @media(max-width:640px){.s-tasks{grid-template-columns:1fr;}.stage{grid-template-columns:44px 1fr;}.stage::after{left:21px;}} 
-          @media(max-width:560px){.qa-grid{grid-template-columns:1fr;}}
+          @media(max-width:520px){.stage{grid-template-columns:1fr;}.stage::after{display:none;}} 
+          @media(max-width:560px){.qa-grid{grid-template-columns:1fr;}.sla-hdr{grid-template-columns:1fr;}.sla-row{grid-template-columns:1fr;}}
         `}</style>
       </Helmet>
 

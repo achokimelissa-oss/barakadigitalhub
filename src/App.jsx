@@ -982,24 +982,25 @@ const BarakaDigitalHub = () => {
 
   const router = useNavigate();
 
+  const pathMap = {
+    '/': 'home',
+    '/services': 'services',
+    '/about': 'about',
+    '/careers': 'careers',
+    '/impact': 'impact',
+    '/contact': 'contact',
+    '/privacy': 'privacy',
+    '/pilot': 'pilot',
+    '/workflow': 'operations',
+    '/operations': 'operations',
+    '/insights': 'insights',
+    '/backoffice': 'backoffice',
+    '/african-languages': 'african-languages',
+    '/blogs': 'blogs'
+  };
+
   useEffect(() => {
-    const map = {
-      '/': 'home',
-      '/services': 'services',
-      '/about': 'about',
-      '/careers': 'careers',
-      '/impact': 'impact',
-      '/contact': 'contact',
-      '/privacy': 'privacy',
-      '/pilot': 'pilot',
-      '/workflow': 'operations',
-      '/operations': 'operations',
-      '/insights': 'insights',
-      '/backoffice': 'backoffice',
-      '/african-languages': 'african-languages',
-      '/blogs': 'blogs'
-    };
-    const p = map[location.pathname] || 'home';
+    const p = pathMap[location.pathname] || 'home';
     setPage(p);
   }, [location.pathname]);
 
@@ -1016,33 +1017,6 @@ const BarakaDigitalHub = () => {
   };
 
   const goBack = () => { navigate("home"); setNav(false); };
-
-  // keep page in sync with URL (back/forward buttons and direct links)
-  useEffect(() => {
-    const map = {
-      '/': 'home',
-      '/services': 'services',
-      '/about': 'about',
-      '/careers': 'careers',
-      '/impact': 'impact',
-      '/contact': 'contact',
-      '/privacy': 'privacy',
-      '/pilot': 'pilot',
-      '/workflow': 'operations',
-      '/operations': 'operations',
-      '/insights': 'insights',
-      '/backoffice': 'backoffice',
-      '/african-languages': 'african-languages',
-      '/blogs': 'blogs'
-    };
-    const updateFromLocation = () => {
-      const p = map[window.location.pathname] || 'home';
-      setPage(p);
-    };
-    window.addEventListener('popstate', updateFromLocation);
-    updateFromLocation();
-    return () => window.removeEventListener('popstate', updateFromLocation);
-  }, []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -1233,7 +1207,8 @@ const BarakaDigitalHub = () => {
         }
         @media(max-width:560px) {
           .svc-grid { grid-template-columns:1fr !important; }
-          .stat-grid { grid-template-columns:1fr 1fr !important; }
+          .stat-grid { grid-template-columns:1fr !important; }
+          .stats-band { grid-template-columns:1fr !important; }
           .hero-h1 { font-size:2.4rem !important; }
           .section-h2 { font-size:1.8rem !important; }
           .typing-effect { animation: typing 3.2s steps(30,end) 0.15s forwards; }
