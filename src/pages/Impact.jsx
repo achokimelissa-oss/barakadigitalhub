@@ -189,10 +189,10 @@ function Impact() {
           .page {
             position: relative;
             z-index: 1;
-            max-width: none;
-            width: min(1160px, 100%);
-            margin: 0;
-            padding: 72px 56px 100px;
+            max-width: 1160px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 72px 40px 100px;
           }
 
           .tag {
@@ -237,20 +237,21 @@ function Impact() {
           }
 
           .btn-primary {
-            background: var(--green);
+            background: linear-gradient(135deg, #0f4fad, #118ab2);
             color: #fff;
             border: none;
-            border-radius: 8px;
+            border-radius: 16px;
             padding: 13px 28px;
             font-size: 14px;
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
             text-decoration: none;
             display: inline-block;
-            transition: background 0.2s;
+            transition: transform .22s, box-shadow .22s, background .22s;
+            box-shadow: 0 18px 42px rgba(15,55,100,0.18);
           }
 
-          .btn-primary:hover { background: #26883b; }
+          .btn-primary:hover { transform: translateY(-2px); }
 
           .btn-ghost {
             background: transparent;
