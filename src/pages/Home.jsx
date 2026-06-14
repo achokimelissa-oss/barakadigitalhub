@@ -24,7 +24,7 @@ function Home() {
         </p>
         <div className="metrics-strip" style={{display: 'flex', gap: 18, marginTop: 20, flexWrap: 'wrap'}}>
           <div className="metric" style={{minWidth: 140}}>
-            <div className="metric-value">80+</div>
+            <div className="metric-value">100+</div>
             <div className="metric-label">Certified specialists</div>
           </div>
           <div className="metric" style={{minWidth: 140}}>

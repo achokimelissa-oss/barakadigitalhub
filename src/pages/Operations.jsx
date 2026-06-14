@@ -151,7 +151,7 @@ function Operations() {
 
             <div className="pillars">
               <div className="pillar">
-                <div className="p-stat">80+</div>
+                <div className="p-stat">100+</div>
                 <div className="p-label">certified contractors</div>
                 <div className="p-title">Trained, Certified Workforce</div>
                 <div className="p-desc">

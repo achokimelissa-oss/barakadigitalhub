@@ -1340,7 +1340,7 @@ const BarakaDigitalHub = () => {
                     <button type="button" onClick={() => navigate("services")} className="btn-secondary">Explore Services</button>
                   </div>
                   <div className="stat-grid" style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3,1fr)", gap:10 }}>
-                    {[{v:"80+",l:"Contractors"},{v:"<4hr",l:"Response"},{v:"5K+ Hr",l:"Weekly Capacity"}].map((s,i)=>(
+                    {[{v:"100+",l:"Contractors"},{v:"<4hr",l:"Response"},{v:"5K+ Hr",l:"Weekly Capacity"}].map((s,i)=>(
                       <div key={i} style={{ background:"rgba(255,255,255,.8)", backdropFilter:"blur(12px)", border:"1px solid rgba(255,255,255,.9)", borderRadius:14, padding:"13px 10px", boxShadow:"0 2px 12px rgba(0,0,0,.04)", textAlign:"center" }}>
                         <div className="font-display" style={{ fontSize:"1.5rem", fontWeight:800, color:"#0f172a" }}>{s.v}</div>
                         <div style={{ fontSize:".72rem", color:"#94a3b8", marginTop:2, fontWeight:500 }}>{s.l}</div>
@@ -1617,7 +1617,7 @@ const BarakaDigitalHub = () => {
                           { icon: "▶", label: "Task", value: "Bounding Box Annotation", color: "#06b6d4" },
                           { icon: "▶", label: "Dataset", value: "25,000 Images", color: "#22c55e" },
                           { icon: "▶", label: "SLA", value: "48 Hours*", color: "#22c55e" },
-                          { icon: "▶", label: "Workforce", value: "80 Trained Agents", color: "#a855f7" },
+                          { icon: "▶", label: "Workforce", value: "100+ Trained Agents", color: "#a855f7" },
                           { icon: "▶", label: "QA Capacity", value: "15 Validators", color: "#a855f7" },
                           { icon: "▶", label: "Throughput", value: "1,920+ GPU Hours", color: "#f59e0b" },
                           { icon: "▶", label: "Assurance", value: "100% Multi-Pass QA", color: "#f59e0b" },
