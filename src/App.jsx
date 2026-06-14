@@ -1736,21 +1736,21 @@ const BarakaDigitalHub = () => {
         </>
       )}
 
-      <footer style={{ background: "#000000", padding: "64px 24px 36px", borderTop: "1px solid rgba(255,255,255,0.06)", position: 'relative', zIndex: 50 }}>
+      <footer style={{ background: "#000000", padding: "40px 24px 28px", borderTop: "1px solid rgba(255,255,255,0.06)", position: 'relative', zIndex: 50 }}>
         <div className="page-container">
-          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "2fr 1fr 1fr 1fr", gap: 32, alignItems: "start", marginBottom: 36 }}>
+          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1.8fr 1fr 1fr 1fr", gap: 28, alignItems: "start", marginBottom: 28 }}>
             <div>
-              <img src="/favicon-512.png" alt="Baraka Digital Hub footer logo" style={{ height: 56, width: "auto", marginBottom: 18 }} />
-              <p style={{ color: "rgba(255,255,255,0.9)", maxWidth: 420, lineHeight: 1.8, marginBottom: 18, fontSize: '0.98rem' }}><strong>Baraka Digital Hub</strong> — Professional AI data and digital operations delivered with measurable social impact from Nairobi to global teams.</p>
-              <div style={{ display: 'flex', gap: 12, marginTop: 6 }}>
-                <a href="/" onClick={(e)=>{e.preventDefault(); navigate('/');}} style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.95rem' }}>Home</a>
-                <a href="/services" onClick={(e)=>{e.preventDefault(); navigate('/services');}} style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.95rem' }}>Services</a>
-                <a href="/about" onClick={(e)=>{e.preventDefault(); navigate('/about');}} style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.95rem' }}>About</a>
+              <img src="/favicon-512.png" alt="Baraka Digital Hub footer logo" style={{ height: 48, width: "auto", marginBottom: 12 }} />
+              <p style={{ color: "rgba(255,255,255,0.92)", maxWidth: 420, lineHeight: 1.6, marginBottom: 12, fontSize: '0.95rem' }}><strong>Baraka Digital Hub</strong> — Professional AI data and digital operations, delivered with measurable social impact.</p>
+              <div style={{ color: 'rgba(255,255,255,0.75)', fontSize: '0.95rem' }}>
+                <div>projects@barakadigitalhub.com</div>
+                <div>+254 793 842 347</div>
+                <div>Nairobi, Kenya</div>
               </div>
             </div>
 
             <div>
-              <div style={{ fontSize: "0.95rem", fontWeight: 700, color: "#ffffff", marginBottom: 14 }}>Pages</div>
+              <div style={{ fontSize: "0.95rem", fontWeight: 700, color: "#ffffff", marginBottom: 12 }}>Pages</div>
               <div style={{ display: "grid", gap: 8 }}>
                 {['/', '/services', '/about', '/impact', '/blogs', '/insights', '/backoffice', '/african-languages', '/operations', '/pilot', '/careers', '/privacy', '/contact'].map((p) => {
                   const label = p === '/' ? 'Home' : p.replace('/','').replace('-', ' ').replace(/\b\w/g, c=>c.toUpperCase());
@@ -1763,7 +1763,7 @@ const BarakaDigitalHub = () => {
             </div>
 
             <div>
-              <div style={{ fontSize: "0.95rem", fontWeight: 700, color: "#ffffff", marginBottom: 14 }}>Services</div>
+              <div style={{ fontSize: "0.95rem", fontWeight: 700, color: "#ffffff", marginBottom: 12 }}>Services</div>
               <div style={{ display: "grid", gap: 8 }}>
                 <button onClick={() => navigate("services")} style={{ textAlign: "left", background: "none", border: "none", color: "rgba(255,255,255,0.85)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,.85)"}>Computer Vision</button>
                 <button onClick={() => navigate("services")} style={{ textAlign: "left", background: "none", border: "none", color: "rgba(255,255,255,0.85)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,.85)"}>NLP & Text</button>
@@ -1773,9 +1773,9 @@ const BarakaDigitalHub = () => {
             </div>
           </div>
 
-          <div style={{ borderTop:"1px solid rgba(255,255,255,.12)", paddingTop:22, display:"flex", justifyContent:"space-between", alignItems:"center", flexWrap:"wrap", gap:12 }}>
-            <p style={{ color:"rgba(255,255,255,.6)", fontSize:"0.85rem" }}>© 2026 Baraka Digital Hub. Nairobi, Kenya.</p>
-            <p style={{ color:"rgba(255,255,255,.6)", fontSize:"0.85rem" }}>Built for reliable AI data services and sustainable social impact.</p>
+          <div style={{ borderTop:"1px solid rgba(255,255,255,.06)", paddingTop:16, display:"flex", justifyContent:"space-between", alignItems:"center", flexWrap:"wrap", gap:12 }}>
+            <p style={{ color:"rgba(255,255,255,.6)", fontSize:"0.85rem" }}>© 2026 Baraka Digital Hub. All rights reserved.</p>
+            <p style={{ color:"rgba(255,255,255,.6)", fontSize:"0.85rem" }}>Built for reliable AI data services and measurable social impact.</p>
           </div>
         </div>
       </footer>
