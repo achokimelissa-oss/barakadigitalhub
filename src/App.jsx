@@ -1151,8 +1151,8 @@ const BarakaDigitalHub = () => {
         @keyframes tech-bg-stripes { 0%,100% { transform: translateY(0); opacity: 0; } 50% { transform: translateY(8px); opacity: 0; } }
         .btn-primary { display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#0f4fad,#118ab2);color:white;padding:14px 26px;border-radius:16px;font-weight:700;font-size:0.98rem;text-decoration:none;box-shadow:0 16px 36px rgba(15,55,100,.2);transition:transform .22s,box-shadow .22s,background .22s;outline:none;border:none;cursor:pointer;font-family:'Segoe UI', Arial, sans-serif; }
         .btn-primary:hover { transform:translateY(-2px);box-shadow:0 20px 42px rgba(15,55,100,.28);background:linear-gradient(135deg,#145d9e,#0d95b6); }
-        .btn-secondary-alt { display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#0f9d68,#06b6d4);color:white;padding:16px 30px;border-radius:999px;font-weight:700;font-size:1rem;text-decoration:none;border:none;transition:transform .22s,box-shadow .22s,background .22s;cursor:pointer;font-family:'Segoe UI', Arial, sans-serif;box-shadow:0 18px 36px rgba(16,185,129,.18); }
-        .btn-secondary-alt:hover { background:linear-gradient(135deg,#14b8a6,#0ea5e9);transform:translateY(-2px);box-shadow:0 22px 44px rgba(16,185,129,.28); }
+        .btn-secondary-alt { display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#0f4fad,#0b5fa9);color:white;padding:16px 30px;border-radius:999px;font-weight:700;font-size:1rem;text-decoration:none;border:none;transition:transform .22s,box-shadow .22s,background .22s;cursor:pointer;font-family:'Segoe UI', Arial, sans-serif;box-shadow:0 18px 36px rgba(15,75,155,.18); }
+        .btn-secondary-alt:hover { background:linear-gradient(135deg,#0b5fa9,#0f4fad);transform:translateY(-2px);box-shadow:0 22px 44px rgba(15,75,155,.22); }
         /* logo carousel */
         .logo-carousel { overflow: hidden; background: linear-gradient(180deg,#f8fbff 0%, #e9f1ff 50%, #edf7ff 100%); border-radius: 24px; padding: 32px 18px; margin-top: 28px; border: 1px solid rgba(15,23,42,.08); box-shadow: 0 24px 80px rgba(15,23,42,.08); }
         .logo-track { display:flex; gap:24px; align-items:center; width:max-content; animation: marquee-logos 28s linear infinite; }
@@ -1304,20 +1304,20 @@ const BarakaDigitalHub = () => {
             <div className="page-container" style={{ position:"relative", zIndex:1, maxWidth:960, margin:"0 auto", padding:"0 24px" }}>
               <div className="hero-grid" style={{ display:"grid", gridTemplateColumns: "1fr", gap:56, alignItems:"center", justifyItems:"center" }}>
                 <div style={{ width:"100%", maxWidth:760, textAlign: isMobile ? "left" : "center" }}>
-                  <div style={{ display:"inline-flex", alignItems:"center", gap:10, background:"linear-gradient(135deg, rgba(14,165,233,.16), rgba(15, 123, 255, .08))", border:"1px solid rgba(14,165,233,.28)", borderRadius:100, padding:"12px 24px", marginBottom:20, boxShadow:"0 20px 50px rgba(15,23,42,.08)" }}>
-                    <span className="ani-pulse" style={{ width:8, height:8, borderRadius:"50%", background:"#0f9d68", display:"inline-block", boxShadow:"0 0 0 4px rgba(15,23,42,.06)" }} />
-                    <span className="typing-effect" style={{ fontFamily:"'Segoe UI', Arial, sans-serif", fontSize:"0.88rem", fontWeight:800, color:"#0f7a44", letterSpacing:"0.14em", textTransform:"uppercase", textShadow:"0 1px 2px rgba(15,23,42,.12)" }}>Empowering Futures Through Technology</span>
+                  <div style={{ display:"inline-flex", alignItems:"center", gap:10, background:"rgba(15,23,42,.08)", border:"1px solid rgba(15,23,42,.16)", borderRadius:100, padding:"12px 24px", marginBottom:20, boxShadow:"0 20px 60px rgba(15,23,42,.10)" }}>
+                    <span className="ani-pulse" style={{ width:8, height:8, borderRadius:"50%", background:"#2563eb", display:"inline-block", boxShadow:"0 0 0 4px rgba(37,99,235,.12)" }} />
+                    <span className="typing-effect" style={{ fontFamily:"'Inter', Arial, sans-serif", fontSize:"0.88rem", fontWeight:700, color:"#374151", letterSpacing:"0.14em", textTransform:"uppercase" }}>Enterprise AI & Operations</span>
                   </div>
-                  <h1 className="hero-h1 font-display" style={{ fontSize: isMobile ? "3rem" : "4.6rem", fontWeight:900, lineHeight:1.04, letterSpacing:"-.03em", color:"#0f172a", marginBottom:22, textShadow:"0 6px 24px rgba(15,23,42,.06)" }}>
+                  <h1 className="hero-h1 font-display" style={{ fontSize: isMobile ? "3rem" : "4.4rem", fontWeight:900, lineHeight:1.04, letterSpacing:"-.03em", color:"#0f172a", marginBottom:18, textShadow:"0 6px 24px rgba(15,23,42,.05)" }}>
                     AI Training & Digital Operations
                     <br />
-                    <span style={{ background:"linear-gradient(90deg,#1d4ed8,#06b6d4,#0f9d68)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", backgroundClip:"text", fontWeight:900 }}>Built for Scale</span>
+                    <span style={{ color:"#0f4fad", fontWeight:900 }}>Built for Scale</span>
                   </h1>
-                  <p style={{ color:"#475569", fontSize: isMobile ? "1rem" : "1.05rem", lineHeight:1.85, marginBottom:36, fontFamily:"'Inter', Arial, sans-serif" }}>
+                  <p style={{ color:"#475569", fontSize: isMobile ? "1rem" : "1.03rem", lineHeight:1.9, marginBottom:34, fontFamily:"'Inter', Arial, sans-serif" }}>
                     Baraka Digital Hub delivers enterprise-ready AI data operations with disciplined execution, secure workflows, and measurable outcomes. Our Nairobi-based teams support global clients with repeatable delivery, quality governance, and production-grade transparency.
                   </p>
                   <div style={{ display:"flex", justifyContent: isMobile ? "flex-start" : "center", gap:16, flexWrap:"wrap", marginBottom:40 }}>
-                    <button type="button" onClick={() => navigate("pilot")} className="btn-primary">Start Pilot Program <ArrowRight size={17} /></button>
+                    <button type="button" onClick={() => navigate("pilot")} className="btn-primary" style={{ background: "linear-gradient(135deg, #0f3f7a, #0b5394)", boxShadow: "0 18px 42px rgba(15,23,42,.18)" }}>Start Pilot Program <ArrowRight size={17} /></button>
                     <button type="button" onClick={() => navigate("services")} className="btn-secondary-alt">Explore Services</button>
                   </div>
                   <div className="stat-grid" style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3,1fr)", gap:14 }}>
