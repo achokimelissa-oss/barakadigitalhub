@@ -37,53 +37,6 @@ export default function InsightsPage({ goBack }) {
           line-height: 1.7;
         }
 
-        nav {
-          background: var(--navy-d);
-          padding: 0 6%;
-          height: 60px;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          position: sticky;
-          top: 0;
-          z-index: 100;
-        }
-
-        .nav-brand {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          text-decoration: none;
-          cursor: pointer;
-        }
-
-        .nav-logo {
-          width: 32px;
-          height: 32px;
-          border-radius: 50%;
-          object-fit: cover;
-          border: 2px solid var(--green);
-        }
-
-        .nav-name {
-          font-family: 'Sora', sans-serif;
-          font-weight: 700;
-          font-size: 0.95rem;
-          color: #fff;
-        }
-
-        .nav-name span {
-          color: var(--amber);
-        }
-
-        .nav-tag {
-          font-size: 0.7rem;
-          font-weight: 600;
-          letter-spacing: 0.12em;
-          text-transform: uppercase;
-          color: rgba(255,255,255,0.38);
-        }
-
         .article-wrap {
           max-width: 740px;
           margin: 0 auto;
@@ -299,14 +252,6 @@ export default function InsightsPage({ goBack }) {
           }
         }
       `}</style>
-
-      <nav>
-        <a className="nav-brand" onClick={() => navigate("/")} style={{ cursor: "pointer" }}>
-          <img className="nav-logo" src="/favicon-512.png" alt="BDH" />
-          <span className="nav-name">Baraka <span>Digital Hub</span></span>
-        </a>
-        <span className="nav-tag">Insights</span>
-      </nav>
 
       <div className="article-wrap">
         <div className="article-category">AI Data Services</div>

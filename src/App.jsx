@@ -1149,8 +1149,8 @@ const BarakaDigitalHub = () => {
         @keyframes tech-bg-stripes { 0%,100% { transform: translateY(0); opacity: 0; } 50% { transform: translateY(8px); opacity: 0; } }
         .btn-primary { display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#0f4fad,#118ab2);color:white;padding:14px 26px;border-radius:16px;font-weight:700;font-size:0.98rem;text-decoration:none;box-shadow:0 16px 36px rgba(15,55,100,.2);transition:transform .22s,box-shadow .22s,background .22s;outline:none;border:none;cursor:pointer;font-family:'Segoe UI', Arial, sans-serif; }
         .btn-primary:hover { transform:translateY(-2px);box-shadow:0 20px 42px rgba(15,55,100,.28);background:linear-gradient(135deg,#145d9e,#0d95b6); }
-        .btn-secondary { display:inline-flex;align-items:center;gap:10px;background:rgba(15,75,115,.95);color:white;padding:14px 26px;border-radius:16px;font-weight:700;font-size:0.98rem;text-decoration:none;border:1px solid rgba(94,176,217,.32);transition:transform .22s,box-shadow .22s,background .22s;cursor:pointer;font-family:'Segoe UI', Arial, sans-serif;box-shadow:0 16px 32px rgba(15,75,115,.18); }
-        .btn-secondary:hover { background:rgba(21,97,142,.96);transform:translateY(-2px);box-shadow:0 20px 40px rgba(15,75,115,.26); }
+        .btn-secondary-alt { display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#0f9d68,#06b6d4);color:white;padding:16px 30px;border-radius:999px;font-weight:700;font-size:1rem;text-decoration:none;border:none;transition:transform .22s,box-shadow .22s,background .22s;cursor:pointer;font-family:'Segoe UI', Arial, sans-serif;box-shadow:0 18px 36px rgba(16,185,129,.18); }
+        .btn-secondary-alt:hover { background:linear-gradient(135deg,#14b8a6,#0ea5e9);transform:translateY(-2px);box-shadow:0 22px 44px rgba(16,185,129,.28); }
         /* logo carousel */
         .logo-carousel { overflow: hidden; background: linear-gradient(180deg,#f8fbff 0%, #e9f1ff 50%, #edf7ff 100%); border-radius: 24px; padding: 32px 18px; margin-top: 28px; border: 1px solid rgba(15,23,42,.08); box-shadow: 0 24px 80px rgba(15,23,42,.08); }
         .logo-track { display:flex; gap:24px; align-items:center; width:max-content; animation: marquee-logos 28s linear infinite; }
@@ -1313,7 +1313,7 @@ const BarakaDigitalHub = () => {
                   </h1>
                   <div style={{ display:"flex", gap:12, flexWrap:"wrap", marginBottom:36 }}>
                     <button type="button" onClick={() => navigate("pilot")} className="btn-primary">Start Pilot Program <ArrowRight size={17} /></button>
-                    <button type="button" onClick={() => navigate("services")} className="btn-secondary">Explore Services</button>
+                    <button type="button" onClick={() => navigate("services")} className="btn-secondary-alt">Explore Services</button>
                   </div>
                   <div className="stat-grid" style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3,1fr)", gap:10 }}>
                     {[{v:"100+",l:"Contractors"},{v:"<4hr",l:"Response"},{v:"5K+ Hr",l:"Weekly Capacity"}].map((s,i)=>(

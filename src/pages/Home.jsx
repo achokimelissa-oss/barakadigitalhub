@@ -41,10 +41,10 @@ function Home() {
           </div>
         </div>
         <div className="hero-actions">
-          <Link to="/services" className="button primary">
+          <Link to="/services" className="btn-primary">
             Our services
           </Link>
-          <Link to="/impact" className="button secondary">
+          <Link to="/impact" className="btn-secondary">
             Learn more
           </Link>
         </div>
