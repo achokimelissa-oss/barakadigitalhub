@@ -130,13 +130,31 @@ function Impact() {
             padding: 0;
           }
 
-          body {
+          body,
+          body.impact-page {
             background: #041528 !important;
             font-family: 'Inter', sans-serif;
-            color: var(--text);
+            color: var(--text) !important;
             min-height: 100vh;
             overflow-x: hidden;
             position: relative;
+          }
+
+          body.impact-page .hero-sub,
+          body.impact-page .stat-label,
+          body.impact-page .section-sub,
+          body.impact-page .origin-text p,
+          body.impact-page .impact-card h3,
+          body.impact-page .impact-card p,
+          body.impact-page .alloc-desc,
+          body.impact-page .cta-block p,
+          body.impact-page .pillar span,
+          body.impact-page .btn-ghost {
+            color: #f3f7ff !important;
+          }
+
+          body.impact-page .impact-card {
+            background: rgba(255,255,255,0.08);
           }
 
           .impact-page {
@@ -190,7 +208,7 @@ function Impact() {
 
           .hero-sub {
             font-size: 17px;
-            color: var(--text-dim);
+            color: var(--text);
             line-height: 1.7;
             max-width: 560px;
             margin-bottom: 48px;
@@ -221,8 +239,8 @@ function Impact() {
 
           .btn-ghost {
             background: transparent;
-            color: var(--text-dim);
-            border: 1px solid rgba(143, 168, 200, 0.3);
+            color: var(--text);
+            border: 1px solid rgba(143, 168, 200, 0.35);
             border-radius: 8px;
             padding: 13px 28px;
             font-size: 14px;
@@ -272,7 +290,7 @@ function Impact() {
 
           .stat-label {
             font-size: 13px;
-            color: var(--text-dim);
+            color: #f3f7ff;
             line-height: 1.5;
           }
 
@@ -295,7 +313,7 @@ function Impact() {
 
           .section-sub {
             font-size: 15px;
-            color: var(--text-dim);
+            color: #dde8ff;
             line-height: 1.7;
             max-width: 520px;
             margin-bottom: 48px;
@@ -360,7 +378,7 @@ function Impact() {
 
           .pillar span {
             font-size: 14px;
-            color: #c5d5e8;
+            color: var(--text);
             font-weight: 500;
           }
 
@@ -402,7 +420,7 @@ function Impact() {
 
           .impact-card p {
             font-size: 14px;
-            color: var(--text-dim);
+            color: #f4f8ff;
             line-height: 1.7;
           }
 
@@ -454,7 +472,7 @@ function Impact() {
 
           .alloc-desc {
             font-size: 13px;
-            color: var(--text-dim);
+            color: #f3f7ff;
             line-height: 1.5;
           }
 
@@ -493,7 +511,7 @@ function Impact() {
 
           .ripple-content p {
             font-size: 15px;
-            color: var(--text-dim);
+            color: #f3f7ff;
             line-height: 1.6;
             padding-top: 0;
             margin-top: -2px;
@@ -511,7 +529,7 @@ function Impact() {
 
           .cta-block p {
             font-size: 16px;
-            color: var(--text-dim);
+            color: var(--text);
             margin-bottom: 36px;
             max-width: 500px;
             margin-left: auto;
