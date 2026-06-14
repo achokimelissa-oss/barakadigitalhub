@@ -89,6 +89,10 @@ export default function BackOfficePage({ goBack }) {
           max-width: 740px;
           margin: 0 auto;
           padding: 64px 5% 100px;
+          background: #ffffff;
+          color: #0b1220;
+          border-radius: 12px;
+          box-shadow: 0 12px 30px rgba(2,6,23,0.06);
         }
 
         .article-category {
@@ -116,7 +120,7 @@ export default function BackOfficePage({ goBack }) {
           font-family: 'Sora', sans-serif;
           font-size: clamp(1.75rem, 4vw, 2.5rem);
           font-weight: 800;
-          color: var(--navy);
+          color: #0b1220;
           line-height: 1.16;
           letter-spacing: -0.025em;
           margin-bottom: 28px;
@@ -133,7 +137,7 @@ export default function BackOfficePage({ goBack }) {
         .article-body p {
           font-size: 1.05rem;
           line-height: 1.88;
-          color: rgba(226,232,240,.85);
+          color: #334155;
           margin-bottom: 24px;
         }
 

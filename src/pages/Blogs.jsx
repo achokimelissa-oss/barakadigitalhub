@@ -63,15 +63,15 @@ export default function BlogsPage({ goBack, isMobile }) {
 
         <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3, minmax(0, 1fr))", gap: 24 }}>
           {blogs.map((blog, index) => (
-            <div key={index} style={{ position: "relative", overflow: "hidden", borderRadius: 28, border: "1px solid rgba(255,255,255,.08)", background: "rgba(1,12,32,.72)", boxShadow: "0 30px 80px rgba(0, 0, 0, 0.35)", padding: "32px 28px", minHeight: 320 }}>
-              <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at top left, rgba(59,130,246,.24), transparent 30%), radial-gradient(circle at bottom right, rgba(16,185,129,.18), transparent 28%)", pointerEvents: "none", opacity: 0.65 }} />
+            <div key={index} style={{ position: "relative", overflow: "hidden", borderRadius: 28, border: "1px solid rgba(2,6,23,0.06)", background: "#ffffff", boxShadow: "0 10px 30px rgba(2,6,23,0.06)", padding: "32px 28px", minHeight: 320 }}>
+              <div style={{ position: "absolute", inset: 0, background: "none", pointerEvents: "none", opacity: 0 }} />
               <div style={{ position: "relative", zIndex: 1, display: "flex", flexDirection: "column", height: "100%" }}>
-                <span style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", color: "#7dd3fc", fontSize: ".82rem", fontWeight: 700, letterSpacing: ".12em", textTransform: "uppercase", marginBottom: 18, background: "rgba(15, 23, 42, .55)", borderRadius: 999, padding: "8px 14px" }}>{blog.tag}</span>
-                <h2 style={{ fontFamily: "'Inter', sans-serif", fontSize: "1.55rem", lineHeight: 1.2, marginBottom: 16, color: "#ffffff" }}>{blog.title}</h2>
-                <p style={{ color: "rgba(226,232,240,.85)", lineHeight: 1.75, fontSize: "0.98rem", marginBottom: "auto" }}>{blog.excerpt}</p>
+                <span style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", color: "#0369a1", fontSize: ".82rem", fontWeight: 700, letterSpacing: ".12em", textTransform: "uppercase", marginBottom: 18, background: "rgba(59,130,246,0.08)", borderRadius: 999, padding: "8px 14px", border: "1px solid rgba(59,130,246,0.12)" }}>{blog.tag}</span>
+                <h2 style={{ fontFamily: "'Inter', sans-serif", fontSize: "1.55rem", lineHeight: 1.2, marginBottom: 16, color: "#0b1220" }}>{blog.title}</h2>
+                <p style={{ color: "#334155", lineHeight: 1.75, fontSize: "0.98rem", marginBottom: "auto" }}>{blog.excerpt}</p>
                 <div style={{ marginTop: 24, display: "flex", justifyContent: "space-between", alignItems: "center", gap: 16 }}>
-                  <span style={{ color: "rgba(226,232,240,.6)", fontSize: ".85rem", fontWeight: 600 }}>{blog.date}</span>
-                  <a href={`/${blog.page}`} onClick={(e) => { e.preventDefault(); router(`/${blog.page}`); }} style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", border: "1px solid rgba(124, 211, 252, .45)", background: "rgba(59,130,246,.14)", color: "#cce7ff", borderRadius: 999, padding: "10px 16px", cursor: "pointer", fontWeight: 700, fontFamily: "inherit", fontSize: ".86rem", textDecoration: "none" }}>Read More</a>
+                  <span style={{ color: "#6b7280", fontSize: ".85rem", fontWeight: 600 }}>{blog.date}</span>
+                  <a href={`/${blog.page}`} onClick={(e) => { e.preventDefault(); router(`/${blog.page}`); }} style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", border: "1px solid rgba(3,105,161,0.14)", background: "transparent", color: "#0369a1", borderRadius: 999, padding: "10px 16px", cursor: "pointer", fontWeight: 700, fontFamily: "inherit", fontSize: ".86rem", textDecoration: "none" }}>Read More</a>
                 </div>
               </div>
             </div>
