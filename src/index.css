@@ -189,10 +189,10 @@ a {
 
 .section-block {
   padding: 56px 0;
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  border-radius: 32px;
-  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.06);
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 body.impact-page .section-block,
@@ -202,7 +202,7 @@ body.impact-page .about-panel,
 body.impact-page .impact-card,
 body.impact-page .stat-card,
 body.impact-page .card {
-  background: rgba(4, 16, 33, 0.72);
+  background: rgba(3, 12, 24, 0.78);
   color: #f8fafc;
   border: 1px solid rgba(125, 207, 255, 0.16);
   box-shadow: 0 20px 55px rgba(2, 8, 23, 0.24);

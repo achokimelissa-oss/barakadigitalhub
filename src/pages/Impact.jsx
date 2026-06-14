@@ -70,7 +70,7 @@ function Impact() {
           .wrap{ max-width:1400px; margin:0 auto; padding:0 4vw; }
 
           /* CTA styles copied from About page */
-          .cta-section{ position:relative; display:grid; grid-template-columns:1fr; gap:24px; background: linear-gradient(145deg, rgba(8, 23, 47, 0.98), rgba(4, 14, 29, 0.98)); border:1px solid rgba(125, 207, 255, 0.16); border-radius:28px; padding:42px 38px; margin-bottom:24px; }
+          .cta-section{ position:relative; display:grid; grid-template-columns:1fr; gap:24px; background: linear-gradient(145deg, rgba(8, 23, 47, 0.96), rgba(4, 14, 29, 0.96)); border:1px solid rgba(125, 207, 255, 0.16); border-radius:28px; padding:42px 38px; margin-bottom:24px; }
           .cta-section > * { position:relative; z-index:1; }
           .cta-copy{ max-width:100%; color:#d6fbff; margin:16px 0 24px; line-height:1.9; font-size:1rem; }
           .cta-highlight{ display:flex; justify-content:center; gap:24px; align-items:stretch; }
