@@ -134,12 +134,23 @@ function Impact() {
           body.impact-page {
             background: #041528 !important;
             font-family: 'Inter', sans-serif;
-            color: var(--text) !important;
+            color: #f3f7ff !important;
             min-height: 100vh;
             overflow-x: hidden;
             position: relative;
           }
 
+          body.impact-page .impact-page,
+          body.impact-page .page,
+          body.impact-page .impact-bg,
+          body.impact-page .tag,
+          body.impact-page h1,
+          body.impact-page h2,
+          body.impact-page h3,
+          body.impact-page h4,
+          body.impact-page p,
+          body.impact-page a,
+          body.impact-page span,
           body.impact-page .hero-sub,
           body.impact-page .stat-label,
           body.impact-page .section-sub,
@@ -153,8 +164,12 @@ function Impact() {
             color: #f3f7ff !important;
           }
 
+          body.impact-page .impact-page {
+            background: #041528 !important;
+          }
+
           body.impact-page .impact-card {
-            background: rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.08) !important;
           }
 
           .impact-page {
