@@ -111,27 +111,27 @@ function Impact() {
         />
         <style>{`
           :root {
-            --navy: #041b45;
-            --dark-navy: #07142a;
-            --deepest: #010810;
+            --navy: #031627;
+            --dark-navy: #020e19;
+            --deepest: #01050d;
             --green: #2e9e44;
             --teal: #4dd7ff;
             --amber: #7dcfff;
-            --text: #f3f7ff;
-            --text-dim: #8fa8c8;
-            --line: rgba(255,255,255,0.12);
+            --text: #f7fbff;
+            --text-dim: #bfd4ee;
+            --line: rgba(255,255,255,0.16);
           }
 
           * { margin: 0; padding: 0; box-sizing: border-box; }
 
           html, body, #root {
-            background: #0b1f3a !important;
+            background: #041528 !important;
             margin: 0;
             padding: 0;
           }
 
           body {
-            background: #0b1f3a !important;
+            background: #041528 !important;
             font-family: 'Inter', sans-serif;
             color: var(--text);
             min-height: 100vh;
@@ -142,7 +142,7 @@ function Impact() {
           .impact-page {
             position: relative;
             min-height: 100vh;
-            background: #0b1f3a !important;
+            background: #041528 !important;
           }
 
           .impact-bg {
@@ -243,8 +243,8 @@ function Impact() {
           }
 
           .stat-card {
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.16);
             border-radius: 12px;
             padding: 28px 24px;
             position: relative;
@@ -272,7 +272,7 @@ function Impact() {
 
           .stat-label {
             font-size: 13px;
-            color: #6b8bad;
+            color: var(--text-dim);
             line-height: 1.5;
           }
 
@@ -295,7 +295,7 @@ function Impact() {
 
           .section-sub {
             font-size: 15px;
-            color: #7a9abf;
+            color: var(--text-dim);
             line-height: 1.7;
             max-width: 520px;
             margin-bottom: 48px;
@@ -306,8 +306,8 @@ function Impact() {
           }
 
           .origin-card {
-            background: rgba(27, 58, 107, 0.35);
-            border: 1px solid rgba(46, 158, 68, 0.2);
+            background: rgba(2, 18, 38, 0.90);
+            border: 1px solid rgba(46, 158, 68, 0.30);
             border-radius: 14px;
             padding: 40px;
             display: grid;
@@ -318,7 +318,7 @@ function Impact() {
 
           .origin-text p {
             font-size: 15px;
-            color: var(--text-dim);
+            color: var(--text);
             line-height: 1.8;
             margin-bottom: 16px;
           }
@@ -341,8 +341,8 @@ function Impact() {
           }
 
           .pillar {
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.07);
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.12);
             border-radius: 10px;
             padding: 18px 20px;
             display: flex;
@@ -376,8 +376,8 @@ function Impact() {
           }
 
           .impact-card {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.07);
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.14);
             border-radius: 12px;
             padding: 32px 28px;
             position: relative;
@@ -402,7 +402,7 @@ function Impact() {
 
           .impact-card p {
             font-size: 14px;
-            color: #6b8bad;
+            color: var(--text-dim);
             line-height: 1.7;
           }
 
@@ -454,7 +454,7 @@ function Impact() {
 
           .alloc-desc {
             font-size: 13px;
-            color: #6b8bad;
+            color: var(--text-dim);
             line-height: 1.5;
           }
 
@@ -500,8 +500,8 @@ function Impact() {
           }
 
           .cta-block {
-            background: rgba(27,58,107,0.4);
-            border: 1px solid rgba(46,158,68,0.2);
+            background: rgba(2,16,35,0.92);
+            border: 1px solid rgba(46,158,68,0.30);
             border-radius: 16px;
             padding: 56px 48px;
             text-align: center;
@@ -511,7 +511,7 @@ function Impact() {
 
           .cta-block p {
             font-size: 16px;
-            color: #7a9abf;
+            color: var(--text-dim);
             margin-bottom: 36px;
             max-width: 500px;
             margin-left: auto;
