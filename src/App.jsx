@@ -1736,46 +1736,39 @@ const BarakaDigitalHub = () => {
         </>
       )}
 
-      <footer style={{ background:"linear-gradient(180deg,#021024,#020617)", padding:"64px 24px 36px", borderTop:"1px solid rgba(255,255,255,.08)" }}>
+      <footer style={{ background: "#000000", padding: "64px 24px 36px", borderTop: "1px solid rgba(255,255,255,0.06)", position: 'relative', zIndex: 50 }}>
         <div className="page-container">
-          <div style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "1.6fr 1fr 1fr 1fr", gap:32, alignItems:"start", marginBottom:36 }}>
+          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "2fr 1fr 1fr 1fr", gap: 32, alignItems: "start", marginBottom: 36 }}>
             <div>
-              <img src="/favicon-512.png" alt="Baraka Digital Hub footer logo" style={{ height:56, width:"auto", marginBottom:18 }} />
-              <p style={{ color:"rgba(255,255,255,.75)", maxWidth:360, lineHeight:1.8, marginBottom:24 }}>Professional AI data and digital operations delivered with social impact from Nairobi to global teams.</p>
-            </div>
-
-            <div>
-              <div style={{ fontSize:"0.95rem", fontWeight:700, color:"#ffffff", marginBottom:14 }}>Explore</div>
-              <div style={{ display:"grid", gap:10 }}>
-                <button onClick={() => navigate("home")} style={{ textAlign:"left", background:"none", border:"none", color:"rgba(255,255,255,.85)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,.85)"}>Home</button>
-                <button onClick={() => navigate("services")} style={{ textAlign:"left", background:"none", border:"none", color:"rgba(255,255,255,.85)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,.85)"}>Services</button>
-                <button onClick={() => navigate("about")} style={{ textAlign:"left", background:"none", border:"none", color:"rgba(255,255,255,.85)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,.85)"}>About</button>
-                <button onClick={() => navigate("impact")} style={{ textAlign:"left", background:"none", border:"none", color:"rgba(255,255,255,.85)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,.85)"}>Impact</button>
-                <button onClick={() => navigate("blogs")} style={{ textAlign:"left", background:"none", border:"none", color:"rgba(255,255,255,.85)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,.85)"}>Blogs</button>
+              <img src="/favicon-512.png" alt="Baraka Digital Hub footer logo" style={{ height: 56, width: "auto", marginBottom: 18 }} />
+              <p style={{ color: "rgba(255,255,255,0.9)", maxWidth: 420, lineHeight: 1.8, marginBottom: 18, fontSize: '0.98rem' }}><strong>Baraka Digital Hub</strong> — Professional AI data and digital operations delivered with measurable social impact from Nairobi to global teams.</p>
+              <div style={{ display: 'flex', gap: 12, marginTop: 6 }}>
+                <a href="/" onClick={(e)=>{e.preventDefault(); navigate('/');}} style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.95rem' }}>Home</a>
+                <a href="/services" onClick={(e)=>{e.preventDefault(); navigate('/services');}} style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.95rem' }}>Services</a>
+                <a href="/about" onClick={(e)=>{e.preventDefault(); navigate('/about');}} style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.95rem' }}>About</a>
               </div>
             </div>
 
             <div>
-              <div style={{ fontSize:"0.95rem", fontWeight:700, color:"#ffffff", marginBottom:14 }}>Services</div>
-              <div style={{ display:"grid", gap:10 }}>
-                <button onClick={() => navigate("services")} style={{ textAlign:"left", background:"none", border:"none", color:"rgba(255,255,255,.85)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,.85)"}>Computer Vision</button>
-                <button onClick={() => navigate("services")} style={{ textAlign:"left", background:"none", border:"none", color:"rgba(255,255,255,.85)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,.85)"}>NLP & Text</button>
-                <button onClick={() => navigate("services")} style={{ textAlign:"left", background:"none", border:"none", color:"rgba(255,255,255,.85)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,.85)"}>Audio Annotation</button>
-                <button onClick={() => navigate("services")} style={{ textAlign:"left", background:"none", border:"none", color:"rgba(255,255,255,.85)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,.85)"}>LLM Training</button>
+              <div style={{ fontSize: "0.95rem", fontWeight: 700, color: "#ffffff", marginBottom: 14 }}>Pages</div>
+              <div style={{ display: "grid", gap: 8 }}>
+                {['/', '/services', '/about', '/impact', '/blogs', '/insights', '/backoffice', '/african-languages', '/operations', '/pilot', '/careers', '/privacy', '/contact'].map((p) => {
+                  const label = p === '/' ? 'Home' : p.replace('/','').replace('-', ' ').replace(/\b\w/g, c=>c.toUpperCase());
+                  const to = p === '/' ? '/' : p.replace(/^\//, '');
+                  return (
+                    <button key={p} onClick={() => navigate(to)} style={{ textAlign: "left", background: "none", border: "none", color: "rgba(255,255,255,0.85)", padding: 0, cursor: "pointer", fontSize: "0.95rem", fontFamily: "inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,0.85)"}>{label}</button>
+                  );
+                })}
               </div>
             </div>
 
             <div>
-              <div style={{ fontSize:"0.95rem", fontWeight:700, color:"#ffffff", marginBottom:14 }}>Company</div>
-              <div style={{ display:"grid", gap:10 }}>
-                <button onClick={() => navigate("careers")} style={{ textAlign:"left", background:"none", border:"none", color:"rgba(255,255,255,.85)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,.85)"}>Careers</button>
-                <button onClick={() => navigate("privacy")} style={{ textAlign:"left", background:"none", border:"none", color:"rgba(255,255,255,.85)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,.85)"}>Privacy</button>
-                <button onClick={() => navigate("contact")} style={{ textAlign:"left", background:"none", border:"none", color:"rgba(255,255,255,.85)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,.85)"}>Contact</button>
-              </div>
-              <div style={{ marginTop: 24, color: 'rgba(255,255,255,.75)', fontSize: '0.95rem', lineHeight: 1.8 }}>
-                <p style={{ margin: 0 }}>projects@barakadigitalhub.com</p>
-                <p style={{ margin: 0 }}>+254793842347</p>
-                <p style={{ margin: 0 }}>Nairobi, Kenya</p>
+              <div style={{ fontSize: "0.95rem", fontWeight: 700, color: "#ffffff", marginBottom: 14 }}>Services</div>
+              <div style={{ display: "grid", gap: 8 }}>
+                <button onClick={() => navigate("services")} style={{ textAlign: "left", background: "none", border: "none", color: "rgba(255,255,255,0.85)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,.85)"}>Computer Vision</button>
+                <button onClick={() => navigate("services")} style={{ textAlign: "left", background: "none", border: "none", color: "rgba(255,255,255,0.85)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,.85)"}>NLP & Text</button>
+                <button onClick={() => navigate("services")} style={{ textAlign: "left", background: "none", border: "none", color: "rgba(255,255,255,0.85)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,.85)"}>Audio Annotation</button>
+                <button onClick={() => navigate("services")} style={{ textAlign: "left", background: "none", border: "none", color: "rgba(255,255,255,0.85)", padding:0, cursor:"pointer", fontSize:"0.95rem", fontFamily:"inherit" }} onMouseEnter={e=>e.target.style.color="white"} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,.85)"}>LLM Training</button>
               </div>
             </div>
           </div>

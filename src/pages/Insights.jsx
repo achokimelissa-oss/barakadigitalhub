@@ -451,9 +451,7 @@ export default function InsightsPage({ goBack }) {
         </div>
       </div>
 
-      <footer>
-        © 2026 <span>Baraka Digital Hub</span> · Nairobi, Kenya · projects@barakadigitalhub.com
-      </footer>
+      
     </>
   );
 }

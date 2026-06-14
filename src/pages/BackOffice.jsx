@@ -529,10 +529,6 @@ export default function BackOfficePage({ goBack }) {
           <p>To discuss your back-office requirements and scope a pilot project, reach out to our team: <strong>projects@barakadigitalhub.com</strong></p>
         </div>
       </div>
-
-      <footer>
-        © 2026 <span>Baraka Digital Hub</span> · Nairobi, Kenya · projects@barakadigitalhub.com
-      </footer>
     </>
   );
 }

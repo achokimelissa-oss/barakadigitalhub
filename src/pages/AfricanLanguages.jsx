@@ -486,10 +486,6 @@ export default function AfricanLanguagesPage({ goBack }) {
           <p>Reach out to discuss your language requirements and data volumes: <strong>projects@barakadigitalhub.com</strong></p>
         </div>
       </div>
-
-      <footer>
-        © 2026 <span>Baraka Digital Hub</span> · Nairobi, Kenya · projects@barakadigitalhub.com
-      </footer>
     </>
   );
 }
