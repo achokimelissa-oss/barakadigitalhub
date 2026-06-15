@@ -1080,6 +1080,16 @@ const BarakaDigitalHub = () => {
         @keyframes grid-flow { 0% { transform: translate(0, 0); } 100% { transform: translate(40px, 40px); } }
         .hero-grid { position: relative; }
         .hero-grid::before { display: none; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(15,23,42,.08); border: 1px solid rgba(15,23,42,.16); border-radius: 999px; padding: 12px 20px; color: #334155; font-size: 0.88rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; justify-content: center; }
+        .hero-badge .ani-pulse { width: 10px; height: 10px; border-radius: 50%; background: #2563eb; box-shadow: 0 0 0 4px rgba(37,99,235,.12); }
+        .hero-metrics { display: grid; grid-template-columns: repeat( auto-fit, minmax(170px, 1fr) ); gap: 14px; margin-top: 24px; }
+        .metric-card { padding: 18px 20px; border-radius: 20px; background: rgba(59,130,246,.08); border: 1px solid rgba(59,130,246,.16); }
+        .metric-value { font-size: 1.7rem; font-weight: 800; color: #0f172a; line-height: 1.1; }
+        .metric-label { margin-top: 8px; font-size: 0.95rem; color: #475569; line-height: 1.6; }
+        .hero-flow { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 22px; }
+        .flow-step { display: inline-flex; align-items: center; gap: 10px; padding: 12px 18px; border-radius: 999px; background: rgba(15,23,42,.05); border: 1px solid rgba(15,23,42,.08); color: #334155; font-size: 0.95rem; }
+        .flow-step__number { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: #eff6ff; color: #0f172a; font-size: 0.82rem; font-weight: 700; }
+        .hero-note { margin-top: 18px; max-width: 680px; color: #475569; font-size: 0.98rem; line-height: 1.75; margin-left: auto; margin-right: auto; }
         .code-panel { position: relative; background: rgba(8,18,36,.92); border: 1px solid rgba(148,163,184,.22); color: #e2e8f0; border-radius: 28px; box-shadow: 0 28px 100px rgba(10,22,51,.30); overflow: hidden; backdrop-filter: blur(10px); font-family: 'Inter', Arial, sans-serif; }
         .code-panel::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px); background-size: 88px 88px; opacity: .12; pointer-events: none; }
         .code-panel-header { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; padding: 0 28px 0 28px; }
@@ -1255,9 +1265,9 @@ const BarakaDigitalHub = () => {
             <div className="page-container" style={{ position:"relative", zIndex:1, maxWidth:960, margin:"0 auto", padding:"0 24px" }}>
               <div className="hero-grid" style={{ display:"grid", gridTemplateColumns: "1fr", gap:56, alignItems:"center", justifyItems:"center" }}>
                 <div style={{ width:"100%", maxWidth:760, textAlign: isMobile ? "left" : "center" }}>
-                  <div style={{ display:"inline-flex", alignItems:"center", gap:10, background:"rgba(15,23,42,.08)", border:"1px solid rgba(15,23,42,.16)", borderRadius:100, padding:"12px 24px", marginBottom:20, boxShadow:"0 20px 60px rgba(15,23,42,.10)" }}>
-                    <span className="ani-pulse" style={{ width:8, height:8, borderRadius:"50%", background:"#2563eb", display:"inline-block", boxShadow:"0 0 0 4px rgba(37,99,235,.12)" }} />
-                    <span className="typing-effect" style={{ fontFamily:"'Inter', Arial, sans-serif", fontSize:"0.88rem", fontWeight:700, color:"#374151", letterSpacing:"0.14em", textTransform:"uppercase" }}>Enterprise AI & Operations</span>
+                  <div className="hero-badge" style={{ marginBottom: 20 }}>
+                    <span className="ani-pulse" />
+                    <span>Tool-agnostic enterprise AI ops · Audit-ready delivery · Production-grade execution</span>
                   </div>
                   <h1 className="hero-h1 font-display" style={{ fontSize: isMobile ? "3rem" : "4.4rem", fontWeight:900, lineHeight:1.04, letterSpacing:"-.03em", color:"#0f172a", marginBottom:18, textShadow:"0 6px 24px rgba(15,23,42,.05)" }}>
                     AI Training & Digital Operations
@@ -1267,17 +1277,32 @@ const BarakaDigitalHub = () => {
                   <p style={{ color:"#475569", fontSize: isMobile ? "1rem" : "1.03rem", lineHeight:1.9, marginBottom:34, fontFamily:"'Inter', Arial, sans-serif" }}>
                     Baraka Digital Hub delivers enterprise-ready AI data operations with disciplined execution, secure workflows, and measurable outcomes. Our Nairobi-based teams support global clients with repeatable delivery, quality governance, and production-grade transparency.
                   </p>
-                  <div style={{ display:"flex", justifyContent: isMobile ? "flex-start" : "center", gap:16, flexWrap:"wrap", marginBottom:40 }}>
+                  <div style={{ display:"flex", justifyContent: isMobile ? "flex-start" : "center", gap:16, flexWrap:"wrap", marginBottom:32 }}>
                     <button type="button" onClick={() => navigate("pilot")} className="btn-primary" style={{ background: "linear-gradient(135deg, #0f3f7a, #0b5394)", boxShadow: "0 18px 42px rgba(15,23,42,.18)" }}>Start Pilot Program <ArrowRight size={17} /></button>
                     <button type="button" onClick={() => navigate("services")} className="btn-secondary-alt">Explore Services</button>
                   </div>
-                  <div className="stat-grid" style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3,1fr)", gap:14 }}>
-                    {[{v:"100+",l:"Contractors"},{v:"<4hr",l:"Response"},{v:"5K+ Hr",l:"Weekly Capacity"}].map((s,i)=>(
-                      <div key={i} style={{ background:"rgba(255,255,255,.92)", border:"1px solid rgba(15,23,42,.08)", borderRadius:16, padding:"18px 16px", boxShadow:"0 12px 30px rgba(15,23,42,.08)", textAlign:"center" }}>
-                        <div className="font-display" style={{ fontSize:"1.75rem", fontWeight:800, color:"#0f172a" }}>{s.v}</div>
-                        <div style={{ fontSize:"0.86rem", color:"#64748b", marginTop:8, fontWeight:600 }}>{s.l}</div>
+                  <div className="hero-metrics">
+                    {[{v:"100+", l:"Certified specialists"},{v:"100%", l:"QA coverage"},{v:"90%+", l:"Accuracy target"},{v:"40–70%", l:"Cost vs US/EU"}].map((s,i)=>(
+                      <div key={i} className="metric-card">
+                        <div className="metric-value">{s.v}</div>
+                        <div className="metric-label">{s.l}</div>
                       </div>
                     ))}
+                  </div>
+                  <div className="hero-flow">
+                    {["Data ops integration", "Human QA & review", "Production-ready delivery"].map((step, index) => (
+                      <div key={index} className="flow-step">
+                        <span className="flow-step__number">0{index + 1}</span>
+                        <span>{step}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <p className="hero-note">
+                    Integrated into client workflows with audit-ready reviews and repeatable production delivery.
+                  </p>
+                  <div className="scroll-indicator">
+                    <span className="indicator-arrow">↓</span>
+                    <span>Explore capabilities</span>
                   </div>
                 </div>
               </div>
