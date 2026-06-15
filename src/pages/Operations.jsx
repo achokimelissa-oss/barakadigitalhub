@@ -24,6 +24,8 @@ function Operations() {
           body.operations-page{background:linear-gradient(180deg, #020615 0%, #04101f 28%, #081a2f 62%, #0b213b 100%);color:var(--hi);font-family:var(--sans);line-height:1.65;min-height:100vh;overflow-x:hidden;}
           body.operations-page::before{content:"";position:fixed;inset:0;background:linear-gradient(180deg, rgba(255,255,255,.04), transparent 26%, rgba(0,0,0,.18));opacity:1;pointer-events:none;z-index:0;}
           body.operations-page::after{content:"";position:fixed;top:0;right:0;width:0;height:0;background:none;opacity:0;pointer-events:none;z-index:0;}
+          .operations-page .hero::before{background:none;}
+          .operations-page .hero::after{background:none;}
           .operations-page .wrap{width:min(75%,1120px);max-width:1120px;margin:0 auto;padding:0 28px;position:relative;z-index:1;}
           @media(max-width:960px){.operations-page .wrap{width:calc(100% - 56px);}}
           .div{border:none;border-top:1px solid var(--line);}
