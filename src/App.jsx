@@ -1426,41 +1426,41 @@ const BarakaDigitalHub = () => {
             <div style={{ position: "absolute", top: "12%", left: "10%", width: isMobile ? 200 : 280, height: isMobile ? 200 : 280, borderRadius: "50%", background: "rgba(96,165,250,.12)", filter: "blur(34px)", pointerEvents: "none" }} />
             <div style={{ position: "absolute", bottom: "10%", right: "6%", width: isMobile ? 180 : 250, height: isMobile ? 180 : 250, borderRadius: "50%", background: "rgba(16,185,129,.10)", filter: "blur(32px)", pointerEvents: "none" }} />
             <div style={{ position: "absolute", top: "28%", right: "16%", width: isMobile ? 120 : 160, height: isMobile ? 120 : 160, borderRadius: "50%", background: "rgba(96,165,250,.06)", filter: "blur(24px)", pointerEvents: "none" }} />
-            <div style={{ position: "absolute", inset: 0, background: "repeating-linear-gradient(135deg, transparent 0px, transparent 32px, rgba(14,165,233,.04) 32px, rgba(14,165,233,.04) 33px)", opacity: 0.22, pointerEvents: "none" }} />
+            <div style={{ position: "absolute", inset: 0, background: "repeating-linear-gradient(135deg, transparent 0px, transparent 48px, rgba(14,165,233,.02) 48px, rgba(14,165,233,.02) 49px)", opacity: 0.12, pointerEvents: "none" }} />
             <div style={{ position: "absolute", inset: 0, pointerEvents: "none", zIndex: 0 }}>
-              <svg viewBox="0 0 1200 600" preserveAspectRatio="none" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", opacity: isMobile ? 0.10 : 0.16 }}>
+              <svg viewBox="0 0 1200 600" preserveAspectRatio="none" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", opacity: isMobile ? 0.06 : 0.09 }}>
                 <defs>
                   <linearGradient id="g1" x1="0" x2="1">
-                    <stop offset="0%" stopColor="rgba(59,130,246,0.12)" />
-                    <stop offset="100%" stopColor="rgba(14,165,233,0.08)" />
+                    <stop offset="0%" stopColor="rgba(59,130,246,0.08)" />
+                    <stop offset="100%" stopColor="rgba(14,165,233,0.05)" />
                   </linearGradient>
                   <pattern id="circuit" width="40" height="40" patternUnits="userSpaceOnUse">
                     <rect width="40" height="40" fill="transparent" />
-                    <path d="M4 20 L18 20 M20 4 L20 18 M22 22 L36 22" stroke="rgba(59,130,246,0.12)" strokeWidth="1" strokeLinecap="round" />
-                    <circle cx="6" cy="6" r="1.5" fill="rgba(59,130,246,0.14)" />
-                    <circle cx="34" cy="34" r="1.5" fill="rgba(16,185,129,0.10)" />
+                    <path d="M4 20 L18 20 M20 4 L20 18 M22 22 L36 22" stroke="rgba(59,130,246,0.08)" strokeWidth="1" strokeLinecap="round" />
+                    <circle cx="6" cy="6" r="1.5" fill="rgba(59,130,246,0.10)" />
+                    <circle cx="34" cy="34" r="1.5" fill="rgba(16,185,129,0.08)" />
                   </pattern>
                 </defs>
-                <rect width="100%" height="100%" fill="url(#circuit)" opacity={isMobile ? 0.06 : 0.08} />
+                <rect width="100%" height="100%" fill="url(#circuit)" opacity={isMobile ? 0.04 : 0.06} />
                 <g fill="none" stroke="url(#g1)" strokeWidth="1">
-                  <line x1={0} y1={0} x2={1200} y2={0} strokeOpacity={0.04} />
-                  <line x1={0} y1={60} x2={1200} y2={60} strokeOpacity={0.06} />
-                  <line x1={0} y1={120} x2={1200} y2={120} strokeOpacity={0.04} />
-                  <line x1={0} y1={180} x2={1200} y2={180} strokeOpacity={0.06} />
-                  <line x1={0} y1={240} x2={1200} y2={240} strokeOpacity={0.04} />
-                  <line x1={0} y1={300} x2={1200} y2={300} strokeOpacity={0.06} />
-                  <line x1={0} y1={360} x2={1200} y2={360} strokeOpacity={0.04} />
-                  <line x1={0} y1={420} x2={1200} y2={420} strokeOpacity={0.06} />
-                  <line x1={0} y1={480} x2={1200} y2={480} strokeOpacity={0.04} />
-                  <line x1={0} y1={540} x2={1200} y2={540} strokeOpacity={0.06} />
+                  <line x1={0} y1={0} x2={1200} y2={0} strokeOpacity={0.02} />
+                  <line x1={0} y1={60} x2={1200} y2={60} strokeOpacity={0.03} />
+                  <line x1={0} y1={120} x2={1200} y2={120} strokeOpacity={0.02} />
+                  <line x1={0} y1={180} x2={1200} y2={180} strokeOpacity={0.03} />
+                  <line x1={0} y1={240} x2={1200} y2={240} strokeOpacity={0.02} />
+                  <line x1={0} y1={300} x2={1200} y2={300} strokeOpacity={0.03} />
+                  <line x1={0} y1={360} x2={1200} y2={360} strokeOpacity={0.02} />
+                  <line x1={0} y1={420} x2={1200} y2={420} strokeOpacity={0.03} />
+                  <line x1={0} y1={480} x2={1200} y2={480} strokeOpacity={0.02} />
+                  <line x1={0} y1={540} x2={1200} y2={540} strokeOpacity={0.03} />
                 </g>
-                <g fill="none" strokeOpacity="0.12">
-                  <path d="M120 480 C200 380 320 420 440 360 S760 280 880 320" stroke="rgba(59,130,246,0.08)" strokeWidth="1.25" />
-                  <path d="M60 140 L140 120 L200 160 L280 140" stroke="rgba(16,185,129,0.06)" strokeWidth="1" />
+                <g fill="none" strokeOpacity="0.08">
+                  <path d="M120 480 C200 380 320 420 440 360 S760 280 880 320" stroke="rgba(59,130,246,0.06)" strokeWidth="1.25" />
+                  <path d="M60 140 L140 120 L200 160 L280 140" stroke="rgba(16,185,129,0.05)" strokeWidth="1" />
                 </g>
                 <g>
-                  <circle cx="220" cy="120" r="2.2" fill="rgba(59,130,246,0.14)" />
-                  <circle cx="880" cy="420" r="2.6" fill="rgba(16,185,129,0.12)" />
+                  <circle cx="220" cy="120" r="2.2" fill="rgba(59,130,246,0.10)" />
+                  <circle cx="880" cy="420" r="2.6" fill="rgba(16,185,129,0.08)" />
                 </g>
               </svg>
               <div style={{ position: "absolute", top: isMobile ? "8%" : "10%", right: isMobile ? "6%" : "8%", width: isMobile ? 110 : 180, height: isMobile ? 110 : 180, opacity: 0.14, pointerEvents: "none" }}>
