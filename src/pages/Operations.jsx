@@ -21,9 +21,9 @@ function Operations() {
           :root{--navy:#07121F;--panel:#0D1E30;--card:#111F30;--line:#1C3248;--cyan:#2DD9C8;--cyand:#1A8C80;--cyang:rgba(45,217,200,.12);--amber:#FFD166;--hi:#ECF3FA;--mid:#A7DDF0;--dim:#98CFE5;--mono:'JetBrains Mono',monospace;--sans:'Space Grotesk',sans-serif;}
           *{margin:0;padding:0;box-sizing:border-box;}
           html{scroll-behavior:smooth;}
-          body.operations-page{background:linear-gradient(180deg, #041124 0%, #071728 35%, #0c1f36 100%);color:var(--hi);font-family:var(--sans);line-height:1.65;min-height:100vh;overflow-x:hidden;}
-          body.operations-page::before{content:"";position:fixed;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:120px 120px;opacity:0.24;pointer-events:none;z-index:0;}
-          body.operations-page::after{content:"";position:fixed;top:-90px;right:-90px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle at 80% 20%, rgba(45,217,200,.08), transparent 40%),radial-gradient(circle at 15% 35%, rgba(59,130,246,.06), transparent 35%);pointer-events:none;z-index:0;}
+          body.operations-page{background:linear-gradient(180deg, #020615 0%, #04101f 28%, #081a2f 62%, #0b213b 100%);color:var(--hi);font-family:var(--sans);line-height:1.65;min-height:100vh;overflow-x:hidden;}
+          body.operations-page::before{content:"";position:fixed;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:140px 140px;opacity:0.18;pointer-events:none;z-index:0;}
+          body.operations-page::after{content:"";position:fixed;top:-80px;right:-90px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle at 80% 20%, rgba(96,165,250,.08), transparent 38%),radial-gradient(circle at 15% 32%, rgba(96,165,250,.05), transparent 32%);pointer-events:none;z-index:0;}
           .operations-page .wrap{width:min(75%,1120px);max-width:1120px;margin:0 auto;padding:0 28px;position:relative;z-index:1;}
           @media(max-width:960px){.operations-page .wrap{width:calc(100% - 56px);}}
           .div{border:none;border-top:1px solid var(--line);}
