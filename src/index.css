@@ -427,7 +427,24 @@ a {
 .hero .hero-actions .secondary,
 .hero .hero-copy p,
 .hero .hero-panel__note {
-  color: #d8e3ff;
+  color: #e8f7ff;
+}
+
+.hero .hero-panel__note,
+.hero .hero-note {
+  color: #f2fbff;
+}
+
+.hero .panel-item__text {
+  color: #e2f3ff;
+}
+
+.hero .metric-label {
+  color: #cfefff;
+}
+
+.hero .scroll-indicator {
+  color: #b8eeff;
 }
 
 .flow-step {
@@ -556,7 +573,7 @@ a {
 }
 
 .hero {
-  color: #d8e3ff;
+  color: #e8f7ff;
 }
 
 .hero .hero-badge {
@@ -565,11 +582,11 @@ a {
 
 .hero .hero-text,
 .hero .hero-copy p {
-  color: #e5f3ff;
+  color: #f0f9ff;
 }
 
 .hero .hero-panel__headline {
-  color: #f8fbff;
+  color: #ffffff;
 }
 
 .hero .panel-item strong {
@@ -577,26 +594,24 @@ a {
 }
 
 .hero .panel-item__text {
-  color: #d0e6ff;
+  color: #f4fbff;
 }
 
 .hero .hero-panel__note,
-.hero .hero-note,
-.hero .scroll-indicator,
-.hero .metric-label {
-  color: #cfefff;
-}
-
 .hero .hero-note {
-  color: #d7f5ff;
+  color: #f7fdff;
 }
 
 .hero .scroll-indicator {
-  color: #b8f1ff;
+  color: #d5fbff;
 }
 
 .hero .metric-label {
-  color: #d7efff;
+  color: #effcff;
+}
+
+.hero .panel-item span {
+  background: linear-gradient(135deg, rgba(56,189,248,0.4), rgba(59,130,246,0.3));
 }
 
 .hero .button.primary {
