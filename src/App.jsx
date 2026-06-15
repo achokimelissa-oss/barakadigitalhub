@@ -1078,7 +1078,10 @@ const BarakaDigitalHub = () => {
         .hero-tech-overlay { position: absolute; inset: 0; background: radial-gradient(circle at top left, rgba(59,130,246,.12), transparent 22%), radial-gradient(circle at bottom right, rgba(16,185,129,.10), transparent 18%); pointer-events: none; }
         .hero-tech-grid { position: absolute; inset: 0; background: radial-gradient(circle at 20% 12%, rgba(255,255,255,.08) 0, transparent 28%), repeating-linear-gradient(90deg, rgba(14,165,233,.06) 0, rgba(14,165,233,.06) 1px, transparent 1px, transparent 32px), repeating-linear-gradient(0deg, rgba(16,185,129,.05) 0, rgba(16,185,129,.05) 1px, transparent 1px, transparent 32px); background-size: 100% 100%, 32px 32px, 32px 32px; opacity: .45; pointer-events: none; animation: hero-grid-move 18s linear infinite; }
         .hero-tech-grid::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(circle at 10% 15%, rgba(59,130,246,.12) 0, transparent 22%), radial-gradient(circle at 80% 75%, rgba(16,185,129,.10) 0, transparent 24%); opacity: .65; pointer-events: none; }
-        @keyframes hero-grid-move { 0% { transform: translate(0, 0) scale(1); } 50% { transform: translate(24px, 18px) scale(1.01); } 100% { transform: translate(0, 0) scale(1); } }
+        .hero-node { position: absolute; left: 50%; top: 22%; width: 22px; height: 22px; border-radius: 50%; background: rgba(14,165,233,1); box-shadow: 0 0 0 4px rgba(14,165,233,.18), 0 0 0 12px rgba(59,130,246,.08), 0 0 32px rgba(14,165,233,.16); transform: translate(-50%, -50%); pointer-events: none; animation: node-pulse 2.8s ease-in-out infinite; }
+        .hero-node::before { content: ""; position: absolute; left: 50%; top: 50%; width: 1px; height: 80px; background: linear-gradient(180deg, rgba(14,165,233,.45) 0%, transparent 100%); transform: translate(-50%, -50%); }
+        .hero-node::after { content: ""; position: absolute; left: 50%; top: 50%; width: 80px; height: 1px; background: linear-gradient(90deg, rgba(16,185,129,.45) 0%, transparent 100%); transform: translate(-50%, -50%); }
+        @keyframes node-pulse { 0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 1; } 50% { transform: translate(-50%, -50%) scale(1.15); opacity: .85; } }
         .hero-grid { position: relative; }
         .hero-grid::before { display: none; }
         .hero-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(15,23,42,.08); border: 1px solid rgba(15,23,42,.16); border-radius: 999px; padding: 12px 20px; color: #334155; font-size: 0.88rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; justify-content: center; }
@@ -1259,6 +1262,7 @@ const BarakaDigitalHub = () => {
           <section style={{ position:"relative", left:"50%", right:"50%", width:"100vw", maxWidth:"100vw", marginLeft:"-50vw", marginRight:"-50vw", paddingTop:72, paddingBottom:80, paddingLeft:0, paddingRight:0, overflow:"visible", background:"linear-gradient(135deg, #f0f7ff 0%, #e6f3ff 25%, #ecfdf5 50%, #e0f8f5 75%, #f0f4ff 100%)" }}>
             <div className="dot-grid" style={{ position:"absolute", inset:0, opacity:.6, pointerEvents: "none" }} />
             <div className="hero-tech-grid" />
+            <div className="hero-node" />
             <div className="hero-tech-overlay" />
             <div style={{ position:"absolute", top:"-20%", right: isMobile ? "-30%" : "-15%", width: isMobile ? 420 : 800, height: isMobile ? 420 : 800, borderRadius:"50%", background:"radial-gradient(circle,rgba(29,78,216,.08) 0%,transparent 70%)", pointerEvents: "none" }} />
             <div style={{ position:"absolute", top:0, left:0, width: isMobile ? 300 : 500, height: isMobile ? 300 : 500, borderRadius:"50%", background:"radial-gradient(circle,rgba(59,130,246,.14) 0%,transparent 74%)", pointerEvents:"none", transform:"translate(-25%, -25%)" }} />
