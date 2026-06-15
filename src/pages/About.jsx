@@ -22,9 +22,9 @@ function About({ navigate }) {
 
           body{
             background:
-              radial-gradient(circle at 15% 10%, rgba(14,165,233,0.12), transparent 32%),
-              radial-gradient(circle at 85% 18%, rgba(56,189,248,0.08), transparent 28%),
-              linear-gradient(180deg, #020617 0%, #07111f 45%, #040b16 100%);
+              radial-gradient(circle at 12% 12%, rgba(79,176,255,0.08), transparent 28%),
+              radial-gradient(circle at 86% 16%, rgba(56,189,248,0.05), transparent 24%),
+              linear-gradient(180deg, #020917 0%, #061224 45%, #03070f 100%);
             color:var(--text);
             font-family:'Inter', 'Segoe UI', system-ui, sans-serif;
             line-height:1.65;
@@ -37,10 +37,10 @@ function About({ navigate }) {
             position:fixed;
             top:0;left:0;right:0;bottom:0;
             background-image:
-              linear-gradient(var(--line) 1px, transparent 1px),
-              linear-gradient(90deg, var(--line) 1px, transparent 1px);
-            background-size:48px 48px;
-            mask-image: radial-gradient(circle at 50% 0%, rgba(0,0,0,0.6), transparent 70%);
+              linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px);
+            background-size:64px 64px;
+            mask-image: radial-gradient(circle at 50% 0%, rgba(0,0,0,0.4), transparent 70%);
             pointer-events:none;
             z-index:0;
           }

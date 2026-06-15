@@ -23,7 +23,7 @@ function Impact() {
 
     const init = () => {
       nodes = [];
-      const count = Math.floor((W * H) / 18000);
+      const count = Math.floor((W * H) / 32000);
       for (let i = 0; i < count; i += 1) {
         nodes.push({
           x: Math.random() * W,
@@ -32,7 +32,7 @@ function Impact() {
           vy: (Math.random() - 0.5) * 0.3,
           r: Math.random() * 1.5 + 0.5,
           pulse: Math.random() * Math.PI * 2,
-          bright: Math.random() > 0.85,
+          bright: Math.random() > 0.88,
         });
       }
     };
@@ -40,12 +40,12 @@ function Impact() {
     const draw = () => {
       ctx.clearRect(0, 0, W, H);
 
-      const gridSize = 48;
+      const gridSize = 56;
       for (let x = gridSize; x < W; x += gridSize) {
         for (let y = gridSize; y < H; y += gridSize) {
           ctx.beginPath();
           ctx.arc(x, y, 0.8, 0, Math.PI * 2);
-          ctx.fillStyle = "rgba(46,158,68,0.08)";
+          ctx.fillStyle = "rgba(46,158,68,0.04)";
           ctx.fill();
         }
       }
@@ -61,7 +61,7 @@ function Impact() {
           const dist = Math.sqrt(dx * dx + dy * dy);
 
           if (dist < 140) {
-            const alpha = (1 - dist / 140) * 0.12;
+            const alpha = (1 - dist / 140) * 0.08;
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
             ctx.lineTo(b.x, b.y);
@@ -79,11 +79,11 @@ function Impact() {
         if (n.y < 0 || n.y > H) n.vy *= -1;
 
         const pulse = Math.sin(t * 1.2 + n.pulse) * 0.3 + 0.7;
-        const alpha = n.bright ? 0.8 * pulse : 0.25 * pulse;
+        const alpha = n.bright ? 0.55 * pulse : 0.18 * pulse;
         const color = n.bright ? `rgba(46,158,68,${alpha})` : `rgba(27,80,180,${alpha})`;
 
         ctx.beginPath();
-        ctx.arc(n.x, n.y, n.r * (n.bright ? 1.5 : 1), 0, Math.PI * 2);
+        ctx.arc(n.x, n.y, n.r * (n.bright ? 1.4 : 1), 0, Math.PI * 2);
         ctx.fillStyle = color;
         ctx.fill();
       }
@@ -125,14 +125,14 @@ function Impact() {
           * { margin: 0; padding: 0; box-sizing: border-box; }
 
           html, body, #root {
-            background: #041528 !important;
+            background: linear-gradient(180deg, #041528 0%, #031022 45%, #020b15 100%) !important;
             margin: 0;
             padding: 0;
           }
 
           body,
           body.impact-page {
-            background: #041528 !important;
+            background: linear-gradient(180deg, #041528 0%, #031022 45%, #020b15 100%) !important;
             font-family: 'Inter', sans-serif;
             color: #f3f7ff !important;
             min-height: 100vh;
@@ -584,7 +584,7 @@ function Impact() {
         <canvas ref={canvasRef} className="impact-bg" />
 
         <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 0 }} aria-hidden>
-          <div style={{ position: 'absolute', inset: 0, backgroundImage: "repeating-linear-gradient(180deg, transparent 0, transparent 40px, rgba(125,207,255,0.18) 40px, rgba(125,207,255,0.18) 41px), repeating-linear-gradient(90deg, transparent 0, transparent 40px, rgba(56,189,248,0.14) 40px, rgba(56,189,248,0.14) 41px)", opacity: 0.68 }} />
+          <div style={{ position: 'absolute', inset: 0, backgroundImage: "repeating-linear-gradient(180deg, transparent 0, transparent 48px, rgba(125,207,255,0.10) 48px, rgba(125,207,255,0.10) 49px), repeating-linear-gradient(90deg, transparent 0, transparent 48px, rgba(56,189,248,0.10) 48px, rgba(56,189,248,0.10) 49px)", opacity: 0.55 }} />
         </div>
 
         <div className="page">

@@ -69,7 +69,7 @@ function Contact() {
           content="Get in touch with the Baraka Digital Hub team for AI training data, annotation services, or partnership enquiries."
         />
       </Helmet>
-      <div style={{ background: "radial-gradient(circle at top, rgba(59,130,246,.18), transparent 28%), radial-gradient(circle at bottom right, rgba(16,185,129,.14), transparent 24%), linear-gradient(180deg, #020617 0%, #08172f 45%, #0b203f 100%)", color: "#e2e8f0", minHeight: "100vh" }}>
+      <div style={{ background: "radial-gradient(circle at 12% 12%, rgba(59,130,246,.07), transparent 22%), radial-gradient(circle at 88% 18%, rgba(16,185,129,.06), transparent 18%), linear-gradient(180deg, #020613 0%, #05101d 42%, #081429 100%)", color: "#e2e8f0", minHeight: "100vh" }}>
       <section className="section-block contact-hero section-intro" style={{ background: "transparent" }}>
         <div className="text-block">
           <p className="highlight-pill">Get in touch</p>

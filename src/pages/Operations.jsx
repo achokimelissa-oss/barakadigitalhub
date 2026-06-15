@@ -21,14 +21,14 @@ function Operations() {
           :root{--navy:#07121F;--panel:#0D1E30;--card:#111F30;--line:#1C3248;--cyan:#2DD9C8;--cyand:#1A8C80;--cyang:rgba(45,217,200,.12);--amber:#FFD166;--hi:#ECF3FA;--mid:#A7DDF0;--dim:#98CFE5;--mono:'JetBrains Mono',monospace;--sans:'Space Grotesk',sans-serif;}
           *{margin:0;padding:0;box-sizing:border-box;}
           html{scroll-behavior:smooth;}
-          body.operations-page{background:var(--navy);color:var(--hi);font-family:var(--sans);line-height:1.65;min-height:100vh;overflow-x:hidden;}
-          body.operations-page::before{content:"";position:fixed;inset:0;background-image:linear-gradient(rgba(45,217,200,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(45,217,200,.022) 1px,transparent 1px);background-size:52px 52px;pointer-events:none;z-index:0;}
-          body.operations-page::after{content:"";position:fixed;top:-120px;right:-120px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(45,217,200,.055),transparent 70%);pointer-events:none;z-index:0;}
+          body.operations-page{background:radial-gradient(circle at 12% 14%, rgba(45,217,200,.06), transparent 24%), radial-gradient(circle at 88% 16%, rgba(45,217,200,.04), transparent 18%), var(--navy);color:var(--hi);font-family:var(--sans);line-height:1.65;min-height:100vh;overflow-x:hidden;}
+          body.operations-page::before{content:"";position:fixed;inset:0;background-image:linear-gradient(rgba(45,217,200,.014) 1px,transparent 1px),linear-gradient(90deg,rgba(45,217,200,.014) 1px,transparent 1px);background-size:64px 64px;pointer-events:none;z-index:0;}
+          body.operations-page::after{content:"";position:fixed;top:-120px;right:-120px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(45,217,200,.04),transparent 72%);pointer-events:none;z-index:0;}
           .operations-page .wrap{max-width:1080px;margin:0 auto;padding:0 28px;position:relative;z-index:1;}
           .div{border:none;border-top:1px solid var(--line);}
-          .tag{font-family:var(--mono);font-size:11px;color:var(--cyan);letter-spacing:3px;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px;margin-bottom:10px;}
+          .tag{font-family:var(--mono);font-size:11px;color:var(--cyan);letter-spacing:3px;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px;margin-bottom:6px;}
           .tag::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan);display:inline-block;}
-          .hero{padding:140px 0 80px;}
+          .hero{padding:120px 0 80px;}
           h1{font-size:clamp(34px,5vw,54px);font-weight:700;line-height:1.1;letter-spacing:-.6px;max-width:820px;background:linear-gradient(90deg,#1d4ed8,#06b6d4,#0f9d68);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent !important;}
           /* Ensure operations page headings are bright even if other styles apply */
           body.operations-page h2, body.operations-page .section-h2, body.operations-page .final h2, body.operations-page .font-display { color: var(--hi) !important; -webkit-text-fill-color: initial !important; background: none !important; }

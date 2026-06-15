@@ -221,8 +221,8 @@ function Pilot(props) {
               <span className="hero-badge">Data-ready deliverables</span>
             </div>
             <div className="hero-cta">
-              <a className="btn btn-primary" href="#start">Start a pilot →</a>
-              <a className="btn btn-secondary" href="#structure">Explore pilot scope</a>
+              <button type="button" className="btn btn-primary" onClick={() => navigate("contact")}>Start a pilot →</button>
+              <button type="button" className="btn btn-secondary" onClick={() => navigate("contact")}>Explore pilot scope</button>
               <button type="button" className="btn btn-secondary" onClick={() => navigate("contact")}>Contact Sales</button>
             </div>
             <div className="hero-metrics">
@@ -455,8 +455,8 @@ function Pilot(props) {
               24 hours. No commitment required until you've seen the results.
             </p>
             <div className="hero-cta">
-              <a className="btn btn-primary" href="#start">Book a discovery call →</a>
-              <a className="btn btn-secondary" href="#structure">Explore pilot scope</a>
+              <button type="button" className="btn btn-primary" onClick={() => navigate("contact")}>Book a discovery call →</button>
+              <button type="button" className="btn btn-secondary" onClick={() => navigate("contact")}>Explore pilot scope</button>
               <button type="button" className="btn btn-secondary" onClick={() => navigate("contact")}>Visit Contact page</button>
             </div>
           </div>

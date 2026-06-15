@@ -873,57 +873,6 @@ const ContactPage = ({ goBack, isMobile }) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   useEffect(() => {
-    const stylesheets = [
-      "https://cdn.jotfor.ms/stylebuilder/static/form-common.css?v=aa2d234",
-      "https://cdn.jotfor.ms/themes/CSS/5e6b428acc8c4e222d1beb91.css?v=4.1.67550&themeRevisionID=65660e4b326633110492e01a",
-      "https://cdn.jotfor.ms/s/static/f3be05c1446/css/styles/payment/payment_styles.css?4.1.67550",
-      "https://cdn.jotfor.ms/s/static/f3be05c1446/css/styles/payment/payment_feature.css?4.1.67550"
-    ];
-
-    stylesheets.forEach(href => {
-      if (!document.querySelector(`link[href*="${href.split('?')[0]}"]`)) {
-        const link = document.createElement("link");
-        link.rel = "stylesheet";
-        link.type = "text/css";
-        link.href = href;
-        document.head.appendChild(link);
-      }
-    });
-
-    const scripts = [
-      "https://cdn.jotfor.ms/s/static/f3be05c1446/static/prototype.forms.js",
-      "https://cdn.jotfor.ms/s/static/f3be05c1446/static/jotform.forms.js",
-      "https://cdn.jotfor.ms/s/umd/f3be05c1446/for-aria-notify-polyfill.js",
-      "https://cdn.jotfor.ms/s/umd/f3be05c1446/for-form-branding-footer.js",
-      "https://cdn.jotfor.ms/s/static/f3be05c1446/js/vendor/smoothscroll.min.js",
-      "https://cdn.jotfor.ms/s/static/f3be05c1446/js/errorNavigation.js"
-    ];
-
-    scripts.forEach(src => {
-      if (!document.querySelector(`script[src="${src}"]`)) {
-        const script = document.createElement("script");
-        script.src = src;
-        script.type = "text/javascript";
-        script.async = true;
-        if (src.includes("branding-footer")) {
-          script.defer = true;
-        }
-        document.head.appendChild(script);
-      }
-    });
-
-    window.enableEventObserver = true;
-    window.enableRenameUploadFile = false;
-    window.enableDateFieldSelectInputs = false;
-    window.CDN = "https://cdn.jotfor.ms/";
-    window.umdRootPath = "https://cdn.jotfor.ms/s/umd/f3be05c1446/";
-    window.staticRootPath = "https://cdn.jotfor.ms/s/static/f3be05c1446/";
-
-    if (window.JotForm) {
-      window.JotForm.showJotFormPowered = "new_footer";
-      window.JotForm.poweredByText = "Powered by Jotform";
-    }
-
     const container = document.getElementById("jotform-container");
     if (container && !document.querySelector("script[src='https://form.jotform.com/jsform/261576400274556']")) {
       const embedScript = document.createElement("script");
@@ -935,9 +884,9 @@ const ContactPage = ({ goBack, isMobile }) => {
   }, []);
 
   return (
-    <div style={{ minHeight: "100vh", background: "linear-gradient(160deg,#f8fbff 0%,#eef9ff 50%,#f0fdf4 100%)", paddingTop: 48 }}>
+    <div style={{ minHeight: "100vh", paddingTop: 76, paddingBottom: 76, background: "transparent" }}>
       <PageHelmet title="Contact Us | Baraka Digital Hub" description="Get in touch with the Baraka Digital Hub team for AI training data, annotation services, or partnership enquiries." />
-      <div style={{ maxWidth: 980, margin: "0 auto", padding: "48px 24px" }}>
+      <div style={{ maxWidth: 980, margin: "0 auto", padding: "0 24px" }}>
         <button onClick={goBack} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", cursor: "pointer", color: "#0d2b4e", fontWeight: 700, fontSize: "0.95rem", marginBottom: 28, fontFamily: "inherit" }}>
           <ChevronLeft size={18} /> Back to Home
         </button>
@@ -950,7 +899,9 @@ const ContactPage = ({ goBack, isMobile }) => {
             <p style={{ color: "#64748b", fontSize: "1.05rem", lineHeight: 1.75, maxWidth: 760, marginBottom: 24 }}>
               Use the form below to share a project inquiry, pilot request, or general partnership question. We’ll respond quickly with details on next steps.
             </p>
-            <div id="jotform-container" />
+            <div id="jotform-container" style={{ minHeight: 520, padding: 20, background: "#fff", borderRadius: 20, border: "1px solid rgba(15,23,42,.08)" }}>
+              <p style={{ color: "#64748b", fontSize: "0.95rem", margin: 0 }}>Loading contact form…</p>
+            </div>
           </div>
         </FadeIn>
       </div>

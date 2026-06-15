@@ -10,7 +10,7 @@ function Privacy() {
           content="Baraka Digital Hub privacy policy — how we handle data, protect client information, and maintain compliance."
         />
       </Helmet>
-      <div style={{ background: "radial-gradient(circle at top, rgba(59,130,246,.18), transparent 28%), radial-gradient(circle at bottom right, rgba(16,185,129,.14), transparent 24%), linear-gradient(180deg, #020617 0%, #08172f 45%, #0b203f 100%)", color: "#e2e8f0", minHeight: "100vh" }}>
+      <div style={{ background: "radial-gradient(circle at 12% 12%, rgba(59,130,246,.06), transparent 24%), radial-gradient(circle at 88% 16%, rgba(16,185,129,.05), transparent 20%), linear-gradient(180deg, #020b17 0%, #08142b 42%, #0c1d33 100%)", color: "#e2e8f0", minHeight: "100vh" }}>
       <section className="section-block contact-hero section-intro" style={{ background: "transparent" }}>
         <div className="text-block">
           <p className="highlight-pill">Compliance & privacy</p>
