@@ -71,7 +71,7 @@ function Operations() {
           .s-num{width:36px;height:36px;border-radius:8px;background:var(--cyan);color:var(--navy);font-family:var(--mono);font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 14px rgba(45,217,200,.28);z-index:1;flex-shrink:0;}
           .s-body{padding:24px 24px 24px 0;}
           .s-head{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:10px;}
-          .s-head h3{font-size:17px;font-weight:600;}
+          .s-head h3{font-size:17px;font-weight:600;color:var(--hi);}
           .s-tag{font-family:var(--mono);font-size:10px;color:var(--dim);border:1px solid var(--line);padding:5px 12px;border-radius:20px;white-space:nowrap;letter-spacing:1px;text-transform:uppercase;}
           .s-desc{font-size:14px;color:var(--mid);line-height:1.7;max-width:660px;margin-bottom:16px;}
           .s-tasks{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
