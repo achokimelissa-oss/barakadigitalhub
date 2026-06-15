@@ -1078,10 +1078,6 @@ const BarakaDigitalHub = () => {
         .hero-tech-overlay { position: absolute; inset: 0; background: radial-gradient(circle at top left, rgba(59,130,246,.12), transparent 22%), radial-gradient(circle at bottom right, rgba(16,185,129,.10), transparent 18%); pointer-events: none; }
         .hero-tech-grid { position: absolute; inset: 0; background: radial-gradient(circle at 20% 12%, rgba(255,255,255,.08) 0, transparent 28%), repeating-linear-gradient(90deg, rgba(14,165,233,.06) 0, rgba(14,165,233,.06) 1px, transparent 1px, transparent 32px), repeating-linear-gradient(0deg, rgba(16,185,129,.05) 0, rgba(16,185,129,.05) 1px, transparent 1px, transparent 32px); background-size: 100% 100%, 32px 32px, 32px 32px; opacity: .45; pointer-events: none; animation: hero-grid-move 18s linear infinite; }
         .hero-tech-grid::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(circle at 10% 15%, rgba(59,130,246,.12) 0, transparent 22%), radial-gradient(circle at 80% 75%, rgba(16,185,129,.10) 0, transparent 24%); opacity: .65; pointer-events: none; }
-        .hero-node { position: absolute; left: 50%; top: 22%; width: 22px; height: 22px; border-radius: 50%; background: rgba(14,165,233,1); box-shadow: 0 0 0 4px rgba(14,165,233,.18), 0 0 0 12px rgba(59,130,246,.08), 0 0 32px rgba(14,165,233,.16); transform: translate(-50%, -50%); pointer-events: none; animation: node-pulse 2.8s ease-in-out infinite; }
-        .hero-node::before { content: ""; position: absolute; left: 50%; top: 50%; width: 1px; height: 80px; background: linear-gradient(180deg, rgba(14,165,233,.45) 0%, transparent 100%); transform: translate(-50%, -50%); }
-        .hero-node::after { content: ""; position: absolute; left: 50%; top: 50%; width: 80px; height: 1px; background: linear-gradient(90deg, rgba(16,185,129,.45) 0%, transparent 100%); transform: translate(-50%, -50%); }
-        @keyframes node-pulse { 0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 1; } 50% { transform: translate(-50%, -50%) scale(1.15); opacity: .85; } }
         .hero-grid { position: relative; }
         .hero-grid::before { display: none; }
         .hero-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(15,23,42,.08); border: 1px solid rgba(15,23,42,.16); border-radius: 999px; padding: 12px 20px; color: #334155; font-size: 0.88rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; justify-content: center; }
@@ -1262,7 +1258,6 @@ const BarakaDigitalHub = () => {
           <section style={{ position:"relative", left:"50%", right:"50%", width:"100vw", maxWidth:"100vw", marginLeft:"-50vw", marginRight:"-50vw", paddingTop:72, paddingBottom:80, paddingLeft:0, paddingRight:0, overflow:"visible", background:"linear-gradient(135deg, #f0f7ff 0%, #e6f3ff 25%, #ecfdf5 50%, #e0f8f5 75%, #f0f4ff 100%)" }}>
             <div className="dot-grid" style={{ position:"absolute", inset:0, opacity:.6, pointerEvents: "none" }} />
             <div className="hero-tech-grid" />
-            <div className="hero-node" />
             <div className="hero-tech-overlay" />
             <div style={{ position:"absolute", top:"-20%", right: isMobile ? "-30%" : "-15%", width: isMobile ? 420 : 800, height: isMobile ? 420 : 800, borderRadius:"50%", background:"radial-gradient(circle,rgba(29,78,216,.08) 0%,transparent 70%)", pointerEvents: "none" }} />
             <div style={{ position:"absolute", top:0, left:0, width: isMobile ? 300 : 500, height: isMobile ? 300 : 500, borderRadius:"50%", background:"radial-gradient(circle,rgba(59,130,246,.14) 0%,transparent 74%)", pointerEvents:"none", transform:"translate(-25%, -25%)" }} />
@@ -1271,25 +1266,25 @@ const BarakaDigitalHub = () => {
             <div className="page-container" style={{ position:"relative", zIndex:1, maxWidth:960, margin:"0 auto", padding:"0 24px" }}>
               <div className="hero-grid" style={{ display:"grid", gridTemplateColumns: "1fr", gap:56, alignItems:"center", justifyItems:"center" }}>
                 <div style={{ width:"100%", maxWidth:760, textAlign: isMobile ? "left" : "center" }}>
-                  <div className="hero-badge" style={{ marginBottom: 20 }}>
+                  <div className="hero-badge" style={{ marginBottom: 20, background:"rgba(15,23,42,.14)", border:"1px solid rgba(14,165,233,.18)", color:"#e2e8f0", boxShadow:"0 16px 40px rgba(15,23,42,.08)" }}>
                     <span className="ani-pulse" />
                     <span>Tool-agnostic enterprise AI ops · Audit-ready delivery · Production-grade execution</span>
                   </div>
-                  <h1 className="hero-h1 font-display" style={{ fontSize: isMobile ? "3rem" : "4.4rem", fontWeight:900, lineHeight:1.04, letterSpacing:"-.03em", color:"#0f172a", marginBottom:18, textShadow:"0 6px 24px rgba(15,23,42,.05)" }}>
+                  <h1 className="hero-h1 font-display" style={{ fontSize: isMobile ? "3rem" : "4.4rem", fontWeight:900, lineHeight:1.04, letterSpacing:"-.03em", color:"#0f172a", marginBottom:14, textShadow:"0 10px 32px rgba(15,23,42,.09)" }}>
                     AI Training & Digital Operations
                     <br />
                     <span style={{ color:"#0f4fad", fontWeight:900 }}>Built for Scale</span>
                   </h1>
-                  <p style={{ color:"#475569", fontSize: isMobile ? "1rem" : "1.03rem", lineHeight:1.9, marginBottom:34, fontFamily:"'Inter', Arial, sans-serif" }}>
+                  <p style={{ color:"#243240", fontSize: isMobile ? "1rem" : "1.03rem", lineHeight:1.9, marginBottom:34, fontFamily:"'Inter', Arial, sans-serif", maxWidth:660 }}>
                     Baraka Digital Hub delivers enterprise-ready AI data operations with disciplined execution, secure workflows, and measurable outcomes. Our Nairobi-based teams support global clients with repeatable delivery, quality governance, and production-grade transparency.
                   </p>
                   <div style={{ display:"flex", justifyContent: isMobile ? "flex-start" : "center", gap:16, flexWrap:"wrap", marginBottom:32 }}>
-                    <button type="button" onClick={() => navigate("pilot")} className="btn-primary" style={{ background: "linear-gradient(135deg, #0f3f7a, #0b5394)", boxShadow: "0 18px 42px rgba(15,23,42,.18)" }}>Start Pilot Program <ArrowRight size={17} /></button>
-                    <button type="button" onClick={() => navigate("services")} className="btn-secondary-alt">Explore Services</button>
+                    <button type="button" onClick={() => navigate("pilot")} className="btn-primary" style={{ background: "linear-gradient(135deg, #0c5fa0, #0c78be)", boxShadow: "0 22px 52px rgba(10,44,82,.24)" }}>Start Pilot Program <ArrowRight size={17} /></button>
+                    <button type="button" onClick={() => navigate("services")} className="btn-secondary-alt" style={{ background: "linear-gradient(135deg, #0f78da, #0b6ca8)", boxShadow: "0 18px 44px rgba(11,44,88,.18)" }}>Explore Services</button>
                   </div>
                   <div className="hero-metrics">
                     {[{v:"100+", l:"Certified specialists"},{v:"100%", l:"QA coverage"},{v:"90%+", l:"Accuracy target"},{v:"40–70%", l:"Cost vs US/EU"}].map((s,i)=>(
-                      <div key={i} className="metric-card">
+                      <div key={i} className="metric-card" style={{ background:"rgba(15,23,42,.12)", border:"1px solid rgba(59,130,246,.16)" }}>
                         <div className="metric-value">{s.v}</div>
                         <div className="metric-label">{s.l}</div>
                       </div>
@@ -1379,9 +1374,9 @@ const BarakaDigitalHub = () => {
               <div className="svc-grid" style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3,1fr)", gap:16 }}>
                 {services.map((s,i)=>(
                   <FadeIn key={i} delay={i*.06}>
-                    <div className="svc-card" style={{ background:"linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01))", border:"1px solid rgba(6,182,212,.08)", borderRadius:24, padding:"24px 22px", transition:"box-shadow .3s,transform .3s", cursor:"pointer", height:"100%", boxShadow:"0 18px 48px rgba(6,182,212,.06), inset 0 1px 0 rgba(255,255,255,.02)" }} onClick={() => navigate("services")}>
+                    <div className="svc-card" style={{ background:"rgba(6,18,44,.88)", border:"1px solid rgba(56,189,248,.22)", borderRadius:24, padding:"24px 22px", transition:"box-shadow .3s,transform .3s", cursor:"pointer", height:"100%", boxShadow:"0 24px 72px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.03)" }} onClick={() => navigate("services")}>
                       <div style={{ width:44, height:44, borderRadius:12, background:s.color, display:"flex", alignItems:"center", justifyContent:"center", color:"white", marginBottom:16 }}>{s.icon}</div>
-                      <h3 className="font-display" style={{ fontSize:"1rem", fontWeight:800, color:"#e6f7ff", marginBottom:10 }}>{s.title}</h3>
+                      <h3 className="font-display" style={{ fontSize:"1rem", fontWeight:800, color:"#eef2ff", marginBottom:10 }}>{s.title}</h3>
                       <p style={{ fontSize:".9rem", color:"#cbd5e1", lineHeight:1.75, marginBottom:18 }}>{s.desc}</p>
                       <ul style={{ margin:0, paddingLeft:18, color:"#cbd5e1", fontSize:"0.9rem", lineHeight:1.7 }}>
                         {s.items.map((item,j)=>(
@@ -1395,7 +1390,7 @@ const BarakaDigitalHub = () => {
               </div>
               <FadeIn delay={0.1}>
                 <div style={{ textAlign:"center", marginTop:36 }}>
-                  <button onClick={() => navigate("services")} className="btn-secondary">View all service details <ArrowRight size={16} /></button>
+                  <button onClick={() => navigate("services")} className="btn-secondary" style={{ background:"linear-gradient(135deg,#0888d5,#0b62ac)", boxShadow:"0 18px 44px rgba(11,46,88,.24)" }}>View all service details <ArrowRight size={16} /></button>
                 </div>
               </FadeIn>
             </div>
@@ -1495,13 +1490,13 @@ const BarakaDigitalHub = () => {
                     { title: "Automated QA gate", detail: "Deterministic checks & observability before every release." },
                     { title: "Elastic execution", detail: "On-demand compute and workforce orchestration for fluctuating production loads." },
                   ].map((item, idx) => (
-                    <div key={idx} style={{ background: "rgba(14, 25, 53, 0.82)", border: "1px solid rgba(96, 165, 250, 0.24)", backdropFilter: "blur(10px)", borderRadius: 22, padding: isMobile ? "22px 18px" : "28px 24px", minHeight: 170, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+                    <div key={idx} style={{ background: "rgba(10, 20, 41, 0.88)", border: "1px solid rgba(96, 165, 250, 0.28)", backdropFilter: "blur(12px)", borderRadius: 22, padding: isMobile ? "22px 18px" : "28px 24px", minHeight: 170, display: "flex", flexDirection: "column", justifyContent: "space-between", boxShadow: "0 24px 64px rgba(10, 20, 41, .18)" }}>
                       <div>
                         <div style={{ width: 40, height: 40, borderRadius: 14, display: "grid", placeItems: "center", background: "linear-gradient(135deg, rgba(59,130,246,.95), rgba(16,185,129,.95))", color: "white", marginBottom: 16, boxShadow: "0 20px 40px rgba(59,130,246,.22)" }}>
                           <span style={{ fontSize: "1.1rem", fontWeight: 800 }}>{idx + 1}</span>
                         </div>
-                        <h3 className="font-display" style={{ fontSize: "1.1rem", fontWeight: 800, color: "#eef2ff", margin: 0, marginBottom: 10 }}>{item.title}</h3>
-                        <p style={{ color: "#dbeafe", fontSize: ".92rem", lineHeight: 1.75, margin: 0 }}>{item.detail}</p>
+                        <h3 className="font-display" style={{ fontSize: "1.1rem", fontWeight: 800, color: "#e2e8f0", margin: 0, marginBottom: 10 }}>{item.title}</h3>
+                        <p style={{ color: "#cbd5e1", fontSize: ".92rem", lineHeight: 1.75, margin: 0 }}>{item.detail}</p>
                       </div>
                     </div>
                   ))}
@@ -1521,9 +1516,9 @@ const BarakaDigitalHub = () => {
             <div style={{ position: "relative", width: "100%", maxWidth:1200, margin:"0 auto" }}>
               <FadeIn>
                 <div style={{ textAlign:"center", marginBottom: isMobile ? 28 : 48 }}>
-                  <div style={{ display:"inline-block", background:"rgba(255,255,255,0.04)", color:"#9be7ff", padding:"6px 16px", borderRadius:100, fontSize:".72rem", fontWeight:800, letterSpacing:".12em", textTransform:"uppercase", marginBottom:18, border:"1px solid rgba(155,231,255,.06)", fontFamily:"ui-monospace, 'Courier New', monospace" }}>BUILT FOR RELIABLE SCALE</div>
-                  <h2 className="font-display" style={{ fontSize:"2.6rem", fontWeight:900, color:"#e6f7ff", letterSpacing:"-.02em", marginBottom:10 }}>How It Works</h2>
-                  <p style={{ color:"#9fb6c9", fontSize:"1rem", maxWidth:680, margin:"0 auto", lineHeight:1.75, fontFamily:"'Segoe UI', Arial, sans-serif" }}>Baraka Digital Hub turns AI workloads into dependable delivery through human-led workflows, quality guardrails, and local operational expertise rooted in impact and accountability.</p>
+                  <div style={{ display:"inline-block", background:"rgba(14,165,233,.16)", color:"#dbeafe", padding:"6px 16px", borderRadius:100, fontSize:".72rem", fontWeight:800, letterSpacing:".12em", textTransform:"uppercase", marginBottom:18, border:"1px solid rgba(96,165,250,.18)", fontFamily:"ui-monospace, 'Courier New', monospace" }}>BUILT FOR RELIABLE SCALE</div>
+                  <h2 className="font-display" style={{ fontSize:"2.6rem", fontWeight:900, color:"#f8fafc", letterSpacing:"-.02em", marginBottom:10 }}>How It Works</h2>
+                  <p style={{ color:"#b8d2f0", fontSize:"1rem", maxWidth:680, margin:"0 auto", lineHeight:1.75, fontFamily:"'Segoe UI', Arial, sans-serif" }}>Baraka Digital Hub turns AI workloads into dependable delivery through human-led workflows, quality guardrails, and local operational expertise rooted in impact and accountability.</p>
                 </div>
               </FadeIn>
               <FadeIn delay={0.08}>
