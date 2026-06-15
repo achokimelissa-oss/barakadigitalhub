@@ -402,6 +402,18 @@ a {
   margin: 24px 0 0;
 }
 
+.hero .hero-note,
+.hero .scroll-indicator,
+.hero .panel-item__text,
+.hero .metric-label,
+.hero .hero-actions .button,
+.hero .hero-actions .primary,
+.hero .hero-actions .secondary,
+.hero .hero-copy p,
+.hero .hero-panel__note {
+  color: #d8e3ff;
+}
+
 .flow-step {
   display: inline-flex;
   align-items: center;
@@ -430,14 +442,14 @@ a {
 .hero-note {
   margin-top: 18px;
   max-width: 680px;
-  color: #475569;
+  color: #cbd5e1;
   font-size: 0.98rem;
   line-height: 1.75;
 }
 
 .scroll-indicator {
   margin-top: 28px;
-  color: #475569;
+  color: #cbd5e1;
 }
 
 .hero-actions {
@@ -457,6 +469,16 @@ a {
   letter-spacing: 0.01em;
   transition: transform 0.18s ease, background 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
   border: 1px solid transparent;
+}
+
+.hero .button,
+.hero .button.primary,
+.hero .button.secondary {
+  color: white;
+}
+
+.hero .button.secondary {
+  color: #e2e8f0;
 }
 
 .button:hover {
