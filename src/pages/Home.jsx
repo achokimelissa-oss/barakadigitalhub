@@ -17,11 +17,11 @@ function Home() {
       </Helmet>
       <section className="hero">
       <div className="hero-copy">
-        <p className="eyebrow">Social Impact</p>
-        <p className="hero-badge">Tool-agnostic enterprise AI ops · Audit-ready delivery · Production-grade execution</p>
-        <h2 className="gradient-text">Work That Creates Real Change</h2>
+        <p className="eyebrow">AI Training & Digital Operations</p>
+        <p className="hero-badge">Enterprise AI data operations · Audit-ready workflows · Production-ready delivery</p>
+        <h2 className="gradient-text">Enterprise-ready AI operations built for global scale</h2>
         <p>
-          Baraka Digital Hub is a tool-agnostic AI data operations and business process outsourcing partner. We function as a managed execution layer for AI systems and data-heavy enterprise operations, integrating directly into client infrastructure without requiring workflow redesign. Our focus is repeatable, auditable, and scalable production systems for AI and data operations.
+          Baraka Digital Hub delivers disciplined, secure AI data operations from Nairobi. Our certified specialists integrate with client systems to provide human-reviewed datasets, QA governance, and production-grade transparency for enterprise AI workflows.
         </p>
         <div className="hero-metrics">
           <article className="metric-card">
@@ -42,11 +42,11 @@ function Home() {
           </article>
         </div>
         <div className="hero-actions">
-          <Link to="/services" className="button primary">
-            View capabilities
+          <Link to="/pilot" className="button primary">
+            Start Pilot Program
           </Link>
-          <Link to="/impact" className="button secondary">
-            See workflow
+          <Link to="/services" className="button secondary">
+            Explore Services
           </Link>
         </div>
         <div className="hero-flow">
