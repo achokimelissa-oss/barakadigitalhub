@@ -30,7 +30,10 @@ function Operations() {
           .operations-page .hero .dot-grid,
           .operations-page .hero .code-panel::before,
           .operations-page .hero .section-tech-bg::before,
-          .operations-page .hero .section-tech-bg::after {
+          .operations-page .hero .section-tech-bg::after,
+          .operations-page .hero .section-tech-bg,
+          .operations-page .hero .hero-grid,
+          .operations-page .hero .hero-tech-grid {
             background: none !important;
             background-image: none !important;
             opacity: 0 !important;

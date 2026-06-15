@@ -1225,7 +1225,7 @@ const BarakaDigitalHub = () => {
       {page !== "home" ? (
         <div style={{ position: 'relative', minHeight: '100vh' }}>
           <div aria-hidden style={{ position: 'fixed', inset: 0, pointerEvents: 'none', zIndex: 1 }}>
-            <div style={{ position: 'absolute', inset: 0, backgroundImage: "repeating-linear-gradient(180deg, transparent 0, transparent 40px, rgba(125,207,255,0.18) 40px, rgba(125,207,255,0.18) 41px), repeating-linear-gradient(90deg, transparent 0, transparent 40px, rgba(56,189,248,0.14) 40px, rgba(56,189,248,0.14) 41px)", opacity: 0.68 }} />
+            <div style={{ position: 'absolute', inset: 0, background: 'none', opacity: 0, pointerEvents: 'none' }} />
           </div>
           <div style={{ position: 'relative', zIndex: 2 }}>
             {page === "services" && <ServicesPage goBack={goBack} navigate={navigate} isMobile={isMobile} />}
