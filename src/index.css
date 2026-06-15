@@ -301,23 +301,23 @@ a {
 
 
 .metric-card {
-  padding: 18px 20px;
-  border-radius: 18px;
-  background: rgba(59,130,246,0.08);
-  border: 1px solid rgba(59,130,246,0.16);
+  padding: 20px 22px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(148,163,184,0.12);
 }
 
 .metric-value {
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   font-weight: 700;
-  color: #0f172a;
+  color: #dbeafe;
   line-height: 1;
 }
 
 .metric-label {
   margin-top: 8px;
   font-size: 0.95rem;
-  color: #475569;
+  color: #cbd5e1;
   line-height: 1.5;
 }
 
