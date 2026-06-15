@@ -525,6 +525,44 @@ a {
   border: 1px solid rgba(255, 255, 255, 0.14);
 }
 
+.hero,
+.hero * {
+  color: #d8e3ff !important;
+}
+
+.hero .hero-title,
+.hero .hero-badge,
+.hero .hero-text,
+.hero .hero-panel__headline,
+.hero .panel-item strong,
+.hero .panel-item__text,
+.hero .hero-panel__note,
+.hero .hero-note,
+.hero .scroll-indicator,
+.hero .metric-label {
+  color: #d8e3ff !important;
+}
+
+.hero .hero-actions .button,
+.hero .button.primary,
+.hero .button.secondary {
+  color: #ffffff !important;
+}
+
+.hero .button.secondary {
+  color: #e2e8f0 !important;
+}
+
+.hero .panel-item span {
+  color: #ffffff !important;
+}
+
+.hero .hero-copy,
+.hero .hero-panel,
+.hero .metric-card {
+  color: inherit;
+}
+
 .section-block {
   padding: 56px 0;
   background: transparent;

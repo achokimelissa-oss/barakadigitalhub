@@ -1270,17 +1270,17 @@ const BarakaDigitalHub = () => {
                     <span className="ani-pulse" />
                     <span>Enterprise AI ops · Audit-ready delivery · Production-grade execution</span>
                   </div>
-                  <h1 className="hero-h1 font-display" style={{ fontSize: isMobile ? "3rem" : "4.4rem", fontWeight:900, lineHeight:1.04, letterSpacing:"-.03em", color:"#0f172a", marginBottom:14, textShadow:"0 10px 32px rgba(15,23,42,.09)" }}>
+                  <h1 className="hero-h1 font-display" style={{ fontSize: isMobile ? "3rem" : "4.4rem", fontWeight:900, lineHeight:1.04, letterSpacing:"-.03em", color:"#ffffff", marginBottom:14, textShadow:"0 10px 32px rgba(0,0,0,.28)" }}>
                     AI Training & Digital Operations
                     <br />
-                    <span style={{ color:"#0f4fad", fontWeight:900 }}>Built for Scale</span>
+                    <span style={{ color:"#7dd3fc", fontWeight:900 }}>Built for Scale</span>
                   </h1>
-                  <p style={{ color:"#243240", fontSize: isMobile ? "1rem" : "1.03rem", lineHeight:1.9, marginBottom:34, fontFamily:"'Inter', Arial, sans-serif", maxWidth:660 }}>
+                  <p style={{ color:"#d8e3ff", fontSize: isMobile ? "1rem" : "1.03rem", lineHeight:1.9, marginBottom:34, fontFamily:"'Inter', Arial, sans-serif", maxWidth:660 }}>
                     Baraka Digital Hub delivers enterprise-ready AI data operations with disciplined execution, secure workflows, and measurable outcomes. Our Nairobi-based teams support global clients with repeatable delivery, quality governance, and production-grade transparency.
                   </p>
                   <div style={{ display:"flex", justifyContent: isMobile ? "flex-start" : "center", gap:16, flexWrap:"wrap", marginBottom:32 }}>
-                    <button type="button" onClick={() => navigate("pilot")} className="btn-primary" style={{ background: "linear-gradient(135deg, #0c5fa0, #0c78be)", boxShadow: "0 22px 52px rgba(10,44,82,.24)" }}>Start Pilot Program <ArrowRight size={17} /></button>
-                    <button type="button" onClick={() => navigate("services")} className="btn-secondary-alt" style={{ background: "linear-gradient(135deg, #0f78da, #0b6ca8)", boxShadow: "0 18px 44px rgba(11,44,88,.18)" }}>Explore Services</button>
+                    <button type="button" onClick={() => navigate("pilot")} className="btn-primary" style={{ background: "linear-gradient(135deg, #0c5fa0, #0c78be)", boxShadow: "0 22px 52px rgba(10,44,82,.24)", color: "#ffffff" }}>Start Pilot Program <ArrowRight size={17} /></button>
+                    <button type="button" onClick={() => navigate("services")} className="btn-secondary-alt" style={{ background: "linear-gradient(135deg, #0f78da, #0b6ca8)", boxShadow: "0 18px 44px rgba(11,44,88,.18)", color: "#ffffff" }}>Explore Services</button>
                   </div>
                   <div className="hero-metrics">
                     {[{v:"100+", l:"Certified specialists"},{v:"100%", l:"QA coverage"},{v:"90%+", l:"Accuracy target"},{v:"40–70%", l:"Cost vs US/EU"}].map((s,i)=>(
