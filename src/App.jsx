@@ -1255,7 +1255,7 @@ const BarakaDigitalHub = () => {
 
       {page === "home" && (
         <>
-          <section style={{ position:"relative", left:"50%", right:"50%", width:"100vw", maxWidth:"100vw", marginLeft:"-50vw", marginRight:"-50vw", paddingTop:72, paddingBottom:80, paddingLeft:0, paddingRight:0, overflow:"visible", background:"linear-gradient(135deg, #f0f7ff 0%, #e6f3ff 25%, #ecfdf5 50%, #e0f8f5 75%, #f0f4ff 100%)" }}>
+          <section style={{ position:"relative", left:"50%", right:"50%", width:"100vw", maxWidth:"100vw", marginLeft:"-50vw", marginRight:"-50vw", paddingTop:72, paddingBottom:80, paddingLeft:0, paddingRight:0, overflow:"visible", background:"linear-gradient(135deg, #06101f 0%, #0c1628 28%, #101d35 58%, #081223 100%)" }}>
             <div className="dot-grid" style={{ position:"absolute", inset:0, opacity:.6, pointerEvents: "none" }} />
             <div className="hero-tech-grid" />
             <div className="hero-tech-overlay" />
@@ -1266,9 +1266,9 @@ const BarakaDigitalHub = () => {
             <div className="page-container" style={{ position:"relative", zIndex:1, maxWidth:960, margin:"0 auto", padding:"0 24px" }}>
               <div className="hero-grid" style={{ display:"grid", gridTemplateColumns: "1fr", gap:56, alignItems:"center", justifyItems:"center" }}>
                 <div style={{ width:"100%", maxWidth:760, textAlign: isMobile ? "left" : "center" }}>
-                  <div className="hero-badge" style={{ marginBottom: 20, background:"rgba(15,23,42,.14)", border:"1px solid rgba(14,165,233,.18)", color:"#e2e8f0", boxShadow:"0 16px 40px rgba(15,23,42,.08)" }}>
+                  <div className="hero-badge" style={{ marginBottom: 20, background:"rgba(8,14,25,.18)", border:"1px solid rgba(14,165,233,.18)", color:"#e2e8f0", boxShadow:"0 16px 40px rgba(5,12,22,.18)" }}>
                     <span className="ani-pulse" />
-                    <span>Tool-agnostic enterprise AI ops · Audit-ready delivery · Production-grade execution</span>
+                    <span>Enterprise AI ops · Audit-ready delivery · Production-grade execution</span>
                   </div>
                   <h1 className="hero-h1 font-display" style={{ fontSize: isMobile ? "3rem" : "4.4rem", fontWeight:900, lineHeight:1.04, letterSpacing:"-.03em", color:"#0f172a", marginBottom:14, textShadow:"0 10px 32px rgba(15,23,42,.09)" }}>
                     AI Training & Digital Operations
