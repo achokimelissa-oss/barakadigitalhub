@@ -490,7 +490,7 @@ const ServicesPage = ({ goBack, navigate, isMobile }) => {
           <div style={{ marginTop: 48, background: "linear-gradient(135deg, rgba(29,78,216,0.96), rgba(6,95,170,0.94))", borderRadius: 24, padding: "40px 36px", textAlign: "center", boxShadow: "0 24px 64px rgba(0,0,0,0.28)" }}>
             <h3 className="font-display" style={{ fontSize: "1.4rem", fontWeight: 800, color: "white", marginBottom: 12 }}>Need a custom workflow?</h3>
             <p style={{ color: "rgba(255,255,255,0.88)", marginBottom: 24, fontSize: "1rem" }}>We tailor annotation pipelines to your exact tooling, formats, and quality thresholds.</p>
-            <button onClick={goBack} style={{ background: "white", color: "#0f172a", border: "none", borderRadius: 12, padding: "14px 28px", fontWeight: 700, fontSize: "0.95rem", cursor: "pointer", fontFamily: "inherit" }}>
+            <button onClick={() => navigate("pilot")} style={{ background: "white", color: "#0f172a", border: "none", borderRadius: 12, padding: "14px 28px", fontWeight: 700, fontSize: "0.95rem", cursor: "pointer", fontFamily: "inherit" }}>
               Start a Pilot →
             </button>
           </div>
