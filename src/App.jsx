@@ -1268,7 +1268,7 @@ const BarakaDigitalHub = () => {
                 <div style={{ width:"100%", maxWidth:760, textAlign: isMobile ? "left" : "center" }}>
                   <div className="hero-badge" style={{ marginBottom: 20, background:"rgba(8,14,25,.18)", border:"1px solid rgba(14,165,233,.18)", color:"#e2e8f0", boxShadow:"0 16px 40px rgba(5,12,22,.18)" }}>
                     <span className="ani-pulse" />
-                    <span>Production-grade AI workflows · Secure intake · Audit-ready delivery</span>
+                    <span>Empowering Futures through Technology</span>
                   </div>
                   <h1 className="hero-h1 font-display" style={{ fontSize: isMobile ? "3rem" : "4.4rem", fontWeight:900, lineHeight:1.04, letterSpacing:"-.03em", color:"#ffffff", marginBottom:14, textShadow:"0 10px 32px rgba(0,0,0,.28)" }}>
                     Enterprise AI data operations
