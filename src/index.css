@@ -282,10 +282,12 @@ a {
 
 .panel-item strong {
   display: block;
-  color: #ffffff;
-  margin-bottom: 6px;
-  font-size: 1rem;
-}
+    color: #f8fafc;
+    margin-bottom: 6px;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+  }
 
 .panel-item__text {
   margin: 0;
@@ -296,11 +298,10 @@ a {
 
 .hero-panel__note {
   margin-top: 28px;
-  color: #e4f2ff;
+  color: #eef9ff;
   font-size: 0.95rem;
   line-height: 1.75;
-}
-
+  font-weight: 500;
 .hero-actions {
   display: flex;
   gap: 14px;
@@ -370,14 +371,14 @@ a {
 .metric-card {
   padding: 20px 22px;
   border-radius: 20px;
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(79, 204, 255, 0.18);
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(148, 163, 184, 0.24);
 }
 
 .metric-value {
   font-size: 1.9rem;
-  font-weight: 700;
-  color: #dbeafe;
+  font-weight: 800;
+  color: #eef2ff;
   line-height: 1;
 }
 
@@ -400,7 +401,8 @@ a {
 .metric-label {
   margin-top: 8px;
   font-size: 0.95rem;
-  color: #e2f0ff;
+  color: #f8fafc;
+  font-weight: 600;
   line-height: 1.5;
 }
 
@@ -440,12 +442,7 @@ a {
 }
 
 .hero .metric-label {
-  color: #cfefff;
-}
-
-.hero .scroll-indicator {
-  color: #b8eeff;
-}
+    color: #f8fafc;
 
 .flow-step {
   display: inline-flex;
