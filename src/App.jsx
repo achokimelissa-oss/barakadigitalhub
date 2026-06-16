@@ -1271,12 +1271,12 @@ const BarakaDigitalHub = () => {
                     <span>Production-grade AI workflows · Secure intake · Audit-ready delivery</span>
                   </div>
                   <h1 className="hero-h1 font-display" style={{ fontSize: isMobile ? "3rem" : "4.4rem", fontWeight:900, lineHeight:1.04, letterSpacing:"-.03em", color:"#ffffff", marginBottom:14, textShadow:"0 10px 32px rgba(0,0,0,.28)" }}>
-                    Enterprise AI training & digital operations
+                    Enterprise AI data operations
                     <br />
-                    <span style={{ color:"#7dd3fc", fontWeight:900 }}>Built for secure, scalable delivery</span>
+                    <span style={{ color:"#7dd3fc", fontWeight:900 }}>Built for secure, scalable model delivery</span>
                   </h1>
                   <p style={{ color:"#d8e3ff", fontSize: isMobile ? "1rem" : "1.03rem", lineHeight:1.9, marginBottom:34, fontFamily:"'Inter', Arial, sans-serif", maxWidth:660 }}>
-                    Baraka Digital Hub delivers enterprise-ready AI data operations with disciplined execution, secure workflows, and measurable outcomes. Our Nairobi-based teams support global clients with repeatable delivery, quality governance, and production-grade transparency.
+                    Baraka Digital Hub delivers enterprise-ready AI data operations from Nairobi with disciplined workflows, secure data handling, and transparent QA. We support global teams with repeatable delivery, audit-ready governance, and production-ready training datasets.
                   </p>
                   <div style={{ display:"flex", justifyContent: isMobile ? "flex-start" : "center", gap:16, flexWrap:"wrap", marginBottom:32 }}>
                     <button type="button" onClick={() => navigate("pilot")} className="btn-primary" style={{ background: "linear-gradient(135deg, #0c5fa0, #0c78be)", boxShadow: "0 22px 52px rgba(10,44,82,.24)", color: "#ffffff" }}>Start Pilot Program <ArrowRight size={17} /></button>
@@ -1291,7 +1291,7 @@ const BarakaDigitalHub = () => {
                     ))}
                   </div>
                   <div className="hero-flow">
-                    {["Data ops integration", "Human QA & review", "Production-ready delivery"].map((step, index) => (
+                    {["Secure data intake", "QA, governance, and review", "Deliver model-ready output"].map((step, index) => (
                       <div key={index} className="flow-step">
                         <span className="flow-step__number">0{index + 1}</span>
                         <span>{step}</span>
@@ -1299,7 +1299,7 @@ const BarakaDigitalHub = () => {
                     ))}
                   </div>
                   <p className="hero-note">
-                    Integrated into client workflows with audit-ready reviews and repeatable production delivery.
+                    Aligned to enterprise SLAs, secure controls, and data workflows for reliable model training delivery.
                   </p>
                   <div className="scroll-indicator">
                     <span className="indicator-arrow">↓</span>
