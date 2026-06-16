@@ -1268,12 +1268,12 @@ const BarakaDigitalHub = () => {
                 <div style={{ width:"100%", maxWidth:760, textAlign: isMobile ? "left" : "center" }}>
                   <div className="hero-badge" style={{ marginBottom: 20, background:"rgba(8,14,25,.18)", border:"1px solid rgba(14,165,233,.18)", color:"#e2e8f0", boxShadow:"0 16px 40px rgba(5,12,22,.18)" }}>
                     <span className="ani-pulse" />
-                    <span>Enterprise AI ops · Audit-ready delivery · Production-grade execution</span>
+                    <span>Production-grade AI workflows · Secure intake · Audit-ready delivery</span>
                   </div>
                   <h1 className="hero-h1 font-display" style={{ fontSize: isMobile ? "3rem" : "4.4rem", fontWeight:900, lineHeight:1.04, letterSpacing:"-.03em", color:"#ffffff", marginBottom:14, textShadow:"0 10px 32px rgba(0,0,0,.28)" }}>
-                    AI Training & Digital Operations
+                    Enterprise AI training & digital operations
                     <br />
-                    <span style={{ color:"#7dd3fc", fontWeight:900 }}>Built for Scale</span>
+                    <span style={{ color:"#7dd3fc", fontWeight:900 }}>Built for secure, scalable delivery</span>
                   </h1>
                   <p style={{ color:"#d8e3ff", fontSize: isMobile ? "1rem" : "1.03rem", lineHeight:1.9, marginBottom:34, fontFamily:"'Inter', Arial, sans-serif", maxWidth:660 }}>
                     Baraka Digital Hub delivers enterprise-ready AI data operations with disciplined execution, secure workflows, and measurable outcomes. Our Nairobi-based teams support global clients with repeatable delivery, quality governance, and production-grade transparency.

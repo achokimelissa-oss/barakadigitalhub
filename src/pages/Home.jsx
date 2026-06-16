@@ -15,16 +15,19 @@ function Home() {
           content="AI data labeling, transcription, annotation, AI training data, outsourcing Africa"
         />
       </Helmet>
-      <section className="hero">
+      <section className="hero home-page">
+        <div className="hero-tech-grid" />
+        <div className="hero-tech-overlay" />
+
         <div className="hero-grid">
           <div className="hero-copy">
             <div className="hero-copy__top">
               <p className="eyebrow">AI Training & Digital Operations</p>
-              <p className="hero-badge">Enterprise AI data operations · Audit-ready workflows · Production-ready delivery</p>
+              <p className="hero-badge">Production-grade AI workflows · Secure data intake · Audit-ready delivery</p>
             </div>
-            <h1 className="hero-title">Enterprise-grade AI operations for global model delivery</h1>
+            <h1 className="hero-title">Enterprise AI operations built for audit, scale, and model-ready delivery</h1>
             <p className="hero-text">
-              Baraka Digital Hub delivers disciplined, secure AI data operations from Nairobi. Our certified specialists integrate with client systems to provide human-reviewed datasets, QA governance, and production-grade transparency for enterprise AI workflows.
+              Baraka Digital Hub combines Nairobi-based specialists, disciplined data workflows, and transparent QA to turn raw datasets into enterprise-ready AI training assets.
             </p>
             <div className="hero-actions">
               <Link to="/pilot" className="button primary">
@@ -34,35 +37,49 @@ function Home() {
                 Explore Services
               </Link>
             </div>
+            <div className="hero-flow">
+              <div className="flow-step">
+                <span className="flow-step__number">1</span>
+                Secure data intake
+              </div>
+              <div className="flow-step">
+                <span className="flow-step__number">2</span>
+                QA, governance, and review
+              </div>
+              <div className="flow-step">
+                <span className="flow-step__number">3</span>
+                Deliver model-ready output
+              </div>
+            </div>
           </div>
 
           <aside className="hero-panel">
             <span className="panel-tag">Operational strengths</span>
-            <h2 className="hero-panel__headline">Structured delivery for enterprise AI teams</h2>
+            <h2 className="hero-panel__headline">Structured, secure delivery for AI teams</h2>
             <div className="hero-panel__list">
               <div className="panel-item">
                 <span>01</span>
                 <div>
-                  <strong>Data ops integration</strong>
-                  <p className="panel-item__text">Seamless integration with client systems, tooling, and governance layers.</p>
+                  <strong>Audit-ready workflows</strong>
+                  <p className="panel-item__text">Traceable data handling, SLA-backed review, and compliant audit logs.</p>
                 </div>
               </div>
               <div className="panel-item">
                 <span>02</span>
                 <div>
-                  <strong>Human QA & review</strong>
-                  <p className="panel-item__text">Multi-stage quality checks, human verification, and audit-ready traceability.</p>
+                  <strong>Human-led quality control</strong>
+                  <p className="panel-item__text">Expert review, multi-stage verification, and accuracy validation across every task.</p>
                 </div>
               </div>
               <div className="panel-item">
                 <span>03</span>
                 <div>
-                  <strong>Production-ready delivery</strong>
-                  <p className="panel-item__text">Reliable, repeatable execution designed for enterprise deployment.</p>
+                  <strong>Production-ready scale</strong>
+                  <p className="panel-item__text">Repeatable operations designed to support global AI development and enterprise rollouts.</p>
                 </div>
               </div>
             </div>
-            <p className="hero-panel__note">Integrated into client workflows with audit-ready reviews and repeatable production delivery.</p>
+            <p className="hero-panel__note">Aligned to enterprise governance, secure workflows, and measurable delivery for AI programs.</p>
           </aside>
         </div>
 
@@ -84,6 +101,8 @@ function Home() {
             <div className="metric-label">Cost vs US/EU</div>
           </article>
         </div>
+
+        <div className="hero-note">Aligned to enterprise SLAs, secure controls, and data workflows for reliable model training delivery.</div>
 
         <div className="scroll-indicator">
           <span className="indicator-arrow">↓</span>
