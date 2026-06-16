@@ -23,7 +23,8 @@ function Operations() {
           html{scroll-behavior:smooth;}
           body.operations-page{background:linear-gradient(180deg, #020615 0%, #04101f 28%, #081a2f 62%, #0b213b 100%);color:var(--hi);font-family:var(--sans);line-height:1.65;min-height:100vh;overflow-x:hidden;}
           body.operations-page::before{content:"";position:fixed;inset:0;background:linear-gradient(180deg, rgba(255,255,255,.04), transparent 26%, rgba(0,0,0,.18));opacity:1;pointer-events:none;z-index:0;}
-          body.operations-page::after{content:"";position:fixed;top:0;right:0;width:0;height:0;background:none;opacity:0;pointer-events:none;z-index:0;}
+          body.operations-page::after{content:"";position:fixed;inset:0;background-image:radial-gradient(circle at 14% 18%, rgba(45,217,200,.10), transparent 16%), radial-gradient(circle at 82% 18%, rgba(96,165,250,.09), transparent 14%), radial-gradient(circle at 50% 82%, rgba(59,130,246,.08), transparent 14%), radial-gradient(circle at 24% 70%, rgba(59,130,246,.06), transparent 10%), repeating-linear-gradient(0deg, rgba(255,255,255,.04), rgba(255,255,255,.04) 1px, transparent 1px, transparent 36px), repeating-linear-gradient(90deg, rgba(255,255,255,.04), rgba(255,255,255,.04) 1px, transparent 1px, transparent 36px), linear-gradient(135deg, rgba(255,255,255,.02), transparent 25%, rgba(255,255,255,.02) 50%, transparent 75%);background-size:100% 100%,100% 100%,100% 100%,100% 100%,36px 36px,36px 36px,120px 120px;background-position:0 0,0 0,0 0,0 0,0 0,0 0,0 0;opacity:.34;pointer-events:none;z-index:0;mix-blend-mode:screen;animation:operationsTechGlow 18s ease-in-out infinite;}
+          @keyframes operationsTechGlow{0%{transform:translateX(0);opacity:.32;}50%{transform:translateX(-12px);opacity:.38;}100%{transform:translateX(0);opacity:.32;}}
           .operations-page .hero::before,
           .operations-page .hero::after,
           .operations-page .hero .hero-tech-grid,
