@@ -302,6 +302,8 @@ a {
   font-size: 0.95rem;
   line-height: 1.75;
   font-weight: 500;
+}
+
 .hero-actions {
   display: flex;
   gap: 14px;
@@ -441,14 +443,33 @@ a {
   color: #e2f3ff;
 }
 
-.hero .metric-label {
-    color: #f8fafc;
-  }
+.hero .metric-label,
+  .metric-card .metric-label,
+  .metric-label {
+  color: #f8fafc !important;
+}
+
+.hero .hero-note,
+.hero-note,
+.hero .hero-copy p,
+.hero .hero-panel__note,
+.hero .scroll-indicator,
+.hero .flow-step,
+.hero .flow-step span,
+.flow-step,
+.flow-step span {
+  color: #f8fafc !important;
+}
+
+.flow-step {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   padding: 10px 16px;
   border-radius: 999px;
-  background: rgba(15,23,42,0.05);
-  border: 1px solid rgba(15,23,42,0.08);
-  color: #334155;
+  background: rgba(15,23,42,0.08);
+  border: 1px solid rgba(59,130,246,0.18);
+  color: #f8fafc !important;
   font-size: 0.95rem;
 }
 
