@@ -1255,6 +1255,7 @@ const BarakaDigitalHub = () => {
 
       {page === "home" && (
         <>
+          <PageHelmet title="Enterprise AI Data Operations | Baraka Digital Hub" description="Baraka Digital Hub delivers enterprise-ready AI data operations from Nairobi with secure workflows, transparent QA, and production-ready model training datasets." canonical="/" />
           <section style={{ position:"relative", left:"50%", right:"50%", width:"100vw", maxWidth:"100vw", marginLeft:"-50vw", marginRight:"-50vw", paddingTop:72, paddingBottom:80, paddingLeft:0, paddingRight:0, overflow:"visible", background:"linear-gradient(135deg, #06101f 0%, #0c1628 28%, #101d35 58%, #081223 100%)" }}>
             <div className="dot-grid" style={{ position:"absolute", inset:0, opacity:.6, pointerEvents: "none" }} />
             <div className="hero-tech-grid" />
